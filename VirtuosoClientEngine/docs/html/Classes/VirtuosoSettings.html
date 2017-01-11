@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>VirtuosoSettings Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Cache &amp; Carry (Virtuoso) SDK - iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Penthera Inc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/additionalNetworkHeaders">additionalNetworkHeaders</option>
+		
+		<option value="//api/name/clientSSLCertificatePassword">clientSSLCertificatePassword</option>
+		
+		<option value="//api/name/clientSSLCertificatePath">clientSSLCertificatePath</option>
+		
+		<option value="//api/name/defaultExpiryAfterDownload">defaultExpiryAfterDownload</option>
+		
+		<option value="//api/name/defaultExpiryAfterPlay">defaultExpiryAfterPlay</option>
+		
+		<option value="//api/name/defaultOfflineViewingPeriod">defaultOfflineViewingPeriod</option>
+		
+		<option value="//api/name/devicePushToken">devicePushToken</option>
+		
+		<option value="//api/name/downloadOverCellular">downloadOverCellular</option>
+		
+		<option value="//api/name/drmPassword">drmPassword</option>
+		
+		<option value="//api/name/drmUserName">drmUserName</option>
+		
+		<option value="//api/name/engineSetsNetworkActivityIndicator">engineSetsNetworkActivityIndicator</option>
+		
+		<option value="//api/name/headroom">headroom</option>
+		
+		<option value="//api/name/manualDeviceUDID">manualDeviceUDID</option>
+		
+		<option value="//api/name/maxDevicesForDownload">maxDevicesForDownload</option>
+		
+		<option value="//api/name/maxDownloadedAssets">maxDownloadedAssets</option>
+		
+		<option value="//api/name/maxStorageAllowed">maxStorageAllowed</option>
+		
+		<option value="//api/name/minimumBackplaneSyncInterval">minimumBackplaneSyncInterval</option>
+		
+		<option value="//api/name/networkTimeout">networkTimeout</option>
+		
+		<option value="//api/name/numberOfDevicesEnabled">numberOfDevicesEnabled</option>
+		
+		<option value="//api/name/trustSelfSignedServerCertificates">trustSelfSignedServerCertificates</option>
+		
+		<option value="//api/name/useStreamPackagerForBackgroundDownloads">useStreamPackagerForBackgroundDownloads</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/instance">+ instance</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/overrideDownloadOverCellular:">- overrideDownloadOverCellular:</option>
+		
+		<option value="//api/name/overrideHeadroom:">- overrideHeadroom:</option>
+		
+		<option value="//api/name/overrideMaxStorageAllowed:">- overrideMaxStorageAllowed:</option>
+		
+		<option value="//api/name/resetDownloadOverCellularToDefault">- resetDownloadOverCellularToDefault</option>
+		
+		<option value="//api/name/resetHeadroomToDefault">- resetHeadroomToDefault</option>
+		
+		<option value="//api/name/resetMaxStorageAllowedToDefault">- resetMaxStorageAllowedToDefault</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">VirtuosoSettings Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoSettings.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A singleton object that manages all SDK configuration settings.  Receives default settings
+and business rules from the Backplane.</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this type directly.
+The VirtuosoSettings is a singleton and should only be accessed via the
+provided <a href="#//api/name/instance">instance</a> method.</p></div>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Utility" name="task_Utility"></a>
+						<h2 class="task-title">Utility</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/instance" title="instance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/instance">+&nbsp;instance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The singleton instance access method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (VirtuosoSettings *)instance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the VirtuosoSettings object instance.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You must never instantiate a local copy of the VirtuosoSettings object.  This object
+is intended to be a static singleton accessed through the instance method only.  Instantiating a local
+copy will throw an exception.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Backplane-Provided Configuration" name="task_Backplane-Provided Configuration"></a>
+						<h2 class="task-title">Backplane-Provided Configuration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/defaultOfflineViewingPeriod" title="defaultOfflineViewingPeriod"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultOfflineViewingPeriod">&nbsp;&nbsp;defaultOfflineViewingPeriod</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Once the time since last Backplane sync exceeds this value, Virtuoso makes the downloaded assets inaccessible</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long defaultOfflineViewingPeriod</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso enforces that clients must sync with the Backplane at a required interval,
+or else lose access to downloaded assets.
+Virtuoso marks the time since the sync with the Backplane, and makes all downloaded
+assets inaccessible if the time exceeds this value.
+After this timeout, any attempts to playback any assets via the file proxy will fail.
+Any calls to <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> methods that would retrieve file paths
+for downloaded assets will return nil.
+Note that Virtuoso doesn’t delete all downloaded assets; it just makes the assets
+inaccessible. Once the next Backplane sync occurs, the assets are again accessible.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberOfDevicesEnabled" title="numberOfDevicesEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberOfDevicesEnabled">&nbsp;&nbsp;numberOfDevicesEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The total number of unique enabled devices for the current user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long numberOfDevicesEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxDevicesForDownload" title="maxDevicesForDownload"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxDevicesForDownload">&nbsp;&nbsp;maxDevicesForDownload</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of devices per user that the Backplane allows to be enabled for download</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxDevicesForDownload</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultExpiryAfterDownload" title="defaultExpiryAfterDownload"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultExpiryAfterDownload">&nbsp;&nbsp;defaultExpiryAfterDownload</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Amount of time, in seconds, between when Virtuoso finishes downloading an asset
+and when it deletes that downloaded asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long defaultExpiryAfterDownload</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>As soon as Virtuoso finishes downloading an asset, it marks the asset with a timestamp.
+As soon as possible after &lsquo;defaultExpiryAfterDownload&rsquo; has elapsed, Virtuoso will
+automatically delete the downloaded asset.
+Values less than or equal to zero mean no expiry.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/defaultExpiryAfterPlay" title="defaultExpiryAfterPlay"></a>
+	<h3 class="method-title"><code><a href="#//api/name/defaultExpiryAfterPlay">&nbsp;&nbsp;defaultExpiryAfterPlay</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Default amount of time after the first playback of a downloaded asset before Virtuoso deletes it</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long defaultExpiryAfterPlay</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>At the first known &lsquo;play&rsquo; event for this asset, Virtuoso marks the item with a timestamp.
+As soon as possible after &lsquo;defaultExpiryAfterPlay&rsquo; time has elapsed, Virtuoso
+will automatically delete the downloaded asset.
+A values zero or less means &ldquo;never expire.&rdquo;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Push Notice Configuration" name="task_Push Notice Configuration"></a>
+						<h2 class="task-title">Push Notice Configuration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/devicePushToken" title="devicePushToken"></a>
+	<h3 class="method-title"><code><a href="#//api/name/devicePushToken">&nbsp;&nbsp;devicePushToken</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The device push token used for remote push notices</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *devicePushToken</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso uses push notifications in various ways.
+For push notifications to work, you must set this value as soon as you get the
+app&rsquo;s push token from the OS. If you cannot access the push token (e.g. the user disabled
+push notifications for the device), then set this value to nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Policy/Configuration" name="task_Policy/Configuration"></a>
+						<h2 class="task-title">Policy/Configuration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/headroom" title="headroom"></a>
+	<h3 class="method-title"><code><a href="#//api/name/headroom">&nbsp;&nbsp;headroom</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the headroom configuration value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long headroom</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The headroom setting (in MB).</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Headroom is the amount of free space that Virtuoso must preserve on disk.
+For <a href="#//api/name/instance">instance</a>, if headroom is 1GB and the device has 1.2GB free disk space, Virtuoso will
+begin to download a 150MB asset, but it will NOT begin to download a 500MB asset. The default
+is 1 GB.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/overrideHeadroom:">- overrideHeadroom:</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetHeadroomToDefault">- resetHeadroomToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideHeadroom:" title="overrideHeadroom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideHeadroom:">&ndash;&nbsp;overrideHeadroom:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to override the default value for the <a href="#//api/name/headroom">headroom</a> setting.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideHeadroom:(long long)<em>newHeadroom</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newHeadroom</code></th>
+						<td><p>The new <a href="#//api/name/headroom">headroom</a> setting Virtuoso should use (in MB)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/headroom">@property headroom</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetHeadroomToDefault">- resetHeadroomToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetHeadroomToDefault" title="resetHeadroomToDefault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetHeadroomToDefault">&ndash;&nbsp;resetHeadroomToDefault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets Virtuoso&rsquo;s <a href="#//api/name/headroom">headroom</a> setting to the default (1 GB)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetHeadroomToDefault</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/headroom">@property headroom</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/overrideHeadroom:">- overrideHeadroom:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxStorageAllowed" title="maxStorageAllowed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxStorageAllowed">&nbsp;&nbsp;maxStorageAllowed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the max storage configuration value, in MB.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxStorageAllowed</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Max storage is the total amount of space that Virtuoso can use on disk for downloads.
+For <a href="#//api/name/instance">instance</a>, if maxStorage is 10GB and Virtuoso is now storing 9.5GB,
+Virtuoso will begin to download a 400MB asset, but will NOT begin to download an 800MB asset.
+The default is 5 GB.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/overrideMaxStorageAllowed:">- overrideMaxStorageAllowed:</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetMaxStorageAllowedToDefault">- resetMaxStorageAllowedToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideMaxStorageAllowed:" title="overrideMaxStorageAllowed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideMaxStorageAllowed:">&ndash;&nbsp;overrideMaxStorageAllowed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to override the default value for max storage.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideMaxStorageAllowed:(long long)<em>maxStorageAllowed</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxStorageAllowed</code></th>
+						<td><p>The new max storage value (in MB).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/maxStorageAllowed">@property maxStorageAllowed</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetMaxStorageAllowedToDefault">- resetMaxStorageAllowedToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetMaxStorageAllowedToDefault" title="resetMaxStorageAllowedToDefault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetMaxStorageAllowedToDefault">&ndash;&nbsp;resetMaxStorageAllowedToDefault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets Virtuoso&rsquo;s maximum storage to the default (5 GB)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetMaxStorageAllowedToDefault</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/maxStorageAllowed">@property maxStorageAllowed</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/overrideMaxStorageAllowed:">- overrideMaxStorageAllowed:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxDownloadedAssets" title="maxDownloadedAssets"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxDownloadedAssets">&nbsp;&nbsp;maxDownloadedAssets</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of downloads that can exist on the device at any given time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxDownloadedAssets</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso limits the total number of downloads the device can have on disk at any given time.
+Any download requests beyond this limit are queued, but will not download, and the engine
+will report an error indicating the download queue is blocked until the user manually
+deletes enough of the currently downloaded assets to get below the limit again.  The default
+value is 100.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadOverCellular" title="downloadOverCellular"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadOverCellular">&nbsp;&nbsp;downloadOverCellular</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the cellular download permission value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean downloadOverCellular</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The &lsquo;downloadOverCellular&rsquo; value is a permission.
+If YES, Virtuoso may elect to use cellular to download under certain conditions.
+A NO value guarantees Virtuoso will never download over cellular. The default
+values is NO.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/overrideDownloadOverCellular:">- overrideDownloadOverCellular:</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetDownloadOverCellularToDefault">- resetDownloadOverCellularToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideDownloadOverCellular:" title="overrideDownloadOverCellular:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideDownloadOverCellular:">&ndash;&nbsp;overrideDownloadOverCellular:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to override Virtuoso&rsquo;s default value for the cellular download permission setting.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideDownloadOverCellular:(Boolean)<em>downloadOverCellular</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>downloadOverCellular</code></th>
+						<td><p>The new cellular download setting</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/downloadOverCellular">@property downloadOverCellular</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetDownloadOverCellularToDefault">- resetDownloadOverCellularToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetDownloadOverCellularToDefault" title="resetDownloadOverCellularToDefault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetDownloadOverCellularToDefault">&ndash;&nbsp;resetDownloadOverCellularToDefault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reset Virtuoso&rsquo;s cellular download setting to the default (false)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetDownloadOverCellularToDefault</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/downloadOverCellular">@property downloadOverCellular</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/overrideDownloadOverCellular:">- overrideDownloadOverCellular:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Advanced Policy/Configuration - stuff you probably should leave alone" name="task_Advanced Policy/Configuration - stuff you probably should leave alone"></a>
+						<h2 class="task-title">Advanced Policy/Configuration - stuff you probably should leave alone</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/networkTimeout" title="networkTimeout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/networkTimeout">&nbsp;&nbsp;networkTimeout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The network connection timeout for Virtuoso HTTP requests, in seconds.  Default is 60.0s.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSTimeInterval networkTimeout</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/additionalNetworkHeaders" title="additionalNetworkHeaders"></a>
+	<h3 class="method-title"><code><a href="#//api/name/additionalNetworkHeaders">&nbsp;&nbsp;additionalNetworkHeaders</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A dictionary of additional HTTP headers that Virtuoso will send (along with the
+default set of HTTP headers) in every HTTP request. Takes precedence over the default
+HTTP headers.  These headers may also be overridden by additionalNetworkHeaders
+specified on the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> individually.</p>
+
+<p>Example:
+engine.additionalNetworkHeaders = @{&ldquo;AccessKey&rdquo;:&ldquo;<UUID>&rdquo;};</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSDictionary *additionalNetworkHeaders</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/useStreamPackagerForBackgroundDownloads" title="useStreamPackagerForBackgroundDownloads"></a>
+	<h3 class="method-title"><code><a href="#//api/name/useStreamPackagerForBackgroundDownloads">&nbsp;&nbsp;useStreamPackagerForBackgroundDownloads</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enables Penthera&rsquo;s StreamPackager service for background download of segmented VirtuosoAssets (HLS, HSS, DASH, etc).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean useStreamPackagerForBackgroundDownloads</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Penthera&rsquo;s StreamPackager (a server proxy) allows Virtuoso to more efficiently download
+segmented <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> formats even when the enclosing app isn&rsquo;t in the foreground.
+To disable this feature (and continue with slower background downloads), set this property to NO.
+Default is YES.</p><div class="warning"><p><strong>Warning:</strong> Since Virtuoso uses this value during startup, you must supply this value before
+calling any other Virtuoso methods. Changes to this value won&rsquo;t take effect
+until the next time you call startup.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/manualDeviceUDID" title="manualDeviceUDID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/manualDeviceUDID">&nbsp;&nbsp;manualDeviceUDID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An explicit device ID to use when authenticating and syncing with the Backplane.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *manualDeviceUDID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>By default, Virtuoso will use an internally generated UUID to authenticate
+with the Backplane.  To use a different device ID value, set it here.</p><div class="warning"><p><strong>Warning:</strong> Since Virtuoso uses this value during startup, you must supply this value before
+calling any other Virtuoso methods.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/engineSetsNetworkActivityIndicator" title="engineSetsNetworkActivityIndicator"></a>
+	<h3 class="method-title"><code><a href="#//api/name/engineSetsNetworkActivityIndicator">&nbsp;&nbsp;engineSetsNetworkActivityIndicator</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether Virtuoso should set the app&rsquo;s network activity indicator</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean engineSetsNetworkActivityIndicator</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If YES, then Virtuoso will set the enclosing app&rsquo;s network activity indicator when downloading.
+Set this to NO if you don&rsquo;t want the Virtuoso&rsquo;s downloading to trigger the app&rsquo;s
+network activity indicator.  Default is YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minimumBackplaneSyncInterval" title="minimumBackplaneSyncInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minimumBackplaneSyncInterval">&nbsp;&nbsp;minimumBackplaneSyncInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The minimum amount of time between Backplane syncs</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSTimeInterval minimumBackplaneSyncInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>No matter how many times the Backplane sync method is called, or how often internal events might
+attempt a sync, the SDK will generally sync with the backplane more often than this value.  Certain time-critical
+events, such as a SDK push notice, may cause the SDK to sync regardless of the last sync.  The default
+is 15 minutes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SSL Configuration" name="task_SSL Configuration"></a>
+						<h2 class="task-title">SSL Configuration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/clientSSLCertificatePath" title="clientSSLCertificatePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientSSLCertificatePath">&nbsp;&nbsp;clientSSLCertificatePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *clientSSLCertificatePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientSSLCertificatePassword" title="clientSSLCertificatePassword"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientSSLCertificatePassword">&nbsp;&nbsp;clientSSLCertificatePassword</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The password required to use the client SSL cert.  Can be nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *clientSSLCertificatePassword</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trustSelfSignedServerCertificates" title="trustSelfSignedServerCertificates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trustSelfSignedServerCertificates">&nbsp;&nbsp;trustSelfSignedServerCertificates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether Virtuoso will trust self-signed SSL certs</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean trustSelfSignedServerCertificates</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Setting to YES causes Virtuoso to trust all self-signed server certs.
+Don&rsquo;t do this in a production build - it&rsquo;s only meant for testing! Default is NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="DRM Settings" name="task_DRM Settings"></a>
+						<h2 class="task-title">DRM Settings</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/drmUserName" title="drmUserName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/drmUserName">&nbsp;&nbsp;drmUserName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The user name to use with the DRM system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *drmUserName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Depending on the DRM system being used, this property may be ignored.  You only need to set
+this value if you know your DRM system requires it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/drmPassword" title="drmPassword"></a>
+	<h3 class="method-title"><code><a href="#//api/name/drmPassword">&nbsp;&nbsp;drmPassword</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The password to use with the DRM system.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *drmPassword</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Depending on the DRM system being used, this property may be ignored.  You only need to set
+this value if you know your DRM system requires it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-01-11</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

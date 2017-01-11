@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		031DD316195A02E000C1F20D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F4C270169CC75300FC43E4 /* libz.dylib */; };
+		032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 032FCF40188F034500190180 /* libMBProgressHUD.a */; };
+		032FCF49188F037D00190180 /* UIBlockSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 032FCF47188F037D00190180 /* UIBlockSwitch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		03592B541DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; };
+		03592B561DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; };
+		03592B571DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; };
+		03592B581DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03592B591DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; };
+		03592B5A1DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0363E5F519D4561800FB6411 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A620CF1591066700CF7A85 /* MediaPlayer.framework */; };
+		03D5862717A05B9600057F1F /* NSObject+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862217A05B9600057F1F /* NSObject+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		03D5862817A05B9600057F1F /* UIActionSheet+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862417A05B9600057F1F /* UIActionSheet+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		03D5862917A05B9600057F1F /* UIAlertView+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862617A05B9600057F1F /* UIAlertView+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		03D5862D17A05C1500057F1F /* AddNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862B17A05C1500057F1F /* AddNewItemViewController.m */; };
+		03D5862E17A05C1500057F1F /* AddNewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */; };
+		03F462061A6D92380045C310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419EF94156AA6A300B383B3 /* CoreGraphics.framework */; };
+		03F587AB1E2693FD00813740 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; };
+		03F587AC1E2695D200813740 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; };
+		03F587AD1E2695D200813740 /* widevine_cdm_sdk_release.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03F9B70B1745405200929556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F9B70A1745405200929556 /* Default-568h@2x.png */; };
+		03FFA0E91A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FFA0E81A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m */; };
+		8419EF91156AA6A300B383B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419EF90156AA6A300B383B3 /* UIKit.framework */; };
+		8419EF93156AA6A300B383B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419EF92156AA6A300B383B3 /* Foundation.framework */; };
+		8419EF9B156AA6A300B383B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8419EF99156AA6A300B383B3 /* InfoPlist.strings */; };
+		8419EF9D156AA6A300B383B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419EF9C156AA6A300B383B3 /* main.m */; };
+		8419EFA1156AA6A300B383B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419EFA0156AA6A300B383B3 /* AppDelegate.m */; };
+		8419EFA4156AA6A300B383B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419EFA3156AA6A300B383B3 /* ViewController.m */; };
+		8419EFA7156AA6A300B383B3 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8419EFA5156AA6A300B383B3 /* ViewController_iPhone.xib */; };
+		8419F15A156C057E00B383B3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419F159156C057E00B383B3 /* SettingsViewController.m */; };
+		8419F15C156C059300B383B3 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8419F15B156C059300B383B3 /* SettingsView.xib */; };
+		8419F160156C0DFF00B383B3 /* ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419F15F156C0DFF00B383B3 /* ModalAlert.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		842B090015754F970016E9E5 /* virtuoso-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 842B08FE15754F970016E9E5 /* virtuoso-icon.png */; };
+		842B090115754F970016E9E5 /* virtuoso-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 842B08FF15754F970016E9E5 /* virtuoso-icon@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		032FCF3F188F034500190180 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 032FCF3B188F034500190180 /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D286A7491518C70F00E13FB8;
+			remoteInfo = MBProgressHUD;
+		};
+		032FCF41188F035100190180 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 032FCF3B188F034500190180 /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D286A7481518C70F00E13FB8;
+			remoteInfo = MBProgressHUD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0363E5F819D456C500FB6411 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				03592B5A1DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				03F587AD1E2695D200813740 /* widevine_cdm_sdk_release.framework in Embed Frameworks */,
+				03592B581DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		032FCF3B188F034500190180 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
+		032FCF46188F037D00190180 /* UIBlockSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBlockSwitch.h; sourceTree = "<group>"; };
+		032FCF47188F037D00190180 /* UIBlockSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBlockSwitch.m; sourceTree = "<group>"; };
+		032FCF4A188F03DB00190180 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		032FCF4B188F03DB00190180 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		0336A09D16850B5000CF4012 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.framework; sourceTree = SOURCE_ROOT; };
+		03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientSubscriptionManager.framework; path = VirtuosoClientEngine/VirtuosoClientSubscriptionManager/Release/VirtuosoClientSubscriptionManager.framework; sourceTree = SOURCE_ROOT; };
+		039E664D17007A3500B427F3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		03D5862017A05B9600057F1F /* MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBlockAdditions.h; sourceTree = "<group>"; };
+		03D5862117A05B9600057F1F /* NSObject+MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKBlockAdditions.h"; sourceTree = "<group>"; };
+		03D5862217A05B9600057F1F /* NSObject+MKBlockAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKBlockAdditions.m"; sourceTree = "<group>"; };
+		03D5862317A05B9600057F1F /* UIActionSheet+MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+MKBlockAdditions.h"; sourceTree = "<group>"; };
+		03D5862417A05B9600057F1F /* UIActionSheet+MKBlockAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+MKBlockAdditions.m"; sourceTree = "<group>"; };
+		03D5862517A05B9600057F1F /* UIAlertView+MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKBlockAdditions.h"; sourceTree = "<group>"; };
+		03D5862617A05B9600057F1F /* UIAlertView+MKBlockAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKBlockAdditions.m"; sourceTree = "<group>"; };
+		03D5862A17A05C1500057F1F /* AddNewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewItemViewController.h; sourceTree = "<group>"; };
+		03D5862B17A05C1500057F1F /* AddNewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewItemViewController.m; sourceTree = "<group>"; };
+		03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewItemViewController.xib; sourceTree = "<group>"; };
+		03D5863417A05DFB00057F1F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		03F4C270169CC75300FC43E4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = widevine_cdm_sdk_release.framework; path = ThirdParty/Widevine/release/widevine_cdm_sdk_release.framework; sourceTree = SOURCE_ROOT; };
+		03F9B70A1745405200929556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "VirtuosoClientEngineDemo/Default-568h@2x.png"; sourceTree = "<group>"; };
+		03FFA0E71A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtuosoMoviePlayerViewController.h; sourceTree = "<group>"; };
+		03FFA0E81A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtuosoMoviePlayerViewController.m; sourceTree = "<group>"; };
+		8419EF8C156AA6A300B383B3 /* VirtuosoClientEngineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtuosoClientEngineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8419EF90156AA6A300B383B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8419EF92156AA6A300B383B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8419EF94156AA6A300B383B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8419EF98156AA6A300B383B3 /* VirtuosoClientEngineDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VirtuosoClientEngineDemo-Info.plist"; sourceTree = "<group>"; };
+		8419EF9A156AA6A300B383B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8419EF9C156AA6A300B383B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8419EF9E156AA6A300B383B3 /* VirtuosoClientEngineDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VirtuosoClientEngineDemo-Prefix.pch"; sourceTree = "<group>"; };
+		8419EF9F156AA6A300B383B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8419EFA0156AA6A300B383B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8419EFA2156AA6A300B383B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8419EFA3156AA6A300B383B3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8419EFA6156AA6A300B383B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		8419EFC3156AABF100B383B3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8419F158156C057E00B383B3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		8419F159156C057E00B383B3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		8419F15B156C059300B383B3 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		8419F15E156C0DFF00B383B3 /* ModalAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalAlert.h; sourceTree = "<group>"; };
+		8419F15F156C0DFF00B383B3 /* ModalAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalAlert.m; sourceTree = "<group>"; };
+		8419F1CB156E89D900B383B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8419F1CD156E89DC00B383B3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		842B08FE15754F970016E9E5 /* virtuoso-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "virtuoso-icon.png"; sourceTree = "<group>"; };
+		842B08FF15754F970016E9E5 /* virtuoso-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "virtuoso-icon@2x.png"; sourceTree = "<group>"; };
+		84A620CD1591062800CF7A85 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		84A620CF1591066700CF7A85 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		84D9C0411579165C00E5BDE8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8419EF89156AA6A300B383B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F462061A6D92380045C310 /* CoreGraphics.framework in Frameworks */,
+				03F587AC1E2695D200813740 /* widevine_cdm_sdk_release.framework in Frameworks */,
+				0363E5F519D4561800FB6411 /* MediaPlayer.framework in Frameworks */,
+				031DD316195A02E000C1F20D /* libz.dylib in Frameworks */,
+				032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */,
+				03592B591DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				03592B561DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
+				8419EF91156AA6A300B383B3 /* UIKit.framework in Frameworks */,
+				03592B571DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
+				03592B541DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				03F587AB1E2693FD00813740 /* widevine_cdm_sdk_release.framework in Frameworks */,
+				8419EF93156AA6A300B383B3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032FCF3C188F034500190180 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				032FCF40188F034500190180 /* libMBProgressHUD.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		032FCF44188F037D00190180 /* UIBlockSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				032FCF46188F037D00190180 /* UIBlockSwitch.h */,
+				032FCF47188F037D00190180 /* UIBlockSwitch.m */,
+			);
+			path = UIBlockSwitch;
+			sourceTree = "<group>";
+		};
+		03D5861F17A05B9600057F1F /* MKAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				03D5862017A05B9600057F1F /* MKBlockAdditions.h */,
+				03D5862117A05B9600057F1F /* NSObject+MKBlockAdditions.h */,
+				03D5862217A05B9600057F1F /* NSObject+MKBlockAdditions.m */,
+				03D5862317A05B9600057F1F /* UIActionSheet+MKBlockAdditions.h */,
+				03D5862417A05B9600057F1F /* UIActionSheet+MKBlockAdditions.m */,
+				03D5862517A05B9600057F1F /* UIAlertView+MKBlockAdditions.h */,
+				03D5862617A05B9600057F1F /* UIAlertView+MKBlockAdditions.m */,
+			);
+			path = MKAdditions;
+			sourceTree = "<group>";
+		};
+		8419EF81156AA6A300B383B3 = {
+			isa = PBXGroup;
+			children = (
+				03F9B70A1745405200929556 /* Default-568h@2x.png */,
+				8419EF96156AA6A300B383B3 /* VirtuosoClientEngineDemo */,
+				8419EF8F156AA6A300B383B3 /* Frameworks */,
+				8419EF8D156AA6A300B383B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8419EF8D156AA6A300B383B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8419EF8C156AA6A300B383B3 /* VirtuosoClientEngineDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8419EF8F156AA6A300B383B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				032FCF4A188F03DB00190180 /* AdSupport.framework */,
+				032FCF4B188F03DB00190180 /* CoreMotion.framework */,
+				03D5863417A05DFB00057F1F /* CoreTelephony.framework */,
+				039E664D17007A3500B427F3 /* CFNetwork.framework */,
+				03F4C270169CC75300FC43E4 /* libz.dylib */,
+				0336A09D16850B5000CF4012 /* QuartzCore.framework */,
+				84A620CF1591066700CF7A85 /* MediaPlayer.framework */,
+				84A620CD1591062800CF7A85 /* AssetsLibrary.framework */,
+				84D9C0411579165C00E5BDE8 /* Security.framework */,
+				8419F1CD156E89DC00B383B3 /* AudioToolbox.framework */,
+				8419F1CB156E89D900B383B3 /* AVFoundation.framework */,
+				8419EFC3156AABF100B383B3 /* SystemConfiguration.framework */,
+				8419EF90156AA6A300B383B3 /* UIKit.framework */,
+				8419EF92156AA6A300B383B3 /* Foundation.framework */,
+				8419EF94156AA6A300B383B3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8419EF96156AA6A300B383B3 /* VirtuosoClientEngineDemo */ = {
+			isa = PBXGroup;
+			children = (
+				84A6201D158FC24600CF7A85 /* Library */,
+				032FCF3B188F034500190180 /* MBProgressHUD.xcodeproj */,
+				8419F15D156C0DFF00B383B3 /* ModalAlert */,
+				032FCF44188F037D00190180 /* UIBlockSwitch */,
+				03D5861F17A05B9600057F1F /* MKAdditions */,
+				8419EF9F156AA6A300B383B3 /* AppDelegate.h */,
+				8419EFA0156AA6A300B383B3 /* AppDelegate.m */,
+				8419EFA2156AA6A300B383B3 /* ViewController.h */,
+				8419EFA3156AA6A300B383B3 /* ViewController.m */,
+				03FFA0E71A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.h */,
+				03FFA0E81A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m */,
+				8419F158156C057E00B383B3 /* SettingsViewController.h */,
+				8419F159156C057E00B383B3 /* SettingsViewController.m */,
+				03D5862A17A05C1500057F1F /* AddNewItemViewController.h */,
+				03D5862B17A05C1500057F1F /* AddNewItemViewController.m */,
+				03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */,
+				8419EFA5156AA6A300B383B3 /* ViewController_iPhone.xib */,
+				8419F15B156C059300B383B3 /* SettingsView.xib */,
+				8419EF97156AA6A300B383B3 /* Supporting Files */,
+			);
+			path = VirtuosoClientEngineDemo;
+			sourceTree = "<group>";
+		};
+		8419EF97156AA6A300B383B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				842B08FE15754F970016E9E5 /* virtuoso-icon.png */,
+				842B08FF15754F970016E9E5 /* virtuoso-icon@2x.png */,
+				8419EF98156AA6A300B383B3 /* VirtuosoClientEngineDemo-Info.plist */,
+				8419EF99156AA6A300B383B3 /* InfoPlist.strings */,
+				8419EF9C156AA6A300B383B3 /* main.m */,
+				8419EF9E156AA6A300B383B3 /* VirtuosoClientEngineDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8419F15D156C0DFF00B383B3 /* ModalAlert */ = {
+			isa = PBXGroup;
+			children = (
+				8419F15E156C0DFF00B383B3 /* ModalAlert.h */,
+				8419F15F156C0DFF00B383B3 /* ModalAlert.m */,
+			);
+			path = ModalAlert;
+			sourceTree = "<group>";
+		};
+		84A6201D158FC24600CF7A85 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */,
+				03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */,
+				03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8419EF8B156AA6A300B383B3 /* VirtuosoClientEngineDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8419EFAD156AA6A300B383B3 /* Build configuration list for PBXNativeTarget "VirtuosoClientEngineDemo" */;
+			buildPhases = (
+				8419EF88156AA6A300B383B3 /* Sources */,
+				8419EF89156AA6A300B383B3 /* Frameworks */,
+				8419EF8A156AA6A300B383B3 /* Resources */,
+				0363E5F819D456C500FB6411 /* Embed Frameworks */,
+				03A671411C244DD000D63090 /* Strip Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				032FCF42188F035100190180 /* PBXTargetDependency */,
+			);
+			name = VirtuosoClientEngineDemo;
+			productName = VirtuosoClientEngineDemo;
+			productReference = 8419EF8C156AA6A300B383B3 /* VirtuosoClientEngineDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8419EF83156AA6A300B383B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					8419EF8B156AA6A300B383B3 = {
+						DevelopmentTeam = L5M4866SC8;
+					};
+				};
+			};
+			buildConfigurationList = 8419EF86156AA6A300B383B3 /* Build configuration list for PBXProject "VirtuosoClientEngineDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8419EF81156AA6A300B383B3;
+			productRefGroup = 8419EF8D156AA6A300B383B3 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 032FCF3C188F034500190180 /* Products */;
+					ProjectRef = 032FCF3B188F034500190180 /* MBProgressHUD.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8419EF8B156AA6A300B383B3 /* VirtuosoClientEngineDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		032FCF40188F034500190180 /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = 032FCF3F188F034500190180 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8419EF8A156AA6A300B383B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8419EF9B156AA6A300B383B3 /* InfoPlist.strings in Resources */,
+				8419EFA7156AA6A300B383B3 /* ViewController_iPhone.xib in Resources */,
+				8419F15C156C059300B383B3 /* SettingsView.xib in Resources */,
+				842B090015754F970016E9E5 /* virtuoso-icon.png in Resources */,
+				842B090115754F970016E9E5 /* virtuoso-icon@2x.png in Resources */,
+				03F9B70B1745405200929556 /* Default-568h@2x.png in Resources */,
+				03D5862E17A05C1500057F1F /* AddNewItemViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03A671411C244DD000D63090 /* Strip Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Strip Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirtuosoClientDownloadEngine.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8419EF88156AA6A300B383B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03FFA0E91A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m in Sources */,
+				8419EF9D156AA6A300B383B3 /* main.m in Sources */,
+				8419EFA1156AA6A300B383B3 /* AppDelegate.m in Sources */,
+				8419EFA4156AA6A300B383B3 /* ViewController.m in Sources */,
+				8419F15A156C057E00B383B3 /* SettingsViewController.m in Sources */,
+				8419F160156C0DFF00B383B3 /* ModalAlert.m in Sources */,
+				03D5862717A05B9600057F1F /* NSObject+MKBlockAdditions.m in Sources */,
+				03D5862817A05B9600057F1F /* UIActionSheet+MKBlockAdditions.m in Sources */,
+				032FCF49188F037D00190180 /* UIBlockSwitch.m in Sources */,
+				03D5862917A05B9600057F1F /* UIAlertView+MKBlockAdditions.m in Sources */,
+				03D5862D17A05C1500057F1F /* AddNewItemViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		032FCF42188F035100190180 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBProgressHUD;
+			targetProxy = 032FCF41188F035100190180 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8419EF99156AA6A300B383B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8419EF9A156AA6A300B383B3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8419EFA5156AA6A300B383B3 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8419EFA6156AA6A300B383B3 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8419EFAB156AA6A300B383B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8419EFAC156AA6A300B383B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8419EFAE156AA6A300B383B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release",
+					"$(PROJECT_DIR)/VirtuosoClientEngine/VirtuosoClientSubscriptionManager/Release",
+					"$(PROJECT_DIR)/ThirdParty/Widevine/release",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VirtuosoClientEngineDemo/VirtuosoClientEngineDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "VirtuosoClientEngineDemo/VirtuosoClientEngineDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8419EFAF156AA6A300B383B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release",
+					"$(PROJECT_DIR)/VirtuosoClientEngine/VirtuosoClientSubscriptionManager/Release",
+					"$(PROJECT_DIR)/ThirdParty/Widevine/release",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VirtuosoClientEngineDemo/VirtuosoClientEngineDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "VirtuosoClientEngineDemo/VirtuosoClientEngineDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8419EF86156AA6A300B383B3 /* Build configuration list for PBXProject "VirtuosoClientEngineDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8419EFAB156AA6A300B383B3 /* Debug */,
+				8419EFAC156AA6A300B383B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8419EFAD156AA6A300B383B3 /* Build configuration list for PBXNativeTarget "VirtuosoClientEngineDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8419EFAE156AA6A300B383B3 /* Debug */,
+				8419EFAF156AA6A300B383B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8419EF83156AA6A300B383B3 /* Project object */;
+}

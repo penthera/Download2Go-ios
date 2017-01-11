@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>kVSM_ManagerFailureCode Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Cache &amp; Carry (Virtuoso) SDK - iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Penthera Inc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">kVSM_ManagerFailureCode Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>VirtuosoSubscriptionManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">kVSM_ManagerFailureCode</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>@typedef kVSM_ManagerFailureCode</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, kVSM_ManagerFailureCode ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVSM_ManagerFailureAuthentication</a> = -1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVSM_ManagerFailureBackplaneUnreachable</a> = -2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVSM_ManagerFailureUnknownBackplaneError</a> = -3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVSM_ManagerFailureNotAvailable</a> = -4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVSM_ManagerFailureOffline</a> = -5,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="kVSM_ManagerFailureAuthentication"></a><code>kVSM_ManagerFailureAuthentication</code></dt>
+<dd>
+
+
+<p>The provided application secret,key, or user ID is invalid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoSubscriptionManager.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVSM_ManagerFailureBackplaneUnreachable"></a><code>kVSM_ManagerFailureBackplaneUnreachable</code></dt>
+<dd>
+
+
+<p>The provided Backplane could not be reached</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoSubscriptionManager.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVSM_ManagerFailureUnknownBackplaneError"></a><code>kVSM_ManagerFailureUnknownBackplaneError</code></dt>
+<dd>
+
+
+<p>The Backplane encountered an internal error or returned an unexpected response</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoSubscriptionManager.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVSM_ManagerFailureNotAvailable"></a><code>kVSM_ManagerFailureNotAvailable</code></dt>
+<dd>
+
+
+<p>The VirtuosoDownloadManager instance has not been properly started and is unavailable.
+        Manager methods will not function properly until after the VirtuosoDownloadManager has been started.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoSubscriptionManager.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVSM_ManagerFailureOffline"></a><code>kVSM_ManagerFailureOffline</code></dt>
+<dd>
+
+
+<p>The device is currently offline and cannot perform the requested call</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoSubscriptionManager.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-01-11</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
