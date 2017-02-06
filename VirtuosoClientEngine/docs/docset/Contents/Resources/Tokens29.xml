@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_DownloadErrorCode.html">
+	<File path="Constants/kVDE_DownloadEngineStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadErrorCode</TokenIdentifier>
-			<Abstract type="html">Virtuoso issues these codes via NSNotificationCenter when there&apos;s a problem downloading an asset.
-Virtuoso also marks the individual asset with an error code.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadEngineStatus</TokenIdentifier>
+			<Abstract type="html">Current activity status of Virtuoso&apos;s download engine.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -15,11 +14,9 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_ServerFileSizeDisagreesWithExpectedFileSize</TokenIdentifier>
-            <Abstract type="html">The file length advertised by the HTTP server doesn&apos;t match the expected size.
-        If file size validation is off, then the download proceeds anyway. If it&apos;s on, 
-        Virtuoso aborts the download and sets the appropriate error codes. </Abstract>
-            <Declaration>kVDE_ServerFileSizeDisagreesWithExpectedFileSize</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Unknown</TokenIdentifier>
+            <Abstract type="html">Virtuoso hasn&apos;t finished starting up; status isn&apos;t determined</Abstract>
+            <Declaration>kVDE_Unknown</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -27,11 +24,9 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileLengthMismatch</TokenIdentifier>
-            <Abstract type="html">When the download completed, the observed final size didn&apos;t match the expected size.
-        If file size validation is on, Virtuoso deletes the file and retries the download. 
-        If it&apos;s off, Virtuoso marks the download complete and successful. </Abstract>
-            <Declaration>kVDE_FileLengthMismatch</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Downloading</TokenIdentifier>
+            <Abstract type="html">Virtuoso is actively downloading</Abstract>
+            <Declaration>kVDE_Downloading</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -39,10 +34,9 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileMD5Mismatch</TokenIdentifier>
-            <Abstract type="html">If you supplied an expected MD5 for the file AND the observed MD5 didn&apos;t match, then
-        Virtuoso deletes the file and restarts the download. </Abstract>
-            <Declaration>kVDE_FileMD5Mismatch</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Idle</TokenIdentifier>
+            <Abstract type="html">Downloading is enabled, but queue is empty</Abstract>
+            <Declaration>kVDE_Idle</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -50,10 +44,9 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidMimeType</TokenIdentifier>
-            <Abstract type="html">If the MIME type returned from the HTTP server doesn&apos;t match the required MIME types
-        whitelist you provided earlier, then Virtuoso aborts the download. </Abstract>
-            <Declaration>kVDE_InvalidMimeType</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Disabled</TokenIdentifier>
+            <Abstract type="html">You have disabled downloading, or the backplane has disabled download for this device</Abstract>
+            <Declaration>kVDE_Disabled</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -61,9 +54,10 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_NetworkError</TokenIdentifier>
-            <Abstract type="html">Some network issue (HTTP 404,416,etc) caused the download to fail.</Abstract>
-            <Declaration>kVDE_NetworkError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Blocked</TokenIdentifier>
+            <Abstract type="html">Downloading is enabled and the queue is non-empty, but environmental conditions
+        (power/network/disk) prevent download. </Abstract>
+            <Declaration>kVDE_Blocked</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -71,9 +65,10 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileSystemError</TokenIdentifier>
-            <Abstract type="html">The OS couldn&apos;t write the file to disk. In most cases, the root cause is a full disk.</Abstract>
-            <Declaration>kVDE_FileSystemError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Errors</TokenIdentifier>
+            <Abstract type="html">Errors occurred while downloading. There are pending downloads, but Virtuoso cannot
+        proceed without manual intervention (e.g. calling reset). </Abstract>
+            <Declaration>kVDE_Errors</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -81,29 +76,9 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_CDNError</TokenIdentifier>
-            <Abstract type="html">The asset requires a dynamic CDN base URL, and one was not available.</Abstract>
-            <Declaration>kVDE_CDNError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidProtectionType</TokenIdentifier>
-            <Abstract type="html">The asset was configured with an invalid protection type.</Abstract>
-            <Declaration>kVDE_InvalidProtectionType</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InternalError</TokenIdentifier>
-            <Abstract type="html">There was an internal error.  Please contact Penthera support.</Abstract>
-            <Declaration>kVDE_InternalError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AuthenticationFailure</TokenIdentifier>
+            <Abstract type="html">SDK licensing failed.  Please contact Penthera support in this case.</Abstract>
+            <Declaration>kVDE_AuthenticationFailure</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

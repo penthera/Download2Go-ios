@@ -26,6 +26,7 @@
 						<NodeRef refid="13"/>
 						<NodeRef refid="14"/>
 						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
 						
 					</Subnodes>
 				</Node>
@@ -36,7 +37,6 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="16"/>
 						<NodeRef refid="17"/>
 						<NodeRef refid="18"/>
 						<NodeRef refid="19"/>
@@ -44,6 +44,7 @@
 						<NodeRef refid="21"/>
 						<NodeRef refid="22"/>
 						<NodeRef refid="23"/>
+						<NodeRef refid="24"/>
 						
 					</Subnodes>
 				</Node>
@@ -53,7 +54,6 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="24"/>
 						<NodeRef refid="25"/>
 						<NodeRef refid="26"/>
 						<NodeRef refid="27"/>
@@ -75,6 +75,7 @@
 						<NodeRef refid="43"/>
 						<NodeRef refid="44"/>
 						<NodeRef refid="45"/>
+						<NodeRef refid="46"/>
 						
 					</Subnodes>
 				</Node>
@@ -84,7 +85,6 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="46"/>
                         <NodeRef refid="47"/>
                         <NodeRef refid="48"/>
                         <NodeRef refid="49"/>
@@ -92,6 +92,7 @@
                         <NodeRef refid="51"/>
                         <NodeRef refid="52"/>
                         <NodeRef refid="53"/>
+                        <NodeRef refid="54"/>
                         
                     </Subnodes>
                 </Node>
@@ -436,6 +437,45 @@
             
         </Node>
 		<Node id="13" type="file" documentType="reference">
+            <Name>VirtuosoSecureClock</Name>
+            <Path>Classes/VirtuosoSecureClock.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/VirtuosoSecureClock.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/VirtuosoSecureClock.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/VirtuosoSecureClock.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/VirtuosoSecureClock.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/VirtuosoSecureClock.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="14" type="file" documentType="reference">
             <Name>VirtuosoSettings</Name>
             <Path>Classes/VirtuosoSettings.html</Path>
             
@@ -474,7 +514,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>VirtuosoSubscriptionDefaultDataSource</Name>
             <Path>Classes/VirtuosoSubscriptionDefaultDataSource.html</Path>
             
@@ -501,7 +541,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>VirtuosoSubscriptionManager</Name>
             <Path>Classes/VirtuosoSubscriptionManager.html</Path>
             
@@ -542,7 +582,7 @@
         </Node>
 		
 		
-        <Node id="16" type="file" documentType="reference">
+        <Node id="17" type="file" documentType="reference">
             <Name>VirtuosoAVAssetResourceLoaderDelegate</Name>
             <Path>Protocols/VirtuosoAVAssetResourceLoaderDelegate.html</Path>
             
@@ -569,7 +609,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>VirtuosoAVAssetResourceLoaderDelegateErrorHandler</Name>
             <Path>Protocols/VirtuosoAVAssetResourceLoaderDelegateErrorHandler.html</Path>
             
@@ -596,7 +636,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>VirtuosoFileSegment</Name>
             <Path>Protocols/VirtuosoFileSegment.html</Path>
             
@@ -623,7 +663,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>VirtuosoLicenseManagerDelegate</Name>
             <Path>Protocols/VirtuosoLicenseManagerDelegate.html</Path>
             
@@ -650,7 +690,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>VirtuosoLoggerDelegate</Name>
             <Path>Protocols/VirtuosoLoggerDelegate.html</Path>
             
@@ -677,7 +717,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>VirtuosoPlayer</Name>
             <Path>Protocols/VirtuosoPlayer.html</Path>
             
@@ -704,7 +744,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>VirtuosoPlayerViewDelegate</Name>
             <Path>Protocols/VirtuosoPlayerViewDelegate.html</Path>
             
@@ -731,7 +771,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>VirtuosoSubscriptionDataSource</Name>
             <Path>Protocols/VirtuosoSubscriptionDataSource.html</Path>
             
@@ -759,153 +799,153 @@
             
         </Node>
 		
-        <Node id="24" type="file" documentType="reference">
+        <Node id="25" type="file" documentType="reference">
             <Name>kVBP_StatusCode</Name>
             <Path>Constants/kVBP_StatusCode.html</Path>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>kVDE_AssetPlaybackType</Name>
             <Path>Constants/kVDE_AssetPlaybackType.html</Path>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
             <Name>kVDE_AssetProtectionType</Name>
             <Path>Constants/kVDE_AssetProtectionType.html</Path>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="28" type="file" documentType="reference">
             <Name>kVDE_AssetType</Name>
             <Path>Constants/kVDE_AssetType.html</Path>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="29" type="file" documentType="reference">
             <Name>kVDE_DownloadEngineStatus</Name>
             <Path>Constants/kVDE_DownloadEngineStatus.html</Path>
             
         </Node>
-		<Node id="29" type="file" documentType="reference">
+		<Node id="30" type="file" documentType="reference">
             <Name>kVDE_DownloadErrorCode</Name>
             <Path>Constants/kVDE_DownloadErrorCode.html</Path>
             
         </Node>
-		<Node id="30" type="file" documentType="reference">
+		<Node id="31" type="file" documentType="reference">
             <Name>kVDE_DownloadErrorType</Name>
             <Path>Constants/kVDE_DownloadErrorType.html</Path>
             
         </Node>
-		<Node id="31" type="file" documentType="reference">
+		<Node id="32" type="file" documentType="reference">
             <Name>kVDE_DownloadStatusType</Name>
             <Path>Constants/kVDE_DownloadStatusType.html</Path>
             
         </Node>
-		<Node id="32" type="file" documentType="reference">
+		<Node id="33" type="file" documentType="reference">
             <Name>kVDE_EngineStartupCode</Name>
             <Path>Constants/kVDE_EngineStartupCode.html</Path>
             
         </Node>
-		<Node id="33" type="file" documentType="reference">
+		<Node id="34" type="file" documentType="reference">
             <Name>kVDE_ErrorCode</Name>
             <Path>Constants/kVDE_ErrorCode.html</Path>
             
         </Node>
-		<Node id="34" type="file" documentType="reference">
+		<Node id="35" type="file" documentType="reference">
             <Name>kVDE_NetworkStatus</Name>
             <Path>Constants/kVDE_NetworkStatus.html</Path>
             
         </Node>
-		<Node id="35" type="file" documentType="reference">
+		<Node id="36" type="file" documentType="reference">
             <Name>kVDE_PlayerErrorCode</Name>
             <Path>Constants/kVDE_PlayerErrorCode.html</Path>
             
         </Node>
-		<Node id="36" type="file" documentType="reference">
+		<Node id="37" type="file" documentType="reference">
             <Name>kVDE_ProxyErrorCode</Name>
             <Path>Constants/kVDE_ProxyErrorCode.html</Path>
             
         </Node>
-		<Node id="37" type="file" documentType="reference">
+		<Node id="38" type="file" documentType="reference">
             <Name>kVDM_ManifestType</Name>
             <Path>Constants/kVDM_ManifestType.html</Path>
             
         </Node>
-		<Node id="38" type="file" documentType="reference">
+		<Node id="39" type="file" documentType="reference">
             <Name>kVF_SegmentType</Name>
             <Path>Constants/kVF_SegmentType.html</Path>
             
         </Node>
-		<Node id="39" type="file" documentType="reference">
+		<Node id="40" type="file" documentType="reference">
             <Name>kVLM_DRMType</Name>
             <Path>Constants/kVLM_DRMType.html</Path>
             
         </Node>
-		<Node id="40" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>kVL_BearerType</Name>
             <Path>Constants/kVL_BearerType.html</Path>
             
         </Node>
-		<Node id="41" type="file" documentType="reference">
+		<Node id="42" type="file" documentType="reference">
             <Name>kVL_LogEvent</Name>
             <Path>Constants/kVL_LogEvent.html</Path>
             
         </Node>
-		<Node id="42" type="file" documentType="reference">
+		<Node id="43" type="file" documentType="reference">
             <Name>kVL_LoggingLevel</Name>
             <Path>Constants/kVL_LoggingLevel.html</Path>
             
         </Node>
-		<Node id="43" type="file" documentType="reference">
+		<Node id="44" type="file" documentType="reference">
             <Name>kVSM_ManagerFailureCode</Name>
             <Path>Constants/kVSM_ManagerFailureCode.html</Path>
             
         </Node>
-		<Node id="44" type="file" documentType="reference">
+		<Node id="45" type="file" documentType="reference">
             <Name>kVSM_MediaTypeCode</Name>
             <Path>Constants/kVSM_MediaTypeCode.html</Path>
             
         </Node>
-		<Node id="45" type="file" documentType="reference">
+		<Node id="46" type="file" documentType="reference">
             <Name>kVSM_Status</Name>
             <Path>Constants/kVSM_Status.html</Path>
             
         </Node>
 		
-        <Node id="46" type="file" documentType="reference">
+        <Node id="47" type="file" documentType="reference">
             <Name>AssetDeletionCompleteBlock</Name>
             <Path>Blocks/AssetDeletionCompleteBlock.html</Path>
             
         </Node>
-        <Node id="47" type="file" documentType="reference">
+        <Node id="48" type="file" documentType="reference">
             <Name>AssetParsingCompletedBlock</Name>
             <Path>Blocks/AssetParsingCompletedBlock.html</Path>
             
         </Node>
-        <Node id="48" type="file" documentType="reference">
+        <Node id="49" type="file" documentType="reference">
             <Name>AssetReadyForDownloadBlock</Name>
             <Path>Blocks/AssetReadyForDownloadBlock.html</Path>
             
         </Node>
-        <Node id="49" type="file" documentType="reference">
+        <Node id="50" type="file" documentType="reference">
             <Name>BasicCompletionBlock</Name>
             <Path>Blocks/BasicCompletionBlock.html</Path>
             
         </Node>
-        <Node id="50" type="file" documentType="reference">
+        <Node id="51" type="file" documentType="reference">
             <Name>DeviceUpdateResultBlock</Name>
             <Path>Blocks/DeviceUpdateResultBlock.html</Path>
             
         </Node>
-        <Node id="51" type="file" documentType="reference">
+        <Node id="52" type="file" documentType="reference">
             <Name>SubscriptionListResultBlock</Name>
             <Path>Blocks/SubscriptionListResultBlock.html</Path>
             
         </Node>
-        <Node id="52" type="file" documentType="reference">
+        <Node id="53" type="file" documentType="reference">
             <Name>SubscriptionResultBlock</Name>
             <Path>Blocks/SubscriptionResultBlock.html</Path>
             
         </Node>
-        <Node id="53" type="file" documentType="reference">
+        <Node id="54" type="file" documentType="reference">
             <Name>SyncCompleteBlock</Name>
             <Path>Blocks/SyncCompleteBlock.html</Path>
             

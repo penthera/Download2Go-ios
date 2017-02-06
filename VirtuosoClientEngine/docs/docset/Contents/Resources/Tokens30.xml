@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_DownloadErrorType.html">
+	<File path="Constants/kVDE_DownloadErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadErrorType</TokenIdentifier>
-			<Abstract type="html">Error states that Virtuoso can be in when downloading an asset.  Returned via the &apos;error&apos; property.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadErrorCode</TokenIdentifier>
+			<Abstract type="html">Virtuoso issues these codes via NSNotificationCenter when there&apos;s a problem downloading an asset.
+Virtuoso also marks the individual asset with an error code.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +15,11 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNoError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered no errors downloading this asset</Abstract>
-            <Declaration>kVDE_DownloadNoError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_ServerFileSizeDisagreesWithExpectedFileSize</TokenIdentifier>
+            <Abstract type="html">The file length advertised by the HTTP server doesn&apos;t match the expected size.
+        If file size validation is off, then the download proceeds anyway. If it&apos;s on, 
+        Virtuoso aborts the download and sets the appropriate error codes. </Abstract>
+            <Declaration>kVDE_ServerFileSizeDisagreesWithExpectedFileSize</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +27,11 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNetworkError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered a network problem downloading asset, e.g. 404 or 416 HTTP error</Abstract>
-            <Declaration>kVDE_DownloadNetworkError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileLengthMismatch</TokenIdentifier>
+            <Abstract type="html">When the download completed, the observed final size didn&apos;t match the expected size.
+        If file size validation is on, Virtuoso deletes the file and retries the download. 
+        If it&apos;s off, Virtuoso marks the download complete and successful. </Abstract>
+            <Declaration>kVDE_FileLengthMismatch</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +39,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadReachabilityError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because it couldn&apos;t reach the remote server</Abstract>
-            <Declaration>kVDE_DownloadReachabilityError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileMD5Mismatch</TokenIdentifier>
+            <Abstract type="html">If you supplied an expected MD5 for the file AND the observed MD5 didn&apos;t match, then
+        Virtuoso deletes the file and restarts the download. </Abstract>
+            <Declaration>kVDE_FileMD5Mismatch</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,9 +50,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadFileCopyError</TokenIdentifier>
-            <Abstract type="html">Virtuoso downloaded this asset, but couldn&apos;t move it to its final location on disk</Abstract>
-            <Declaration>kVDE_DownloadFileCopyError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidMimeType</TokenIdentifier>
+            <Abstract type="html">If the MIME type returned from the HTTP server doesn&apos;t match the required MIME types
+        whitelist you provided earlier, then Virtuoso aborts the download. </Abstract>
+            <Declaration>kVDE_InvalidMimeType</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -54,9 +61,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadEngineError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because of an internal issue</Abstract>
-            <Declaration>kVDE_DownloadEngineError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_NetworkError</TokenIdentifier>
+            <Abstract type="html">Some network issue (HTTP 404,416,etc) caused the download to fail.</Abstract>
+            <Declaration>kVDE_NetworkError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -64,10 +71,39 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadMaxRetriesExceeded</TokenIdentifier>
-            <Abstract type="html">Virtuoso has attempted to download this asset the max times permitted. Will not try again
-        until you call reset or clearRetryCount </Abstract>
-            <Declaration>kVDE_DownloadMaxRetriesExceeded</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileSystemError</TokenIdentifier>
+            <Abstract type="html">The OS couldn&apos;t write the file to disk. In most cases, the root cause is a full disk.</Abstract>
+            <Declaration>kVDE_FileSystemError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_CDNError</TokenIdentifier>
+            <Abstract type="html">The asset requires a dynamic CDN base URL, and one was not available.</Abstract>
+            <Declaration>kVDE_CDNError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidProtectionType</TokenIdentifier>
+            <Abstract type="html">The asset was configured with an invalid protection type.</Abstract>
+            <Declaration>kVDE_InvalidProtectionType</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_InternalError</TokenIdentifier>
+            <Abstract type="html">There was an internal error.  Please contact Penthera support.</Abstract>
+            <Declaration>kVDE_InternalError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

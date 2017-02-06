@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegateErrorHandler.html">
+	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegateErrorHandler</TokenIdentifier>
-			<Abstract type="html">Provides a mechanism to easily identify and handle errors encountered during the DRM licensing process</Abstract>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegate</TokenIdentifier>
+			<Abstract type="html">Provides a mechanism to automatically handle FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
@@ -13,22 +13,110 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegateErrorHandler/resourceLoaderDelegate:generatedError:</TokenIdentifier>
-			<Abstract type="html">Called when an error has been encountered during the DRM licensing process</Abstract>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (void)resourceLoaderDelegate:(id&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)delegate generatedError:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The VirtuosoAVAssetResourceLoaderDelegate that encountered the error</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error describing the issue.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
 			
-			<Anchor>//api/name/resourceLoaderDelegate:generatedError:</Anchor>
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setLoadPersistentLicense:</TokenIdentifier>
+			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			
+			
+			<Anchor>//api/name/loadPersistentLicense</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
+			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			
+			
+			<Anchor>//api/name/loadPersistentLicense</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
+			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			
+			
+			<Anchor>//api/name/loadPersistentLicense</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setErrorHandler:</TokenIdentifier>
+			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			
+			
+			<Anchor>//api/name/errorHandler</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
+			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			
+			
+			<Anchor>//api/name/errorHandler</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
+			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			
+			
+			<Anchor>//api/name/errorHandler</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

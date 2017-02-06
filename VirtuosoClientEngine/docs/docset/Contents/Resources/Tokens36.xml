@@ -1,55 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_ProxyErrorCode.html">
+	<File path="Constants/kVDE_PlayerErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ProxyErrorCode</TokenIdentifier>
-			<Abstract type="html">Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
-NSNotificationCenter. These codes are included in the NSError that is sent.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_PlayerErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors issued from VirtuosoAVPlayer and associated classes.  Will be reported via the AVPlayer
+error property when the status property changes to AVPlayerStatusFailed.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAVPlayer</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<NodeRef refid="36"/>
 		</Token>
 		
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneAuthorizationTimedOut</TokenIdentifier>
-            <Abstract type="html">For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
-        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. </Abstract>
-            <Declaration>kVDE_BackplaneAuthorizationTimedOut</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="36"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetOutsideViewingWindow</TokenIdentifier>
-            <Abstract type="html">You attempted to play an asset outside its availability window.</Abstract>
-            <Declaration>kVDE_PlayedAssetOutsideViewingWindow</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="36"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetExpired</TokenIdentifier>
-            <Abstract type="html">You attempted to play an expired asset.</Abstract>
-            <Declaration>kVDE_PlayedAssetExpired</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="36"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidAsset</TokenIdentifier>
-            <Abstract type="html">The VirtuosoAsset used to initialize the proxy wasn&apos;t an invalid asset or the asset protection type was not
-        kVDE_AssetProtectionTypePassthrough. </Abstract>
-            <Declaration>kVDE_InvalidAsset</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayerErrorAssetTypeNotSupported</TokenIdentifier>
+            <Abstract type="html">VirtuosoAVPlayer supports playback of MP4, HLS, and MPEG-DASH assets.  FairPlay and Widevine DRM is
+        directly supported.  Integration with other DRM systems is possible, but may require additional integration. 
+        Attempts to play any other asset type will result in this error. </Abstract>
+            <Declaration>kVDE_PlayerErrorAssetTypeNotSupported</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

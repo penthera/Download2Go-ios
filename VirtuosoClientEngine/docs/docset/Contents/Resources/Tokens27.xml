@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_AssetType.html">
+	<File path="Constants/kVDE_AssetProtectionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetType</TokenIdentifier>
-			<Abstract type="html">@typedef kVDE_AssetType</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetProtectionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetProtectionType</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,11 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeNonSegmented</TokenIdentifier>
-            <Abstract type="html">A single-file asset (E.G. MP4)</Abstract>
-            <Declaration>kVDE_AssetTypeNonSegmented</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypePassthrough</TokenIdentifier>
+            <Abstract type="html">The asset is not protected, is protected by an external DRM system, or is protected by some form of
+        native encryption.  This value indicates that no special handling is required for download or playback
+        of this asset, and is the default value. </Abstract>
+            <Declaration>kVDE_AssetProtectionTypePassthrough</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +26,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHLS</TokenIdentifier>
-            <Abstract type="html">A HTTP Live Streaming (HLS) asset</Abstract>
-            <Declaration>kVDE_AssetTypeHLS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeFairPlay</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Apple FairPlay DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeFairPlay</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +36,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHSS</TokenIdentifier>
-            <Abstract type="html">A HTTP Smooth Streaming (HSS) asset</Abstract>
-            <Declaration>kVDE_AssetTypeHSS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeWidevine</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Google Widevine DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeWidevine</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,9 +46,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeDASH</TokenIdentifier>
-            <Abstract type="html">A MPEG-DASH asset</Abstract>
-            <Declaration>kVDE_AssetTypeDASH</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeDrmCisco</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Cisco DRM, and download and playback will be automatically serviced by
+        the Cisco platform. </Abstract>
+            <Declaration>kVDE_AssetProtectionTypeDrmCisco</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

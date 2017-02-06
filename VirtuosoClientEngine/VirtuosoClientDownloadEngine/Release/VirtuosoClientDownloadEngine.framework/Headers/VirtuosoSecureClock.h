@@ -15,6 +15,12 @@
  */
 #import <Foundation/Foundation.h>
 
+/*!
+ *  @abstract A basic secure clock implementation
+ *
+ *  @discussion This class is used internally to the SDK to insure that the user cannot violate expiry,
+ *              licensing, and business logic by modifying the device system clock.
+ */
 @interface VirtuosoSecureClock : NSObject
 
 /*!

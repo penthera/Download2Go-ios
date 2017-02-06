@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoFileSegment.html">
+	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegateErrorHandler.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoFileSegment</TokenIdentifier>
-			<Abstract type="html">An interface representing the basic information about an individual file segment download</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegateErrorHandler</TokenIdentifier>
+			<Abstract type="html">Provides a mechanism to easily identify and handle errors encountered during the DRM licensing process</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,182 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setUuid:</TokenIdentifier>
-			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this segment.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegateErrorHandler/resourceLoaderDelegate:generatedError:</TokenIdentifier>
+			<Abstract type="html">Called when an error has been encountered during the DRM licensing process</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *uuid</Declaration>
+			<Declaration>- (void)resourceLoaderDelegate:(id&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)delegate generatedError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The VirtuosoAVAssetResourceLoaderDelegate that encountered the error</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error describing the issue.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/uuid</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/uuid</TokenIdentifier>
-			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this segment.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *uuid</Declaration>
-			
-			
-			<Anchor>//api/name/uuid</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/uuid</TokenIdentifier>
-			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this segment.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *uuid</Declaration>
-			
-			
-			<Anchor>//api/name/uuid</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setAssetUUID:</TokenIdentifier>
-			<Abstract type="html">The universally unique identifier (UUID) of the Virtuoso asset that this segment is a part of.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *assetUUID</Declaration>
-			
-			
-			<Anchor>//api/name/assetUUID</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/assetUUID</TokenIdentifier>
-			<Abstract type="html">The universally unique identifier (UUID) of the Virtuoso asset that this segment is a part of.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *assetUUID</Declaration>
-			
-			
-			<Anchor>//api/name/assetUUID</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/assetUUID</TokenIdentifier>
-			<Abstract type="html">The universally unique identifier (UUID) of the Virtuoso asset that this segment is a part of.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *assetUUID</Declaration>
-			
-			
-			<Anchor>//api/name/assetUUID</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setSegmentURL:</TokenIdentifier>
-			<Abstract type="html">The remote URL where this segment resides on the internet.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *segmentURL</Declaration>
-			
-			
-			<Anchor>//api/name/segmentURL</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/segmentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL where this segment resides on the internet.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *segmentURL</Declaration>
-			
-			
-			<Anchor>//api/name/segmentURL</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/segmentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL where this segment resides on the internet.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *segmentURL</Declaration>
-			
-			
-			<Anchor>//api/name/segmentURL</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setSegmentType:</TokenIdentifier>
-			<Abstract type="html">The type of segment (E.G. video, encryption key, audio)</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) kVF_SegmentType segmentType</Declaration>
-			
-			
-			<Anchor>//api/name/segmentType</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/segmentType</TokenIdentifier>
-			<Abstract type="html">The type of segment (E.G. video, encryption key, audio)</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) kVF_SegmentType segmentType</Declaration>
-			
-			
-			<Anchor>//api/name/segmentType</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/segmentType</TokenIdentifier>
-			<Abstract type="html">The type of segment (E.G. video, encryption key, audio)</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) kVF_SegmentType segmentType</Declaration>
-			
-			
-			<Anchor>//api/name/segmentType</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setSegmentSubtype:</TokenIdentifier>
-			<Abstract type="html">If this segment is a CC or Audio segment type, then this property indicates the language.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *segmentSubtype</Declaration>
-			
-			
-			<Anchor>//api/name/segmentSubtype</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/segmentSubtype</TokenIdentifier>
-			<Abstract type="html">If this segment is a CC or Audio segment type, then this property indicates the language.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *segmentSubtype</Declaration>
-			
-			
-			<Anchor>//api/name/segmentSubtype</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/segmentSubtype</TokenIdentifier>
-			<Abstract type="html">If this segment is a CC or Audio segment type, then this property indicates the language.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *segmentSubtype</Declaration>
-			
-			
-			<Anchor>//api/name/segmentSubtype</Anchor>
+			<Anchor>//api/name/resourceLoaderDelegate:generatedError:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

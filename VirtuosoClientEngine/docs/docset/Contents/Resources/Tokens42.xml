@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVL_LoggingLevel.html">
+	<File path="Constants/kVL_LogEvent.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVL_LoggingLevel</TokenIdentifier>
-			<Abstract type="html">Log levels available to filter log output.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVL_LogEvent</TokenIdentifier>
+			<Abstract type="html">Complete list of events that Virtuoso captures and delivers to the Backplane.
+You may use the &quot;user custom&quot; event for other events you wish to record.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
 			
@@ -14,9 +15,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_AppLaunch</TokenIdentifier>
+            <Abstract type="html">The enclosing app has launched</Abstract>
+            <Declaration>kVLE_AppLaunch</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
@@ -24,9 +25,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogWarning</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogWarning</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_QueueForDownload</TokenIdentifier>
+            <Abstract type="html">Virtuoso has queued a new VirtuosoAsset for download</Abstract>
+            <Declaration>kVLE_QueueForDownload</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
@@ -34,9 +35,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogInformation</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogInformation</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_FileRemovedFromQueue</TokenIdentifier>
+            <Abstract type="html">Virtuoso has removed a VirtuosoAsset from the download queue</Abstract>
+            <Declaration>kVLE_FileRemovedFromQueue</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
@@ -44,9 +45,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogDebug</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogDebug</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_DownloadStart</TokenIdentifier>
+            <Abstract type="html">Virtuoso has begun to download a VirtuosoAsset</Abstract>
+            <Declaration>kVLE_DownloadStart</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
@@ -54,9 +55,109 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogVerbose</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogVerbose</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_DownloadComplete</TokenIdentifier>
+            <Abstract type="html">Virtuoso successfully finished downloading a VirtuosoFile</Abstract>
+            <Declaration>kVLE_DownloadComplete</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_DownloadError</TokenIdentifier>
+            <Abstract type="html">Virtuoso detected an error during download</Abstract>
+            <Declaration>kVLE_DownloadError</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_AssetDeleted</TokenIdentifier>
+            <Abstract type="html">A VirtuosoAsset was deleted</Abstract>
+            <Declaration>kVLE_AssetDeleted</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_FileExpired</TokenIdentifier>
+            <Abstract type="html">A VirtuosoAsset reached the expired state</Abstract>
+            <Declaration>kVLE_FileExpired</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_SyncWithServer</TokenIdentifier>
+            <Abstract type="html">Virtuoso successfully synced with the Backplane</Abstract>
+            <Declaration>kVLE_SyncWithServer</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_PlayStart</TokenIdentifier>
+            <Abstract type="html">The enclosing app played a video asset</Abstract>
+            <Declaration>kVLE_PlayStart</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_PlayStop</TokenIdentifier>
+            <Abstract type="html">The enclosing app stopped playing a video asset</Abstract>
+            <Declaration>kVLE_PlayStop</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_Subscribe</TokenIdentifier>
+            <Abstract type="html">The User subscribed to a Feed</Abstract>
+            <Declaration>kVLE_Subscribe</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_Unsubscribe</TokenIdentifier>
+            <Abstract type="html">The User canceled a subscription to a Feed</Abstract>
+            <Declaration>kVLE_Unsubscribe</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_Reset</TokenIdentifier>
+            <Abstract type="html">The app either started the first time after installation, or is starting up after a remote wipe</Abstract>
+            <Declaration>kVLE_Reset</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLE_MaxErrorsReset</TokenIdentifier>
+            <Abstract type="html">An asset which had exceeded it&apos;s maximum error count has been reset and will retry download</Abstract>
+            <Declaration>kVLE_MaxErrorsReset</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
