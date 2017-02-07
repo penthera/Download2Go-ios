@@ -367,6 +367,13 @@ extern NSTimeInterval kInvalidExpiryTimeInterval;
 extern NSTimeInterval kInfiniteExpiryTimeInterval;
 
 /*!
+ *  @defined kInvalidDuration
+ *
+ *  @abstract Represents an invalid or unknown asset duration.
+ */
+extern NSTimeInterval kInvalidDuration;
+
+/*!
  *  @typedef kVDE_DownloadStatusType
  *
  *  @abstract Allowable states that a Virtuoso asset can be in.  Returned via the 'status' property.

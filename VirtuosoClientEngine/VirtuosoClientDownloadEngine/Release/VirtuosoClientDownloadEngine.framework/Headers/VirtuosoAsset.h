@@ -594,6 +594,11 @@ typedef void (^BasicCompletionBlock)();
 @property (nonatomic,readonly) double fractionComplete;
 
 /*!
+ *  @abstract The detected duration of the asset, in seconds, or kInvalidDuration if no duration has been detected.
+ */
+@property (nonatomic,readonly) NSTimeInterval duration;
+
+/*!
  *  @abstract The current status of this asset
  *
  *  @discussion Virtuoso uses the most efficient methods possible to return current status of the aset.  Depending
