@@ -141,7 +141,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/removeLicenseForAsset:whenComplete:</TokenIdentifier>
-			<Abstract type="html">Deletes any previously downloaded license for the given asset</Abstract>
+			<Abstract type="html">Asynchronously deletes any previously downloaded license for the given asset</Abstract>
 			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
 			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset whenComplete:(nullable void ( ^ ) ( ))onComplete</Declaration>
@@ -156,6 +156,23 @@
 			</Parameters>
 			
 			<Anchor>//api/name/removeLicenseForAsset:whenComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/removeLicenseForAsset:</TokenIdentifier>
+			<Abstract type="html">Synchronously deletes any previously downloaded license for the given asset</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to remove DRM licensing for</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeLicenseForAsset:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
