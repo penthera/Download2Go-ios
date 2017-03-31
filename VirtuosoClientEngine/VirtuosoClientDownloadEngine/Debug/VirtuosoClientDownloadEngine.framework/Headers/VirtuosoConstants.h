@@ -240,6 +240,9 @@ typedef NS_ENUM(NSInteger, kVDE_ProxyErrorCode)
     /** The VirtuosoAsset used to initialize the proxy wasn't an invalid asset or the asset protection type was not
         kVDE_AssetProtectionTypePassthrough. */
     kVDE_InvalidAsset = -9,
+    
+    /** The HTTP server was unable to listen on the selected port */
+    kVDE_PortInUse = -10,
 };
 
 /*!

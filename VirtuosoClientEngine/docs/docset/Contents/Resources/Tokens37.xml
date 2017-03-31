@@ -56,6 +56,16 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
             <NodeRef refid="37"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PortInUse</TokenIdentifier>
+            <Abstract type="html">The HTTP server was unable to listen on the selected port</Abstract>
+            <Declaration>kVDE_PortInUse</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="37"/>
+        </Token>
+        
         
 	</File>
 </Tokens>
