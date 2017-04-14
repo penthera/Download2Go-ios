@@ -84,7 +84,11 @@
 		
 		<option value="//api/name/maxDevicesForDownload">maxDevicesForDownload</option>
 		
-		<option value="//api/name/maxDownloadedAssets">maxDownloadedAssets</option>
+		<option value="//api/name/maxDownloadedAssetsOnDevice">maxDownloadedAssetsOnDevice</option>
+		
+		<option value="//api/name/maxDownloadedAssetsPerAccount">maxDownloadedAssetsPerAccount</option>
+		
+		<option value="//api/name/maxLifetimeDownloadsForAsset">maxLifetimeDownloadsForAsset</option>
 		
 		<option value="//api/name/maxStorageAllowed">maxStorageAllowed</option>
 		
@@ -93,6 +97,10 @@
 		<option value="//api/name/networkTimeout">networkTimeout</option>
 		
 		<option value="//api/name/numberOfDevicesEnabled">numberOfDevicesEnabled</option>
+		
+		<option value="//api/name/permittedSegmentDownloadErrors">permittedSegmentDownloadErrors</option>
+		
+		<option value="//api/name/sendHTTPErrorForErroredSegments">sendHTTPErrorForErroredSegments</option>
 		
 		<option value="//api/name/trustSelfSignedServerCertificates">trustSelfSignedServerCertificates</option>
 		
@@ -112,11 +120,15 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/allowAdditionalMimeTypes:forAssetType:andDataType:">- allowAdditionalMimeTypes:forAssetType:andDataType:</option>
+		
 		<option value="//api/name/overrideDownloadOverCellular:">- overrideDownloadOverCellular:</option>
 		
 		<option value="//api/name/overrideHeadroom:">- overrideHeadroom:</option>
 		
 		<option value="//api/name/overrideMaxStorageAllowed:">- overrideMaxStorageAllowed:</option>
+		
+		<option value="//api/name/permittedMimeTypesForAssetType:andDataType:">- permittedMimeTypesForAssetType:andDataType:</option>
 		
 		<option value="//api/name/resetDownloadOverCellularToDefault">- resetDownloadOverCellularToDefault</option>
 		
@@ -193,7 +205,7 @@ provided <a href="#//api/name/instance">instance</a> method.</p></div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (VirtuosoSettings *)instance</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull VirtuosoSettings *)instance</code></div>
 
 		    
 			
@@ -374,6 +386,154 @@ inaccessible. Once the next Backplane sync occurs, the assets are again accessib
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/maxDownloadedAssetsOnDevice" title="maxDownloadedAssetsOnDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxDownloadedAssetsOnDevice">&nbsp;&nbsp;maxDownloadedAssetsOnDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of downloads that can exist on the device at any given time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxDownloadedAssetsOnDevice</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso limits the total number of downloads the device can have on disk at any given time.
+Any download requests beyond this limit are queued, but will not download, and the engine
+will report an error indicating the download queue is blocked until the user manually
+deletes enough of the currently downloaded assets to get below the limit again.  The default
+value is 100.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxDownloadedAssetsPerAccount" title="maxDownloadedAssetsPerAccount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxDownloadedAssetsPerAccount">&nbsp;&nbsp;maxDownloadedAssetsPerAccount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of downloads that can exist across all devices on the account at any given time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxDownloadedAssetsPerAccount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso limits the total number of downloads the user can have on disk across all their devices
+at any given time.  Any download requests beyond this limit are queued, but will not download, and
+the engine will report an error indicating the download queue is blocked until the user manually
+deletes enough of the currently downloaded assets, on this device or other devices, to get below
+the limit again.  The default value is -1 (unlimited).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxLifetimeDownloadsForAsset" title="maxLifetimeDownloadsForAsset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxLifetimeDownloadsForAsset">&nbsp;&nbsp;maxLifetimeDownloadsForAsset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of times any single asset can be downloaded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxLifetimeDownloadsForAsset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso limits the total number of times an asset can be downloaded on any device in the account.
+Once this limit is reached, the asset can no longer be downloaded without administrative action.
+The default value is -1 (unlimited).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/defaultExpiryAfterDownload" title="defaultExpiryAfterDownload"></a>
 	<h3 class="method-title"><code><a href="#//api/name/defaultExpiryAfterDownload">&nbsp;&nbsp;defaultExpiryAfterDownload</a></code>
 </h3>
@@ -497,7 +657,7 @@ A values zero or less means &ldquo;never expire.&rdquo;</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *devicePushToken</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSString *devicePushToken</code></div>
 
 		    
 			
@@ -895,56 +1055,6 @@ The default is 5 GB.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/maxDownloadedAssets" title="maxDownloadedAssets"></a>
-	<h3 class="method-title"><code><a href="#//api/name/maxDownloadedAssets">&nbsp;&nbsp;maxDownloadedAssets</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The maximum number of downloads that can exist on the device at any given time.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxDownloadedAssets</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Virtuoso limits the total number of downloads the device can have on disk at any given time.
-Any download requests beyond this limit are queued, but will not download, and the engine
-will report an error indicating the download queue is blocked until the user manually
-deletes enough of the currently downloaded assets to get below the limit again.  The default
-value is 100.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/downloadOverCellular" title="downloadOverCellular"></a>
 	<h3 class="method-title"><code><a href="#//api/name/downloadOverCellular">&nbsp;&nbsp;downloadOverCellular</a></code>
 </h3>
@@ -1129,6 +1239,59 @@ values is NO.</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/permittedSegmentDownloadErrors" title="permittedSegmentDownloadErrors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/permittedSegmentDownloadErrors">&nbsp;&nbsp;permittedSegmentDownloadErrors</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether or not the engine stops downloading if an error occurs while downloading individual segments.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSUInteger permittedSegmentDownloadErrors</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If this value is zero, then any errors encountered while downloading segments will be treated
+as errors, and the documented download error handling rules will be followed.  The download
+of the individual segment will be retried three times before the SDK moves on to download other
+assets in the queue.  The asset will retry downloading 3 times before being marked with a
+permanent error.  If this value is greater than zero, then the SDK will permit a maximum
+of this number of segment errors without counting them as an error against the asset. A
+warning will be issued instead, and downloading will continue past the failed segment.  This setting
+only applies to segmented assets (E.G. HLS, HSS, etc).  The default value is 0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/networkTimeout" title="networkTimeout"></a>
 	<h3 class="method-title"><code><a href="#//api/name/networkTimeout">&nbsp;&nbsp;networkTimeout</a></code>
 </h3>
@@ -1192,7 +1355,7 @@ engine.additionalNetworkHeaders = @{&ldquo;AccessKey&rdquo;:&ldquo;<UUID>&rdquo;
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSDictionary *additionalNetworkHeaders</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, nullable) NSDictionary *additionalNetworkHeaders</code></div>
 
 		    
 			
@@ -1284,7 +1447,7 @@ until the next time you call startup.</p></div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *manualDeviceUDID</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSString *manualDeviceUDID</code></div>
 
 		    
 			
@@ -1395,7 +1558,217 @@ network activity indicator.  Default is YES.</p>
 				<p>No matter how many times the Backplane sync method is called, or how often internal events might
 attempt a sync, the SDK will generally sync with the backplane more often than this value.  Certain time-critical
 events, such as a SDK push notice, may cause the SDK to sync regardless of the last sync.  The default
-is 15 minutes.</p>
+is 60 minutes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/permittedMimeTypesForAssetType:andDataType:" title="permittedMimeTypesForAssetType:andDataType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/permittedMimeTypesForAssetType:andDataType:">&ndash;&nbsp;permittedMimeTypesForAssetType:andDataType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The permitted MIME types for a particular asset and segment type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)permittedMimeTypesForAssetType:(kVDE_AssetType)<em>assetType</em> andDataType:(kVF_DownloadDataType)<em>dataType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetType</code></th>
+						<td><p>The asset type to validate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataType</code></th>
+						<td><p>The data type to validate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of strings representing MIME types Virtuoso will allow for download</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When an asset is downloaded, the server returns a MIME type for each invidually downloaded
+unit of data.  This could be the file itself (in the case of single-file downloads), the manifest
+file (in the case of streaming video types like HLS or HSS), or individual segment types (video,
+closed captioning files, or audio).  If the server returns a MIME type that is not contained
+in this list, then the download will be marked in error.  This behavior is useful for blocking
+invalid downloads that may occur when devices are on captive networks, as well as other networking-
+related issues.</p><div class="warning"><p><strong>Warning:</strong> An empty array means that all MIME types are valid.  This may be an issue on captive networks where
+the response returned from the server may not match the requested resource.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowAdditionalMimeTypes:forAssetType:andDataType:" title="allowAdditionalMimeTypes:forAssetType:andDataType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowAdditionalMimeTypes:forAssetType:andDataType:">&ndash;&nbsp;allowAdditionalMimeTypes:forAssetType:andDataType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configures additional MIME types for asset manifest and segment file validation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)allowAdditionalMimeTypes:(nonnull NSArray *)<em>additionalMimeTypes</em> forAssetType:(kVDE_AssetType)<em>assetType</em> andDataType:(kVF_DownloadDataType)<em>dataType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>additionalMimeTypes</code></th>
+						<td><p>An array of string MIME type values add to the default list, or nil</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetType</code></th>
+						<td><p>The asset type to validate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataType</code></th>
+						<td><p>The data type to validate</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Values provided via this method will be added to the internal default list of permitted MIME types.
+If you pass nil, then only the default list of permitted MIME types will be used.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="HTTP Proxy Configuration" name="task_HTTP Proxy Configuration"></a>
+						<h2 class="task-title">HTTP Proxy Configuration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sendHTTPErrorForErroredSegments" title="sendHTTPErrorForErroredSegments"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sendHTTPErrorForErroredSegments">&nbsp;&nbsp;sendHTTPErrorForErroredSegments</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configures proxy playback behavior when errored segments are requested.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean sendHTTPErrorForErroredSegments</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>By default, the SDK stops download and marks the asset with errors if it
+cannot download an asset segment.  If you have configured
+<a href="#//api/name/permittedSegmentDownloadErrors">permittedSegmentDownloadErrors</a> with a non-zero value, then the SDK will,
+instead, skip over a configured number of segment errors and continue downloading.
+These downloads will report errors, but will be marked as completed and
+can be played.  By default, the SDK HTTP Proxy will return HTTP 200 status
+for these files with zero length.  This allows most video players to continue
+playing over the error.  If desired, you can use this setting to configure
+the proxy to return 404 NOT FOUND instead.</p>
+
+<p>Note that this behavior only applies for segments that are missing due to
+errors.  If you play an asset that has not finished downloading, the proxy
+will always return 404 NOT FOUND for segments that have not downloaded yet.</p>
 			</div>
 			
 
@@ -1437,7 +1810,7 @@ is 15 minutes.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *clientSSLCertificatePath</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePath</code></div>
 
 		    
 			
@@ -1478,7 +1851,7 @@ is 15 minutes.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *clientSSLCertificatePassword</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePassword</code></div>
 
 		    
 			
@@ -1574,7 +1947,7 @@ Don&rsquo;t do this in a production build - it&rsquo;s only meant for testing! D
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *drmUserName</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSString *drmUserName</code></div>
 
 		    
 			
@@ -1621,7 +1994,7 @@ this value if you know your DRM system requires it.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *drmPassword</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSString *drmPassword</code></div>
 
 		    
 			
@@ -1666,7 +2039,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-03-30</p>
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-04-14</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVF_SegmentType.html">
+	<File path="Constants/kVF_DownloadDataType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVF_SegmentType</TokenIdentifier>
-			<Abstract type="html">Allowable Virtuoso types for segments</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVF_DownloadDataType</TokenIdentifier>
+			<Abstract type="html">A convenience type to define potential data Virtuoso will download.  This includes segment types as well as manifest data.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeUnknown</TokenIdentifier>
-            <Abstract type="html">The file is of unknown type (default)</Abstract>
-            <Declaration>kVF_SegmentTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeManifest</TokenIdentifier>
+            <Abstract type="html">The data is for a segmented asset (HLS/HSS/DASH/etc) manifest</Abstract>
+            <Declaration>kVF_DataTypeManifest</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeSubRange</TokenIdentifier>
-            <Abstract type="html">The file is a sub-range of a larger monolithic file (MP4)</Abstract>
-            <Declaration>kVF_SegmentTypeSubRange</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamEncryptionKey</TokenIdentifier>
+            <Abstract type="html">The data is for a video stream encryption key (HLS/HSS)</Abstract>
+            <Declaration>kVF_DataTypeStreamEncryptionKey</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamEncryptionKey</TokenIdentifier>
-            <Abstract type="html">The file is a video stream encryption key (HLS/HSS)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamEncryptionKey</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamSegment</TokenIdentifier>
+            <Abstract type="html">The data is for a video stream segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_DataTypeStreamSegment</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamSegment</TokenIdentifier>
-            <Abstract type="html">The file is a video stream segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamSegment</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamAudio</TokenIdentifier>
+            <Abstract type="html">The data is for a video stream audio segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_DataTypeStreamAudio</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -54,19 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamAudio</TokenIdentifier>
-            <Abstract type="html">The file is a video stream audio segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamAudio</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="39"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamCC</TokenIdentifier>
-            <Abstract type="html">The file is a video stream closed captioning segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamCC</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamCC</TokenIdentifier>
+            <Abstract type="html">The data is for a video stream closed captioning segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_DataTypeStreamCC</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

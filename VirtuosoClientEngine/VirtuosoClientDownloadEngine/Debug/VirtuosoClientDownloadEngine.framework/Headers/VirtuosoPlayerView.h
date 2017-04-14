@@ -33,14 +33,14 @@
  *
  *  @param view The VirtuosoPlayerView object that finished playing
  */
--(void)playerFinishedPlayback:(VirtuosoPlayerView*)view;
+-(void)playerFinishedPlayback:(nonnull VirtuosoPlayerView*)view;
 
 /*!
  *  @abstract Called when the user taps the done button.
  *
  *  @param view The VirtuosoPlayerView object requesting to finish
  */
--(void)playerDoneButtonClicked:(VirtuosoPlayerView*)view;
+-(void)playerDoneButtonClicked:(nonnull VirtuosoPlayerView*)view;
 
 @end
 
@@ -76,12 +76,12 @@
 /*!
  *  @abstract The local or remote location of the video to play.
  */
-@property (nonatomic, copy) NSURL *contentURL;
+@property (nonatomic, copy, nullable) NSURL *contentURL;
 
 /*!
  *  @abstract The VirtuosoAsset object representing the video to play.
  */
-@property (nonatomic, strong) VirtuosoAsset* asset;
+@property (nonatomic, strong, nullable) VirtuosoAsset* asset;
 
 /*!
  *  @abstract A Boolean value that indicates whether the player allows switching to external playback mode.
@@ -118,13 +118,14 @@
  *  @param coordinator The transition coordinator object managing the size change. You can use this object to animate your changes
  *                     or get information about the transition that is in progress.
  */
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator NS_AVAILABLE_IOS(8_0);;
+- (void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator NS_AVAILABLE_IOS(8_0);;
 
 
 /*!
  *  @abstract An object that implements the VirtuosoPlayerViewDelegate protocol.
  */
-@property (nonatomic, weak) id <VirtuosoPlayerViewDelegate> delegate;
+@property (nonatomic, weak, nullable) id <VirtuosoPlayerViewDelegate> delegate;
 
 /*!
  *  @abstract The internal player
@@ -132,7 +133,7 @@
  *  @abstract You may use access to the AVPlayer object to perform custom player actions, such as modifying the 
  *            playback rate or seeking to a particular time in the playback stream.
  */
-@property (nonatomic, readonly) AVPlayer *player;
+@property (nonatomic, readonly, nonnull) AVPlayer *player;
 
 /*!
  *  @abstract Whether the player is currently playing
@@ -152,22 +153,22 @@
 /*!
  *  @abstract Button shown in the center of the screen, allowing the user to pause/resume playback
  */
-@property (nonatomic, readonly) UIButton *playPauseButton;
+@property (nonatomic, readonly, nonnull) UIButton *playPauseButton;
 
 /*!
  *  @abstract Slider shown in the top HUD overlay, allowing the user to see playback progress and scrub
  *            to a particular location in the video.
  */
-@property (nonatomic, readonly) UISlider *progressBar;
+@property (nonatomic, readonly, nonnull) UISlider *progressBar;
 
 /*!
  *  @abstract Label shown to the left of the progress bar to indicate the current playback position
  */
-@property (nonatomic, readonly) UILabel *playBackTime;
+@property (nonatomic, readonly, nonnull) UILabel *playBackTime;
 
 /*!
  *  @abstract Label shown to the right of the progress bar to indicate how much time is left for playback
  */
-@property (nonatomic, readonly) UILabel *playBackTotalTime;
+@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime;
 
 @end

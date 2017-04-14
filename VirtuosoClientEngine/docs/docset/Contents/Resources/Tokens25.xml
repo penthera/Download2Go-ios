@@ -145,6 +145,26 @@ consult the notice and error description for details of the problem.</Abstract>
             <NodeRef refid="25"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVBP_DownloadDeniedForMaxDownloadsPerAccount</TokenIdentifier>
+            <Abstract type="html">Permission to download an asset was denied due to maximum download per account rules</Abstract>
+            <Declaration>kVBP_DownloadDeniedForMaxDownloadsPerAccount</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVBP_DownloadDeniedForMaxLifetimeDownloadsPerAsset</TokenIdentifier>
+            <Abstract type="html">Permission to download an asset was denied due to maximum lifetime downloads for asset rules</Abstract>
+            <Declaration>kVBP_DownloadDeniedForMaxLifetimeDownloadsPerAsset</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="25"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

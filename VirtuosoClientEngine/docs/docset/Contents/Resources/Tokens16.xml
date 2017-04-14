@@ -17,7 +17,7 @@
 			<Abstract type="html">The singleton instance access method</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoSubscriptionManager *)instance</Declaration>
+			<Declaration>+ (nullable VirtuosoSubscriptionManager *)instance</Declaration>
 			
 			<ReturnValue><Abstract type="html">Returns the VirtuosoSubscriptionManager object instance, or nil if the VirtuosoDownloadEngine hasn&apos;t been started yet.</Abstract></ReturnValue>
 			<Anchor>//api/name/instance</Anchor>
@@ -34,7 +34,7 @@
 		
 	</RelatedTokens>
 	
-			<Declaration>- (void)syncSubscriptionsWithBackplaneNowOnComplete:(SyncCompleteBlock)onComplete</Declaration>
+			<Declaration>- (void)syncSubscriptionsWithBackplaneNowOnComplete:(nullable SyncCompleteBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>onComplete</Name>
@@ -56,7 +56,7 @@
 		
 	</RelatedTokens>
 	
-			<Declaration>- (void)syncSubscriptionsWithBackplaneNowForDataSince:(NSDate *)since returningOnlySubscribedFeeds:(Boolean)subscribed onComplete:(SyncCompleteBlock)onComplete</Declaration>
+			<Declaration>- (void)syncSubscriptionsWithBackplaneNowForDataSince:(nullable NSDate *)since returningOnlySubscribedFeeds:(Boolean)subscribed onComplete:(nullable SyncCompleteBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>since</Name>
@@ -80,7 +80,7 @@ will be returned.</Abstract>
 			<Abstract type="html">The last time the Manager successfully synced with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastSubscriptionSyncTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</Declaration>
 			
 			
 			<Anchor>//api/name/lastSubscriptionSyncTime</Anchor>
@@ -92,7 +92,7 @@ will be returned.</Abstract>
 			<Abstract type="html">The last time the Manager successfully synced with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastSubscriptionSyncTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</Declaration>
 			
 			
 			<Anchor>//api/name/lastSubscriptionSyncTime</Anchor>
@@ -104,7 +104,7 @@ will be returned.</Abstract>
 			<Abstract type="html">The last time the Manager successfully synced with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastSubscriptionSyncTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</Declaration>
 			
 			
 			<Anchor>//api/name/lastSubscriptionSyncTime</Anchor>
@@ -116,7 +116,7 @@ will be returned.</Abstract>
 			<Abstract type="html">Cancels all subscriptions.</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)unregisterSubscriptionsOnComplete:(SubscriptionResultBlock)onComplete</Declaration>
+			<Declaration>- (void)unregisterSubscriptionsOnComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>onComplete</Name>
@@ -133,7 +133,7 @@ will be returned.</Abstract>
 			<Abstract type="html">Configures the Manager to utilize a particular data source class</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)registerDataSource:(Class&lt;VirtuosoSubscriptionDataSource&gt;)dataSourceClass</Declaration>
+			<Declaration>- (void)registerDataSource:(nonnull Class&lt;VirtuosoSubscriptionDataSource&gt;)dataSourceClass</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>dataSourceClass</Name>
@@ -186,14 +186,14 @@ will be returned.</Abstract>
 			<Abstract type="html">Returns a list of VirtuosoAsset UUID values that represent items currently tracked in the subscription feed.</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)itemsInTrackingFeed:(NSString *)feedAssetID</Declaration>
+			<Declaration>- (nonnull NSArray *)itemsInTrackingFeed:(nonnull NSString *)feedAssetID</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>feedAssetID</Name>
 					<Abstract type="html">The feed to return items for</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">A list of items in the subscription feed</Abstract></ReturnValue>
 			<Anchor>//api/name/itemsInTrackingFeed:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
@@ -203,7 +203,7 @@ will be returned.</Abstract>
 			<Abstract type="html">Includes the provided episode in the Manager&apos;s feed tracking lists</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)includeItem:(VirtuosoAsset *)item inTrackingFeed:(NSString *)feedAssetID</Declaration>
+			<Declaration>- (void)includeItem:(nonnull VirtuosoAsset *)item inTrackingFeed:(nonnull NSString *)feedAssetID</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>item</Name>
@@ -223,7 +223,7 @@ will be returned.</Abstract>
 			<Abstract type="html">Registers the Manager for updates from the Backplane relating to the provided Subscription ID</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)registerForSubscription:(NSString *)feedAssetID onComplete:(SubscriptionResultBlock)onComplete</Declaration>
+			<Declaration>- (void)registerForSubscription:(nonnull NSString *)feedAssetID onComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>feedAssetID</Name>
@@ -243,7 +243,7 @@ will be returned.</Abstract>
 			<Abstract type="html">Registers the Manager for updates from the Backplane relating to the provided Subscription ID</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)registerForSubscription:(NSString *)feedAssetID withMaximumItems:(int)maximumSubscriptionItems andAutodeleteOldItems:(Boolean)autodelete maxBitrate:(int)maxBitrate onComplete:(SubscriptionResultBlock)onComplete</Declaration>
+			<Declaration>- (void)registerForSubscription:(nonnull NSString *)feedAssetID withMaximumItems:(int)maximumSubscriptionItems andAutodeleteOldItems:(Boolean)autodelete maxBitrate:(int)maxBitrate onComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>feedAssetID</Name>
@@ -274,7 +274,7 @@ will override this value.</Abstract>
 			<Abstract type="html">Applies new feed options to a subscribed feed</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)updateSubscription:(NSString *)feedAssetID withMaximumItems:(int)maximumSubscriptionItems andAutodeleteOldItems:(Boolean)autodelete maxBitrate:(int)maxBitrate</Declaration>
+			<Declaration>- (void)updateSubscription:(nonnull NSString *)feedAssetID withMaximumItems:(int)maximumSubscriptionItems andAutodeleteOldItems:(Boolean)autodelete maxBitrate:(int)maxBitrate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>feedAssetID</Name>
@@ -302,7 +302,7 @@ will override this value.</Abstract>
 			<Abstract type="html">Unregisters the Manager for updates from the Backplane relating to the provided Subscription ID</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)unregisterForSubscription:(NSString *)feedAssetID onComplete:(SubscriptionResultBlock)onComplete</Declaration>
+			<Declaration>- (void)unregisterForSubscription:(nonnull NSString *)feedAssetID onComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>feedAssetID</Name>
@@ -322,7 +322,7 @@ will override this value.</Abstract>
 			<Abstract type="html">Returns a list of existing subscriptions</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)subscriptionsOnComplete:(SubscriptionListResultBlock)onComplete</Declaration>
+			<Declaration>- (void)subscriptionsOnComplete:(nullable SubscriptionListResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>onComplete</Name>

@@ -17,7 +17,7 @@
 			<Abstract type="html">The singleton instance access method</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoSettings *)instance</Declaration>
+			<Declaration>+ (nonnull VirtuosoSettings *)instance</Declaration>
 			
 			<ReturnValue><Abstract type="html">Returns the VirtuosoSettings object instance.</Abstract></ReturnValue>
 			<Anchor>//api/name/instance</Anchor>
@@ -133,6 +133,114 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxDownloadedAssetsOnDevice:</TokenIdentifier>
+			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsOnDevice</Declaration>
+			
+			
+			<Anchor>//api/name/maxDownloadedAssetsOnDevice</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxDownloadedAssetsOnDevice</TokenIdentifier>
+			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsOnDevice</Declaration>
+			
+			
+			<Anchor>//api/name/maxDownloadedAssetsOnDevice</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxDownloadedAssetsOnDevice</TokenIdentifier>
+			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsOnDevice</Declaration>
+			
+			
+			<Anchor>//api/name/maxDownloadedAssetsOnDevice</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxDownloadedAssetsPerAccount:</TokenIdentifier>
+			<Abstract type="html">The maximum number of downloads that can exist across all devices on the account at any given time</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsPerAccount</Declaration>
+			
+			
+			<Anchor>//api/name/maxDownloadedAssetsPerAccount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxDownloadedAssetsPerAccount</TokenIdentifier>
+			<Abstract type="html">The maximum number of downloads that can exist across all devices on the account at any given time</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsPerAccount</Declaration>
+			
+			
+			<Anchor>//api/name/maxDownloadedAssetsPerAccount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxDownloadedAssetsPerAccount</TokenIdentifier>
+			<Abstract type="html">The maximum number of downloads that can exist across all devices on the account at any given time</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsPerAccount</Declaration>
+			
+			
+			<Anchor>//api/name/maxDownloadedAssetsPerAccount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxLifetimeDownloadsForAsset:</TokenIdentifier>
+			<Abstract type="html">The maximum number of times any single asset can be downloaded</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxLifetimeDownloadsForAsset</Declaration>
+			
+			
+			<Anchor>//api/name/maxLifetimeDownloadsForAsset</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxLifetimeDownloadsForAsset</TokenIdentifier>
+			<Abstract type="html">The maximum number of times any single asset can be downloaded</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxLifetimeDownloadsForAsset</Declaration>
+			
+			
+			<Anchor>//api/name/maxLifetimeDownloadsForAsset</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxLifetimeDownloadsForAsset</TokenIdentifier>
+			<Abstract type="html">The maximum number of times any single asset can be downloaded</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxLifetimeDownloadsForAsset</Declaration>
+			
+			
+			<Anchor>//api/name/maxLifetimeDownloadsForAsset</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDefaultExpiryAfterDownload:</TokenIdentifier>
 			<Abstract type="html">Amount of time, in seconds, between when Virtuoso finishes downloading an asset
 and when it deletes that downloaded asset.</Abstract>
@@ -212,7 +320,7 @@ and when it deletes that downloaded asset.</Abstract>
 			<Abstract type="html">The device push token used for remote push notices</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *devicePushToken</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
 			
 			
 			<Anchor>//api/name/devicePushToken</Anchor>
@@ -224,7 +332,7 @@ and when it deletes that downloaded asset.</Abstract>
 			<Abstract type="html">The device push token used for remote push notices</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *devicePushToken</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
 			
 			
 			<Anchor>//api/name/devicePushToken</Anchor>
@@ -236,7 +344,7 @@ and when it deletes that downloaded asset.</Abstract>
 			<Abstract type="html">The device push token used for remote push notices</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *devicePushToken</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
 			
 			
 			<Anchor>//api/name/devicePushToken</Anchor>
@@ -434,42 +542,6 @@ and when it deletes that downloaded asset.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxDownloadedAssets:</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssets</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssets</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxDownloadedAssets</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssets</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssets</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxDownloadedAssets</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssets</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssets</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDownloadOverCellular:</TokenIdentifier>
 			<Abstract type="html">Returns the cellular download permission value.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
@@ -565,6 +637,42 @@ and when it deletes that downloaded asset.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setPermittedSegmentDownloadErrors:</TokenIdentifier>
+			<Abstract type="html">Whether or not the engine stops downloading if an error occurs while downloading individual segments.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger permittedSegmentDownloadErrors</Declaration>
+			
+			
+			<Anchor>//api/name/permittedSegmentDownloadErrors</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/permittedSegmentDownloadErrors</TokenIdentifier>
+			<Abstract type="html">Whether or not the engine stops downloading if an error occurs while downloading individual segments.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger permittedSegmentDownloadErrors</Declaration>
+			
+			
+			<Anchor>//api/name/permittedSegmentDownloadErrors</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/permittedSegmentDownloadErrors</TokenIdentifier>
+			<Abstract type="html">Whether or not the engine stops downloading if an error occurs while downloading individual segments.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger permittedSegmentDownloadErrors</Declaration>
+			
+			
+			<Anchor>//api/name/permittedSegmentDownloadErrors</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setNetworkTimeout:</TokenIdentifier>
 			<Abstract type="html">The network connection timeout for Virtuoso HTTP requests, in seconds.  Default is 60.0s.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
@@ -611,7 +719,7 @@ Example:
 engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quot;};</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSDictionary *additionalNetworkHeaders</Declaration>
+			<Declaration>@property (nonatomic, assign, nullable) NSDictionary *additionalNetworkHeaders</Declaration>
 			
 			
 			<Anchor>//api/name/additionalNetworkHeaders</Anchor>
@@ -629,7 +737,7 @@ Example:
 engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quot;};</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSDictionary *additionalNetworkHeaders</Declaration>
+			<Declaration>@property (nonatomic, assign, nullable) NSDictionary *additionalNetworkHeaders</Declaration>
 			
 			
 			<Anchor>//api/name/additionalNetworkHeaders</Anchor>
@@ -647,7 +755,7 @@ Example:
 engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quot;};</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSDictionary *additionalNetworkHeaders</Declaration>
+			<Declaration>@property (nonatomic, assign, nullable) NSDictionary *additionalNetworkHeaders</Declaration>
 			
 			
 			<Anchor>//api/name/additionalNetworkHeaders</Anchor>
@@ -695,7 +803,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">An explicit device ID to use when authenticating and syncing with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *manualDeviceUDID</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *manualDeviceUDID</Declaration>
 			
 			
 			<Anchor>//api/name/manualDeviceUDID</Anchor>
@@ -707,7 +815,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">An explicit device ID to use when authenticating and syncing with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *manualDeviceUDID</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *manualDeviceUDID</Declaration>
 			
 			
 			<Anchor>//api/name/manualDeviceUDID</Anchor>
@@ -719,7 +827,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">An explicit device ID to use when authenticating and syncing with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *manualDeviceUDID</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *manualDeviceUDID</Declaration>
 			
 			
 			<Anchor>//api/name/manualDeviceUDID</Anchor>
@@ -799,11 +907,90 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/permittedMimeTypesForAssetType:andDataType:</TokenIdentifier>
+			<Abstract type="html">The permitted MIME types for a particular asset and segment type</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)permittedMimeTypesForAssetType:(kVDE_AssetType)assetType andDataType:(kVF_DownloadDataType)dataType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetType</Name>
+					<Abstract type="html">The asset type to validate</Abstract>
+				</Parameter><Parameter>
+					<Name>dataType</Name>
+					<Abstract type="html">The data type to validate</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of strings representing MIME types Virtuoso will allow for download</Abstract></ReturnValue>
+			<Anchor>//api/name/permittedMimeTypesForAssetType:andDataType:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/allowAdditionalMimeTypes:forAssetType:andDataType:</TokenIdentifier>
+			<Abstract type="html">Configures additional MIME types for asset manifest and segment file validation</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>- (void)allowAdditionalMimeTypes:(nonnull NSArray *)additionalMimeTypes forAssetType:(kVDE_AssetType)assetType andDataType:(kVF_DownloadDataType)dataType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>additionalMimeTypes</Name>
+					<Abstract type="html">An array of string MIME type values add to the default list, or nil</Abstract>
+				</Parameter><Parameter>
+					<Name>assetType</Name>
+					<Abstract type="html">The asset type to validate</Abstract>
+				</Parameter><Parameter>
+					<Name>dataType</Name>
+					<Abstract type="html">The data type to validate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/allowAdditionalMimeTypes:forAssetType:andDataType:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setSendHTTPErrorForErroredSegments:</TokenIdentifier>
+			<Abstract type="html">Configures proxy playback behavior when errored segments are requested.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean sendHTTPErrorForErroredSegments</Declaration>
+			
+			
+			<Anchor>//api/name/sendHTTPErrorForErroredSegments</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/sendHTTPErrorForErroredSegments</TokenIdentifier>
+			<Abstract type="html">Configures proxy playback behavior when errored segments are requested.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean sendHTTPErrorForErroredSegments</Declaration>
+			
+			
+			<Anchor>//api/name/sendHTTPErrorForErroredSegments</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/sendHTTPErrorForErroredSegments</TokenIdentifier>
+			<Abstract type="html">Configures proxy playback behavior when errored segments are requested.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean sendHTTPErrorForErroredSegments</Declaration>
+			
+			
+			<Anchor>//api/name/sendHTTPErrorForErroredSegments</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setClientSSLCertificatePath:</TokenIdentifier>
 			<Abstract type="html">The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *clientSSLCertificatePath</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePath</Declaration>
 			
 			
 			<Anchor>//api/name/clientSSLCertificatePath</Anchor>
@@ -815,7 +1002,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *clientSSLCertificatePath</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePath</Declaration>
 			
 			
 			<Anchor>//api/name/clientSSLCertificatePath</Anchor>
@@ -827,7 +1014,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *clientSSLCertificatePath</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePath</Declaration>
 			
 			
 			<Anchor>//api/name/clientSSLCertificatePath</Anchor>
@@ -839,7 +1026,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The password required to use the client SSL cert.  Can be nil.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *clientSSLCertificatePassword</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePassword</Declaration>
 			
 			
 			<Anchor>//api/name/clientSSLCertificatePassword</Anchor>
@@ -851,7 +1038,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The password required to use the client SSL cert.  Can be nil.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *clientSSLCertificatePassword</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePassword</Declaration>
 			
 			
 			<Anchor>//api/name/clientSSLCertificatePassword</Anchor>
@@ -863,7 +1050,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The password required to use the client SSL cert.  Can be nil.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *clientSSLCertificatePassword</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePassword</Declaration>
 			
 			
 			<Anchor>//api/name/clientSSLCertificatePassword</Anchor>
@@ -911,7 +1098,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The user name to use with the DRM system.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *drmUserName</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *drmUserName</Declaration>
 			
 			
 			<Anchor>//api/name/drmUserName</Anchor>
@@ -923,7 +1110,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The user name to use with the DRM system.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *drmUserName</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *drmUserName</Declaration>
 			
 			
 			<Anchor>//api/name/drmUserName</Anchor>
@@ -935,7 +1122,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The user name to use with the DRM system.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *drmUserName</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *drmUserName</Declaration>
 			
 			
 			<Anchor>//api/name/drmUserName</Anchor>
@@ -947,7 +1134,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The password to use with the DRM system.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *drmPassword</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *drmPassword</Declaration>
 			
 			
 			<Anchor>//api/name/drmPassword</Anchor>
@@ -959,7 +1146,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The password to use with the DRM system.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *drmPassword</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *drmPassword</Declaration>
 			
 			
 			<Anchor>//api/name/drmPassword</Anchor>
@@ -971,7 +1158,7 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<Abstract type="html">The password to use with the DRM system.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *drmPassword</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) NSString *drmPassword</Declaration>
 			
 			
 			<Anchor>//api/name/drmPassword</Anchor>

@@ -130,7 +130,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Adds a arbitrary logging event.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)addCustomLogEvent:(NSString *)eventName withStringData:(NSString *)eventData</Declaration>
+			<Declaration>+ (void)addCustomLogEvent:(nonnull NSString *)eventName withStringData:(nonnull NSString *)eventData</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>eventName</Name>
@@ -150,7 +150,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Adds a arbitrary logging event.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)addCustomLogEvent:(NSString *)eventName withNumericData:(long)eventData</Declaration>
+			<Declaration>+ (void)addCustomLogEvent:(nonnull NSString *)eventName withNumericData:(long)eventData</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>eventName</Name>
@@ -170,7 +170,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Adds a debug event.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)addDebugEvent:(NSString *)eventData atLevel:(kVL_LoggingLevel)level</Declaration>
+			<Declaration>+ (void)addDebugEvent:(nonnull NSString *)eventData atLevel:(kVL_LoggingLevel)level</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>eventData</Name>
@@ -190,7 +190,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Logs &quot;expire&quot; event for an asset</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)logAssetExpired:(VirtuosoAsset *)asset</Declaration>
+			<Declaration>+ (void)logAssetExpired:(nonnull VirtuosoAsset *)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -207,7 +207,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Logs &quot;play&quot; event for an asset</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)logPlaybackStartedForAsset:(VirtuosoAsset *)asset</Declaration>
+			<Declaration>+ (void)logPlaybackStartedForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -224,7 +224,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Logs &quot;stop-play&quot; event for an asset</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)logPlaybackStoppedForAsset:(VirtuosoAsset *)asset withSecondsSinceLastStart:(long long)seconds</Declaration>
+			<Declaration>+ (void)logPlaybackStoppedForAsset:(nonnull VirtuosoAsset *)asset withSecondsSinceLastStart:(long long)seconds</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -245,7 +245,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Adds an object that follows the VirtuosoLoggerDelegate protocol to the delegate list.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)addDelegate:(id&lt;VirtuosoLoggerDelegate&gt;)delegate</Declaration>
+			<Declaration>+ (void)addDelegate:(nonnull id&lt;VirtuosoLoggerDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>delegate</Name>
@@ -262,7 +262,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Removes a delegate from the delegate list.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (void)removeDelegate:(id&lt;VirtuosoLoggerDelegate&gt;)delegate</Declaration>
+			<Declaration>+ (void)removeDelegate:(nonnull id&lt;VirtuosoLoggerDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>delegate</Name>
@@ -279,7 +279,7 @@ Only the static methods provided with this interface should be used.</Abstract>
 			<Abstract type="html">Returns a current list of logging delegates.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)delegates</Declaration>
+			<Declaration>+ (nonnull NSArray *)delegates</Declaration>
 			
 			<ReturnValue><Abstract type="html">The current list of logging delegates.</Abstract></ReturnValue>
 			<Anchor>//api/name/delegates</Anchor>

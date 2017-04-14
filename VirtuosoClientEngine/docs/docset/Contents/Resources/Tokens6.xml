@@ -17,7 +17,7 @@
 			<Abstract type="html">The singleton instance access method</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoDownloadEngine *)instance</Declaration>
+			<Declaration>+ (nonnull VirtuosoDownloadEngine *)instance</Declaration>
 			
 			<ReturnValue><Abstract type="html">Returns the VirtuosoDownloadEngine object instance.</Abstract></ReturnValue>
 			<Anchor>//api/name/instance</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">Returns the version of this build.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)versionString</Declaration>
+			<Declaration>+ (nonnull NSString *)versionString</Declaration>
 			
 			<ReturnValue><Abstract type="html">The compile-time configured version of this Virtuoso build</Abstract></ReturnValue>
 			<Anchor>//api/name/versionString</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">You must call this method to initialize Virtuoso before you call any other Virtuoso method.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (kVDE_EngineStartupCode)startupWithBackplane:(NSString *)backplaneURL user:(NSString *)user externalDeviceID:(NSString *)externalDeviceID privateKey:(NSString *)privateKey publicKey:(NSString *)publicKey</Declaration>
+			<Declaration>- (kVDE_EngineStartupCode)startupWithBackplane:(nonnull NSString *)backplaneURL user:(nonnull NSString *)user externalDeviceID:(nullable NSString *)externalDeviceID privateKey:(nonnull NSString *)privateKey publicKey:(nonnull NSString *)publicKey</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>backplaneURL</Name>
@@ -62,6 +62,18 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">A startup code indicating the result</Abstract></ReturnValue>
 			<Anchor>//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/shutdown</TokenIdentifier>
+			<Abstract type="html">Resets Virtuoso without unregistering the device or deleting assets.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (void)shutdown</Declaration>
+			
+			
+			<Anchor>//api/name/shutdown</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
@@ -87,7 +99,7 @@
 			<Abstract type="html">The URL where the Backplane lives</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *backplaneURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</Declaration>
 			
 			
 			<Anchor>//api/name/backplaneURL</Anchor>
@@ -99,7 +111,7 @@
 			<Abstract type="html">The URL where the Backplane lives</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *backplaneURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</Declaration>
 			
 			
 			<Anchor>//api/name/backplaneURL</Anchor>
@@ -111,7 +123,7 @@
 			<Abstract type="html">The URL where the Backplane lives</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *backplaneURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</Declaration>
 			
 			
 			<Anchor>//api/name/backplaneURL</Anchor>
@@ -123,7 +135,7 @@
 			<Abstract type="html">The user used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *user</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *user</Declaration>
 			
 			
 			<Anchor>//api/name/user</Anchor>
@@ -135,7 +147,7 @@
 			<Abstract type="html">The user used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *user</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *user</Declaration>
 			
 			
 			<Anchor>//api/name/user</Anchor>
@@ -147,7 +159,7 @@
 			<Abstract type="html">The user used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *user</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *user</Declaration>
 			
 			
 			<Anchor>//api/name/user</Anchor>
@@ -159,7 +171,7 @@
 			<Abstract type="html">The external device ID provided to Virtuoso during startup</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *externalDeviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
 			
 			
 			<Anchor>//api/name/externalDeviceID</Anchor>
@@ -171,7 +183,7 @@
 			<Abstract type="html">The external device ID provided to Virtuoso during startup</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *externalDeviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
 			
 			
 			<Anchor>//api/name/externalDeviceID</Anchor>
@@ -183,7 +195,7 @@
 			<Abstract type="html">The external device ID provided to Virtuoso during startup</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *externalDeviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
 			
 			
 			<Anchor>//api/name/externalDeviceID</Anchor>
@@ -195,7 +207,7 @@
 			<Abstract type="html">The Virtuoso-assigned unique device ID for this device</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
 			
 			
 			<Anchor>//api/name/deviceID</Anchor>
@@ -207,7 +219,7 @@
 			<Abstract type="html">The Virtuoso-assigned unique device ID for this device</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
 			
 			
 			<Anchor>//api/name/deviceID</Anchor>
@@ -219,7 +231,7 @@
 			<Abstract type="html">The Virtuoso-assigned unique device ID for this device</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
 			
 			
 			<Anchor>//api/name/deviceID</Anchor>
@@ -231,7 +243,7 @@
 			<Abstract type="html">The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *secret</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *secret</Declaration>
 			
 			
 			<Anchor>//api/name/secret</Anchor>
@@ -243,7 +255,7 @@
 			<Abstract type="html">The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *secret</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *secret</Declaration>
 			
 			
 			<Anchor>//api/name/secret</Anchor>
@@ -255,7 +267,7 @@
 			<Abstract type="html">The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *secret</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *secret</Declaration>
 			
 			
 			<Anchor>//api/name/secret</Anchor>
@@ -267,7 +279,7 @@
 			<Abstract type="html">The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *key</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *key</Declaration>
 			
 			
 			<Anchor>//api/name/key</Anchor>
@@ -279,7 +291,7 @@
 			<Abstract type="html">The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *key</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *key</Declaration>
 			
 			
 			<Anchor>//api/name/key</Anchor>
@@ -291,7 +303,7 @@
 			<Abstract type="html">The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *key</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *key</Declaration>
 			
 			
 			<Anchor>//api/name/key</Anchor>
@@ -411,7 +423,7 @@
 			<Abstract type="html">A convenience method to return a displayable version of the downloadBandwidth property.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *downloadBandwidthString</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</Declaration>
 			
 			
 			<Anchor>//api/name/downloadBandwidthString</Anchor>
@@ -423,7 +435,7 @@
 			<Abstract type="html">A convenience method to return a displayable version of the downloadBandwidth property.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *downloadBandwidthString</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</Declaration>
 			
 			
 			<Anchor>//api/name/downloadBandwidthString</Anchor>
@@ -435,7 +447,7 @@
 			<Abstract type="html">A convenience method to return a displayable version of the downloadBandwidth property.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *downloadBandwidthString</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</Declaration>
 			
 			
 			<Anchor>//api/name/downloadBandwidthString</Anchor>
@@ -483,7 +495,7 @@
 			<Abstract type="html">The UUID for asset Virtuoso is currently downloading.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *currentlyDownloadingAsset</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</Declaration>
 			
 			
 			<Anchor>//api/name/currentlyDownloadingAsset</Anchor>
@@ -495,7 +507,7 @@
 			<Abstract type="html">The UUID for asset Virtuoso is currently downloading.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *currentlyDownloadingAsset</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</Declaration>
 			
 			
 			<Anchor>//api/name/currentlyDownloadingAsset</Anchor>
@@ -507,7 +519,7 @@
 			<Abstract type="html">The UUID for asset Virtuoso is currently downloading.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *currentlyDownloadingAsset</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</Declaration>
 			
 			
 			<Anchor>//api/name/currentlyDownloadingAsset</Anchor>
@@ -519,7 +531,7 @@
 			<Abstract type="html">The date/time of the last successful Backplane sync</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastBackplaneSyncTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</Declaration>
 			
 			
 			<Anchor>//api/name/lastBackplaneSyncTime</Anchor>
@@ -531,7 +543,7 @@
 			<Abstract type="html">The date/time of the last successful Backplane sync</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastBackplaneSyncTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</Declaration>
 			
 			
 			<Anchor>//api/name/lastBackplaneSyncTime</Anchor>
@@ -543,7 +555,7 @@
 			<Abstract type="html">The date/time of the last successful Backplane sync</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastBackplaneSyncTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</Declaration>
 			
 			
 			<Anchor>//api/name/lastBackplaneSyncTime</Anchor>
@@ -591,7 +603,7 @@
 			<Abstract type="html">When the Virtuoso SDK license expires</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *licenseExpiry</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</Declaration>
 			
 			
 			<Anchor>//api/name/licenseExpiry</Anchor>
@@ -603,7 +615,7 @@
 			<Abstract type="html">When the Virtuoso SDK license expires</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *licenseExpiry</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</Declaration>
 			
 			
 			<Anchor>//api/name/licenseExpiry</Anchor>
@@ -615,7 +627,7 @@
 			<Abstract type="html">When the Virtuoso SDK license expires</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *licenseExpiry</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</Declaration>
 			
 			
 			<Anchor>//api/name/licenseExpiry</Anchor>
@@ -664,7 +676,7 @@
 The array is current as of the last sync with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *devices</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSArray *devices</Declaration>
 			
 			
 			<Anchor>//api/name/devices</Anchor>
@@ -677,7 +689,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 The array is current as of the last sync with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *devices</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSArray *devices</Declaration>
 			
 			
 			<Anchor>//api/name/devices</Anchor>
@@ -690,7 +702,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 The array is current as of the last sync with the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *devices</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSArray *devices</Declaration>
 			
 			
 			<Anchor>//api/name/devices</Anchor>
@@ -702,7 +714,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 			<Abstract type="html">Returns an ordered array of UUID strings for VirtuosoAsset items in the download queue.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)assetsInQueue</Declaration>
+			<Declaration>- (nonnull NSArray *)assetsInQueue</Declaration>
 			
 			<ReturnValue><Abstract type="html">An ordered array of UUID strings representing VirtuosoAsset objects enqueued for download.</Abstract></ReturnValue>
 			<Anchor>//api/name/assetsInQueue</Anchor>
@@ -714,7 +726,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 			<Abstract type="html">Adds an asset to the download queue.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (void)addToQueue:(VirtuosoAsset *)asset atIndex:(NSUInteger)index</Declaration>
+			<Declaration>- (void)addToQueue:(nonnull VirtuosoAsset *)asset atIndex:(NSUInteger)index</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -734,7 +746,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 			<Abstract type="html">Reorders the download queue.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (void)moveAsset:(VirtuosoAsset *)asset inQueueToIndex:(NSUInteger)index</Declaration>
+			<Declaration>- (void)moveAsset:(nonnull VirtuosoAsset *)asset inQueueToIndex:(NSUInteger)index</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -754,7 +766,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 			<Abstract type="html">Remove the given asset from the download queue.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (NSUInteger)removeFromQueue:(VirtuosoAsset *)asset</Declaration>
+			<Declaration>- (NSUInteger)removeFromQueue:(nonnull VirtuosoAsset *)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -771,7 +783,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 			<Abstract type="html">Retrieves an asset in the download queue by remote URL.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (VirtuosoAsset *)assetInQueueWithURL:(NSString *)url</Declaration>
+			<Declaration>- (nullable VirtuosoAsset *)assetInQueueWithURL:(nonnull NSString *)url</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>url</Name>
@@ -788,7 +800,7 @@ The array is current as of the last sync with the Backplane.</Abstract>
 			<Abstract type="html">Retrieves an asset in the download queue by UUID.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (VirtuosoAsset *)assetInQueueWithUUID:(NSString *)uuid</Declaration>
+			<Declaration>- (nullable VirtuosoAsset *)assetInQueueWithUUID:(nonnull NSString *)uuid</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>uuid</Name>
@@ -929,6 +941,42 @@ The array is current as of the last sync with the Backplane.</Abstract>
 			
 			
 			<Anchor>//api/name/queueStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setAccountStatusOK:</TokenIdentifier>
+			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean accountStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/accountStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/accountStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean accountStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/accountStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/accountStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean accountStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/accountStatusOK</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

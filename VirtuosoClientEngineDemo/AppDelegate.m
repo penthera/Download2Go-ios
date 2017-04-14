@@ -95,8 +95,6 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    self.pushToken = [NSString stringWithFormat:@"%@",deviceToken];
-    
 #warning You will be unable to generate a usable push token unless you properly configure your app provisioning profiles and upload an Apple push certificate to your Backplane instance.
     
     // Due to Apple's infrastructure requirements, the push certificates stored on the server *must* match the provisioning profile
@@ -106,13 +104,12 @@
     // to the Backplane.  See the Backplane documentation for additional details.
     
     if( [VirtuosoDownloadEngine instance].started )
-        [VirtuosoSettings instance].devicePushToken = self.pushToken;
+        [VirtuosoSettings instance].devicePushToken = [deviceToken description];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
     NSLog(@"Error registering for push notices: %@",error);
-    self.pushToken = nil;
     
     if( [VirtuosoDownloadEngine instance].started )
         [VirtuosoSettings instance].devicePushToken = nil;

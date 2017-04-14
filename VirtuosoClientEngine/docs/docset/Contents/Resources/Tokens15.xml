@@ -17,7 +17,7 @@
 			<Abstract type="html">Requests a synchronous metadata lookup for a known asset ID</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>- (NSDictionary *)lookupMetadataForAssetID:(NSString *)assetID usingKnownData:(NSDictionary *)knownData</Declaration>
+			<Declaration>- (nonnull NSDictionary *)lookupMetadataForAssetID:(nonnull NSString *)assetID usingKnownData:(nonnull NSDictionary *)knownData</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>assetID</Name>
@@ -38,7 +38,7 @@ to provide additional missing data.</Abstract>
 			<Abstract type="html">Indicates that an asset was succesfully processed</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)didProcessAssetWithMetadata:(NSDictionary *)metadata</Declaration>
+			<Declaration>- (void)didProcessAssetWithMetadata:(nonnull NSDictionary *)metadata</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>metadata</Name>
@@ -56,7 +56,7 @@ the Backplane or the External Catalog during a metadata lookup may also be defin
 			<Abstract type="html">Indicates a new VirtuosoAsset item has been created</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)willAddAsset:(VirtuosoAsset *)asset</Declaration>
+			<Declaration>- (void)willAddAsset:(nonnull VirtuosoAsset *)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>

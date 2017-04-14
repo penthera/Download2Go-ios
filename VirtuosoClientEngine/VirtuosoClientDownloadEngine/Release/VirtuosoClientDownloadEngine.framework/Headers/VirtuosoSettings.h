@@ -18,6 +18,7 @@
 #define VSETTINGS
 
 #import <Foundation/Foundation.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 
 /*!
  *  @abstract An encapsulation for all Virtuoso SDK configuration settings.
@@ -49,7 +50,7 @@
  *
  *  @return Returns the VirtuosoSettings object instance.
  */
-+ (VirtuosoSettings*)instance;
++ (nonnull VirtuosoSettings*)instance;
 
 
 /**---------------------------------------------------------------------------------------
@@ -85,6 +86,37 @@
  *  @abstract The maximum number of devices per user that the Backplane allows to be enabled for download
  */
 @property (nonatomic,readonly) long long maxDevicesForDownload;
+
+/*!
+ *  @abstract The maximum number of downloads that can exist on the device at any given time
+ *
+ *  @discussion Virtuoso limits the total number of downloads the device can have on disk at any given time.
+ *              Any download requests beyond this limit are queued, but will not download, and the engine
+ *              will report an error indicating the download queue is blocked until the user manually
+ *              deletes enough of the currently downloaded assets to get below the limit again.  The default
+ *              value is 100.
+ */
+@property (nonatomic,readonly) long long maxDownloadedAssetsOnDevice;
+
+/*!
+ *  @abstract The maximum number of downloads that can exist across all devices on the account at any given time
+ *
+ *  @discussion Virtuoso limits the total number of downloads the user can have on disk across all their devices
+ *              at any given time.  Any download requests beyond this limit are queued, but will not download, and
+ *              the engine will report an error indicating the download queue is blocked until the user manually
+ *              deletes enough of the currently downloaded assets, on this device or other devices, to get below
+ *              the limit again.  The default value is -1 (unlimited).
+ */
+@property (nonatomic,readonly) long long maxDownloadedAssetsPerAccount;
+
+/*!
+ *  @abstract The maximum number of times any single asset can be downloaded
+ *
+ *  @discussion Virtuoso limits the total number of times an asset can be downloaded on any device in the account.
+ *              Once this limit is reached, the asset can no longer be downloaded without administrative action.
+ *              The default value is -1 (unlimited).
+ */
+@property (nonatomic,readonly) long long maxLifetimeDownloadsForAsset;
 
 /*!
  *  @abstract Amount of time, in seconds, between when Virtuoso finishes downloading an asset
@@ -124,7 +156,7 @@
  *              app's push token from the OS. If you cannot access the push token (e.g. the user disabled
  *              push notifications for the device), then set this value to nil.
  */
-@property (nonatomic,strong) NSString* devicePushToken;
+@property (nonatomic,strong,nullable) NSString* devicePushToken;
 
 /**---------------------------------------------------------------------------------------
  * @name Policy/Configuration
@@ -200,17 +232,6 @@
 - (void)resetMaxStorageAllowedToDefault;
 
 /*!
- *  @abstract The maximum number of downloads that can exist on the device at any given time.
- *
- *  @discussion Virtuoso limits the total number of downloads the device can have on disk at any given time.
- *              Any download requests beyond this limit are queued, but will not download, and the engine
- *              will report an error indicating the download queue is blocked until the user manually
- *              deletes enough of the currently downloaded assets to get below the limit again.  The default
- *              value is 100.
- */
-@property (nonatomic,readonly) long long maxDownloadedAssets;
-
-/*!
  *  @abstract Returns the cellular download permission value.
  *
  *  @discussion The 'downloadOverCellular' value is a permission.
@@ -252,6 +273,20 @@
 #pragma mark
 
 /*!
+ *  @abstract Whether or not the engine stops downloading if an error occurs while downloading individual segments.
+ *
+ *  @discussion If this value is zero, then any errors encountered while downloading segments will be treated
+ *              as errors, and the documented download error handling rules will be followed.  The download
+ *              of the individual segment will be retried three times before the SDK moves on to download other
+ *              assets in the queue.  The asset will retry downloading 3 times before being marked with a
+ *              permanent error.  If this value is greater than zero, then the SDK will permit a maximum 
+ *              of this number of segment errors without counting them as an error against the asset. A 
+ *              warning will be issued instead, and downloading will continue past the failed segment.  This setting
+ *              only applies to segmented assets (E.G. HLS, HSS, etc).  The default value is 0.
+ */
+@property (nonatomic,assign) NSUInteger permittedSegmentDownloadErrors;
+
+/*!
  *  @abstract The network connection timeout for Virtuoso HTTP requests, in seconds.  Default is 60.0s.
  */
 @property (nonatomic,assign) NSTimeInterval networkTimeout;
@@ -265,13 +300,13 @@
  *            Example:
  *              engine.additionalNetworkHeaders = @{"AccessKey":"<UUID>"};
  */
-@property (nonatomic,assign) NSDictionary* additionalNetworkHeaders;
+@property (nonatomic,assign,nullable) NSDictionary* additionalNetworkHeaders;
 
 /*!
  *  @abstract Enables Penthera's StreamPackager service for background download of segmented VirtuosoAssets (HLS, HSS, DASH, etc).
  *
- *  @discussion Penthera's StreamPackager (a server proxy) allows Virtuoso to more efficiently download 
- *              segmented VirtuosoAsset formats even when the enclosing app isn't in the foreground.  
+ *  @discussion Penthera's StreamPackager (a server proxy) allows Virtuoso to more efficiently download
+ *              segmented VirtuosoAsset formats even when the enclosing app isn't in the foreground.
  *              To disable this feature (and continue with slower background downloads), set this property to NO.
  *              Default is YES.
  *
@@ -291,7 +326,7 @@
  *  @warning Since Virtuoso uses this value during startup, you must supply this value before
  *           calling any other Virtuoso methods.
  */
-@property (nonatomic,strong) NSString* manualDeviceUDID;
+@property (nonatomic,strong,nullable) NSString* manualDeviceUDID;
 
 
 /*!
@@ -310,9 +345,74 @@
  *  @discussion No matter how many times the Backplane sync method is called, or how often internal events might
  *              attempt a sync, the SDK will generally sync with the backplane more often than this value.  Certain time-critical
  *              events, such as a SDK push notice, may cause the SDK to sync regardless of the last sync.  The default
- *              is 15 minutes.
+ *              is 60 minutes.
  */
 @property (nonatomic,assign) NSTimeInterval minimumBackplaneSyncInterval;
+
+/*!
+ *  @abstract The permitted MIME types for a particular asset and segment type
+ *
+ *  @discussion When an asset is downloaded, the server returns a MIME type for each invidually downloaded
+ *              unit of data.  This could be the file itself (in the case of single-file downloads), the manifest
+ *              file (in the case of streaming video types like HLS or HSS), or individual segment types (video,
+ *              closed captioning files, or audio).  If the server returns a MIME type that is not contained
+ *              in this list, then the download will be marked in error.  This behavior is useful for blocking
+ *              invalid downloads that may occur when devices are on captive networks, as well as other networking-
+ *              related issues.
+ *
+ *  @warning    An empty array means that all MIME types are valid.  This may be an issue on captive networks where
+ *              the response returned from the server may not match the requested resource.
+ *
+ *  @param assetType The asset type to validate
+ *  @param dataType The data type to validate
+ *
+ *  @return An array of strings representing MIME types Virtuoso will allow for download
+ */
+- (nonnull NSArray*)permittedMimeTypesForAssetType:(kVDE_AssetType)assetType
+                                       andDataType:(kVF_DownloadDataType)dataType;
+
+/*!
+ *  @abstract Configures additional MIME types for asset manifest and segment file validation
+ *
+ *  @discussion Values provided via this method will be added to the internal default list of permitted MIME types.
+ *              If you pass nil, then only the default list of permitted MIME types will be used.
+ *
+ *  @param additionalMimeTypes An array of string MIME type values add to the default list, or nil
+ *  @param assetType The asset type to validate
+ *  @param dataType The data type to validate
+ */
+- (void)allowAdditionalMimeTypes:(nonnull NSArray*)additionalMimeTypes
+                    forAssetType:(kVDE_AssetType)assetType
+                     andDataType:(kVF_DownloadDataType)dataType;
+
+
+/**---------------------------------------------------------------------------------------
+ * @name HTTP Proxy Configuration
+ *  ---------------------------------------------------------------------------------------
+ */
+
+#pragma mark
+#pragma mark HTTP Proxy Configuration
+#pragma mark
+
+/*!
+ *  @abstract Configures proxy playback behavior when errored segments are requested.
+ *
+ *  @discussion By default, the SDK stops download and marks the asset with errors if it
+ *              cannot download an asset segment.  If you have configured 
+ *              permittedSegmentDownloadErrors with a non-zero value, then the SDK will,
+ *              instead, skip over a configured number of segment errors and continue downloading.
+ *              These downloads will report errors, but will be marked as completed and
+ *              can be played.  By default, the SDK HTTP Proxy will return HTTP 200 status
+ *              for these files with zero length.  This allows most video players to continue
+ *              playing over the error.  If desired, you can use this setting to configure
+ *              the proxy to return 404 NOT FOUND instead.
+ *
+ *              Note that this behavior only applies for segments that are missing due to 
+ *              errors.  If you play an asset that has not finished downloading, the proxy
+ *              will always return 404 NOT FOUND for segments that have not downloaded yet.
+ */
+@property (nonatomic,assign) Boolean sendHTTPErrorForErroredSegments;
 
 
 /**---------------------------------------------------------------------------------------
@@ -327,12 +427,12 @@
 /*!
  *  @abstract The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.
  */
-@property (nonatomic,strong) NSString* clientSSLCertificatePath;
+@property (nonatomic,strong,nullable) NSString* clientSSLCertificatePath;
 
 /*!
  *  @abstract The password required to use the client SSL cert.  Can be nil.
  */
-@property (nonatomic,strong) NSString* clientSSLCertificatePassword;
+@property (nonatomic,strong,nullable) NSString* clientSSLCertificatePassword;
 
 /*!
  *  @abstract Whether Virtuoso will trust self-signed SSL certs
@@ -357,7 +457,7 @@
  *  @discussion Depending on the DRM system being used, this property may be ignored.  You only need to set
  *              this value if you know your DRM system requires it.
  */
-@property (nonatomic,strong) NSString* drmUserName;
+@property (nonatomic,strong,nullable) NSString* drmUserName;
 
 /*!
  *  @abstract The password to use with the DRM system.
@@ -365,7 +465,7 @@
  *  @discussion Depending on the DRM system being used, this property may be ignored.  You only need to set
  *              this value if you know your DRM system requires it.
  */
-@property (nonatomic,strong) NSString* drmPassword;
+@property (nonatomic,strong,nullable) NSString* drmPassword;
 
 @end
 

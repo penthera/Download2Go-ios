@@ -32,7 +32,7 @@
  *
  *  @return Returns the VirtuosoSecureClock object instance.
  */
-+ (VirtuosoSecureClock*)instance;
++ (nonnull VirtuosoSecureClock*)instance;
 
 /*!
  *  @abstract Requests an update to the secure clock time.  This method is called internal to the SDK
@@ -43,12 +43,12 @@
 /*!
  *  @abstract The current secure clock time, or nil if a secure time cannot be determined.
  */
-@property (nonatomic,readonly) NSDate* secureDate;
+@property (nonatomic,readonly,nullable) NSDate* secureDate;
 
 /*!
  *  @abstract Similar to the secureDate property, except that this method will return the current
  *            system clock time if a secure date cannot be determined.
  */
-@property (nonatomic,readonly) NSDate* date;
+@property (nonatomic,readonly,nonnull) NSDate* date;
 
 @end

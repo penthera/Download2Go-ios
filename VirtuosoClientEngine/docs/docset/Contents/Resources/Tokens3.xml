@@ -17,7 +17,7 @@
 			<Abstract type="html">Creates a local HTTP proxy on a random port using the specified asset</Abstract>
 			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithAsset:(VirtuosoAsset *)asset</Declaration>
+			<Declaration>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -40,7 +40,7 @@ indicating the problem.</Abstract></ReturnValue>
 			<Abstract type="html">Creates a local HTTP proxy on the specified port using the specified asset</Abstract>
 			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
 			
-			<Declaration>- (id)initOnPort:(NSInteger)port withAsset:(VirtuosoAsset *)asset</Declaration>
+			<Declaration>- (nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset *)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>port</Name>
@@ -126,7 +126,7 @@ indicating the problem.</Abstract></ReturnValue>
 			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
 			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *playbackURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
 			
 			
 			<Anchor>//api/name/playbackURL</Anchor>
@@ -138,7 +138,7 @@ indicating the problem.</Abstract></ReturnValue>
 			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
 			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *playbackURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
 			
 			
 			<Anchor>//api/name/playbackURL</Anchor>
@@ -150,7 +150,7 @@ indicating the problem.</Abstract></ReturnValue>
 			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
 			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *playbackURL</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
 			
 			
 			<Anchor>//api/name/playbackURL</Anchor>

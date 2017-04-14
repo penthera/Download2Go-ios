@@ -124,6 +124,12 @@ typedef NS_ENUM(NSInteger, kVBP_StatusCode)
     
     /** The current sync did not get processed because a sync with the Backplane has already occurred recently */
     kVBP_SyncThrottled = -12,
+    
+    /** Permission to download an asset was denied due to maximum download per account rules */
+    kVBP_DownloadDeniedForMaxDownloadsPerAccount = -61,
+    
+    /** Permission to download an asset was denied due to maximum lifetime downloads for asset rules */
+    kVBP_DownloadDeniedForMaxLifetimeDownloadsPerAsset = -62,
 };
 
 /*!
@@ -216,6 +222,9 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     
     /** There was an internal error.  Please contact Penthera support. */
     kVDE_InternalError = -9,
+    
+    /** Virtuoso was unable to obtain permission to download the asset. */
+    kVDE_PermissionsError = -10,
 };
 
 
@@ -291,6 +300,30 @@ typedef NS_ENUM(NSInteger, kVF_SegmentType)
     /** The file is a video stream closed captioning segment (HLS/HSS/DASH) */
     kVF_SegmentTypeStreamCC = 6,
 };
+
+/*!
+ *  @typedef kVF_DownloadDataType
+ *
+ *  @abstract A convenience type to define potential data Virtuoso will download.  This includes segment types as well as manifest data.
+ */
+typedef NS_ENUM(NSInteger, kVF_DownloadDataType)
+{
+    /** The data is for a segmented asset (HLS/HSS/DASH/etc) manifest */
+    kVF_DataTypeManifest = 0,
+    
+    /** The data is for a video stream encryption key (HLS/HSS) */
+    kVF_DataTypeStreamEncryptionKey = kVF_SegmentTypeStreamEncryptionKey,
+    
+    /** The data is for a video stream segment (HLS/HSS/DASH) */
+    kVF_DataTypeStreamSegment = kVF_SegmentTypeStreamSegment,
+    
+    /** The data is for a video stream audio segment (HLS/HSS/DASH) */
+    kVF_DataTypeStreamAudio = kVF_SegmentTypeStreamAudio,
+    
+    /** The data is for a video stream closed captioning segment (HLS/HSS/DASH) */
+    kVF_DataTypeStreamCC = kVF_SegmentTypeStreamCC,
+};
+
 
 /*!
  *  @typedef kVDE_AssetType
@@ -383,26 +416,32 @@ extern NSTimeInterval kInvalidDuration;
  */
 typedef NS_ENUM(NSInteger, kVDE_DownloadStatusType)
 {
-    /** Asset exists, but is not in the download queue */
+    /** Download is complete; asset is stored locally */
     kVDE_DownloadComplete = 0,
     
-    /** Asset is in download queue, waiting its turn */
+    /** Asset is downloaded, and is being written to its final location on disk. */
     kVDE_DownloadProcessing = 1,
     
     /** Download is in progress for this asset */
     kVDE_DownloadActive = 2,
     
-    /** Asset is downloaded, and is being written to its final location on disk. */
+    /** Asset is in download queue, waiting its turn */
     kVDE_DownloadPending = 3,
     
-    /** Download is complete; asset is stored locally */
+    /** Asset exists, but is not in the download queue */
     kVDE_DownloadNone = 4,
     
-    /** Asset has a publish date in the future, and thus unavailable */
+    /** Virtuoso has marked this asset as expired */
     kVDE_DownloadExpired = 5,
     
-    /** Virtuoso has marked this asset as expired */
+    /** Asset has a publish date in the future, and thus unavailable */
     kVDE_DownloadNotAvailable = 6,
+    
+    /** Asset is being analyzed and prepared for download */
+    kVDE_DownloadInitializing = 7,
+    
+    /** Asset is in download queue, waiting its turn, and has not been granted download permissions yet */
+    kVDE_DownloadPendingOnPermission = 8,
 };
 
 /*!
@@ -430,6 +469,10 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorType)
     /** Virtuoso has attempted to download this asset the max times permitted. Will not try again 
         until you call reset or clearRetryCount */
     kVDE_DownloadMaxRetriesExceeded = 5,
+    
+    /** Virtuoso has received notice from the server that the user has downloaded this asset the
+        maximum number of times for this account.  Downloads cannot continue for this asset. */
+    kVDE_LifetimeDownloadLimitReached = 6,
 };
 
 /*!

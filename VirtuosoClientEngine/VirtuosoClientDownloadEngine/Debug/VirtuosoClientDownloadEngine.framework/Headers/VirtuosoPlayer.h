@@ -36,12 +36,12 @@
 /*!
  *  @abstract The remote URL for the manifest file to play
  */
-@property (nonatomic, copy) NSURL *contentURL;
+@property (nonatomic, copy, nullable) NSURL *contentURL;
 
 /*!
  *  @abstract The VirtuosoAsset object representing the video to be played
  */
-@property (nonatomic, strong) VirtuosoAsset* asset;
+@property (nonatomic, strong, nullable) VirtuosoAsset* asset;
 
 @end
 

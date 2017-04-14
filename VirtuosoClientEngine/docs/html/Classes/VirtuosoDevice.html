@@ -161,7 +161,7 @@ You can access a VirtuosoDevice instance via VirtuosoDownloadEngine&rsquo;s retr
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *nickname</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *nickname</code></div>
 
 		    
 			
@@ -202,7 +202,7 @@ You can access a VirtuosoDevice instance via VirtuosoDownloadEngine&rsquo;s retr
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updateNickname:(NSString *)<em>newNickname</em> onComplete:(DeviceUpdateResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updateNickname:(nonnull NSString *)<em>newNickname</em> onComplete:(nullable DeviceUpdateResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -315,7 +315,7 @@ This property is the most recent value received from the Backplane.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updateDownloadEnabled:(Boolean)<em>enabled</em> onComplete:(DeviceUpdateResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updateDownloadEnabled:(Boolean)<em>enabled</em> onComplete:(nullable DeviceUpdateResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -381,7 +381,7 @@ upgrades and reinstalls, but will not persist across device restores.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *deviceID</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *deviceID</code></div>
 
 		    
 			
@@ -425,7 +425,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *externalDeviceID</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</code></div>
 
 		    
 			
@@ -466,7 +466,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *clientVersion</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *clientVersion</code></div>
 
 		    
 			
@@ -507,7 +507,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *deviceModel</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *deviceModel</code></div>
 
 		    
 			
@@ -548,7 +548,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *deviceVersion</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *deviceVersion</code></div>
 
 		    
 			
@@ -589,7 +589,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *lastSyncDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSDate *lastSyncDate</code></div>
 
 		    
 			
@@ -630,7 +630,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *lastModifiedDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSDate *lastModifiedDate</code></div>
 
 		    
 			
@@ -671,7 +671,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *createdDate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSDate *createdDate</code></div>
 
 		    
 			
@@ -712,7 +712,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *pushToken</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *pushToken</code></div>
 
 		    
 			
@@ -794,7 +794,7 @@ value along with the Virtuoso-assigned device ID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)unregisterOnComplete:(DeviceUpdateResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)unregisterOnComplete:(nullable DeviceUpdateResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -852,7 +852,7 @@ Attempts to unregister other devices will have no effect.</p></div>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-03-30</p>
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-04-14</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

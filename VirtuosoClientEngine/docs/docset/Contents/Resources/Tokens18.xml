@@ -17,7 +17,7 @@
 			<Abstract type="html">Called when an error has been encountered during the DRM licensing process</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (void)resourceLoaderDelegate:(id&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)delegate generatedError:(NSError *)error</Declaration>
+			<Declaration>- (void)resourceLoaderDelegate:(nonnull id&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)delegate generatedError:(nonnull NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>delegate</Name>

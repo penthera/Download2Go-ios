@@ -61,16 +61,6 @@
  *
  *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
  *
- *  @param permittedManifestMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                    observed mime type of the m3u8 manifest is contained in this list, or it
- *                                    will issue an error and cancel the download. Nil means "evaluate the m3u8 manifest
- *                                    using internal defaults."
- *
- *  @param permittedSegmentMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                   observed mime type of each video segment is contained in this list, or it
- *                                   will issue an error and cancel the download. Nil means "evaluate the segment mime
- *                                   type using internal defaults."
- *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -83,23 +73,21 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new (empty) VirtuosoAsset object.
+ *  @return A new (empty) VirtuosoAsset object, or nil if an error occured.
  *
  */
-+ (VirtuosoAsset*)assetWithAssetID:(NSString*)assetID
-                       description:(NSString*)description
-                            mpdUrl:(NSString*)mpdUrl
-                    protectionType:(kVDE_AssetProtectionType)protectionType
-               maximumVideoBitrate:(long long)maximumVideoBitrate
-               maximumAudioBitrate:(long long)maximumAudioBitrate
-                       publishDate:(NSDate*)publishDate
-                        expiryDate:(NSDate*)expiryDate
-        permittedManifestMimeTypes:(NSArray*)permittedManifestMimeTypes
-         permittedSegmentMimeTypes:(NSArray*)permittedSegmentMimeTypes
-                    enableFastPlay:(Boolean)enableFastPlay
-                          userInfo:(NSDictionary*)userInfo
-                onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(AssetParsingCompletedBlock)completeBlock;
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
+                                description:(nonnull NSString*)description
+                                     mpdUrl:(nonnull NSString*)mpdUrl
+                             protectionType:(kVDE_AssetProtectionType)protectionType
+                        maximumVideoBitrate:(long long)maximumVideoBitrate
+                        maximumAudioBitrate:(long long)maximumAudioBitrate
+                                publishDate:(nullable NSDate*)publishDate
+                                 expiryDate:(nullable NSDate*)expiryDate
+                             enableFastPlay:(Boolean)enableFastPlay
+                                   userInfo:(nullable NSDictionary*)userInfo
+                         onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /*!
  *  @abstract Creates a new in-memory DASH VirtuosoAsset object.
@@ -133,16 +121,6 @@
  *  @param expiryAfterPlay Amount of time after the asset is first played that
  *                         Virtuoso will delete the asset. In seconds. <=0 means no expiry.
  *
- *  @param permittedManifestMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                    observed mime type of the m3u8 manifest is contained in this list, or it
- *                                    will issue an error and cancel the download. Nil means "evaluate the m3u8 manifest
- *                                    using internal defaults."
- *
- *  @param permittedSegmentMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                   observed mime type of each video segment is contained in this list, or it
- *                                   will issue an error and cancel the download. Nil means "evaluate the segment mime
- *                                   type using internal defaults."
- *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -155,25 +133,23 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new (empty) VirtuosoAsset object.
+ *  @return A new (empty) VirtuosoAsset object, or nil if an error occured.
  *
  */
-+ (VirtuosoAsset*)assetWithAssetID:(NSString*)assetID
-                       description:(NSString*)description
-                            mpdUrl:(NSString*)mpdUrl
-                    protectionType:(kVDE_AssetProtectionType)protectionType
-               maximumVideoBitrate:(long long)maximumVideoBitrate
-               maximumAudioBitrate:(long long)maximumAudioBitrate
-                       publishDate:(NSDate*)publishDate
-                        expiryDate:(NSDate*)expiryDate
-               expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
-                   expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
-        permittedManifestMimeTypes:(NSArray*)permittedManifestMimeTypes
-         permittedSegmentMimeTypes:(NSArray*)permittedSegmentMimeTypes
-                    enableFastPlay:(Boolean)enableFastPlay
-                          userInfo:(NSDictionary*)userInfo
-                onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(AssetParsingCompletedBlock)completeBlock;
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
+                                description:(nonnull NSString*)description
+                                     mpdUrl:(nonnull NSString*)mpdUrl
+                             protectionType:(kVDE_AssetProtectionType)protectionType
+                        maximumVideoBitrate:(long long)maximumVideoBitrate
+                        maximumAudioBitrate:(long long)maximumAudioBitrate
+                                publishDate:(nullable NSDate*)publishDate
+                                 expiryDate:(nullable NSDate*)expiryDate
+                        expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
+                            expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                             enableFastPlay:(Boolean)enableFastPlay
+                                   userInfo:(nullable NSDictionary*)userInfo
+                         onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /**---------------------------------------------------------------------------------------
  * @name Update DASH Assets
@@ -196,10 +172,10 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  */
-- (void)setMpdURL:(NSString*)mpdUrl
-    withMaximumVideoBitrate:(long long)maximumVideoBitrate
-     andMaximumAudioBitrate:(long long)maximumAudioBitrate
-            onParseComplete:(AssetParsingCompletedBlock)completeBlock;
+- (void)setMpdURL:(nonnull NSString*)mpdUrl
+withMaximumVideoBitrate:(long long)maximumVideoBitrate
+andMaximumAudioBitrate:(long long)maximumAudioBitrate
+  onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 @end
 

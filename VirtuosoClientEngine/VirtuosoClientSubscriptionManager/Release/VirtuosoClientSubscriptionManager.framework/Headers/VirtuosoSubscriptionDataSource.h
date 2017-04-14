@@ -25,9 +25,9 @@
  *            feed item.  Additional information *may* be available if it was provided to the server by the external catalog.
  */
 
-extern NSString* const SubscriptionServerRemoteUUIDKey;
-extern NSString* const SubscriptionServerCollectionUUIDKey;
-extern NSString* const SubscriptionServerAssetsKey;
+extern NSString* _Nonnull const SubscriptionServerRemoteUUIDKey;
+extern NSString* _Nonnull const SubscriptionServerCollectionUUIDKey;
+extern NSString* _Nonnull const SubscriptionServerAssetsKey;
 
 /*!
  *  @typedef kVSM_MediaTypeCode
@@ -78,21 +78,21 @@ typedef NS_ENUM(NSInteger, kVSM_MediaTypeCode)
  *  @constant Require Ads            (Optional - NSNumber)     Whether or not this asset requires ads.  This value is evaluated as a Boolean
  */
 
-extern NSString* const SubscriptionAssetDataCreatedDateKey;
-extern NSString* const SubscriptionAssetDataCollectionAssetIDKey;
-extern NSString* const SubscriptionAssetDataAssetIDKey;
-extern NSString* const SubscriptionAssetDataMediaTypeKey;
-extern NSString* const SubscriptionAssetDataTitleKey;
-extern NSString* const SubscriptionAssetDataDescriptionKey;
-extern NSString* const SubscriptionAssetDataDownloadURLKey;
-extern NSString* const SubscriptionAssetDataMaximumBitrateKey;
-extern NSString* const SubscriptionAssetDataPublishDateKey;
-extern NSString* const SubscriptionAssetDataExpiryDateKey;
-extern NSString* const SubscriptionAssetDataExpiryAfterDownloadKey;
-extern NSString* const SubscriptionAssetDataExpiryAfterPlayKey;
-extern NSString* const SubscriptionAssetDataPermittedMimeTypesKey;
-extern NSString* const SubscriptionAssetDataUserInfoKey;           
-extern NSString* const SubscriptionAssetDataRequireAds;
+extern NSString* _Nonnull const SubscriptionAssetDataCreatedDateKey;
+extern NSString* _Nonnull const SubscriptionAssetDataCollectionAssetIDKey;
+extern NSString* _Nonnull const SubscriptionAssetDataAssetIDKey;
+extern NSString* _Nonnull const SubscriptionAssetDataMediaTypeKey;
+extern NSString* _Nonnull const SubscriptionAssetDataTitleKey;
+extern NSString* _Nonnull const SubscriptionAssetDataDescriptionKey;
+extern NSString* _Nonnull const SubscriptionAssetDataDownloadURLKey;
+extern NSString* _Nonnull const SubscriptionAssetDataMaximumBitrateKey;
+extern NSString* _Nonnull const SubscriptionAssetDataPublishDateKey;
+extern NSString* _Nonnull const SubscriptionAssetDataExpiryDateKey;
+extern NSString* _Nonnull const SubscriptionAssetDataExpiryAfterDownloadKey;
+extern NSString* _Nonnull const SubscriptionAssetDataExpiryAfterPlayKey;
+extern NSString* _Nonnull const SubscriptionAssetDataPermittedMimeTypesKey;
+extern NSString* _Nonnull const SubscriptionAssetDataUserInfoKey;
+extern NSString* _Nonnull const SubscriptionAssetDataRequireAds;
 
 
 
@@ -128,7 +128,7 @@ extern NSString* const SubscriptionAssetDataRequireAds;
  *
  *  @return Returns an initialized unstarted data source
  */
-- (id)initWithSubscriptions:(NSArray*)subscriptions;
+- (nonnull id)initWithSubscriptions:(nonnull NSArray*)subscriptions;
 
 /*!
  *  @abstract Initializes a data source with individual assets that require data lookups
@@ -140,7 +140,7 @@ extern NSString* const SubscriptionAssetDataRequireAds;
  *
  *  @return Returns an initialized unstarted data source
  */
-- (id)initWithAssets:(NSArray*)assets;
+- (nonnull id)initWithAssets:(nonnull NSArray*)assets;
 
 /*!
  *  @abstract Processes a data lookup operation using the initalized subscription data
@@ -159,6 +159,6 @@ extern NSString* const SubscriptionAssetDataRequireAds;
  *          the values are NSArrays containing NSDictionaries representing asset data, with key-value data as defined in SubscriptionAssetDataAttributes.  If the 
  *          data source was initialized with assets, via the initWithAssets method, then a single NSArray is returned directly, without the top NSDictionary package.
  */
-- (NSObject*)process;
+- (nonnull NSObject*)process;
 
 @end

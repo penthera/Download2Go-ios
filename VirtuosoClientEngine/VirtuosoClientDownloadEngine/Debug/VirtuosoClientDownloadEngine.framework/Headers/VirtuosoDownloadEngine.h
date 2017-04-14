@@ -57,7 +57,7 @@
  *
  *  @return Returns the VirtuosoDownloadEngine object instance.
  */
-+ (VirtuosoDownloadEngine*)instance;
++ (nonnull VirtuosoDownloadEngine*)instance;
 
 /*!
  *  @abstract Returns the version of this build.
@@ -67,15 +67,15 @@
  *
  *  @return The compile-time configured version of this Virtuoso build
  */
-+ (NSString*)versionString;
++ (nonnull NSString*)versionString;
 
 /**---------------------------------------------------------------------------------------
- * @name Startup
+ * @name Startup and Shutdown
  *  ---------------------------------------------------------------------------------------
  */
 
 #pragma mark
-#pragma mark Startup Actions
+#pragma mark Startup and Shutdown Actions
 #pragma mark
 
 /*!
@@ -100,11 +100,31 @@
  *
  *  @return A startup code indicating the result
  */
-- (kVDE_EngineStartupCode)startupWithBackplane:(NSString*)backplaneURL
-                                          user:(NSString*)user
-                              externalDeviceID:(NSString*)externalDeviceID
-                                    privateKey:(NSString*)privateKey
-                                     publicKey:(NSString*)publicKey;
+- (kVDE_EngineStartupCode)startupWithBackplane:(nonnull NSString*)backplaneURL
+                                          user:(nonnull NSString*)user
+                              externalDeviceID:(nullable NSString*)externalDeviceID
+                                    privateKey:(nonnull NSString*)privateKey
+                                     publicKey:(nonnull NSString*)publicKey;
+
+/*!
+ *  @abstract Resets Virtuoso without unregistering the device or deleting assets.
+ *
+ *  @discussion Normally, if a user logs out of the enclosing app, you would call the device unregister
+ *              method for the user's device, which deletes all assets, removes the device from the backplane,
+ *              and resets the engine state.  If complex business logic requires that you do not do these things
+ *              when the user logs out (if you want to allow the same user to log back in without losing 
+ *              downloads, for instance), then you would use this method, rather than the device unregister method.
+ *
+ *              After this method has been called, you must call 
+ *              startupWithBackplane:user:externalDeviceID:privateKey:publicKey: again befor you call any other
+ *              Virtuoso method.  
+ *
+ *  @warning    After calling this method, except as otherwise documented, if you attempt to call other methods
+ *              before calling startupWithBackplane:user:externalDeviceID:privateKey:publicKey:, you'll get an
+ *              exception. If you catch and ignore the exceptions, Virtuoso behavior will be undefined. If you 
+ *              attempt to use the VirtuosoSubscriptionManager before starting up, its instance method will return nil.
+ */
+- (void)shutdown;
 
 /**---------------------------------------------------------------------------------------
  * @name Backplane
@@ -129,32 +149,32 @@
 /*!
  *  @abstract The URL where the Backplane lives
  */
-@property (nonatomic,readonly) NSString* backplaneURL;
+@property (nonatomic,readonly,nonnull) NSString* backplaneURL;
 
 /*!
  *  @abstract The user used to authenticate with the Backplane
  */
-@property (nonatomic,readonly) NSString* user;
+@property (nonatomic,readonly,nonnull) NSString* user;
 
 /*!
  *  @abstract The external device ID provided to Virtuoso during startup
  */
-@property (nonatomic,readonly) NSString* externalDeviceID;
+@property (nonatomic,readonly,nullable) NSString* externalDeviceID;
 
 /*!
  *  @abstract The Virtuoso-assigned unique device ID for this device
  */
-@property (nonatomic,readonly) NSString* deviceID;
+@property (nonatomic,readonly,nonnull) NSString* deviceID;
 
 /*!
  *  @abstract The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane
  */
-@property (nonatomic,readonly) NSString* secret;
+@property (nonatomic,readonly,nonnull) NSString* secret;
 
 /*!
  *  @abstract The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane
  */
-@property (nonatomic,readonly) NSString* key;
+@property (nonatomic,readonly,nonnull) NSString* key;
 
 /**---------------------------------------------------------------------------------------
  * @name Engine Status
@@ -192,7 +212,7 @@
  *  @discussion This value will automatically adjust for human-readable display, including 
  *              shifting and displaying appropriate units.
  */
-@property (nonatomic,readonly) NSString* downloadBandwidthString;
+@property (nonatomic,readonly,nonnull) NSString* downloadBandwidthString;
 
 /*!
  *  @abstract Effective download throughput in KBps
@@ -211,12 +231,12 @@
  *              Status for these background downloads will be updated when the application resumes operation
  *              in the foreground.
  */
-@property (nonatomic,readonly) NSString* currentlyDownloadingAsset;
+@property (nonatomic,readonly,nullable) NSString* currentlyDownloadingAsset;
 
 /*!
  *  @abstract The date/time of the last successful Backplane sync
  */
-@property (nonatomic,readonly) NSDate* lastBackplaneSyncTime;
+@property (nonatomic,readonly,nullable) NSDate* lastBackplaneSyncTime;
 
 /*!
  *  @abstract Whether authorization with the Backplane has timed out
@@ -233,7 +253,7 @@
  *  @discussion If your SDK license expires, then this property returns the date/time when the license
  *              will expire, otherwise it returns nil.
  */
-@property (nonatomic,readonly) NSDate* licenseExpiry;
+@property (nonatomic,readonly,nullable) NSDate* licenseExpiry;
 
 /*!
  *  @abstract Whether this device is permitted to download
@@ -248,7 +268,7 @@
  *  @abstract Returns an array of VirtuosoDevice objects associated with the registered User.  
  *            The array is current as of the last sync with the Backplane.
  */
-@property (nonatomic,readonly) NSArray* devices;
+@property (nonatomic,readonly,nonnull) NSArray* devices;
 
 /**---------------------------------------------------------------------------------------
  * @name Queue Management
@@ -268,7 +288,7 @@
  *
  *  @return An ordered array of UUID strings representing VirtuosoAsset objects enqueued for download.
  */
-- (NSArray*)assetsInQueue;
+- (nonnull NSArray*)assetsInQueue;
 
 /*!
  *  @abstract Adds an asset to the download queue.
@@ -283,7 +303,7 @@
  *  @param asset The asset to add to the download queue
  *  @param index The index in the queue to add the asset at
  */
-- (void)addToQueue:(VirtuosoAsset*)asset atIndex:(NSUInteger)index;
+- (void)addToQueue:(nonnull VirtuosoAsset*)asset atIndex:(NSUInteger)index;
 
 /*!
  *  @abstract Reorders the download queue.
@@ -298,18 +318,16 @@
  *  @param asset The asset to move in the download queue
  *  @param index The index in the queue to move the asset to
  */
-- (void)moveAsset:(VirtuosoAsset*)asset inQueueToIndex:(NSUInteger)index;
+- (void)moveAsset:(nonnull VirtuosoAsset*)asset inQueueToIndex:(NSUInteger)index;
 
 /*!
  *  @abstract Remove the given asset from the download queue.
  *
- *  @discussion This method also deletes any temporary files on disk
- *               
  *  @param asset The asset to remove from the download queue
  *
  *  @return The location the asset was removed from, if successful, or NSNotFound if the asset was not in the queue.
  */
-- (NSUInteger)removeFromQueue:(VirtuosoAsset*)asset;
+- (NSUInteger)removeFromQueue:(nonnull VirtuosoAsset*)asset;
 
 /*!
  *  @abstract Retrieves an asset in the download queue by remote URL.
@@ -321,7 +339,7 @@
  *
  *  @return Returns the VirtuosoAsset object on success or nil on failure.
  */
-- (VirtuosoAsset*)assetInQueueWithURL:(NSString*)url;
+- (nullable VirtuosoAsset*)assetInQueueWithURL:(nonnull NSString*)url;
 
 /*!
  *  @abstract Retrieves an asset in the download queue by UUID.
@@ -330,7 +348,7 @@
  *
  *  @return Returns the VirtuosoAsset object on success or nil on failure.
  */
-- (VirtuosoAsset*)assetInQueueWithUUID:(NSString*)uuid;
+- (nullable VirtuosoAsset*)assetInQueueWithUUID:(nonnull NSString*)uuid;
 
 /*!
  *  @abstract Removes all items from the download queue.
@@ -366,6 +384,11 @@
  *  @abstract Whether queue state permits downloading
  */
 @property (nonatomic,readonly) Boolean queueStatusOK;
+
+/*!
+ *  @abstract Whether account-level business rules permit downloading
+ */
+@property (nonatomic,readonly) Boolean accountStatusOK;
 
 /*!
  *  @abstract Whether the Virtuoso SDK license is currently valid

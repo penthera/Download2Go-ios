@@ -17,7 +17,7 @@
 			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -89,7 +89,7 @@
 			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
 			
 			
 			<Anchor>//api/name/errorHandler</Anchor>
@@ -101,7 +101,7 @@
 			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
 			
 			
 			<Anchor>//api/name/errorHandler</Anchor>
@@ -113,7 +113,7 @@
 			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
 			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
 			
 			
 			<Anchor>//api/name/errorHandler</Anchor>

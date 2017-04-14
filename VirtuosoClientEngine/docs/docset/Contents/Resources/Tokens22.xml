@@ -17,7 +17,7 @@
 			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
 			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
 			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
 			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -53,7 +53,7 @@
 			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
 			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -65,7 +65,7 @@
 			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
 			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -77,7 +77,7 @@
 			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
 			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>

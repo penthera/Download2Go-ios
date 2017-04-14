@@ -55,7 +55,7 @@
  *
  *  @return A NSDictionary object containing all required keys, as defined in the data source protocol
  */
-- (NSDictionary*)lookupMetadataForAssetID:(NSString*)assetID usingKnownData:(NSDictionary*)knownData;
+- (nonnull NSDictionary*)lookupMetadataForAssetID:(nonnull NSString*)assetID usingKnownData:(nonnull NSDictionary*)knownData;
 
 /*!
  *  @abstract Indicates that an asset was succesfully processed
@@ -67,7 +67,7 @@
  *  @param metadata A NSDictionary object containing, at a minimum, metadata values for the keys defined in the data source protocol.  Any additional data provided by
  *                  the Backplane or the External Catalog during a metadata lookup may also be defined, and Callers can access custom catalog data in this manner.
  */
-- (void)didProcessAssetWithMetadata:(NSDictionary*)metadata;
+- (void)didProcessAssetWithMetadata:(nonnull NSDictionary*)metadata;
 
 /*!
  *  @abstract Indicates a new VirtuosoAsset item has been created
@@ -79,6 +79,6 @@
  *
  *  @param asset A VirtuosoAsset item that has just been created by the Subscription Manager
  */
-- (void)willAddAsset:(VirtuosoAsset*)asset;
+- (void)willAddAsset:(nonnull VirtuosoAsset*)asset;
 
 @end

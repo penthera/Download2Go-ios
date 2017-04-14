@@ -17,7 +17,7 @@
 			<Abstract type="html">This device&apos;s nickname. Same as the device ID, by default.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *nickname</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *nickname</Declaration>
 			
 			
 			<Anchor>//api/name/nickname</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">This device&apos;s nickname. Same as the device ID, by default.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *nickname</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *nickname</Declaration>
 			
 			
 			<Anchor>//api/name/nickname</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">This device&apos;s nickname. Same as the device ID, by default.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *nickname</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *nickname</Declaration>
 			
 			
 			<Anchor>//api/name/nickname</Anchor>
@@ -53,7 +53,7 @@
 			<Abstract type="html">Sets a new nickname for this device.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>- (void)updateNickname:(NSString *)newNickname onComplete:(DeviceUpdateResultBlock)onComplete</Declaration>
+			<Declaration>- (void)updateNickname:(nonnull NSString *)newNickname onComplete:(nullable DeviceUpdateResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>newNickname</Name>
@@ -109,7 +109,7 @@
 			<Abstract type="html">Enables (or disables) downloads for this device</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>- (void)updateDownloadEnabled:(Boolean)enabled onComplete:(DeviceUpdateResultBlock)onComplete</Declaration>
+			<Declaration>- (void)updateDownloadEnabled:(Boolean)enabled onComplete:(nullable DeviceUpdateResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>enabled</Name>
@@ -131,7 +131,7 @@ This UUID is not tied to any iOS-defined UUID.  It will persist across applicati
 upgrades and reinstalls, but will not persist across device restores.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
 			
 			
 			<Anchor>//api/name/deviceID</Anchor>
@@ -145,7 +145,7 @@ This UUID is not tied to any iOS-defined UUID.  It will persist across applicati
 upgrades and reinstalls, but will not persist across device restores.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
 			
 			
 			<Anchor>//api/name/deviceID</Anchor>
@@ -159,7 +159,7 @@ This UUID is not tied to any iOS-defined UUID.  It will persist across applicati
 upgrades and reinstalls, but will not persist across device restores.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
 			
 			
 			<Anchor>//api/name/deviceID</Anchor>
@@ -174,7 +174,7 @@ Virtuoso reports this value to the Backplane, which maintains this
 value along with the Virtuoso-assigned device ID.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *externalDeviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
 			
 			
 			<Anchor>//api/name/externalDeviceID</Anchor>
@@ -189,7 +189,7 @@ Virtuoso reports this value to the Backplane, which maintains this
 value along with the Virtuoso-assigned device ID.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *externalDeviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
 			
 			
 			<Anchor>//api/name/externalDeviceID</Anchor>
@@ -204,7 +204,7 @@ Virtuoso reports this value to the Backplane, which maintains this
 value along with the Virtuoso-assigned device ID.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *externalDeviceID</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
 			
 			
 			<Anchor>//api/name/externalDeviceID</Anchor>
@@ -216,7 +216,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The Virtuoso version reported by the CFBundleVersion info.plist entry.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *clientVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *clientVersion</Declaration>
 			
 			
 			<Anchor>//api/name/clientVersion</Anchor>
@@ -228,7 +228,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The Virtuoso version reported by the CFBundleVersion info.plist entry.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *clientVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *clientVersion</Declaration>
 			
 			
 			<Anchor>//api/name/clientVersion</Anchor>
@@ -240,7 +240,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The Virtuoso version reported by the CFBundleVersion info.plist entry.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *clientVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *clientVersion</Declaration>
 			
 			
 			<Anchor>//api/name/clientVersion</Anchor>
@@ -252,7 +252,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The device model reported by the operating system (e.g. &quot;iPhone5&quot;)</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceModel</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceModel</Declaration>
 			
 			
 			<Anchor>//api/name/deviceModel</Anchor>
@@ -264,7 +264,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The device model reported by the operating system (e.g. &quot;iPhone5&quot;)</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceModel</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceModel</Declaration>
 			
 			
 			<Anchor>//api/name/deviceModel</Anchor>
@@ -276,7 +276,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The device model reported by the operating system (e.g. &quot;iPhone5&quot;)</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceModel</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceModel</Declaration>
 			
 			
 			<Anchor>//api/name/deviceModel</Anchor>
@@ -288,7 +288,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The OS version reported by the operating system (e.g. &quot;6.1&quot;)</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceVersion</Declaration>
 			
 			
 			<Anchor>//api/name/deviceVersion</Anchor>
@@ -300,7 +300,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The OS version reported by the operating system (e.g. &quot;6.1&quot;)</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceVersion</Declaration>
 			
 			
 			<Anchor>//api/name/deviceVersion</Anchor>
@@ -312,7 +312,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The OS version reported by the operating system (e.g. &quot;6.1&quot;)</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *deviceVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceVersion</Declaration>
 			
 			
 			<Anchor>//api/name/deviceVersion</Anchor>
@@ -324,7 +324,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When this device last synced with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastSyncDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastSyncDate</Declaration>
 			
 			
 			<Anchor>//api/name/lastSyncDate</Anchor>
@@ -336,7 +336,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When this device last synced with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastSyncDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastSyncDate</Declaration>
 			
 			
 			<Anchor>//api/name/lastSyncDate</Anchor>
@@ -348,7 +348,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When this device last synced with the Backplane</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastSyncDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastSyncDate</Declaration>
 			
 			
 			<Anchor>//api/name/lastSyncDate</Anchor>
@@ -360,7 +360,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When this device&apos;s info was last changed</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastModifiedDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastModifiedDate</Declaration>
 			
 			
 			<Anchor>//api/name/lastModifiedDate</Anchor>
@@ -372,7 +372,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When this device&apos;s info was last changed</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastModifiedDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastModifiedDate</Declaration>
 			
 			
 			<Anchor>//api/name/lastModifiedDate</Anchor>
@@ -384,7 +384,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When this device&apos;s info was last changed</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *lastModifiedDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastModifiedDate</Declaration>
 			
 			
 			<Anchor>//api/name/lastModifiedDate</Anchor>
@@ -396,7 +396,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When the Backplane created a record for this device</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *createdDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *createdDate</Declaration>
 			
 			
 			<Anchor>//api/name/createdDate</Anchor>
@@ -408,7 +408,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When the Backplane created a record for this device</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *createdDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *createdDate</Declaration>
 			
 			
 			<Anchor>//api/name/createdDate</Anchor>
@@ -420,7 +420,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">When the Backplane created a record for this device</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *createdDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *createdDate</Declaration>
 			
 			
 			<Anchor>//api/name/createdDate</Anchor>
@@ -432,7 +432,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The current push token associated with this device</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *pushToken</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *pushToken</Declaration>
 			
 			
 			<Anchor>//api/name/pushToken</Anchor>
@@ -444,7 +444,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The current push token associated with this device</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *pushToken</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *pushToken</Declaration>
 			
 			
 			<Anchor>//api/name/pushToken</Anchor>
@@ -456,7 +456,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">The current push token associated with this device</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *pushToken</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *pushToken</Declaration>
 			
 			
 			<Anchor>//api/name/pushToken</Anchor>
@@ -504,7 +504,7 @@ value along with the Virtuoso-assigned device ID.</Abstract>
 			<Abstract type="html">Unregisters this device from the Backplane.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>- (void)unregisterOnComplete:(DeviceUpdateResultBlock)onComplete</Declaration>
+			<Declaration>- (void)unregisterOnComplete:(nullable DeviceUpdateResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>onComplete</Name>

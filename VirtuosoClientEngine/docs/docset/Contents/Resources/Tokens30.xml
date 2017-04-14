@@ -110,6 +110,16 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
             <NodeRef refid="30"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PermissionsError</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to obtain permission to download the asset.</Abstract>
+            <Declaration>kVDE_PermissionsError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

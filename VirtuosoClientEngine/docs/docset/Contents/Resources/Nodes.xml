@@ -76,6 +76,7 @@
 						<NodeRef refid="44"/>
 						<NodeRef refid="45"/>
 						<NodeRef refid="46"/>
+						<NodeRef refid="47"/>
 						
 					</Subnodes>
 				</Node>
@@ -85,7 +86,6 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="47"/>
                         <NodeRef refid="48"/>
                         <NodeRef refid="49"/>
                         <NodeRef refid="50"/>
@@ -93,6 +93,7 @@
                         <NodeRef refid="52"/>
                         <NodeRef refid="53"/>
                         <NodeRef refid="54"/>
+                        <NodeRef refid="55"/>
                         
                     </Subnodes>
                 </Node>
@@ -870,82 +871,87 @@
             
         </Node>
 		<Node id="39" type="file" documentType="reference">
+            <Name>kVF_DownloadDataType</Name>
+            <Path>Constants/kVF_DownloadDataType.html</Path>
+            
+        </Node>
+		<Node id="40" type="file" documentType="reference">
             <Name>kVF_SegmentType</Name>
             <Path>Constants/kVF_SegmentType.html</Path>
             
         </Node>
-		<Node id="40" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>kVLM_DRMType</Name>
             <Path>Constants/kVLM_DRMType.html</Path>
             
         </Node>
-		<Node id="41" type="file" documentType="reference">
+		<Node id="42" type="file" documentType="reference">
             <Name>kVL_BearerType</Name>
             <Path>Constants/kVL_BearerType.html</Path>
             
         </Node>
-		<Node id="42" type="file" documentType="reference">
+		<Node id="43" type="file" documentType="reference">
             <Name>kVL_LogEvent</Name>
             <Path>Constants/kVL_LogEvent.html</Path>
             
         </Node>
-		<Node id="43" type="file" documentType="reference">
+		<Node id="44" type="file" documentType="reference">
             <Name>kVL_LoggingLevel</Name>
             <Path>Constants/kVL_LoggingLevel.html</Path>
             
         </Node>
-		<Node id="44" type="file" documentType="reference">
+		<Node id="45" type="file" documentType="reference">
             <Name>kVSM_ManagerFailureCode</Name>
             <Path>Constants/kVSM_ManagerFailureCode.html</Path>
             
         </Node>
-		<Node id="45" type="file" documentType="reference">
+		<Node id="46" type="file" documentType="reference">
             <Name>kVSM_MediaTypeCode</Name>
             <Path>Constants/kVSM_MediaTypeCode.html</Path>
             
         </Node>
-		<Node id="46" type="file" documentType="reference">
+		<Node id="47" type="file" documentType="reference">
             <Name>kVSM_Status</Name>
             <Path>Constants/kVSM_Status.html</Path>
             
         </Node>
 		
-        <Node id="47" type="file" documentType="reference">
+        <Node id="48" type="file" documentType="reference">
             <Name>AssetDeletionCompleteBlock</Name>
             <Path>Blocks/AssetDeletionCompleteBlock.html</Path>
             
         </Node>
-        <Node id="48" type="file" documentType="reference">
+        <Node id="49" type="file" documentType="reference">
             <Name>AssetParsingCompletedBlock</Name>
             <Path>Blocks/AssetParsingCompletedBlock.html</Path>
             
         </Node>
-        <Node id="49" type="file" documentType="reference">
+        <Node id="50" type="file" documentType="reference">
             <Name>AssetReadyForDownloadBlock</Name>
             <Path>Blocks/AssetReadyForDownloadBlock.html</Path>
             
         </Node>
-        <Node id="50" type="file" documentType="reference">
+        <Node id="51" type="file" documentType="reference">
             <Name>BasicCompletionBlock</Name>
             <Path>Blocks/BasicCompletionBlock.html</Path>
             
         </Node>
-        <Node id="51" type="file" documentType="reference">
+        <Node id="52" type="file" documentType="reference">
             <Name>DeviceUpdateResultBlock</Name>
             <Path>Blocks/DeviceUpdateResultBlock.html</Path>
             
         </Node>
-        <Node id="52" type="file" documentType="reference">
+        <Node id="53" type="file" documentType="reference">
             <Name>SubscriptionListResultBlock</Name>
             <Path>Blocks/SubscriptionListResultBlock.html</Path>
             
         </Node>
-        <Node id="53" type="file" documentType="reference">
+        <Node id="54" type="file" documentType="reference">
             <Name>SubscriptionResultBlock</Name>
             <Path>Blocks/SubscriptionResultBlock.html</Path>
             
         </Node>
-        <Node id="54" type="file" documentType="reference">
+        <Node id="55" type="file" documentType="reference">
             <Name>SyncCompleteBlock</Name>
             <Path>Blocks/SyncCompleteBlock.html</Path>
             

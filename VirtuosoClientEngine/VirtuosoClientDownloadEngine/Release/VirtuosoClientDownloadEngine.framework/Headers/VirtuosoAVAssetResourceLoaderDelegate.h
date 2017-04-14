@@ -30,7 +30,7 @@
  *  @param delegate The VirtuosoAVAssetResourceLoaderDelegate that encountered the error
  *  @param error The error describing the issue.
  */
-- (void)resourceLoaderDelegate:(id<VirtuosoAVAssetResourceLoaderDelegate>)delegate generatedError:(NSError*)error;
+- (void)resourceLoaderDelegate:(nonnull id<VirtuosoAVAssetResourceLoaderDelegate>)delegate generatedError:(nonnull NSError*)error;
 
 @end
 
@@ -47,7 +47,7 @@
 /*!
  *  @abstract The VirtuosoAsset that is going to be played
  */
-@property (nonatomic,strong) VirtuosoAsset* asset;
+@property (nonatomic,strong,nullable) VirtuosoAsset* asset;
 
 /*!
  *  @abstract Whether to load a persistent offline FairPlay license
@@ -57,6 +57,6 @@
 /*!
  *  @abstract An error handler to receive errors encountered while generating FairPlay licenses
  */
-@property (nonatomic,weak) id<VirtuosoAVAssetResourceLoaderDelegateErrorHandler> errorHandler;
+@property (nonatomic,weak,nullable) id<VirtuosoAVAssetResourceLoaderDelegateErrorHandler> errorHandler;
 
 @end

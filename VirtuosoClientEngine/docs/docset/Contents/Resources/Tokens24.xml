@@ -22,7 +22,7 @@
 			<Abstract type="html">Initializes a data source with subscriptions that require data lookups</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithSubscriptions:(NSArray *)subscriptions</Declaration>
+			<Declaration>- (nonnull id)initWithSubscriptions:(nonnull NSArray *)subscriptions</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>subscriptions</Name>
@@ -39,7 +39,7 @@
 			<Abstract type="html">Initializes a data source with individual assets that require data lookups</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithAssets:(NSArray *)assets</Declaration>
+			<Declaration>- (nonnull id)initWithAssets:(nonnull NSArray *)assets</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>assets</Name>
@@ -56,7 +56,7 @@
 			<Abstract type="html">Processes a data lookup operation using the initalized subscription data</Abstract>
 			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
 			
-			<Declaration>- (NSObject *)process</Declaration>
+			<Declaration>- (nonnull NSObject *)process</Declaration>
 			
 			<ReturnValue><Abstract type="html">If the data source was initialized with subscriptions, via the initWithSubscriptions method, then a NSDictionary where the keys are subscription IDs and
 the values are NSArrays containing NSDictionaries representing asset data, with key-value data as defined in SubscriptionAssetDataAttributes.  If the

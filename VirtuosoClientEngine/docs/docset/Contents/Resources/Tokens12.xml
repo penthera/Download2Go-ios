@@ -18,7 +18,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The local or remote location of the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -30,7 +30,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The local or remote location of the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -42,7 +42,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The local or remote location of the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -54,7 +54,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -66,7 +66,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -78,7 +78,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -90,7 +90,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The internal player view</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) VirtuosoPlayerView *playerView</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) VirtuosoPlayerView *playerView</Declaration>
 			
 			
 			<Anchor>//api/name/playerView</Anchor>
@@ -102,7 +102,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The internal player view</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) VirtuosoPlayerView *playerView</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) VirtuosoPlayerView *playerView</Declaration>
 			
 			
 			<Anchor>//api/name/playerView</Anchor>
@@ -114,7 +114,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The internal player view</Abstract>
 			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) VirtuosoPlayerView *playerView</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) VirtuosoPlayerView *playerView</Declaration>
 			
 			
 			<Anchor>//api/name/playerView</Anchor>

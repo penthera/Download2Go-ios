@@ -61,16 +61,6 @@
  *
  *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
  *
- *  @param permittedManifestMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                    observed mime type of the m3u8 manifest is contained in this list, or it
- *                                    will issue an error and cancel the download. Nil means "evaluate the m3u8 manifest
- *                                    using internal defaults."
- *
- *  @param permittedSegmentMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                   observed mime type of each video segment is contained in this list, or it
- *                                   will issue an error and cancel the download. Nil means "evaluate the segment mime
- *                                   type using internal defaults."
- *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -83,23 +73,21 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new (empty) VirtuosoAsset object.
+ *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
  *
  */
-+ (VirtuosoAsset*)assetWithAssetID:(NSString*)assetID
-                       description:(NSString*)description
-                       manifestUrl:(NSString*)manifestUrl
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
+                       description:(nonnull NSString*)description
+                       manifestUrl:(nonnull NSString*)manifestUrl
                     protectionType:(kVDE_AssetProtectionType)protectionType
              includeEncryptionKeys:(Boolean)includeEncryption
                     maximumBitrate:(long long)maximumBitrate
-                       publishDate:(NSDate*)publishDate
-                        expiryDate:(NSDate*)expiryDate
-        permittedManifestMimeTypes:(NSArray*)permittedManifestMimeTypes
-         permittedSegmentMimeTypes:(NSArray*)permittedSegmentMimeTypes
+                       publishDate:(nullable NSDate*)publishDate
+                        expiryDate:(nullable NSDate*)expiryDate
                     enableFastPlay:(Boolean)enableFastPlay
-                          userInfo:(NSDictionary*)userInfo
-                onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(AssetParsingCompletedBlock)completeBlock;
+                          userInfo:(nullable NSDictionary*)userInfo
+                onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                   onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /*!
  *  @abstract Creates a new in-memory HLS VirtuosoAsset object.
@@ -133,16 +121,6 @@
  *  @param expiryAfterPlay Amount of time after the asset is first played that
  *                         Virtuoso will delete the asset. In seconds. <=0 means no expiry.
  *
- *  @param permittedManifestMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                    observed mime type of the m3u8 manifest is contained in this list, or it
- *                                    will issue an error and cancel the download. Nil means "evaluate the m3u8 manifest
- *                                    using internal defaults."
- *
- *  @param permittedSegmentMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                   observed mime type of each video segment is contained in this list, or it
- *                                   will issue an error and cancel the download. Nil means "evaluate the segment mime
- *                                   type using internal defaults."
- *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -155,25 +133,23 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new (empty) VirtuosoAsset object.
+ *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
  *
  */
-+ (VirtuosoAsset*)assetWithAssetID:(NSString*)assetID
-                       description:(NSString*)description
-                       manifestUrl:(NSString*)manifestUrl
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
+                       description:(nonnull NSString*)description
+                       manifestUrl:(nonnull NSString*)manifestUrl
                     protectionType:(kVDE_AssetProtectionType)protectionType
              includeEncryptionKeys:(Boolean)includeEncryption
                     maximumBitrate:(long long)maximumBitrate
-                       publishDate:(NSDate*)publishDate
-                        expiryDate:(NSDate*)expiryDate
+                       publishDate:(nullable NSDate*)publishDate
+                        expiryDate:(nullable NSDate*)expiryDate
                expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
                    expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
-        permittedManifestMimeTypes:(NSArray*)permittedManifestMimeTypes
-         permittedSegmentMimeTypes:(NSArray*)permittedSegmentMimeTypes
                     enableFastPlay:(Boolean)enableFastPlay
-                          userInfo:(NSDictionary*)userInfo
-                onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(AssetParsingCompletedBlock)completeBlock;
+                          userInfo:(nullable NSDictionary*)userInfo
+                onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                   onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /**---------------------------------------------------------------------------------------
  * @name Update HLS Assets
@@ -196,10 +172,10 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  */
-- (void)setManifestURL:(NSString*)manifestUrl
+- (void)setManifestURL:(nonnull NSString*)manifestUrl
  includeEncryptionKeys:(Boolean)includeEncryption
     withMaximumBitrate:(long long)maximumBitrate
-       onParseComplete:(AssetParsingCompletedBlock)completeBlock;
+       onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /**---------------------------------------------------------------------------------------
  * @name HLS Playback
@@ -223,7 +199,7 @@
  *
  *  @return The local file path for the HLS manifest of the given type and subtype
  */
-- (NSString*)hlsManifestLocalPathForType:(kVDM_ManifestType)type forSubtype:(NSString*)subtype;
+- (nullable NSString*)hlsManifestLocalPathForType:(kVDM_ManifestType)type forSubtype:(nullable NSString*)subtype;
 
 /**---------------------------------------------------------------------------------------
  * @name HLS Properties
@@ -233,7 +209,7 @@
 /*!
  *  @abstract The local file path for the saved FastPlay manifest file
  */
-- (NSString*)hlsManifestFastPlayPath;
+- (nullable NSString*)hlsManifestFastPlayPath;
 
 @end
 

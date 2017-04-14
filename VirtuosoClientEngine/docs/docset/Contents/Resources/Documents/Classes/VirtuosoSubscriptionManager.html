@@ -171,7 +171,7 @@ module.</p></div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (VirtuosoSubscriptionManager *)instance</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoSubscriptionManager *)instance</code></div>
 
 		    
 			
@@ -236,7 +236,7 @@ while the device is offline, it will begin in the &lsquo;offline&rsquo; state un
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)syncSubscriptionsWithBackplaneNowOnComplete:(SyncCompleteBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)syncSubscriptionsWithBackplaneNowOnComplete:(nullable SyncCompleteBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -305,7 +305,7 @@ can be used to increase the sync frequency, as required by the Caller.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)syncSubscriptionsWithBackplaneNowForDataSince:(NSDate *)<em>since</em> returningOnlySubscribedFeeds:(Boolean)<em>subscribed</em> onComplete:(SyncCompleteBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)syncSubscriptionsWithBackplaneNowForDataSince:(nullable NSDate *)<em>since</em> returningOnlySubscribedFeeds:(Boolean)<em>subscribed</em> onComplete:(nullable SyncCompleteBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -388,7 +388,7 @@ may be returned and reported in the processing results, but these outdated items
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *lastSubscriptionSyncTime</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</code></div>
 
 		    
 			
@@ -429,7 +429,7 @@ may be returned and reported in the processing results, but these outdated items
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)unregisterSubscriptionsOnComplete:(SubscriptionResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)unregisterSubscriptionsOnComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -490,7 +490,7 @@ may be returned and reported in the processing results, but these outdated items
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)registerDataSource:(Class&lt;VirtuosoSubscriptionDataSource&gt;)<em>dataSourceClass</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)registerDataSource:(nonnull Class&lt;VirtuosoSubscriptionDataSource&gt;)<em>dataSourceClass</em></code></div>
 
 		    
 			
@@ -598,7 +598,7 @@ Calling this method allows the Caller to specify an alternate custom class for t
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)itemsInTrackingFeed:(NSString *)<em>feedAssetID</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)itemsInTrackingFeed:(nonnull NSString *)<em>feedAssetID</em></code></div>
 
 		    
 			
@@ -615,6 +615,11 @@ Calling this method allows the Caller to specify an alternate custom class for t
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A list of items in the subscription feed</p>
+			</div>
 			
 
 			
@@ -651,7 +656,7 @@ Calling this method allows the Caller to specify an alternate custom class for t
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)includeItem:(VirtuosoAsset *)<em>item</em> inTrackingFeed:(NSString *)<em>feedAssetID</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)includeItem:(nonnull VirtuosoAsset *)<em>item</em> inTrackingFeed:(nonnull NSString *)<em>feedAssetID</em></code></div>
 
 		    
 			
@@ -718,7 +723,7 @@ items may be deleted, as with standard processing.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)registerForSubscription:(NSString *)<em>feedAssetID</em> onComplete:(SubscriptionResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)registerForSubscription:(nonnull NSString *)<em>feedAssetID</em> onComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -786,7 +791,7 @@ web portal or via the Backplane APIs.  See Backplane documentation for details.<
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)registerForSubscription:(NSString *)<em>feedAssetID</em> withMaximumItems:(int)<em>maximumSubscriptionItems</em> andAutodeleteOldItems:(Boolean)<em>autodelete</em> maxBitrate:(int)<em>maxBitrate</em> onComplete:(SubscriptionResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)registerForSubscription:(nonnull NSString *)<em>feedAssetID</em> withMaximumItems:(int)<em>maximumSubscriptionItems</em> andAutodeleteOldItems:(Boolean)<em>autodelete</em> maxBitrate:(int)<em>maxBitrate</em> onComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -871,7 +876,7 @@ number of items remains on disk at any one time.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)updateSubscription:(NSString *)<em>feedAssetID</em> withMaximumItems:(int)<em>maximumSubscriptionItems</em> andAutodeleteOldItems:(Boolean)<em>autodelete</em> maxBitrate:(int)<em>maxBitrate</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)updateSubscription:(nonnull NSString *)<em>feedAssetID</em> withMaximumItems:(int)<em>maximumSubscriptionItems</em> andAutodeleteOldItems:(Boolean)<em>autodelete</em> maxBitrate:(int)<em>maxBitrate</em></code></div>
 
 		    
 			
@@ -947,7 +952,7 @@ an unsubscribe and resubscribe.  If a subscription does not exist for the provid
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)unregisterForSubscription:(NSString *)<em>feedAssetID</em> onComplete:(SubscriptionResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)unregisterForSubscription:(nonnull NSString *)<em>feedAssetID</em> onComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -1013,7 +1018,7 @@ identifier that the Caller must provide.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)subscriptionsOnComplete:(SubscriptionListResultBlock)<em>onComplete</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)subscriptionsOnComplete:(nullable SubscriptionListResultBlock)<em>onComplete</em></code></div>
 
 		    
 			
@@ -1222,7 +1227,7 @@ override this default and the feed-specific value by providing a max bitrate val
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-03-30</p>
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-04-14</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

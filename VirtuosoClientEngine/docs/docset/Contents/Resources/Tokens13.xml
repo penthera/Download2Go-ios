@@ -17,7 +17,7 @@
 			<Abstract type="html">The singleton instance access method</Abstract>
 			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoSecureClock *)instance</Declaration>
+			<Declaration>+ (nonnull VirtuosoSecureClock *)instance</Declaration>
 			
 			<ReturnValue><Abstract type="html">Returns the VirtuosoSecureClock object instance.</Abstract></ReturnValue>
 			<Anchor>//api/name/instance</Anchor>
@@ -42,7 +42,7 @@ automatically at opportune times and you should not normally need to call it man
 			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
 			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
 			
 			
 			<Anchor>//api/name/secureDate</Anchor>
@@ -54,7 +54,7 @@ automatically at opportune times and you should not normally need to call it man
 			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
 			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
 			
 			
 			<Anchor>//api/name/secureDate</Anchor>
@@ -66,7 +66,7 @@ automatically at opportune times and you should not normally need to call it man
 			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
 			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
 			
 			
 			<Anchor>//api/name/secureDate</Anchor>
@@ -79,7 +79,7 @@ automatically at opportune times and you should not normally need to call it man
 system clock time if a secure date cannot be determined.</Abstract>
 			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
 			
 			
 			<Anchor>//api/name/date</Anchor>
@@ -92,7 +92,7 @@ system clock time if a secure date cannot be determined.</Abstract>
 system clock time if a secure date cannot be determined.</Abstract>
 			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
 			
 			
 			<Anchor>//api/name/date</Anchor>
@@ -105,7 +105,7 @@ system clock time if a secure date cannot be determined.</Abstract>
 system clock time if a secure date cannot be determined.</Abstract>
 			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDate *date</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
 			
 			
 			<Anchor>//api/name/date</Anchor>

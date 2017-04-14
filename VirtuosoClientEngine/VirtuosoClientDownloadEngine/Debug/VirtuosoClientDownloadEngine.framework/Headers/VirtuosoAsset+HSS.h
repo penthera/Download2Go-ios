@@ -48,7 +48,7 @@
  *
  *  @param maximumVideoBitrate For manifests containing multiple profiles, Virtuoso will select the highest bitrate
  *                             profile whose bitrate doesn't exceed this value. A value of 1 means "use the lowest
- *                             bitrate." If there's no profile of lower bitrate than maximumBitrate, Virtuoso will 
+ *                             bitrate." If there's no profile of lower bitrate than maximumBitrate, Virtuoso will
  *                             select the lowest bitrate profile. A value of INT_MAX means "use the highest bitrate."
  *
  *  @param maximumAudioBitrate Same as maximumVideoBitrate, but for the audio portion of the stream.
@@ -56,16 +56,6 @@
  *  @param publishDate Virtuoso will not provide API access to the asset until this date. Nil means "now."
  *
  *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
- *
- *  @param permittedManifestMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                    observed mime type of the m3u8 manifest is contained in this list, or it
- *                                    will issue an error and cancel the download. Nil means "evaluate the m3u8 manifest
- *                                    using internal defaults."
- *
- *  @param permittedSegmentMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                   observed mime type of each video segment is contained in this list, or it
- *                                   will issue an error and cancel the download. Nil means "evaluate the segment mime
- *                                   type using internal defaults."
  *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
@@ -79,21 +69,19 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new (empty) VirtuosoAsset object.
+ *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
  */
-+ (VirtuosoAsset*)assetWithAssetID:(NSString*)assetID
-                       description:(NSString*)description
-                       manifestUrl:(NSString*)manifestUrl
-               maximumVideoBitrate:(long long)maximumVideoBitrate
-               maximumAudioBitrate:(long long)maximumAudioBitrate
-                       publishDate:(NSDate*)publishDate
-                        expiryDate:(NSDate*)expiryDate
-        permittedManifestMimeTypes:(NSArray*)permittedManifestMimeTypes
-         permittedSegmentMimeTypes:(NSArray*)permittedSegmentMimeTypes
-                    enableFastPlay:(Boolean)enableFastPlay
-                          userInfo:(NSDictionary*)userInfo
-                onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(AssetParsingCompletedBlock)completeBlock;
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
+                                description:(nonnull NSString*)description
+                                manifestUrl:(nonnull NSString*)manifestUrl
+                        maximumVideoBitrate:(long long)maximumVideoBitrate
+                        maximumAudioBitrate:(long long)maximumAudioBitrate
+                                publishDate:(nullable NSDate*)publishDate
+                                 expiryDate:(nullable NSDate*)expiryDate
+                             enableFastPlay:(Boolean)enableFastPlay
+                                   userInfo:(nullable NSDictionary*)userInfo
+                         onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /*!
  *  @abstract Creates a new empty HSS VirtuosoAsset object, identified by the provided manifest URL.
@@ -107,8 +95,8 @@
  *  @param manifestUrl Where the manifest lives on the Internet.
  *
  *  @param maximumVideoBitrate For manifests containing multiple profiles, Virtuoso will select the highest bitrate
- *                             profile whose bitrate doesn't exceed this value. A value of 1 means "use the lowest 
- *                             bitrate." If there's no profile of lower bitrate than maximumBitrate, Virtuoso will 
+ *                             profile whose bitrate doesn't exceed this value. A value of 1 means "use the lowest
+ *                             bitrate." If there's no profile of lower bitrate than maximumBitrate, Virtuoso will
  *                             select the lowest bitrate profile. A value of INT_MAX means "use the highest bitrate."
  *
  *  @param maximumAudioBitrate Same as maximumVideoBitrate, but for the audio portion of the stream.
@@ -123,16 +111,6 @@
  *  @param expiryAfterPlay Amount of time after the asset is first played that
  *                         Virtuoso will delete the asset. In seconds. <=0 means no expiry.
  *
- *  @param permittedManifestMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                    observed mime type of the m3u8 manifest is contained in this list, or it
- *                                    will issue an error and cancel the download. Nil means "evaluate the m3u8 manifest
- *                                    using internal defaults."
- *
- *  @param permittedSegmentMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                                   observed mime type of each video segment is contained in this list, or it
- *                                   will issue an error and cancel the download. Nil means "evaluate the segment mime
- *                                   type using internal defaults."
- *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -145,24 +123,22 @@
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new (empty) VirtuosoAsset object.
+ *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
  *
  */
-+ (VirtuosoAsset*)assetWithAssetID:(NSString*)assetID
-                       description:(NSString*)description
-                       manifestUrl:(NSString*)manifestUrl
-               maximumVideoBitrate:(long long)maximumVideoBitrate
-               maximumAudioBitrate:(long long)maximumAudioBitrate
-                       publishDate:(NSDate*)publishDate
-                        expiryDate:(NSDate*)expiryDate
-               expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
-                   expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
-        permittedManifestMimeTypes:(NSArray*)permittedManifestMimeTypes
-         permittedSegmentMimeTypes:(NSArray*)permittedSegmentMimeTypes
-                    enableFastPlay:(Boolean)enableFastPlay
-                          userInfo:(NSDictionary*)userInfo
-                onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(AssetParsingCompletedBlock)completeBlock;
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
+                                description:(nonnull NSString*)description
+                                manifestUrl:(nonnull NSString*)manifestUrl
+                        maximumVideoBitrate:(long long)maximumVideoBitrate
+                        maximumAudioBitrate:(long long)maximumAudioBitrate
+                                publishDate:(nullable NSDate*)publishDate
+                                 expiryDate:(nullable NSDate*)expiryDate
+                        expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
+                            expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                             enableFastPlay:(Boolean)enableFastPlay
+                                   userInfo:(nullable NSDictionary*)userInfo
+                         onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /**---------------------------------------------------------------------------------------
  * @name Update HSS Assets
@@ -176,19 +152,19 @@
  *
  *  @param manifestUrl Where the manifest lives on the Internet.
  *
- *  @param maximumVideoBitrate For manifests containing multiple profiles, Virtuoso will select the highest bitrate 
- *                             profile whose bitrate doesn't exceed this value. A value of 1 means "use the lowest 
- *                             bitrate." If there's no profile of lower bitrate than maximumBitrate, Virtuoso will 
+ *  @param maximumVideoBitrate For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+ *                             profile whose bitrate doesn't exceed this value. A value of 1 means "use the lowest
+ *                             bitrate." If there's no profile of lower bitrate than maximumBitrate, Virtuoso will
  *                             select the lowest bitrate profile. A value of INT_MAX means "use the highest bitrate."
  *
  *  @param maximumAudioBitrate Same as maximumVideoBitrate, but for the audio portion of the stream.
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  */
-- (void)setManifestURL:(NSString*)manifestUrl
-           withMaximumVideoBitrate:(long long)maximumVideoBitrate
-            andMaximumAudioBitrate:(long long)maximumAudioBitrate
-                   onParseComplete:(AssetParsingCompletedBlock)completeBlock;
+- (void)setManifestURL:(nonnull NSString*)manifestUrl
+withMaximumVideoBitrate:(long long)maximumVideoBitrate
+andMaximumAudioBitrate:(long long)maximumAudioBitrate
+       onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 @end
 

@@ -18,7 +18,7 @@ VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
 			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -30,7 +30,7 @@ VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
 			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -42,7 +42,7 @@ VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
 			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -54,7 +54,7 @@ VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
 			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -66,7 +66,7 @@ VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
 			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -78,7 +78,7 @@ VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
 			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>

@@ -22,6 +22,19 @@
 @interface VirtuosoAsset (SegmentedVideo)
 
 /**---------------------------------------------------------------------------------------
+ * @name Segmented Video Methods
+ *  ---------------------------------------------------------------------------------------
+ */
+
+/*!
+ *  @abstract The number of segments that could not be downloaded in this asset.
+ *
+ *  @discussion This value will always be 0 unless the option in VirtuosoSettings is 
+ *              configured to permit downloading after segment errors are hit.
+ */
+- (NSUInteger)segmentDownloadErrors;
+
+/**---------------------------------------------------------------------------------------
  * @name Segmented Video Properties
  *  ---------------------------------------------------------------------------------------
  */
@@ -36,7 +49,7 @@
  *              may need to issue a network request to get a 'fresh' URL.  In that case, this method
  *              will block during this network request.
  */
-@property (nonatomic,readonly) NSString* manifestRemoteURL;
+@property (nonatomic,readonly,nullable) NSString* manifestRemoteURL;
 
 /*!
  *  @abstract The local file path for the saved master manifest file
@@ -45,7 +58,7 @@
  *           outside its availability window or the asset is expired), then this property will return nil,
  *           preventing API access to the asset.
  */
-@property (nonatomic,readonly) NSString* manifestLocalPath;
+@property (nonatomic,readonly,nullable) NSString* manifestLocalPath;
 
 /*!
  *  @abstract The video bitrate of this asset when downloaded

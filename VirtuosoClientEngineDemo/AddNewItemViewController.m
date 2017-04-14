@@ -393,8 +393,6 @@
                                  maximumBitrate:INT_MAX
                                     publishDate:nil
                                      expiryDate:nil
-                     permittedManifestMimeTypes:nil
-                      permittedSegmentMimeTypes:nil
                                  enableFastPlay:NO
                                        userInfo:nil
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -424,8 +422,6 @@
                                  maximumBitrate:INT_MAX
                                     publishDate:nil
                                      expiryDate:nil
-                     permittedManifestMimeTypes:nil
-                      permittedSegmentMimeTypes:nil
                                  enableFastPlay:NO
                                        userInfo:nil
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -455,8 +451,6 @@
                                  maximumBitrate:INT_MAX
                                     publishDate:nil
                                      expiryDate:nil
-                     permittedManifestMimeTypes:nil
-                      permittedSegmentMimeTypes:nil
                                  enableFastPlay:NO
                                        userInfo:nil
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -495,8 +489,6 @@
                             maximumAudioBitrate:LONG_LONG_MAX
                                     publishDate:nil
                                      expiryDate:nil
-                     permittedManifestMimeTypes:nil
-                      permittedSegmentMimeTypes:nil
                                  enableFastPlay:NO
                                        userInfo:nil
                              onReadyForDownload:^(VirtuosoAsset *parsedAsset)
@@ -529,8 +521,6 @@
                             maximumAudioBitrate:LONG_LONG_MAX
                                     publishDate:nil
                                      expiryDate:nil
-                     permittedManifestMimeTypes:nil
-                      permittedSegmentMimeTypes:nil
                                  enableFastPlay:NO
                                        userInfo:nil
                              onReadyForDownload:^(VirtuosoAsset *parsedAsset)
@@ -563,8 +553,6 @@
                             maximumAudioBitrate:LONG_LONG_MAX
                                     publishDate:nil
                                      expiryDate:nil
-                     permittedManifestMimeTypes:nil
-                      permittedSegmentMimeTypes:nil
                                  enableFastPlay:NO
                                        userInfo:nil
                              onReadyForDownload:^(VirtuosoAsset *parsedAsset)
@@ -602,7 +590,6 @@
                                       description:@"The Boy In The Plastic Bubble MP4 (Large)"
                                       publishDate:nil
                                        expiryDate:nil
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -629,7 +616,6 @@
                                       description:@"Return Of The Kung Fu Dragon MP4 (Medium)"
                                       publishDate:nil
                                        expiryDate:nil
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -656,7 +642,6 @@
                                       description:@"Night Club Stock Video (Small)"
                                       publishDate:nil
                                        expiryDate:nil
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -691,7 +676,6 @@
                                       description:@"File with 404 Error"
                                       publishDate:nil
                                        expiryDate:nil
-                               permittedMimeTypes:nil
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -718,7 +702,6 @@
                                       description:@"File With Invalid MIME"
                                       publishDate:nil
                                        expiryDate:nil
-                               permittedMimeTypes:@[@"video/m4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -745,7 +728,6 @@
                                       description:@"File Exceeding Max Retries"
                                       publishDate:nil
                                        expiryDate:nil
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -777,7 +759,6 @@
                                       description:@"File With Some Pre-Retries"
                                       publishDate:nil
                                        expiryDate:nil
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -809,7 +790,6 @@
                                       description:@"File With Publish Date Now + 5m"
                                       publishDate:[NSDate dateWithTimeIntervalSinceNow:5.0*60.0]
                                        expiryDate:nil
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -836,7 +816,6 @@
                                       description:@"File With Expiry Date Now + 5m"
                                       publishDate:nil
                                        expiryDate:[NSDate dateWithTimeIntervalSinceNow:5.0*60.0]
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -865,7 +844,6 @@
                                        expiryDate:nil
                               expiryAfterDownload:5.0*60.0
                                   expiryAfterPlay:0.0
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -894,7 +872,6 @@
                                        expiryDate:nil
                               expiryAfterDownload:0.0
                                   expiryAfterPlay:5.0*60.0
-                               permittedMimeTypes:@[@"video/mp4"]
                                    enableFastPlay:NO
                                          userInfo:nil
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
@@ -924,8 +901,6 @@
                                  maximumBitrate:INT_MAX
                                     publishDate:nil
                                      expiryDate:[NSDate dateWithTimeIntervalSinceNow:2.0*60.0]
-                     permittedManifestMimeTypes:nil
-                      permittedSegmentMimeTypes:nil
                                  enableFastPlay:NO
                                        userInfo:nil
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {

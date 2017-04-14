@@ -99,7 +99,7 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @param block A callback block used to retrieve additional URL parameters when downloading asset data.
  */
-+ (void)setRequestAdditionalParametersBlock:(RequestAdditionalParametersBlock)block;
++ (void)setRequestAdditionalParametersBlock:(nullable RequestAdditionalParametersBlock)block;
 
 /*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
@@ -117,11 +117,7 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
  *
- *  @param permittedMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                            observed mime type is contained in this list, or it will issue an error and cancel
- *                            the download. Nil means "do not validate mime type."
- *
- *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon 
+ *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
  *
@@ -133,18 +129,17 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new VirtuosoAsset object.
+ *  @return A new VirtuosoAsset object, or nil if an error occurred.
  */
-+ (VirtuosoAsset*)assetWithRemoteURL:(NSString*)assetURL
-                             assetID:(NSString*)assetID
-                         description:(NSString*)description
-                         publishDate:(NSDate*)publishDate
-                          expiryDate:(NSDate*)expiryDate
-                  permittedMimeTypes:(NSArray*)permittedMimeTypes
-                      enableFastPlay:(Boolean)enableFastPlay
-                            userInfo:(NSDictionary*)userInfo
-                  onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                     onParseComplete:(AssetParsingCompletedBlock)completeBlock;
++ (nullable VirtuosoAsset*)assetWithRemoteURL:(nonnull NSString*)assetURL
+                                      assetID:(nonnull NSString*)assetID
+                                  description:(nonnull NSString*)description
+                                  publishDate:(nullable NSDate*)publishDate
+                                   expiryDate:(nullable NSDate*)expiryDate
+                               enableFastPlay:(Boolean)enableFastPlay
+                                     userInfo:(nullable NSDictionary*)userInfo
+                           onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
@@ -168,10 +163,6 @@ typedef void (^BasicCompletionBlock)();
  *  @param expiryAfterPlay Amount of time after the asset is first played that
  *                         Virtuoso will delete the asset. In seconds.  <=0.0 means no expiry.
  *
- *  @param permittedMimeTypes An array of NSString mime type values.  Virtuoso will validate that the
- *                            observed mime type is contained in this list, or it will issue an error and cancel
- *                            the download. Nil means "do not validate mime type."
- *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -184,20 +175,19 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
- *  @return A new VirtuosoAsset object.
+ *  @return A new VirtuosoAsset object, or nil if an error occurred.
  */
-+ (VirtuosoAsset*)assetWithRemoteURL:(NSString*)assetURL
-                             assetID:(NSString*)assetID
-                         description:(NSString*)description
-                         publishDate:(NSDate*)publishDate
-                          expiryDate:(NSDate*)expiryDate
-                 expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
-                     expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
-                  permittedMimeTypes:(NSArray*)permittedMimeTypes
-                      enableFastPlay:(Boolean)enableFastPlay
-                            userInfo:(NSDictionary*)userInfo
-                  onReadyForDownload:(AssetReadyForDownloadBlock)readyBlock
-                     onParseComplete:(AssetParsingCompletedBlock)completeBlock;
++ (nullable VirtuosoAsset*)assetWithRemoteURL:(nonnull NSString*)assetURL
+                                      assetID:(nonnull NSString*)assetID
+                                  description:(nonnull NSString*)description
+                                  publishDate:(nullable NSDate*)publishDate
+                                   expiryDate:(nullable NSDate*)expiryDate
+                          expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
+                              expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                               enableFastPlay:(Boolean)enableFastPlay
+                                     userInfo:(nullable NSDictionary*)userInfo
+                           onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 
 /**---------------------------------------------------------------------------------------
@@ -213,17 +203,17 @@ typedef void (^BasicCompletionBlock)();
  *  @abstract Returns an array of all assets.  This method only returns non-ad content.
  *
  *  @discussion This method only returns non-ad content.  If the Caller wishes to retrieve ads,
- *              they must be instantiated by UUID after retrieving the ad load from an ad-supported 
+ *              they must be instantiated by UUID after retrieving the ad load from an ad-supported
  *              asset.
  *
- *  @param availabilityFilter Whether to filter the returned array against the availability window.  
+ *  @param availabilityFilter Whether to filter the returned array against the availability window.
  *                            If NO, then all VirtuosoAsset objects are returned.
- *                            If YES, then Virtuoso filters out all assets that are unavailable, 
+ *                            If YES, then Virtuoso filters out all assets that are unavailable,
  *                            based on their publishDate and expiry constraints.
  *
  *  @return An NSArray of VirtuosoAsset objects
  */
-+ (NSArray*)assetsWithAvailabilityFilter:(Boolean)availabilityFilter;
++ (nonnull NSArray*)assetsWithAvailabilityFilter:(Boolean)availabilityFilter;
 
 /*!
  *  @abstract Returns an array of all pending (undownloaded) assets.  This method only returns non-ad content.
@@ -241,7 +231,7 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @return An NSArray of VirtuosoAsset objects
  */
-+ (NSArray*)pendingAssetsWithAvailabilityFilter:(Boolean)availabilityFilter;
++ (nonnull NSArray*)pendingAssetsWithAvailabilityFilter:(Boolean)availabilityFilter;
 
 /*!
  *  @abstract Returns an array of all completed (downloaded) assets.  This method only returns non-ad content.
@@ -252,7 +242,7 @@ typedef void (^BasicCompletionBlock)();
  *              they must be instantiated by UUID after retrieving the ad load from an ad-supported
  *              asset.
  *
- *  @warning An asset in this array does not necessarily have the asset data on disk.  If business rules have 
+ *  @warning An asset in this array does not necessarily have the asset data on disk.  If business rules have
  *           reset the asset (E.G. to enforce expiry) then the asset may be marked as completed, not not have any
  *           local data.  You should check the relevant asset properties (expiry, window) before attempting to play
  *           the asset.
@@ -264,24 +254,24 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @return An NSArray of VirtuosoAsset objects
  */
-+ (NSArray*)completedAssetsWithAvailabilityFilter:(Boolean)availabilityFilter;
++ (nonnull NSArray*)completedAssetsWithAvailabilityFilter:(Boolean)availabilityFilter;
 
 /*!
  *  @abstract Lookup an asset by UUID.
  *
- *  @discussion Every asset has a UUID, which Virtuoso assigns to the asset when you instantiate it. 
+ *  @discussion Every asset has a UUID, which Virtuoso assigns to the asset when you instantiate it.
  *              The return value may be nil (if no object exists with the given UUID).
  *
  *  @param uuid The UUID (universally unique identifier) corresponding to the asset
  *
- *  @param availabilityFilter Whether to filter the return value against the availability window.  
- *                            If NO, then the asset will be returned if it exists.  
+ *  @param availabilityFilter Whether to filter the return value against the availability window.
+ *                            If NO, then the asset will be returned if it exists.
  *                            If YES, then Virtuoso will return nil for the asset if it is unavailable,
  *                            based on its publishDate and expiry constraints.
  *
  *  @return An instantiated VirtuosoAsset object or nil, if the asset doesn't exist or is unavailable.
  */
-+ (VirtuosoAsset*)assetWithUUID:(NSString*)uuid availabilityFilter:(Boolean)availabilityFilter;
++ (nullable VirtuosoAsset*)assetWithUUID:(nonnull NSString*)uuid availabilityFilter:(Boolean)availabilityFilter;
 
 /*!
  *  @abstract Lookup an asset by assetID.
@@ -298,7 +288,7 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @return An instantiated VirtuosoAsset object or nil, if the asset does not exist or is unavailable.
  */
-+ (VirtuosoAsset*)assetWithAssetID:(NSString*)assetID availabilityFilter:(Boolean)availabilityFilter;
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID availabilityFilter:(Boolean)availabilityFilter;
 
 /**---------------------------------------------------------------------------------------
  * @name Update And Delete
@@ -316,7 +306,7 @@ typedef void (^BasicCompletionBlock)();
  *              one object instance are not guaranteed to be immediately reflected in other existing instances.
  *              Under most use cases, this will not be apparent, as Virtuoso always passes an updated object with
  *              each relevant notification.  But if you are storing instantiated objects externally to Virtuoso and are
- *              accessing property values that frequently change, such as fractionComplete or current size, then you 
+ *              accessing property values that frequently change, such as fractionComplete or current size, then you
  *              may need to refresh the object to obtain the most up-to-date values.
  */
 - (void)refresh;
@@ -334,7 +324,7 @@ typedef void (^BasicCompletionBlock)();
 /*!
  *  @abstract Synchronously deletes this asset
  *
- *  @warning This method is synchronous. It will block until it has removed all files and internal data 
+ *  @warning This method is synchronous. It will block until it has removed all files and internal data
  *           belonging to this asset.
  */
 - (void)deleteAsset;
@@ -346,7 +336,7 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @param deletedBlock Notifies that Virtuoso has finished deleting all asset resources from disk.
  */
-- (void)deleteAssetOnComplete:(AssetDeletionCompleteBlock)deletedBlock;
+- (void)deleteAssetOnComplete:(nullable AssetDeletionCompleteBlock)deletedBlock;
 
 /*!
  *  @abstract Deletes all assets.
@@ -379,8 +369,8 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @return Returns NO if the playback cannot be set up for some reason
  */
-- (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType fromViewController:(UIViewController*)parent
-                    onSuccess:(BasicCompletionBlock)onSuccess onFail:(BasicCompletionBlock)onFail;
+- (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType fromViewController:(nonnull UIViewController*)parent
+                    onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail;
 
 /*!
  *  @abstract Plays this asset using a custom player class.  You are responsible for presentation.
@@ -398,8 +388,8 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @return Returns NO if the playback cannot be set up for some reason
  */
-- (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType andPlayer:(id<VirtuosoPlayer>)player
-                    onSuccess:(BasicCompletionBlock)onSuccess onFail:(BasicCompletionBlock)onFail;
+- (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType andPlayer:(nonnull id<VirtuosoPlayer>)player
+                    onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail;
 
 /*!
  *  @abstract Called when playback finishes (the video player exits) to cleanup the session.
@@ -433,12 +423,12 @@ typedef void (^BasicCompletionBlock)();
 /*!
  *  @abstract Clears this asset's internal retry count, so Virtuoso will retry downloading it
  *
- *  @discussion When Virtuoso fails to download an asset, for whatever reason, Virtuoso will automatically retry the 
+ *  @discussion When Virtuoso fails to download an asset, for whatever reason, Virtuoso will automatically retry the
  *              download N times. If Virtuoso fails N times, it will move to the next asset in the download queue.
  *              Eventually Virtuoso will loop through the download queue and reach this asset again, and re-attempt the
  *              download N more times. At some point, Virtuoso will have looped through the queue M times, and attempted
  *              to download the asset M*N times.
- * 
+ *
  *              After M*N attempts, Virtuoso gives up, and will no longer atempt to download the asset.  When all pending
  *              assets have exceeded the allowable retries, Virtuoso enters the kVDE_DownloadMaxRetriesExceeded state and
  *              stops processing downloads until new assets are enqueued or existing assets are cleared.
@@ -447,7 +437,7 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @param onComplete A block to call when the engine has finished resetting the error count
  */
-- (void)clearRetryCountOnComplete:(BasicCompletionBlock)onComplete;
+- (void)clearRetryCountOnComplete:(nullable BasicCompletionBlock)onComplete;
 
 
 /**---------------------------------------------------------------------------------------
@@ -486,7 +476,7 @@ typedef void (^BasicCompletionBlock)();
  *  @param end When this asset should be made unavailable for access (expiryDate)
  *
  */
-- (void)setAvailabilityFrom:(NSDate*)start to:(NSDate*)end;
+- (void)setAvailabilityFrom:(nullable NSDate*)start to:(nullable NSDate*)end;
 
 /**---------------------------------------------------------------------------------------
  * @name General Properties
@@ -501,7 +491,7 @@ typedef void (^BasicCompletionBlock)();
  *  @abstract A universally unique identifier (UUID) that Virtuoso generates when it created this asset.
  *
  */
-@property (nonatomic,readonly) NSString* uuid;
+@property (nonatomic,readonly,nonnull) NSString* uuid;
 
 /*!
  *  @abstract The asset type
@@ -511,9 +501,9 @@ typedef void (^BasicCompletionBlock)();
 /*!
  *  @abstract A unique identifier that you provide when instantiating this asset
  *
- *  @discussion Virtuoso uses the assetID in log events and for remote delete/wipe requests. 
+ *  @discussion Virtuoso uses the assetID in log events and for remote delete/wipe requests.
  */
-@property (nonatomic,readonly) NSString* assetID;
+@property (nonatomic,readonly,nonnull) NSString* assetID;
 
 /*!
  *  @abstract A SHA256 hash generated from this particular asset instance.
@@ -522,7 +512,7 @@ typedef void (^BasicCompletionBlock)();
  *              devices.  For HLS/HSS assets, this hash is only valid after the manifest has
  *              finished parsing.
  */
-@property (nonatomic,readonly) NSString* assetHash;
+@property (nonatomic,readonly,nonnull) NSString* assetHash;
 
 /*!
  *  @abstract Where this asset exists on the Internet
@@ -534,12 +524,12 @@ typedef void (^BasicCompletionBlock)();
  *              may need to issue a network request to get a 'fresh' URL.  In that case, this method
  *              will block during this network request.
  */
-@property (nonatomic,readonly) NSString* assetURL;
+@property (nonatomic,readonly,nonnull) NSString* assetURL;
 
 /*!
  *  @abstract Where this asset exists on disk
  *
- *  @discussion The value of this property will be nil if this asset's type property is not 
+ *  @discussion The value of this property will be nil if this asset's type property is not
  *              kVDE_AssetTypeNonSegmented, if the asset has not finished downloading yet,
  *              or if the asset is not currently available due to expiry or windowing rules.
  *
@@ -548,7 +538,7 @@ typedef void (^BasicCompletionBlock)();
  *  @see isExpired
  *  @see isPlayable
  */
-@property (nonatomic,readonly) NSString* filePath;
+@property (nonatomic,readonly,nullable) NSString* filePath;
 
 /*!
  *  @abstract Where this asset exists on disk
@@ -558,15 +548,15 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @see filePath
  */
-@property (nonatomic,readonly) NSURL* fileURL;
+@property (nonatomic,readonly,nullable) NSURL* fileURL;
 
 /*!
  *  @abstract A human-readable description for this asset
  *
- *  @discussion Virtuoso does not use this internally, but does include it in logging output. 
+ *  @discussion Virtuoso does not use this internally, but does include it in logging output.
  *              You provided this value when instantiating this asset.
  */
-@property (nonatomic,readonly) NSString* description;
+@property (nonatomic,readonly,nonnull) NSString* description;
 
 /*!
  *  @abstract Estimated size of this asset, in bytes
@@ -579,6 +569,17 @@ typedef void (^BasicCompletionBlock)();
 @property (nonatomic,readonly) long long estimatedSize;
 
 /*!
+ *  @abstract Whether the backplane has given permission to download this asset
+ *
+ *  @discussion If the backplane settings for 'maximum downloads per account' or 'lifetime asset download limit'
+ *              are configured, then download permissions must be coordinated with the backplane in order to 
+ *              insure these business rules are properly enforced.  Once the backplane has given permission
+ *              for the asset to be downloaded, that permission is retained until a download error occurs, the 
+ *              download completes successfully, or the download is deleted.
+ */
+@property (nonatomic,readonly) Boolean downloadPermissionGranted;
+
+/*!
  *  @abstract The current size of this asset
  *
  *  @discussion The amount of data that Virtuoso has downloaded for this asset (in bytes)
@@ -588,7 +589,7 @@ typedef void (^BasicCompletionBlock)();
 /*!
  *  @abstract How much of this asset Virtuoso has already downloaded, as a fraction between 0.0 and 1.0
  *
- *  @discussion Virtuoso will calculate this value in various ways, depending on which method is the 
+ *  @discussion Virtuoso will calculate this value in various ways, depending on which method is the
  *              most efficient.  This value may be helpful for display purposes, but is not guaranteed precise.
  */
 @property (nonatomic,readonly) double fractionComplete;
@@ -612,31 +613,14 @@ typedef void (^BasicCompletionBlock)();
 @property (nonatomic,readonly) kVDE_DownloadErrorType error;
 
 /*!
- *  @abstract The allowable mime-type(s) for this file.  The behavior of this property depends on the type
- *            of VirtuosoAsset you are downloading:
- *
- *            Single File (e.g. MP4) - An empty array means all mime types are valid. If provided, then
- *                                     Virtuoso will validate the observed mime type of the downloaded file
- *                                     and will report an error if the observed mime type isn't in this array.
- *
- *            Segmented File (e.g. HLS) - This property validates the mime type for the asset's manifest file.
- *                                        An empty array means only the internally defined default mime types
- *                                        for this asset will be permitted.  If provided, then Virtuoso will 
- *                                        also allow the provided mime types in addition to the defaults.
- *                                        Virtuoso will report an error if the observed mime type isn't in the
- *                                        combined array.
- */
-@property (nonatomic,readonly) NSArray*  permittedMimeTypes;
-
-/*!
  *  @abstract The generic userInfo metadata for this asset
  *
  *  @discussion The userInfo dictionary is for you to store metadata alongside this asset.
  *              Since Virtuoso serializes this object, all objects contained within the userInfo dictionary
- *              MUST be property list compatible objects.  If you attempt to save non-compatible objects, 
+ *              MUST be property list compatible objects.  If you attempt to save non-compatible objects,
  *              the userInfo dictionary won't be persisted.
  */
-@property (nonatomic,strong) NSDictionary* userInfo;
+@property (nonatomic,strong,nullable) NSDictionary* userInfo;
 
 /*
  *  @abstract Additional HTTP headers that Virtuoso will use when requesting this asset from the remote web server
@@ -646,7 +630,7 @@ typedef void (^BasicCompletionBlock)();
  *              Lower-level values take precedence. For instance, if you provide the same header key in both
  *              levels, then the Asset value takes predecence over the Engine value.
  */
-@property (nonatomic,strong) NSDictionary* additionalNetworkHeaders;
+@property (nonatomic,strong,nullable) NSDictionary* additionalNetworkHeaders;
 
 /*
  *  @abstract The asset protection type identified during asset creation.
@@ -684,21 +668,21 @@ typedef void (^BasicCompletionBlock)();
  *  @discussion Virtuoso will download assets as soon as they are enqueued.
  *              But in some cases, you may wish to embargo an asset.
  *              You do so by setting the publishDate property in the future.
- *              Until this date, Virtuoso will disallow access to this asset via the 
+ *              Until this date, Virtuoso will disallow access to this asset via the
  *              VirtuosoClientHTTPServer, and will not include this asset in any filtered
  *              query methods.
  *
  *  @see expiryDate
  *  @see assetWithUUID:availabilityFilter:
  */
-@property (nonatomic,strong) NSDate* publishDate;
+@property (nonatomic,strong,nullable) NSDate* publishDate;
 
 /*!
  *  @abstract As soon as possible after 'expiryDate' has passed, Virtuoso automatically deletes the asset.
  *
  *  @discussion A nil value means the asset never expires.
  */
-@property (nonatomic,strong) NSDate* expiryDate;
+@property (nonatomic,strong,nullable) NSDate* expiryDate;
 
 /*!
  *  @abstract After the asset has completed download, as soon as possible after 'expiryAfterDownload'
@@ -725,7 +709,7 @@ typedef void (^BasicCompletionBlock)();
 @property (nonatomic,readonly) Boolean isWithinViewingWindow;
 
 /*!
- *  @abstract Has this asset already expired?  
+ *  @abstract Has this asset already expired?
  */
 @property (nonatomic,readonly) Boolean isExpired;
 
@@ -742,32 +726,32 @@ typedef void (^BasicCompletionBlock)();
  *            Returns the soonest date based on all the expiry constraints for this asset.
  *            A return value of nil means the item never expires.
  */
-@property (nonatomic,readonly) NSDate* effectiveExpiryDate;
+@property (nonatomic,readonly,nullable) NSDate* effectiveExpiryDate;
 
 /*!
  *  @abstract When Virtuoso finished downloading this asset.  Nil if Virtuoso hasn't completed the download yet.
  *
  */
-@property (nonatomic,readonly) NSDate* downloadCompleteDateTime;
+@property (nonatomic,readonly,nullable) NSDate* downloadCompleteDateTime;
 
 /*!
- *  @abstract When a VirtuosoAsset was created. 
+ *  @abstract When a VirtuosoAsset was created.
  *
- *  @discussion If this asset was created on the device, then this value is the time the asset was instantiated.  If 
+ *  @discussion If this asset was created on the device, then this value is the time the asset was instantiated.  If
  *              this asset was pushed from the server via subscription or remote push, then this value is the time
  *              the asset was created in the Backplane.
  */
-@property (nonatomic,readonly) NSDate* creationDateTime;
+@property (nonatomic,readonly,nonnull) NSDate* creationDateTime;
 
 /*!
  *  @abstract When this asset was first played.  Nil if Virtuoso is not aware of this asset being played yet.
  *
- *  @discussion Virtuoso doesn't always know when an asset is played.  Therefore,  you must set this value when 
+ *  @discussion Virtuoso doesn't always know when an asset is played.  Therefore,  you must set this value when
  *              playback of this asset begins. This allows Virtuoso to enforce 'expiryAfterPlay'.
  *              Setting this value if it has already been set does nothing, but the value can be reset to nil.
  *
  */
-@property (nonatomic,strong) NSDate* firstPlayDateTime;
+@property (nonatomic,strong,nullable) NSDate* firstPlayDateTime;
 
 /*!
  *  @abstract Whether this asset supports FastPlay

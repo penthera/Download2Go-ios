@@ -17,7 +17,7 @@
 
 @interface VirtuosoEncryption : NSObject
 
-+ (NSData*)deviceSpecificEncrypt:(NSData*)data;
-+ (NSData*)deviceSpecificDecrypt:(NSData*)data;
++ (nonnull NSData*)deviceSpecificEncrypt:(nonnull NSData*)data;
++ (nullable NSData*)deviceSpecificDecrypt:(nonnull NSData*)data;
 
 @end

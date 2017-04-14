@@ -6,19 +6,19 @@
 	<dict>
 		<key>Headers/VirtuosoSubscriptionDataSource.h</key>
 		<data>
-		J5emBfNp5O7+4ODGmGHXJeXT1KQ=
+		1Mx5w7IDXxOwEkHm6WQWP4pNrhk=
 		</data>
 		<key>Headers/VirtuosoSubscriptionDefaultDataSource.h</key>
 		<data>
-		gF7D5OArph3zJKSV92qSwwKGxic=
+		BPOjayXJnUNJxxTOY6oMpWgIvno=
 		</data>
 		<key>Headers/VirtuosoSubscriptionManager.h</key>
 		<data>
-		zg5O1caf5r2OSkNVzMkcwQudAvQ=
+		g8bmMCKAoGw0xllvKSWVj8fbo5c=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		kziNPKkhPhFrDF8dTKuMG9NfAhM=
+		Ei6tjiwMepsQdfNeo4OVS4Y5qMk=
 		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<dict>
@@ -36,33 +36,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			J5emBfNp5O7+4ODGmGHXJeXT1KQ=
+			1Mx5w7IDXxOwEkHm6WQWP4pNrhk=
 			</data>
 			<key>hash2</key>
 			<data>
-			fCbi+rs6eqzBx4OabAZXUMBKp6hYiwZFPSORznDOYoE=
+			dEvbGdObc5DbbHZm4DqSZdo5kxAjID6HSZvozR1wnSM=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoSubscriptionDefaultDataSource.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gF7D5OArph3zJKSV92qSwwKGxic=
+			BPOjayXJnUNJxxTOY6oMpWgIvno=
 			</data>
 			<key>hash2</key>
 			<data>
-			cgXeiGEFfT6GWglNJMlKbShvMCxGvESzJUeWDRMXxtw=
+			rHHealSfsvXs8x5Mo8gorYuEssOH6LSxSuyU4Kkz4mM=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoSubscriptionManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zg5O1caf5r2OSkNVzMkcwQudAvQ=
+			g8bmMCKAoGw0xllvKSWVj8fbo5c=
 			</data>
 			<key>hash2</key>
 			<data>
-			Lx5caW4Q3r0t4jcD3z+LVxhGOWuvdUmloGqm3j/p4mk=
+			KL33uCRzUOS4E/dkwFfDatVUbA8nK3Em8zLgrvjhGYo=
 			</data>
 		</dict>
 		<key>en.lproj/InfoPlist.strings</key>

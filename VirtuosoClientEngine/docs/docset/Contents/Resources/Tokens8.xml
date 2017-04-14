@@ -17,14 +17,14 @@
 			<Abstract type="html">Handles remote push notices</Abstract>
 			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
 			
-			<Declaration>+ (Boolean)processRemotePushNotice:(NSDictionary *)userInfo withCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Declaration>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)userInfo withCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>userInfo</Name>
 					<Abstract type="html">The userInfo dictionary provided by the remote push notice</Abstract>
 				</Parameter><Parameter>
 					<Name>completionHandler</Name>
-					<Abstract type="html">The handler callback provided by the iOS 7 UIApplicationDelegate remote push method</Abstract>
+					<Abstract type="html">The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Whether Virtuoso handled the push notice</Abstract></ReturnValue>
@@ -37,14 +37,14 @@
 			<Abstract type="html">Handles processing of background download session notices</Abstract>
 			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
 			
-			<Declaration>+ (Boolean)processBackgroundSessionWake:(NSString *)identifier completionHandler:(void ( ^ ) ( ))completionHandler</Declaration>
+			<Declaration>+ (Boolean)processBackgroundSessionWake:(nonnull NSString *)identifier completionHandler:(nonnull void ( ^ ) ( ))completionHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>identifier</Name>
 					<Abstract type="html">The background session identifier the wake is for</Abstract>
 				</Parameter><Parameter>
 					<Name>completionHandler</Name>
-					<Abstract type="html">The handler callback provided by the iOS7 UIApplicationDelegate background session method</Abstract>
+					<Abstract type="html">The handler callback provided by the iOS7+ UIApplicationDelegate background session method</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Whether Virtuoso handled the session wake</Abstract></ReturnValue>
@@ -57,7 +57,7 @@
 			<Abstract type="html">Handles background fetch</Abstract>
 			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
 			
-			<Declaration>+ (void)processFetchWithCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Declaration>+ (void)processFetchWithCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>completionHandler</Name>

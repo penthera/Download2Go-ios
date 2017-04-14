@@ -46,11 +46,12 @@
  *              handle the push notice, and the enclosing app should handle it.
  *
  *  @param userInfo The userInfo dictionary provided by the remote push notice
- *  @param completionHandler The handler callback provided by the iOS 7 UIApplicationDelegate remote push method
+ *  @param completionHandler The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method
  *
  *  @return Whether Virtuoso handled the push notice
  */
-+ (Boolean)processRemotePushNotice:(NSDictionary*)userInfo withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
++ (Boolean)processRemotePushNotice:(nonnull NSDictionary*)userInfo
+             withCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler;
 
 /*!
  *  @abstract Handles processing of background download session notices
@@ -64,11 +65,12 @@
  *              If this method returns NO, then the wake wasn't intended for Virtuoso; you need to handle it.
  *
  *  @param identifier The background session identifier the wake is for
- *  @param completionHandler The handler callback provided by the iOS7 UIApplicationDelegate background session method
+ *  @param completionHandler The handler callback provided by the iOS7+ UIApplicationDelegate background session method
  *
  *  @return Whether Virtuoso handled the session wake
  */
-+ (Boolean)processBackgroundSessionWake:(NSString*)identifier completionHandler:(void (^)())completionHandler;
++ (Boolean)processBackgroundSessionWake:(nonnull NSString*)identifier
+                      completionHandler:(nonnull void (^)())completionHandler;
 
 /*!
  *  @abstract Handles background fetch
@@ -86,7 +88,7 @@
  *
  *  @param completionHandler The handler callback provided by the iOS 7 UIApplicationDelegate remote push method
  */
-+ (void)processFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
++ (void)processFetchWithCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler;
 
 @end
 

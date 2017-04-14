@@ -19,7 +19,7 @@ delegate if the VirtuosoLogger would have otherwise processed them.</Abstract>
 			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(NSString *)fileID onBearer:(kVL_BearerType)bearer withData:(long long)data</Declaration>
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withData:(long long)data</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>event</Name>
@@ -47,7 +47,7 @@ Example: For the download-paused event, contains total bytes downloaded so far f
 			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(NSString *)fileID onBearer:(kVL_BearerType)bearer withStringData:(NSString *)data</Declaration>
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withStringData:(nullable NSString *)data</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>event</Name>
@@ -74,7 +74,7 @@ the network state.</Abstract>
 			<Abstract type="html">Reports on a custom event not tracked by the standard event list.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoCustomEventOccurred:(NSDictionary *)event</Declaration>
+			<Declaration>- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary *)event</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>event</Name>
@@ -91,7 +91,7 @@ the network state.</Abstract>
 			<Abstract type="html">Reports debug data.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoDebugEventOccurred:(NSString *)data atLevel:(kVL_LoggingLevel)level</Declaration>
+			<Declaration>- (void)virtuosoDebugEventOccurred:(nonnull NSString *)data atLevel:(kVL_LoggingLevel)level</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>data</Name>

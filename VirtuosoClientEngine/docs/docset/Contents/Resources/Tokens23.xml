@@ -19,7 +19,7 @@ then the delegate calls are handled internally.</Abstract>
 			<Abstract type="html">Called when the player has reached the end of the video.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>- (void)playerFinishedPlayback:(VirtuosoPlayerView *)view</Declaration>
+			<Declaration>- (void)playerFinishedPlayback:(nonnull VirtuosoPlayerView *)view</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>view</Name>
@@ -36,7 +36,7 @@ then the delegate calls are handled internally.</Abstract>
 			<Abstract type="html">Called when the user taps the done button.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>- (void)playerDoneButtonClicked:(VirtuosoPlayerView *)view</Declaration>
+			<Declaration>- (void)playerDoneButtonClicked:(nonnull VirtuosoPlayerView *)view</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>view</Name>

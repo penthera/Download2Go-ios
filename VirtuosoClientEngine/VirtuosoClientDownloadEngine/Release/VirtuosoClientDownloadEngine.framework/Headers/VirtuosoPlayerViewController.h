@@ -34,17 +34,17 @@
 /*!
  *  @abstract The local or remote location of the video to play.
  */
-@property (nonatomic, copy) NSURL *contentURL;
+@property (nonatomic, copy, nullable) NSURL *contentURL;
 
 /*!
  *  @abstract The VirtuosoAsset object representing the video to play.
  */
-@property (nonatomic, strong) VirtuosoAsset* asset;
+@property (nonatomic, strong, nullable) VirtuosoAsset* asset;
 
 /*!
  *  @abstract The internal player view
  */
-@property (nonatomic, readonly) VirtuosoPlayerView* playerView;
+@property (nonatomic, readonly, nonnull) VirtuosoPlayerView* playerView;
 
 /*!
  *  @abstract A Boolean value that indicates whether the player allows switching to external playback mode.

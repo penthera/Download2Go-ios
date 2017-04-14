@@ -42,7 +42,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The local or remote location of the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -54,7 +54,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The local or remote location of the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -66,7 +66,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The local or remote location of the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
 			<Anchor>//api/name/contentURL</Anchor>
@@ -78,7 +78,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -90,7 +90,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -102,7 +102,7 @@ the VirtuosoPlayer protocol.</Abstract>
 			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
 			<Anchor>//api/name/asset</Anchor>
@@ -170,7 +170,7 @@ If you override this method in your custom view controllers, always call super a
 so that UIKit can forward the size change message appropriately.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id&lt;UIViewControllerTransitionCoordinator&gt;)coordinator</Declaration>
+			<Declaration>- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id&lt;UIViewControllerTransitionCoordinator&gt;)coordinator</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>size</Name>
@@ -191,7 +191,7 @@ or get information about the transition that is in progress.</Abstract>
 			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -203,7 +203,7 @@ or get information about the transition that is in progress.</Abstract>
 			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -215,7 +215,7 @@ or get information about the transition that is in progress.</Abstract>
 			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -228,7 +228,7 @@ or get information about the transition that is in progress.</Abstract>
 playback rate or seeking to a particular time in the playback stream.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) AVPlayer *player</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
 			
 			
 			<Anchor>//api/name/player</Anchor>
@@ -241,7 +241,7 @@ playback rate or seeking to a particular time in the playback stream.</Abstract>
 playback rate or seeking to a particular time in the playback stream.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) AVPlayer *player</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
 			
 			
 			<Anchor>//api/name/player</Anchor>
@@ -254,7 +254,7 @@ playback rate or seeking to a particular time in the playback stream.</Abstract>
 playback rate or seeking to a particular time in the playback stream.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) AVPlayer *player</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
 			
 			
 			<Anchor>//api/name/player</Anchor>
@@ -338,7 +338,7 @@ playback rate or seeking to a particular time in the playback stream.</Abstract>
 			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIButton *playPauseButton</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
 			
 			
 			<Anchor>//api/name/playPauseButton</Anchor>
@@ -350,7 +350,7 @@ playback rate or seeking to a particular time in the playback stream.</Abstract>
 			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIButton *playPauseButton</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
 			
 			
 			<Anchor>//api/name/playPauseButton</Anchor>
@@ -362,7 +362,7 @@ playback rate or seeking to a particular time in the playback stream.</Abstract>
 			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIButton *playPauseButton</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
 			
 			
 			<Anchor>//api/name/playPauseButton</Anchor>
@@ -375,7 +375,7 @@ playback rate or seeking to a particular time in the playback stream.</Abstract>
 to a particular location in the video.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UISlider *progressBar</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
 			
 			
 			<Anchor>//api/name/progressBar</Anchor>
@@ -388,7 +388,7 @@ to a particular location in the video.</Abstract>
 to a particular location in the video.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UISlider *progressBar</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
 			
 			
 			<Anchor>//api/name/progressBar</Anchor>
@@ -401,7 +401,7 @@ to a particular location in the video.</Abstract>
 to a particular location in the video.</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UISlider *progressBar</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
 			
 			
 			<Anchor>//api/name/progressBar</Anchor>
@@ -413,7 +413,7 @@ to a particular location in the video.</Abstract>
 			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILabel *playBackTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
 			
 			
 			<Anchor>//api/name/playBackTime</Anchor>
@@ -425,7 +425,7 @@ to a particular location in the video.</Abstract>
 			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILabel *playBackTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
 			
 			
 			<Anchor>//api/name/playBackTime</Anchor>
@@ -437,7 +437,7 @@ to a particular location in the video.</Abstract>
 			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILabel *playBackTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
 			
 			
 			<Anchor>//api/name/playBackTime</Anchor>
@@ -449,7 +449,7 @@ to a particular location in the video.</Abstract>
 			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILabel *playBackTotalTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
 			
 			
 			<Anchor>//api/name/playBackTotalTime</Anchor>
@@ -461,7 +461,7 @@ to a particular location in the video.</Abstract>
 			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILabel *playBackTotalTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
 			
 			
 			<Anchor>//api/name/playBackTotalTime</Anchor>
@@ -473,7 +473,7 @@ to a particular location in the video.</Abstract>
 			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
 			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILabel *playBackTotalTime</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
 			
 			
 			<Anchor>//api/name/playBackTotalTime</Anchor>

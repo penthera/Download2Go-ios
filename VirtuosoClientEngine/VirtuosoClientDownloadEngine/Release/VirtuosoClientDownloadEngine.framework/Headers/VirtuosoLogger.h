@@ -91,6 +91,10 @@ typedef NS_ENUM(NSInteger, kVL_LogEvent)
     
     /** An asset which had exceeded it's maximum error count has been reset and will retry download */
     kVLE_MaxErrorsReset,
+    
+    /** The download limit imposed by the rules for either MDA or MAD has been reached and the asset with asset_id
+        cannot be downloaded. */
+    kVLE_DownloadLimitReached,
 };
 
 /*!
@@ -113,10 +117,9 @@ typedef NS_ENUM(NSInteger, kVL_BearerType)
     kVL_Invalid
 };
 
-
-extern NSString* kVDE_AssetDeletedByUser;
-extern NSString* kVDE_AssetDeletedByRemote;
-extern NSString* kVDE_AssetDeletedInternal;
+extern NSString* _Nonnull kVDE_AssetDeletedByUser;
+extern NSString* _Nonnull kVDE_AssetDeletedByRemote;
+extern NSString* _Nonnull kVDE_AssetDeletedInternal;
 
 /*!
  *  @constant kLoggerDataValueInvalid
@@ -147,7 +150,10 @@ extern long long kLoggerDataValueInvalid;
  *  @param data A numeric value semantically unique to the specific event.  Will be 0 when not required.
  *              Example: For the download-paused event, contains total bytes downloaded so far for this asset.
  */
-- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(NSString*)fileID onBearer:(kVL_BearerType)bearer withData:(long long)data;
+- (void)virtuosoEventOccurred:(kVL_LogEvent)event
+                      forFile:(nullable NSString*)fileID
+                     onBearer:(kVL_BearerType)bearer
+                     withData:(long long)data;
 
 /*!
  *  @abstract Reports that a tracked event was logged.
@@ -161,14 +167,17 @@ extern long long kLoggerDataValueInvalid;
  *
  *  @param data A string value semantically unique to the specific event.
  */
-- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(NSString*)fileID onBearer:(kVL_BearerType)bearer withStringData:(NSString*)data;
+- (void)virtuosoEventOccurred:(kVL_LogEvent)event
+                      forFile:(nullable NSString*)fileID
+                     onBearer:(kVL_BearerType)bearer
+               withStringData:(nullable NSString*)data;
 
 /*!
  *  @abstract Reports on a custom event not tracked by the standard event list.
  *
  *  @param event An NSDictionary containing the logged event data
  */
-- (void)virtuosoCustomEventOccurred:(NSDictionary*)event;
+- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary*)event;
 
 /*!
  *  @abstract Reports debug data.
@@ -179,7 +188,7 @@ extern long long kLoggerDataValueInvalid;
  *  @param data A string containing the debug event data
  *  @param level The severity level of the log item
  */
-- (void)virtuosoDebugEventOccurred:(NSString*)data atLevel:(kVL_LoggingLevel)level;
+- (void)virtuosoDebugEventOccurred:(nonnull NSString*)data atLevel:(kVL_LoggingLevel)level;
 
 @end
 
@@ -280,7 +289,7 @@ extern long long kLoggerDataValueInvalid;
  *  @param eventName The name of your custom log event
  *  @param eventData A string containing arbitrary data related to your log event
  */
-+ (void) addCustomLogEvent:(NSString*)eventName withStringData:(NSString*)eventData;
++ (void) addCustomLogEvent:(nonnull NSString*)eventName withStringData:(nonnull NSString*)eventData;
 
 /*!
  *  @abstract Adds a arbitrary logging event.
@@ -288,7 +297,7 @@ extern long long kLoggerDataValueInvalid;
  *  @param eventName The name of your custom log event
  *  @param eventData A long value containing arbitrary data related to your log event
  */
-+ (void) addCustomLogEvent:(NSString*)eventName withNumericData:(long)eventData;
++ (void) addCustomLogEvent:(nonnull NSString*)eventName withNumericData:(long)eventData;
 
 /*!
  *  @abstract Adds a debug event.
@@ -300,7 +309,7 @@ extern long long kLoggerDataValueInvalid;
  *  @param eventData A string containing arbitrary debug data for logging
  *  @param level     The log level this event is associated with
  */
-+ (void) addDebugEvent:(NSString*)eventData atLevel:(kVL_LoggingLevel)level;
++ (void) addDebugEvent:(nonnull NSString*)eventData atLevel:(kVL_LoggingLevel)level;
 
 
 /*!
@@ -311,7 +320,7 @@ extern long long kLoggerDataValueInvalid;
  *
  *  @param asset The expired asset
  */
-+ (void) logAssetExpired:(VirtuosoAsset*)asset;
++ (void) logAssetExpired:(nonnull VirtuosoAsset*)asset;
 
 /*!
  *  @abstract Logs "play" event for an asset
@@ -322,7 +331,7 @@ extern long long kLoggerDataValueInvalid;
  *
  *  @param asset The played asset
  */
-+ (void) logPlaybackStartedForAsset:(VirtuosoAsset*)asset;
++ (void) logPlaybackStartedForAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
  *  @abstract Logs "stop-play" event for an asset
@@ -336,7 +345,7 @@ extern long long kLoggerDataValueInvalid;
  *  @param seconds The number of seconds the asset was played before it was stopped or paused
  *                 (e.g. play time since 'start' was reported)
  */
-+ (void) logPlaybackStoppedForAsset:(VirtuosoAsset*)asset withSecondsSinceLastStart:(long long)seconds;
++ (void) logPlaybackStoppedForAsset:(nonnull VirtuosoAsset*)asset withSecondsSinceLastStart:(long long)seconds;
 
 
 /**---------------------------------------------------------------------------------------
@@ -351,21 +360,21 @@ extern long long kLoggerDataValueInvalid;
   *
  *  @param delegate An object that follows the VirtuosoLoggerDelegate protocol
  */
-+ (void) addDelegate:(id<VirtuosoLoggerDelegate>) delegate;
++ (void) addDelegate:(nonnull id<VirtuosoLoggerDelegate>) delegate;
 
 /*!
  *  @abstract Removes a delegate from the delegate list.
  *
  *  @param delegate An object to be removed from the delegate list
  */
-+ (void) removeDelegate:(id<VirtuosoLoggerDelegate>) delegate;
++ (void) removeDelegate:(nonnull id<VirtuosoLoggerDelegate>) delegate;
 
 /*!
  *  @abstract Returns a current list of logging delegates.
  *
  *  @return The current list of logging delegates.
  */
-+ (NSArray*) delegates;
++ (nonnull NSArray*) delegates;
 
 @end
 

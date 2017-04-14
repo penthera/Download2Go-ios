@@ -86,7 +86,7 @@ typedef NS_ENUM(NSInteger, kVSM_Status)
  *
  *  @param error   If an error occurred, this value will be non-nil and will contain detailed error data
  */
-typedef void(^SubscriptionResultBlock)(Boolean success, NSError* error);
+typedef void(^SubscriptionResultBlock)(Boolean success, NSError* _Nullable error);
 
 /*!
  *  @typedef SubscriptionListResultBlock
@@ -97,7 +97,7 @@ typedef void(^SubscriptionResultBlock)(Boolean success, NSError* error);
  *
  *  @param error A NSError containing a failure code and debug string, or nil of no error occurred.
  */
-typedef void(^SubscriptionListResultBlock)(NSArray* subscriptions, NSError* error);
+typedef void(^SubscriptionListResultBlock)(NSArray* _Nonnull subscriptions, NSError* _Nullable error);
 
 /*!
  *
@@ -114,7 +114,7 @@ typedef void(^SubscriptionListResultBlock)(NSArray* subscriptions, NSError* erro
  *
  *  @param error   If an error occurred, this value will be non-nil and will contain detailed error data
  */
-typedef void(^SyncCompleteBlock)(Boolean success, NSArray* subscriptions, NSError* error);
+typedef void(^SyncCompleteBlock)(Boolean success, NSArray* _Nullable subscriptions, NSError* _Nullable error);
 
 
 #pragma mark
@@ -126,14 +126,14 @@ typedef void(^SyncCompleteBlock)(Boolean success, NSArray* subscriptions, NSErro
  *
  *  @abstract This key is used to find the new status within the userInfo dictionary sent by various NSNotificationCenter notices.
  */
-extern NSString* const kSubscriptionManagerStatusDidChangeNotificationStatusKey;
+extern NSString* _Nonnull const kSubscriptionManagerStatusDidChangeNotificationStatusKey;
 
 /*!
  *  @constant kSubscriptionManagerNotificationVirtuosoAssetsKey
  *
  *  @abstract This key is used to find the VirtuosoAsset array within the userInfo dictionary sent by various NSNotificationCenter notices.
  */
-extern NSString* const kSubscriptionManagerNotificationVirtuosoAssetsKey;
+extern NSString* _Nonnull const kSubscriptionManagerNotificationVirtuosoAssetsKey;
 
 /*!
  *  @constant kSubscriptionManagerNotifiationVirtuosoAssetUUIDsKey
@@ -141,7 +141,7 @@ extern NSString* const kSubscriptionManagerNotificationVirtuosoAssetsKey;
  *  @abstract This key is used to find the array of VirtuosoAsset UUID values within the userInfo dictionary sent by various NSNotificationCenter
  *            notices.
  */
-extern NSString* const kSubscriptionManagerNotificationVirtuosoAssetUUIDsKey;
+extern NSString* _Nonnull const kSubscriptionManagerNotificationVirtuosoAssetUUIDsKey;
 
 
 #pragma mark
@@ -154,7 +154,7 @@ extern NSString* const kSubscriptionManagerNotificationVirtuosoAssetUUIDsKey;
  *  @abstract The current status of the Subscription Manager.  The updated status will be in the
  *            user info dictionary under the kSubscriptionManagerStatusDidChangeNotificationStatusKey.
  */
-extern NSString* const kSubscriptionManagerStatusDidChangeNotification;
+extern NSString* _Nonnull const kSubscriptionManagerStatusDidChangeNotification;
 
 /*!
  *  @constant kSubscriptionManagerAssetDeletedNotification
@@ -163,7 +163,7 @@ extern NSString* const kSubscriptionManagerStatusDidChangeNotification;
  *            An NSArray containing the UUID values of any VirtuosoAsset objects that were deleted will be in the user info dictionary under the
  *            kSubscriptionManagerNotificationVirtuosoAssetUUIDsKey.  You should use those values to update your own bookkeeping.
  */
-extern NSString* const kSubscriptionManagerAssetDeletedNotification;
+extern NSString* _Nonnull const kSubscriptionManagerAssetDeletedNotification;
 
 /*!
  *  @constant kSubscriptionManagerAssetDeferredNotification
@@ -172,7 +172,7 @@ extern NSString* const kSubscriptionManagerAssetDeletedNotification;
  *            any VirtuosoAsset objects that were created, but not added to the download queue, will be in the user info dictionary
  *            under the kSubscriptionManagerNotificationVirtuosoAssetsKey.
  */
-extern NSString* const kSubscriptionManagerAssetDeferredNotification;
+extern NSString* _Nonnull const kSubscriptionManagerAssetDeferredNotification;
 
 /*! 
  *  @constant kSubscriptionManagerAssetAddedNotification
@@ -188,14 +188,14 @@ extern NSString* const kSubscriptionManagerAssetDeferredNotification;
  *           would normally be triggered when asset expires or is removed from the catalog.  It is the Caller's responsibility to delete
  *           VirtuosoAsset items.
  */
-extern NSString* const kSubscriptionManagerAssetAddedNotification;
+extern NSString* _Nonnull const kSubscriptionManagerAssetAddedNotification;
 
 /*!
  *  @constant kSubscriptionManagerDidFinishSyncNotification
  *
  *  @abstract Notification sent by the Manager when a subscription sync with the Backplane has completed.
  */
-extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
+extern NSString* _Nonnull const kSubscriptionManagerDidFinishSyncNotification;
 
 
 /*!
@@ -239,7 +239,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @return Returns the VirtuosoSubscriptionManager object instance, or nil if the VirtuosoDownloadEngine hasn't been started yet.
  */
-+ (VirtuosoSubscriptionManager*)instance;
++ (nullable VirtuosoSubscriptionManager*)instance;
 
 /**---------------------------------------------------------------------------------------
  * @name Backplane Actions
@@ -261,7 +261,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @see syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:
  */
-- (void)syncSubscriptionsWithBackplaneNowOnComplete:(SyncCompleteBlock)onComplete;
+- (void)syncSubscriptionsWithBackplaneNowOnComplete:(nullable SyncCompleteBlock)onComplete;
 
 /*!
  *  @abstract Forces a manual subscription sync with the Backplane, using custom parameters
@@ -284,20 +284,22 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @see syncSubscriptionsWithBackplaneNowOnComplete:
  */
-- (void)syncSubscriptionsWithBackplaneNowForDataSince:(NSDate*)since returningOnlySubscribedFeeds:(Boolean)subscribed onComplete:(SyncCompleteBlock)onComplete;
+- (void)syncSubscriptionsWithBackplaneNowForDataSince:(nullable NSDate*)since
+                         returningOnlySubscribedFeeds:(Boolean)subscribed
+                                           onComplete:(nullable SyncCompleteBlock)onComplete;
 
 
 /*! 
  *  @abstract The last time the Manager successfully synced with the Backplane.
  */
-@property (nonatomic,readonly) NSDate* lastSubscriptionSyncTime;
+@property (nonatomic,readonly,nullable) NSDate* lastSubscriptionSyncTime;
 
 /*!
  *  @abstract Cancels all subscriptions.
  *
  *  @param onComplete A completion block indicating the unsubscription process is compplete.
  */
-- (void)unregisterSubscriptionsOnComplete:(SubscriptionResultBlock)onComplete;
+- (void)unregisterSubscriptionsOnComplete:(nullable SubscriptionResultBlock)onComplete;
 
 /**---------------------------------------------------------------------------------------
  * @name Subscription Manager Status
@@ -316,7 +318,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @param dataSourceClass A Class instance to use for metadata lookup operations
  */
-- (void)registerDataSource:(Class<VirtuosoSubscriptionDataSource>)dataSourceClass;
+- (void)registerDataSource:(nonnull Class<VirtuosoSubscriptionDataSource>)dataSourceClass;
 
 /*!
  *  @abstract The current Subscription Manager status
@@ -336,8 +338,9 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *  @abstract Returns a list of VirtuosoAsset UUID values that represent items currently tracked in the subscription feed.
  *
  *  @param feedAssetID The feed to return items for
+ *  @return A list of items in the subscription feed
  */
-- (NSArray*)itemsInTrackingFeed:(NSString*)feedAssetID;
+- (nonnull NSArray*)itemsInTrackingFeed:(nonnull NSString*)feedAssetID;
 
 /*!
  *  @abstract Includes the provided episode in the Manager's feed tracking lists
@@ -352,7 +355,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @param feedAssetID The feed to associate the item with
  */
-- (void)includeItem:(VirtuosoAsset*)item inTrackingFeed:(NSString*)feedAssetID;
+- (void)includeItem:(nonnull VirtuosoAsset*)item inTrackingFeed:(nonnull NSString*)feedAssetID;
 
 /*!
  *  @abstract Registers the Manager for updates from the Backplane relating to the provided Subscription ID
@@ -370,7 +373,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @param onComplete A completion block to call with request results
  */
-- (void)registerForSubscription:(NSString*)feedAssetID onComplete:(SubscriptionResultBlock)onComplete;
+- (void)registerForSubscription:(nonnull NSString*)feedAssetID onComplete:(nullable SubscriptionResultBlock)onComplete;
 
 /*!
  *  @abstract Registers the Manager for updates from the Backplane relating to the provided Subscription ID
@@ -394,11 +397,11 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @param onComplete A completion block to call with request results
  */
-- (void)registerForSubscription:(NSString*)feedAssetID
+- (void)registerForSubscription:(nonnull NSString*)feedAssetID
                withMaximumItems:(int)maximumSubscriptionItems
           andAutodeleteOldItems:(Boolean)autodelete
                      maxBitrate:(int)maxBitrate
-                     onComplete:(SubscriptionResultBlock)onComplete;
+                     onComplete:(nullable SubscriptionResultBlock)onComplete;
 
 /*!
  *  @abstract Applies new feed options to a subscribed feed
@@ -416,7 +419,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *                    value will be treated as the default for all new episodes.  Specific values provided by the Backplane metadata or data source
  *                    will override this value.
  */
-- (void)updateSubscription:(NSString*)feedAssetID
+- (void)updateSubscription:(nonnull NSString*)feedAssetID
           withMaximumItems:(int)maximumSubscriptionItems
      andAutodeleteOldItems:(Boolean)autodelete
                 maxBitrate:(int)maxBitrate;
@@ -433,7 +436,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @param onComplete A completion block to call with request results
  */
-- (void)unregisterForSubscription:(NSString*)feedAssetID onComplete:(SubscriptionResultBlock)onComplete;
+- (void)unregisterForSubscription:(nonnull NSString*)feedAssetID onComplete:(nullable SubscriptionResultBlock)onComplete;
 
 /*!
  *  @abstract Returns a list of existing subscriptions
@@ -442,7 +445,7 @@ extern NSString* const kSubscriptionManagerDidFinishSyncNotification;
  *
  *  @param onComplete A completion block to call with request results
  */
-- (void)subscriptionsOnComplete:(SubscriptionListResultBlock)onComplete;
+- (void)subscriptionsOnComplete:(nullable SubscriptionListResultBlock)onComplete;
 
 
 

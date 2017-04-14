@@ -74,6 +74,17 @@
             <NodeRef refid="31"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_LifetimeDownloadLimitReached</TokenIdentifier>
+            <Abstract type="html">Virtuoso has received notice from the server that the user has downloaded this asset the
+        maximum number of times for this account.  Downloads cannot continue for this asset. </Abstract>
+            <Declaration>kVDE_LifetimeDownloadLimitReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="31"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

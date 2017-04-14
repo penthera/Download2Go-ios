@@ -56,6 +56,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/accountStatusOK">accountStatusOK</option>
+		
 		<option value="//api/name/authenticationOK">authenticationOK</option>
 		
 		<option value="//api/name/backplaneURL">backplaneURL</option>
@@ -129,6 +131,8 @@
 		<option value="//api/name/moveAsset:inQueueToIndex:">- moveAsset:inQueueToIndex:</option>
 		
 		<option value="//api/name/removeFromQueue:">- removeFromQueue:</option>
+		
+		<option value="//api/name/shutdown">- shutdown</option>
 		
 		<option value="//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">- startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</option>
 		
@@ -205,7 +209,7 @@ provided <a href="#//api/name/instance">instance</a> method.</p></div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (VirtuosoDownloadEngine *)instance</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull VirtuosoDownloadEngine *)instance</code></div>
 
 		    
 			
@@ -258,7 +262,7 @@ copy will throw an exception.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)versionString</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)versionString</code></div>
 
 		    
 			
@@ -297,8 +301,8 @@ for documentation and debugging purposes.</p>
 						</div>
 						
 
-						<a title="Startup" name="task_Startup"></a>
-						<h2 class="task-title">Startup</h2>
+						<a title="Startup and Shutdown" name="task_Startup and Shutdown"></a>
+						<h2 class="task-title">Startup and Shutdown</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -318,7 +322,7 @@ for documentation and debugging purposes.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (kVDE_EngineStartupCode)startupWithBackplane:(NSString *)<em>backplaneURL</em> user:(NSString *)<em>user</em> externalDeviceID:(NSString *)<em>externalDeviceID</em> privateKey:(NSString *)<em>privateKey</em> publicKey:(NSString *)<em>publicKey</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (kVDE_EngineStartupCode)startupWithBackplane:(nonnull NSString *)<em>backplaneURL</em> user:(nonnull NSString *)<em>user</em> externalDeviceID:(nullable NSString *)<em>externalDeviceID</em> privateKey:(nonnull NSString *)<em>privateKey</em> publicKey:(nonnull NSString *)<em>publicKey</em></code></div>
 
 		    
 			
@@ -371,6 +375,63 @@ for documentation and debugging purposes.</p>
 this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
 Virtuoso behavior will be undefined. If you attempt to use the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a>
 before starting up, its <a href="#//api/name/instance">instance</a> method will return nil.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shutdown" title="shutdown"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shutdown">&ndash;&nbsp;shutdown</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets Virtuoso without unregistering the device or deleting assets.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)shutdown</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, if a <a href="#//api/name/user">user</a> logs out of the enclosing app, you would call the device unregister
+method for the user&rsquo;s device, which deletes all assets, removes the device from the backplane,
+and resets the engine state.  If complex business logic requires that you do not do these things
+when the <a href="#//api/name/user">user</a> logs out (if you want to allow the same <a href="#//api/name/user">user</a> to log back in without losing
+downloads, for <a href="#//api/name/instance">instance</a>), then you would use this method, rather than the device unregister method.</p>
+
+<p>After this method has been called, you must call
+<a href="#//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</a> again befor you call any other
+Virtuoso method.</p><div class="warning"><p><strong>Warning:</strong> After calling this method, except as otherwise documented, if you attempt to call other methods
+before calling <a href="#//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</a>, you&rsquo;ll get an
+exception. If you catch and ignore the exceptions, Virtuoso behavior will be undefined. If you
+attempt to use the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a> before starting up, its <a href="#//api/name/instance">instance</a> method will return nil.</p></div>
 			</div>
 			
 
@@ -472,7 +533,7 @@ then pass YES to the parameter.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *backplaneURL</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</code></div>
 
 		    
 			
@@ -513,7 +574,7 @@ then pass YES to the parameter.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *user</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *user</code></div>
 
 		    
 			
@@ -554,7 +615,7 @@ then pass YES to the parameter.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *externalDeviceID</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</code></div>
 
 		    
 			
@@ -595,7 +656,7 @@ then pass YES to the parameter.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *deviceID</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *deviceID</code></div>
 
 		    
 			
@@ -636,7 +697,7 @@ then pass YES to the parameter.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *secret</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *secret</code></div>
 
 		    
 			
@@ -677,7 +738,7 @@ then pass YES to the parameter.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *key</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *key</code></div>
 
 		    
 			
@@ -858,7 +919,7 @@ Default is YES.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *downloadBandwidthString</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</code></div>
 
 		    
 			
@@ -953,7 +1014,7 @@ background downloads, and this value only applies to data transferred while the 
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *currentlyDownloadingAsset</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</code></div>
 
 		    
 			
@@ -1002,7 +1063,7 @@ in the foreground.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *lastBackplaneSyncTime</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</code></div>
 
 		    
 			
@@ -1091,7 +1152,7 @@ objects will also return nil.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *licenseExpiry</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</code></div>
 
 		    
 			
@@ -1187,7 +1248,7 @@ The array is current as of the last sync with the Backplane.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *devices</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSArray *devices</code></div>
 
 		    
 			
@@ -1236,7 +1297,7 @@ The array is current as of the last sync with the Backplane.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)assetsInQueue</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)assetsInQueue</code></div>
 
 		    
 			
@@ -1289,7 +1350,7 @@ effect on the active queue.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addToQueue:(VirtuosoAsset *)<em>asset</em> atIndex:(NSUInteger)<em>index</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addToQueue:(nonnull VirtuosoAsset *)<em>asset</em> atIndex:(NSUInteger)<em>index</em></code></div>
 
 		    
 			
@@ -1357,7 +1418,7 @@ larger than the current queue size will result in the asset being added to the e
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)moveAsset:(VirtuosoAsset *)<em>asset</em> inQueueToIndex:(NSUInteger)<em>index</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)moveAsset:(nonnull VirtuosoAsset *)<em>asset</em> inQueueToIndex:(NSUInteger)<em>index</em></code></div>
 
 		    
 			
@@ -1425,7 +1486,7 @@ larger than the current queue size will result in the asset being added to the e
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSUInteger)removeFromQueue:(VirtuosoAsset *)<em>asset</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)removeFromQueue:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
 
 		    
 			
@@ -1451,11 +1512,6 @@ larger than the current queue size will result in the asset being added to the e
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method also deletes any temporary files on disk</p>
-			</div>
 			
 
 			
@@ -1488,7 +1544,7 @@ larger than the current queue size will result in the asset being added to the e
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (VirtuosoAsset *)assetInQueueWithURL:(NSString *)<em>url</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable VirtuosoAsset *)assetInQueueWithURL:(nonnull NSString *)<em>url</em></code></div>
 
 		    
 			
@@ -1552,7 +1608,7 @@ efficient to access the asset in the queue by known index or UUID value.</p></di
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (VirtuosoAsset *)assetInQueueWithUUID:(NSString *)<em>uuid</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable VirtuosoAsset *)assetInQueueWithUUID:(nonnull NSString *)<em>uuid</em></code></div>
 
 		    
 			
@@ -1807,6 +1863,47 @@ efficient to access the asset in the queue by known index or UUID value.</p></di
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/accountStatusOK" title="accountStatusOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accountStatusOK">&nbsp;&nbsp;accountStatusOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether account-level business rules permit downloading</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean accountStatusOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/authenticationOK" title="authenticationOK"></a>
 	<h3 class="method-title"><code><a href="#//api/name/authenticationOK">&nbsp;&nbsp;authenticationOK</a></code>
 </h3>
@@ -1862,7 +1959,7 @@ efficient to access the asset in the queue by known index or UUID value.</p></di
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-03-30</p>
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-04-14</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

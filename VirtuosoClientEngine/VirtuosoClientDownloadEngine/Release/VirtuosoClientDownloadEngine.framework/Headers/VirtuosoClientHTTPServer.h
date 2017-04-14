@@ -58,7 +58,7 @@
  *          window. If this method returns nil, it also sends errors via NSNotificationCenter
  *          indicating the problem.
  */
--(id)initWithAsset:(VirtuosoAsset*)asset;
+-(nullable id)initWithAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
  *  @abstract Creates a local HTTP proxy on the specified port using the specified asset
@@ -80,7 +80,7 @@
  *          window. If this method returns nil, it also sends errors via NSNotificationCenter 
  *          indicating the problem.
  */
--(id)initOnPort:(NSInteger)port withAsset:(VirtuosoAsset*)asset;
+-(nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
  *  @abstract Shuts down a running proxy instance
@@ -108,7 +108,7 @@
  *              based on the 'type' property of the provided VirtuosoAsset.
  *
  */
-@property (nonatomic,readonly) NSString* playbackURL;
+@property (nonatomic,readonly,nonnull) NSString* playbackURL;
 
 @end
 
