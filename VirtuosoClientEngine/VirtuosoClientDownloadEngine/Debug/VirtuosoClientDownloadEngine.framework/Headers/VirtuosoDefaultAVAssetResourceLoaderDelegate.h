@@ -17,6 +17,17 @@
 #import <VirtuosoClientDownloadEngine/VirtuosoAVAssetResourceLoaderDelegate.h>
 
 /*!
+ *  @abstract  Allows custom processing of the SPC license request and the license response
+ */
+@protocol VirtuosoLicenseProcessingDelegate <NSObject>
+
+- (NSData*)prepareSPCForLicenseRequest:(NSData*)spc;
+- (NSData*)extractCKCFromLicenseResponse:(NSData*)response;
+
+@end
+
+
+/*!
  *  @abstract A convenience subclass that automatically handles basic FairPlay licensing using the VirtuosoLicenseManager configuration
  *
  *  @discussion The VirtuosoDefaultAVAssetResourceLoaderDelegate automatically uses the configured VirtuosoLicenseManager settings to request
@@ -25,5 +36,7 @@
  *              content will only work while the device is online and capable of re-requesting streaming keys.
  */
 @interface VirtuosoDefaultAVAssetResourceLoaderDelegate : NSObject<VirtuosoAVAssetResourceLoaderDelegate>
+
++ (void)setLicenseProcessingDelegate:(id<VirtuosoLicenseProcessingDelegate>)delegate;
 
 @end

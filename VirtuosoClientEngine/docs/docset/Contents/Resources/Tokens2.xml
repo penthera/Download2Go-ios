@@ -842,38 +842,38 @@ specified parent view controller.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setDownloadPermissionGranted:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setDownloadPermission:</TokenIdentifier>
 			<Abstract type="html">Whether the backplane has given permission to download this asset</Abstract>
 			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Boolean downloadPermissionGranted</Declaration>
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetPermissionType downloadPermission</Declaration>
 			
 			
-			<Anchor>//api/name/downloadPermissionGranted</Anchor>
+			<Anchor>//api/name/downloadPermission</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/downloadPermissionGranted</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/downloadPermission</TokenIdentifier>
 			<Abstract type="html">Whether the backplane has given permission to download this asset</Abstract>
 			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Boolean downloadPermissionGranted</Declaration>
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetPermissionType downloadPermission</Declaration>
 			
 			
-			<Anchor>//api/name/downloadPermissionGranted</Anchor>
+			<Anchor>//api/name/downloadPermission</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadPermissionGranted</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadPermission</TokenIdentifier>
 			<Abstract type="html">Whether the backplane has given permission to download this asset</Abstract>
 			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Boolean downloadPermissionGranted</Declaration>
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetPermissionType downloadPermission</Declaration>
 			
 			
-			<Anchor>//api/name/downloadPermissionGranted</Anchor>
+			<Anchor>//api/name/downloadPermission</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

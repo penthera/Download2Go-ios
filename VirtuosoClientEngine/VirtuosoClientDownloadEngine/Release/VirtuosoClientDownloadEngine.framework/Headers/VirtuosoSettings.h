@@ -119,6 +119,18 @@
 @property (nonatomic,readonly) long long maxLifetimeDownloadsForAsset;
 
 /*!
+ *  @abstract Whether the engine should acquire download permissions when the asset is queued or when it starts downloading
+ *
+ *  @discussion Normally, the download engine acquires any necessary download permissions when the item starts downloading. By
+ *              delaying the permission check until download can occur, the SDK can allow new assets to be queued while the
+ *              device is offline.  If this setting is enabled, the download engine acquires permissions when the item is initially
+ *              queued.  This means that assets can only be created and queued when the device is online.  If this setting is
+ *              enabled and permissions are required (the maximum lifetime download limit or the maximum downloads per account features
+ *              are configured), then attempts to create/queue the asset while offline will fail.  The default value is NO.
+ */
+@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued;
+
+/*!
  *  @abstract Amount of time, in seconds, between when Virtuoso finishes downloading an asset
  *            and when it deletes that downloaded asset.
  *
@@ -384,6 +396,26 @@
 - (void)allowAdditionalMimeTypes:(nonnull NSArray*)additionalMimeTypes
                     forAssetType:(kVDE_AssetType)assetType
                      andDataType:(kVF_DownloadDataType)dataType;
+
+/*!
+ *  @abstract Configures the download engine to allow restricted MIME types
+ *
+ *  @discussion By default, the download engine explicitly disallows the MIME types text/html and text/xml
+ *              for encryption keys.  This is because these MIME types are commonly used in responses for
+ *              server errors and captive network pages, and the encryption keys should not use these types.
+ *              The default value for this setting is NO.
+ *             
+ *  @warning If you enable this option, the download engine will not be able to differentiate between 
+ *           downloaded encryption keys and other types of network content.  It is possible and, in fact, likely
+ *           that your users will eventually attempt a download in these conditions and end up with unplayable
+ *           content.
+ */
+- (void)allowRestrictedMimeTypesForEncryptionKeys:(Boolean)allow;
+
+/*!
+ *  @abstract Whether restricted MIME types are allowed for encryption keys
+ */
+- (Boolean)restrictedMimeTypesForEncryptionKeysAllowed;
 
 
 /**---------------------------------------------------------------------------------------

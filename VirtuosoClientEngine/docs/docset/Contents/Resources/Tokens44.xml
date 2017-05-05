@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVL_LoggingLevel.html">
+	<File path="Constants/kVL_BearerType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVL_LoggingLevel</TokenIdentifier>
-			<Abstract type="html">Log levels available to filter log output.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVL_BearerType</TokenIdentifier>
+			<Abstract type="html">Type of network the device was on when the log event was created.</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogError</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_BearerWifi</TokenIdentifier>
+            <Abstract type="html">A wifi network</Abstract>
+            <Declaration>kVL_BearerWifi</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogWarning</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogWarning</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_BearerCellular</TokenIdentifier>
+            <Abstract type="html">A cellular network</Abstract>
+            <Declaration>kVL_BearerCellular</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogInformation</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogInformation</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_BearerNone</TokenIdentifier>
+            <Abstract type="html">No network detected</Abstract>
+            <Declaration>kVL_BearerNone</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
@@ -44,19 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogDebug</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogDebug</Declaration>
-            
-            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
-            
-            <NodeRef refid="44"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_LogVerbose</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVL_LogVerbose</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_Invalid</TokenIdentifier>
+            <Abstract type="html">Used for events that don&apos;t relate to network state</Abstract>
+            <Declaration>kVL_Invalid</Declaration>
             
             <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             

@@ -79,8 +79,6 @@ extern NSString* kDownloadEngineNotificationErrorKey;
  */
 extern NSString* kDownloadEngineNotificationSuccessValueKey;
 
-
-
 /**---------------------------------------------------------------------------------------
  * @name NSNotification Names
  *  ---------------------------------------------------------------------------------------

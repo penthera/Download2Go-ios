@@ -223,8 +223,11 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     /** There was an internal error.  Please contact Penthera support. */
     kVDE_InternalError = -9,
     
-    /** Virtuoso was unable to obtain permission to download the asset. */
-    kVDE_PermissionsError = -10,
+    /** Virtuoso was unable to obtain permission to download the asset because the lifetime download limit for this asset was reached. */
+    kVDE_PermissionsErrorLifetimeDownloadLimit = -10,
+    
+    /** Virtuoso was unable to obtain permission to download the asset because the account has reached its maximum download limit. */
+    kVDE_PermissionsErrorMaximumDownloadsPerAccount = -11,
 };
 
 
@@ -274,6 +277,22 @@ typedef NS_ENUM(NSInteger, kVDE_PlayerErrorCode)
 #pragma mark
 #pragma mark Virtuoso Asset Data Types
 #pragma mark
+
+/*!
+ *  @constant kAssetPermissionErrorAssetDataKey
+ *
+ *  @abstract The key in the NSError userInfo dictionary containing information about current asset download state
+ *            when Virtuoso fails to acquire download permission
+ */
+extern NSString* kAssetPermissionErrorAssetDataKey;
+
+/*!
+ *  @constant kAssetPermissionErrorAccountDataKey
+ *
+ *  @abstract The key in the NSError userInfo dictionary containing information about current account download state
+ *            when Virtuoso fails to acquire download permission
+ */
+extern NSString* kAssetPermissionErrorAccountDataKey;
 
 /*!
  *  @typedef kVF_SegmentType
@@ -384,6 +403,26 @@ typedef NS_ENUM(NSInteger, kVDE_AssetPlaybackType)
     
     /** The asset will play using FastPlay, a mix of local and online data */
     kVDE_AssetPlaybackTypeFastPlay = 2,
+};
+
+/*!
+ * @typedef kVDE_AssetPermissionType
+ *
+ * @discussion Available account or global asset permissions
+ **/
+typedef NS_ENUM(NSInteger, kVDE_AssetPermissionType)
+{
+    /** Permissions have not yet been requested for the asset */
+    kVDE_AssetPermissionNotRequested = 0,
+    
+    /** Permission has been granted for the asset to download */
+    kVDE_AssetPermissionGranted = 1,
+    
+    /** Permission to download has been denied because the account has reached is maximum limit */
+    kVDE_AssetPermissionDeniedAccountMaxReached = 2,
+    
+    /** Permission to download has been denied because the global asset download limit as been reached */
+    kVDE_AssetPermissionDeniedLifetimeLimitReached = 3,
 };
 
 /*!
@@ -565,6 +604,18 @@ typedef void(^AssetParsingCompletedBlock)(VirtuosoAsset* parsedAsset, NSError* e
  *  @param parsedAsset The VirtuosoAsset ready to be added to the download queue.
  */
 typedef void(^AssetReadyForDownloadBlock)(VirtuosoAsset* parsedAsset);
+
+/*!
+ *  @typedef AssetAddToQueueCompleteBlock
+ *
+ *  @discussion Fires when Virtuoso has finished adding an asset to the queue.  If an error was encountered while adding
+ *              the asset to the queue, it will be returned.  The userInfo dictionary will contain additional details
+ *              about the error.
+ *
+ *  @param asset The VirtuosoAsset that was added to the queue
+ *  @param error Any error that was encountered while adding the asset to the queue, otherwise nil
+ */
+typedef void(^AssetAddToQueueCompleteBlock)(VirtuosoAsset* asset, NSError* error);
 
 /*!
  *  @typedef kVDM_ManifestType

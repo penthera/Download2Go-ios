@@ -722,11 +722,11 @@ The array is current as of the last sync with the Backplane.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/addToQueue:atIndex:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/addToQueue:atIndex:onComplete:</TokenIdentifier>
 			<Abstract type="html">Adds an asset to the download queue.</Abstract>
 			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
 			
-			<Declaration>- (void)addToQueue:(nonnull VirtuosoAsset *)asset atIndex:(NSUInteger)index</Declaration>
+			<Declaration>- (NSError *_Nullable)addToQueue:(nonnull VirtuosoAsset *)asset atIndex:(NSUInteger)index onComplete:(AssetAddToQueueCompleteBlock _Nullable)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -734,10 +734,13 @@ The array is current as of the last sync with the Backplane.</Abstract>
 				</Parameter><Parameter>
 					<Name>index</Name>
 					<Abstract type="html">The index in the queue to add the asset at</Abstract>
+				</Parameter><Parameter>
+					<Name>onComplete</Name>
+					<Abstract type="html">Completion block that fires after the asset has been added to the queue</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/addToQueue:atIndex:</Anchor>
+			<ReturnValue><Abstract type="html">An error indicating any issues that occurred while adding the asset to the queue, or nil if no error</Abstract></ReturnValue>
+			<Anchor>//api/name/addToQueue:atIndex:onComplete:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

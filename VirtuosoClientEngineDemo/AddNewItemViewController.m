@@ -398,7 +398,7 @@
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                     NSLog(@"Item is ready for download: %@",parsedAsset);
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                     [self dismissViewControllerAnimated:YES completion:nil];
                                 } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                     NSLog(@"Finished parsing %@", parsedAsset);
@@ -427,7 +427,7 @@
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                     NSLog(@"Item is ready for download: %@",parsedAsset);
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                     [self dismissViewControllerAnimated:YES completion:nil];
                                 } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                     NSLog(@"Finished parsing %@", parsedAsset);
@@ -456,7 +456,7 @@
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                     NSLog(@"Item is ready for download: %@",parsedAsset);
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                     [self dismissViewControllerAnimated:YES completion:nil];
                                 } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                     NSLog(@"Finished parsing %@", parsedAsset);
@@ -495,7 +495,7 @@
                  {
                      NSLog(@"Item is ready for download: %@",parsedAsset);
                      [MBProgressHUD hideHUDForView:self.view animated:YES];
-                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                      [self dismissViewControllerAnimated:YES completion:nil];
                  }
                                 onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error)
@@ -527,7 +527,7 @@
                  {
                      NSLog(@"Item is ready for download: %@",parsedAsset);
                      [MBProgressHUD hideHUDForView:self.view animated:YES];
-                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                      [self dismissViewControllerAnimated:YES completion:nil];
                  }
                                 onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error)
@@ -559,7 +559,7 @@
                  {
                      NSLog(@"Item is ready for download: %@",parsedAsset);
                      [MBProgressHUD hideHUDForView:self.view animated:YES];
-                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                      [self dismissViewControllerAnimated:YES completion:nil];
                  }
                                 onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error)
@@ -595,7 +595,7 @@
                                onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                    NSLog(@"Item is ready for download: %@",parsedAsset);
                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                   [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                   [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                    [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -621,7 +621,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -647,7 +647,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -681,7 +681,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -707,7 +707,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -738,7 +738,7 @@
                                       
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -769,7 +769,7 @@
                                       
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -795,7 +795,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -821,7 +821,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -849,7 +849,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -877,7 +877,7 @@
                                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                         [self dismissViewControllerAnimated:YES completion:nil];
                                   } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                       NSLog(@"Finished parsing %@", parsedAsset);
@@ -906,7 +906,7 @@
                                 onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
                                     NSLog(@"Item is ready for download: %@",parsedAsset);
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax];
+                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
                                     [self dismissViewControllerAnimated:YES completion:nil];
                                 } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
                                     NSLog(@"Finished parsing %@", parsedAsset);

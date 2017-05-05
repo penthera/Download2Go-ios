@@ -44,6 +44,7 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoSettings.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoLicenseManager.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoSecureClock.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoDefaultAVAssetResourceLoaderDelegate.h>
 
 #pragma mark
 #pragma mark Common

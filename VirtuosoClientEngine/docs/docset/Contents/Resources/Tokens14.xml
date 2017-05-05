@@ -241,6 +241,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAcquirePermissionWhenQueued:</TokenIdentifier>
+			<Abstract type="html">Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued</Declaration>
+			
+			
+			<Anchor>//api/name/acquirePermissionWhenQueued</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/acquirePermissionWhenQueued</TokenIdentifier>
+			<Abstract type="html">Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued</Declaration>
+			
+			
+			<Anchor>//api/name/acquirePermissionWhenQueued</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/acquirePermissionWhenQueued</TokenIdentifier>
+			<Abstract type="html">Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued</Declaration>
+			
+			
+			<Anchor>//api/name/acquirePermissionWhenQueued</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDefaultExpiryAfterDownload:</TokenIdentifier>
 			<Abstract type="html">Amount of time, in seconds, between when Virtuoso finishes downloading an asset
 and when it deletes that downloaded asset.</Abstract>
@@ -946,6 +982,30 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			</Parameters>
 			
 			<Anchor>//api/name/allowAdditionalMimeTypes:forAssetType:andDataType:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/allowRestrictedMimeTypesForEncryptionKeys:</TokenIdentifier>
+			<Abstract type="html">Configures the download engine to allow restricted MIME types</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>- (void)allowRestrictedMimeTypesForEncryptionKeys:(Boolean)allow</Declaration>
+			
+			
+			<Anchor>//api/name/allowRestrictedMimeTypesForEncryptionKeys:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/restrictedMimeTypesForEncryptionKeysAllowed</TokenIdentifier>
+			<Abstract type="html">Whether restricted MIME types are allowed for encryption keys</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)restrictedMimeTypesForEncryptionKeysAllowed</Declaration>
+			
+			
+			<Anchor>//api/name/restrictedMimeTypesForEncryptionKeysAllowed</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

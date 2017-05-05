@@ -47,21 +47,23 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
 /*!
  *  @abstract Requests optional license parameters for license aquisition
  *
- *  @discussion Some DRM implementations require that an additional unique asset license ID be appended
+ *  @discussion Some DRM implementations require that an additional unique URL suffix be appended
  *              to the license server URL.  Some DRM implementations may also require that an additional
- *              token parameter is included as a property on the license server url.  Both of these values
+ *              custom parameters be included on the license server url.  Both of these values
  *              are optional, and if you pass nil, they will not be used.  If you do pass these values, the
- *              resulting license server request will be in the format <license_server_base_url>/<licenseID>?token=<licenseToken>.
+ *              resulting license server request will be in the format <license_server_base_url>/<url_suffix>?<parameters>.
  *
- *              Note that the parameters for licenseID and licenseToken are pointers to pointers.  To provide
+ *              Note that the parameters for both values are pointers to pointers.  To provide
  *              the values, set your desired values to the dereferenced parameter (See the SDK Demo app for an 
  *              example).
  *
- *  @param licenseID An asset-unique DRM license ID
- *  @param licenseToken A unique token parameter to include as part of the DRM license request.
- *  @param asset The asset requiring an offline playback license
+ *  @param urlSuffix        A URL suffix to be appended to the base license URL.
+ *  @param customParameters A dictionary of key-value pairs to be added to the license request as URL parameters
+ *  @param asset            The asset requiring an offline playback license
  */
-- (void)lookupID:( NSString* _Nonnull * _Nullable)licenseID andLicenseToken:( NSString* _Nonnull * _Nullable)licenseToken forAsset:(VirtuosoAsset* _Nonnull)asset;
+- (void)lookupLicenseURLSuffix:(NSString* _Nonnull * _Nullable)urlSuffix
+                 andParameters:(NSDictionary* _Nonnull * _Nullable)customParameters
+                      forAsset:(VirtuosoAsset* _Nonnull)asset;
 
 @end
 

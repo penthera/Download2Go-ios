@@ -171,4 +171,9 @@
  */
 @property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime;
 
+/*!
+ *  @abstract Button shown in the top HUD overlay, allowing the user to select audio and subtitle language options
+ */
+@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton;
+
 @end

@@ -56,6 +56,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/acquirePermissionWhenQueued">acquirePermissionWhenQueued</option>
+		
 		<option value="//api/name/additionalNetworkHeaders">additionalNetworkHeaders</option>
 		
 		<option value="//api/name/clientSSLCertificatePassword">clientSSLCertificatePassword</option>
@@ -122,6 +124,8 @@
 		
 		<option value="//api/name/allowAdditionalMimeTypes:forAssetType:andDataType:">- allowAdditionalMimeTypes:forAssetType:andDataType:</option>
 		
+		<option value="//api/name/allowRestrictedMimeTypesForEncryptionKeys:">- allowRestrictedMimeTypesForEncryptionKeys:</option>
+		
 		<option value="//api/name/overrideDownloadOverCellular:">- overrideDownloadOverCellular:</option>
 		
 		<option value="//api/name/overrideHeadroom:">- overrideHeadroom:</option>
@@ -135,6 +139,8 @@
 		<option value="//api/name/resetHeadroomToDefault">- resetHeadroomToDefault</option>
 		
 		<option value="//api/name/resetMaxStorageAllowedToDefault">- resetMaxStorageAllowedToDefault</option>
+		
+		<option value="//api/name/restrictedMimeTypesForEncryptionKeysAllowed">- restrictedMimeTypesForEncryptionKeysAllowed</option>
 		
 	</optgroup>
 	
@@ -517,6 +523,57 @@ the limit again.  The default value is -1 (unlimited).</p>
 				<p>Virtuoso limits the total number of times an asset can be downloaded on any device in the account.
 Once this limit is reached, the asset can no longer be downloaded without administrative action.
 The default value is -1 (unlimited).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/acquirePermissionWhenQueued" title="acquirePermissionWhenQueued"></a>
+	<h3 class="method-title"><code><a href="#//api/name/acquirePermissionWhenQueued">&nbsp;&nbsp;acquirePermissionWhenQueued</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, the download engine acquires any necessary download permissions when the item starts downloading. By
+delaying the permission check until download can occur, the SDK can allow new assets to be queued while the
+device is offline.  If this setting is enabled, the download engine acquires permissions when the item is initially
+queued.  This means that assets can only be created and queued when the device is online.  If this setting is
+enabled and permissions are required (the maximum lifetime download limit or the maximum downloads per account features
+are configured), then attempts to create/queue the asset while offline will fail.  The default value is NO.</p>
 			</div>
 			
 
@@ -1719,6 +1776,99 @@ If you pass nil, then only the default list of permitted MIME types will be used
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowRestrictedMimeTypesForEncryptionKeys:" title="allowRestrictedMimeTypesForEncryptionKeys:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowRestrictedMimeTypesForEncryptionKeys:">&ndash;&nbsp;allowRestrictedMimeTypesForEncryptionKeys:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configures the download engine to allow restricted MIME types</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)allowRestrictedMimeTypesForEncryptionKeys:(Boolean)<em>allow</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>By default, the download engine explicitly disallows the MIME types text/html and text/xml
+for encryption keys.  This is because these MIME types are commonly used in responses for
+server errors and captive network pages, and the encryption keys should not use these types.
+The default value for this setting is NO.</p><div class="warning"><p><strong>Warning:</strong> If you enable this option, the download engine will not be able to differentiate between
+downloaded encryption keys and other types of network content.  It is possible and, in fact, likely
+that your users will eventually attempt a download in these conditions and end up with unplayable
+content.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/restrictedMimeTypesForEncryptionKeysAllowed" title="restrictedMimeTypesForEncryptionKeysAllowed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/restrictedMimeTypesForEncryptionKeysAllowed">&ndash;&nbsp;restrictedMimeTypesForEncryptionKeysAllowed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether restricted MIME types are allowed for encryption keys</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (Boolean)restrictedMimeTypesForEncryptionKeysAllowed</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -2039,7 +2189,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-04-14</p>
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

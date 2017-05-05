@@ -13,25 +13,25 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupID:andLicenseToken:forAsset:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:forAsset:</TokenIdentifier>
 			<Abstract type="html">Requests optional license parameters for license aquisition</Abstract>
 			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>- (void)lookupID:(NSString *_Nonnull *_Nullable)licenseID andLicenseToken:(NSString *_Nonnull *_Nullable)licenseToken forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>licenseID</Name>
-					<Abstract type="html">An asset-unique DRM license ID</Abstract>
+					<Name>urlSuffix</Name>
+					<Abstract type="html">A URL suffix to be appended to the base license URL.</Abstract>
 				</Parameter><Parameter>
-					<Name>licenseToken</Name>
-					<Abstract type="html">A unique token parameter to include as part of the DRM license request.</Abstract>
+					<Name>customParameters</Name>
+					<Abstract type="html">A dictionary of key-value pairs to be added to the license request as URL parameters</Abstract>
 				</Parameter><Parameter>
 					<Name>asset</Name>
 					<Abstract type="html">The asset requiring an offline playback license</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/lookupID:andLicenseToken:forAsset:</Anchor>
+			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:forAsset:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

@@ -577,7 +577,7 @@ typedef void (^BasicCompletionBlock)();
  *              for the asset to be downloaded, that permission is retained until a download error occurs, the 
  *              download completes successfully, or the download is deleted.
  */
-@property (nonatomic,readonly) Boolean downloadPermissionGranted;
+@property (nonatomic,readonly) kVDE_AssetPermissionType downloadPermission;
 
 /*!
  *  @abstract The current size of this asset

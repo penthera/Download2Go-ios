@@ -300,10 +300,23 @@
  *              any assumptions about the number of assets Virtuoso may download in parallel.  Providing any index
  *              larger than the current queue size will result in the asset being added to the end of the queue.
  *
- *  @param asset The asset to add to the download queue
- *  @param index The index in the queue to add the asset at
+ *              If this method is called without a completion block, any required permissions checks will be done
+ *              synchronously, and this method may block until they complete.  Any errors will be returned in the
+ *              method's return value.  If this method is called with a completion block, then the method is 
+ *              asynchronous, and the asset will be added to the queue after this method returns.  In this case,
+ *              the return value will always be nil.  In either case, the asset will be added to the queue.  
+ *              Any errors encountered while adding the asset asynchronously (E.G. permissions errors) will be 
+ *              reported with the completion block.
+ *
+ *  @param asset      The asset to add to the download queue
+ *  @param index      The index in the queue to add the asset at
+ *  @param onComplete Completion block that fires after the asset has been added to the queue
+ *
+ *  @return An error indicating any issues that occurred while adding the asset to the queue, or nil if no error
  */
-- (void)addToQueue:(nonnull VirtuosoAsset*)asset atIndex:(NSUInteger)index;
+- (NSError* _Nullable)addToQueue:(nonnull VirtuosoAsset*)asset
+                         atIndex:(NSUInteger)index
+                      onComplete:(AssetAddToQueueCompleteBlock _Nullable )onComplete;
 
 /*!
  *  @abstract Reorders the download queue.

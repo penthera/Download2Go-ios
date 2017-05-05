@@ -1456,7 +1456,7 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                                                      otherButtonTitles:@"Add To Download Queue", nil];
             self.actionSheetCompleteBlock = ^(UIActionSheet* actionSheet, NSInteger buttonIndex) {
                 if( buttonIndex != actionSheet.cancelButtonIndex )
-                    [[VirtuosoDownloadEngine instance] addToQueue:asset atIndex:NSUIntegerMax];
+                    [[VirtuosoDownloadEngine instance] addToQueue:asset atIndex:NSUIntegerMax onComplete:nil];
             };
             [sheet showInView:self.view];
             return;
