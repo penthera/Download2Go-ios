@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/VirtuosoPlayerView.h</key>
 		<data>
-		KbJWqdxSX6d6NNrBY+FvzcnsYDM=
+		+5ADl/LcF0BdSL6FOwMSwI4ekNI=
 		</data>
 		<key>Headers/VirtuosoPlayerViewController.h</key>
 		<data>
@@ -183,14 +183,6 @@
 		<key>hudbackground_iphone@2x.png</key>
 		<data>
 		Lp4WFoHmwKi6V+s8r3ODn2pCpt4=
-		</data>
-		<key>language.png</key>
-		<data>
-		FtyB+LyGyVnEFavL2hz4g+3k3lA=
-		</data>
-		<key>language@2x</key>
-		<data>
-		tgFkGsV5OxKUJYRW/Dl72qY/3CM=
 		</data>
 		<key>music_icon.png</key>
 		<data>
@@ -500,11 +492,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KbJWqdxSX6d6NNrBY+FvzcnsYDM=
+			+5ADl/LcF0BdSL6FOwMSwI4ekNI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qe+QxHQftC0C9DQT43yKujZXFVlwHpGaL798PZMcFBo=
+			y3lBJOuBWdcPpYMY3sJMvHYSZkKKwKGX41ShK4cZTJE=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoPlayerViewController.h</key>
@@ -769,28 +761,6 @@
 			<key>hash2</key>
 			<data>
 			3rolrby07PSc8DSxaAQqLQHAB4YXR7eUDoHeucC10C0=
-			</data>
-		</dict>
-		<key>language.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FtyB+LyGyVnEFavL2hz4g+3k3lA=
-			</data>
-			<key>hash2</key>
-			<data>
-			N1IlZsyaV5jWMZGRmYrCxnHwcOhqNp8yxLaVrBXH2ik=
-			</data>
-		</dict>
-		<key>language@2x</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tgFkGsV5OxKUJYRW/Dl72qY/3CM=
-			</data>
-			<key>hash2</key>
-			<data>
-			Q6L+DGHNYMw2HnarCbK59jYVmlmLUY27Z9kGOFFa8as=
 			</data>
 		</dict>
 		<key>music_icon.png</key>
