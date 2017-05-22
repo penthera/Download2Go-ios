@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVL_LoggingLevel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVL_LoggingLevel</TokenIdentifier>
+			<Abstract type="html">Log levels available to filter log output.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+			
+			<NodeRef refid="46"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_LogError</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVL_LogError</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_LogWarning</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVL_LogWarning</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_LogInformation</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVL_LogInformation</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_LogDebug</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVL_LogDebug</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVL_LogVerbose</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVL_LogVerbose</Declaration>
+            
+            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

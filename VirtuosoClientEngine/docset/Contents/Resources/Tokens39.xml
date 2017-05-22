@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_ProxyErrorCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ProxyErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
+NSNotificationCenter. These codes are included in the NSError that is sent.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneAuthorizationTimedOut</TokenIdentifier>
+            <Abstract type="html">For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
+        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. </Abstract>
+            <Declaration>kVDE_BackplaneAuthorizationTimedOut</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetOutsideViewingWindow</TokenIdentifier>
+            <Abstract type="html">You attempted to play an asset outside its availability window.</Abstract>
+            <Declaration>kVDE_PlayedAssetOutsideViewingWindow</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetExpired</TokenIdentifier>
+            <Abstract type="html">You attempted to play an expired asset.</Abstract>
+            <Declaration>kVDE_PlayedAssetExpired</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidAsset</TokenIdentifier>
+            <Abstract type="html">The VirtuosoAsset used to initialize the proxy wasn&apos;t an invalid asset or the asset protection type was not
+        kVDE_AssetProtectionTypePassthrough. </Abstract>
+            <Declaration>kVDE_InvalidAsset</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PortInUse</TokenIdentifier>
+            <Abstract type="html">The HTTP server was unable to listen on the selected port</Abstract>
+            <Declaration>kVDE_PortInUse</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

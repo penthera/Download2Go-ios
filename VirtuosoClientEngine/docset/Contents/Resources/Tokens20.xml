@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/VirtuosoLicenseManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLicenseManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate used to request optional license parameters for license aquisition</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:forAsset:</TokenIdentifier>
+			<Abstract type="html">Requests optional license parameters for license aquisition</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>urlSuffix</Name>
+					<Abstract type="html">A URL suffix to be appended to the base license URL.</Abstract>
+				</Parameter><Parameter>
+					<Name>customParameters</Name>
+					<Abstract type="html">A dictionary of key-value pairs to be added to the license request as URL parameters</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset requiring an offline playback license</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:forAsset:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

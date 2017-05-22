@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegate</TokenIdentifier>
+			<Abstract type="html">Provides a mechanism to automatically handle FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setLoadPersistentLicense:</TokenIdentifier>
+			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			
+			
+			<Anchor>//api/name/loadPersistentLicense</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
+			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			
+			
+			<Anchor>//api/name/loadPersistentLicense</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
+			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			
+			
+			<Anchor>//api/name/loadPersistentLicense</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setErrorHandler:</TokenIdentifier>
+			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			
+			
+			<Anchor>//api/name/errorHandler</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
+			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			
+			
+			<Anchor>//api/name/errorHandler</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
+			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			
+			
+			<Anchor>//api/name/errorHandler</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

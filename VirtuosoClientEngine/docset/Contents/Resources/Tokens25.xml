@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/VirtuosoSubscriptionDataSource.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoSubscriptionDataSource</TokenIdentifier>
+			<Abstract type="html">Provides a configurable and dynamic mechanism for retrieving required data about subscription content.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionDefaultDataSource</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithSubscriptions:</TokenIdentifier>
+			<Abstract type="html">Initializes a data source with subscriptions that require data lookups</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			
+			<Declaration>- (nonnull id)initWithSubscriptions:(nonnull NSArray *)subscriptions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>subscriptions</Name>
+					<Abstract type="html">A list of subscription data</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSubscriptions:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithAssets:</TokenIdentifier>
+			<Abstract type="html">Initializes a data source with individual assets that require data lookups</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			
+			<Declaration>- (nonnull id)initWithAssets:(nonnull NSArray *)assets</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assets</Name>
+					<Abstract type="html">A list of asset data</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAssets:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/process</TokenIdentifier>
+			<Abstract type="html">Processes a data lookup operation using the initalized subscription data</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSObject *)process</Declaration>
+			
+			<ReturnValue><Abstract type="html">If the data source was initialized with subscriptions, via the initWithSubscriptions method, then a NSDictionary where the keys are subscription IDs and
+the values are NSArrays containing NSDictionaries representing asset data, with key-value data as defined in SubscriptionAssetDataAttributes.  If the
+data source was initialized with assets, via the initWithAssets method, then a single NSArray is returned directly, without the top NSDictionary package.</Abstract></ReturnValue>
+			<Anchor>//api/name/process</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

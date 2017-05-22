@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVSM_MediaTypeCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVSM_MediaTypeCode</TokenIdentifier>
+			<Abstract type="html">A defined list of media types that the Manager is aware of and will auto-start downloads for.  The data source must include
+a media type value in the parsed data response for automatic downloads to be handled.  Any returned item that does not have one
+of these values will be ignored.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+			
+			<NodeRef refid="48"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFirst</TokenIdentifier>
+            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
+            <Declaration>kVSM_MediaTypeCodeFirst</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFile</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVSM_MediaTypeCodeFile</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeAudio</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVSM_MediaTypeCodeAudio</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeVideo</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVSM_MediaTypeCodeVideo</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHLS</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVSM_MediaTypeCodeHLS</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHSS</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kVSM_MediaTypeCodeHSS</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeLast</TokenIdentifier>
+            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
+            <Declaration>kVSM_MediaTypeCodeLast</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

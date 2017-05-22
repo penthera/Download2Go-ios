@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVLM_DRMType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVLM_DRMType</TokenIdentifier>
+			<Abstract type="html">DRM types internally supported by Virtuoso</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="43"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLM_FairPlay</TokenIdentifier>
+            <Abstract type="html">DRM provided by Apple FairPlay</Abstract>
+            <Declaration>kVLM_FairPlay</Declaration>
+            
+            <DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+            
+            <NodeRef refid="43"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVLM_Widevine</TokenIdentifier>
+            <Abstract type="html">DRM provided by Google Widevine</Abstract>
+            <Declaration>kVLM_Widevine</Declaration>
+            
+            <DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+            
+            <NodeRef refid="43"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

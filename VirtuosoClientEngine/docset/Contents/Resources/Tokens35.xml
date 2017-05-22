@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_EngineStartupCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_EngineStartupCode</TokenIdentifier>
+			<Abstract type="html">Returned by the various startup methods to indicate whether Virtuoso successfully started up.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccess</TokenIdentifier>
+            <Abstract type="html">Virtuoso successfully started up</Abstract>
+            <Declaration>kVDE_EngineStartupSuccess</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupAlreadyStarted</TokenIdentifier>
+            <Abstract type="html">Virtuoso was already started; no action occurred</Abstract>
+            <Declaration>kVDE_EngineStartupAlreadyStarted</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccessNoBackplane</TokenIdentifier>
+            <Abstract type="html">Virtuoso started up, but couldn&apos;t reach the  Backplane</Abstract>
+            <Declaration>kVDE_EngineStartupSuccessNoBackplane</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupFailed</TokenIdentifier>
+            <Abstract type="html">Virtuoso failed to start up. Error codes from the Backplane
+        will be sent via NSNotificationCenter </Abstract>
+            <Declaration>kVDE_EngineStartupFailed</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupInvalidOptions</TokenIdentifier>
+            <Abstract type="html">Virtuoso can&apos;t start up with the parameters provided</Abstract>
+            <Declaration>kVDE_EngineStartupInvalidOptions</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

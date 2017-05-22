@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/VirtuosoPlayerViewDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayerViewDelegate</TokenIdentifier>
+			<Abstract type="html">If you are using VirtuosoPlayerView directly, then you will need to configure
+a delegate to handle playback events.  If you are using VirtuosoPlayerViewController,
+then the delegate calls are handled internally.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerFinishedPlayback:</TokenIdentifier>
+			<Abstract type="html">Called when the player has reached the end of the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)playerFinishedPlayback:(nonnull VirtuosoPlayerView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The VirtuosoPlayerView object that finished playing</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/playerFinishedPlayback:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerDoneButtonClicked:</TokenIdentifier>
+			<Abstract type="html">Called when the user taps the done button.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)playerDoneButtonClicked:(nonnull VirtuosoPlayerView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The VirtuosoPlayerView object requesting to finish</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/playerDoneButtonClicked:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

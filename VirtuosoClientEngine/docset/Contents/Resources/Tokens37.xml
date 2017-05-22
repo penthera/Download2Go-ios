@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_NetworkStatus.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_NetworkStatus</TokenIdentifier>
+			<Abstract type="html">Engine-local versions of Reachability status.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="37"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_NotReachable</TokenIdentifier>
+            <Abstract type="html">The network is not currently reachable</Abstract>
+            <Declaration>kVDE_NotReachable</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="37"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_ReachableViaWiFi</TokenIdentifier>
+            <Abstract type="html">The network is currently reachable via WiFi</Abstract>
+            <Declaration>kVDE_ReachableViaWiFi</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="37"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_ReachableViaWWAN</TokenIdentifier>
+            <Abstract type="html">The network is currently reachable via cellular</Abstract>
+            <Declaration>kVDE_ReachableViaWWAN</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="37"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_AssetPlaybackType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetPlaybackType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetPlaybackType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeLocal</TokenIdentifier>
+            <Abstract type="html">The asset will play using downloaded version</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeLocal</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="28"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeStream</TokenIdentifier>
+            <Abstract type="html">The asset will play using the online stream</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeStream</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="28"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeFastPlay</TokenIdentifier>
+            <Abstract type="html">The asset will play using FastPlay, a mix of local and online data</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeFastPlay</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="28"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

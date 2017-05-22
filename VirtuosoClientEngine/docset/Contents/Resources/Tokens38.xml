@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_PlayerErrorCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_PlayerErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors issued from VirtuosoAVPlayer and associated classes.  Will be reported via the AVPlayer
+error property when the status property changes to AVPlayerStatusFailed.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAVPlayer</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<NodeRef refid="38"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayerErrorAssetTypeNotSupported</TokenIdentifier>
+            <Abstract type="html">VirtuosoAVPlayer supports playback of MP4, HLS, and MPEG-DASH assets.  FairPlay and Widevine DRM is
+        directly supported.  Integration with other DRM systems is possible, but may require additional integration. 
+        Attempts to play any other asset type will result in this error. </Abstract>
+            <Declaration>kVDE_PlayerErrorAssetTypeNotSupported</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="38"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

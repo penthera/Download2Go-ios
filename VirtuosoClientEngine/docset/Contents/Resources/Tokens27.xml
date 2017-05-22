@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_AssetPermissionType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetPermissionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetPermissionType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionNotRequested</TokenIdentifier>
+            <Abstract type="html">Permissions have not yet been requested for the asset</Abstract>
+            <Declaration>kVDE_AssetPermissionNotRequested</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionGranted</TokenIdentifier>
+            <Abstract type="html">Permission has been granted for the asset to download</Abstract>
+            <Declaration>kVDE_AssetPermissionGranted</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAccountMaxReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because the account has reached is maximum limit</Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedAccountMaxReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedLifetimeLimitReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because the global asset download limit as been reached</Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedLifetimeLimitReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVSM_ManagerFailureCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVSM_ManagerFailureCode</TokenIdentifier>
+			<Abstract type="html">The kVSM_ManagerFailureCode values are used to indicate various startup failure modes in the Manager.  The
+codes can be used to diagnose potential issues with startup, including communications issues with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="47"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureAuthentication</TokenIdentifier>
+            <Abstract type="html">The provided application secret,key, or user ID is invalid</Abstract>
+            <Declaration>kVSM_ManagerFailureAuthentication</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureBackplaneUnreachable</TokenIdentifier>
+            <Abstract type="html">The provided Backplane could not be reached</Abstract>
+            <Declaration>kVSM_ManagerFailureBackplaneUnreachable</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureUnknownBackplaneError</TokenIdentifier>
+            <Abstract type="html">The Backplane encountered an internal error or returned an unexpected response</Abstract>
+            <Declaration>kVSM_ManagerFailureUnknownBackplaneError</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureNotAvailable</TokenIdentifier>
+            <Abstract type="html">The VirtuosoDownloadManager instance has not been properly started and is unavailable.
+        Manager methods will not function properly until after the VirtuosoDownloadManager has been started. </Abstract>
+            <Declaration>kVSM_ManagerFailureNotAvailable</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureOffline</TokenIdentifier>
+            <Abstract type="html">The device is currently offline and cannot perform the requested call</Abstract>
+            <Declaration>kVSM_ManagerFailureOffline</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

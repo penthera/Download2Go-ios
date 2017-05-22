@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_AssetType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="30"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeNonSegmented</TokenIdentifier>
+            <Abstract type="html">A single-file asset (E.G. MP4)</Abstract>
+            <Declaration>kVDE_AssetTypeNonSegmented</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHLS</TokenIdentifier>
+            <Abstract type="html">A HTTP Live Streaming (HLS) asset</Abstract>
+            <Declaration>kVDE_AssetTypeHLS</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHSS</TokenIdentifier>
+            <Abstract type="html">A HTTP Smooth Streaming (HSS) asset</Abstract>
+            <Declaration>kVDE_AssetTypeHSS</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeDASH</TokenIdentifier>
+            <Abstract type="html">A MPEG-DASH asset</Abstract>
+            <Declaration>kVDE_AssetTypeDASH</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="30"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

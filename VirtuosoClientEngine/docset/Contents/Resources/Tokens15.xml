@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VirtuosoSubscriptionDefaultDataSource.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionDefaultDataSource</TokenIdentifier>
+			<Abstract type="html">The default data source for the VirtuosoSubscriptionManager.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
+            
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/lookupMetadataForAssetID:usingKnownData:</TokenIdentifier>
+			<Abstract type="html">Requests a synchronous metadata lookup for a known asset ID</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSDictionary *)lookupMetadataForAssetID:(nonnull NSString *)assetID usingKnownData:(nonnull NSDictionary *)knownData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">The asset ID representing an asset to lookup</Abstract>
+				</Parameter><Parameter>
+					<Name>knownData</Name>
+					<Abstract type="html">The known metadata received by the backplane for this asset.  May be used as a reference
+to provide additional missing data.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A NSDictionary object containing all required keys, as defined in the data source protocol</Abstract></ReturnValue>
+			<Anchor>//api/name/lookupMetadataForAssetID:usingKnownData:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/didProcessAssetWithMetadata:</TokenIdentifier>
+			<Abstract type="html">Indicates that an asset was succesfully processed</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
+			
+			<Declaration>- (void)didProcessAssetWithMetadata:(nonnull NSDictionary *)metadata</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>metadata</Name>
+					<Abstract type="html">A NSDictionary object containing, at a minimum, metadata values for the keys defined in the data source protocol.  Any additional data provided by
+the Backplane or the External Catalog during a metadata lookup may also be defined, and Callers can access custom catalog data in this manner.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didProcessAssetWithMetadata:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/willAddAsset:</TokenIdentifier>
+			<Abstract type="html">Indicates a new VirtuosoAsset item has been created</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
+			
+			<Declaration>- (void)willAddAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">A VirtuosoAsset item that has just been created by the Subscription Manager</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/willAddAsset:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

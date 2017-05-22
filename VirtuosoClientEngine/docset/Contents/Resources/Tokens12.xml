@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VirtuosoPlayerViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlayerViewController</TokenIdentifier>
+			<Abstract type="html">A convenience UIViewController subclass that includes a VirtuosoPlayerView and implements
+the VirtuosoPlayer protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setPlayerView:</TokenIdentifier>
+			<Abstract type="html">The internal player view</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) VirtuosoPlayerView *playerView</Declaration>
+			
+			
+			<Anchor>//api/name/playerView</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/playerView</TokenIdentifier>
+			<Abstract type="html">The internal player view</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) VirtuosoPlayerView *playerView</Declaration>
+			
+			
+			<Anchor>//api/name/playerView</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/playerView</TokenIdentifier>
+			<Abstract type="html">The internal player view</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) VirtuosoPlayerView *playerView</Declaration>
+			
+			
+			<Anchor>//api/name/playerView</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setAllowsExternalPlayback:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/play</TokenIdentifier>
+			<Abstract type="html">Begins or resumes video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)play</Declaration>
+			
+			
+			<Anchor>//api/name/play</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/pause</TokenIdentifier>
+			<Abstract type="html">Pauses video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)pause</Declaration>
+			
+			
+			<Anchor>//api/name/pause</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

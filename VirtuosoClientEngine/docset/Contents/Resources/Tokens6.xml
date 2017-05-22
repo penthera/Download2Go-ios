@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VirtuosoDownloadEngine.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoDownloadEngine</TokenIdentifier>
+			<Abstract type="html">The central control for all download-related activities.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoDownloadEngine/instance</TokenIdentifier>
+			<Abstract type="html">The singleton instance access method</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull VirtuosoDownloadEngine *)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">Returns the VirtuosoDownloadEngine object instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoDownloadEngine/versionString</TokenIdentifier>
+			<Abstract type="html">Returns the version of this build.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSString *)versionString</Declaration>
+			
+			<ReturnValue><Abstract type="html">The compile-time configured version of this Virtuoso build</Abstract></ReturnValue>
+			<Anchor>//api/name/versionString</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</TokenIdentifier>
+			<Abstract type="html">You must call this method to initialize Virtuoso before you call any other Virtuoso method.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (kVDE_EngineStartupCode)startupWithBackplane:(nonnull NSString *)backplaneURL user:(nonnull NSString *)user externalDeviceID:(nullable NSString *)externalDeviceID privateKey:(nonnull NSString *)privateKey publicKey:(nonnull NSString *)publicKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>backplaneURL</Name>
+					<Abstract type="html">A root URL pointing to the location of the Backplane endpoints</Abstract>
+				</Parameter><Parameter>
+					<Name>user</Name>
+					<Abstract type="html">The Backplane user to use</Abstract>
+				</Parameter><Parameter>
+					<Name>externalDeviceID</Name>
+					<Abstract type="html">An optional externally-defined device UUID</Abstract>
+				</Parameter><Parameter>
+					<Name>privateKey</Name>
+					<Abstract type="html">The Penthera-provided private key</Abstract>
+				</Parameter><Parameter>
+					<Name>publicKey</Name>
+					<Abstract type="html">The Penthera-provided public key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A startup code indicating the result</Abstract></ReturnValue>
+			<Anchor>//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/shutdown</TokenIdentifier>
+			<Abstract type="html">Resets Virtuoso without unregistering the device or deleting assets.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (void)shutdown</Declaration>
+			
+			
+			<Anchor>//api/name/shutdown</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/syncWithBackplaneNow:</TokenIdentifier>
+			<Abstract type="html">Causes a sync with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (void)syncWithBackplaneNow:(Boolean)now</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>now</Name>
+					<Abstract type="html">Used to force a sync, even if the backplane has synced recently.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/syncWithBackplaneNow:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setBackplaneURL:</TokenIdentifier>
+			<Abstract type="html">The URL where the Backplane lives</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneURL</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/backplaneURL</TokenIdentifier>
+			<Abstract type="html">The URL where the Backplane lives</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneURL</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/backplaneURL</TokenIdentifier>
+			<Abstract type="html">The URL where the Backplane lives</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneURL</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setUser:</TokenIdentifier>
+			<Abstract type="html">The user used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/user</TokenIdentifier>
+			<Abstract type="html">The user used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/user</TokenIdentifier>
+			<Abstract type="html">The user used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setExternalDeviceID:</TokenIdentifier>
+			<Abstract type="html">The external device ID provided to Virtuoso during startup</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/externalDeviceID</TokenIdentifier>
+			<Abstract type="html">The external device ID provided to Virtuoso during startup</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/externalDeviceID</TokenIdentifier>
+			<Abstract type="html">The external device ID provided to Virtuoso during startup</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setDeviceID:</TokenIdentifier>
+			<Abstract type="html">The Virtuoso-assigned unique device ID for this device</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
+			
+			
+			<Anchor>//api/name/deviceID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/deviceID</TokenIdentifier>
+			<Abstract type="html">The Virtuoso-assigned unique device ID for this device</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
+			
+			
+			<Anchor>//api/name/deviceID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/deviceID</TokenIdentifier>
+			<Abstract type="html">The Virtuoso-assigned unique device ID for this device</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
+			
+			
+			<Anchor>//api/name/deviceID</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setSecret:</TokenIdentifier>
+			<Abstract type="html">The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *secret</Declaration>
+			
+			
+			<Anchor>//api/name/secret</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/secret</TokenIdentifier>
+			<Abstract type="html">The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *secret</Declaration>
+			
+			
+			<Anchor>//api/name/secret</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/secret</TokenIdentifier>
+			<Abstract type="html">The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *secret</Declaration>
+			
+			
+			<Anchor>//api/name/secret</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setKey:</TokenIdentifier>
+			<Abstract type="html">The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/key</TokenIdentifier>
+			<Abstract type="html">The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/key</TokenIdentifier>
+			<Abstract type="html">The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setEnabled:</TokenIdentifier>
+			<Abstract type="html">Virtuoso&apos;s global &apos;enable&apos; state</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean enabled</Declaration>
+			
+			
+			<Anchor>//api/name/enabled</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/enabled</TokenIdentifier>
+			<Abstract type="html">Virtuoso&apos;s global &apos;enable&apos; state</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean enabled</Declaration>
+			
+			
+			<Anchor>//api/name/enabled</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/enabled</TokenIdentifier>
+			<Abstract type="html">Virtuoso&apos;s global &apos;enable&apos; state</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean enabled</Declaration>
+			
+			
+			<Anchor>//api/name/enabled</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setStarted:</TokenIdentifier>
+			<Abstract type="html">Whether Virtuoso has been started (i.e. had a startup method called)</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean started</Declaration>
+			
+			
+			<Anchor>//api/name/started</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/started</TokenIdentifier>
+			<Abstract type="html">Whether Virtuoso has been started (i.e. had a startup method called)</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean started</Declaration>
+			
+			
+			<Anchor>//api/name/started</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/started</TokenIdentifier>
+			<Abstract type="html">Whether Virtuoso has been started (i.e. had a startup method called)</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean started</Declaration>
+			
+			
+			<Anchor>//api/name/started</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setStatus:</TokenIdentifier>
+			<Abstract type="html">The current Virtuoso download Engine status</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadEngineStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/status</TokenIdentifier>
+			<Abstract type="html">The current Virtuoso download Engine status</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadEngineStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/status</TokenIdentifier>
+			<Abstract type="html">The current Virtuoso download Engine status</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadEngineStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setDownloadBandwidthString:</TokenIdentifier>
+			<Abstract type="html">A convenience method to return a displayable version of the downloadBandwidth property.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</Declaration>
+			
+			
+			<Anchor>//api/name/downloadBandwidthString</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/downloadBandwidthString</TokenIdentifier>
+			<Abstract type="html">A convenience method to return a displayable version of the downloadBandwidth property.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</Declaration>
+			
+			
+			<Anchor>//api/name/downloadBandwidthString</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/downloadBandwidthString</TokenIdentifier>
+			<Abstract type="html">A convenience method to return a displayable version of the downloadBandwidth property.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</Declaration>
+			
+			
+			<Anchor>//api/name/downloadBandwidthString</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setDownloadBandwidth:</TokenIdentifier>
+			<Abstract type="html">Effective download throughput in KBps</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double downloadBandwidth</Declaration>
+			
+			
+			<Anchor>//api/name/downloadBandwidth</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/downloadBandwidth</TokenIdentifier>
+			<Abstract type="html">Effective download throughput in KBps</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double downloadBandwidth</Declaration>
+			
+			
+			<Anchor>//api/name/downloadBandwidth</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/downloadBandwidth</TokenIdentifier>
+			<Abstract type="html">Effective download throughput in KBps</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double downloadBandwidth</Declaration>
+			
+			
+			<Anchor>//api/name/downloadBandwidth</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setCurrentlyDownloadingAsset:</TokenIdentifier>
+			<Abstract type="html">The UUID for asset Virtuoso is currently downloading.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</Declaration>
+			
+			
+			<Anchor>//api/name/currentlyDownloadingAsset</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/currentlyDownloadingAsset</TokenIdentifier>
+			<Abstract type="html">The UUID for asset Virtuoso is currently downloading.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</Declaration>
+			
+			
+			<Anchor>//api/name/currentlyDownloadingAsset</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/currentlyDownloadingAsset</TokenIdentifier>
+			<Abstract type="html">The UUID for asset Virtuoso is currently downloading.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</Declaration>
+			
+			
+			<Anchor>//api/name/currentlyDownloadingAsset</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setLastBackplaneSyncTime:</TokenIdentifier>
+			<Abstract type="html">The date/time of the last successful Backplane sync</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</Declaration>
+			
+			
+			<Anchor>//api/name/lastBackplaneSyncTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/lastBackplaneSyncTime</TokenIdentifier>
+			<Abstract type="html">The date/time of the last successful Backplane sync</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</Declaration>
+			
+			
+			<Anchor>//api/name/lastBackplaneSyncTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/lastBackplaneSyncTime</TokenIdentifier>
+			<Abstract type="html">The date/time of the last successful Backplane sync</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</Declaration>
+			
+			
+			<Anchor>//api/name/lastBackplaneSyncTime</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setOfflineTimedOut:</TokenIdentifier>
+			<Abstract type="html">Whether authorization with the Backplane has timed out</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean offlineTimedOut</Declaration>
+			
+			
+			<Anchor>//api/name/offlineTimedOut</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/offlineTimedOut</TokenIdentifier>
+			<Abstract type="html">Whether authorization with the Backplane has timed out</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean offlineTimedOut</Declaration>
+			
+			
+			<Anchor>//api/name/offlineTimedOut</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/offlineTimedOut</TokenIdentifier>
+			<Abstract type="html">Whether authorization with the Backplane has timed out</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean offlineTimedOut</Declaration>
+			
+			
+			<Anchor>//api/name/offlineTimedOut</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setLicenseExpiry:</TokenIdentifier>
+			<Abstract type="html">When the Virtuoso SDK license expires</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</Declaration>
+			
+			
+			<Anchor>//api/name/licenseExpiry</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/licenseExpiry</TokenIdentifier>
+			<Abstract type="html">When the Virtuoso SDK license expires</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</Declaration>
+			
+			
+			<Anchor>//api/name/licenseExpiry</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/licenseExpiry</TokenIdentifier>
+			<Abstract type="html">When the Virtuoso SDK license expires</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</Declaration>
+			
+			
+			<Anchor>//api/name/licenseExpiry</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setDownloadEnabled:</TokenIdentifier>
+			<Abstract type="html">Whether this device is permitted to download</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean downloadEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/downloadEnabled</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/downloadEnabled</TokenIdentifier>
+			<Abstract type="html">Whether this device is permitted to download</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean downloadEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/downloadEnabled</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/downloadEnabled</TokenIdentifier>
+			<Abstract type="html">Whether this device is permitted to download</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean downloadEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/downloadEnabled</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setDevices:</TokenIdentifier>
+			<Abstract type="html">Returns an array of VirtuosoDevice objects associated with the registered User.
+The array is current as of the last sync with the Backplane.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSArray *devices</Declaration>
+			
+			
+			<Anchor>//api/name/devices</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/devices</TokenIdentifier>
+			<Abstract type="html">Returns an array of VirtuosoDevice objects associated with the registered User.
+The array is current as of the last sync with the Backplane.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSArray *devices</Declaration>
+			
+			
+			<Anchor>//api/name/devices</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/devices</TokenIdentifier>
+			<Abstract type="html">Returns an array of VirtuosoDevice objects associated with the registered User.
+The array is current as of the last sync with the Backplane.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSArray *devices</Declaration>
+			
+			
+			<Anchor>//api/name/devices</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/assetsInQueue</TokenIdentifier>
+			<Abstract type="html">Returns an ordered array of UUID strings for VirtuosoAsset items in the download queue.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)assetsInQueue</Declaration>
+			
+			<ReturnValue><Abstract type="html">An ordered array of UUID strings representing VirtuosoAsset objects enqueued for download.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetsInQueue</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/addToQueue:atIndex:onComplete:</TokenIdentifier>
+			<Abstract type="html">Adds an asset to the download queue.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (NSError *_Nullable)addToQueue:(nonnull VirtuosoAsset *)asset atIndex:(NSUInteger)index onComplete:(AssetAddToQueueCompleteBlock _Nullable)onComplete</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to add to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index in the queue to add the asset at</Abstract>
+				</Parameter><Parameter>
+					<Name>onComplete</Name>
+					<Abstract type="html">Completion block that fires after the asset has been added to the queue</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An error indicating any issues that occurred while adding the asset to the queue, or nil if no error</Abstract></ReturnValue>
+			<Anchor>//api/name/addToQueue:atIndex:onComplete:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/moveAsset:inQueueToIndex:</TokenIdentifier>
+			<Abstract type="html">Reorders the download queue.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (void)moveAsset:(nonnull VirtuosoAsset *)asset inQueueToIndex:(NSUInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to move in the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index in the queue to move the asset to</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/moveAsset:inQueueToIndex:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/removeFromQueue:</TokenIdentifier>
+			<Abstract type="html">Remove the given asset from the download queue.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)removeFromQueue:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to remove from the download queue</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The location the asset was removed from, if successful, or NSNotFound if the asset was not in the queue.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeFromQueue:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/assetInQueueWithURL:</TokenIdentifier>
+			<Abstract type="html">Retrieves an asset in the download queue by remote URL.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (nullable VirtuosoAsset *)assetInQueueWithURL:(nonnull NSString *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The remote url of an asset to query for</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns the VirtuosoAsset object on success or nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetInQueueWithURL:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/assetInQueueWithUUID:</TokenIdentifier>
+			<Abstract type="html">Retrieves an asset in the download queue by UUID.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (nullable VirtuosoAsset *)assetInQueueWithUUID:(nonnull NSString *)uuid</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>uuid</Name>
+					<Abstract type="html">The universally unique identifier (UUID) of the asset</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns the VirtuosoAsset object on success or nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetInQueueWithUUID:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/flushQueue</TokenIdentifier>
+			<Abstract type="html">Removes all items from the download queue.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (void)flushQueue</Declaration>
+			
+			
+			<Anchor>//api/name/flushQueue</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/currentNetworkStatus</TokenIdentifier>
+			<Abstract type="html">Returns the network status, as reported by Virtuoso&apos;s internal Reachability instance.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>- (kVDE_NetworkStatus)currentNetworkStatus</Declaration>
+			
+			
+			<Anchor>//api/name/currentNetworkStatus</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setNetworkStatusOK:</TokenIdentifier>
+			<Abstract type="html">Whether current network state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean networkStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/networkStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/networkStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether current network state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean networkStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/networkStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/networkStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether current network state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean networkStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/networkStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setDiskStatusOK:</TokenIdentifier>
+			<Abstract type="html">Whether disk usage state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean diskStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/diskStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/diskStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether disk usage state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean diskStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/diskStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/diskStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether disk usage state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean diskStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/diskStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setQueueStatusOK:</TokenIdentifier>
+			<Abstract type="html">Whether queue state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean queueStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/queueStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/queueStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether queue state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean queueStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/queueStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/queueStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether queue state permits downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean queueStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/queueStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setAccountStatusOK:</TokenIdentifier>
+			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean accountStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/accountStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/accountStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean accountStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/accountStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/accountStatusOK</TokenIdentifier>
+			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean accountStatusOK</Declaration>
+			
+			
+			<Anchor>//api/name/accountStatusOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/setAuthenticationOK:</TokenIdentifier>
+			<Abstract type="html">Whether the Virtuoso SDK license is currently valid</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean authenticationOK</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngine/authenticationOK</TokenIdentifier>
+			<Abstract type="html">Whether the Virtuoso SDK license is currently valid</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean authenticationOK</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngine/authenticationOK</TokenIdentifier>
+			<Abstract type="html">Whether the Virtuoso SDK license is currently valid</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngine.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean authenticationOK</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationOK</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

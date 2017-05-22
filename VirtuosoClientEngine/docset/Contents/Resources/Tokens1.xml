@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VirtuosoAVPlayer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAVPlayer</TokenIdentifier>
+			<Abstract type="html">A subclass of AVPlayer that is directly integrated with the Virtuoso SDK via the
+VirtuosoPlayer protocol.</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/prepareToPlay</TokenIdentifier>
+			<Abstract type="html">Prepares the player to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>- (void)prepareToPlay</Declaration>
+			
+			
+			<Anchor>//api/name/prepareToPlay</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/cleanup</TokenIdentifier>
+			<Abstract type="html">Must be called when playback permanently stops (E.G. when the view controller exits)</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>- (void)cleanup</Declaration>
+			
+			
+			<Anchor>//api/name/cleanup</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

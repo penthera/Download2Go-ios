@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDM_ManifestType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDM_ManifestType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDM_ManifestType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="40"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeMaster</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeMaster</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeBitrate</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeBitrate</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeAudio</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeAudio</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeCC</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeCC</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

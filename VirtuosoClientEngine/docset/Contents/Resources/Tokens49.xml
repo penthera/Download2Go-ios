@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVSM_Status.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVSM_Status</TokenIdentifier>
+			<Abstract type="html">The kVSM_Status values indicate the current activity status of the Manager.
+
+@constant kVSM_Unknown
+@constant kVSM_Offline
+@constant kVSM_Started
+@constant kVSM_Receiving
+@constant kVSM_Errors</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="49"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_Unknown</TokenIdentifier>
+            <Abstract type="html">The Manager hasn&apos;t finished starting up yet and status has not yet been determined</Abstract>
+            <Declaration>kVSM_Unknown</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_Offline</TokenIdentifier>
+            <Abstract type="html">The Manager cannot take any action, as the device is currently offline</Abstract>
+            <Declaration>kVSM_Offline</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_Started</TokenIdentifier>
+            <Abstract type="html">The Manager has successfully authenticated, but hasn&apos;t received any data yet</Abstract>
+            <Declaration>kVSM_Started</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_Receiving</TokenIdentifier>
+            <Abstract type="html">The Manager is operational and receiving content from the Backplane</Abstract>
+            <Declaration>kVSM_Receiving</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_Errors</TokenIdentifier>
+            <Abstract type="html">Errors occurred while processing subscriptions that prevent the Manager from
+        continuing.  Recoverable errors will be reported, but Manager status will remain
+        at kVSM_Receiving. </Abstract>
+            <Declaration>kVSM_Errors</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

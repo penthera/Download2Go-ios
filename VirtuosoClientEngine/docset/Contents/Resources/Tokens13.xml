@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VirtuosoSecureClock.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSecureClock</TokenIdentifier>
+			<Abstract type="html">A basic secure clock implementation</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoSecureClock/instance</TokenIdentifier>
+			<Abstract type="html">The singleton instance access method</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull VirtuosoSecureClock *)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">Returns the VirtuosoSecureClock object instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/update</TokenIdentifier>
+			<Abstract type="html">Requests an update to the secure clock time.  This method is called internal to the SDK
+automatically at opportune times and you should not normally need to call it manually.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>- (void)update</Declaration>
+			
+			
+			<Anchor>//api/name/update</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setSecureDate:</TokenIdentifier>
+			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			
+			
+			<Anchor>//api/name/secureDate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/secureDate</TokenIdentifier>
+			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			
+			
+			<Anchor>//api/name/secureDate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/secureDate</TokenIdentifier>
+			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			
+			
+			<Anchor>//api/name/secureDate</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setDate:</TokenIdentifier>
+			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
+system clock time if a secure date cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/date</TokenIdentifier>
+			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
+system clock time if a secure date cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/date</TokenIdentifier>
+			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
+system clock time if a secure date cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

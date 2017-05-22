@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVDE_ErrorCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors or warnings encountered by Virtuoso. Included in the NSError object sent
+via NSNotificationCenter when issues are reported.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneURLError</TokenIdentifier>
+            <Abstract type="html">The supplied Backplane URL contains an invalid format</Abstract>
+            <Declaration>kVDE_BackplaneURLError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneNotReachableError</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to reach the Backplane</Abstract>
+            <Declaration>kVDE_BackplaneNotReachableError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileMoveToFinalPathError</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to move the downloaded asset to the final destination</Abstract>
+            <Declaration>kVDE_FileMoveToFinalPathError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnexpectedFileSizeWarning</TokenIdentifier>
+            <Abstract type="html">The observed final file size doesn&apos;t match the expected file size</Abstract>
+            <Declaration>kVDE_UnexpectedFileSizeWarning</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnserializableUserInfoError</TokenIdentifier>
+            <Abstract type="html">The userInfo dictionary contains objects that cannot be serialized</Abstract>
+            <Declaration>kVDE_UnserializableUserInfoError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

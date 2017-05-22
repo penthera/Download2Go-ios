@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VirtuosoLogger.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoLogger</TokenIdentifier>
+			<Abstract type="html">You must never instantiate an object of this type directly.
+Only the static methods provided with this interface should be used.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/enableLogsToFile:</TokenIdentifier>
+			<Abstract type="html">Enables/disables file-based logging.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)enableLogsToFile:(Boolean)enable</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">Whether to enable file-based logging</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enableLogsToFile:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/isLoggingToFile</TokenIdentifier>
+			<Abstract type="html">Whether Virtuoso is currently logging to file</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (Boolean)isLoggingToFile</Declaration>
+			
+			<ReturnValue><Abstract type="html">Whether Virtuoso is currently logging to file</Abstract></ReturnValue>
+			<Anchor>//api/name/isLoggingToFile</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/setLogLevel:</TokenIdentifier>
+			<Abstract type="html">Sets the log level for the Virtuoso logging system</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLogLevel:(kVL_LoggingLevel)level</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>level</Name>
+					<Abstract type="html">The filter level for log output</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLogLevel:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/logLevel</TokenIdentifier>
+			<Abstract type="html">The current log filter level</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (kVL_LoggingLevel)logLevel</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current log filter level</Abstract></ReturnValue>
+			<Anchor>//api/name/logLevel</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/setLoggingEnabledForAllEvents:</TokenIdentifier>
+			<Abstract type="html">Sets all Virtuoso events as enabled</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLoggingEnabledForAllEvents:(Boolean)enabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">Whether to enable all Backplane-tracked log events</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLoggingEnabledForAllEvents:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/setLoggingEnabled:forEvent:</TokenIdentifier>
+			<Abstract type="html">Enables/disables logging for a specific event</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLoggingEnabled:(Boolean)enabled forEvent:(kVL_LogEvent)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">Whether to enable logging for this event</Abstract>
+				</Parameter><Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The event</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLoggingEnabled:forEvent:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/isLoggingEnabledForEvent:</TokenIdentifier>
+			<Abstract type="html">Whether a particular Backplane-tracked event is enabled</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (Boolean)isLoggingEnabledForEvent:(kVL_LogEvent)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The event</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Returns whether a particular Backplane-tracked event is enabled</Abstract></ReturnValue>
+			<Anchor>//api/name/isLoggingEnabledForEvent:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/addCustomLogEvent:withStringData:</TokenIdentifier>
+			<Abstract type="html">Adds a arbitrary logging event.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)addCustomLogEvent:(nonnull NSString *)eventName withStringData:(nonnull NSString *)eventData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">The name of your custom log event</Abstract>
+				</Parameter><Parameter>
+					<Name>eventData</Name>
+					<Abstract type="html">A string containing arbitrary data related to your log event</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addCustomLogEvent:withStringData:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/addCustomLogEvent:withNumericData:</TokenIdentifier>
+			<Abstract type="html">Adds a arbitrary logging event.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)addCustomLogEvent:(nonnull NSString *)eventName withNumericData:(long)eventData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventName</Name>
+					<Abstract type="html">The name of your custom log event</Abstract>
+				</Parameter><Parameter>
+					<Name>eventData</Name>
+					<Abstract type="html">A long value containing arbitrary data related to your log event</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addCustomLogEvent:withNumericData:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/addDebugEvent:atLevel:</TokenIdentifier>
+			<Abstract type="html">Adds a debug event.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)addDebugEvent:(nonnull NSString *)eventData atLevel:(kVL_LoggingLevel)level</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventData</Name>
+					<Abstract type="html">A string containing arbitrary debug data for logging</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">The log level this event is associated with</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addDebugEvent:atLevel:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/logAssetExpired:</TokenIdentifier>
+			<Abstract type="html">Logs &quot;expire&quot; event for an asset</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)logAssetExpired:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The expired asset</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/logAssetExpired:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/logPlaybackStartedForAsset:</TokenIdentifier>
+			<Abstract type="html">Logs &quot;play&quot; event for an asset</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)logPlaybackStartedForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The played asset</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/logPlaybackStartedForAsset:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/logPlaybackStoppedForAsset:withSecondsSinceLastStart:</TokenIdentifier>
+			<Abstract type="html">Logs &quot;stop-play&quot; event for an asset</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)logPlaybackStoppedForAsset:(nonnull VirtuosoAsset *)asset withSecondsSinceLastStart:(long long)seconds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The stopped asset</Abstract>
+				</Parameter><Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">The number of seconds the asset was played before it was stopped or paused
+(e.g. play time since &apos;start&apos; was reported)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/logPlaybackStoppedForAsset:withSecondsSinceLastStart:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/addDelegate:</TokenIdentifier>
+			<Abstract type="html">Adds an object that follows the VirtuosoLoggerDelegate protocol to the delegate list.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)addDelegate:(nonnull id&lt;VirtuosoLoggerDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">An object that follows the VirtuosoLoggerDelegate protocol</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addDelegate:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/removeDelegate:</TokenIdentifier>
+			<Abstract type="html">Removes a delegate from the delegate list.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)removeDelegate:(nonnull id&lt;VirtuosoLoggerDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">An object to be removed from the delegate list</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeDelegate:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/delegates</TokenIdentifier>
+			<Abstract type="html">Returns a current list of logging delegates.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSArray *)delegates</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current list of logging delegates.</Abstract></ReturnValue>
+			<Anchor>//api/name/delegates</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

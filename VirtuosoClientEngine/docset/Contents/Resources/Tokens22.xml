@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/VirtuosoLoggerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLoggerDelegate</TokenIdentifier>
+			<Abstract type="html">For those who wish to use their own logging system or report metrics to
+non-Virtuoso locations/trackers. Virtuoso will send all log events to the registered
+delegate if the VirtuosoLogger would have otherwise processed them.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withData:</TokenIdentifier>
+			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withData:(long long)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The type of event</Abstract>
+				</Parameter><Parameter>
+					<Name>fileID</Name>
+					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>bearer</Name>
+					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
+the network state.</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A numeric value semantically unique to the specific event.  Will be 0 when not required.
+Example: For the download-paused event, contains total bytes downloaded so far for this asset.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withData:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withStringData:</TokenIdentifier>
+			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withStringData:(nullable NSString *)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The type of event</Abstract>
+				</Parameter><Parameter>
+					<Name>fileID</Name>
+					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>bearer</Name>
+					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
+the network state.</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A string value semantically unique to the specific event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withStringData:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoCustomEventOccurred:</TokenIdentifier>
+			<Abstract type="html">Reports on a custom event not tracked by the standard event list.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">An NSDictionary containing the logged event data</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoCustomEventOccurred:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoDebugEventOccurred:atLevel:</TokenIdentifier>
+			<Abstract type="html">Reports debug data.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoDebugEventOccurred:(nonnull NSString *)data atLevel:(kVL_LoggingLevel)level</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A string containing the debug event data</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">The severity level of the log item</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoDebugEventOccurred:atLevel:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
