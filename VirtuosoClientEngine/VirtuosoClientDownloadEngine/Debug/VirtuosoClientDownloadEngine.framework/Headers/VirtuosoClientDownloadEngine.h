@@ -17,13 +17,13 @@
 #ifndef VirtuosoClientDownloadEngine_Master_h
 #define VirtuosoClientDownloadEngine_Master_h
 
-#import <UIKit/UIKit.h>
-
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 //! Project version number for VirtuosoClientDownloadEngine.
 FOUNDATION_EXPORT double VirtuosoClientDownloadEngineVersionNumber;
 
 //! Project version string for VirtuosoClientDownloadEngine.
 FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[];
+#endif
 
 #pragma mark
 #pragma mark Download SDK
@@ -40,10 +40,13 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoClientHTTPServer.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoDevice.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoPlayer.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAVPlayer.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoEventHandler.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoEncryption.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoSettings.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoLicenseManager.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoSecureClock.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAVAssetResourceLoaderDelegate.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoDefaultAVAssetResourceLoaderDelegate.h>
 
 #pragma mark

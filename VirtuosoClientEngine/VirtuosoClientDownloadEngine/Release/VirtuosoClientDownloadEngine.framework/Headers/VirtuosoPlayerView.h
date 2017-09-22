@@ -171,4 +171,14 @@
  */
 @property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime;
 
+/*!
+ *  @abstract Button shown in the top HUD overlay, allowing the user to select audio language options
+ */
+@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton;
+
+/*!
+ *  @abstract Button shown in the top HUD overlay, allowing the user to select subtitle language options
+ */
+@property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton;
+
 @end

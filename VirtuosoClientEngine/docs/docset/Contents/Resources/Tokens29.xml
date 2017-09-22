@@ -45,17 +45,6 @@
             <NodeRef refid="29"/>
         </Token>
         
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeDrmCisco</TokenIdentifier>
-            <Abstract type="html">The asset is protected by Cisco DRM, and download and playback will be automatically serviced by
-        the Cisco platform. </Abstract>
-            <Declaration>kVDE_AssetProtectionTypeDrmCisco</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="29"/>
-        </Token>
-        
         
 	</File>
 </Tokens>
