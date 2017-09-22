@@ -60,8 +60,6 @@
 		
 		<option value="//api/name/additionalNetworkHeaders">additionalNetworkHeaders</option>
 		
-		<option value="//api/name/audioLanguagesToDownload">audioLanguagesToDownload</option>
-		
 		<option value="//api/name/clientSSLCertificatePassword">clientSSLCertificatePassword</option>
 		
 		<option value="//api/name/clientSSLCertificatePath">clientSSLCertificatePath</option>
@@ -105,8 +103,6 @@
 		<option value="//api/name/permittedSegmentDownloadErrors">permittedSegmentDownloadErrors</option>
 		
 		<option value="//api/name/sendHTTPErrorForErroredSegments">sendHTTPErrorForErroredSegments</option>
-		
-		<option value="//api/name/subtitleLanguagesToDownload">subtitleLanguagesToDownload</option>
 		
 		<option value="//api/name/trustSelfSignedServerCertificates">trustSelfSignedServerCertificates</option>
 		
@@ -1781,112 +1777,6 @@ If you pass nil, then only the default list of permitted MIME types will be used
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/audioLanguagesToDownload" title="audioLanguagesToDownload"></a>
-	<h3 class="method-title"><code><a href="#//api/name/audioLanguagesToDownload">&nbsp;&nbsp;audioLanguagesToDownload</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Configures which audio languages will be downloaded from assets that contain multiple
-audio versions</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSArray *audioLanguagesToDownload</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Some asset types allow multiple versions of the audio track to be included in the asset.  It is
-usually desirable to provide every language available in the streaming asset, to provide customers
-a wide choice in language options.  It is not usually desirable to download every available language,
-however, as this increases the download size and bandwidth usage.  If you set this property to nil,
-then the SDK will download every available audio language.  If you set this property to
-an empty array, then the SDK will not download any additional audio tracks that are not included
-in the main video file.  If you provide an array of language codes, then the SDK will only download
-audio tracks matching the indicated language.  The default value is nil.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/subtitleLanguagesToDownload" title="subtitleLanguagesToDownload"></a>
-	<h3 class="method-title"><code><a href="#//api/name/subtitleLanguagesToDownload">&nbsp;&nbsp;subtitleLanguagesToDownload</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Configures which subtitle languages will be downloaded from assets that contain subtitles</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSArray *subtitleLanguagesToDownload</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Some asset types allow subtitles to be included in the asset.  It is usually desirable to provide
-every language available in the streaming asset, to provide customers a wide choice in language options.
-It is not usually desirable to download every available language, however, as this increases the download
-size and bandwidth usage.  If you set this property to nil, then the SDK will download every available
-subtitle track.  If you set this property to an empty array, then the SDK will not download any subtitles.
-If you provide an array of language codes, then the SDK will only download subtitles matching the indicated
-language.  The default value is nil.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/allowRestrictedMimeTypesForEncryptionKeys:" title="allowRestrictedMimeTypesForEncryptionKeys:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/allowRestrictedMimeTypesForEncryptionKeys:">&ndash;&nbsp;allowRestrictedMimeTypesForEncryptionKeys:</a></code>
 </h3>
@@ -2299,7 +2189,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-07-28</p>
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-09-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

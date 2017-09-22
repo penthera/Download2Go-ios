@@ -17,12 +17,8 @@
 #define VASSET
 
 #import <Foundation/Foundation.h>
-
-#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-#import <UIKit/UIKit.h>
-#endif
-
 #import "VirtuosoConstants.h"
+#import <UIKit/UIKit.h>
 
 #if IS_LIB==0
 #import <VirtuosoClientDownloadEngine/VirtuosoPlayer.h>
@@ -356,8 +352,6 @@ typedef void (^BasicCompletionBlock)();
 #pragma mark Playback
 #pragma mark
 
-#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-
 /*!
  *  @abstract Plays this asset by presenting a standard MPMoviePlayerViewController from the
  *            specified parent view controller.
@@ -397,8 +391,6 @@ typedef void (^BasicCompletionBlock)();
 - (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType andPlayer:(nonnull id<VirtuosoPlayer>)player
                     onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail;
 
-#endif
-
 /*!
  *  @abstract Called when playback finishes (the video player exits) to cleanup the session.
  *
@@ -407,7 +399,6 @@ typedef void (^BasicCompletionBlock)();
  *              method of that class instead.
  */
 - (void)stoppedPlaying;
-
 
 /**---------------------------------------------------------------------------------------
  * @name Download State

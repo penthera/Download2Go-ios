@@ -48,53 +48,53 @@ typedef NS_ENUM(NSInteger, kVL_LoggingLevel)
 typedef NS_ENUM(NSInteger, kVL_LogEvent)
 {
     /** The enclosing app has launched */
-    kVLE_AppLaunch = 0,
+    kVLE_AppLaunch,
     
     /** Virtuoso has queued a new VirtuosoAsset for download */
-    kVLE_QueueForDownload = 1,
+    kVLE_QueueForDownload,
     
     /** Virtuoso has removed a VirtuosoAsset from the download queue */
-    kVLE_FileRemovedFromQueue = 2,
+    kVLE_FileRemovedFromQueue,
     
     /** Virtuoso has begun to download a VirtuosoAsset */
-    kVLE_DownloadStart = 3,
+    kVLE_DownloadStart,
     
     /** Virtuoso successfully finished downloading a VirtuosoFile */
-    kVLE_DownloadComplete = 4,
+    kVLE_DownloadComplete,
     
     /** Virtuoso detected an error during download */
-    kVLE_DownloadError = 5,
+    kVLE_DownloadError,
     
     /** A VirtuosoAsset was deleted */
-    kVLE_AssetDeleted = 6,
+    kVLE_AssetDeleted,
     
     /** A VirtuosoAsset reached the expired state */
-    kVLE_FileExpired = 7,
+    kVLE_FileExpired,
     
     /** Virtuoso successfully synced with the Backplane */
-    kVLE_SyncWithServer = 8,
+    kVLE_SyncWithServer,
     
     /** The enclosing app played a video asset */
-    kVLE_PlayStart = 9,
+    kVLE_PlayStart,
     
     /** The enclosing app stopped playing a video asset */
-    kVLE_PlayStop = 10,
+    kVLE_PlayStop,
     
     /** The User subscribed to a Feed */
-    kVLE_Subscribe = 11,
+    kVLE_Subscribe,
     
     /** The User canceled a subscription to a Feed */
-    kVLE_Unsubscribe = 12,
+    kVLE_Unsubscribe,
     
     /** The app either started the first time after installation, or is starting up after a remote wipe */
-    kVLE_Reset = 13,
+    kVLE_Reset,
     
     /** An asset which had exceeded it's maximum error count has been reset and will retry download */
-    kVLE_MaxErrorsReset = 14,
+    kVLE_MaxErrorsReset,
     
     /** The download limit imposed by the rules for either MDA or MAD has been reached and the asset with asset_id
         cannot be downloaded. */
-    kVLE_DownloadLimitReached = 15,
+    kVLE_DownloadLimitReached,
 };
 
 /*!

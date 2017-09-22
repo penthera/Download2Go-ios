@@ -18,11 +18,7 @@
 #define VEVENT_HANDLER
 
 #import <Foundation/Foundation.h>
-
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
-#endif
-
 
 /*!
  *  @abstract Provides a common static interface for all Virtuoso modules to handle incoming app delegate events.
@@ -38,12 +34,24 @@
  */
 @interface VirtuosoEventHandler : NSObject
 
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-
-/**---------------------------------------------------------------------------------------
- * @name iOS Event Handling Methods
- *  ---------------------------------------------------------------------------------------
+/*!
+ *  @abstract Handles remote push notices
+ *
+ *  @discussion The Backplane sends push notices to instruct Virtuoso to perform certain actions: 
+ *              delete an asset, enqueue an asset, etc. The Backplane sends these notices to Virtuoso by 
+ *              way of the enclosing app.
+ *              Whenever the enclosing app receives a remote notice via any of the standard app delegate methods,
+ *              it must call this method first, to let Virtuoso have a crack at it. If this method returns YES,
+ *              that means Virtuoso handled the notice. If this method returns NO, then Virtuoso did not
+ *              handle the push notice, and the enclosing app should handle it.
+ *
+ *  @param userInfo The userInfo dictionary provided by the remote push notice
+ *  @param completionHandler The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method
+ *
+ *  @return Whether Virtuoso handled the push notice
  */
++ (Boolean)processRemotePushNotice:(nonnull NSDictionary*)userInfo
+             withCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler;
 
 /*!
  *  @abstract Handles processing of background download session notices
@@ -65,25 +73,6 @@
                       completionHandler:(nonnull void (^)())completionHandler;
 
 /*!
- *  @abstract Handles remote push notices
- *
- *  @discussion The Backplane sends push notices to instruct Virtuoso to perform certain actions:
- *              delete an asset, enqueue an asset, etc. The Backplane sends these notices to Virtuoso by
- *              way of the enclosing app.
- *              Whenever the enclosing app receives a remote notice via any of the standard app delegate methods,
- *              it must call this method first, to let Virtuoso have a crack at it. If this method returns YES,
- *              that means Virtuoso handled the notice. If this method returns NO, then Virtuoso did not
- *              handle the push notice, and the enclosing app should handle it.
- *
- *  @param userInfo The userInfo dictionary provided by the remote push notice
- *  @param completionHandler The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method
- *
- *  @return Whether Virtuoso handled the push notice
- */
-+ (Boolean)processRemotePushNotice:(nonnull NSDictionary*)userInfo
-             withCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler;
-
-/*!
  *  @abstract Handles background fetch
  *
  *  @discussion When the enclosing app enables the background fetch feature, Virtuoso can use those application
@@ -100,32 +89,6 @@
  *  @param completionHandler The handler callback provided by the iOS 7 UIApplicationDelegate remote push method
  */
 + (void)processFetchWithCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler;
-
-#else
-
-/**---------------------------------------------------------------------------------------
- * @name Mac Event Handling Methods
- *  ---------------------------------------------------------------------------------------
- */
-
-/*!
- *  @abstract Handles remote push notices
- *
- *  @discussion The Backplane sends push notices to instruct Virtuoso to perform certain actions:
- *              delete an asset, enqueue an asset, etc. The Backplane sends these notices to Virtuoso by
- *              way of the enclosing app.
- *              Whenever the enclosing app receives a remote notice via any of the standard app delegate methods,
- *              it must call this method first, to let Virtuoso have a crack at it. If this method returns YES,
- *              that means Virtuoso handled the notice. If this method returns NO, then Virtuoso did not
- *              handle the push notice, and the enclosing app should handle it.
- *
- *  @param userInfo The userInfo dictionary provided by the remote push notice
- *
- *  @return Whether Virtuoso handled the push notice
- */
-+ (Boolean)processRemotePushNotice:(nonnull NSDictionary*)userInfo;
-
-#endif
 
 @end
 

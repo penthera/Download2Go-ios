@@ -130,16 +130,6 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
             <NodeRef refid="32"/>
         </Token>
         
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidConfigurationOptions</TokenIdentifier>
-            <Abstract type="html">Virtuoso was unable to create the VirtuosoAsset due to configuration restrictions.</Abstract>
-            <Declaration>kVDE_InvalidConfigurationOptions</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="32"/>
-        </Token>
-        
         
 	</File>
 </Tokens>

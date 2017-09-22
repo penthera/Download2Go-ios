@@ -17,6 +17,8 @@
 #ifndef VDASH
 #define VDASH
 
+#import <UIKit/UIKit.h>
+
 #import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoPlayer.h>

@@ -14,27 +14,27 @@
 		</data>
 		<key>Headers/VirtuosoAsset+DASH.h</key>
 		<data>
-		BA63an8LbdKN5//P3K4SWO1UDOo=
+		X9cvuk0lmG1HziKUO4Gtn8kWJjs=
 		</data>
 		<key>Headers/VirtuosoAsset+HLS.h</key>
 		<data>
-		weddoIXPSWU6jr3un8iTG2vRuu0=
+		bZo3ALUCWCRr0cmjsggm/QlKtwo=
 		</data>
 		<key>Headers/VirtuosoAsset+HSS.h</key>
 		<data>
-		aojGR7kdjLwtR2cQuP9/XTrR2aw=
+		UR9i1bkXz4xEyJdaBxQLT37AIAY=
 		</data>
 		<key>Headers/VirtuosoAsset+SegmentedVideo.h</key>
 		<data>
-		Gdi9eFDngJHPkdwnSqQ0u7JMxOU=
+		pQIiIX+eCls83TWFmyo5MEf2Ju4=
 		</data>
 		<key>Headers/VirtuosoAsset.h</key>
 		<data>
-		EZ6CqMqrdRVjiKTFFW1y5ZFQv5A=
+		nAuvIQRxNOBXGAZ22dtudX+Vs1M=
 		</data>
 		<key>Headers/VirtuosoClientDownloadEngine.h</key>
 		<data>
-		xw6OcPjyfRJ8zlv5zgC57TcDbqA=
+		N4/NsG9bKjJQiWK8QarpJJTZ2iY=
 		</data>
 		<key>Headers/VirtuosoClientHTTPServer.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/VirtuosoConstants.h</key>
 		<data>
-		cXG/sXiFeNuJJuNg8wHziegkn8o=
+		LJROqrH51E4HXCmdsrXlBrFnTB8=
 		</data>
 		<key>Headers/VirtuosoDefaultAVAssetResourceLoaderDelegate.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/VirtuosoDownloadEngine.h</key>
 		<data>
-		HFW1Z8xJqag6Ib5FsVFXPboGiow=
+		8+VFw3AkzMRrR7qi3BgnlGS5frg=
 		</data>
 		<key>Headers/VirtuosoEncryption.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/VirtuosoEventHandler.h</key>
 		<data>
-		FKICURdpUbfK/rboiEF5BJSroF8=
+		SGYuJcHfCrZvlVihlt3v3iBa9PQ=
 		</data>
 		<key>Headers/VirtuosoLicenseManager.h</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Headers/VirtuosoLogger.h</key>
 		<data>
-		uyvqW3Pvc0vBkYTjODiugNhGbKE=
+		6aE2Zcu6A2gzSloE4s2Pz1FQgCE=
 		</data>
 		<key>Headers/VirtuosoNotifications.h</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/VirtuosoPlayerView.h</key>
 		<data>
-		863M4SDP2G1N90SXkiwMvMi1bnk=
+		+5ADl/LcF0BdSL6FOwMSwI4ekNI=
 		</data>
 		<key>Headers/VirtuosoPlayerViewController.h</key>
 		<data>
@@ -94,75 +94,71 @@
 		</data>
 		<key>Headers/VirtuosoSettings.h</key>
 		<data>
-		Zoce9v1tRQE2jyajltJ4vNnLFHE=
+		QvQdjjxzqnLU3fhT+c2OLbY0xkY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		13rKjknoHqJ+Rh8FvijajjT3Tg0=
+		4F7P3PVAIV8UJPyTTp9pbXhW0j8=
 		</data>
 		<key>Virtuoso.momd/VersionInfo.plist</key>
 		<data>
-		H1WGMARzQK7erYhd8STLRZNM6ok=
+		h4stufF8dKf7HIcmPMMnciLlPKk=
 		</data>
 		<key>Virtuoso.momd/Virtuoso.mom</key>
 		<data>
-		fMsCX1vYrdWk/hWuIA6MjCuhKMQ=
+		ls/e52X++PZYepDeCMMD/bY6ZxU=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_10.mom</key>
 		<data>
-		46+fP0GniAS5soIj1yNKmiZV6mM=
+		RKzh8Otr2pULD9ruh0+wE5Uez9s=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_11.mom</key>
 		<data>
-		ZpJLWQlOPbD7TEkRC/ScE9SqrTw=
+		oO+PtEZJYtrLy9Oe8UHdI9Ldg0w=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_12.mom</key>
 		<data>
-		44BA50ru3hZP0RGyN6+W0xGN1XY=
+		rQFqkGqt/aNWzbP4saz0mKiHduY=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_12_1.mom</key>
 		<data>
-		3EnUjHg7OVli8STuw8FmehoiBnQ=
+		ESDE52IiNxWWdMz9tpDT1SAa7ZQ=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_12_2.mom</key>
 		<data>
-		cc9UPy4lt8JmX1kkb2HJ2N1K/v0=
+		W7BvZt62UGAsTWvz+BJrX0WjfGI=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_13.mom</key>
 		<data>
-		W123zn4FKowuGt7fXd8I+o3/JSg=
+		NwVefzrMIjTnBkjp10QHIqKZunA=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_13_1.mom</key>
 		<data>
-		8pR/pwO7ccro4JpBqqDh5mf/uOQ=
+		hfXTtcIMjGprvKea71zTEopYJUg=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_13_2.mom</key>
 		<data>
-		u/1Zh/Za7joR2YnEIBZkBnkt/Cg=
+		E0C/t/rIGYcUw6kJvXmESklYJdU=
 		</data>
-		<key>Virtuoso.momd/Virtuoso_3_14.mom</key>
+		<key>Virtuoso.momd/Virtuoso_3_13_2.omo</key>
 		<data>
-		wD68CEMjpNzuGTkyddpjk/LFp/A=
-		</data>
-		<key>Virtuoso.momd/Virtuoso_3_14.omo</key>
-		<data>
-		X2U0U5S6BcAFmgrTivbpp3hjksI=
+		si/puEx0zfYzI8Auqz7bIC2I5Ek=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_4.mom</key>
 		<data>
-		B3cX2Q/2tPVXBrFIvF+iBbOL8Og=
+		rV4EaLkVe2MlD/YvZKKekqckj78=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_4_1.mom</key>
 		<data>
-		CUTmh6Bonj75Tx1Wubqos7Hr4bc=
+		VxIpMsSY6p1yKQhM7Tvg6ZVDbio=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_6.mom</key>
 		<data>
-		x24byR/COml14HxnyJIhYK+7okg=
+		EuP2L9L/rLTyvWW2Yq2DAUIAtVU=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_9.mom</key>
 		<data>
-		9LNfyHP1xqWuDtGKalOzgwrMBm4=
+		A0ycyU8/y0LEstcIfC2TznUgkk0=
 		</data>
 		<key>audioTrackIcon.png</key>
 		<data>
@@ -171,14 +167,6 @@
 		<key>audioTrackIcon@2x.png</key>
 		<data>
 		1LzH7oApBV8dqDDKUJv5eb0vQgc=
-		</data>
-		<key>cc.png</key>
-		<data>
-		+DDoo7JO5xRPPgAq8qjRarA3c6s=
-		</data>
-		<key>cc@2x.png</key>
-		<data>
-		ThUae6mnSBLcmhTjBQWVIw4jAtA=
 		</data>
 		<key>hudbackground_ipad.png</key>
 		<data>
@@ -195,14 +183,6 @@
 		<key>hudbackground_iphone@2x.png</key>
 		<data>
 		Lp4WFoHmwKi6V+s8r3ODn2pCpt4=
-		</data>
-		<key>language.png</key>
-		<data>
-		FtyB+LyGyVnEFavL2hz4g+3k3lA=
-		</data>
-		<key>language@2x.png</key>
-		<data>
-		PRvCQkyVka0jfs1oV6MP7fAxkKY=
 		</data>
 		<key>music_icon.png</key>
 		<data>
@@ -325,66 +305,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BA63an8LbdKN5//P3K4SWO1UDOo=
+			X9cvuk0lmG1HziKUO4Gtn8kWJjs=
 			</data>
 			<key>hash2</key>
 			<data>
-			WT0n1ldOT929x7TK86iLnxwBYXylz/3OT0YFvWeBTXo=
+			2Te7KHonTTcQcHF51X6YL2j0hy+uf35nNmmin7L6hV4=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoAsset+HLS.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			weddoIXPSWU6jr3un8iTG2vRuu0=
+			bZo3ALUCWCRr0cmjsggm/QlKtwo=
 			</data>
 			<key>hash2</key>
 			<data>
-			UaC9BdW13L+dorshur2CF6fl/+1QKJap8ZM99KU6N1s=
+			Vagrjj3EqO90W5UrWdEybew72EXf7bhokMoQmKeqRYo=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoAsset+HSS.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aojGR7kdjLwtR2cQuP9/XTrR2aw=
+			UR9i1bkXz4xEyJdaBxQLT37AIAY=
 			</data>
 			<key>hash2</key>
 			<data>
-			9VB7Wu7q56/S0qLZoCfCs7BRoPAYi9nfNetJ+54zJuM=
+			9/MxH5hC2Qxz06/gON07DTuGsnIhW3PfzNkFIGuqNFA=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoAsset+SegmentedVideo.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Gdi9eFDngJHPkdwnSqQ0u7JMxOU=
+			pQIiIX+eCls83TWFmyo5MEf2Ju4=
 			</data>
 			<key>hash2</key>
 			<data>
-			G4UqNKukY6lYFKv9lfmEFTa73JHOtpFYP2gZXEYNZNc=
+			h5hjRE/zuZMjHnUUJEkhkVTiZMj8XVAl1+KNWSXasEM=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoAsset.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EZ6CqMqrdRVjiKTFFW1y5ZFQv5A=
+			nAuvIQRxNOBXGAZ22dtudX+Vs1M=
 			</data>
 			<key>hash2</key>
 			<data>
-			sw9pj+NmC+xwH6F67Xcd9WRBCSEEXspVxMAjzDbfvXs=
+			c4OcHoH+yh7AI5b+xgfRZxr6HUOU2dlxWEzS3Owd3ec=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoClientDownloadEngine.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xw6OcPjyfRJ8zlv5zgC57TcDbqA=
+			N4/NsG9bKjJQiWK8QarpJJTZ2iY=
 			</data>
 			<key>hash2</key>
 			<data>
-			bcqq6g8Idge9ABAUdTDeOcM+hyP0xRWSQ/oK6Dh9xyo=
+			PouGWjGMXb/a0CAqvZ+6d5UW9ThRc2CiGHWd1J4LuxA=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoClientHTTPServer.h</key>
@@ -402,11 +382,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cXG/sXiFeNuJJuNg8wHziegkn8o=
+			LJROqrH51E4HXCmdsrXlBrFnTB8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ytijOLphwiJf/sCPffCy99hThcVLCht42Qc/2teIIl8=
+			Wqpe2ljhM9pxo/sNjx8VD8VCSvDWiC0r572OCoJy0YI=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoDefaultAVAssetResourceLoaderDelegate.h</key>
@@ -435,11 +415,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HFW1Z8xJqag6Ib5FsVFXPboGiow=
+			8+VFw3AkzMRrR7qi3BgnlGS5frg=
 			</data>
 			<key>hash2</key>
 			<data>
-			ihQDoN1zsHua/kxa+YEzwLGI80VpKSY1Rd4AROXq4t0=
+			Q6n1S9tgIvbxzNovlvBL8sMPHJi00oP+4mEZ2mC0m9k=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoEncryption.h</key>
@@ -457,11 +437,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FKICURdpUbfK/rboiEF5BJSroF8=
+			SGYuJcHfCrZvlVihlt3v3iBa9PQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			j4VX4QJEWB2X7bp7e5DpqRKQPMFVvnSEobI6TurYPCM=
+			AVclYt/WinR9Gwv78p688u1ayvVMy7wuAu9YPrNpPHk=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoLicenseManager.h</key>
@@ -479,11 +459,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uyvqW3Pvc0vBkYTjODiugNhGbKE=
+			6aE2Zcu6A2gzSloE4s2Pz1FQgCE=
 			</data>
 			<key>hash2</key>
 			<data>
-			SrKzfd3aNbsvzyYbbZ1wazhrC5oi4OxKSVPoM4Tz3fE=
+			MeLtkldPfwMq0hqcaSFsRQEOJeApoGLEvJpiWoDvWDo=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoNotifications.h</key>
@@ -512,11 +492,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			863M4SDP2G1N90SXkiwMvMi1bnk=
+			+5ADl/LcF0BdSL6FOwMSwI4ekNI=
 			</data>
 			<key>hash2</key>
 			<data>
-			QHDy0TUmI0RSz6ss+M6/5Pq3sxtX3dP4liHZ0j/ji9o=
+			y3lBJOuBWdcPpYMY3sJMvHYSZkKKwKGX41ShK4cZTJE=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoPlayerViewController.h</key>
@@ -545,187 +525,176 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Zoce9v1tRQE2jyajltJ4vNnLFHE=
+			QvQdjjxzqnLU3fhT+c2OLbY0xkY=
 			</data>
 			<key>hash2</key>
 			<data>
-			nplmXdpXUoWrNAIl/BnmjAmd5rPYhAehhdgNsOJ6QRE=
+			7Dwv8k38GR0K+WZNo9atfwK4eqxqKAuHTwXTTaqDlr4=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			H1WGMARzQK7erYhd8STLRZNM6ok=
+			h4stufF8dKf7HIcmPMMnciLlPKk=
 			</data>
 			<key>hash2</key>
 			<data>
-			21WojgKv5XtZmryL0TJUHiJvO29ZqAieG8UE51IJlwI=
+			yM2qiuLML6v0Yy2jqdf9v1I2eXAQQLkFrthlhFjPuVQ=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fMsCX1vYrdWk/hWuIA6MjCuhKMQ=
+			ls/e52X++PZYepDeCMMD/bY6ZxU=
 			</data>
 			<key>hash2</key>
 			<data>
-			qW2jDfktLW7+qiuI2Hhe72gmks53DPFvHvKkHVKdwD4=
+			jEf7tGluN50qNinsN1+Yh5ZXQrX3einKyMMe83yxmCk=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_10.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			46+fP0GniAS5soIj1yNKmiZV6mM=
+			RKzh8Otr2pULD9ruh0+wE5Uez9s=
 			</data>
 			<key>hash2</key>
 			<data>
-			WIOCmEaY/yQLHN8mCGZJlomTHiU0XnqB2iFxsuVoQH0=
+			cp+hwv9w0HAvYdLfq3/v1domC9nohArneO4zIUspDr4=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_11.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZpJLWQlOPbD7TEkRC/ScE9SqrTw=
+			oO+PtEZJYtrLy9Oe8UHdI9Ldg0w=
 			</data>
 			<key>hash2</key>
 			<data>
-			/t08hJs/oiml+pUYtXJq5zi3zJ1dFlNGcHplOXuuJTE=
+			Wl25gmXKZ5G7OejX22MTYxndAc/VNhmqjQH98Asp7mo=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_12.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			44BA50ru3hZP0RGyN6+W0xGN1XY=
+			rQFqkGqt/aNWzbP4saz0mKiHduY=
 			</data>
 			<key>hash2</key>
 			<data>
-			1XDs9yVT0cb7FCN36GMN6XUFxrz6u2dsaP11RB0VvgY=
+			IdWCuBWBoK8EBaq583lpjFrTXz40UoaR5Yrf2ehn9UA=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_12_1.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3EnUjHg7OVli8STuw8FmehoiBnQ=
+			ESDE52IiNxWWdMz9tpDT1SAa7ZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			nQNXhTF3cpdgTyKjPdC8200ygVn5ttdsE6mbryL00HQ=
+			oZf8ok2d4DHd9F+GuoPUUGdOtdv3fZx/2j4v4Bcj3s8=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_12_2.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cc9UPy4lt8JmX1kkb2HJ2N1K/v0=
+			W7BvZt62UGAsTWvz+BJrX0WjfGI=
 			</data>
 			<key>hash2</key>
 			<data>
-			UbE3CSlovUx5FukpGqsu5Z4/3UqjeVW1PzMtOf/IXX0=
+			8tpdSCE9jmAF8r6PMkHoaaVx4zHlpKPhsj7cLymUmz0=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_13.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			W123zn4FKowuGt7fXd8I+o3/JSg=
+			NwVefzrMIjTnBkjp10QHIqKZunA=
 			</data>
 			<key>hash2</key>
 			<data>
-			TgO1kDg2Z+H9f5VkoIPOY06qo/eW4l1qM2oZdbizsBo=
+			8tFqiRNeZUCm3Ermtj/T0V2Ly1nCYhlscoShBwYMOvY=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_13_1.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8pR/pwO7ccro4JpBqqDh5mf/uOQ=
+			hfXTtcIMjGprvKea71zTEopYJUg=
 			</data>
 			<key>hash2</key>
 			<data>
-			QvK2xVNpTd0Re84UnmFFpPOz2yG0nGVTiBemfXAR2Zs=
+			KUjcVcZkv4kqEa81zFEeaqStN3p58pEvsBS262de7Mw=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_13_2.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			u/1Zh/Za7joR2YnEIBZkBnkt/Cg=
+			E0C/t/rIGYcUw6kJvXmESklYJdU=
 			</data>
 			<key>hash2</key>
 			<data>
-			MmD9V7koEZmPbTz3iPDfuJLjDwHXiwwhBHA92MY/gL8=
+			LsWuUZ95/O+uFnYtvSZbpqUq7s19hfiCZ8ZksV0//LE=
 			</data>
 		</dict>
-		<key>Virtuoso.momd/Virtuoso_3_14.mom</key>
+		<key>Virtuoso.momd/Virtuoso_3_13_2.omo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wD68CEMjpNzuGTkyddpjk/LFp/A=
+			si/puEx0zfYzI8Auqz7bIC2I5Ek=
 			</data>
 			<key>hash2</key>
 			<data>
-			tIgEWQkifXwQoX5MLG/HGD5JbnwewifTtfZgFGmT9cE=
-			</data>
-		</dict>
-		<key>Virtuoso.momd/Virtuoso_3_14.omo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			X2U0U5S6BcAFmgrTivbpp3hjksI=
-			</data>
-			<key>hash2</key>
-			<data>
-			U6heQ1jZ/9Y9NtGI0lwyY0UIDH5aqBzW9SZhzTguzH8=
+			K8GgBdsHU0KL9qheJ0wuutXCPgY1PGazK1BXFkLnA7g=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_4.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			B3cX2Q/2tPVXBrFIvF+iBbOL8Og=
+			rV4EaLkVe2MlD/YvZKKekqckj78=
 			</data>
 			<key>hash2</key>
 			<data>
-			+ZfshecwjSAjYs8wBOSVFm4S7L8fxbLByt/UKAN17BU=
+			NVIt0pyRiGyhtZsGzarXXgNyRHBhCZv5kOjEDfJUMhE=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_4_1.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CUTmh6Bonj75Tx1Wubqos7Hr4bc=
+			VxIpMsSY6p1yKQhM7Tvg6ZVDbio=
 			</data>
 			<key>hash2</key>
 			<data>
-			xOzZ87/4iSnIsvJ2WTDzDtyQw01wjjjpQxMux4IndNk=
+			AUY4ExxuclL+whw4XsV+ozoC1LxZEg4Up+R5s9sZiF8=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_6.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x24byR/COml14HxnyJIhYK+7okg=
+			EuP2L9L/rLTyvWW2Yq2DAUIAtVU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wn5zgvXd0YKePAfIH9Hj0JZyCVJHhIFNgK8Z80ZSMtc=
+			YL3Q6obp6W9L7zeumGXMJK8tcgNhcAVmSYdxHgMW6oE=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_9.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9LNfyHP1xqWuDtGKalOzgwrMBm4=
+			A0ycyU8/y0LEstcIfC2TznUgkk0=
 			</data>
 			<key>hash2</key>
 			<data>
-			6Us6FEO4YMecCPnrcGtzphJUnjj/4xoFn706qw9nyqs=
+			EVgOZabqQtA6K4vSGjjZBTA6prxCAT4T8QwcdebvYMo=
 			</data>
 		</dict>
 		<key>audioTrackIcon.png</key>
@@ -748,28 +717,6 @@
 			<key>hash2</key>
 			<data>
 			lg3BVicsYdw0hw7UCmvjLElv/Vdv1BWUAQtWYg3icGI=
-			</data>
-		</dict>
-		<key>cc.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+DDoo7JO5xRPPgAq8qjRarA3c6s=
-			</data>
-			<key>hash2</key>
-			<data>
-			2OYfF6LwWZoe05hfQ2SHHQcPVRDFZFbS3uX0/L5s9jA=
-			</data>
-		</dict>
-		<key>cc@2x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ThUae6mnSBLcmhTjBQWVIw4jAtA=
-			</data>
-			<key>hash2</key>
-			<data>
-			TsxbBVw8mprQ+6t8XbtZRnyzDCY9RrCnmqRJe2TXs6c=
 			</data>
 		</dict>
 		<key>hudbackground_ipad.png</key>
@@ -814,28 +761,6 @@
 			<key>hash2</key>
 			<data>
 			3rolrby07PSc8DSxaAQqLQHAB4YXR7eUDoHeucC10C0=
-			</data>
-		</dict>
-		<key>language.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FtyB+LyGyVnEFavL2hz4g+3k3lA=
-			</data>
-			<key>hash2</key>
-			<data>
-			N1IlZsyaV5jWMZGRmYrCxnHwcOhqNp8yxLaVrBXH2ik=
-			</data>
-		</dict>
-		<key>language@2x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PRvCQkyVka0jfs1oV6MP7fAxkKY=
-			</data>
-			<key>hash2</key>
-			<data>
-			EDnuFAwDmHFQadO6l7nUuSvGioaho2xx5k5YtWUJsgw=
 			</data>
 		</dict>
 		<key>music_icon.png</key>

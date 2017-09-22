@@ -17,8 +17,6 @@
 #ifndef VirtuosoClientDownloadEngine_VirtuosoConstants_h
 #define VirtuosoClientDownloadEngine_VirtuosoConstants_h
 
-#import <Foundation/Foundation.h>
-
 @class VirtuosoAsset;
 
 /**---------------------------------------------------------------------------------------
@@ -230,9 +228,6 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     
     /** Virtuoso was unable to obtain permission to download the asset because the account has reached its maximum download limit. */
     kVDE_PermissionsErrorMaximumDownloadsPerAccount = -11,
-    
-    /** Virtuoso was unable to create the VirtuosoAsset due to configuration restrictions. */
-    kVDE_InvalidConfigurationOptions = -12,
 };
 
 
@@ -386,7 +381,11 @@ typedef NS_ENUM(NSInteger, kVDE_AssetProtectionType)
     kVDE_AssetProtectionTypeFairPlay = 1,
     
     /** The asset is protected by Google Widevine DRM. */
-    kVDE_AssetProtectionTypeWidevine = 2,    
+    kVDE_AssetProtectionTypeWidevine = 2,
+    
+    /** The asset is protected by Cisco DRM, and download and playback will be automatically serviced by
+        the Cisco platform. */
+    kVDE_AssetProtectionTypeDrmCisco = 3,
 };
 
 /*!
