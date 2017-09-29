@@ -19,6 +19,12 @@
 @protocol VirtuosoAVAssetResourceLoaderDelegate;
 @class VirtuosoAsset;
 
+typedef enum
+{
+    kVAV_NoCertificate = -1,
+    kVAV_ExpiredWhileOffline = -2
+} kVAV_ErrorCode;
+
 /*!
  *  @abstract Provides a mechanism to easily identify and handle errors encountered during the DRM licensing process
  */

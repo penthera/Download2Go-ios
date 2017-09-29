@@ -59,10 +59,12 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *
  *  @param urlSuffix        A URL suffix to be appended to the base license URL.
  *  @param customParameters A dictionary of key-value pairs to be added to the license request as URL parameters
+ *  @param renewalDate      A NSDate timestamp indicating when the license should be renewed
  *  @param asset            The asset requiring an offline playback license
  */
 - (void)lookupLicenseURLSuffix:(NSString* _Nonnull * _Nullable)urlSuffix
                  andParameters:(NSDictionary* _Nonnull * _Nullable)customParameters
+                   renewalDate:(NSDate* _Nonnull * _Nullable)renewalDate
                       forAsset:(VirtuosoAsset* _Nonnull)asset;
 
 @end

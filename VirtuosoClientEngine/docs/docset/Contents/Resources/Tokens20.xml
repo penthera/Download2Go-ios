@@ -13,11 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:forAsset:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:renewalDate:forAsset:</TokenIdentifier>
 			<Abstract type="html">Requests optional license parameters for license aquisition</Abstract>
 			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters renewalDate:(NSDate *_Nonnull *_Nullable)renewalDate forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>urlSuffix</Name>
@@ -26,12 +26,15 @@
 					<Name>customParameters</Name>
 					<Abstract type="html">A dictionary of key-value pairs to be added to the license request as URL parameters</Abstract>
 				</Parameter><Parameter>
+					<Name>renewalDate</Name>
+					<Abstract type="html">A NSDate timestamp indicating when the license should be renewed</Abstract>
+				</Parameter><Parameter>
 					<Name>asset</Name>
 					<Abstract type="html">The asset requiring an offline playback license</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:forAsset:</Anchor>
+			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:renewalDate:forAsset:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
