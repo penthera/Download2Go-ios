@@ -106,6 +106,26 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setClientAppCertificate:forDRM:</TokenIdentifier>
+			<Abstract type="html">Sets the client app certificate from a previously downloaded or internal source</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)setClientAppCertificate:(nonnull NSData *)certificate forDRM:(kVLM_DRMType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>certificate</Name>
+					<Abstract type="html">The data representing the client app certificate</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setClientAppCertificate:forDRM:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/clientAppCertificateForDRM:</TokenIdentifier>
 			<Abstract type="html">Retrieves the previously downloaded client app security certificate, if it exists</Abstract>
 			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>

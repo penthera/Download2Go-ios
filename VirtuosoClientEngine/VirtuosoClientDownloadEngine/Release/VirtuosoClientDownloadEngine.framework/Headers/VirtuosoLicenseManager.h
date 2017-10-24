@@ -121,6 +121,20 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
 + (void)downloadClientAppCertificateFromURL:(nonnull NSString*)url forDRM:(kVLM_DRMType)type;
 
 /*!
+ *  @abstract Sets the client app certificate from a previously downloaded or internal source
+ *
+ *
+ *  @discussion As a part of DRM processing, some DRM platforms require a client security
+ *              certificate.  Best practices dictate that this certificate is not hard-coded
+ *              in the client app.  This method is used to load the required client app
+ *              certificate from a remote location.
+ *
+ *  @param certificate The data representing the client app certificate
+ *  @param type The DRM type to configure
+ */
++ (void)setClientAppCertificate:(nonnull NSData*)certificate forDRM:(kVLM_DRMType)type;
+
+/*!
  *  @abstract Retrieves the previously downloaded client app security certificate, if it exists
  *
  *  @param type The DRM type to configure
