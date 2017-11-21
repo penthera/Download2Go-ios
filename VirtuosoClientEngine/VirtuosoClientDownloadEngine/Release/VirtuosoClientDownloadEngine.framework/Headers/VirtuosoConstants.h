@@ -516,12 +516,12 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorType)
 
 /*!
  *
- *  @typedef AssetDeletionCompleteBlock
+ *  @typedef AsyncCompleteBlock
  *
- *  @discussion When you delete an asset via the async delete method, this callback indicates that
- *              Virtuoso has completely finished deleting all related resources from disk.
+ *  @discussion When you call an asynchronous SDK method, this callback indicates that
+ *              Virtuoso has completely finished the requested action.
  */
-typedef void(^AssetDeletionCompleteBlock)();
+typedef void(^AsyncCompleteBlock)();
 
 
 #pragma mark

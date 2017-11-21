@@ -935,18 +935,18 @@
             
         </Node>
         <Node id="51" type="file" documentType="reference">
-            <Name>AssetDeletionCompleteBlock</Name>
-            <Path>Blocks/AssetDeletionCompleteBlock.html</Path>
-            
-        </Node>
-        <Node id="52" type="file" documentType="reference">
             <Name>AssetParsingCompletedBlock</Name>
             <Path>Blocks/AssetParsingCompletedBlock.html</Path>
             
         </Node>
-        <Node id="53" type="file" documentType="reference">
+        <Node id="52" type="file" documentType="reference">
             <Name>AssetReadyForDownloadBlock</Name>
             <Path>Blocks/AssetReadyForDownloadBlock.html</Path>
+            
+        </Node>
+        <Node id="53" type="file" documentType="reference">
+            <Name>AsyncCompleteBlock</Name>
+            <Path>Blocks/AsyncCompleteBlock.html</Path>
             
         </Node>
         <Node id="54" type="file" documentType="reference">

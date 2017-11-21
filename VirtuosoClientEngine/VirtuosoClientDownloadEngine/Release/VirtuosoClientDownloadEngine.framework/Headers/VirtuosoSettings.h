@@ -409,6 +409,8 @@
  *           downloaded encryption keys and other types of network content.  It is possible and, in fact, likely
  *           that your users will eventually attempt a download in these conditions and end up with unplayable
  *           content.
+ *
+ *  @param allow Whether to allow restricted MIME types for encryption key downloads
  */
 - (void)allowRestrictedMimeTypesForEncryptionKeys:(Boolean)allow;
 

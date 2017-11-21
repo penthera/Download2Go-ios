@@ -174,8 +174,6 @@
 		
 		<option value="//api/name/clearRetryCountOnComplete:">- clearRetryCountOnComplete:</option>
 		
-		<option value="//api/name/deleteAsset">- deleteAsset</option>
-		
 		<option value="//api/name/deleteAssetOnComplete:">- deleteAssetOnComplete:</option>
 		
 		<option value="//api/name/forceExpire:">- forceExpire:</option>
@@ -188,9 +186,9 @@
 		
 		<option value="//api/name/playUsingPlaybackType:fromViewController:onSuccess:onFail:">- playUsingPlaybackType:fromViewController:onSuccess:onFail:</option>
 		
-		<option value="//api/name/refresh">- refresh</option>
+		<option value="//api/name/refreshOnComplete:">- refreshOnComplete:</option>
 		
-		<option value="//api/name/save">- save</option>
+		<option value="//api/name/saveOnComplete:">- saveOnComplete:</option>
 		
 		<option value="//api/name/segmentDownloadErrors">- segmentDownloadErrors</option>
 		
@@ -240,7 +238,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>A VirtuosoAsset may be a single physical file (E.G. MP4) or a conceptual &ldquo;group&rdquo;
 of many smaller file segments (E.G. HLS/HSS).</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this <a href="#//api/name/type">type</a> directly.
-You can create a VirtuosoAsset object via the provided static constructor methods.</p></div><p>Provides types and methods used to handle HTTP Live Streaming (HLS) video</p><p>Provides additional types and methods used to handle segmented video</p><p>Provides types and methods used to handle MPEG Dynamic Adaptive Streaming over HTTP (DASH) video</p><p>Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.</p>
+You can create a VirtuosoAsset object via the provided static constructor methods.</p></div><p>Provides types and methods used to handle MPEG Dynamic Adaptive Streaming over HTTP (DASH) video</p><p>Provides additional types and methods used to handle segmented video</p><p>Provides types and methods used to handle HTTP Live Streaming (HLS) video</p><p>Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.</p>
 					</div>
 					
 					
@@ -1033,8 +1031,8 @@ The returned object may be nil (if no object exists with the given <a href="#//a
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/refresh" title="refresh"></a>
-	<h3 class="method-title"><code><a href="#//api/name/refresh">&ndash;&nbsp;refresh</a></code>
+	<a name="//api/name/refreshOnComplete:" title="refreshOnComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshOnComplete:">&ndash;&nbsp;refreshOnComplete:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1049,9 +1047,21 @@ The returned object may be nil (if no object exists with the given <a href="#//a
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)refresh</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)refreshOnComplete:(nullable AsyncCompleteBlock)<em>completeBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>An optional block that will be called when the refresh is complete</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -1067,6 +1077,10 @@ Under most use cases, this will not be apparent, as Virtuoso always passes an up
 each relevant notification.  But if you are storing instantiated objects externally to Virtuoso and are
 accessing property values that frequently change, such as <a href="#//api/name/fractionComplete">fractionComplete</a> or current size, then you
 may need to refresh the object to obtain the most up-to-date values.</p>
+
+<p>If you pass a non-NULL completeBlock, then the method is asynchronous and will return
+immediately.  When the save has finished, the completion block will be called.  If you
+pass a NULL value for the completeBlock, then the save is synchronous.</p>
 			</div>
 			
 
@@ -1084,8 +1098,8 @@ may need to refresh the object to obtain the most up-to-date values.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/save" title="save"></a>
-	<h3 class="method-title"><code><a href="#//api/name/save">&ndash;&nbsp;save</a></code>
+	<a name="//api/name/saveOnComplete:" title="saveOnComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveOnComplete:">&ndash;&nbsp;saveOnComplete:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1100,9 +1114,21 @@ may need to refresh the object to obtain the most up-to-date values.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)save</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)saveOnComplete:(nullable AsyncCompleteBlock)<em>completeBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>An optional block that will be called when the refresh is complete</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -1114,55 +1140,12 @@ may need to refresh the object to obtain the most up-to-date values.</p>
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Virtuoso relies on in-memory caching to optimize performance.
 After making changes to an asset, you should call this method to ensure consistency.
-This method persists changes to the local instance of this object to disk.  Call <a href="#//api/name/refresh">refresh</a>
+This method persists changes to the local instance of this object to disk.  Call refresh
 on an object to load up-to-date values from the persistent store into memory.</p>
-			</div>
-			
 
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/deleteAsset" title="deleteAsset"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deleteAsset">&ndash;&nbsp;deleteAsset</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Synchronously deletes this asset</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)deleteAsset</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="warning"><p><strong>Warning:</strong> This method is synchronous. It will block until it has removed all files and internal data
-belonging to this asset.</p></div>
+<p>If you pass a non-NULL completeBlock, then the method is asynchronous and will return
+immediately.  When the save has finished, the completion block will be called.  If you
+pass a NULL value for the completeBlock, then the save is synchronous.</p>
 			</div>
 			
 
@@ -1191,12 +1174,12 @@ belonging to this asset.</p></div>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Asynchronously deletes this asset</p>
+				<p>Deletes this asset</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)deleteAssetOnComplete:(nullable AssetDeletionCompleteBlock)<em>deletedBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)deleteAssetOnComplete:(nullable AsyncCompleteBlock)<em>deletedBlock</em></code></div>
 
 		    
 			
@@ -1220,7 +1203,10 @@ belonging to this asset.</p></div>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Deletes this asset.  This method is asynchronous and returns immediately.</p>
+				<p>Deletes this asset.  If you pass a non-NULL deletedBlock, then the method is
+asynchronous and will return immediately.  When the deletion has finished, the
+completion block will be called.  If you pass a NULL value for the deletedBlock,
+then the deletion is synchronous.</p>
 			</div>
 			
 
@@ -2513,7 +2499,7 @@ on the <a href="#//api/name/type">type</a> of this asset and its status, this me
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>The userInfo dictionary is for you to store metadata alongside this asset.
 Since Virtuoso serializes this object, all objects contained within the userInfo dictionary
-MUST be property list compatible objects.  If you attempt to <a href="#//api/name/save">save</a> non-compatible objects,
+MUST be property list compatible objects.  If you attempt to save non-compatible objects,
 the userInfo dictionary won&rsquo;t be persisted.</p>
 			</div>
 			
@@ -3208,6 +3194,606 @@ enabled.</p>
 						</div>
 						
 
+						<a title="DASH Methods" name="task_DASH Methods"></a>
+						<h2 class="task-title">DASH Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new in-memory DASH VirtuosoAsset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> mpdUrl:(nonnull NSString *)<em>mpdUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> maximumVideoBitrate:(long long)<em>maximumVideoBitrate</em> maximumAudioBitrate:(long long)<em>maximumAudioBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetID</code></th>
+						<td><p>A unique identifier for the asset. Used in all log events.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>description</code></th>
+						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mpdUrl</code></th>
+						<td><p>Where the media presentation <a href="#//api/name/description">description</a> (mpd) file lives on the Internet.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protectionType</code></th>
+						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumVideoBitrate</code></th>
+						<td><p>For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
+bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumAudioBitrate</code></th>
+						<td><p>Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>publishDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
+						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>readyBlock</code></th>
+						<td><p>Called when the asset is ready to be added to the download queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>Called when asset parsing completes. May be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new (empty) VirtuosoAsset object, or nil if an <a href="#//api/name/error">error</a> occured.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This constructor uses the default expiry rules.  To customize expiry rules for this asset,
+use the constructors that take expiry parameters, or change the expiry values after creation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+DASH.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new in-memory DASH VirtuosoAsset object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> mpdUrl:(nonnull NSString *)<em>mpdUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> maximumVideoBitrate:(long long)<em>maximumVideoBitrate</em> maximumAudioBitrate:(long long)<em>maximumAudioBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> expiryAfterDownload:(NSTimeInterval)<em>expiryAfterDownload</em> expiryAfterPlay:(NSTimeInterval)<em>expiryAfterPlay</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetID</code></th>
+						<td><p>A unique identifier for the asset. Used in all log events.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>description</code></th>
+						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mpdUrl</code></th>
+						<td><p>Where the media presentation <a href="#//api/name/description">description</a> (mpd) file lives on the Internet.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protectionType</code></th>
+						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumVideoBitrate</code></th>
+						<td><p>For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
+bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumAudioBitrate</code></th>
+						<td><p>Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>publishDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterDownload</code></th>
+						<td><p>Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterPlay</code></th>
+						<td><p>Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
+						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>readyBlock</code></th>
+						<td><p>Called when the asset is ready to be added to the download queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>Called when asset parsing completes. May be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new (empty) VirtuosoAsset object, or nil if an <a href="#//api/name/error">error</a> occured.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This constructor allows you to set custom expiry rules.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+DASH.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:" title="setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:">&ndash;&nbsp;setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a mpd URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
+not a DASH asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setMpdURL:(nonnull NSString *)<em>mpdUrl</em> withMaximumVideoBitrate:(long long)<em>maximumVideoBitrate</em> andMaximumAudioBitrate:(long long)<em>maximumAudioBitrate</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mpdUrl</code></th>
+						<td><p>Where the media presentation <a href="#//api/name/description">description</a> (mpd) lives on the Internet.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumVideoBitrate</code></th>
+						<td><p>For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
+bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumAudioBitrate</code></th>
+						<td><p>Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>Called when asset parsing completes. May be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+DASH.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="SegmentedVideo Methods" name="task_SegmentedVideo Methods"></a>
+						<h2 class="task-title">SegmentedVideo Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/segmentDownloadErrors" title="segmentDownloadErrors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/segmentDownloadErrors">&ndash;&nbsp;segmentDownloadErrors</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of segments that could not be downloaded in this asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)segmentDownloadErrors</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This value will always be 0 unless the option in <a href="../Classes/VirtuosoSettings.html">VirtuosoSettings</a> is
+configured to permit downloading after segment errors are hit.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/manifestRemoteURL" title="manifestRemoteURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/manifestRemoteURL">&nbsp;&nbsp;manifestRemoteURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Where the manifest for this asset lives on the Internet.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The remote URL is the addressable location on the Internet.  The URL must include any
+security or CDN tokens required to download the asset.</p>
+
+<p>If your CDN uses dynamic URLs or another method where URLs change over time, Virtuoso
+may need to issue a network request to get a &lsquo;fresh&rsquo; URL.  In that case, this method
+will block during this network request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/manifestLocalPath" title="manifestLocalPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/manifestLocalPath">&nbsp;&nbsp;manifestLocalPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The local file path for the saved master manifest file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> If this asset is not available (Virtuoso is in an timed-out state, the asset is
+outside its availability window or the asset is expired), then this property will return nil,
+preventing API access to the asset.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoStreamBitrate" title="videoStreamBitrate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoStreamBitrate">&nbsp;&nbsp;videoStreamBitrate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The video bitrate of this asset when downloaded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long videoStreamBitrate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the provided manifest contained multiple video profiles, then this property contains the
+bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
+then this property will return 0.  If the asset contains both video and audio in a single
+stream, then this property will return the same value as the <a href="#//api/name/audioStreamBitrate">audioStreamBitrate</a> property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioStreamBitrate" title="audioStreamBitrate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioStreamBitrate">&nbsp;&nbsp;audioStreamBitrate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The audio bitrate of this asset when downloaded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long audioStreamBitrate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the provided manifest contained multiple audio profiles, then this property contains the
+bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
+then this property will return 0.  If the asset contains both video and audio in a single
+stream, then this property will return the same value as the <a href="#//api/name/videoStreamBitrate">videoStreamBitrate</a> property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
 						<a title="HLS Methods" name="task_HLS Methods"></a>
 						<h2 class="task-title">HLS Methods</h2>
 
@@ -3670,606 +4256,6 @@ preventing API access to the asset.</p></div>
 						</div>
 						
 
-						<a title="SegmentedVideo Methods" name="task_SegmentedVideo Methods"></a>
-						<h2 class="task-title">SegmentedVideo Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/segmentDownloadErrors" title="segmentDownloadErrors"></a>
-	<h3 class="method-title"><code><a href="#//api/name/segmentDownloadErrors">&ndash;&nbsp;segmentDownloadErrors</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The number of segments that could not be downloaded in this asset.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSUInteger)segmentDownloadErrors</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This value will always be 0 unless the option in <a href="../Classes/VirtuosoSettings.html">VirtuosoSettings</a> is
-configured to permit downloading after segment errors are hit.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/manifestRemoteURL" title="manifestRemoteURL"></a>
-	<h3 class="method-title"><code><a href="#//api/name/manifestRemoteURL">&nbsp;&nbsp;manifestRemoteURL</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Where the manifest for this asset lives on the Internet.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The remote URL is the addressable location on the Internet.  The URL must include any
-security or CDN tokens required to download the asset.</p>
-
-<p>If your CDN uses dynamic URLs or another method where URLs change over time, Virtuoso
-may need to issue a network request to get a &lsquo;fresh&rsquo; URL.  In that case, this method
-will block during this network request.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/manifestLocalPath" title="manifestLocalPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/manifestLocalPath">&nbsp;&nbsp;manifestLocalPath</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The local file path for the saved master manifest file</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="warning"><p><strong>Warning:</strong> If this asset is not available (Virtuoso is in an timed-out state, the asset is
-outside its availability window or the asset is expired), then this property will return nil,
-preventing API access to the asset.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/videoStreamBitrate" title="videoStreamBitrate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/videoStreamBitrate">&nbsp;&nbsp;videoStreamBitrate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The video bitrate of this asset when downloaded</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long videoStreamBitrate</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If the provided manifest contained multiple video profiles, then this property contains the
-bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
-then this property will return 0.  If the asset contains both video and audio in a single
-stream, then this property will return the same value as the <a href="#//api/name/audioStreamBitrate">audioStreamBitrate</a> property.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/audioStreamBitrate" title="audioStreamBitrate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/audioStreamBitrate">&nbsp;&nbsp;audioStreamBitrate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The audio bitrate of this asset when downloaded</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long audioStreamBitrate</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If the provided manifest contained multiple audio profiles, then this property contains the
-bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
-then this property will return 0.  If the asset contains both video and audio in a single
-stream, then this property will return the same value as the <a href="#//api/name/videoStreamBitrate">videoStreamBitrate</a> property.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="DASH Methods" name="task_DASH Methods"></a>
-						<h2 class="task-title">DASH Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Creates a new in-memory DASH VirtuosoAsset.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> mpdUrl:(nonnull NSString *)<em>mpdUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> maximumVideoBitrate:(long long)<em>maximumVideoBitrate</em> maximumAudioBitrate:(long long)<em>maximumAudioBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetID</code></th>
-						<td><p>A unique identifier for the asset. Used in all log events.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>description</code></th>
-						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>mpdUrl</code></th>
-						<td><p>Where the media presentation <a href="#//api/name/description">description</a> (mpd) file lives on the Internet.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>protectionType</code></th>
-						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
-instructed differently by Penthera support.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumVideoBitrate</code></th>
-						<td><p>For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
-profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
-bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
-select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumAudioBitrate</code></th>
-						<td><p>Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
-this asset is contained within the video profile, this value is ignored.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>publishDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
-						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
-as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
-will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>userInfo</code></th>
-						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
-Virtuoso will serialize this data and store it, but not explicitly use this data.
-The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>readyBlock</code></th>
-						<td><p>Called when the asset is ready to be added to the download queue</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completeBlock</code></th>
-						<td><p>Called when asset parsing completes. May be nil.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new (empty) VirtuosoAsset object, or nil if an <a href="#//api/name/error">error</a> occured.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This constructor uses the default expiry rules.  To customize expiry rules for this asset,
-use the constructors that take expiry parameters, or change the expiry values after creation.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+DASH.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Creates a new in-memory DASH VirtuosoAsset object.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> mpdUrl:(nonnull NSString *)<em>mpdUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> maximumVideoBitrate:(long long)<em>maximumVideoBitrate</em> maximumAudioBitrate:(long long)<em>maximumAudioBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> expiryAfterDownload:(NSTimeInterval)<em>expiryAfterDownload</em> expiryAfterPlay:(NSTimeInterval)<em>expiryAfterPlay</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetID</code></th>
-						<td><p>A unique identifier for the asset. Used in all log events.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>description</code></th>
-						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>mpdUrl</code></th>
-						<td><p>Where the media presentation <a href="#//api/name/description">description</a> (mpd) file lives on the Internet.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>protectionType</code></th>
-						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
-instructed differently by Penthera support.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumVideoBitrate</code></th>
-						<td><p>For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
-profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
-bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
-select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumAudioBitrate</code></th>
-						<td><p>Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
-this asset is contained within the video profile, this value is ignored.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>publishDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryAfterDownload</code></th>
-						<td><p>Amount of time after Virtuoso completes download of the asset that
-Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryAfterPlay</code></th>
-						<td><p>Amount of time after the asset is first played that
-Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
-						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
-as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
-will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>userInfo</code></th>
-						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
-Virtuoso will serialize this data and store it, but not explicitly use this data.
-The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>readyBlock</code></th>
-						<td><p>Called when the asset is ready to be added to the download queue</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completeBlock</code></th>
-						<td><p>Called when asset parsing completes. May be nil.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new (empty) VirtuosoAsset object, or nil if an <a href="#//api/name/error">error</a> occured.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This constructor allows you to set custom expiry rules.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+DASH.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:" title="setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:">&ndash;&nbsp;setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Adds a mpd URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
-not a DASH asset.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setMpdURL:(nonnull NSString *)<em>mpdUrl</em> withMaximumVideoBitrate:(long long)<em>maximumVideoBitrate</em> andMaximumAudioBitrate:(long long)<em>maximumAudioBitrate</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>mpdUrl</code></th>
-						<td><p>Where the media presentation <a href="#//api/name/description">description</a> (mpd) lives on the Internet.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumVideoBitrate</code></th>
-						<td><p>For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
-profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
-bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
-select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumAudioBitrate</code></th>
-						<td><p>Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
-this asset is contained within the video profile, this value is ignored.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completeBlock</code></th>
-						<td><p>Called when asset parsing completes. May be nil.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+DASH.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
 						<a title="HSS Methods" name="task_HSS Methods"></a>
 						<h2 class="task-title">HSS Methods</h2>
 
@@ -4618,7 +4604,7 @@ select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highe
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-11-16</p>
+						<p class="copyright">Copyright &copy; 2017 Penthera Inc. All rights reserved. Updated: 2017-11-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

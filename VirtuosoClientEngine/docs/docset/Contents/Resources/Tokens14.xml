@@ -991,7 +991,12 @@ engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quo
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
 			<Declaration>- (void)allowRestrictedMimeTypesForEncryptionKeys:(Boolean)allow</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>allow</Name>
+					<Abstract type="html">Whether to allow restricted MIME types for encryption key downloads</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/allowRestrictedMimeTypesForEncryptionKeys:</Anchor>
             <NodeRef refid="14"/>

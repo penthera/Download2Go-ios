@@ -734,7 +734,7 @@
                                         [parsedAsset _setDownloadRetryCount:4];
                                         [parsedAsset _setMaximumRetriesExceeded:YES];
                                         [parsedAsset _setError:kVDE_DownloadNetworkError];
-                                        [parsedAsset save];
+                                        [parsedAsset saveOnComplete:nil];
                                       
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -765,7 +765,7 @@
                                         [parsedAsset _setDownloadRetryCount:1];
                                         [parsedAsset _setMaximumRetriesExceeded:NO];
                                         [parsedAsset _setError:kVDE_DownloadNetworkError];
-                                        [parsedAsset save];
+                                        [parsedAsset saveOnComplete:nil];
                                       
                                         NSLog(@"Item is ready for download: %@",parsedAsset);
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];

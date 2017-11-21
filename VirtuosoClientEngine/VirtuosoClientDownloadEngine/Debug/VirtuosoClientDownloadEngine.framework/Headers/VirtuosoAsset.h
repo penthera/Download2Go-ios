@@ -308,8 +308,14 @@ typedef void (^BasicCompletionBlock)();
  *              each relevant notification.  But if you are storing instantiated objects externally to Virtuoso and are
  *              accessing property values that frequently change, such as fractionComplete or current size, then you
  *              may need to refresh the object to obtain the most up-to-date values.
+ *
+ *              If you pass a non-NULL completeBlock, then the method is asynchronous and will return
+ *              immediately.  When the save has finished, the completion block will be called.  If you
+ *              pass a NULL value for the completeBlock, then the save is synchronous.
+ *
+ *  @param completeBlock An optional block that will be called when the refresh is complete
  */
-- (void)refresh;
+- (void)refreshOnComplete:(nullable AsyncCompleteBlock)completeBlock;
 
 /*!
  *  @abstract Persists the VirtuosoAsset object for later use
@@ -318,25 +324,26 @@ typedef void (^BasicCompletionBlock)();
  *              After making changes to an asset, you should call this method to ensure consistency.
  *              This method persists changes to the local instance of this object to disk.  Call refresh
  *              on an object to load up-to-date values from the persistent store into memory.
+ *
+ *              If you pass a non-NULL completeBlock, then the method is asynchronous and will return
+ *              immediately.  When the save has finished, the completion block will be called.  If you
+ *              pass a NULL value for the completeBlock, then the save is synchronous.
+ *
+ *  @param completeBlock An optional block that will be called when the refresh is complete
  */
-- (void)save;
+- (void)saveOnComplete:(nullable AsyncCompleteBlock)completeBlock;
 
 /*!
- *  @abstract Synchronously deletes this asset
+ *  @abstract Deletes this asset
  *
- *  @warning This method is synchronous. It will block until it has removed all files and internal data
- *           belonging to this asset.
- */
-- (void)deleteAsset;
-
-/*!
- *  @abstract Asynchronously deletes this asset
- *
- *  @discussion Deletes this asset.  This method is asynchronous and returns immediately.
+ *  @discussion Deletes this asset.  If you pass a non-NULL deletedBlock, then the method is
+ *              asynchronous and will return immediately.  When the deletion has finished, the
+ *              completion block will be called.  If you pass a NULL value for the deletedBlock,
+ *              then the deletion is synchronous.
  *
  *  @param deletedBlock Notifies that Virtuoso has finished deleting all asset resources from disk.
  */
-- (void)deleteAssetOnComplete:(nullable AssetDeletionCompleteBlock)deletedBlock;
+- (void)deleteAssetOnComplete:(nullable AsyncCompleteBlock)deletedBlock;
 
 /*!
  *  @abstract Deletes all assets.

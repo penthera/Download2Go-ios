@@ -1199,7 +1199,9 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                  
                  // We need to set the playback date here.  Don't log it.  We'll use the movie player controller events for that.
                  [asset setFirstPlayDateTime:[NSDate date]];
-                 [asset save];
+                 [asset saveOnComplete:^{
+                     // No need to wait, but we don't need to do anything here.
+                 }];
              }
              
                             onFail:^
@@ -1220,7 +1222,9 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                                       {
                                           // We need to set the playback date here.  Don't log it.  We'll use the movie player controller events for that.
                                           [asset setFirstPlayDateTime:[NSDate date]];
-                                          [asset save];
+                                          [asset saveOnComplete:^{
+                                              // No need to wait, but we don't need to do anything here.
+                                          }];
                                           
                                           self.secondsAtPlaybackStart = -1;
                                           self.playingAsset = asset;
@@ -1265,7 +1269,9 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                                                [self presentViewController:self.player animated:YES completion:nil];
                                                
                                                [asset setFirstPlayDateTime:[NSDate date]];
-                                               [asset save];
+                                               [asset saveOnComplete:^{
+                                                   // No need to wait, but we don't need to do anything here.
+                                               }];
                                            }
                                            
                                                           onFail:^
@@ -1293,7 +1299,9 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                  [self presentViewController:self.player animated:YES completion:nil];
                  
                  [asset setFirstPlayDateTime:[NSDate date]];
-                 [asset save];
+                 [asset saveOnComplete:^{
+                     // No need to wait, but we don't need to do anything here.
+                 }];
              }
              
                             onFail:^
@@ -1311,7 +1319,9 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
             
             // We need to set the playback date here.  Don't log it.  We'll use the movie player controller events for that.
             [asset setFirstPlayDateTime:[NSDate date]];
-            [asset save];
+            [asset saveOnComplete:^{
+                // No need to wait, but we don't need to do anything here.
+            }];
             
             self.secondsAtPlaybackStart = -1;
             self.playingAsset = asset;
