@@ -57,6 +57,10 @@
  *
  *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
  *
+ *  @param assetDownloadLimit Virtuoso applies this value instead of the backplane-defined global asset download limit
+ *                            A value < 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+ *                            value > 0 will be applied to download permissions checks for this asset.
+ *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -78,6 +82,7 @@
                         maximumAudioBitrate:(long long)maximumAudioBitrate
                                 publishDate:(nullable NSDate*)publishDate
                                  expiryDate:(nullable NSDate*)expiryDate
+                         assetDownloadLimit:(int)assetDownloadLimit
                              enableFastPlay:(Boolean)enableFastPlay
                                    userInfo:(nullable NSDictionary*)userInfo
                          onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
@@ -111,6 +116,10 @@
  *  @param expiryAfterPlay Amount of time after the asset is first played that
  *                         Virtuoso will delete the asset. In seconds. <=0 means no expiry.
  *
+ *  @param assetDownloadLimit Virtuoso applies this value instead of the backplane-defined global asset download limit
+ *                            A value < 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+ *                            value > 0 will be applied to download permissions checks for this asset.
+ *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -135,6 +144,7 @@
                                  expiryDate:(nullable NSDate*)expiryDate
                         expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
                             expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                         assetDownloadLimit:(int)assetDownloadLimit
                              enableFastPlay:(Boolean)enableFastPlay
                                    userInfo:(nullable NSDictionary*)userInfo
                          onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock

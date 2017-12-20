@@ -117,6 +117,10 @@ typedef void (^BasicCompletionBlock)();
  *
  *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
  *
+ *  @param assetDownloadLimit Virtuoso applies this value instead of the backplane-defined global asset download limit
+ *                            A value < 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+ *                            value > 0 will be applied to download permissions checks for this asset.
+ *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -136,6 +140,7 @@ typedef void (^BasicCompletionBlock)();
                                   description:(nonnull NSString*)description
                                   publishDate:(nullable NSDate*)publishDate
                                    expiryDate:(nullable NSDate*)expiryDate
+                           assetDownloadLimit:(int)assetDownloadLimit
                                enableFastPlay:(Boolean)enableFastPlay
                                      userInfo:(nullable NSDictionary*)userInfo
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
@@ -163,6 +168,10 @@ typedef void (^BasicCompletionBlock)();
  *  @param expiryAfterPlay Amount of time after the asset is first played that
  *                         Virtuoso will delete the asset. In seconds.  <=0.0 means no expiry.
  *
+ *  @param assetDownloadLimit Virtuoso applies this value instead of the backplane-defined global asset download limit
+ *                            A value < 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+ *                            value > 0 will be applied to download permissions checks for this asset.
+ *
  *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
  *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
  *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
@@ -184,6 +193,7 @@ typedef void (^BasicCompletionBlock)();
                                    expiryDate:(nullable NSDate*)expiryDate
                           expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
                               expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                           assetDownloadLimit:(int)assetDownloadLimit
                                enableFastPlay:(Boolean)enableFastPlay
                                      userInfo:(nullable NSDictionary*)userInfo
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
@@ -773,6 +783,18 @@ typedef void (^BasicCompletionBlock)();
  *              enabled.
  */
 @property (nonatomic,readonly) Boolean fastPlayReady;
+
+/*!
+ *  @abstract The asset-specific lifetime download limit.
+ *
+ *  @discussion The Backplane specifies a globally applied lifetime download limit for all assets.  An individual
+ *              asset may not be downloaded more than this number of times in a given account.  Once the asset has
+ *              been successfully downloaded this many time, future attempts to download the asset will return an error.
+ *              This optional value may be specified to override the lifetime download limit for this particular asset.
+ *              If this value is greater than 0, it will be used for permissions calculations instead of the backplane-
+ *              defined value.  This value is provided during creation of the asset and cannot be changed after creation.
+ */
+@property (nonatomic,readonly) int assetDownloadLimit;
 
 @end
 
