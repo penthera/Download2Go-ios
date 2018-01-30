@@ -21,7 +21,7 @@
 
 #define VLog(level, fmt, ...) [VirtuosoLogger addDebugEvent:[NSString stringWithFormat:(@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] atLevel:level]
 
-#define INCLUDE_DEV_LOGGING 0
+#define INCLUDE_DEV_LOGGING 1
 
 @class VirtuosoAsset;
 
