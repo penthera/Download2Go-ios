@@ -1702,6 +1702,162 @@ A return value of nil means the item never expires.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/segmentDownloadErrors</TokenIdentifier>
+			<Abstract type="html">The number of segments that could not be downloaded in this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)segmentDownloadErrors</Declaration>
+			
+			
+			<Anchor>//api/name/segmentDownloadErrors</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestRemoteURL:</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestLocalPath:</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setVideoStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAudioStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
 			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
 			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
@@ -2052,162 +2208,6 @@ select the lowest bitrate profile.  A value of INT_MAX means &quot;use the highe
 			
 			
 			<Anchor>//api/name/hlsManifestFastPlayPath</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/segmentDownloadErrors</TokenIdentifier>
-			<Abstract type="html">The number of segments that could not be downloaded in this asset.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>- (NSUInteger)segmentDownloadErrors</Declaration>
-			
-			
-			<Anchor>//api/name/segmentDownloadErrors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestRemoteURL:</TokenIdentifier>
-			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
-			
-			
-			<Anchor>//api/name/manifestRemoteURL</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
-			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
-			
-			
-			<Anchor>//api/name/manifestRemoteURL</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
-			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
-			
-			
-			<Anchor>//api/name/manifestRemoteURL</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestLocalPath:</TokenIdentifier>
-			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
-			
-			
-			<Anchor>//api/name/manifestLocalPath</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
-			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
-			
-			
-			<Anchor>//api/name/manifestLocalPath</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
-			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
-			
-			
-			<Anchor>//api/name/manifestLocalPath</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setVideoStreamBitrate:</TokenIdentifier>
-			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/videoStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/videoStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/videoStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAudioStreamBitrate:</TokenIdentifier>
-			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/audioStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/audioStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/audioStreamBitrate</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
