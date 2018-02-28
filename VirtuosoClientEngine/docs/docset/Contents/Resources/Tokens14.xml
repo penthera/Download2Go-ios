@@ -673,6 +673,84 @@ and when it deletes that downloaded asset.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaximumAssetsForBackgroundDownload:</TokenIdentifier>
+			<Abstract type="html">How many assets the SDK will attempt to download after the app is suspended.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger maximumAssetsForBackgroundDownload</Declaration>
+			
+			
+			<Anchor>//api/name/maximumAssetsForBackgroundDownload</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maximumAssetsForBackgroundDownload</TokenIdentifier>
+			<Abstract type="html">How many assets the SDK will attempt to download after the app is suspended.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger maximumAssetsForBackgroundDownload</Declaration>
+			
+			
+			<Anchor>//api/name/maximumAssetsForBackgroundDownload</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maximumAssetsForBackgroundDownload</TokenIdentifier>
+			<Abstract type="html">How many assets the SDK will attempt to download after the app is suspended.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger maximumAssetsForBackgroundDownload</Declaration>
+			
+			
+			<Anchor>//api/name/maximumAssetsForBackgroundDownload</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setNumberOfSegmentsPerDirectDownloadBatch:</TokenIdentifier>
+			<Abstract type="html">When downloading without the packager, the number of direct-download segments to startup for
+background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
+invalid.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger numberOfSegmentsPerDirectDownloadBatch</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfSegmentsPerDirectDownloadBatch</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/numberOfSegmentsPerDirectDownloadBatch</TokenIdentifier>
+			<Abstract type="html">When downloading without the packager, the number of direct-download segments to startup for
+background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
+invalid.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger numberOfSegmentsPerDirectDownloadBatch</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfSegmentsPerDirectDownloadBatch</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/numberOfSegmentsPerDirectDownloadBatch</TokenIdentifier>
+			<Abstract type="html">When downloading without the packager, the number of direct-download segments to startup for
+background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
+invalid.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger numberOfSegmentsPerDirectDownloadBatch</Declaration>
+			
+			
+			<Anchor>//api/name/numberOfSegmentsPerDirectDownloadBatch</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setPermittedSegmentDownloadErrors:</TokenIdentifier>
 			<Abstract type="html">Whether or not the engine stops downloading if an error occurs while downloading individual segments.</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
