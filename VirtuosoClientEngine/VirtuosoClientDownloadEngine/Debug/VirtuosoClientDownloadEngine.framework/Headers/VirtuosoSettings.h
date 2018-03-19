@@ -285,6 +285,28 @@
 #pragma mark
 
 /*!
+ *  @abstract How many assets the SDK will attempt to download after the app is suspended.
+ *
+ *  @discussion Under most conditions, it is desirable to download all assets in the queue when the
+ *              application is suspended.  Under certain scenarios, it may be desirable to restrict
+ *              the number of downloads the SDK will transfer to the iOS download system.  If this value
+ *              is 0, then background downloading is disabled.  If this value is greater than 0, the SDK will
+ *              only startup that many background downloads.  The default is INT_MAX.
+ *
+ *              Note that when the SDK transitions to background downloading, a notification is sent to the
+ *              application which indicates the assets that were transferred to background download and the assets
+ *              that were paused and which won't download until the app returns to the foreground.
+ */
+@property (nonatomic,assign) NSUInteger maximumAssetsForBackgroundDownload;
+
+/*!
+ *  @abstract When downloading without the packager, the number of direct-download segments to startup for
+ *            background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
+ *            invalid.
+ */
+@property (nonatomic,assign) NSUInteger numberOfSegmentsPerDirectDownloadBatch;
+
+/*!
  *  @abstract Whether or not the engine stops downloading if an error occurs while downloading individual segments.
  *
  *  @discussion If this value is zero, then any errors encountered while downloading segments will be treated
