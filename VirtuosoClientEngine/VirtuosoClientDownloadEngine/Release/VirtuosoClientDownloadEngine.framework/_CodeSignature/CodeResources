@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/VirtuosoAsset.h</key>
 		<data>
-		BJJA3Aqb5I6/wBPts1sf0DtsXxE=
+		CZL3bJWUleqqKPnxtcYlSe5UlqA=
 		</data>
 		<key>Headers/VirtuosoClientDownloadEngine.h</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Headers/VirtuosoSettings.h</key>
 		<data>
-		+msomYvm5czNkRJH5eI3nTD7vtc=
+		2WNPhj5JdWzM81EZOijKCEAUydI=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Virtuoso.momd/VersionInfo.plist</key>
 		<data>
-		dhlnRElSxcRe8+CJdx7wJjisKes=
+		iBNG3MlEgOloLt6XaQeKqmwMYgw=
 		</data>
 		<key>Virtuoso.momd/Virtuoso.mom</key>
 		<data>
@@ -144,9 +144,13 @@
 		<data>
 		rbRf0kl7gCnnW6gKLyOhX8TI7O4=
 		</data>
-		<key>Virtuoso.momd/Virtuoso_3_13_3.omo</key>
+		<key>Virtuoso.momd/Virtuoso_3_13_4.mom</key>
 		<data>
-		zcnX3v0kZYBowVZtX3kJi85+rDk=
+		aOc0zEqpjP4uYLviuU2qYbapIi0=
+		</data>
+		<key>Virtuoso.momd/Virtuoso_3_13_4.omo</key>
+		<data>
+		OK/BUWcr8w9Sh+DmcRn1NYwzK0U=
 		</data>
 		<key>Virtuoso.momd/Virtuoso_3_4.mom</key>
 		<data>
@@ -353,11 +357,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BJJA3Aqb5I6/wBPts1sf0DtsXxE=
+			CZL3bJWUleqqKPnxtcYlSe5UlqA=
 			</data>
 			<key>hash2</key>
 			<data>
-			z7ha72wUCrdRZLKIKg9JfQjWHsq8CtO5DaLS53fHW/w=
+			BPqdBhyuM+HZHlT772fWQqf9jOoetkL1f1g6pEkxkWk=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoClientDownloadEngine.h</key>
@@ -529,22 +533,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+msomYvm5czNkRJH5eI3nTD7vtc=
+			2WNPhj5JdWzM81EZOijKCEAUydI=
 			</data>
 			<key>hash2</key>
 			<data>
-			JsctdQA8cH8kllQ/8DC5gtpLG/AY9RTLF2kyyVcXwsM=
+			vB6BehnRyKDH+OxaUL6DZ3ejBMzl+NVUD6SkxaqdQGk=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dhlnRElSxcRe8+CJdx7wJjisKes=
+			iBNG3MlEgOloLt6XaQeKqmwMYgw=
 			</data>
 			<key>hash2</key>
 			<data>
-			JQIWOue4lF6DgZxYuw5aleU6RzWKu3R/LbLjxU50Oos=
+			kMpSP2zySwS181q5xaqxXiX19yUeDnf0CTlLGOZrIGc=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso.mom</key>
@@ -657,15 +661,26 @@
 			T5tXpgbYqdw3SeM2NRf8wYObghQVhSaW5yhn2PzJ9Uw=
 			</data>
 		</dict>
-		<key>Virtuoso.momd/Virtuoso_3_13_3.omo</key>
+		<key>Virtuoso.momd/Virtuoso_3_13_4.mom</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zcnX3v0kZYBowVZtX3kJi85+rDk=
+			aOc0zEqpjP4uYLviuU2qYbapIi0=
 			</data>
 			<key>hash2</key>
 			<data>
-			yVPBTVk76uyF2I7zYUvWNt2WuHLJeQavAXhawIBRfjA=
+			PD1ARWpCcSrwkMELT0eRwQK9OnfYrnmeXmdkJSMeaCI=
+			</data>
+		</dict>
+		<key>Virtuoso.momd/Virtuoso_3_13_4.omo</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OK/BUWcr8w9Sh+DmcRn1NYwzK0U=
+			</data>
+			<key>hash2</key>
+			<data>
+			gZVIrQ2vUBde3TzzIcfK73w83koO1w0iux1WQHDfLTk=
 			</data>
 		</dict>
 		<key>Virtuoso.momd/Virtuoso_3_4.mom</key>

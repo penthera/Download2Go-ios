@@ -370,6 +370,11 @@ typedef void (^BasicCompletionBlock)();
 #pragma mark
 
 /*!
+ *  @abstract Logs the asset as having been played back, incrementing the stored playback counts on the Backplane
+ */
+- (void)logPlayback;
+
+/*!
  *  @abstract Plays this asset by presenting a standard MPMoviePlayerViewController from the
  *            specified parent view controller.
  *

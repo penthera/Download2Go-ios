@@ -277,6 +277,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAlwaysRequestDownloadPermission:</TokenIdentifier>
+			<Abstract type="html">If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean alwaysRequestDownloadPermission</Declaration>
+			
+			
+			<Anchor>//api/name/alwaysRequestDownloadPermission</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/alwaysRequestDownloadPermission</TokenIdentifier>
+			<Abstract type="html">If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean alwaysRequestDownloadPermission</Declaration>
+			
+			
+			<Anchor>//api/name/alwaysRequestDownloadPermission</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/alwaysRequestDownloadPermission</TokenIdentifier>
+			<Abstract type="html">If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean alwaysRequestDownloadPermission</Declaration>
+			
+			
+			<Anchor>//api/name/alwaysRequestDownloadPermission</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDefaultExpiryAfterDownload:</TokenIdentifier>
 			<Abstract type="html">Amount of time, in seconds, between when Virtuoso finishes downloading an asset
 and when it deletes that downloaded asset.</Abstract>

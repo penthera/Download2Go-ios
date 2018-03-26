@@ -131,6 +131,18 @@
 @property (nonatomic, readonly) Boolean acquirePermissionWhenQueued;
 
 /*!
+ *  @abstract If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.
+ *
+ *  @discussion Normally, the download engine will not request download permissions when the Backplane settings for maximum
+ *              downloads per account and maximum lifetime download limit is set to unlimited, as there is no reason to attempt
+ *              policy enforcement under these conditions.  If, however, your settings are currently unlimited, you anticipate
+ *              that you might enforce limits later, and you wish to track downloads done while the policy was unrestricted, you may wish
+ *              to set this value to YES.  If you have an external policy service (configured in Backplane settings) and have set
+ *              both Backplane limits to unrestricted, you will also need to set this value to YES.
+ */
+@property (nonatomic, assign) Boolean alwaysRequestDownloadPermission;
+
+/*!
  *  @abstract Amount of time, in seconds, between when Virtuoso finishes downloading an asset
  *            and when it deletes that downloaded asset.
  *
