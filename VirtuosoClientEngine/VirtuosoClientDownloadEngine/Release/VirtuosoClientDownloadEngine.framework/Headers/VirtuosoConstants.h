@@ -130,9 +130,6 @@ typedef NS_ENUM(NSInteger, kVBP_StatusCode)
     
     /** Permission to download an asset was denied due to maximum lifetime downloads for asset rules */
     kVBP_DownloadDeniedForMaxLifetimeDownloadsPerAsset = -62,
-    
-    /** Permission to download an asset was denied due to external policy restrictions */
-    kVBP_DownloadDeniedForExternalPolicy = -63,
 };
 
 /*!
@@ -231,9 +228,6 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     
     /** Virtuoso was unable to obtain permission to download the asset because the account has reached its maximum download limit. */
     kVDE_PermissionsErrorMaximumDownloadsPerAccount = -11,
-    
-    /** Virtuoso was unable to obtain permission to download the asset because the external policy service denied permission. */
-    kVDE_PermissionsErrorExternalPolicyServiceDenied = -12,
 };
 
 
@@ -299,15 +293,6 @@ extern NSString* kAssetPermissionErrorAssetDataKey;
  *            when Virtuoso fails to acquire download permission
  */
 extern NSString* kAssetPermissionErrorAccountDataKey;
-
-/*!
- *  @constant kAssetPermissionErrorServerResponseDataKey
- *
- *  @abstract The key in the NSError userInfo dictionary containing the raw server response to the permissions request.
- *            In the case where an external download policy service is used, this may be accessed to determine specific
- *            responses from that service.
- */
-extern NSString* kAssetPermissionErrorServerResponseDataKey;
 
 /*!
  *  @typedef kVF_SegmentType

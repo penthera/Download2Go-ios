@@ -19,8 +19,6 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -119,15 +117,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Fabric with:@[[Crashlytics class]]];
-
     /*
      * We are NOT going to register for remote notifications here, because we need to authenticate a user first (in this case,
      * just ask for a user name).  We'll register after engine startup.
      */
-    [[NSUserDefaults standardUserDefaults] setInteger:10 forKey:@"VFM_MaxHTTPConn"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+
     /*
      *  For the purposes of our example, we want to default the Download Engine enabled state to NO.  This default setting
      *  will be used by the ViewController to finish configuration of the Engine after the Backplane User and Group have been 
@@ -147,19 +141,6 @@
     [VirtuosoLogger addDelegate:self];
     [VirtuosoLogger setLogLevel:kVL_LogVerbose];
     [VirtuosoLogger enableLogsToFile:YES];
-
-    [VirtuosoSettings instance].permittedSegmentDownloadErrors = 9999999;
-    
-    [[VirtuosoSettings instance] allowAdditionalMimeTypes:@[@"application/octet-stream"] forAssetType:kVDE_AssetTypeHSS andDataType:kVF_DataTypeManifest];
-    
-    [[NSUserDefaults standardUserDefaults] setInteger:200 forKey:@"VFM_TaskRefillSize"];
-    [[NSUserDefaults standardUserDefaults] setInteger:50 forKey:@"VFM_TaskRefillLimit"];
-    [[NSUserDefaults standardUserDefaults] setDouble:90.0 forKey:@"VFM_BackgroundSetupTime"];
-    [VirtuosoSettings instance].networkTimeout = 60.0;
-    
-    // Internal value that specifies we interleave segments for download
-    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"kVDE_SegmentDownloadMode"];
-
     
     /*
      *  Configure the DRM license manager

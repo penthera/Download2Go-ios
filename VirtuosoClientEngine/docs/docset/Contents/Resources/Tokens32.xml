@@ -130,16 +130,6 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
             <NodeRef refid="32"/>
         </Token>
         
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PermissionsErrorExternalPolicyServiceDenied</TokenIdentifier>
-            <Abstract type="html">Virtuoso was unable to obtain permission to download the asset because the external policy service denied permission.</Abstract>
-            <Declaration>kVDE_PermissionsErrorExternalPolicyServiceDenied</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="32"/>
-        </Token>
-        
         
 	</File>
 </Tokens>
