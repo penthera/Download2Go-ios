@@ -21,4 +21,6 @@
 
 @interface AddNewItemViewController : UITableViewController
 
+@property (nonatomic,strong) NSArray* logCHProd;
+
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0302B929206D526B001C1187 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0302B928206D526B001C1187 /* Settings.bundle */; };
 		031DD316195A02E000C1F20D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F4C270169CC75300FC43E4 /* libz.dylib */; };
 		032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 032FCF40188F034500190180 /* libMBProgressHUD.a */; };
 		032FCF49188F037D00190180 /* UIBlockSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 032FCF47188F037D00190180 /* UIBlockSwitch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -22,6 +23,8 @@
 		03D5862917A05B9600057F1F /* UIAlertView+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862617A05B9600057F1F /* UIAlertView+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03D5862D17A05C1500057F1F /* AddNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862B17A05C1500057F1F /* AddNewItemViewController.m */; };
 		03D5862E17A05C1500057F1F /* AddNewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */; };
+		03EFB9D8206C312400067B28 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EFB9D6206C312400067B28 /* Crashlytics.framework */; };
+		03EFB9D9206C312400067B28 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EFB9D7206C312400067B28 /* Fabric.framework */; };
 		03F462061A6D92380045C310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419EF94156AA6A300B383B3 /* CoreGraphics.framework */; };
 		03F587AB1E2693FD00813740 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; };
 		03F587AC1E2695D200813740 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; };
@@ -76,6 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0302B928206D526B001C1187 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "../../iOS-VirtuosoClientSDK/VirtuosoClientDownloadEngineDemo/VirtuosoClientEngineDemo/Settings.bundle"; sourceTree = "<group>"; };
 		032FCF3B188F034500190180 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		032FCF46188F037D00190180 /* UIBlockSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBlockSwitch.h; sourceTree = "<group>"; };
 		032FCF47188F037D00190180 /* UIBlockSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBlockSwitch.m; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		03D5862B17A05C1500057F1F /* AddNewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewItemViewController.m; sourceTree = "<group>"; };
 		03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewItemViewController.xib; sourceTree = "<group>"; };
 		03D5863417A05DFB00057F1F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		03EFB9D6206C312400067B28 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		03EFB9D7206C312400067B28 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		03F4C270169CC75300FC43E4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = widevine_cdm_sdk_release.framework; path = ThirdParty/Widevine/release/widevine_cdm_sdk_release.framework; sourceTree = SOURCE_ROOT; };
 		03F9B70A1745405200929556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "VirtuosoClientEngineDemo/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -136,10 +142,12 @@
 			files = (
 				03F462061A6D92380045C310 /* CoreGraphics.framework in Frameworks */,
 				03F587AC1E2695D200813740 /* widevine_cdm_sdk_release.framework in Frameworks */,
+				03EFB9D8206C312400067B28 /* Crashlytics.framework in Frameworks */,
 				0363E5F519D4561800FB6411 /* MediaPlayer.framework in Frameworks */,
 				031DD316195A02E000C1F20D /* libz.dylib in Frameworks */,
 				032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */,
 				03592B591DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				03EFB9D9206C312400067B28 /* Fabric.framework in Frameworks */,
 				03592B561DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
 				8419EF91156AA6A300B383B3 /* UIKit.framework in Frameworks */,
 				03592B571DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
@@ -204,6 +212,8 @@
 		8419EF8F156AA6A300B383B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03EFB9D6206C312400067B28 /* Crashlytics.framework */,
+				03EFB9D7206C312400067B28 /* Fabric.framework */,
 				032FCF4A188F03DB00190180 /* AdSupport.framework */,
 				032FCF4B188F03DB00190180 /* CoreMotion.framework */,
 				03D5863417A05DFB00057F1F /* CoreTelephony.framework */,
@@ -252,6 +262,7 @@
 		8419EF97156AA6A300B383B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0302B928206D526B001C1187 /* Settings.bundle */,
 				842B08FE15754F970016E9E5 /* virtuoso-icon.png */,
 				842B08FF15754F970016E9E5 /* virtuoso-icon@2x.png */,
 				8419EF98156AA6A300B383B3 /* VirtuosoClientEngineDemo-Info.plist */,
@@ -293,6 +304,7 @@
 				8419EF8A156AA6A300B383B3 /* Resources */,
 				0363E5F819D456C500FB6411 /* Embed Frameworks */,
 				03A671411C244DD000D63090 /* Strip Frameworks */,
+				03EFB9D0206C306F00067B28 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -314,6 +326,7 @@
 				TargetAttributes = {
 					8419EF8B156AA6A300B383B3 = {
 						DevelopmentTeam = L5M4866SC8;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -355,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0302B929206D526B001C1187 /* Settings.bundle in Resources */,
 				8419EF9B156AA6A300B383B3 /* InfoPlist.strings in Resources */,
 				8419EFA7156AA6A300B383B3 /* ViewController_iPhone.xib in Resources */,
 				8419F15C156C059300B383B3 /* SettingsView.xib in Resources */,
@@ -381,6 +395,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirtuosoClientDownloadEngine.framework/strip-frameworks.sh\"";
+		};
+		03EFB9D0206C306F00067B28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 6febdfc87e353644c32b8c5e192c69571e96853f 0975e40dfbe785e0815858e14190c64af2b11591792ced080468329f5de7483c";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -508,6 +535,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
@@ -524,7 +553,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f681adf6-e60c-4f34-8dc3-5a842ea823e0";
+				PROVISIONING_PROFILE_SPECIFIER = "Test Harness Development";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -537,6 +567,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
@@ -553,7 +585,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f681adf6-e60c-4f34-8dc3-5a842ea823e0";
+				PROVISIONING_PROFILE_SPECIFIER = "Test Harness Development";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

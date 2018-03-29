@@ -19,6 +19,7 @@
 
 #import "AddNewItemViewController.h"
 #import "MBProgressHUD/MBProgressHUD.h"
+#import "ModalAlert.h"
 
 /*
  * NOTE: These are for test/demo purposes only and you should NEVER access these directly.  They are used here
@@ -65,6 +66,27 @@
 
     self.title = @"Add New Item";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(doCancel)];
+    
+    self.logCHProd = @[@"http://wp24-vod-ch.horizon.tv/shss/9b508ab6-2bb6-41e5-96a1-a8e63e4604d1/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp8-vod-ch.horizon.tv/shss/22532f5f-d3fb-44c9-9733-227806e44d66/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp19-vod-ch.horizon.tv/shss/507000a1-59fd-4ffa-aff8-df7ca8a955da/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp26-vod-ch.horizon.tv/shss/b0cb110f-e49f-4a82-bb5f-ccf877fd4185/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp15-vod-ch.horizon.tv/shss/de8445c4-2cc9-49de-a8a9-3240598f72a8/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp16-vod-ch.horizon.tv/shss/db349daa-3def-431b-adf0-46eb364c5eb9/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp22-vod-ch.horizon.tv/shss/333f16d9-4c9c-466f-8ba2-fe1637266eaf/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp23-vod-ch.horizon.tv/shss/24e44d79-a511-4acb-b2d0-2ebb4ced2a99/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp23-vod-ch.horizon.tv/shss/260e2546-fa74-46f0-8a32-2049562b41eb/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp27-vod-ch.horizon.tv/shss/3a8efcf8-f6dd-4486-9844-eb839c138e7d/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp18-vod-ch.horizon.tv/shss/f2b1d178-3480-425f-994e-a4047a75ed80/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp8-vod-ch.horizon.tv/shss/d260a73d-3836-43a2-83b7-370413d2e362/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp3-vod-ch.horizon.tv/shss/b799f4bf-5d08-464c-8322-ab16a9d9abec/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp9-vod-ch.horizon.tv/shss/aa36d772-58d0-4ccc-a352-cb9a3eb94709/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp22-vod-ch.horizon.tv/shss/12c4733f-dca2-4a19-a3ab-1dc53d3a1bd0/3.ism/Manifest?start=0&end=-1&device=Orion-HSS",
+                       @"http://wp22-vod-ch.horizon.tv/shss/277666d7-28a1-4e40-9617-15cec8d04294/3.ism/Manifest?start=0&end=-1&device=Orion-HSS",
+                       @"http://wp22-vod-ch.horizon.tv/shss/af23c97d-3598-4b04-86d6-d7f05275b9e0/3.ism/Manifest?start=0&end=-1&device=Orion-HSS",
+                       @"http://wp22-vod-ch.horizon.tv/shss/c5dfec18-13d5-4e9a-a89c-11abe210b244/3.ism/Manifest?start=0&end=-1&device=Orion-HSS",
+                       @"http://wp6-vod-ch.horizon.tv/shss/66d1b699-4a42-4429-b7f4-9ca16c2d4d21/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS",
+                       @"http://wp5-vod-ch.horizon.tv/shss/7a6e4a9f-0d0b-4925-aed7-05f2f320abb6/2.ism/Manifest?start=0&end=-1&device=Orion-Replay-HSS"];
 }
 
 - (void)doCancel
@@ -83,30 +105,22 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 5;
+    return 3;
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
         case 0:
-            return @"Subscriptions";
+            return @"Manual HSS Asset";
             break;
             
         case 1:
-            return @"Autoparsed HLS Video";
-            break;
-
-        case 2:
-            return @"Autoparsed DASH Video";
+            return @"LGI Lab Assets";
             break;
             
-        case 3:
-            return @"Single MP4 Files";
-            break;
-
-        case 4:
-            return @"Failure Modes";
+        case 2:
+            return @"LGI CH Prod Assets";
             break;
             
         default:
@@ -120,23 +134,15 @@
 {
     switch (section) {
         case 0:
-            return 3;
+            return 1;
             break;
             
         case 1:
-            return 3;
+            return 10;
             break;
 
         case 2:
-            return 3;
-            break;
-            
-        case 3:
-            return 3;
-            break;
-
-        case 4:
-            return 9;
+            return 20;
             break;
             
         default:
@@ -160,132 +166,69 @@
     
     if( indexPath.section == 0 )
     {
-        if( indexPath.row == 0 )
-        {
-            // Normally, you'd keep track of subscription status in your own data store.  Since we're only supporting one
-            // test feed in this demo app, it's just a basic setting value
-            if( ![[NSUserDefaults standardUserDefaults] boolForKey:@"TestFeedSubscribed"] )
-            {
-                cell.textLabel.text = @"Subscribe To Test Feed";
-            }
-            else
-            {
-                cell.textLabel.text = @"Unsubscribe From Test Feed";
-            }
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
-        else if( indexPath.row == 1 )
-        {
-            cell.textLabel.text = @"Manual Sync With Subscriptions";
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
-        else if( indexPath.row == 2 )
-        {
-            cell.textLabel.text = @"Trigger Demo Feed Episode";
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
+        cell.textLabel.text = @"Add Custom Asset";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     else if( indexPath.section == 1 )
     {
-        switch (indexPath.row) {
+        switch (indexPath.row ) {
             case 0:
-                cell.textLabel.text = @"The Boy In The Plastic Bubble (Large HLS)";
+                cell.textLabel.text = @"LGI Asset 1";
                 break;
-
+                
             case 1:
-                cell.textLabel.text = @"Return Of The Kung Fu Dragon (Medium HLS)";
+                cell.textLabel.text = @"LGI Asset 2";
                 break;
-
+                
             case 2:
-                cell.textLabel.text = @"Night Club Stock Video (Small HLS)";
+                cell.textLabel.text = @"LGI Asset 3";
+                break;
+                
+            case 3:
+                cell.textLabel.text = @"LGI Asset 4";
+                break;
+                
+            case 4:
+                cell.textLabel.text = @"LGI Asset 5";
+                break;
+                
+            case 5:
+                cell.textLabel.text = @"LGI Asset 6";
+                break;
+                
+            case 6:
+                cell.textLabel.text = @"LGI Asset 7";
+                break;
+                
+            case 7:
+                cell.textLabel.text = @"LGI Asset 8";
+                break;
+                
+            case 8:
+                cell.textLabel.text = @"LGI Asset 9";
                 break;
 
+            case 9:
+                cell.textLabel.text = @"LGI Asset 10";
+                break;
+                
             default:
                 break;
         }
     }
     else if( indexPath.section == 2 )
     {
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"Google Widevine (Small)";
-                break;
-                
-            case 1:
-                cell.textLabel.text = @"Google Widevine (Large)";
-                break;
-                
-            case 2:
-                cell.textLabel.text = @"Google Widevine (A+V)";
-                break;
-                
-            default:
-                break;
+        if( indexPath.row < 14) {
+            cell.textLabel.text = [NSString stringWithFormat:@"LGI Replay Asset %li",indexPath.row+1];
+        }
+        else if( indexPath.row < 19 ) {
+            cell.textLabel.text = [NSString stringWithFormat:@"LGI VOD Asset %li",indexPath.row+1-14];
+        }
+        else {
+            cell.textLabel.text = [NSString stringWithFormat:@"LGI Series Asset %li",indexPath.row+1-18];
         }
     }
-    else if( indexPath.section == 3 )
-    {
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"The Boy In The Plastic Bubble MP4 (Large)";
-                break;
 
-            case 1:
-                cell.textLabel.text = @"Return Of The Kung Fu Dragon MP4 (Medium)";
-                break;
-
-            case 2:
-                cell.textLabel.text = @"Night Club Stock Video MP4 (Small)";
-                break;
-
-            default:
-                break;
-        }
-    }
-    else if( indexPath.section == 4 )
-    {
-        switch (indexPath.row ) {
-            case 0:
-                cell.textLabel.text = @"File Returning HTTP 404";
-                break;
-                
-            case 1:
-                cell.textLabel.text = @"File With Invalid Mime";
-                break;
-                
-            case 2:
-                cell.textLabel.text = @"File Exceeding Max Errors+Loops";
-                break;
-                
-            case 3:
-                cell.textLabel.text = @"File With Some Pre-Errors";
-                break;
-                
-            case 4:
-                cell.textLabel.text = @"File with publishDate 5 minutes from now";
-                break;
-                
-            case 5:
-                cell.textLabel.text = @"File with expiryDate 5 minutes from now";
-                break;
-                
-            case 6:
-                cell.textLabel.text = @"File with expiryAfterDownload at 5 minutes";
-                break;
-                
-            case 7:
-                cell.textLabel.text = @"File with expiryAfterPlay at 5 minutes";
-                break;
-                
-            case 8:
-                cell.textLabel.text = @"HLS File with Expiry 5 minutes from now";
-                break;
-                
-            default:
-                break;
-        }
-    }
-    
     return cell;
 }
 
@@ -301,175 +244,358 @@
     
     if( indexPath.section == 0 )
     {
-        if( indexPath.row == 0 )
-        {
-            [tableView deselectRowAtIndexPath:indexPath animated:NO];
-            if( ![[NSUserDefaults standardUserDefaults] boolForKey:@"TestFeedSubscribed"] )
-            {
-                MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                hud.labelText = @"Subscribing to feed...";
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"HSS Download"
+                                                                       message:@"Please enter the information for your download:" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"Manifest URL";
+            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+        }];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"Asset ID";
+            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+        }];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"Asset Description";
+            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+        }];
 
-                [[VirtuosoSubscriptionManager instance] registerForSubscription:@"CLIENT_ADD_ITEM_TEST_FEED" onComplete:^(Boolean success, NSError *error) {
-                    if( success )
-                    {
-                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TestFeedSubscribed"];
-                        [[NSUserDefaults standardUserDefaults] synchronize];
-                    }
-                    hud.labelText = success?@"Success...":@"Failed...";
-                    [hud hide:YES afterDelay:2.0];
-                    [tableView reloadData];
-                }];
-            }
-            else
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSArray* textFields = alert.textFields;
+            UITextField* manifest = textFields[0];
+            UITextField* assetID = textFields[1];
+            UITextField* desc = textFields[2];
+            if( manifest.text.length > 0 && assetID.text.length > 0 && desc.text.length > 0 )
             {
                 MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                hud.labelText = @"Unsubscribing from feed...";
-                
-                [[VirtuosoSubscriptionManager instance] unregisterForSubscription:@"CLIENT_ADD_ITEM_TEST_FEED" onComplete:^(Boolean success, NSError *error) {
-                    if( success )
-                    {
-                        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"TestFeedSubscribed"];
-                        [[NSUserDefaults standardUserDefaults] synchronize];
-                    }
-                    hud.labelText = success?@"Success...":@"Failed...";
-                    [hud hide:YES afterDelay:2.0];
-                    [tableView reloadData];
-                }];
+                hud.labelText = @"Adding item to queue...";
+
+                [VirtuosoAsset assetWithAssetID:assetID.text
+                                    description:desc.text
+                                    manifestUrl:manifest.text
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
             }
-        }
-        else if( indexPath.row == 1 )
-        {
-            MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"Syncing subscriptions...";
-            [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
-            [[VirtuosoSubscriptionManager instance] syncSubscriptionsWithBackplaneNowOnComplete:^(Boolean success, NSArray *subscriptions, NSError *error) {
-                hud.labelText = @"Sync complete...";
-                [hud hide:YES afterDelay:2.0];
-            }];
-        }
-        else if( indexPath.row == 2 )
-        {
-            // This private method calls a backplane endpoint that creates a new episode and adds it to Penthera's fixed constant "test feed".
-            // If you have subscribed to the test feed and authorized push notices, then the server will post a silent push notice that causes
-            // the subscription manager to sync and manage downloads.  This will result in a new item going into the download queue.  This is
-            // a PRIVATE API and should not be used in production code.  It is for demo/testing ONLY.
-            
-            [tableView deselectRowAtIndexPath:indexPath animated:NO];
-            
-            // Append a persistently incrementing test number to these items so we can tell them apart.
-            NSInteger testNum = [[NSUserDefaults standardUserDefaults]integerForKey:@"TestNum"];
-            testNum++;
-            [[NSUserDefaults standardUserDefaults] setInteger:testNum forKey:@"TestNum"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            [[VirtuosoSubscriptionManager instance] generatePushUpdate:@{@"title":[NSString stringWithFormat:@"Dilbert - Pirate's Booty: Test %li",(long)testNum],
-                                                                         @"desc":@"Dilbert Test Push Item",
-                                                                         @"contentSize":@(1576292),
-                                                                         @"contentSizeIsEstimate":@(NO),
-                                                                         @"duration":@(30),
-                                                                         @"downloadURL":@"http://josh-push-test.s3.amazonaws.com/Dilbert_1000.m4v",
-                                                                         @"streamURL":@"http://josh-push-test.s3.amazonaws.com/Dilbert_1000.m4v",
-                                                                         @"downloadEnabled":@(YES),
-                                                                         @"contentType":@"video/x-m4v"}];
-            
-            MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"New subscription item posted...";
-            [hud hide:YES afterDelay:2.0];
-        }
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
     else if( indexPath.section == 1 )
     {
-        // HLS content can autoparse the required files for download asynchronously.  This is the preferred method for adding HLS content to the system.
-        // The completion block will be called when everything is complete.
+        // All of these options are various error modes for test and example purposes.
         switch (indexPath.row) {
             case 0:
             {
-                [VirtuosoAsset assetWithAssetID:@"TBITPBHLS"
-                                    description:@"The Boy In The Plastic Bubble (Large HLS)"
-                                    manifestUrl:@"http://hls-vbcp.s3.amazonaws.com/boy_in_bubble/prog_index.m3u8"
-                                 protectionType:kVDE_AssetProtectionTypePassthrough
-                          includeEncryptionKeys:YES
-                                 maximumBitrate:INT_MAX
+                [VirtuosoAsset assetWithAssetID:@"LGI1"
+                                    description:@"LGI Asset 1"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/16d5a3c7-5038-41d1-a308-df670bce2316/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
                                     publishDate:nil
                                      expiryDate:nil
                              assetDownloadLimit:-1
                                  enableFastPlay:NO
                                        userInfo:nil
-                                onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                    NSLog(@"Item is ready for download: %@",parsedAsset);
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                    [self dismissViewControllerAnimated:YES completion:nil];
-                                } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                    NSLog(@"Finished parsing %@", parsedAsset);
-                                    if( error != nil )
-                                    {
-                                        NSLog(@"Detected error creating new asset: %@",error);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                    }
-                                }];
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
             }
                 break;
-
+                
             case 1:
             {
-                [VirtuosoAsset assetWithAssetID:@"ROTKFDHLS"
-                                    description:@"Return of the Kung Fu Dragon (Medium HLS)"
-                                    manifestUrl:@"http://hls-vbcp.s3.amazonaws.com/dragon_ten_sec/prog_index.m3u8"
-                                 protectionType:kVDE_AssetProtectionTypePassthrough
-                          includeEncryptionKeys:YES
-                                 maximumBitrate:INT_MAX
+                [VirtuosoAsset assetWithAssetID:@"LGI2"
+                                    description:@"LGI Asset 2"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/9ef0602c-1861-4338-8a95-4131bddfee9c/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
                                     publishDate:nil
                                      expiryDate:nil
                              assetDownloadLimit:-1
                                  enableFastPlay:NO
                                        userInfo:nil
-                                onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                    NSLog(@"Item is ready for download: %@",parsedAsset);
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                    [self dismissViewControllerAnimated:YES completion:nil];
-                                } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                    NSLog(@"Finished parsing %@", parsedAsset);
-                                    if( error != nil )
-                                    {
-                                        NSLog(@"Detected error creating new asset: %@",error);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                    }
-                                }];
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
             }
                 break;
-
+                
             case 2:
             {
-                [VirtuosoAsset assetWithAssetID:@"NCSVHLS"
-                                    description:@"Night Club Stock Video (Small HLS)"
-                                    manifestUrl:@"http://hls-vbcp.s3.amazonaws.com/night_club/prog_index.m3u8"
-                                 protectionType:kVDE_AssetProtectionTypePassthrough
-                          includeEncryptionKeys:YES
-                                 maximumBitrate:INT_MAX
+                [VirtuosoAsset assetWithAssetID:@"LGI3"
+                                    description:@"LGI Asset 3"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/b152e010-0ca9-48c4-94c4-09b8904eba59/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
                                     publishDate:nil
                                      expiryDate:nil
                              assetDownloadLimit:-1
                                  enableFastPlay:NO
                                        userInfo:nil
-                                onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                    NSLog(@"Item is ready for download: %@",parsedAsset);
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                    [self dismissViewControllerAnimated:YES completion:nil];
-                                } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                    NSLog(@"Finished parsing %@", parsedAsset);
-                                    if( error != nil )
-                                    {
-                                        NSLog(@"Detected error creating new asset: %@",error);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                    }
-                                }];
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
+            }
+                break;
+                
+            case 3:
+            {
+                [VirtuosoAsset assetWithAssetID:@"LGI4"
+                                    description:@"LGI Asset 4"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/6180b095-1620-4b53-9e39-6fe5dd0e08cb/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
+            }
+                break;
+                
+            case 4:
+            {
+                [VirtuosoAsset assetWithAssetID:@"LGI5"
+                                    description:@"LGI Asset 5"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/69f511c5-1ef7-4dfd-b725-c1e4d2ceae64/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
+            }
+                break;
+                
+            case 5:
+            {
+                [VirtuosoAsset assetWithAssetID:@"LGI6"
+                                    description:@"LGI Asset 6"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/a44d5ef3-8a04-405e-b8e8-990648daf454/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
+            }
+                break;
+                
+            case 6:
+            {
+                [VirtuosoAsset assetWithAssetID:@"LGI7"
+                                    description:@"LGI Asset 7"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/cc843a0d-a775-4ab5-b56c-878c1d15b8d2/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
+            }
+                break;
+                
+            case 7:
+            {
+                [VirtuosoAsset assetWithAssetID:@"LGI8"
+                                    description:@"LGI Asset 8"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/161ca21d-a5d7-44ca-b72f-d48c37f6f1d2/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
+            }
+                break;
+                
+            case 8:
+            {
+                [VirtuosoAsset assetWithAssetID:@"LGI9"
+                                    description:@"LGI Asset 9"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/171a0b98-f64c-424c-aef5-b2ebc6314cc6/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
+            }
+                break;
+                
+            case 9:
+            {
+                [VirtuosoAsset assetWithAssetID:@"LGI10"
+                                    description:@"LGI Asset 10"
+                                    manifestUrl:@"http://wp1.lab2.vod.upclabs.com/shss/0daa6f5d-c1e3-439a-8916-28f6644dafb4/index.ism/Manifest?&device=Orion-Replay-HSS"
+                            maximumVideoBitrate:LONG_LONG_MAX
+                            maximumAudioBitrate:LONG_LONG_MAX
+                                    publishDate:nil
+                                     expiryDate:nil
+                             assetDownloadLimit:-1
+                                 enableFastPlay:NO
+                                       userInfo:nil
+                             onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                                 NSLog(@"Item is ready for download: %@",parsedAsset);
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                             } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                                 NSLog(@"Finished parsing %@", parsedAsset);
+                                 if( error != nil )
+                                 {
+                                     NSLog(@"Detected error creating new asset: %@",error);
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                 }
+                             }];
             }
                 break;
                 
@@ -479,466 +605,51 @@
     }
     else if( indexPath.section == 2 )
     {
-        // DASH files can be downloaded as well.
-        switch (indexPath.row)
-        {
-            case 0:
-            {
-                [VirtuosoAsset assetWithAssetID:@"WIDEVINE_SMALL"
-                                    description:@"Widevine Demo (Small)"
-                                         mpdUrl:@"https://storage.googleapis.com/wvtemp/tejal/deluxe_content/test/deluxe_single.mpd"
-                                 protectionType:kVDE_AssetProtectionTypeWidevine
-                            maximumVideoBitrate:LONG_LONG_MAX
-                            maximumAudioBitrate:LONG_LONG_MAX
-                                    publishDate:nil
-                                     expiryDate:nil
-                             assetDownloadLimit:-1
-                                 enableFastPlay:NO
-                                       userInfo:nil
-                             onReadyForDownload:^(VirtuosoAsset *parsedAsset)
-                 {
-                     NSLog(@"Item is ready for download: %@",parsedAsset);
-                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                     [self dismissViewControllerAnimated:YES completion:nil];
-                 }
-                                onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error)
-                 {
-                     NSLog(@"Finished parsing %@", parsedAsset);
-                     if( error != nil )
-                     {
-                         NSLog(@"Detected error creating new asset: %@",error);
-                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                         [self dismissViewControllerAnimated:YES completion:nil];
-                     }
-                 }];
-            }
-                break;
-                
-            case 1:
-            {
-                [VirtuosoAsset assetWithAssetID:@"WIDEVINE_LARGE"
-                                    description:@"Widevine Demo (Large)"
-                                         mpdUrl:@"http://storage.googleapis.com/wvmedia/cenc/valkaama.mpd"
-                                 protectionType:kVDE_AssetProtectionTypeWidevine
-                            maximumVideoBitrate:LONG_LONG_MAX
-                            maximumAudioBitrate:LONG_LONG_MAX
-                                    publishDate:nil
-                                     expiryDate:nil
-                             assetDownloadLimit:-1
-                                 enableFastPlay:NO
-                                       userInfo:nil
-                             onReadyForDownload:^(VirtuosoAsset *parsedAsset)
-                 {
-                     NSLog(@"Item is ready for download: %@",parsedAsset);
-                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                     [self dismissViewControllerAnimated:YES completion:nil];
-                 }
-                                onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error)
-                 {
-                     NSLog(@"Finished parsing %@", parsedAsset);
-                     if( error != nil )
-                     {
-                         NSLog(@"Detected error creating new asset: %@",error);
-                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                         [self dismissViewControllerAnimated:YES completion:nil];
-                     }
-                 }];
-            }
-                break;
-                
-            case 2:
-            {
-                [VirtuosoAsset assetWithAssetID:@"WIDEVINE_AV"
-                                    description:@"Widevine Demo (A+V)"
-                                         mpdUrl:@"https://storage.googleapis.com/wvtemp/tejal/deluxe_content/deluxe_tejal_encrypted/deluxe_audio_video.mpd"
-                                 protectionType:kVDE_AssetProtectionTypeWidevine
-                            maximumVideoBitrate:LONG_LONG_MAX
-                            maximumAudioBitrate:LONG_LONG_MAX
-                                    publishDate:nil
-                                     expiryDate:nil
-                             assetDownloadLimit:-1
-                                 enableFastPlay:NO
-                                       userInfo:nil
-                             onReadyForDownload:^(VirtuosoAsset *parsedAsset)
-                 {
-                     NSLog(@"Item is ready for download: %@",parsedAsset);
-                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                     [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                     [self dismissViewControllerAnimated:YES completion:nil];
-                 }
-                                onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error)
-                 {
-                     NSLog(@"Finished parsing %@", parsedAsset);
-                     if( error != nil )
-                     {
-                         NSLog(@"Detected error creating new asset: %@",error);
-                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                         [self dismissViewControllerAnimated:YES completion:nil];
-                     }
-                 }];
-            }
-                break;
-                
-            default:
-                break;
-        }
-    }
-    else if( indexPath.section == 3 )
-    {
-        // Standard MP4 files can be downloaded as well.
-        switch (indexPath.row) {
-            case 0:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/TheBoyInThePlasticBubble.mp4"
-                                          assetID:@"TBITPBMP4"
-                                      description:@"The Boy In The Plastic Bubble MP4 (Large)"
-                                      publishDate:nil
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                               onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                   NSLog(@"Item is ready for download: %@",parsedAsset);
-                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                   [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                   [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 1:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/ReturnoftheKungFuDragon.mp4"
-                                          assetID:@"ROTKFDMP4"
-                                      description:@"Return Of The Kung Fu Dragon MP4 (Medium)"
-                                      publishDate:nil
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 2:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"NCSVMP4"
-                                      description:@"Night Club Stock Video (Small)"
-                                      publishDate:nil
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-
-            default:
-                break;
-        }
-    }
-    else if( indexPath.section == 4 )
-    {
         // All of these options are various error modes for test and example purposes.
-        switch (indexPath.row) {
-            case 0:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://www.penthera.com/dead.mp4"
-                                          assetID:@"DeadLink"
-                                      description:@"File with 404 Error"
-                                      publishDate:nil
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 1:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"InvalidMIME"
-                                      description:@"File With Invalid MIME"
-                                      publishDate:nil
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 2:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"DeadFile"
-                                      description:@"File Exceeding Max Retries"
-                                      publishDate:nil
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        [parsedAsset _setDownloadRetryCount:4];
-                                        [parsedAsset _setMaximumRetriesExceeded:YES];
-                                        [parsedAsset _setError:kVDE_DownloadNetworkError];
-                                        [parsedAsset saveOnComplete:nil];
-                                      
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 3:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"ErroredFile"
-                                      description:@"File With Some Pre-Retries"
-                                      publishDate:nil
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        [parsedAsset _setDownloadRetryCount:1];
-                                        [parsedAsset _setMaximumRetriesExceeded:NO];
-                                        [parsedAsset _setError:kVDE_DownloadNetworkError];
-                                        [parsedAsset saveOnComplete:nil];
-                                      
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 4:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"PublishDate"
-                                      description:@"File With Publish Date Now + 5m"
-                                      publishDate:[NSDate dateWithTimeIntervalSinceNow:5.0*60.0]
-                                       expiryDate:nil
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 5:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"ExpiryDate"
-                                      description:@"File With Expiry Date Now + 5m"
-                                      publishDate:nil
-                                       expiryDate:[NSDate dateWithTimeIntervalSinceNow:5.0*60.0]
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 6:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"ExpiryAfterDownload"
-                                      description:@"File With Expiry After Download 5m"
-                                      publishDate:nil
-                                       expiryDate:nil
-                              expiryAfterDownload:5.0*60.0
-                                  expiryAfterPlay:0.0
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-                
-            case 7:
-            {
-                [VirtuosoAsset assetWithRemoteURL:@"http://hls-vbcp.s3.amazonaws.com/testmp4s/NightClub.mp4"
-                                          assetID:@"ExpiryAfterPlay"
-                                      description:@"File With Expiry After Play 5m"
-                                      publishDate:nil
-                                       expiryDate:nil
-                              expiryAfterDownload:0.0
-                                  expiryAfterPlay:5.0*60.0
-                               assetDownloadLimit:-1
-                                   enableFastPlay:NO
-                                         userInfo:nil
-                                    onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                        NSLog(@"Item is ready for download: %@",parsedAsset);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                  } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                      NSLog(@"Finished parsing %@", parsedAsset);
-                                      if( error != nil )
-                                      {
-                                          NSLog(@"Detected error creating new asset: %@",error);
-                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                      }
-                                  }];
-            }
-                break;
-             
-            case 8:
-            {
-                [VirtuosoAsset assetWithAssetID:@"HLSExpiryAfterPlay"
-                                    description:@"HLS File With Expiry Date Now + 2m"
-                                    manifestUrl:@"http://hls-vbcp.s3.amazonaws.com/night_club/prog_index.m3u8"
-                                 protectionType:kVDE_AssetProtectionTypePassthrough
-                          includeEncryptionKeys:YES
-                                 maximumBitrate:INT_MAX
-                                    publishDate:nil
-                                     expiryDate:[NSDate dateWithTimeIntervalSinceNow:2.0*60.0]
-                             assetDownloadLimit:-1
-                                 enableFastPlay:NO
-                                       userInfo:nil
-                                onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                                    NSLog(@"Item is ready for download: %@",parsedAsset);
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                                    [self dismissViewControllerAnimated:YES completion:nil];
-                                } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                                    NSLog(@"Finished parsing %@", parsedAsset);
-                                    if( error != nil )
-                                    {
-                                        NSLog(@"Detected error creating new asset: %@",error);
-                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                    }
-                                }];
-            }
-            default:
-                break;
+        NSString* assetID = @"";
+        NSString* manifestURL = @"";
+        NSString* desc = @"";
+        
+        if( indexPath.row < 14) {
+            desc = [NSString stringWithFormat:@"LGI Replay Asset %li",indexPath.row+1];
+            assetID = [NSString stringWithFormat:@"LGIPRODCHREPLAY-%li",indexPath.row+1];
+            manifestURL = self.logCHProd[indexPath.row];
         }
+        else if( indexPath.row < 19 ) {
+            desc = [NSString stringWithFormat:@"LGI VOD Asset %li",indexPath.row+1-14];
+            assetID = [NSString stringWithFormat:@"LGIPRODCHVOD-%li",indexPath.row+1-14];
+            manifestURL = self.logCHProd[indexPath.row];
+        }
+        else {
+            desc = [NSString stringWithFormat:@"LGI Series Asset %li",indexPath.row+1-18];
+            assetID = [NSString stringWithFormat:@"LGIPRODCHSERIES-%li",indexPath.row+1-18];
+            manifestURL = self.logCHProd[indexPath.row];
+        }
+
+        [VirtuosoAsset assetWithAssetID:assetID
+                            description:desc
+                            manifestUrl:manifestURL
+                    maximumVideoBitrate:LONG_LONG_MAX
+                    maximumAudioBitrate:LONG_LONG_MAX
+                            publishDate:nil
+                             expiryDate:nil
+                     assetDownloadLimit:-1
+                         enableFastPlay:NO
+                               userInfo:nil
+                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
+                         NSLog(@"Item is ready for download: %@",parsedAsset);
+                         [MBProgressHUD hideHUDForView:self.view animated:YES];
+                         [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
+                         [self dismissViewControllerAnimated:YES completion:nil];
+                     } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError *error) {
+                         NSLog(@"Finished parsing %@", parsedAsset);
+                         if( error != nil )
+                         {
+                             NSLog(@"Detected error creating new asset: %@",error);
+                             [MBProgressHUD hideHUDForView:self.view animated:YES];
+                             [self dismissViewControllerAnimated:YES completion:nil];
+                         }
+                     }];
     }
 }
 
