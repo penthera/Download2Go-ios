@@ -1714,11 +1714,167 @@ A return value of nil means the item never expires.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
-			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
-			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/segmentDownloadErrors</TokenIdentifier>
+			<Abstract type="html">The number of segments that could not be downloaded in this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Declaration>- (NSUInteger)segmentDownloadErrors</Declaration>
+			
+			
+			<Anchor>//api/name/segmentDownloadErrors</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestRemoteURL:</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestLocalPath:</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setVideoStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAudioStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory DASH VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description mpdUrl:(nonnull NSString *)mpdUrl protectionType:(kVDE_AssetProtectionType)protectionType maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>assetID</Name>
@@ -1727,17 +1883,22 @@ A return value of nil means the item never expires.</Abstract>
 					<Name>description</Name>
 					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
 				</Parameter><Parameter>
-					<Name>manifestUrl</Name>
-					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+					<Name>mpdUrl</Name>
+					<Abstract type="html">Where the media presentation description (mpd) file lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumVideoBitrate</Name>
-					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
 profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
 bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
 select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumAudioBitrate</Name>
-					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</Abstract>
 				</Parameter><Parameter>
 					<Name>publishDate</Name>
 					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
@@ -1767,17 +1928,17 @@ The provided userInfo must be property-list compatible. May be nil.</Abstract>
 					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
-			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
-			<Abstract type="html">Creates a new empty HSS VirtuosoAsset object, identified by the provided manifest URL.</Abstract>
-			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory DASH VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
 			
-			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description mpdUrl:(nonnull NSString *)mpdUrl protectionType:(kVDE_AssetProtectionType)protectionType maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>assetID</Name>
@@ -1786,17 +1947,22 @@ The provided userInfo must be property-list compatible. May be nil.</Abstract>
 					<Name>description</Name>
 					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
 				</Parameter><Parameter>
-					<Name>manifestUrl</Name>
-					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+					<Name>mpdUrl</Name>
+					<Abstract type="html">Where the media presentation description (mpd) file lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumVideoBitrate</Name>
-					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
 profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
 bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
 select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumAudioBitrate</Name>
-					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</Abstract>
 				</Parameter><Parameter>
 					<Name>publishDate</Name>
 					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
@@ -1805,8 +1971,8 @@ select the lowest bitrate profile. A value of INT_MAX means &quot;use the highes
 					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
 				</Parameter><Parameter>
 					<Name>expiryAfterDownload</Name>
-					<Abstract type="html">Amount of time after Virtuoso completes download of file that
-Virtuoso will delete the file. In seconds. &lt;=0 means no expiry.</Abstract>
+					<Abstract type="html">Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
 				</Parameter><Parameter>
 					<Name>expiryAfterPlay</Name>
 					<Abstract type="html">Amount of time after the asset is first played that
@@ -1834,37 +2000,39 @@ The provided userInfo must be property-list compatible. May be nil.</Abstract>
 					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
-			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</TokenIdentifier>
-			<Abstract type="html">Adds a manifest URL to an existing VirtuosoAsset.</Abstract>
-			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Adds a mpd URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
+not a DASH asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
 			
-			<Declaration>- (void)setManifestURL:(nonnull NSString *)manifestUrl withMaximumVideoBitrate:(long long)maximumVideoBitrate andMaximumAudioBitrate:(long long)maximumAudioBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Declaration>- (void)setMpdURL:(nonnull NSString *)mpdUrl withMaximumVideoBitrate:(long long)maximumVideoBitrate andMaximumAudioBitrate:(long long)maximumAudioBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>manifestUrl</Name>
-					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+					<Name>mpdUrl</Name>
+					<Abstract type="html">Where the media presentation description (mpd) lives on the Internet.</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumVideoBitrate</Name>
-					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
 profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
 bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
 select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumAudioBitrate</Name>
-					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</Abstract>
 				</Parameter><Parameter>
 					<Name>completeBlock</Name>
 					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</Anchor>
+			<Anchor>//api/name/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
@@ -2068,11 +2236,11 @@ select the lowest bitrate profile.  A value of INT_MAX means &quot;use the highe
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
-			<Abstract type="html">Creates a new in-memory DASH VirtuosoAsset.</Abstract>
-			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
 			
-			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description mpdUrl:(nonnull NSString *)mpdUrl protectionType:(kVDE_AssetProtectionType)protectionType maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>assetID</Name>
@@ -2081,22 +2249,17 @@ select the lowest bitrate profile.  A value of INT_MAX means &quot;use the highe
 					<Name>description</Name>
 					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
 				</Parameter><Parameter>
-					<Name>mpdUrl</Name>
-					<Abstract type="html">Where the media presentation description (mpd) file lives on the Internet.</Abstract>
-				</Parameter><Parameter>
-					<Name>protectionType</Name>
-					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
-instructed differently by Penthera support.</Abstract>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumVideoBitrate</Name>
-					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
 profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
 bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
 select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumAudioBitrate</Name>
-					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
-this asset is contained within the video profile, this value is ignored.</Abstract>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
 				</Parameter><Parameter>
 					<Name>publishDate</Name>
 					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
@@ -2126,17 +2289,17 @@ The provided userInfo must be property-list compatible. May be nil.</Abstract>
 					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if an error occured.</Abstract></ReturnValue>
-			<Anchor>//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
-			<Abstract type="html">Creates a new in-memory DASH VirtuosoAsset object.</Abstract>
-			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new empty HSS VirtuosoAsset object, identified by the provided manifest URL.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
 			
-			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description mpdUrl:(nonnull NSString *)mpdUrl protectionType:(kVDE_AssetProtectionType)protectionType maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>assetID</Name>
@@ -2145,22 +2308,17 @@ The provided userInfo must be property-list compatible. May be nil.</Abstract>
 					<Name>description</Name>
 					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
 				</Parameter><Parameter>
-					<Name>mpdUrl</Name>
-					<Abstract type="html">Where the media presentation description (mpd) file lives on the Internet.</Abstract>
-				</Parameter><Parameter>
-					<Name>protectionType</Name>
-					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
-instructed differently by Penthera support.</Abstract>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumVideoBitrate</Name>
-					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
 profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
 bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
 select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumAudioBitrate</Name>
-					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
-this asset is contained within the video profile, this value is ignored.</Abstract>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
 				</Parameter><Parameter>
 					<Name>publishDate</Name>
 					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
@@ -2169,8 +2327,8 @@ this asset is contained within the video profile, this value is ignored.</Abstra
 					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
 				</Parameter><Parameter>
 					<Name>expiryAfterDownload</Name>
-					<Abstract type="html">Amount of time after Virtuoso completes download of the asset that
-Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+					<Abstract type="html">Amount of time after Virtuoso completes download of file that
+Virtuoso will delete the file. In seconds. &lt;=0 means no expiry.</Abstract>
 				</Parameter><Parameter>
 					<Name>expiryAfterPlay</Name>
 					<Abstract type="html">Amount of time after the asset is first played that
@@ -2198,195 +2356,37 @@ The provided userInfo must be property-list compatible. May be nil.</Abstract>
 					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if an error occured.</Abstract></ReturnValue>
-			<Anchor>//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</TokenIdentifier>
-			<Abstract type="html">Adds a mpd URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
-not a DASH asset.</Abstract>
-			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Adds a manifest URL to an existing VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
 			
-			<Declaration>- (void)setMpdURL:(nonnull NSString *)mpdUrl withMaximumVideoBitrate:(long long)maximumVideoBitrate andMaximumAudioBitrate:(long long)maximumAudioBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Declaration>- (void)setManifestURL:(nonnull NSString *)manifestUrl withMaximumVideoBitrate:(long long)maximumVideoBitrate andMaximumAudioBitrate:(long long)maximumAudioBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>mpdUrl</Name>
-					<Abstract type="html">Where the media presentation description (mpd) lives on the Internet.</Abstract>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumVideoBitrate</Name>
-					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
 profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
 bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
 select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
 				</Parameter><Parameter>
 					<Name>maximumAudioBitrate</Name>
-					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
-this asset is contained within the video profile, this value is ignored.</Abstract>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
 				</Parameter><Parameter>
 					<Name>completeBlock</Name>
 					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/segmentDownloadErrors</TokenIdentifier>
-			<Abstract type="html">The number of segments that could not be downloaded in this asset.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>- (NSUInteger)segmentDownloadErrors</Declaration>
-			
-			
-			<Anchor>//api/name/segmentDownloadErrors</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestRemoteURL:</TokenIdentifier>
-			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
-			
-			
-			<Anchor>//api/name/manifestRemoteURL</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
-			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
-			
-			
-			<Anchor>//api/name/manifestRemoteURL</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
-			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
-			
-			
-			<Anchor>//api/name/manifestRemoteURL</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestLocalPath:</TokenIdentifier>
-			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
-			
-			
-			<Anchor>//api/name/manifestLocalPath</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
-			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
-			
-			
-			<Anchor>//api/name/manifestLocalPath</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
-			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
-			
-			
-			<Anchor>//api/name/manifestLocalPath</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setVideoStreamBitrate:</TokenIdentifier>
-			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/videoStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/videoStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/videoStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAudioStreamBitrate:</TokenIdentifier>
-			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/audioStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/audioStreamBitrate</Anchor>
-            <NodeRef refid="2"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
-			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
-			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/audioStreamBitrate</Anchor>
+			<Anchor>//api/name/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
