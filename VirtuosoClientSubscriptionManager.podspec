@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source_files = 'VirtuosoClientSubscriptionManager.framework/Headers/*'
   
   s.ios.vendored_frameworks = 'VirtuosoClientSubscriptionManager.framework'
-  s.preserve_path = 'Modules/module.modulemap'
-  s.module_map = 'Modules/module.modulemap'
+  s.preserve_path = 'VirtuosoClientSubscriptionManager.framework/Modules/module.modulemap'
+  s.module_map = 'VirtuosoClientSubscriptionManager.framework/Modules/module.modulemap'
   
 end

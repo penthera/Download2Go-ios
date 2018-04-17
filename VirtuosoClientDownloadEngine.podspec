@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source_files = 'VirtuosoClientDownloadEngine.framework/Headers/*'
   
   s.ios.vendored_frameworks = 'VirtuosoClientDownloadEngine.framework'
-  s.preserve_path = 'Modules/module.modulemap'
-  s.module_map = 'Modules/module.modulemap'
+  s.preserve_path = 'VirtuosoClientDownloadEngine.framework/Modules/module.modulemap'
+  s.module_map = 'VirtuosoClientDownloadEngine.framework/Modules/module.modulemap'
 
 end
