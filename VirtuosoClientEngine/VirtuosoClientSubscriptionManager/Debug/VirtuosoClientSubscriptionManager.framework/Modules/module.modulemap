@@ -1,0 +1,6 @@
+framework module VirtuosoClientSubscriptionManager {
+  umbrella header "VirtuosoClientSubscriptionManager.h"
+
+  export *
+  module * { export * }
+}

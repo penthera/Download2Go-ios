@@ -20,6 +20,10 @@
 		<data>
 		aLCp5fAhHpBkZr5Vv8MEc8Ed5Dw=
 		</data>
+		<key>Modules/module.modulemap</key>
+		<data>
+		pNFhKw+FyQiM1RrY8F6S0+1p7DA=
+		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<dict>
 			<key>hash</key>
@@ -63,6 +67,17 @@
 			<key>hash2</key>
 			<data>
 			KL33uCRzUOS4E/dkwFfDatVUbA8nK3Em8zLgrvjhGYo=
+			</data>
+		</dict>
+		<key>Modules/module.modulemap</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pNFhKw+FyQiM1RrY8F6S0+1p7DA=
+			</data>
+			<key>hash2</key>
+			<data>
+			Dd4O6HX+Me9MLoWr762lNkrW+TNr1RV2JnGsUwxoEJY=
 			</data>
 		</dict>
 		<key>en.lproj/InfoPlist.strings</key>

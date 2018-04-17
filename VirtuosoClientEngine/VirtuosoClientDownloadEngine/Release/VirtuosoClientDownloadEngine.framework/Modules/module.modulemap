@@ -1,0 +1,6 @@
+framework module VirtuosoClientDownloadEngine {
+  umbrella header "VirtuosoClientDownloadEngine.h"
+
+  export *
+  module * { export * }
+}
