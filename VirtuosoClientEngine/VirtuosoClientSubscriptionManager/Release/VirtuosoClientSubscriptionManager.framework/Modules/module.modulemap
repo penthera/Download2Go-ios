@@ -3,4 +3,9 @@ framework module VirtuosoClientSubscriptionManager {
 
   export *
   module * { export * }
+  
+  header "VirtuosoSubscriptionDataSource.h"
+  header "VirtuosoSubscriptionDefaultDataSource.h"
+  header "VirtuosoSubscriptionManager.h"
+  
 }

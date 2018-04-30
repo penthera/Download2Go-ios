@@ -3,4 +3,28 @@ framework module VirtuosoClientDownloadEngine {
 
   export *
   module * { export * }
+  
+  header "VirtuosoConstants.h"
+  header "VirtuosoNotifications.h"
+  header "VirtuosoDownloadEngine.h"
+  header "VirtuosoAsset.h"
+  header "VirtuosoAsset+SegmentedVideo.h"
+  header "VirtuosoAsset+HLS.h"
+  header "VirtuosoAsset+HSS.h"
+  header "VirtuosoAsset+DASH.h"
+  header "VirtuosoClientHTTPServer.h"
+  header "VirtuosoDevice.h"
+  header "VirtuosoPlayer.h"
+  header "VirtuosoEventHandler.h"
+  header "VirtuosoSettings.h"
+  header "VirtuosoLicenseManager.h"
+  header "VirtuosoSecureClock.h"
+  header "VirtuosoDefaultAVAssetResourceLoaderDelegate.h"
+  header "VirtuosoLogger.h"
+  header "VirtuosoAVAssetResourceLoaderDelegate.h"
+  header "VirtuosoAVPlayer.h"
+  header "VirtuosoPlayerViewController.h"
+  header "VirtuosoPlayerView.h"
+  header "VirtuosoEncryption.h"
+  
 }
