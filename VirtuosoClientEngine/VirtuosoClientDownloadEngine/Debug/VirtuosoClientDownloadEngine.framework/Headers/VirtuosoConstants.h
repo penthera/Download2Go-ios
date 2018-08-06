@@ -17,6 +17,8 @@
 #ifndef VirtuosoClientDownloadEngine_VirtuosoConstants_h
 #define VirtuosoClientDownloadEngine_VirtuosoConstants_h
 
+#import <Foundation/Foundation.h>
+
 @class VirtuosoAsset;
 
 /**---------------------------------------------------------------------------------------
@@ -234,6 +236,9 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     
     /** Virtuoso was unable to obtain permission to download the asset because the external policy service denied permission. */
     kVDE_PermissionsErrorExternalPolicyServiceDenied = -12,
+
+    /** Virtuoso was unable to create the VirtuosoAsset due to configuration restrictions. */
+    kVDE_InvalidConfigurationOptions = -13,
 };
 
 
@@ -396,11 +401,7 @@ typedef NS_ENUM(NSInteger, kVDE_AssetProtectionType)
     kVDE_AssetProtectionTypeFairPlay = 1,
     
     /** The asset is protected by Google Widevine DRM. */
-    kVDE_AssetProtectionTypeWidevine = 2,
-    
-    /** The asset is protected by Cisco DRM, and download and playback will be automatically serviced by
-        the Cisco platform. */
-    kVDE_AssetProtectionTypeDrmCisco = 3,
+    kVDE_AssetProtectionTypeWidevine = 2,    
 };
 
 /*!
@@ -536,7 +537,7 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorType)
  *  @discussion When you call an asynchronous SDK method, this callback indicates that
  *              Virtuoso has completely finished the requested action.
  */
-typedef void(^AsyncCompleteBlock)();
+typedef void(^AsyncCompleteBlock)(void);
 
 
 #pragma mark

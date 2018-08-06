@@ -21,7 +21,7 @@
 
 #define VLog(level, fmt, ...) [VirtuosoLogger addDebugEvent:[NSString stringWithFormat:(@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] atLevel:level]
 
-#define INCLUDE_DEV_LOGGING 1
+#define INCLUDE_DEV_LOGGING 0
 
 @class VirtuosoAsset;
 
@@ -48,53 +48,53 @@ typedef NS_ENUM(NSInteger, kVL_LoggingLevel)
 typedef NS_ENUM(NSInteger, kVL_LogEvent)
 {
     /** The enclosing app has launched */
-    kVLE_AppLaunch,
+    kVLE_AppLaunch = 0,
     
     /** Virtuoso has queued a new VirtuosoAsset for download */
-    kVLE_QueueForDownload,
+    kVLE_QueueForDownload = 1,
     
     /** Virtuoso has removed a VirtuosoAsset from the download queue */
-    kVLE_FileRemovedFromQueue,
+    kVLE_FileRemovedFromQueue = 2,
     
     /** Virtuoso has begun to download a VirtuosoAsset */
-    kVLE_DownloadStart,
+    kVLE_DownloadStart = 3,
     
     /** Virtuoso successfully finished downloading a VirtuosoFile */
-    kVLE_DownloadComplete,
+    kVLE_DownloadComplete = 4,
     
     /** Virtuoso detected an error during download */
-    kVLE_DownloadError,
+    kVLE_DownloadError = 5,
     
     /** A VirtuosoAsset was deleted */
-    kVLE_AssetDeleted,
+    kVLE_AssetDeleted = 6,
     
     /** A VirtuosoAsset reached the expired state */
-    kVLE_FileExpired,
+    kVLE_FileExpired = 7,
     
     /** Virtuoso successfully synced with the Backplane */
-    kVLE_SyncWithServer,
+    kVLE_SyncWithServer = 8,
     
     /** The enclosing app played a video asset */
-    kVLE_PlayStart,
+    kVLE_PlayStart = 9,
     
     /** The enclosing app stopped playing a video asset */
-    kVLE_PlayStop,
+    kVLE_PlayStop = 10,
     
     /** The User subscribed to a Feed */
-    kVLE_Subscribe,
+    kVLE_Subscribe = 11,
     
     /** The User canceled a subscription to a Feed */
-    kVLE_Unsubscribe,
+    kVLE_Unsubscribe = 12,
     
     /** The app either started the first time after installation, or is starting up after a remote wipe */
-    kVLE_Reset,
+    kVLE_Reset = 13,
     
     /** An asset which had exceeded it's maximum error count has been reset and will retry download */
-    kVLE_MaxErrorsReset,
+    kVLE_MaxErrorsReset = 14,
     
     /** The download limit imposed by the rules for either MDA or MAD has been reached and the asset with asset_id
         cannot be downloaded. */
-    kVLE_DownloadLimitReached,
+    kVLE_DownloadLimitReached = 15,
 };
 
 /*!

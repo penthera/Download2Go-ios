@@ -164,7 +164,7 @@
 			<Abstract type="html">Asynchronously deletes any previously downloaded license for the given asset</Abstract>
 			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset whenComplete:(nullable void ( ^ ) ( ))onComplete</Declaration>
+			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset whenComplete:(nullable void ( ^ ) ( void ))onComplete</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>

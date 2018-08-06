@@ -80,4 +80,24 @@
  */
 @property (nonatomic,readonly) long long audioStreamBitrate;
 
+/*!
+ *  @abstract The audio languages to download
+ *
+ *  @discussion For manifests containing multiple audio language definitions, it is possible to specify which
+ *              languages will be downloaded.  If the languages were filtered when this asset was created,
+ *              then the languages that were downloaded will be returned.  If all languages were downloaded,
+ *              this property will be nil.
+ */
+@property (nonatomic,readonly,nullable) NSArray* selectedAudio;
+
+/*!
+ *  @abstract The subtitle languages to download
+ *
+ *  @discussion For manifests containing multiple subtitle language definitions, it is possible to specify which
+ *              languages will be downloaded.  If the languages were filtered when this asset was created,
+ *              then the languages that were downloaded will be returned.  If all languages were downloaded,
+ *              this property will be nil.
+ */
+@property (nonatomic,readonly,nullable) NSArray* selectedSubtitles;
+
 @end

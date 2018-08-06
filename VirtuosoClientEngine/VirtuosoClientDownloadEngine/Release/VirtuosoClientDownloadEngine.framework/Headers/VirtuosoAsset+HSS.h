@@ -17,8 +17,6 @@
 #ifndef VHSS
 #define VHSS
 
-#import <UIKit/UIKit.h>
-
 #import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset+SegmentedVideo.h>

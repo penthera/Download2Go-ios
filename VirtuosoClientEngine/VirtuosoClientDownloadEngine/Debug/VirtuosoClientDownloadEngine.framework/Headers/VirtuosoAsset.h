@@ -17,8 +17,12 @@
 #define VASSET
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoConstants.h"
+
+#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
 #import <UIKit/UIKit.h>
+#endif
+
+#import "VirtuosoConstants.h"
 
 #if IS_LIB==0
 #import <VirtuosoClientDownloadEngine/VirtuosoPlayer.h>
@@ -29,7 +33,7 @@
 /*!
  *  @abstract Basic completion block used generically in methods
  */
-typedef void (^BasicCompletionBlock)();
+typedef void (^BasicCompletionBlock)(void);
 
 /*!
  *  @abstract Represents a conceptual "file" object in Virtuoso.
@@ -369,6 +373,8 @@ typedef void (^BasicCompletionBlock)();
 #pragma mark Playback
 #pragma mark
 
+#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
+
 /*!
  *  @abstract Logs the asset as having been played back, incrementing the stored playback counts on the Backplane
  */
@@ -413,6 +419,8 @@ typedef void (^BasicCompletionBlock)();
 - (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType andPlayer:(nonnull id<VirtuosoPlayer>)player
                     onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail;
 
+#endif
+
 /*!
  *  @abstract Called when playback finishes (the video player exits) to cleanup the session.
  *
@@ -421,6 +429,7 @@ typedef void (^BasicCompletionBlock)();
  *              method of that class instead.
  */
 - (void)stoppedPlaying;
+
 
 /**---------------------------------------------------------------------------------------
  * @name Download State

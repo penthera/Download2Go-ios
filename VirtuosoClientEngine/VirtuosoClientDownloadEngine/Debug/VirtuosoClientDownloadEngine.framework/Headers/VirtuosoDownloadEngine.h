@@ -18,7 +18,6 @@
 #define VDENGINE
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "VirtuosoConstants.h"
 
 @class VirtuosoAsset;

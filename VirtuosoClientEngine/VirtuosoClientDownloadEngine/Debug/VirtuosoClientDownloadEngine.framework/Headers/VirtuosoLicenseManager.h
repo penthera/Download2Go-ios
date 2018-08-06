@@ -167,7 +167,7 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @param asset The asset to remove DRM licensing for
  *  @param onComplete A block to call when DRM licenses have been removed
  */
-+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset*)asset whenComplete:(nullable void (^)())onComplete;
++ (void)removeLicenseForAsset:(nonnull VirtuosoAsset*)asset whenComplete:(nullable void (^)(void))onComplete;
 
 /*!
  *  @abstract Synchronously deletes any previously downloaded license for the given asset

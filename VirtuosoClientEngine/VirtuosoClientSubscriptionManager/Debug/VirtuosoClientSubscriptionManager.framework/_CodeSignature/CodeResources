@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/VirtuosoClientSubscriptionManager.h</key>
 		<data>
-		IOUDLXBj9LDqxi9MJ8W86oC11gI=
+		SjUkWpcw2N0sC995ia7ukRZKwvM=
 		</data>
 		<key>Headers/VirtuosoSubscriptionDataSource.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Headers/VirtuosoSubscriptionManager.h</key>
 		<data>
-		g8bmMCKAoGw0xllvKSWVj8fbo5c=
+		uDTRozfUyTa0YwevxYjvOb5gMjY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cq5ekOXeCXqG241cML1cVkjR0bQ=
+		ovhTnkPgOPRHOQjY2d1X/fsCum4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -44,11 +44,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IOUDLXBj9LDqxi9MJ8W86oC11gI=
+			SjUkWpcw2N0sC995ia7ukRZKwvM=
 			</data>
 			<key>hash2</key>
 			<data>
-			PJkIwDEs77xocDD4pfCJRA37nTjTyaK89vQJhPuy8U0=
+			XkhlBcON4lMxLdRaJirJpJI6DH85MPrQormjSKPCVbw=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoSubscriptionDataSource.h</key>
@@ -77,11 +77,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g8bmMCKAoGw0xllvKSWVj8fbo5c=
+			uDTRozfUyTa0YwevxYjvOb5gMjY=
 			</data>
 			<key>hash2</key>
 			<data>
-			KL33uCRzUOS4E/dkwFfDatVUbA8nK3Em8zLgrvjhGYo=
+			qBGBLoWUnceRwGwDNIpfE1ucQCOoMvRR0dG/LlZM5hI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -13,26 +13,6 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processRemotePushNotice:withCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Handles remote push notices</Abstract>
-			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
-			
-			<Declaration>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)userInfo withCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">The userInfo dictionary provided by the remote push notice</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Whether Virtuoso handled the push notice</Abstract></ReturnValue>
-			<Anchor>//api/name/processRemotePushNotice:withCompletionHandler:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processBackgroundSessionWake:completionHandler:</TokenIdentifier>
 			<Abstract type="html">Handles processing of background download session notices</Abstract>
 			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
@@ -53,6 +33,26 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processRemotePushNotice:withCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Handles remote push notices</Abstract>
+			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
+			
+			<Declaration>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)userInfo withCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">The userInfo dictionary provided by the remote push notice</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Whether Virtuoso handled the push notice</Abstract></ReturnValue>
+			<Anchor>//api/name/processRemotePushNotice:withCompletionHandler:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processFetchWithCompletionHandler:</TokenIdentifier>
 			<Abstract type="html">Handles background fetch</Abstract>
 			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
@@ -66,6 +66,23 @@
 			</Parameters>
 			
 			<Anchor>//api/name/processFetchWithCompletionHandler:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processRemotePushNotice:</TokenIdentifier>
+			<Abstract type="html">Handles remote push notices</Abstract>
+			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
+			
+			<Declaration>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">The userInfo dictionary provided by the remote push notice</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Whether Virtuoso handled the push notice</Abstract></ReturnValue>
+			<Anchor>//api/name/processRemotePushNotice:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

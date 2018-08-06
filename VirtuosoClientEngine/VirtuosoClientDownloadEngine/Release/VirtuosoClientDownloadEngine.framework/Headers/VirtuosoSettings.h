@@ -432,6 +432,34 @@
                      andDataType:(kVF_DownloadDataType)dataType;
 
 /*!
+ *  @abstract Configures which audio languages will be downloaded from assets that contain multiple
+ *            audio versions
+ *
+ *  @discussion Some asset types allow multiple versions of the audio track to be included in the asset.  It is
+ *              usually desirable to provide every language available in the streaming asset, to provide customers
+ *              a wide choice in language options.  It is not usually desirable to download every available language,
+ *              however, as this increases the download size and bandwidth usage.  If you set this property to nil, 
+ *              then the SDK will download every available audio language.  If you set this property to
+ *              an empty array, then the SDK will not download any additional audio tracks that are not included
+ *              in the main video file.  If you provide an array of language codes, then the SDK will only download
+ *              audio tracks matching the indicated language.  The default value is nil.
+ */
+@property (nonatomic,strong,nullable) NSArray* audioLanguagesToDownload;
+
+/*!
+ *  @abstract Configures which subtitle languages will be downloaded from assets that contain subtitles
+ *
+ *  @discussion Some asset types allow subtitles to be included in the asset.  It is usually desirable to provide
+ *              every language available in the streaming asset, to provide customers a wide choice in language options.
+ *              It is not usually desirable to download every available language, however, as this increases the download
+ *              size and bandwidth usage.  If you set this property to nil, then the SDK will download every available 
+ *              subtitle track.  If you set this property to an empty array, then the SDK will not download any subtitles.
+ *              If you provide an array of language codes, then the SDK will only download subtitles matching the indicated 
+ *              language.  The default value is nil.
+ */
+@property (nonatomic,strong,nullable) NSArray* subtitleLanguagesToDownload;
+
+/*!
  *  @abstract Configures the download engine to allow restricted MIME types
  *
  *  @discussion By default, the download engine explicitly disallows the MIME types text/html and text/xml

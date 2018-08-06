@@ -97,7 +97,7 @@ typedef void(^SubscriptionResultBlock)(Boolean success, NSError* _Nullable error
  *
  *  @param error A NSError containing a failure code and debug string, or nil of no error occurred.
  */
-typedef void(^SubscriptionListResultBlock)(NSArray* _Nonnull subscriptions, NSError* _Nullable error);
+typedef void(^SubscriptionListResultBlock)(NSArray* _Nullable subscriptions, NSError* _Nullable error);
 
 /*!
  *
