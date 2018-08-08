@@ -1210,7 +1210,7 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                  [self showErrorForAsset:asset atIndexPath:indexPath];
              }];
         }
-        else if( (asset.type == kVDE_AssetTypeHLS && asset.assetProtectionType != kVDE_AssetProtectionTypeDrmCisco) ||
+        else if( asset.type == kVDE_AssetTypeHLS ||
                  asset.type == kVDE_AssetTypeDASH )
         {
             [UIAlertView alertViewWithTitle:@"Play Video"
@@ -1284,31 +1284,6 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                                    onCancel:^{
                                        
                                    }];
-        }
-        else if( asset.type == kVDE_AssetTypeHLS && asset.assetProtectionType == kVDE_AssetProtectionTypeDrmCisco )
-        {
-            self.player = [VirtuosoMoviePlayerViewController playerForAssetType:asset.type];
-            self.secondsAtPlaybackStart = -1;
-            self.playingAsset = asset;
-            
-            [asset playUsingPlaybackType:kVDE_AssetPlaybackTypeLocal andPlayer:(id<VirtuosoPlayer>)self.player
-             
-                         onSuccess:^
-             {
-                 // Present the player
-                 [self presentViewController:self.player animated:YES completion:nil];
-                 
-                 [asset setFirstPlayDateTime:[NSDate date]];
-                 [asset saveOnComplete:^{
-                     // No need to wait, but we don't need to do anything here.
-                 }];
-             }
-             
-                            onFail:^
-             {
-                 self.playingAsset = nil;
-                 [self showErrorForAsset:asset atIndexPath:indexPath];
-             }];
         }
         else if( asset.type == kVDE_AssetTypeHSS )
         {
@@ -1478,7 +1453,7 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
         // to locally downloaded asset where possible, seamlessly transitioning to remote online asset when needed.  We can't play
         // HSS streams using the native player.
         __weak ViewController* weakSelf = self;
-        if( asset.type != kVDE_AssetTypeHSS && asset.assetProtectionType != kVDE_AssetProtectionTypeDrmCisco )
+        if( asset.type != kVDE_AssetTypeHSS )
         {
             UIActionSheet* sheet = [[UIActionSheet alloc]initWithTitle:@"Action"
                                                               delegate:self
