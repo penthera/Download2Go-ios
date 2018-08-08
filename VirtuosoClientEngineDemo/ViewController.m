@@ -664,8 +664,8 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
 #warning These settings are for a Penthera test configuration.  You must insert your OWN Penthera-provided secret and key here
     NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
     [settings registerDefaults:@{@"BackplaneURL":@"https://demo.penthera.com",
-                                 @"PrivateKey":@"",//#PRIVATE_KEY_HERE#,
-                                 @"PublicKey":@"",//#PUBLIC_KEY_HERE#,
+                                 @"PrivateKey":#PRIVATE_KEY_HERE#,
+                                 @"PublicKey":#PUBLIC_KEY_HERE#,
                                  @"MaxBackgroundDownload":@(0),
                                  @"UsePackager":@(YES)}];
     
