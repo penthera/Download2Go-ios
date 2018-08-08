@@ -32,6 +32,16 @@
 #include <arpa/inet.h>
 #include <net/if.h>
 
+
+// ---------------------------------------------------------------------------------------------------------
+// IMPORTANT:
+// The following three values must be initialzied, please contact support@penthera.com to obtain these keys
+// ---------------------------------------------------------------------------------------------------------
+static NSString* backplaneUrl = @"";    // <-- change this
+static NSString* publicKey = @"";       // <-- change this
+static NSString* privateKey = @"";      // <-- change this
+
+
 #define IOS_CELLULAR    @"pdp_ip0"
 #define IOS_WIFI        @"en0"
 #define IP_ADDR_IPv4    @"ipv4"
@@ -61,8 +71,8 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
 @property (nonatomic,strong) UIViewController* player;
 @property (nonatomic,strong) VirtuosoClientHTTPServer* playerProxy;
 
-@property (nonatomic,strong) NSMutableArray* pendingAssets;
-@property (nonatomic,strong) NSMutableArray* completedAssets;
+@property (atomic,strong) NSMutableArray* pendingAssets;
+@property (atomic,strong) NSMutableArray* completedAssets;
 
 @end
 
@@ -76,17 +86,22 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
 
 - (void)reloadTable
 {
-    if( [[VirtuosoDownloadEngine instance]started] )
-    {
-        self.pendingAssets = [[VirtuosoAsset pendingAssetsWithAvailabilityFilter:NO]mutableCopy];
-        self.completedAssets = [[VirtuosoAsset completedAssetsWithAvailabilityFilter:NO]mutableCopy];
-    }
-    else
-    {
-        self.pendingAssets = nil;
-        self.completedAssets = nil;
-    }
-    [self.tableView reloadData];
+    __block NSMutableArray* pending = nil;
+    __block NSMutableArray* completed = nil;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        if( [[VirtuosoDownloadEngine instance]started] )
+        {
+            pending = [[VirtuosoAsset pendingAssetsWithAvailabilityFilter:NO]mutableCopy];
+            completed = [[VirtuosoAsset completedAssetsWithAvailabilityFilter:NO]mutableCopy];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.pendingAssets = pending;
+            self.completedAssets = completed;
+            [self.tableView reloadData];
+        });
+    });
 }
 
 /*
@@ -635,8 +650,27 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
 {
     [super viewWillAppear:animated];
     [self reloadTable];
-    
     self.playingAsset = nil;
+}
+
+-(Boolean)validateConfigurationSetup
+{
+    if ( !backplaneUrl.length || !publicKey.length || !privateKey.length )
+    {
+        NSString* title = NSLocalizedString(@"Setup Error", @"");
+        NSString* message = NSLocalizedString(@"Download Engine needs to more information. Please initialize the following variables: backplaneUrl, publicKey, privateKey.", @"");
+        UIAlertController* configAlert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [configAlert addAction:ok];
+        [self presentViewController:configAlert animated:YES completion:^{
+            
+        }];
+        
+        return FALSE;
+    }
+    return TRUE;
 }
 
 /*
@@ -660,12 +694,13 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
     // NOTE: The Caller MUST use an appropriate Penthera-provided Backplane instance.  The server used in this example
     //       is a demo server and no guarantees or warranties are made about quality of service or data integrity.  The server
     //       may be updated, have data deleted, or be taken down without notice.
+
+    [self validateConfigurationSetup];
     
-#warning These settings are for a Penthera test configuration.  You must insert your OWN Penthera-provided secret and key here
     NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
-    [settings registerDefaults:@{@"BackplaneURL":@"https://demo.penthera.com",
-                                 @"PrivateKey":#PRIVATE_KEY_HERE#,
-                                 @"PublicKey":#PUBLIC_KEY_HERE#,
+    [settings registerDefaults:@{@"BackplaneURL":backplaneUrl,
+                                 @"PrivateKey":privateKey,
+                                 @"PublicKey":publicKey,
                                  @"MaxBackgroundDownload":@(0),
                                  @"UsePackager":@(YES)}];
     
@@ -1089,9 +1124,9 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         // Delete the row from the data source, we only allow edits on section 0
-        
         VirtuosoAsset* asset = nil;
         
         @try
@@ -1107,6 +1142,7 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
         }
         @catch (NSException *exception)
         {
+            VLog(kVL_LogError, @"Unexpected exception: %@", exception);
             [self reloadTable];
             [self updateStorageLabels];
             [self updateStatusLabel];
@@ -1115,21 +1151,29 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
         
         if( asset )
         {
+            if( indexPath.section == 0 )
+            {
+                [self.pendingAssets removeObjectAtIndex:indexPath.row];
+            }
+            else
+            {
+                [self.completedAssets removeObjectAtIndex:indexPath.row];
+            }
+            
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+            
             [asset deleteAssetOnComplete:^
              {
                  @try
                  {
-                     if( indexPath.section == 0 )
-                         [self.pendingAssets removeObjectAtIndex:indexPath.row];
-                     else
-                         [self.completedAssets removeObjectAtIndex:indexPath.row];
-                     
-                     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
                      [self updateStorageLabels];
                      [self updateStatusLabel];
+                     
                  }
                  @catch (NSException *exception)
                  {
+                     VLog(kVL_LogError, @"Unexpected exception: %@", exception);
+                     
                      [self reloadTable];
                      [self updateStorageLabels];
                      [self updateStatusLabel];
@@ -1137,7 +1181,8 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
              }];
         }
     }
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
 }
