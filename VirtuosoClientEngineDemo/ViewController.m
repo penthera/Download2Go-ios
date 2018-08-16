@@ -934,13 +934,15 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
     }
     else if( status != kVDE_DownloadComplete && status != kVDE_DownloadProcessing )
     {
+        NSString* optionalStatus = (asset.status == kVDE_DownloadInitializing) ? NSLocalizedString(@"Initializing: ", @"") : @"";
+
         if( effectiveExpiry != nil )
         {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.02f%% (%qi MB) (Expires on %@)%@",fractionComplete*100.0,asset.currentSize/1024/1024,[df stringFromDate:effectiveExpiry],errorAdd];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%0.02f%% (%qi MB) (Expires on %@)%@",optionalStatus, fractionComplete*100.0,asset.currentSize/1024/1024,[df stringFromDate:effectiveExpiry],errorAdd];
         }
         else
         {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.02f%% (%qi MB)%@",fractionComplete*100.0,asset.currentSize/1024/1024,errorAdd];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%0.02f%% (%qi MB)%@",optionalStatus,fractionComplete*100.0,asset.currentSize/1024/1024,errorAdd];
         }
     }
     else
