@@ -83,6 +83,58 @@
 -(nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
+ *  @abstract Creates a local HTTP proxy on a random port using the specified asset
+ *
+ *  @discussion The proxy uses the local manifest, remote URL, and segment file root path from the provided
+ *              VirtuosoAsset to construct a streaming URL for the video player.  Use this method,
+ *              rather than the playback methods on the VirtuosoAsset, for more direct control of the
+ *              proxy, which is especially useful for custom video players.
+ *
+ *  @param asset A VirtuosoAsset object to base streamed playback from.
+ *               The server will use the internal data from the VirtuosoAsset
+ *               to dynamically contruct the playback URL for the player.
+ *
+ *  @param usingFastPlay If YES, then the service is setup for FastPlay playback.  The server will
+ *                       return a FastPlay playback manifest suitable for online streaming with FastPlay
+ *                       playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
+ *                       playback is not currently available, then this method returns nil.
+ *
+ *  @return A started (running) VirtuosoClientHTTPServer object.
+ *          Returns nil if the VirtuosoAsset is outside its availability window, is expired,
+ *          or if the VirtuosoDownloadEngine instance is outside its Backplane communications
+ *          window. If this method returns nil, it also sends errors via NSNotificationCenter
+ *          indicating the problem.
+ */
+-(nullable id)initWithAsset:(nonnull VirtuosoAsset*)asset usingFastPlay:(Boolean)usingFastPlay;
+
+/*!
+ *  @abstract Creates a local HTTP proxy on the specified port using the specified asset
+ *
+ *  @discussion The proxy uses the local manifest, remote URL, and segment file root path from the provided
+ *              VirtuosoAsset to construct a streaming URL for the video player.  Use this method,
+ *              rather than the playback methods on the VirtuosoAsset, for more direct control of the
+ *              proxy, which is especially useful for custom video players.
+ *
+ *  @param port The local port to open with the localhost server
+ *
+ *  @param asset A VirtuosoAsset object to base streamed playback from.
+ *               The server will use the internal data from the VirtuosoAsset
+ *               to dynamically contruct the playback URL for the player.
+ *
+ *  @param usingFastPlay If YES, then the service is setup for FastPlay playback.  The server will
+ *                       return a FastPlay playback manifest suitable for online streaming with FastPlay
+ *                       playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
+ *                       playback is not currently available, then this method returns nil.
+ *
+ *  @return A started (running) VirtuosoClientHTTPServer object.
+ *          Returns nil if the VirtuosoAsset is outside its availability window, is expired,
+ *          or if the VirtuosoDownloadEngine instance is outside its Backplane communications
+ *          window. If this method returns nil, it also sends errors via NSNotificationCenter
+ *          indicating the problem.
+ */
+-(nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset*)asset usingFastPlay:(Boolean)usingFastPlay;
+
+/*!
  *  @abstract Shuts down a running proxy instance
  * 
  *  @discussion You can call the startup method to restart the proxy using the same settings.

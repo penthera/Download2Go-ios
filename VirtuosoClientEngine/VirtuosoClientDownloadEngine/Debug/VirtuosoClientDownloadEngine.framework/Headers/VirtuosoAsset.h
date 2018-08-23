@@ -30,6 +30,8 @@
 #import "VirtuosoPlayer.h"
 #endif
 
+@class VirtuosoAncillaryFile;
+
 /*!
  *  @abstract Basic completion block used generically in methods
  */
@@ -202,6 +204,35 @@ typedef void (^BasicCompletionBlock)(void);
                                      userInfo:(nullable NSDictionary*)userInfo
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
                               onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+
+
+
+/*!
+ *  @abstract Adds an ancillary file to the download for this asset
+ *
+ *  @param file VirtuosoAncillaryFile object describing the file to be downloaded
+ *
+ *  @return Boolean indicating success or failure
+ */
+- (Boolean)addAncillaryFile:(VirtuosoAncillaryFile* _Nonnull)file;
+
+/*!
+ *  @abstract Adds an ancillary file to the download for this asset
+ *
+ *  @param file VirtuosoAncillaryFile object describing the file to be downloaded
+ *  @param asset VirtuosoAsset object to add an ancillary file download to
+ *
+ *  @return Boolean indicating success or failure
+ */
++ (Boolean)addAncillaryFile:(VirtuosoAncillaryFile* _Nonnull)file inAsset:(VirtuosoAsset* _Nonnull)asset;
+
+
+/*!
+ *  @abstract Retrieves all of the ancillary files assocated with this asset
+ *
+ *  @return Array of VirtuosoAncillaryFile objects. Empty if none.
+ */
+-(NSArray<VirtuosoAncillaryFile*>*_Nonnull)ancillaryFiles;
 
 
 /**---------------------------------------------------------------------------------------

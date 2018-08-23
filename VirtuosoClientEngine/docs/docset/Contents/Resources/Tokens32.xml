@@ -150,6 +150,46 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
             <NodeRef refid="32"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PermissionsErrorMaximumCopiesPerAccount</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to obtain permission to download the asset because too many copies of this asset are already in the account.</Abstract>
+            <Declaration>kVDE_PermissionsErrorMaximumCopiesPerAccount</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidManifest</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to create the VirtuosoAsset due to invalid manifest.</Abstract>
+            <Declaration>kVDE_InvalidManifest</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetDeleted</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to create the VirtuosoAsset due to asset being deleted.</Abstract>
+            <Declaration>kVDE_AssetDeleted</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_CreateSegmentFailed</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to create a VirtuosoSegment.</Abstract>
+            <Declaration>kVDE_CreateSegmentFailed</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

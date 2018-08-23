@@ -119,6 +119,18 @@
 @property (nonatomic,readonly) long long maxLifetimeDownloadsForAsset;
 
 /*!
+ *  @abstract The maximum number of copies of this asset that can be stored in all devices in the account
+ *
+ *  @discussion Virtuoso limits the total number of copies of an asset that can be downloaded on any device in the
+ *              account.  Once this limit is reached, the asset can no longer be downloaded until the user deletes
+ *              a copy of the asset from other devices in the account.  Any download requests beyond this limit are
+ *              queued, but will not download, and the engine will report an error indicating the download queue is
+ *              blocked until the user manually deletes copies of the asset on other devices to get below the limit
+ *              again.  The default value is -1 (unlimited).
+ */
+@property (nonatomic,readonly) long long maxCopiesOfAssetPerAccount;
+
+/*!
  *  @abstract Whether the engine should acquire download permissions when the asset is queued or when it starts downloading
  *
  *  @discussion Normally, the download engine acquires any necessary download permissions when the item starts downloading. By
@@ -141,6 +153,15 @@
  *              both Backplane limits to unrestricted, you will also need to set this value to YES.
  */
 @property (nonatomic, assign) Boolean alwaysRequestDownloadPermission;
+
+/*!
+ *  @abstract If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.
+ *
+ *  @discussion Normally, the download engine will not support IFRAME's for HLS. Enabling this will provide IFRAME support
+ *              for HLS video content. This improves fast-forward and rewind experience during playback.
+ */
+@property (nonatomic, assign) Boolean iframeSupportEnabled;
+
 
 /*!
  *  @abstract Amount of time, in seconds, between when Virtuoso finishes downloading an asset
@@ -445,6 +466,24 @@
  *              audio tracks matching the indicated language.  The default value is nil.
  */
 @property (nonatomic,strong,nullable) NSArray* audioLanguagesToDownload;
+
+/*!
+ *  @abstract Configures which audio codecs will be downloaded from assets that contain multiple
+ *            audio codecs in the master manifest
+ *
+ *  @discussion Some asset types allow multiple versions of the audio track to be included in the asset.  A video may
+ *              contain multiple audio languages as well as multiple audio codecs for extended device support.  While
+ *              it is generally desirable to download many language options, it is only necessary to download the one
+ *              audio codec that the device will use for playback.  Since "the best" codec may be different, depending
+ *              on your particular requirements, the SDK allows you to configure exactly which codecs to download, if
+ *              multiple codecs are present.  In order to download only the desired codecs, specify the specific audio
+ *              codecs here (E.G. ec-3, ac-3, mp4a.40.2, etc).  If you set this property to nil or an empty array,
+ *              then all available codecs will be downloaded.
+ *
+ *  @warning In order for this feature to be supported, your master manifests must properly specify the audio codecs
+ *           in the CODECS field of the #EXT-X-STREAM-INF definitions.
+ */
+@property (nonatomic,strong,nullable) NSArray* audioCodecsToDownload;
 
 /*!
  *  @abstract Configures which subtitle languages will be downloaded from assets that contain subtitles

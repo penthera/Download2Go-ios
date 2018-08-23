@@ -13,6 +13,18 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoDevice/currentDevice</TokenIdentifier>
+			<Abstract type="html">Retrieves the current device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>+ (VirtuosoDevice *_Nullable)currentDevice</Declaration>
+			
+			
+			<Anchor>//api/name/currentDevice</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setNickname:</TokenIdentifier>
 			<Abstract type="html">This device&apos;s nickname. Same as the device ID, by default.</Abstract>
 			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>

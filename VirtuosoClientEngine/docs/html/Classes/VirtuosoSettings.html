@@ -62,6 +62,8 @@
 		
 		<option value="//api/name/alwaysRequestDownloadPermission">alwaysRequestDownloadPermission</option>
 		
+		<option value="//api/name/audioCodecsToDownload">audioCodecsToDownload</option>
+		
 		<option value="//api/name/audioLanguagesToDownload">audioLanguagesToDownload</option>
 		
 		<option value="//api/name/clientSSLCertificatePassword">clientSSLCertificatePassword</option>
@@ -86,7 +88,11 @@
 		
 		<option value="//api/name/headroom">headroom</option>
 		
+		<option value="//api/name/iframeSupportEnabled">iframeSupportEnabled</option>
+		
 		<option value="//api/name/manualDeviceUDID">manualDeviceUDID</option>
+		
+		<option value="//api/name/maxCopiesOfAssetPerAccount">maxCopiesOfAssetPerAccount</option>
 		
 		<option value="//api/name/maxDevicesForDownload">maxDevicesForDownload</option>
 		
@@ -550,6 +556,57 @@ The default value is -1 (unlimited).</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/maxCopiesOfAssetPerAccount" title="maxCopiesOfAssetPerAccount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxCopiesOfAssetPerAccount">&nbsp;&nbsp;maxCopiesOfAssetPerAccount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of copies of this asset that can be stored in all devices in the account</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long maxCopiesOfAssetPerAccount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso limits the total number of copies of an asset that can be downloaded on any device in the
+account.  Once this limit is reached, the asset can no longer be downloaded until the user deletes
+a copy of the asset from other devices in the account.  Any download requests beyond this limit are
+queued, but will not download, and the engine will report an error indicating the download queue is
+blocked until the user manually deletes copies of the asset on other devices to get below the limit
+again.  The default value is -1 (unlimited).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/acquirePermissionWhenQueued" title="acquirePermissionWhenQueued"></a>
 	<h3 class="method-title"><code><a href="#//api/name/acquirePermissionWhenQueued">&nbsp;&nbsp;acquirePermissionWhenQueued</a></code>
 </h3>
@@ -635,6 +692,53 @@ policy enforcement under these conditions.  If, however, your settings are curre
 that you might enforce limits later, and you wish to track downloads done while the policy was unrestricted, you may wish
 to set this value to YES.  If you have an external policy service (configured in Backplane settings) and have set
 both Backplane limits to unrestricted, you will also need to set this value to YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/iframeSupportEnabled" title="iframeSupportEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/iframeSupportEnabled">&nbsp;&nbsp;iframeSupportEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean iframeSupportEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, the download engine will not support IFRAME&rsquo;s for HLS. Enabling this will provide IFRAME support
+for HLS video content. This improves fast-forward and rewind experience during playback.</p>
 			</div>
 			
 
@@ -1989,6 +2093,61 @@ audio tracks matching the indicated language.  The default value is nil.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/audioCodecsToDownload" title="audioCodecsToDownload"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioCodecsToDownload">&nbsp;&nbsp;audioCodecsToDownload</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configures which audio codecs will be downloaded from assets that contain multiple
+audio codecs in the master manifest</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) NSArray *audioCodecsToDownload</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Some asset types allow multiple versions of the audio track to be included in the asset.  A video may
+contain multiple audio languages as well as multiple audio codecs for extended device support.  While
+it is generally desirable to download many language options, it is only necessary to download the one
+audio codec that the device will use for playback.  Since &ldquo;the best&rdquo; codec may be different, depending
+on your particular requirements, the SDK allows you to configure exactly which codecs to download, if
+multiple codecs are present.  In order to download only the desired codecs, specify the specific audio
+codecs here (E.G. ec-3, ac-3, mp4a.40.2, etc).  If you set this property to nil or an empty array,
+then all available codecs will be downloaded.</p><div class="warning"><p><strong>Warning:</strong> In order for this feature to be supported, your master manifests must properly specify the audio codecs
+in the CODECS field of the #EXT-X-STREAM-INF definitions.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/subtitleLanguagesToDownload" title="subtitleLanguagesToDownload"></a>
 	<h3 class="method-title"><code><a href="#//api/name/subtitleLanguagesToDownload">&nbsp;&nbsp;subtitleLanguagesToDownload</a></code>
 </h3>
@@ -2465,7 +2624,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2018 Penthera Inc. All rights reserved. Updated: 2018-08-03</p>
+						<p class="copyright">Copyright &copy; 2018 Penthera Inc. All rights reserved. Updated: 2018-08-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

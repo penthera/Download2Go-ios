@@ -32,6 +32,7 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoNotifications.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoDownloadEngine.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAncillaryFile.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset+SegmentedVideo.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset+HLS.h>

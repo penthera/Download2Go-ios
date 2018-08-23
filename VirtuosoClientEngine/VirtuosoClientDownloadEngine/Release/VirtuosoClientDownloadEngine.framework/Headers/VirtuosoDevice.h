@@ -43,6 +43,13 @@ typedef void(^DeviceUpdateResultBlock)(Boolean success,  NSError* _Nullable  err
 @interface VirtuosoDevice : NSObject
 
 /*!
+ *  @abstract Retrieves the current device
+ *
+ *  @discussion A convenience class to access device-related values.
+ */
++(VirtuosoDevice* _Nullable)currentDevice;
+
+/*!
  *  @abstract This device's nickname. Same as the device ID, by default.
  *
  */

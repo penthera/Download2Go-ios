@@ -73,6 +73,16 @@
             <NodeRef refid="42"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeAncillary</TokenIdentifier>
+            <Abstract type="html">The file is a ancillary</Abstract>
+            <Declaration>kVF_SegmentTypeAncillary</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="42"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

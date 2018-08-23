@@ -17,7 +17,7 @@
 			<Abstract type="html">Handles processing of background download session notices</Abstract>
 			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
 			
-			<Declaration>+ (Boolean)processBackgroundSessionWake:(nonnull NSString *)identifier completionHandler:(nonnull void ( ^ ) ( ))completionHandler</Declaration>
+			<Declaration>+ (Boolean)processBackgroundSessionWake:(nonnull NSString *)identifier completionHandler:(nonnull void ( ^ ) ( void ))completionHandler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>identifier</Name>

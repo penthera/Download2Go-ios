@@ -62,7 +62,7 @@
  *  @return Whether Virtuoso handled the session wake
  */
 + (Boolean)processBackgroundSessionWake:(nonnull NSString*)identifier
-                      completionHandler:(nonnull void (^)())completionHandler;
+                      completionHandler:(nonnull void (^)(void))completionHandler;
 
 /*!
  *  @abstract Handles remote push notices

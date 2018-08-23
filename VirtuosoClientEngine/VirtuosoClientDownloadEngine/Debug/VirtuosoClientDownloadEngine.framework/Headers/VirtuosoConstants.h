@@ -135,6 +135,9 @@ typedef NS_ENUM(NSInteger, kVBP_StatusCode)
     
     /** Permission to download an asset was denied due to external policy restrictions */
     kVBP_DownloadDeniedForExternalPolicy = -63,
+    
+    /** Permission to download an asset was denied due to maximum copies of asset per account rules */
+    kVBP_DownloadDeniedForMaxCopiesOfAssetPerAccount = -64,
 };
 
 /*!
@@ -239,6 +242,20 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
 
     /** Virtuoso was unable to create the VirtuosoAsset due to configuration restrictions. */
     kVDE_InvalidConfigurationOptions = -13,
+    
+    /** Virtuoso was unable to obtain permission to download the asset because too many copies of this asset are already in the account. */
+    kVDE_PermissionsErrorMaximumCopiesPerAccount = -14,
+    
+    /** Virtuoso was unable to create the VirtuosoAsset due to invalid manifest. */
+    kVDE_InvalidManifest = -15,
+    
+    /** Virtuoso was unable to create the VirtuosoAsset due to asset being deleted. */
+    kVDE_AssetDeleted = -16,
+    
+    /** Virtuoso was unable to create a VirtuosoSegment. */
+    kVDE_CreateSegmentFailed = -17,
+    
+
 };
 
 
@@ -338,6 +355,10 @@ typedef NS_ENUM(NSInteger, kVF_SegmentType)
     
     /** The file is a video stream closed captioning segment (HLS/HSS/DASH) */
     kVF_SegmentTypeStreamCC = 6,
+    
+    /** The file is a ancillary */
+    kVF_SegmentTypeAncillary = 7,
+
 };
 
 /*!
@@ -439,6 +460,10 @@ typedef NS_ENUM(NSInteger, kVDE_AssetPermissionType)
     
     /** Permission to download has been denied because the global asset download limit as been reached */
     kVDE_AssetPermissionDeniedLifetimeLimitReached = 3,
+    
+    /** Permission to download has been denied because too many copies of this asset already exist on
+        devices in this account */
+    kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached = 4,
 };
 
 /*!
@@ -644,6 +669,7 @@ typedef NS_ENUM(NSInteger, kVDM_ManifestType)
     hlsManifestTypeBitrate = 1,
     hlsManifestTypeAudio = 2,
     hlsManifestTypeCC = 3,
+    hlsManifestTypeIFRAME = 4,
 };
 
 

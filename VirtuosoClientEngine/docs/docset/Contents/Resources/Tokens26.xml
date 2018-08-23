@@ -175,6 +175,16 @@ consult the notice and error description for details of the problem.</Abstract>
             <NodeRef refid="26"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVBP_DownloadDeniedForMaxCopiesOfAssetPerAccount</TokenIdentifier>
+            <Abstract type="html">Permission to download an asset was denied due to maximum copies of asset per account rules</Abstract>
+            <Declaration>kVBP_DownloadDeniedForMaxCopiesOfAssetPerAccount</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

@@ -62,6 +62,67 @@ indicating the problem.</Abstract></ReturnValue>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initWithAsset:usingFastPlay:</TokenIdentifier>
+			<Abstract type="html">Creates a local HTTP proxy on a random port using the specified asset</Abstract>
+			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)asset usingFastPlay:(Boolean)usingFastPlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
+The server will use the internal data from the VirtuosoAsset
+to dynamically contruct the playback URL for the player.</Abstract>
+				</Parameter><Parameter>
+					<Name>usingFastPlay</Name>
+					<Abstract type="html">If YES, then the service is setup for FastPlay playback.  The server will
+return a FastPlay playback manifest suitable for online streaming with FastPlay
+playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
+playback is not currently available, then this method returns nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
+Returns nil if the VirtuosoAsset is outside its availability window, is expired,
+or if the VirtuosoDownloadEngine instance is outside its Backplane communications
+window. If this method returns nil, it also sends errors via NSNotificationCenter
+indicating the problem.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAsset:usingFastPlay:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initOnPort:withAsset:usingFastPlay:</TokenIdentifier>
+			<Abstract type="html">Creates a local HTTP proxy on the specified port using the specified asset</Abstract>
+			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset *)asset usingFastPlay:(Boolean)usingFastPlay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>port</Name>
+					<Abstract type="html">The local port to open with the localhost server</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
+The server will use the internal data from the VirtuosoAsset
+to dynamically contruct the playback URL for the player.</Abstract>
+				</Parameter><Parameter>
+					<Name>usingFastPlay</Name>
+					<Abstract type="html">If YES, then the service is setup for FastPlay playback.  The server will
+return a FastPlay playback manifest suitable for online streaming with FastPlay
+playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
+playback is not currently available, then this method returns nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
+Returns nil if the VirtuosoAsset is outside its availability window, is expired,
+or if the VirtuosoDownloadEngine instance is outside its Backplane communications
+window. If this method returns nil, it also sends errors via NSNotificationCenter
+indicating the problem.</Abstract></ReturnValue>
+			<Anchor>//api/name/initOnPort:withAsset:usingFastPlay:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/shutdown</TokenIdentifier>
 			<Abstract type="html">Shuts down a running proxy instance</Abstract>
 			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>

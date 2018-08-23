@@ -53,6 +53,16 @@
             <NodeRef refid="40"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeIFRAME</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeIFRAME</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

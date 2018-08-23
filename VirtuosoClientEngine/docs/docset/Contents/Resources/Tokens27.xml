@@ -53,6 +53,17 @@
             <NodeRef refid="27"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because too many copies of this asset already exist on
+        devices in this account </Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="27"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

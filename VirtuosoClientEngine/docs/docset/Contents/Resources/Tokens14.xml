@@ -241,6 +241,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxCopiesOfAssetPerAccount:</TokenIdentifier>
+			<Abstract type="html">The maximum number of copies of this asset that can be stored in all devices in the account</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxCopiesOfAssetPerAccount</Declaration>
+			
+			
+			<Anchor>//api/name/maxCopiesOfAssetPerAccount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxCopiesOfAssetPerAccount</TokenIdentifier>
+			<Abstract type="html">The maximum number of copies of this asset that can be stored in all devices in the account</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxCopiesOfAssetPerAccount</Declaration>
+			
+			
+			<Anchor>//api/name/maxCopiesOfAssetPerAccount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxCopiesOfAssetPerAccount</TokenIdentifier>
+			<Abstract type="html">The maximum number of copies of this asset that can be stored in all devices in the account</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long maxCopiesOfAssetPerAccount</Declaration>
+			
+			
+			<Anchor>//api/name/maxCopiesOfAssetPerAccount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAcquirePermissionWhenQueued:</TokenIdentifier>
 			<Abstract type="html">Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
@@ -309,6 +345,42 @@
 			
 			
 			<Anchor>//api/name/alwaysRequestDownloadPermission</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setIframeSupportEnabled:</TokenIdentifier>
+			<Abstract type="html">If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean iframeSupportEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/iframeSupportEnabled</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/iframeSupportEnabled</TokenIdentifier>
+			<Abstract type="html">If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean iframeSupportEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/iframeSupportEnabled</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/iframeSupportEnabled</TokenIdentifier>
+			<Abstract type="html">If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean iframeSupportEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/iframeSupportEnabled</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
@@ -1135,6 +1207,45 @@ audio versions</Abstract>
 			
 			
 			<Anchor>//api/name/audioLanguagesToDownload</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAudioCodecsToDownload:</TokenIdentifier>
+			<Abstract type="html">Configures which audio codecs will be downloaded from assets that contain multiple
+audio codecs in the master manifest</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioCodecsToDownload</Declaration>
+			
+			
+			<Anchor>//api/name/audioCodecsToDownload</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/audioCodecsToDownload</TokenIdentifier>
+			<Abstract type="html">Configures which audio codecs will be downloaded from assets that contain multiple
+audio codecs in the master manifest</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioCodecsToDownload</Declaration>
+			
+			
+			<Anchor>//api/name/audioCodecsToDownload</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/audioCodecsToDownload</TokenIdentifier>
+			<Abstract type="html">Configures which audio codecs will be downloaded from assets that contain multiple
+audio codecs in the master manifest</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioCodecsToDownload</Declaration>
+			
+			
+			<Anchor>//api/name/audioCodecsToDownload</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
