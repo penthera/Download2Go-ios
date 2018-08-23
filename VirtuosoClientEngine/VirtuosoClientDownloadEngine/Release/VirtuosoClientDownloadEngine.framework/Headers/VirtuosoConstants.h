@@ -355,10 +355,6 @@ typedef NS_ENUM(NSInteger, kVF_SegmentType)
     
     /** The file is a video stream closed captioning segment (HLS/HSS/DASH) */
     kVF_SegmentTypeStreamCC = 6,
-    
-    /** The file is a ancillary */
-    kVF_SegmentTypeAncillary = 7,
-
 };
 
 /*!

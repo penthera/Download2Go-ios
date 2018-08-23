@@ -29,7 +29,7 @@
 /*!
  *  @abstract The number of segments that could not be downloaded in this asset.
  *
- *  @discussion This value will always be 0 unless the option in VirtuosoSettings is
+ *  @discussion This value will always be 0 unless the option in VirtuosoSettings is 
  *              configured to permit downloading after segment errors are hit.
  */
 - (NSUInteger)segmentDownloadErrors;
