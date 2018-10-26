@@ -10,9 +10,7 @@
 		031DD316195A02E000C1F20D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F4C270169CC75300FC43E4 /* libz.dylib */; };
 		032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 032FCF40188F034500190180 /* libMBProgressHUD.a */; };
 		032FCF49188F037D00190180 /* UIBlockSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 032FCF47188F037D00190180 /* UIBlockSwitch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		03592B541DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; };
 		03592B561DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; };
-		03592B571DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; };
 		03592B581DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03592B591DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; };
 		03592B5A1DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -23,7 +21,6 @@
 		03D5862D17A05C1500057F1F /* AddNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862B17A05C1500057F1F /* AddNewItemViewController.m */; };
 		03D5862E17A05C1500057F1F /* AddNewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */; };
 		03F462061A6D92380045C310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419EF94156AA6A300B383B3 /* CoreGraphics.framework */; };
-		03F587AB1E2693FD00813740 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; };
 		03F587AC1E2695D200813740 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; };
 		03F587AD1E2695D200813740 /* widevine_cdm_sdk_release.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03F9B70B1745405200929556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F9B70A1745405200929556 /* Default-568h@2x.png */; };
@@ -142,9 +139,6 @@
 				03592B591DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
 				03592B561DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
 				8419EF91156AA6A300B383B3 /* UIKit.framework in Frameworks */,
-				03592B571DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
-				03592B541DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
-				03F587AB1E2693FD00813740 /* widevine_cdm_sdk_release.framework in Frameworks */,
 				8419EF93156AA6A300B383B3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,7 +304,7 @@
 		8419EF83156AA6A300B383B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					8419EF8B156AA6A300B383B3 = {
 						DevelopmentTeam = L5M4866SC8;
@@ -370,7 +364,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		03A671411C244DD000D63090 /* Strip Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -380,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirtuosoClientDownloadEngine.framework/strip-frameworks.sh\"";
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirtuosoClientDownloadEngine.framework/strip-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -437,16 +431,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -463,7 +467,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -473,12 +478,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
@@ -492,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -503,7 +517,6 @@
 		8419EFAE156AA6A300B383B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -523,6 +536,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.penthera.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -532,7 +546,6 @@
 		8419EFAF156AA6A300B383B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -552,6 +565,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.penthera.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

@@ -34,18 +34,29 @@ for file in $(find . -type f -perm +111); do
   fi
   # Get architectures for current file
   archs="$(lipo -info "${file}" | rev | cut -d ':' -f1 | rev)"
+  echo "Found $archs in $file"
   stripped=""
+  valid="NO"
   for arch in $archs; do
-    if ! [[ "${VALID_ARCHS}" == *"$arch"* ]]; then
-      # Strip non-valid architectures in-place
-      lipo -remove "$arch" -output "$file" "$file" || exit 1
-      stripped="$stripped $arch"
+    if [[ "${VALID_ARCHS}" == *"$arch"* ]]; then
+      valid="YES"
     fi
   done
-  if [[ "$stripped" != "" ]]; then
-    echo "Stripped $file of architectures:$stripped"
-    if [ "${CODE_SIGNING_REQUIRED}" == "YES" ]; then
-      code_sign "${file}"
+  if [ "${valid}" == "YES" ]; then
+    for arch in $archs; do
+      if ! [[ "${VALID_ARCHS}" == *"$arch"* ]]; then
+        # Strip non-valid architectures in-place
+        lipo -remove "$arch" -output "$file" "$file" || exit 1
+        stripped="$stripped $arch"
+      fi
+    done
+    if [[ "$stripped" != "" ]]; then
+      echo "Stripped $file of architectures:$stripped"
+      if [ "${CODE_SIGNING_REQUIRED}" == "YES" ]; then
+        code_sign "${file}"
+      fi
     fi
+  else
+    echo "Didn't find valid architectures in $file. Aborting strip of this framework."
   fi
 done
