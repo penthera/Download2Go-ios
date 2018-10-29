@@ -24,7 +24,6 @@
     IBOutlet UILabel* statusLabel;
     IBOutlet UIBarButtonItem* startButton;
     IBOutlet UIBarButtonItem* editButton;
-    IBOutlet UILabel* usedStorageLabel;
     IBOutlet UIToolbar* toolbar;
     IBOutlet UILabel* usedLabelLabel;
     IBOutlet UILabel* statusLabelLabel;
@@ -35,6 +34,7 @@
 - (IBAction)doSettings:(id)sender;
 - (IBAction)doAddVideo:(id)sender;
 
+@property (nonatomic,strong) IBOutlet UILabel* usedStorageLabel;
 @property (nonatomic,readonly) IBOutlet UITableView* tableView;
 
 @end

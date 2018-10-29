@@ -41,19 +41,8 @@ static NSString* backplaneUrl = @"";    // <-- change this
 static NSString* publicKey = @"";       // <-- change this
 static NSString* privateKey = @"";      // <-- change this
 
-
-#define IOS_CELLULAR    @"pdp_ip0"
-#define IOS_WIFI        @"en0"
-#define IP_ADDR_IPv4    @"ipv4"
-#define IP_ADDR_IPv6    @"ipv6"
-
 static Boolean hasStartedUp = NO;
 static NSDate* startDownloadTime;
-
-// Private test method.  DO NOT make this part of the public release!!
-@interface VirtuosoClientHTTPServer()
--(id)initWithAsset:(VirtuosoAsset*)asset withOpenInterface:(Boolean)open;
-@end
 
 // Private test method.  DO NOT make this part of the public release!
 @interface VirtuosoSettings()
@@ -159,9 +148,10 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
         long long used = [VirtuosoAsset storageUsed]/1024/1024;
         NSString* kbps = [[VirtuosoDownloadEngine instance] downloadBandwidthString];
         
+        __weak ViewController* weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            usedStorageLabel.text = [NSString stringWithFormat:@"%qi MB",used];
-            self.navigationItem.title = kbps;
+            weakSelf.usedStorageLabel.text = [NSString stringWithFormat:@"%qi MB",used];
+            weakSelf.navigationItem.title = kbps;
         });
     });
 }
@@ -1231,7 +1221,7 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
 {
     if( [asset isPlayable] )
     {
-        if( asset.type == kVDE_AssetTypeNonSegmented )
+        if( asset.type != kVDE_AssetTypeHSS )
         {
             self.player = [VirtuosoMoviePlayerViewController playerForAssetType:asset.type];
             self.playingAsset = asset;
@@ -1257,117 +1247,34 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                  [self showErrorForAsset:asset atIndexPath:indexPath];
              }];
         }
-        else if( asset.type == kVDE_AssetTypeHLS ||
-                 asset.type == kVDE_AssetTypeDASH )
+        else
         {
-            [UIAlertView alertViewWithTitle:@"Play Video"
-                                    message:@""
-                          cancelButtonTitle:@"Cancel"
-                          otherButtonTitles:@[@"Open Web Server",@"Play Locally"]
-                                  onDismiss:^(UIAlertView* alert, int buttonIndex) {
-                                      if( buttonIndex == 0 )
-                                      {
-                                          // We need to set the playback date here.  Don't log it.  We'll use the movie player controller events for that.
-                                          [asset setFirstPlayDateTime:[NSDate date]];
-                                          [asset saveOnComplete:^{
-                                              // No need to wait, but we don't need to do anything here.
-                                          }];
-                                          
-                                          self.secondsAtPlaybackStart = -1;
-                                          self.playingAsset = asset;
-                                          NSDate* startDate = [NSDate date];
-                                          
-                                          [VirtuosoLogger logPlaybackStartedForAsset:asset];
-                                          
-                                          self.playerProxy = [[VirtuosoClientHTTPServer alloc]initWithAsset:asset withOpenInterface:YES];
-                                          
-                                          NSString* playURL = self.playerProxy.playbackURL;
-                                          NSString* myIP = [self getIPAddress:YES];
-                                          playURL = [playURL stringByReplacingOccurrencesOfString:@"127.0.0.1" withString:myIP];
-                                          
-                                          NSLog(@"Proxy Playback URL: %@",playURL);
-                                          [UIAlertView alertViewWithTitle:@"Asset Playback"
-                                                                  message:[NSString stringWithFormat:@"Proxy will be open until you close this alert.  Playback URL: %@",playURL]
-                                                        cancelButtonTitle:@"OK"
-                                                        otherButtonTitles:nil
-                                                                onDismiss:^(UIAlertView* alert, int buttonIndex) {
-                                                                    [VirtuosoLogger logPlaybackStoppedForAsset:asset withSecondsSinceLastStart:(long long)fabs([startDate timeIntervalSince1970])];
-                                                                    [self.playerProxy shutdown];
-                                                                    self.playerProxy = nil;
-                                                                    [[NSNotificationCenter defaultCenter] postNotificationName:kMoviePlayerDidExitNotification object:nil];
-                                                                } onCancel:^{
-                                                                    [VirtuosoLogger logPlaybackStoppedForAsset:asset withSecondsSinceLastStart:(long long)fabs([startDate timeIntervalSince1970])];
-                                                                    [self.playerProxy shutdown];
-                                                                    self.playerProxy = nil;
-                                                                    [[NSNotificationCenter defaultCenter] postNotificationName:kMoviePlayerDidExitNotification object:nil];
-                                                                }];
-                                      }
-                                      else
-                                      {
-                                          self.player = [VirtuosoMoviePlayerViewController playerForAssetType:asset.type];
-                                          self.secondsAtPlaybackStart = -1;
-                                          self.playingAsset = asset;
-                                          
-                                          [asset playUsingPlaybackType:kVDE_AssetPlaybackTypeLocal andPlayer:(id<VirtuosoPlayer>)self.player
-                                           
-                                                       onSuccess:^
-                                           {
-                                               // Present the player
-                                               [self presentViewController:self.player animated:YES completion:nil];
-                                               
-                                               [asset setFirstPlayDateTime:[NSDate date]];
-                                               [asset saveOnComplete:^{
-                                                   // No need to wait, but we don't need to do anything here.
-                                               }];
-                                           }
-                                           
-                                                          onFail:^
-                                           {
-                                               self.playingAsset = nil;
-                                               [self showErrorForAsset:asset atIndexPath:indexPath];
-                                           }];
-                                      }
-                                  }
-                                   onCancel:^{
-                                       
-                                   }];
-        }
-        else if( asset.type == kVDE_AssetTypeHSS )
-        {
-            // We can't playback HSS in a native player, so we're just going to startup a proxy server for this and tell the
-            // user what the playback URL is.  We're shortcutting a lot of capabiltiy here to "mock up" what would happen if
-            // a native player existed.  You can use several online HSS players and the playback URL output in the popup to
-            // test playback.
+            // We can't playback HSS in a native player.  In order to test HSS playback, you need to
+            // provide your own player that supports HSS.  To integrate, you'd just startup a proxy
+            // directly and then provide your player the playbackURL.
             
-            // We need to set the playback date here.  Don't log it.  We'll use the movie player controller events for that.
+            // We need to set the playback date here.
             [asset setFirstPlayDateTime:[NSDate date]];
             [asset saveOnComplete:^{
                 // No need to wait, but we don't need to do anything here.
             }];
-            
+            [VirtuosoLogger logPlaybackStartedForAsset:asset];
+
             self.secondsAtPlaybackStart = -1;
             self.playingAsset = asset;
             NSDate* startDate = [NSDate date];
             
-            [VirtuosoLogger logPlaybackStartedForAsset:asset];
-            
-            self.playerProxy = [[VirtuosoClientHTTPServer alloc]initWithAsset:asset withOpenInterface:YES];
-            
+            self.playerProxy = [[VirtuosoClientHTTPServer alloc]initWithAsset:asset];
             NSString* playURL = self.playerProxy.playbackURL;
-            NSString* myIP = [self getIPAddress:YES];
-            playURL = [playURL stringByReplacingOccurrencesOfString:@"127.0.0.1" withString:myIP];
             
+            // This is the URL you would hand to your HSS player.
             NSLog(@"Proxy Playback URL: %@",playURL);
             
             [UIAlertView alertViewWithTitle:@"HSS Playback"
-                                    message:[NSString stringWithFormat:@"Proxy will be open until you close this alert.  Playback URL: %@",playURL]
+                                    message:@"You must provide your own player to test HSS playback."
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil
                                   onDismiss:^(UIAlertView* alert, int buttonIndex) {
-                                      [VirtuosoLogger logPlaybackStoppedForAsset:asset withSecondsSinceLastStart:(long long)fabs([startDate timeIntervalSince1970])];
-                                      [self.playerProxy shutdown];
-                                      self.playerProxy = nil;
-                                      [[NSNotificationCenter defaultCenter] postNotificationName:kMoviePlayerDidExitNotification object:nil];
                                   } onCancel:^{
                                       [VirtuosoLogger logPlaybackStoppedForAsset:asset withSecondsSinceLastStart:(long long)fabs([startDate timeIntervalSince1970])];
                                       [self.playerProxy shutdown];
@@ -1407,64 +1314,6 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
                                   delegate:nil
                          cancelButtonTitle:@"OK" otherButtonTitles:nil]show];
     }
-}
-
-- (NSString *)getIPAddress:(BOOL)preferIPv4
-{
-    NSArray *searchArray = preferIPv4 ?
-    @[ IOS_WIFI @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6 ] :
-    @[ IOS_WIFI @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4 ] ;
-    
-    NSDictionary *addresses = [self getIPAddresses];
-    //NSLog(@"addresses: %@", addresses);
-    
-    __block NSString *address;
-    [searchArray enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop)
-     {
-         address = addresses[key];
-         if(address) *stop = YES;
-     } ];
-    return address ? address : @"0.0.0.0";
-}
-
-- (NSDictionary *)getIPAddresses
-{
-    NSMutableDictionary *addresses = [NSMutableDictionary dictionaryWithCapacity:8];
-    
-    // retrieve the current interfaces - returns 0 on success
-    struct ifaddrs *interfaces;
-    if(!getifaddrs(&interfaces)) {
-        // Loop through linked list of interfaces
-        struct ifaddrs *interface;
-        for(interface=interfaces; interface; interface=interface->ifa_next) {
-            if(!(interface->ifa_flags & IFF_UP) /* || (interface->ifa_flags & IFF_LOOPBACK) */ ) {
-                continue; // deeply nested code harder to read
-            }
-            const struct sockaddr_in *addr = (const struct sockaddr_in*)interface->ifa_addr;
-            char addrBuf[ MAX(INET_ADDRSTRLEN, INET6_ADDRSTRLEN) ];
-            if(addr && (addr->sin_family==AF_INET || addr->sin_family==AF_INET6)) {
-                NSString *name = [NSString stringWithUTF8String:interface->ifa_name];
-                NSString *type;
-                if(addr->sin_family == AF_INET) {
-                    if(inet_ntop(AF_INET, &addr->sin_addr, addrBuf, INET_ADDRSTRLEN)) {
-                        type = IP_ADDR_IPv4;
-                    }
-                } else {
-                    const struct sockaddr_in6 *addr6 = (const struct sockaddr_in6*)interface->ifa_addr;
-                    if(inet_ntop(AF_INET6, &addr6->sin6_addr, addrBuf, INET6_ADDRSTRLEN)) {
-                        type = IP_ADDR_IPv6;
-                    }
-                }
-                if(type) {
-                    NSString *key = [NSString stringWithFormat:@"%@/%@", name, type];
-                    addresses[key] = [NSString stringWithUTF8String:addrBuf];
-                }
-            }
-        }
-        // Free memory
-        freeifaddrs(interfaces);
-    }
-    return [addresses count] ? addresses : nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

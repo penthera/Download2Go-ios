@@ -70,7 +70,7 @@
     }
 }
 
-- (void)application:(UIApplication*)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler
+- (void)application:(UIApplication*)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler
 {
     NSLog(@"Did receive background download session wake for session: %@",identifier);
     if( [VirtuosoEventHandler processBackgroundSessionWake:identifier completionHandler:completionHandler] )
@@ -208,6 +208,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)lookupLicenseURLSuffix:(NSString *__autoreleasing  _Nonnull * _Nullable)urlSuffix andParameters:(NSDictionary *__autoreleasing  _Nonnull * _Nullable)customParameters renewalDate:(NSDate *__autoreleasing  _Nonnull * _Nullable)renewalDate forAsset:(VirtuosoAsset * _Nonnull)asset {
+    // If you're using DRM, you would need to implement this method and provide any modifications to the licensing properties required
+    // for the provided asset.
+    //
+    // *urlSuffix = @"asset-unique-suffix-for-drm";                   // Gets appended onto the end of the DRM license URL
+    // *customParameters = @{@"key":@"value"};                        // key/value pairs that get added to the URL query string
+    // *renewalDate = [NSDate dateWithTimeIntervalSinceNow:48_HOURS]; // Expected DRM renewal timestamp
 }
 
 @end

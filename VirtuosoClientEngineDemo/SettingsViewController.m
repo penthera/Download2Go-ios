@@ -28,9 +28,9 @@
 @interface SettingsViewController ()
 {
     NSTimer* refreshTimer;
-    NSLock *CPUUsageLock;
     id<NSObject> deviceObserver;
 }
+@property (nonatomic,strong) NSLock* CPUUsageLock;
 @end
 
 /*
@@ -57,7 +57,7 @@
     // This approach is for demo purposes only, to monitor performance levels over time
     
     refreshTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self.tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
-    CPUUsageLock = [[NSLock alloc] init];
+    self.CPUUsageLock = [[NSLock alloc] init];
     
     // When the Backplane notifies us that it finished saving our device object, reload the devices section.
     deviceObserver = [[NSNotificationCenter defaultCenter] addObserverForName:kBackplaneDeviceSaveResultNotification
@@ -252,6 +252,7 @@
             {
                 // CPU load
                 cell.textLabel.text = @"CPU Usage";
+                __weak SettingsViewController* weakSelf = self;
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                     
                     processor_info_array_t cpuInfo= nil, prevCpuInfo = nil;
@@ -263,7 +264,7 @@
                     kern_return_t err = host_processor_info(mach_host_self(), PROCESSOR_CPU_LOAD_INFO, &numCPUsU, &cpuInfo, &numCpuInfo);
                     if(err == KERN_SUCCESS)
                     {
-                        [CPUUsageLock lock];
+                        [weakSelf.CPUUsageLock lock];
                         for(natural_t i = 0; i < numCPUsU; ++i)
                         {
                             float inUse, total;
@@ -287,7 +288,7 @@
                             else
                                 coreTwo = (inUse/total);
                         }
-                        [CPUUsageLock unlock];
+                        [weakSelf.CPUUsageLock unlock];
                         
                         if(prevCpuInfo)
                         {

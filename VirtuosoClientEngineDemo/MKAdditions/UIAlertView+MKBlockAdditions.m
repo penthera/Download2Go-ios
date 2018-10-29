@@ -114,7 +114,7 @@ static Boolean _isTextQuery;
 	}
     else
     {
-        _dismissBlock(alertView,buttonIndex - 1); // cancel button is button 0
+        _dismissBlock(alertView,(int)(buttonIndex - 1)); // cancel button is button 0
     }
 }
 
