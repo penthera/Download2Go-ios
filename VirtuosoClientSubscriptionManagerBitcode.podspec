@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VirtuosoClientSubscriptionManagerBitcode'
-  s.version          = '3.14.8'
+  s.version          = '3.14.10'
   s.summary          = 'A best-of-breed download and offline viewing solution for video.'
   s.homepage         = 'http://penthera.com'
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
