@@ -10,19 +10,19 @@
 		031DD316195A02E000C1F20D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F4C270169CC75300FC43E4 /* libz.dylib */; };
 		032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 032FCF40188F034500190180 /* libMBProgressHUD.a */; };
 		032FCF49188F037D00190180 /* UIBlockSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 032FCF47188F037D00190180 /* UIBlockSwitch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		03592B561DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; };
-		03592B581DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		03592B591DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; };
-		03592B5A1DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0363E5F519D4561800FB6411 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A620CF1591066700CF7A85 /* MediaPlayer.framework */; };
+		0367BD1D21CD727E008C95D5 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */; };
+		0367BD1F21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */; };
+		0367BD2121CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */; };
+		0367BD2321CD72AA008C95D5 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0367BD2521CD72AA008C95D5 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0367BD2721CD72AA008C95D5 /* widevine_cdm_sdk_release.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03D5862717A05B9600057F1F /* NSObject+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862217A05B9600057F1F /* NSObject+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03D5862817A05B9600057F1F /* UIActionSheet+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862417A05B9600057F1F /* UIActionSheet+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03D5862917A05B9600057F1F /* UIAlertView+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862617A05B9600057F1F /* UIAlertView+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03D5862D17A05C1500057F1F /* AddNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862B17A05C1500057F1F /* AddNewItemViewController.m */; };
 		03D5862E17A05C1500057F1F /* AddNewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */; };
 		03F462061A6D92380045C310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419EF94156AA6A300B383B3 /* CoreGraphics.framework */; };
-		03F587AC1E2695D200813740 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; };
-		03F587AD1E2695D200813740 /* widevine_cdm_sdk_release.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03F9B70B1745405200929556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F9B70A1745405200929556 /* Default-568h@2x.png */; };
 		03FFA0E91A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FFA0E81A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m */; };
 		8419EF91156AA6A300B383B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8419EF90156AA6A300B383B3 /* UIKit.framework */; };
@@ -63,9 +63,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				03592B5A1DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
-				03F587AD1E2695D200813740 /* widevine_cdm_sdk_release.framework in Embed Frameworks */,
-				03592B581DBFEE850000C348 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */,
+				0367BD2521CD72AA008C95D5 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				0367BD2721CD72AA008C95D5 /* widevine_cdm_sdk_release.framework in Embed Frameworks */,
+				0367BD2321CD72AA008C95D5 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,8 +79,9 @@
 		032FCF4A188F03DB00190180 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		032FCF4B188F03DB00190180 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		0336A09D16850B5000CF4012 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.framework; sourceTree = SOURCE_ROOT; };
-		03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientSubscriptionManager.framework; path = VirtuosoClientEngine/VirtuosoClientSubscriptionManager/Release/VirtuosoClientSubscriptionManager.framework; sourceTree = SOURCE_ROOT; };
+		0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = widevine_cdm_sdk_release.framework; path = ThirdParty/Widevine/release/widevine_cdm_sdk_release.framework; sourceTree = SOURCE_ROOT; };
+		0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.framework; sourceTree = SOURCE_ROOT; };
+		0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientSubscriptionManager.framework; path = VirtuosoClientEngine/VirtuosoClientSubscriptionManager/Release/VirtuosoClientSubscriptionManager.framework; sourceTree = SOURCE_ROOT; };
 		039E664D17007A3500B427F3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		03D5862017A05B9600057F1F /* MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBlockAdditions.h; sourceTree = "<group>"; };
 		03D5862117A05B9600057F1F /* NSObject+MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKBlockAdditions.h"; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		03D5862C17A05C1500057F1F /* AddNewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewItemViewController.xib; sourceTree = "<group>"; };
 		03D5863417A05DFB00057F1F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		03F4C270169CC75300FC43E4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = widevine_cdm_sdk_release.framework; path = ThirdParty/Widevine/release/widevine_cdm_sdk_release.framework; sourceTree = SOURCE_ROOT; };
 		03F9B70A1745405200929556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "VirtuosoClientEngineDemo/Default-568h@2x.png"; sourceTree = "<group>"; };
 		03FFA0E71A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtuosoMoviePlayerViewController.h; sourceTree = "<group>"; };
 		03FFA0E81A72C8A80003FAB1 /* VirtuosoMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtuosoMoviePlayerViewController.m; sourceTree = "<group>"; };
@@ -132,14 +132,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F462061A6D92380045C310 /* CoreGraphics.framework in Frameworks */,
-				03F587AC1E2695D200813740 /* widevine_cdm_sdk_release.framework in Frameworks */,
+				0367BD1D21CD727E008C95D5 /* widevine_cdm_sdk_release.framework in Frameworks */,
+				0367BD1F21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
 				0363E5F519D4561800FB6411 /* MediaPlayer.framework in Frameworks */,
 				031DD316195A02E000C1F20D /* libz.dylib in Frameworks */,
 				032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */,
-				03592B591DBFEE850000C348 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
-				03592B561DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
 				8419EF91156AA6A300B383B3 /* UIKit.framework in Frameworks */,
 				8419EF93156AA6A300B383B3 /* Foundation.framework in Frameworks */,
+				0367BD2121CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +268,9 @@
 		84A6201D158FC24600CF7A85 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				03F587AA1E2693FD00813740 /* widevine_cdm_sdk_release.framework */,
-				03592B551DBFEE7B0000C348 /* VirtuosoClientSubscriptionManager.framework */,
-				03592B531DBFEE740000C348 /* VirtuosoClientDownloadEngine.framework */,
+				0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */,
+				0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */,
+				0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */,
 			);
 			name = Library;
 			sourceTree = "<group>";

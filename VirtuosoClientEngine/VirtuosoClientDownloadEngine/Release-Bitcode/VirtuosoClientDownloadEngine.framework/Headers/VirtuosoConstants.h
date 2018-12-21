@@ -625,14 +625,15 @@ typedef NSDictionary<NSString*,NSString*>*(^RequestAdditionalParametersBlock)(Vi
  *  @abstract If set, this block is called whenever a segment for an asset is initially created during parsing
  *            of the manifest.
  *
- *  @discussion Customers can use this callback to add parameters to the segment download URL before the
- *              Segment is downloaded. If this block is set, Virtuoso will invoke the block and then add
- *              the key/value pairs to the segment's download url before doing the download.
+ *  @discussion Customers can use this callback to modify the segment download URL before the
+ *              Segment is downloaded. If this block is set, Virtuoso will invoke the block.
+ *              Callers that need to update the segment's download URL should return an updated
+ *              url. Returning nil indicates ignore the returned URL and use the original segment URL.
  *
- *              The dictionary you return should include the URL parameter names as the keys and the
- *              parameter value as the values.
+ *              Callers that modifiy the URL must ensure they return a valid URL. Failure to do so will cause
+ *              the download to fail.
  */
-typedef NSDictionary<NSString*,NSString*>*(^RequestAdditionalSegmentParametersBlock)(VirtuosoAsset* asset, NSString* segmentUrl);
+typedef NSString*(^RequestAdditionalSegmentParametersBlock)(VirtuosoAsset* asset, NSString* segmentUrl);
 
 /*!
  *  @typedef AssetParsingCompleteBlock

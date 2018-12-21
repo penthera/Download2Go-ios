@@ -97,6 +97,7 @@
                         <NodeRef refid="56"/>
                         <NodeRef refid="57"/>
                         <NodeRef refid="58"/>
+                        <NodeRef refid="59"/>
                         
                     </Subnodes>
                 </Node>
@@ -966,16 +967,21 @@
             
         </Node>
         <Node id="56" type="file" documentType="reference">
+            <Name>RequestAdditionalSegmentParametersBlock</Name>
+            <Path>Blocks/RequestAdditionalSegmentParametersBlock.html</Path>
+            
+        </Node>
+        <Node id="57" type="file" documentType="reference">
             <Name>SubscriptionListResultBlock</Name>
             <Path>Blocks/SubscriptionListResultBlock.html</Path>
             
         </Node>
-        <Node id="57" type="file" documentType="reference">
+        <Node id="58" type="file" documentType="reference">
             <Name>SubscriptionResultBlock</Name>
             <Path>Blocks/SubscriptionResultBlock.html</Path>
             
         </Node>
-        <Node id="58" type="file" documentType="reference">
+        <Node id="59" type="file" documentType="reference">
             <Name>SyncCompleteBlock</Name>
             <Path>Blocks/SyncCompleteBlock.html</Path>
             

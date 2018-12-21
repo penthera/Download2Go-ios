@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/VirtuosoAsset.h</key>
 		<data>
-		7qQl0yeVE8Kp+klfW4Q9C0BRLaQ=
+		UDk71P3t/sOO/tA524S5UsOILWQ=
 		</data>
 		<key>Headers/VirtuosoClientDownloadEngine.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/VirtuosoConstants.h</key>
 		<data>
-		kBm2NU1rzK577sQhRvwMiYJUlvQ=
+		L9fq6lbPw3fjfQY8tD74qFoyzHQ=
 		</data>
 		<key>Headers/VirtuosoDefaultAVAssetResourceLoaderDelegate.h</key>
 		<data>
@@ -381,11 +381,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7qQl0yeVE8Kp+klfW4Q9C0BRLaQ=
+			UDk71P3t/sOO/tA524S5UsOILWQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			1yPMb6sr1mW9CWn5UJFCO9DL7JD0dOykLj/rfiWY87s=
+			knvjLeQU6RPXlPv01jhR5kUgYvz9fVtPDBnmox0TykM=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoClientDownloadEngine.h</key>
@@ -414,11 +414,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kBm2NU1rzK577sQhRvwMiYJUlvQ=
+			L9fq6lbPw3fjfQY8tD74qFoyzHQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			HlL3bV6vdLSqsI8dtJCANBAmQFZKEQcFK8nHCmk4pCk=
+			GRWgZY3NQJSWOuh/H/SMrrxuQD0pWpfSndpij2shubI=
 			</data>
 		</dict>
 		<key>Headers/VirtuosoDefaultAVAssetResourceLoaderDelegate.h</key>
