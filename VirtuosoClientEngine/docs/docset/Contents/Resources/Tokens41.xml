@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVF_DownloadDataType.html">
+	<File path="Constants/kVDM_ManifestType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVF_DownloadDataType</TokenIdentifier>
-			<Abstract type="html">A convenience type to define potential data Virtuoso will download.  This includes segment types as well as manifest data.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDM_ManifestType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDM_ManifestType</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeManifest</TokenIdentifier>
-            <Abstract type="html">The data is for a segmented asset (HLS/HSS/DASH/etc) manifest</Abstract>
-            <Declaration>kVF_DataTypeManifest</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeMaster</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeMaster</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamEncryptionKey</TokenIdentifier>
-            <Abstract type="html">The data is for a video stream encryption key (HLS/HSS)</Abstract>
-            <Declaration>kVF_DataTypeStreamEncryptionKey</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeBitrate</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeBitrate</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamSegment</TokenIdentifier>
-            <Abstract type="html">The data is for a video stream segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_DataTypeStreamSegment</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeAudio</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeAudio</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamAudio</TokenIdentifier>
-            <Abstract type="html">The data is for a video stream audio segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_DataTypeStreamAudio</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeCC</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeCC</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_DataTypeStreamCC</TokenIdentifier>
-            <Abstract type="html">The data is for a video stream closed captioning segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_DataTypeStreamCC</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeIFRAME</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>hlsManifestTypeIFRAME</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

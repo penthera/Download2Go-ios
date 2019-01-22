@@ -30,6 +30,62 @@
 #import "VirtuosoPlayer.h"
 #endif
 
+/**---------------------------------------------------------------------------------------
+ * @name Download engine Delegates
+ *  ---------------------------------------------------------------------------------------
+ */
+#pragma mark
+#pragma mark Protocols
+#pragma mark
+
+/*!
+ *  @abstract This delegate defines the methods that can be implemented
+ *            to allow modification of Asset URL's before downloading.
+ *
+ *            This is an advanced feature which is entirely optional.
+ */
+@protocol VirtuosoPrepareUrlDelegate <NSObject>
+
+@optional
+
+/*!
+ *  @abstract Allows modification of the sub-manifest Url prior to download.
+ *
+ *  @discussion Fires during asset parsing, prior to the start of a download.
+ *
+ *  @param asset The VirtuosoAsset.
+ *  @param url The URL that is about to be downloaded.
+ *
+ *  @return Return the updated url, or nil to use the original url.
+ */
+-(NSString* _Nullable)prepareSubManifestURL:(NSString* _Nonnull)url manifestType:(kVDM_ManifestType)manifestType forAsset:(VirtuosoAsset* _Nonnull)asset;
+
+/*!
+ *  @abstract Allows modification of the Segment Url prior to download.
+ *
+ *  @discussion Fires during asset parsing, prior to the start of a download.
+ *
+ *  @param asset The VirtuosoAsset.
+ *  @param url The URL that is about to be downloaded.
+ *
+ *  @return Return the updated url, or nil to use the original url.
+ */
+-(NSString* _Nullable)prepareSegmentURL:(NSString* _Nonnull)url forAsset:(VirtuosoAsset* _Nonnull)asset;
+
+/*!
+ *  @abstract Allows modification of the video encryption key URL prior to download.
+ *
+ *  @discussion Fires during asset parsing, prior to the start of a download.
+ *
+ *  @param asset The VirtuosoAsset.
+ *  @param url The URL that is about to be downloaded.
+ *
+ *  @return Return the updated url, or nil to use the original url.
+ */
+-(NSString* _Nullable)prepareEncryptionKeyURL:(NSString* _Nonnull)url forAsset:(VirtuosoAsset* _Nonnull)asset;
+
+@end
+
 /*!
  *  @abstract Basic completion block used generically in methods
  */
@@ -74,6 +130,27 @@ typedef void (^BasicCompletionBlock)(void);
  */
 + (long long)allowableStorageRemaining;
 
+
+/**---------------------------------------------------------------------------------------
+ * @name Class Properties
+ *  ---------------------------------------------------------------------------------------
+ */
+
+#pragma mark
+#pragma mark Class Properties
+#pragma mark
+
+/*!
+ *  @abstract If set, this delegate is called as described in VirtuosoPrepareUrlDelegate.
+ *
+ *  @discussion This is an advanced feature. It allows the Customer to modify the various download
+ *              Url's before downloading. See VirtuosoPrepareUrlDelegate for more information.
+ *
+ *  @param prepareUrlDelegate An object implementing VirtuosoPrepareUrlDelegate.
+ */
+@property (nonatomic, weak, class)id <VirtuosoPrepareUrlDelegate> _Nullable prepareUrlDelegate;
+
+
 /**---------------------------------------------------------------------------------------
  * @name Creation
  *  ---------------------------------------------------------------------------------------
@@ -82,44 +159,6 @@ typedef void (^BasicCompletionBlock)(void);
 #pragma mark
 #pragma mark Creation
 #pragma mark
-
-/*!
- *  @abstract If set, this block is called whenever an asset is about to request data from
- *            a network resource.
- *
- *  @discussion Certain types of DRM or CDN may require that additional parameters be placed on URLs
- *              beyond what is contained in the asset manifest.  In some cases, those security tokens
- *              are dynamically generated and short lived.  If set, whenever Virtuoso is about to access
- *              a network resource, you can return additional URL parameters to include in the request
- *              in this block and they will be appended to the network URL.  If you do not need to use
- *              additional URL parameters, do not set this block.
- *
- *              In order to maximize performance, Virtuoso will store your returned response in memory.
- *              Therefore, this block may not be called for every network request, but it will be called
- *              as-needed.
- *
- *              The dictionary you return should include the URL parameter names as the keys and the
- *              parameter value as the values.
- *
- *  @param block A callback block used to retrieve additional URL parameters when downloading asset data.
- */
-+ (void)setRequestAdditionalParametersBlock:(nullable RequestAdditionalParametersBlock)block;
-
-/*!
- *  @abstract If set, this block is called whenever a segment for an asset is initially created during parsing
- *            of the manifest.
- *
- *  @discussion Customers can use this callback to modify the segment download URL before the
- *              Segment is downloaded. If this block is set, Virtuoso will invoke the block.
- *              Callers that need to update the segment's download URL should return an updated
- *              url. Returning nil indicates ignore the returned URL and use the original segment URL.
- *
- *              Callers that modifiy the URL must ensure they return a valid URL. Failure to do so will cause
- *              the download to fail.
- *
- *  @param block A callback block used to retrieve additional URL parameters when downloading asset data.
- */
-+ (void)setRequestAdditionalSegmentParametersBlock:(nullable RequestAdditionalSegmentParametersBlock)block;
 
 /*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.

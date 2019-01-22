@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVSM_MediaTypeCode.html">
+	<File path="Constants/kVSM_ManagerFailureCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVSM_MediaTypeCode</TokenIdentifier>
-			<Abstract type="html">A defined list of media types that the Manager is aware of and will auto-start downloads for.  The data source must include
-a media type value in the parsed data response for automatic downloads to be handled.  Any returned item that does not have one
-of these values will be ignored.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVSM_ManagerFailureCode</TokenIdentifier>
+			<Abstract type="html">The kVSM_ManagerFailureCode values are used to indicate various startup failure modes in the Manager.  The
+codes can be used to diagnose potential issues with startup, including communications issues with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="48"/>
@@ -16,71 +15,52 @@ of these values will be ignored.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFirst</TokenIdentifier>
-            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
-            <Declaration>kVSM_MediaTypeCodeFirst</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureAuthentication</TokenIdentifier>
+            <Abstract type="html">The provided application secret,key, or user ID is invalid</Abstract>
+            <Declaration>kVSM_ManagerFailureAuthentication</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFile</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeFile</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
             
             <NodeRef refid="48"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeAudio</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeAudio</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureBackplaneUnreachable</TokenIdentifier>
+            <Abstract type="html">The provided Backplane could not be reached</Abstract>
+            <Declaration>kVSM_ManagerFailureBackplaneUnreachable</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeVideo</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeVideo</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
             
             <NodeRef refid="48"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHLS</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeHLS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureUnknownBackplaneError</TokenIdentifier>
+            <Abstract type="html">The Backplane encountered an internal error or returned an unexpected response</Abstract>
+            <Declaration>kVSM_ManagerFailureUnknownBackplaneError</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="48"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHSS</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeHSS</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
             
             <NodeRef refid="48"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeLast</TokenIdentifier>
-            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
-            <Declaration>kVSM_MediaTypeCodeLast</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureNotAvailable</TokenIdentifier>
+            <Abstract type="html">The VirtuosoDownloadManager instance has not been properly started and is unavailable.
+        Manager methods will not function properly until after the VirtuosoDownloadManager has been started. </Abstract>
+            <Declaration>kVSM_ManagerFailureNotAvailable</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            
+            <NodeRef refid="48"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureOffline</TokenIdentifier>
+            <Abstract type="html">The device is currently offline and cannot perform the requested call</Abstract>
+            <Declaration>kVSM_ManagerFailureOffline</Declaration>
+            
+            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
             
             <NodeRef refid="48"/>
         </Token>

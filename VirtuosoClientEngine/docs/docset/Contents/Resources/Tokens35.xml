@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_EngineStartupCode.html">
+	<File path="Constants/kVDE_DownloadStatusType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_EngineStartupCode</TokenIdentifier>
-			<Abstract type="html">Returned by the various startup methods to indicate whether Virtuoso successfully started up.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadStatusType</TokenIdentifier>
+			<Abstract type="html">Allowable states that a Virtuoso asset can be in.  Returned via the &apos;status&apos; property.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccess</TokenIdentifier>
-            <Abstract type="html">Virtuoso successfully started up</Abstract>
-            <Declaration>kVDE_EngineStartupSuccess</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadComplete</TokenIdentifier>
+            <Abstract type="html">Download is complete; asset is stored locally</Abstract>
+            <Declaration>kVDE_DownloadComplete</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupAlreadyStarted</TokenIdentifier>
-            <Abstract type="html">Virtuoso was already started; no action occurred</Abstract>
-            <Declaration>kVDE_EngineStartupAlreadyStarted</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadProcessing</TokenIdentifier>
+            <Abstract type="html">Asset is downloaded, and is being written to its final location on disk.</Abstract>
+            <Declaration>kVDE_DownloadProcessing</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccessNoBackplane</TokenIdentifier>
-            <Abstract type="html">Virtuoso started up, but couldn&apos;t reach the  Backplane</Abstract>
-            <Declaration>kVDE_EngineStartupSuccessNoBackplane</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadActive</TokenIdentifier>
+            <Abstract type="html">Download is in progress for this asset</Abstract>
+            <Declaration>kVDE_DownloadActive</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,10 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupFailed</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to start up. Error codes from the Backplane
-        will be sent via NSNotificationCenter </Abstract>
-            <Declaration>kVDE_EngineStartupFailed</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadPending</TokenIdentifier>
+            <Abstract type="html">Asset is in download queue, waiting its turn</Abstract>
+            <Declaration>kVDE_DownloadPending</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -55,9 +54,49 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupInvalidOptions</TokenIdentifier>
-            <Abstract type="html">Virtuoso can&apos;t start up with the parameters provided</Abstract>
-            <Declaration>kVDE_EngineStartupInvalidOptions</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNone</TokenIdentifier>
+            <Abstract type="html">Asset exists, but is not in the download queue</Abstract>
+            <Declaration>kVDE_DownloadNone</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadExpired</TokenIdentifier>
+            <Abstract type="html">Virtuoso has marked this asset as expired</Abstract>
+            <Declaration>kVDE_DownloadExpired</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNotAvailable</TokenIdentifier>
+            <Abstract type="html">Asset has a publish date in the future, and thus unavailable</Abstract>
+            <Declaration>kVDE_DownloadNotAvailable</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadInitializing</TokenIdentifier>
+            <Abstract type="html">Asset is being analyzed and prepared for download</Abstract>
+            <Declaration>kVDE_DownloadInitializing</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadPendingOnPermission</TokenIdentifier>
+            <Abstract type="html">Asset is in download queue, waiting its turn, and has not been granted download permissions yet</Abstract>
+            <Declaration>kVDE_DownloadPendingOnPermission</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

@@ -602,40 +602,6 @@ typedef void(^AsyncCompleteBlock)(void);
 @end
 
 /*!
- *  @abstract If set, this block is called whenever an asset is about to request data from
- *            a network resource.
- *
- *  @discussion Certain types of DRM or CDN may require that additional parameters be placed on URLs
- *              beyond what is contained in the asset manifest.  In some cases, those security tokens
- *              are dynamically generated and short lived.  If set, whenever Virtuoso is about to access
- *              a network resource, you can return additional URL parameters to include in the request
- *              in this block and they will be appended to the network URL.  If you do not need to use
- *              additional URL parameters, do not set this block.  
- *
- *              In order to maximize performance, Virtuoso will store your returned response in memory.
- *              Therefore, this block may not be called for every network request, but it will be called
- *              as-needed.
- *
- *              The dictionary you return should include the URL parameter names as the keys and the
- *              parameter value as the values.
- */
-typedef NSDictionary<NSString*,NSString*>*(^RequestAdditionalParametersBlock)(VirtuosoAsset* asset);
-
-/*!
- *  @abstract If set, this block is called whenever a segment for an asset is initially created during parsing
- *            of the manifest.
- *
- *  @discussion Customers can use this callback to modify the segment download URL before the
- *              Segment is downloaded. If this block is set, Virtuoso will invoke the block.
- *              Callers that need to update the segment's download URL should return an updated
- *              url. Returning nil indicates ignore the returned URL and use the original segment URL.
- *
- *              Callers that modifiy the URL must ensure they return a valid URL. Failure to do so will cause
- *              the download to fail.
- */
-typedef NSString*(^RequestAdditionalSegmentParametersBlock)(VirtuosoAsset* asset, NSString* segmentUrl);
-
-/*!
  *  @typedef AssetParsingCompleteBlock
  *
  *  @discussion Fires when Virtuoso has finished parsing the asset
