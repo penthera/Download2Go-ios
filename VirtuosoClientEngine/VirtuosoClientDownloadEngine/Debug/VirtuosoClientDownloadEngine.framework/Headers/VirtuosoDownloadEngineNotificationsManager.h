@@ -16,13 +16,6 @@
 
 // MARK: DownloadEngine
 @required
-
-/*
- *  Called whenever the Engine status changes
- */
-// kDownloadEngineStatusDidChangeNotification
--(void)downloadEngineStatusChange:(kVDE_DownloadEngineStatus)status;
-
 /*
  *  Called whenever the Engine starts downloading a VirtuosoAsset object.
  */
@@ -36,28 +29,34 @@
 -(void)downloadEngineProgressUpdatedForAsset:(VirtuosoAsset* _Nonnull)asset;
 
 /*
- *  Called whenever the Engine reports refresh of DRM
- */
-// kDownloadEngineDRMRefreshForAssetNotification
--(void)downloadEngineDRMRefreshForAsset:(VirtuosoAsset* _Nonnull)asset;
-
-/*
  *  Called when an asset is being processed after background transfer
  */
 // kDownloadEngineProgressUpdatedForAssetProcessingNotification
 -(void)downloadEngineProgressUpdatedProcessingForAsset:(VirtuosoAsset* _Nonnull)asset;
 
 /*
- *  Called when internal logic changes queue order.  All we need to do is refresh the tables.
- */
-// kDownloadEngineInternalQueueUpdateNotification
--(void)downloadEngineInternalQueueUpdate;
-
-/*
  *  Called whenever the Engine reports a VirtuosoAsset as complete
  */
 // kDownloadEngineDidFinishDownloadingAssetNotification
 -(void)downloadEngineDidFinishDownloadingAsset:(VirtuosoAsset* _Nonnull)asset;
+
+@optional
+/*
+ *  Called whenever the Engine reports refresh of DRM
+ */
+// kDownloadEngineDRMRefreshForAssetNotification
+-(void)downloadEngineDRMRefreshForAsset:(VirtuosoAsset* _Nonnull)asset;
+
+/*
+ *  Called whenever the Engine status changes
+ */
+// kDownloadEngineStatusDidChangeNotification
+-(void)downloadEngineStatusChange:(kVDE_DownloadEngineStatus)status;
+/*
+ *  Called when internal logic changes queue order.  All we need to do is refresh the tables.
+ */
+// kDownloadEngineInternalQueueUpdateNotification
+-(void)downloadEngineInternalQueueUpdate;
 
 /*
  *  Called whenever the Engine encounters a recoverable issue.  These are events that MAY be of concern to the Caller, but the Engine will continue
@@ -88,8 +87,6 @@
 // kDownloadEngineEnableDisableChangeNotificationKey
 -(void)downloadEngineEnableStateChange:(Boolean)enabled;
 
-@optional
-
 // kDownloadEngineDidBeginDataStoreUpgradeNotification
 -(void)downloadEngineDidBeginDataStoreUpgrade;
 
@@ -102,9 +99,11 @@
 
 @property (nonatomic, strong, readonly)id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull delegate;
 @property (nonatomic, strong, readonly)NSOperationQueue* _Nonnull queue;
+@property (atomic, copy)NSString* _Nullable assetID;
 
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate;
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue;
+-(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue assetID:(NSString* _Nullable)assetID;
 
 @end
 

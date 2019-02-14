@@ -24,9 +24,11 @@
 
 @property (nonatomic, strong, readonly)id<VirtuosoAdsManagerNotificationDelegate> _Nonnull delegate;
 @property (nonatomic, strong, readonly)NSOperationQueue* _Nonnull queue;
+@property (atomic, copy)NSString* _Nullable assetID;
 
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoAdsManagerNotificationDelegate> _Nonnull)delegate;
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoAdsManagerNotificationDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue;
+-(instancetype _Nullable)initWithDelegate:(id<VirtuosoAdsManagerNotificationDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue assetID:(NSString* _Nullable)sssetID;
 
 @end
 

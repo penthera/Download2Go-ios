@@ -27,6 +27,13 @@
 @property (nonatomic,readonly)NSString* _Nonnull fileDownloadURL;
 
 /*!
+ *  @abstract tag optional string that can be used to identify
+ *
+ *  @discussion Specifying a tag will allow targeted searches
+ */
+@property (nonatomic,readonly)NSString* _Nullable tag;
+
+/*!
  *  @abstract URL for this ancillary
  *
  *  @discussion The remote URL for the ancillary
@@ -67,6 +74,16 @@
  */
 -(instancetype _Nullable)initWithDownloadUrl:(NSString* _Nonnull)downloadUrl;
 
+/*!
+ *  @abstract Creates instance of Ancillary file
+ *
+ *  @param downloadUrl URL of the file to be downloaded. Required.
+ *
+ *  @param tag user defined string that identifies this ancillary.
+ *
+ *  @return instance of the object
+ */
+-(instancetype _Nullable)initWithDownloadUrl:(NSString* _Nonnull)downloadUrl andTag:(NSString* _Nullable)tag;
 @end
 
 #endif
