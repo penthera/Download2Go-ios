@@ -8,12 +8,12 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VirtuosoClientSubscriptionManagerBitcode'
-  s.version          = '3.14.16'
+  s.version          = '3.14.17'
   s.summary          = 'A best-of-breed download and offline viewing solution for video.'
   s.homepage         = 'http://penthera.com'
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
   s.author           = { 'josh-penthera' => 'josh.pressnell@penthera.com' }
-  s.source           = { :http => 'https://github.com/penthera/Cache-and-Carry-ios/releases/download/v3.14.16/VirtuosoClientSubscriptionManagerBitcode.zip' }
+  s.source           = { :http => 'https://github.com/penthera/Cache-and-Carry-ios/releases/download/v3.14.17/VirtuosoClientSubscriptionManagerBitcode.zip' }
 
   s.ios.deployment_target = '8.0'
 

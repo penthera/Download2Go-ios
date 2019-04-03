@@ -13,11 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:renewalDate:forAsset:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</TokenIdentifier>
 			<Abstract type="html">Requests optional license parameters for license aquisition</Abstract>
 			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters renewalDate:(NSDate *_Nonnull *_Nullable)renewalDate forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters additionalHeaders:(NSDictionary *_Nonnull *_Nullable)customHeaders renewalDate:(NSDate *_Nonnull *_Nullable)renewalDate forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>urlSuffix</Name>
@@ -25,6 +25,9 @@
 				</Parameter><Parameter>
 					<Name>customParameters</Name>
 					<Abstract type="html">A dictionary of key-value pairs to be added to the license request as URL parameters</Abstract>
+				</Parameter><Parameter>
+					<Name>customHeaders</Name>
+					<Abstract type="html">A dictionary of key-value pairs to be added to the DRM request headers</Abstract>
 				</Parameter><Parameter>
 					<Name>renewalDate</Name>
 					<Abstract type="html">A NSDate timestamp indicating when the license should be renewed</Abstract>
@@ -34,7 +37,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:renewalDate:forAsset:</Anchor>
+			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

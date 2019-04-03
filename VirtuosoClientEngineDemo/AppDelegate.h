@@ -22,7 +22,7 @@
 
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,VirtuosoLoggerDelegate,VirtuosoLicenseManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,VirtuosoLoggerDelegate,VirtuosoLicenseManagerDelegate,VirtuosoLicenseProcessingDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ViewController *viewController;
