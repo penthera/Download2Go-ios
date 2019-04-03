@@ -148,19 +148,6 @@
     [VirtuosoLicenseManager setLicenseServerURL:@"https://widevine-proxy.appspot.com/proxy" forDRM:kVLM_Widevine]; // Google License Server
     [VirtuosoLicenseManager setDelegate:self];
     
-    NSMutableURLRequest* req = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:@"https://api.skychnl.net/channels/FYGNBZ95/fpscert"]];
-    req.allHTTPHeaderFields = @{@"sky-devinfo": @"atv",
-                                @"Accept": @"text/html",
-                                @"sky-ccode": @"FYGNBZ95",
-                                @"sky-deviceid": @"3066D97B-5873-49C5-A991-8F34C1BCFCC9",
-                                @"sky-token": @"mM4Ukr%7CvFxTxg2tp1sk09WPUFOaDFI3EWQFHyGEtPqIAwbHHcdD0ZAIoPRiuITjREc7gUdaC7i7kZmDDpFFMxWbo3JrrZLsoIJ7%2B8g%7C5z%7Cg07O%2Bvp8ice%7CEKP2BuqOYxXH%2BPFGhz9R0nTJnNe6q%7CaGr25BPJ3xLHGfLX9lQPa4w%3D"};
-    req.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    
-    NSData* cert = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
-    [VirtuosoLicenseManager setClientAppCertificate:cert forDRM:kVLM_FairPlay];
-    
-    [VirtuosoLicenseManager setLicenseServerURL:@"https://api.skychnl.net/channels/FYGNBZ95/videos/fps" forDRM:kVLM_FairPlay];
-    
     [VirtuosoDefaultAVAssetResourceLoaderDelegate setLicenseProcessingDelegate:self];
     
     /*
@@ -190,22 +177,7 @@
 }
 
 - (NSData *)prepareSPCForLicenseRequest:(NSData *)spc {
-    NSString* multipartData = [NSString stringWithFormat:@"--Boundary+4854176008C73200\r\nContent-Disposition: form-data; name=\"payload\"\r\n\r\n%@\r\n--Boundary+4854176008C73200--\r\n",[[NSString alloc]initWithData:[spc base64EncodedDataWithOptions:0] encoding:NSUTF8StringEncoding]];
-    return [multipartData dataUsingEncoding:NSUTF8StringEncoding];
-}
-
-- (void)lookupID:(NSString *__autoreleasing  _Nonnull *)licenseID andLicenseToken:(NSString *__autoreleasing  _Nonnull *)licenseToken forAsset:(VirtuosoAsset *)asset
-{
-    if( [asset.assetID isEqualToString:@"<ASSET_THAT_NEEDS_SPECIAL_TOKENS>"] )
-    {
-        *licenseID = @"<LICENSE ID>";
-        *licenseToken = @"<URL ENCODED TOKEN>";
-    }
-    else
-    {
-        *licenseID = nil;
-        *licenseToken = nil;
-    }
+    return spc;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -243,15 +215,6 @@
     // *urlSuffix = @"asset-unique-suffix-for-drm";                   // Gets appended onto the end of the DRM license URL
     // *customParameters = @{@"key":@"value"};                        // key/value pairs that get added to the URL query string
     // *renewalDate = [NSDate dateWithTimeIntervalSinceNow:48_HOURS]; // Expected DRM renewal timestamp
-    
-    *customHeaders = @{@"sky-devinfo": @"atv",
-                       @"User-Agent": @"Shudder/22 (iPhone; iOS 12.1; Scale/2.00)",
-                       @"Content-Type": @"multipart/form-data; boundary=Boundary+4854176008C73200",
-                       @"Accept-Language": @"en;q=1",
-                       @"Accept": @"text/html",
-                       @"sky-ccode": @"FYGNBZ95",
-                       @"sky-deviceid": @"3066D97B-5873-49C5-A991-8F34C1BCFCC9",
-                       @"sky-token": @"mM4Ukr%7CvFxTxg2tp1sk09WPUFOaDFI3EWQFHyGEtPqIAwbHHcdD0ZAIoPRiuITjREc7gUdaC7i7kZmDDpFFMxWbo3JrrZLsoIJ7%2B8g%7C5z%7Cg07O%2Bvp8ice%7CEKP2BuqOYxXH%2BPFGhz9R0nTJnNe6q%7CaGr25BPJ3xLHGfLX9lQPa4w%3D"};
 }
 
 @end

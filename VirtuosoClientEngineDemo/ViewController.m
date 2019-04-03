@@ -37,9 +37,9 @@
 // IMPORTANT:
 // The following three values must be initialzied, please contact support@penthera.com to obtain these keys
 // ---------------------------------------------------------------------------------------------------------
-static NSString* backplaneUrl = @"https://qa.penthera.com";    // <-- change this
-static NSString* publicKey = @"c9adba5e6ceeed7d7a5bfc9ac24197971bbb4b2c34813dd5c674061a961a899e";       // <-- change this
-static NSString* privateKey = @"41cc269275e04dcb4f2527b0af6e0ea11d227319fa743e4364255d07d7ed2830";      // <-- change this
+static NSString* backplaneUrl = @"";    // <-- change this
+static NSString* publicKey = @"";       // <-- change this
+static NSString* privateKey = @"";      // <-- change this
 
 static Boolean hasStartedUp = NO;
 static NSDate* startDownloadTime;

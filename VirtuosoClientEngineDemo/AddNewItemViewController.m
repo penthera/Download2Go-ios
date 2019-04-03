@@ -83,7 +83,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 6;
+    return 5;
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -107,10 +107,6 @@
 
         case 4:
             return @"Failure Modes";
-            break;
-            
-        case 5:
-            return @"Customer Video";
             break;
             
         default:
@@ -141,10 +137,6 @@
 
         case 4:
             return 9;
-            break;
-            
-        case 5:
-            return 1;
             break;
             
         default:
@@ -292,10 +284,6 @@
             default:
                 break;
         }
-    }
-    else if( indexPath.section == 5 )
-    {
-        cell.textLabel.text = @"AMC Test Video";
     }
     
     return cell;
@@ -951,35 +939,6 @@
             default:
                 break;
         }
-    }
-    else if( indexPath.section == 5 )
-    {
-        [VirtuosoAsset assetWithAssetID:@"AMCTEST"
-                            description:@"AMC FairPlay Test Video"
-                            manifestUrl:@"https://amcshudd.vo.llnwd.net/e1/A7TIV9SL/POAK02MBM6ZI/hd/hls_v5/POAK02MBM6ZI_encrypted-ATV.m3u8"
-                         protectionType:kVDE_AssetProtectionTypeFairPlay
-                  includeEncryptionKeys:NO
-                         maximumBitrate:INT_MAX
-                            publishDate:nil
-                             expiryDate:nil
-                     assetDownloadLimit:-1
-                         enableFastPlay:NO
-                               userInfo:nil
-                     onReadyForDownload:^(VirtuosoAsset *parsedAsset) {
-                         NSLog(@"Item is ready for download: %@",parsedAsset);
-                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                         [[VirtuosoDownloadEngine instance] addToQueue:parsedAsset atIndex:NSUIntegerMax onComplete:nil];
-                         [self dismissViewControllerAnimated:YES completion:nil];
-                     } onParseComplete:^(VirtuosoAsset *parsedAsset, NSError* error) {
-                         NSLog(@"Finished parsing %@", parsedAsset);
-                         if( error != nil )
-                         {
-                             NSLog(@"Detected error creating new asset: %@",error);
-                             [MBProgressHUD hideHUDForView:self.view animated:YES];
-                             [self dismissViewControllerAnimated:YES completion:nil];
-                         }
-                     }];
-
     }
 }
 
