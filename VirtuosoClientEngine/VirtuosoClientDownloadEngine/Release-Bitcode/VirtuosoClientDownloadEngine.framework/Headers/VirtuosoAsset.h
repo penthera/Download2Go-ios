@@ -30,6 +30,9 @@
 #import "VirtuosoPlayer.h"
 #endif
 
+@class VirtuosoAncillaryFile;
+@class VirtuosoAdsProvider;
+
 /**---------------------------------------------------------------------------------------
  * @name Download engine Delegates
  *  ---------------------------------------------------------------------------------------
@@ -53,8 +56,9 @@
  *
  *  @discussion Fires during asset parsing, prior to the start of a download.
  *
- *  @param asset The VirtuosoAsset.
- *  @param url The URL that is about to be downloaded.
+ *  @param url The URL that is about to be downloaded
+ *  @param manifestType The manifest type for the URL that is about to be downloaded
+ *  @param asset The VirtuosoAsset
  *
  *  @return Return the updated url, or nil to use the original url.
  */
@@ -65,8 +69,8 @@
  *
  *  @discussion Fires during asset parsing, prior to the start of a download.
  *
- *  @param asset The VirtuosoAsset.
- *  @param url The URL that is about to be downloaded.
+ *  @param url The URL that is about to be downloaded
+ *  @param asset The VirtuosoAsset
  *
  *  @return Return the updated url, or nil to use the original url.
  */
@@ -77,14 +81,15 @@
  *
  *  @discussion Fires during asset parsing, prior to the start of a download.
  *
- *  @param asset The VirtuosoAsset.
- *  @param url The URL that is about to be downloaded.
+ *  @param url The URL that is about to be downloaded
+ *  @param asset The VirtuosoAsset
  *
  *  @return Return the updated url, or nil to use the original url.
  */
 -(NSString* _Nullable)prepareEncryptionKeyURL:(NSString* _Nonnull)url forAsset:(VirtuosoAsset* _Nonnull)asset;
 
 @end
+
 
 /*!
  *  @abstract Basic completion block used generically in methods
@@ -130,7 +135,6 @@ typedef void (^BasicCompletionBlock)(void);
  */
 + (long long)allowableStorageRemaining;
 
-
 /**---------------------------------------------------------------------------------------
  * @name Class Properties
  *  ---------------------------------------------------------------------------------------
@@ -145,8 +149,6 @@ typedef void (^BasicCompletionBlock)(void);
  *
  *  @discussion This is an advanced feature. It allows the Customer to modify the various download
  *              Url's before downloading. See VirtuosoPrepareUrlDelegate for more information.
- *
- *  @param prepareUrlDelegate An object implementing VirtuosoPrepareUrlDelegate.
  */
 @property (nonatomic, weak, class)id <VirtuosoPrepareUrlDelegate> _Nullable prepareUrlDelegate;
 
@@ -166,9 +168,11 @@ typedef void (^BasicCompletionBlock)(void);
  *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
  *              This one relies on the default expiry-after-download and expiry-after-play rules.
  *
+ *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
+ *
  *  @param assetURL The remote URL for the file (where to download from).
  *
- *  @param assetID A unique identifier for the asset. Used in all log events.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -211,9 +215,11 @@ typedef void (^BasicCompletionBlock)(void);
  *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
  *              This constructor sets the expiry after download and play intervals explicitly.
  *
+ *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
+ *
  *  @param assetURL The remote URL for the file (where to download from).
  *
- *  @param assetID A unique identifier for the asset. Used in all log events.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -258,6 +264,101 @@ typedef void (^BasicCompletionBlock)(void);
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
                               onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
+/*!
+ *  @abstract Creates a new in-memory VirtuosoAsset object.
+ *
+ *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
+ *              This constructor sets the expiry after download and play intervals explicitly.
+ *
+ *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
+ *
+ *  @param assetURL The remote URL for the file (where to download from).
+ *
+ *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *
+ *  @param description A description of the asset.  Virtuoso only uses this in log output.
+ *
+ *  @param publishDate Virtuoso will not provide API access to the asset until this date. Nil means "now."
+ *
+ *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
+ *
+ *  @param expiryAfterDownload Amount of time after Virtuoso completes download of asset that
+ *                             Virtuoso will delete the asset. In seconds.  <=0.0 means no expiry.
+ *
+ *  @param expiryAfterPlay Amount of time after the asset is first played that
+ *                         Virtuoso will delete the asset. In seconds.  <=0.0 means no expiry.
+ *
+ *  @param assetDownloadLimit Virtuoso applies this value instead of the backplane-defined global asset download limit
+ *                            A value < 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+ *                            value > 0 will be applied to download permissions checks for this asset.
+ *
+ *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+ *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+ *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
+ *
+ *  @param ancillaries Optional array of VirtuosoAncillaryFile to be downloaded
+ *
+ *  @param adsProvider BETA Feature. Optional AdsProvider to use with this Asset.
+ *
+ *  @param userInfo A convenience field allowing you to associate arbitrary data with an asset.
+ *                  Virtuoso will serialize this data and store it, but not explicitly use this data.
+ *                  The provided userInfo must be property-list compatible. May be nil.
+ *
+ *  @param readyBlock Called when the asset is ready to be added to the download queue
+ *
+ *  @param completeBlock Called when asset parsing completes. May be nil.
+ *
+ *  @return A new VirtuosoAsset object, or nil if an error occurred.
+ */
++ (nullable VirtuosoAsset*)assetWithRemoteURL:(nonnull NSString*)assetURL
+                                      assetID:(nonnull NSString*)assetID
+                                  description:(nonnull NSString*)description
+                                  publishDate:(nullable NSDate*)publishDate
+                                   expiryDate:(nullable NSDate*)expiryDate
+                          expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
+                              expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                           assetDownloadLimit:(int)assetDownloadLimit
+                               enableFastPlay:(Boolean)enableFastPlay
+                                  ancillaries:(nullable NSArray*)ancillaries
+                                  adsProvider:(nullable VirtuosoAdsProvider*)adsProvider
+                                     userInfo:(nullable NSDictionary*)userInfo
+                           onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+
+/*!
+ *  @abstract Adds an ancillary file to the download for this asset
+ *
+ *  @param file VirtuosoAncillaryFile object describing the file to be downloaded
+ *
+ *  @return Boolean indicating success or failure
+ */
+- (Boolean)addAncillaryFile:(VirtuosoAncillaryFile* _Nonnull)file;
+
+/*!
+ *  @abstract Adds an ancillary file to the download for this asset
+ *
+ *  @param file VirtuosoAncillaryFile object describing the file to be downloaded
+ *  @param asset VirtuosoAsset object to add an ancillary file download to
+ *
+ *  @return Boolean indicating success or failure
+ */
++ (Boolean)addAncillaryFile:(VirtuosoAncillaryFile* _Nonnull)file inAsset:(VirtuosoAsset* _Nonnull)asset;
+
+/*!
+ *  @abstract Retrieves all of the ancillary files assocated with this asset
+ *
+ *  @return Array of VirtuosoAncillaryFile objects. Empty if none.
+ */
+-(NSArray<VirtuosoAncillaryFile*>*_Nonnull)findAllAncillaries;
+
+/*!
+ *  @abstract Retrieves ancillary files with the specified tag for this asset
+ *
+ *  @param tag The tag to filter on
+ *
+ *  @return Array of VirtuosoAncillaryFile objects with the specified tag. Empty if none.
+ */
+-(NSArray<VirtuosoAncillaryFile*>*_Nonnull)findAllAncillariesWithTag:(NSString* _Nonnull)tag;
 
 /**---------------------------------------------------------------------------------------
  * @name Retrieval
@@ -412,6 +513,7 @@ typedef void (^BasicCompletionBlock)(void);
  *
  *  @param deletedBlock Notifies that Virtuoso has finished deleting all asset resources from disk.
  */
+
 - (void)deleteAssetOnComplete:(nullable AsyncCompleteBlock)deletedBlock;
 
 /*!
@@ -771,6 +873,14 @@ typedef void (^BasicCompletionBlock)(void);
 @property (nonatomic,strong,nullable) NSDate* expiryDate;
 
 /*!
+ *  @abstract When this asset's DRM was last refreshed
+ *
+ *  @discussion For Virtuoso managed DRM, this property is updated with the Date when
+ *              DRM was last successfully refreshed.
+ */
+@property (nonatomic,strong,nullable) NSDate* lastDRMRefresh;
+
+/*!
  *  @abstract After the asset has completed download, as soon as possible after 'expiryAfterDownload'
  *            time has elapsed, Virtuoso automatically deletes the asset.
  *
@@ -864,6 +974,12 @@ typedef void (^BasicCompletionBlock)(void);
  *              defined value.  This value is provided during creation of the asset and cannot be changed after creation.
  */
 @property (nonatomic,readonly) int assetDownloadLimit;
+
+/*!
+ *  @abstract BETA Feature. AdsProvider assocated with the Asset.
+ *
+ */
+@property (nonatomic, strong, readonly)VirtuosoAdsProvider* _Nonnull adsProvider;
 
 @end
 

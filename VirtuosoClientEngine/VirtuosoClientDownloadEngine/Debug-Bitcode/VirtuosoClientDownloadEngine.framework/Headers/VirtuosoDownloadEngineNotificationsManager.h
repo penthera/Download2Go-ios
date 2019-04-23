@@ -11,6 +11,7 @@
 #import "VirtuosoConstants.h"
 
 @class VirtuosoAsset;
+@class VirtuosoAncillaryFile;
 
 @protocol VirtuosoDownloadEngineNotificationsDelegate <NSObject>
 
@@ -59,6 +60,7 @@
 // kDownloadEngineDidFinishDownloadingAssetNotification
 -(void)downloadEngineDidFinishDownloadingAsset:(VirtuosoAsset* _Nonnull)asset;
 
+
 /*
  *  Called whenever the Engine encounters a recoverable issue.  These are events that MAY be of concern to the Caller, but the Engine will continue
  *  the download process without intervention.
@@ -89,6 +91,11 @@
 -(void)downloadEngineEnableStateChange:(Boolean)enabled;
 
 @optional
+/*
+ *  Called whenever the Engine reports a VirtuosoAncillaryFile as complete
+ */
+// kDownloadEngineDidFinishDownloadingAssetNotification
+-(void)downloadEngineDidFinishDownloadingAncillary:(VirtuosoAncillaryFile* _Nonnull)ancillary forAsset:(VirtuosoAsset* _Nonnull)asset;
 
 // kDownloadEngineDidBeginDataStoreUpgradeNotification
 -(void)downloadEngineDidBeginDataStoreUpgrade;

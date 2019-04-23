@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_EngineStartupCode.html">
+	<File path="Constants/kVDE_AssetProtectionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_EngineStartupCode</TokenIdentifier>
-			<Abstract type="html">Returned by the various startup methods to indicate whether Virtuoso successfully started up.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetProtectionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetProtectionType</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,11 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccess</TokenIdentifier>
-            <Abstract type="html">Virtuoso successfully started up</Abstract>
-            <Declaration>kVDE_EngineStartupSuccess</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypePassthrough</TokenIdentifier>
+            <Abstract type="html">The asset is not protected, is protected by an external DRM system, or is protected by some form of
+        native encryption.  This value indicates that no special handling is required for download or playback
+        of this asset, and is the default value. </Abstract>
+            <Declaration>kVDE_AssetProtectionTypePassthrough</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +26,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupAlreadyStarted</TokenIdentifier>
-            <Abstract type="html">Virtuoso was already started; no action occurred</Abstract>
-            <Declaration>kVDE_EngineStartupAlreadyStarted</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeFairPlay</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Apple FairPlay DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeFairPlay</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,30 +36,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccessNoBackplane</TokenIdentifier>
-            <Abstract type="html">Virtuoso started up, but couldn&apos;t reach the  Backplane</Abstract>
-            <Declaration>kVDE_EngineStartupSuccessNoBackplane</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="36"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupFailed</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to start up. Error codes from the Backplane
-        will be sent via NSNotificationCenter </Abstract>
-            <Declaration>kVDE_EngineStartupFailed</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="36"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupInvalidOptions</TokenIdentifier>
-            <Abstract type="html">Virtuoso can&apos;t start up with the parameters provided</Abstract>
-            <Declaration>kVDE_EngineStartupInvalidOptions</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeWidevine</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Google Widevine DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeWidevine</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

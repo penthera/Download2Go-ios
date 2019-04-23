@@ -78,6 +78,8 @@
 		
 		<option value="//api/name/devicePushToken">devicePushToken</option>
 		
+		<option value="//api/name/disableAutoRenewDRMLicense">disableAutoRenewDRMLicense</option>
+		
 		<option value="//api/name/downloadOverCellular">downloadOverCellular</option>
 		
 		<option value="//api/name/drmPassword">drmPassword</option>
@@ -121,8 +123,6 @@
 		<option value="//api/name/subtitleLanguagesToDownload">subtitleLanguagesToDownload</option>
 		
 		<option value="//api/name/trustSelfSignedServerCertificates">trustSelfSignedServerCertificates</option>
-		
-		<option value="//api/name/useStreamPackagerForBackgroundDownloads">useStreamPackagerForBackgroundDownloads</option>
 		
 	</optgroup>
 	
@@ -838,6 +838,53 @@ Values less than or equal to zero mean no expiry.</p>
 As soon as possible after &lsquo;defaultExpiryAfterPlay&rsquo; time has elapsed, Virtuoso
 will automatically delete the downloaded asset.
 A values zero or less means &ldquo;never expire.&rdquo;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableAutoRenewDRMLicense" title="disableAutoRenewDRMLicense"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableAutoRenewDRMLicense">&nbsp;&nbsp;disableAutoRenewDRMLicense</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If YES, Virtuoso will disable.  Defaults to NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean disableAutoRenewDRMLicense</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, the download engine will automatically renew DRM license in 48 hours,
+but user can disable this feature using this property</p>
 			</div>
 			
 
@@ -1699,57 +1746,6 @@ engine.additionalNetworkHeaders = @{&ldquo;AccessKey&rdquo;:&ldquo;<UUID>&rdquo;
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/useStreamPackagerForBackgroundDownloads" title="useStreamPackagerForBackgroundDownloads"></a>
-	<h3 class="method-title"><code><a href="#//api/name/useStreamPackagerForBackgroundDownloads">&nbsp;&nbsp;useStreamPackagerForBackgroundDownloads</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Enables Penthera&rsquo;s StreamPackager service for background download of segmented VirtuosoAssets (HLS, HSS, DASH, etc).</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean useStreamPackagerForBackgroundDownloads</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Penthera&rsquo;s StreamPackager (a server proxy) allows Virtuoso to more efficiently download
-segmented <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> formats even when the enclosing app isn&rsquo;t in the foreground.
-To disable this feature (and continue with slower background downloads), set this property to NO.
-Default is YES.</p><div class="warning"><p><strong>Warning:</strong> Since Virtuoso uses this value during startup, you must supply this value before
-calling any other Virtuoso methods. Changes to this value won&rsquo;t take effect
-until the next time you call startup.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/manualDeviceUDID" title="manualDeviceUDID"></a>
 	<h3 class="method-title"><code><a href="#//api/name/manualDeviceUDID">&nbsp;&nbsp;manualDeviceUDID</a></code>
 </h3>
@@ -2130,7 +2126,8 @@ on your particular requirements, the SDK allows you to configure exactly which c
 multiple codecs are present.  In order to download only the desired codecs, specify the specific audio
 codecs here (E.G. ec-3, ac-3, mp4a.40.2, etc).  If you set this property to nil or an empty array,
 then all available codecs will be downloaded.</p><div class="warning"><p><strong>Warning:</strong> In order for this feature to be supported, your master manifests must properly specify the audio codecs
-in the CODECS field of the #EXT-X-STREAM-INF definitions.</p></div>
+in the CODECS field of the #EXT-X-STREAM-INF definitions.</p></div><div class="warning"><p><strong>Warning:</strong> It is possibe to configure a download with values that are not natively supported on the Device. To protect
+against this, always test against the actual device.</p></div>
 			</div>
 			
 
@@ -2624,7 +2621,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-04-03</p>
+						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-04-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

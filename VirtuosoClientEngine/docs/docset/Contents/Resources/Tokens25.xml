@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPrepareUrlDelegate.html">
+	<File path="Protocols/VirtuosoLicenseManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPrepareUrlDelegate</TokenIdentifier>
-			<Abstract type="html">This delegate defines the methods that can be implemented
-to allow modification of Asset URL&apos;s before downloading.
-
-This is an advanced feature which is entirely optional.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLicenseManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate used to request optional license parameters for license aquisition</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
@@ -16,62 +13,31 @@ This is an advanced feature which is entirely optional.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSubManifestURL:manifestType:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the sub-manifest Url prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</TokenIdentifier>
+			<Abstract type="html">Requests optional license parameters for license aquisition</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)prepareSubManifestURL:(NSString *_Nonnull)url manifestType:(kVDM_ManifestType)manifestType forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters additionalHeaders:(NSDictionary *_Nonnull *_Nullable)customHeaders renewalDate:(NSDate *_Nonnull *_Nullable)renewalDate forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
+					<Name>urlSuffix</Name>
+					<Abstract type="html">A URL suffix to be appended to the base license URL.</Abstract>
+				</Parameter><Parameter>
+					<Name>customParameters</Name>
+					<Abstract type="html">A dictionary of key-value pairs to be added to the license request as URL parameters</Abstract>
+				</Parameter><Parameter>
+					<Name>customHeaders</Name>
+					<Abstract type="html">A dictionary of key-value pairs to be added to the DRM request headers</Abstract>
+				</Parameter><Parameter>
+					<Name>renewalDate</Name>
+					<Abstract type="html">A NSDate timestamp indicating when the license should be renewed</Abstract>
 				</Parameter><Parameter>
 					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset.</Abstract>
+					<Abstract type="html">The asset requiring an offline playback license</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSubManifestURL:manifestType:forAsset:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSegmentURL:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the Segment Url prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)prepareSegmentURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSegmentURL:forAsset:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareEncryptionKeyURL:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the video encryption key URL prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nullable)prepareEncryptionKeyURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareEncryptionKeyURL:forAsset:</Anchor>
+			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		

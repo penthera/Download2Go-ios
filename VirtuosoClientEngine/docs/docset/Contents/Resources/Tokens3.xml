@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoClientHTTPServer.html">
+	<File path="Classes/VirtuosoAVPlayer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoClientHTTPServer</TokenIdentifier>
-			<Abstract type="html">A proxy layer that sits between the video player and a Virtuoso-managed (video) asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAVPlayer</TokenIdentifier>
+			<Abstract type="html">A subclass of AVPlayer that is directly integrated with the Virtuoso SDK via the
+VirtuosoPlayer protocol.</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
             
 			
 			<NodeRef refid="3"/>
@@ -13,208 +14,98 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initWithAsset:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on a random port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAsset:</Anchor>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initOnPort:withAsset:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on the specified port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset *)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>port</Name>
-					<Abstract type="html">The local port to open with the localhost server</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initOnPort:withAsset:</Anchor>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initWithAsset:usingFastPlay:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on a random port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)asset usingFastPlay:(Boolean)usingFastPlay</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
-				</Parameter><Parameter>
-					<Name>usingFastPlay</Name>
-					<Abstract type="html">If YES, then the service is setup for FastPlay playback.  The server will
-return a FastPlay playback manifest suitable for online streaming with FastPlay
-playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
-playback is not currently available, then this method returns nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAsset:usingFastPlay:</Anchor>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initOnPort:withAsset:usingFastPlay:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on the specified port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset *)asset usingFastPlay:(Boolean)usingFastPlay</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>port</Name>
-					<Abstract type="html">The local port to open with the localhost server</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
-				</Parameter><Parameter>
-					<Name>usingFastPlay</Name>
-					<Abstract type="html">If YES, then the service is setup for FastPlay playback.  The server will
-return a FastPlay playback manifest suitable for online streaming with FastPlay
-playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
-playback is not currently available, then this method returns nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initOnPort:withAsset:usingFastPlay:</Anchor>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/shutdown</TokenIdentifier>
-			<Abstract type="html">Shuts down a running proxy instance</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>- (void)shutdown</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
-			<Anchor>//api/name/shutdown</Anchor>
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/startup</TokenIdentifier>
-			<Abstract type="html">Restarts a previously shutdown proxy instance.  Does nothing if the receiver is already running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>- (void)startup</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
-			<Anchor>//api/name/startup</Anchor>
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/setRunning:</TokenIdentifier>
-			<Abstract type="html">Indicates whether the receiver is currently running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/prepareToPlay</TokenIdentifier>
+			<Abstract type="html">Prepares the player to play</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Boolean running</Declaration>
+			<Declaration>- (void)prepareToPlay</Declaration>
 			
 			
-			<Anchor>//api/name/running</Anchor>
+			<Anchor>//api/name/prepareToPlay</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/running</TokenIdentifier>
-			<Abstract type="html">Indicates whether the receiver is currently running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/cleanup</TokenIdentifier>
+			<Abstract type="html">Must be called when playback permanently stops (E.G. when the view controller exits)</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Boolean running</Declaration>
-			
-			
-			<Anchor>//api/name/running</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientHTTPServer/running</TokenIdentifier>
-			<Abstract type="html">Indicates whether the receiver is currently running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Boolean running</Declaration>
+			<Declaration>- (void)cleanup</Declaration>
 			
 			
-			<Anchor>//api/name/running</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/setPlaybackURL:</TokenIdentifier>
-			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
-			
-			
-			<Anchor>//api/name/playbackURL</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/playbackURL</TokenIdentifier>
-			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
-			
-			
-			<Anchor>//api/name/playbackURL</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientHTTPServer/playbackURL</TokenIdentifier>
-			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
-			
-			
-			<Anchor>//api/name/playbackURL</Anchor>
+			<Anchor>//api/name/cleanup</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

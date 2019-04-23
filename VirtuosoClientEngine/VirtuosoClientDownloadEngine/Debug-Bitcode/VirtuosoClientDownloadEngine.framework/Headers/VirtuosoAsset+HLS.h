@@ -38,7 +38,9 @@
  *  @discussion This constructor uses the default expiry rules.  To customize expiry rules for this asset,
  *              use the constructors that take expiry parameters, or change the expiry values after creation.
  *
- *  @param assetID A unique identifier for the asset. Used in all log events.
+ *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
+ *
+ *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -97,7 +99,9 @@
  *
  *  @discussion This constructor allows you to set custom expiry rules.
  *
- *  @param assetID A unique identifier for the asset. Used in all log events.
+ *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
+ *
+ *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -144,20 +148,95 @@
  *
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
-                       description:(nonnull NSString*)description
-                       manifestUrl:(nonnull NSString*)manifestUrl
-                    protectionType:(kVDE_AssetProtectionType)protectionType
-             includeEncryptionKeys:(Boolean)includeEncryption
-                    maximumBitrate:(long long)maximumBitrate
-                       publishDate:(nullable NSDate*)publishDate
-                        expiryDate:(nullable NSDate*)expiryDate
-               expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
-                   expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
-                assetDownloadLimit:(int)assetDownloadLimit
-                    enableFastPlay:(Boolean)enableFastPlay
-                          userInfo:(nullable NSDictionary*)userInfo
-                onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                                description:(nonnull NSString*)description
+                                manifestUrl:(nonnull NSString*)manifestUrl
+                             protectionType:(kVDE_AssetProtectionType)protectionType
+                      includeEncryptionKeys:(Boolean)includeEncryption
+                             maximumBitrate:(long long)maximumBitrate
+                                publishDate:(nullable NSDate*)publishDate
+                                 expiryDate:(nullable NSDate*)expiryDate
+                        expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
+                            expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                         assetDownloadLimit:(int)assetDownloadLimit
+                             enableFastPlay:(Boolean)enableFastPlay
+                                   userInfo:(nullable NSDictionary*)userInfo
+                         onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+
+/*!
+ *  @abstract Creates a new in-memory HLS VirtuosoAsset object.
+ *
+ *  @discussion This constructor allows you to set custom expiry rules.
+ *
+ *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
+ *
+ *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *
+ *  @param description A description of the asset.  Virtuoso only uses this in log output.
+ *
+ *  @param manifestUrl Where the manifest lives on the Internet.
+ *
+ *  @param protectionType You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+ *                        instructed differently by Penthera support.
+ *
+ *  @param includeEncryption If YES, then this method will download any encryption keys in
+ *                           manifest.  Normally, you would pass YES, but this allows for custom behaviors.
+ *
+ *  @param maximumBitrate For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+ *                        profile whose bitrate doesn't exceed this value. A value of 1 means "use the lowest
+ *                        bitrate." If there's no profile of lower bitrate than maximumBitrate, Virtuoso will
+ *                        select the lowest bitrate profile.  A value of INT_MAX means "use the highest bitrate."
+ *
+ *  @param publishDate Virtuoso will not provide API access to the asset until this date. Nil means "now."
+ *
+ *  @param expiryDate Virtuoso will not provide API access to the asset after this date. Nil means no expiry.
+ *
+ *  @param expiryAfterDownload  Amount of time after Virtuoso completes download of the asset that
+ *                              Virtuoso will delete the asset. In seconds. <=0 means no expiry.
+ *
+ *  @param expiryAfterPlay Amount of time after the asset is first played that
+ *                         Virtuoso will delete the asset. In seconds. <=0 means no expiry.
+ *
+ *  @param assetDownloadLimit Virtuoso applies this value instead of the backplane-defined global asset download limit
+ *                            A value < 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+ *                            value > 0 will be applied to download permissions checks for this asset.
+ *
+ *  @param enableFastPlay If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+ *                        as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+ *                        will be returned to the player immediatley, eliminating startup buffer time for streamed playback.
+ *
+ *  @param ancillaries Optional array of VirtuosoAncillaryFile's
+ *
+ *  @param adsProvider BETA Feature. Instance of AdsProvider to use with this Asset.
+ *
+ *  @param userInfo A convenience field allowing you to associate arbitrary data with an asset.
+ *                  Virtuoso will serialize this data and store it, but not explicitly use this data.
+ *                  The provided userInfo must be property-list compatible. May be nil.
+ *
+ *  @param readyBlock Called when the asset is ready to be added to the download queue
+ *
+ *  @param completeBlock Called when asset parsing completes. May be nil.
+ *
+ *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
+ *
+ */
++ (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
+                                description:(nonnull NSString*)description
+                                manifestUrl:(nonnull NSString*)manifestUrl
+                             protectionType:(kVDE_AssetProtectionType)protectionType
+                      includeEncryptionKeys:(Boolean)includeEncryption
+                             maximumBitrate:(long long)maximumBitrate
+                                publishDate:(nullable NSDate*)publishDate
+                                 expiryDate:(nullable NSDate*)expiryDate
+                        expiryAfterDownload:(NSTimeInterval)expiryAfterDownload
+                            expiryAfterPlay:(NSTimeInterval)expiryAfterPlay
+                         assetDownloadLimit:(int)assetDownloadLimit
+                             enableFastPlay:(Boolean)enableFastPlay
+                                ancillaries:(nullable NSArray*)ancillaries
+                                  adsProvider:(nullable VirtuosoAdsProvider*)adsProvider   // NEW parameter
+                                   userInfo:(nullable NSDictionary*)userInfo
+                         onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
 
 /**---------------------------------------------------------------------------------------
  * @name Update HLS Assets
@@ -210,6 +289,23 @@
 - (nullable NSString*)hlsManifestLocalPathForType:(kVDM_ManifestType)type forSubtype:(nullable NSString*)subtype;
 
 /**---------------------------------------------------------------------------------------
+ * @name HLS Ads
+ *  ---------------------------------------------------------------------------------------
+ */
+/*!
+ *  @abstract Starts async process to refresh Advertisements associated with this asset.
+ *
+ *  @discussion This method starts an async process to refresh ads assocated with this asset.
+ *              NSNotification kReloadAdsCompleteNotification is raised when this call completes.
+ *
+ *              NSNotification UserInfo:
+ *              - kDownloadEngineNotificationAssetKey: VirtuosoAsset* to which reloadAds was called
+ *              - kDownloadEngineNotificationSuccessValueKey: NSNumber* Boolean TRUE = Success
+ *              - kDownloadEngineNotificationErrorKey: NSError* identifies cause of error
+ */
+- (void)reloadAds;
+
+/**---------------------------------------------------------------------------------------
  * @name HLS Properties
  *  ---------------------------------------------------------------------------------------
  */
@@ -218,6 +314,7 @@
  *  @abstract The local file path for the saved FastPlay manifest file
  */
 - (nullable NSString*)hlsManifestFastPlayPath;
+
 
 @end
 

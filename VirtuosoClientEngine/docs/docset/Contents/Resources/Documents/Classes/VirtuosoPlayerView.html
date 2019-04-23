@@ -64,7 +64,13 @@
 		
 		<option value="//api/name/contentURL">contentURL</option>
 		
+		<option value="//api/name/currentPlaybackPosition">currentPlaybackPosition</option>
+		
+		<option value="//api/name/currentProgress">currentProgress</option>
+		
 		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/duration">duration</option>
 		
 		<option value="//api/name/isPlaying">isPlaying</option>
 		
@@ -75,6 +81,8 @@
 		<option value="//api/name/playBackTotalTime">playBackTotalTime</option>
 		
 		<option value="//api/name/playPauseButton">playPauseButton</option>
+		
+		<option value="//api/name/playbackTimeRemaining">playbackTimeRemaining</option>
 		
 		<option value="//api/name/player">player</option>
 		
@@ -92,9 +100,13 @@
 		
 		<option value="//api/name/cleanup">- cleanup</option>
 		
+		<option value="//api/name/mediaOptionsForMediaCharacteristic:">- mediaOptionsForMediaCharacteristic:</option>
+		
 		<option value="//api/name/pause">- pause</option>
 		
 		<option value="//api/name/play">- play</option>
+		
+		<option value="//api/name/setMediaSelectionOption:forMediaCharacteristic:">- setMediaSelectionOption:forMediaCharacteristic:</option>
 		
 		<option value="//api/name/viewWillTransitionToSize:withTransitionCoordinator:">- viewWillTransitionToSize:withTransitionCoordinator:</option>
 		
@@ -606,6 +618,170 @@ playback rate or seeking to a particular time in the playback stream.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentProgress" title="currentProgress"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentProgress">&nbsp;&nbsp;currentProgress</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method to set/return the current <a href="#//api/name/player">player</a> progress as a value from 0.0 - 1.0 inclusive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) double currentProgress</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentPlaybackPosition" title="currentPlaybackPosition"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentPlaybackPosition">&nbsp;&nbsp;currentPlaybackPosition</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method to return the current playback position, in seconds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/duration" title="duration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/duration">&nbsp;&nbsp;duration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method to return the total duration of the loaded video, in seconds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval duration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playbackTimeRemaining" title="playbackTimeRemaining"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playbackTimeRemaining">&nbsp;&nbsp;playbackTimeRemaining</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method to return the playback time remaining, in seconds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -905,6 +1081,143 @@ to a particular location in the video.</p>
 </div>
 						</div>
 						
+
+						<a title="Alternative Language Options" name="task_Alternative Language Options"></a>
+						<h2 class="task-title">Alternative Language Options</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mediaOptionsForMediaCharacteristic:" title="mediaOptionsForMediaCharacteristic:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mediaOptionsForMediaCharacteristic:">&ndash;&nbsp;mediaOptionsForMediaCharacteristic:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience interface used to retrieve the available audio and subtitle track options.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;AVMediaSelectionOption*&gt; *)mediaOptionsForMediaCharacteristic:(nonnull AVMediaCharacteristic)<em>characteristic</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characteristic</code></th>
+						<td><p>Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSArray containing the available media selection options for the given characteristic</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method returns the available media selection options (languages) for either audio or subtitle tracks.
+Only AVMediaCharacteristicAudible and AVMediaCharacteristicLegible are valid inputs.  Specifying any other
+media characteristic will return null.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setMediaSelectionOption:forMediaCharacteristic:" title="setMediaSelectionOption:forMediaCharacteristic:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMediaSelectionOption:forMediaCharacteristic:">&ndash;&nbsp;setMediaSelectionOption:forMediaCharacteristic:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience interface used to set a particular audio/subtitle language option in the <a href="#//api/name/player">player</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setMediaSelectionOption:(nullable AVMediaSelectionOption *)<em>option</em> forMediaCharacteristic:(nonnull AVMediaCharacteristic)<em>characteristic</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>option</code></th>
+						<td><p>One of the options returned from <a href="#//api/name/mediaOptionsForMediaCharacteristic:">mediaOptionsForMediaCharacteristic:</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>characteristic</code></th>
+						<td><p>Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Only AVMediaCharacteristicAudible and AVMediaCharacteristicLegible are valid inputs.  Specifying any other
+media characteristic will have no effect.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
 					</div>
 					
 					
@@ -917,7 +1230,7 @@ to a particular location in the video.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-04-03</p>
+						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-04-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

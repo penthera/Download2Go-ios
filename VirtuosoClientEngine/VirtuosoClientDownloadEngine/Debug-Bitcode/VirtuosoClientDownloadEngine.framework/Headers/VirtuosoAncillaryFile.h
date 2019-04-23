@@ -1,10 +1,17 @@
-//
-//  VirtuosoAncillaryFile.h
-//  VirtuosoClientDownloadEngine
-//
-//  Created by jk on 6/25/18.
-//  Copyright © 2018 Penthera. All rights reserved.
-//
+/*!
+ *  @header VirtuosoAncillaryFile
+ *
+ *  PENTHERA CONFIDENTIAL
+ *
+ *  Notice: This file is the property of Penthera Inc.
+ *  The concepts contained herein are proprietary to Penthera Inc.
+ *  and may be covered by U.S. and/or foreign patents and/or patent
+ *  applications, and are protected by trade secret or copyright law.
+ *  Distributing and/or reproducing this information is forbidden unless
+ *  prior written permission is obtained from Penthera Inc.
+ *
+ *  @copyright (c) 2018 Penthera Inc. All Rights Reserved.
+ */
 #ifndef VIRTUOSOANCILLARYFILE_INCLUDE
 #define VIRTUOSOANCILLARYFILE_INCLUDE
 
@@ -16,8 +23,15 @@
 #import <AppKit/AppKit.h>
 #endif
 
+/*!
+ *  @abstract An abstract object that can be downloaded "as part" of a VirtuosoAsset
+ *            download.  These may represent out-of-manifest closed caption files,
+ *            cover art images, or other files that you may want to keep associated
+ *            with the asset.
+ *
+ *            This is an advanced feature which is entirely optional.
+ */
 @interface VirtuosoAncillaryFile : NSObject
-
 
 /*!
  *  @abstract URL for this ancillary
@@ -25,6 +39,13 @@
  *  @discussion The remote URL for the ancillary
  */
 @property (nonatomic,readonly)NSString* _Nonnull fileDownloadURL;
+
+/*!
+ *  @abstract tag optional string that can be used to identify
+ *
+ *  @discussion Specifying a tag will allow targeted searches
+ */
+@property (nonatomic,readonly)NSString* _Nullable tag;
 
 /*!
  *  @abstract URL for this ancillary
@@ -59,6 +80,13 @@
 #endif
 
 /*!
+ *  @abstract Indicates the ancillary has been downloaded
+ *
+ *  @discussion Boolean value true when downloaded
+ */
+@property (nonatomic,readonly)Boolean isDownloaded;
+
+/*!
  *  @abstract Creates instance of Ancillary file
  *
  *  @param downloadUrl URL of the file to be downloaded. Required.
@@ -66,6 +94,17 @@
  *  @return instance of the object
  */
 -(instancetype _Nullable)initWithDownloadUrl:(NSString* _Nonnull)downloadUrl;
+
+/*!
+ *  @abstract Creates instance of Ancillary file
+ *
+ *  @param downloadUrl URL of the file to be downloaded. Required.
+ *
+ *  @param tag user defined string that identifies this ancillary.
+ *
+ *  @return instance of the object
+ */
+-(instancetype _Nullable)initWithDownloadUrl:(NSString* _Nonnull)downloadUrl andTag:(NSString* _Nullable)tag;
 
 @end
 

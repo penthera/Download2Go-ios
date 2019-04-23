@@ -48,6 +48,13 @@ extern NSString* kDownloadEngineStatusDidChangeNotificationStatusKey;
 extern NSString* kDownloadEngineNotificationAssetKey;
 
 /*!
+ *  @constant kDownloadEngineNotificationAncillaryKey
+ *
+ *  @abstract Key for the VirtuosoAncillaryFile object in the userInfo dictionary
+ */
+extern NSString* kDownloadEngineNotificationAncillaryKey;
+
+/*!
  *  @constant kDownloadEngineNotificationContinuingAssetsKey
  *
  *  @abstract When the enclosing app goes to the background, Virtuoso may automatically continue downloading some
@@ -114,6 +121,14 @@ extern NSString* kDownloadEngineStatusDidChangeNotification;
 extern NSString* kDownloadEngineDidStartDownloadingAssetNotification;
 
 /*!
+ *  @constant kDownloadEngineDRMRefreshForAssetNotification
+ *
+ *  @abstract Fired after Virtuoso has updated DRM for an Asset.  The userInfo dictionary
+ *            will contain the asset (in 'kDownloadEngineNotificationAssetKey').
+ */
+extern NSString* kDownloadEngineDRMRefreshForAssetNotification;
+
+/*!
  *  @constant kDownloadEngineProgressUpdatedForAssetNotification
  *
  *  @abstract Fired after Virtuoso has made some progress downloading an asset.  The userInfo dictionary
@@ -156,6 +171,14 @@ extern NSString* kDownloadEngineInternalQueueUpdateNotification;
  *            'kDownloadEngineNotificationAssetKey').
  */
 extern NSString* kDownloadEngineDidFinishDownloadingAssetNotification;
+
+/*!
+ *  @constant kDownloadEngineDidFinishedAncillaryDownloadNotification
+ *
+ *  @abstract Fired when an ancillary download completes.  The userInfo dictionary will contain the ancillary file object (in
+ *            'kDownloadEngineNotificationAncillaryKey') and the asset object (in 'kDownloadEngineNotificationAssetKey').
+ */
+extern NSString* kDownloadEngineDidFinishedAncillaryDownloadNotification;
 
 /*!
  *  @constant kDownloadEngineDidEncounterErrorNotification
@@ -318,5 +341,19 @@ extern NSString* kDownloadEngineDidBeginDataStoreUpgradeNotification;
  *            provide notice to the user at this time.
  */
 extern NSString* kDownloadEngineDidFinishDataStoreUpgradeNotification;
+
+/*!
+ *  @constant kReloadAdsCompleteNotification
+ *
+ *  @abstract Fires when ads refresh finishes.
+ */
+extern NSString* kReloadAdsCompleteNotification;
+
+/*!
+ *  @constant kDownloadEngineEnableDisableChangeNotificationKey
+ *
+ *  @abstract Key for the engine enable or disable in the userInfo dictionary
+ */
+extern NSString* kDownloadEngineEnableDisableChangeNotificationKey;
 
 #endif

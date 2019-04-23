@@ -23,21 +23,21 @@
 @interface VirtuosoAdsProvider : NSObject
 
 /*!
- *  @abstract Class convienence method to create a server-side Ads Provider
+ *  @abstract BETA Feature. Class convienence method to create a server-side Ads Provider
  *
  *  @return A new VirtuosoAdsProvider object.
  */
 +(VirtuosoAdsProvider* _Nonnull)serverAdsProvider;
 
 /*!
- *  @abstract Class convienence method to create a default Ads Provider
+ *  @abstract BETA Feature. Class convienence method to create a default Ads Provider
  *
  *  @return A new VirtuosoAdsProvider object.
  */
 +(VirtuosoAdsProvider* _Nonnull)disableAds;
 
 /*!
- *  @abstract True if Ads are required for this Asset
+ *  @abstract BETA Feature. True if Ads are required for this Asset
  *
  *  @discussion This prperty can be used to check whether Ads are required for this Asset.
  */

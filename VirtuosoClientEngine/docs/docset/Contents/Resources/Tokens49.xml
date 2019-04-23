@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVSM_MediaTypeCode.html">
+	<File path="Constants/kVF_SegmentType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVSM_MediaTypeCode</TokenIdentifier>
-			<Abstract type="html">A defined list of media types that the Manager is aware of and will auto-start downloads for.  The data source must include
-a media type value in the parsed data response for automatic downloads to be handled.  Any returned item that does not have one
-of these values will be ignored.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVF_SegmentType</TokenIdentifier>
+			<Abstract type="html">Allowable Virtuoso types for segments</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
@@ -16,71 +14,71 @@ of these values will be ignored.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFirst</TokenIdentifier>
-            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
-            <Declaration>kVSM_MediaTypeCodeFirst</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeUnknown</TokenIdentifier>
+            <Abstract type="html">The file is of unknown type (default)</Abstract>
+            <Declaration>kVF_SegmentTypeUnknown</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFile</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeFile</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="49"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeAudio</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeAudio</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeSubRange</TokenIdentifier>
+            <Abstract type="html">The file is a sub-range of a larger monolithic file (MP4)</Abstract>
+            <Declaration>kVF_SegmentTypeSubRange</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeVideo</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeVideo</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="49"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHLS</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeHLS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamEncryptionKey</TokenIdentifier>
+            <Abstract type="html">The file is a video stream encryption key (HLS/HSS)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamEncryptionKey</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHSS</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>kVSM_MediaTypeCodeHSS</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="49"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeLast</TokenIdentifier>
-            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
-            <Declaration>kVSM_MediaTypeCodeLast</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamSegment</TokenIdentifier>
+            <Abstract type="html">The file is a video stream segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamSegment</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamAudio</TokenIdentifier>
+            <Abstract type="html">The file is a video stream audio segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamAudio</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamCC</TokenIdentifier>
+            <Abstract type="html">The file is a video stream closed captioning segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamCC</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeAncillary</TokenIdentifier>
+            <Abstract type="html">The file is a ancillary</Abstract>
+            <Declaration>kVF_SegmentTypeAncillary</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="49"/>
         </Token>

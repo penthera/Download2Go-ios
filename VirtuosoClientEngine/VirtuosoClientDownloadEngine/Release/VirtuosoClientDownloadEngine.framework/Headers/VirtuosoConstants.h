@@ -93,49 +93,52 @@ typedef NS_ENUM(NSInteger, kVBP_StatusCode)
     
     /** Backplane encountered an internal error */
     kVBP_InternalError = -1,
-    
+
     /** The client's request to Backplane was formatted incorrectly */
     kVBP_InvalidRequest = -2,
-    
+
     /** The supplied credentials are invalid on the Backplane */
     kVBP_InvalidCredentials = -3,
-    
+
     /** The device is already linked with a different User account on the Backplane */
     kVBP_DeviceAlreadyExists = -4,
-    
+
     /** The client attempted to use the Backplane without first registering the device */
     kVBP_UnregisteredDevice = -5,
-    
+
     /** The Backplane reported this User has reached the max enabled device limit */
     kVBP_DeviceLimitReached = -6,
-    
+
     /** The request object to save device settings is missing some required fields */
     kVBP_InvalidDeviceSettings = -7,
-    
+
     /** The client submitted an unsupported log event to the Backplane */
     kVBP_NoSuchEvent = -8,
-    
+
     /** The client submitted an event with invalid format to the Backplane */
     kVBP_InvalidEventSyntax = -9,
-    
+
     /** The Backplane cannot be contacted because the device is currently offline */
     kVBP_NoConnection = -10,
-    
+
     /** The current sync did not get processed because another sync is already in process */
     kVBP_SyncDeferred = -11,
-    
+
     /** The current sync did not get processed because a sync with the Backplane has already occurred recently */
     kVBP_SyncThrottled = -12,
+
+    /** The Backplane reported denied due to device enablement limit reached */
+    kVBP_DeviceEnablementLimitReached = -14,
     
     /** Permission to download an asset was denied due to maximum download per account rules */
     kVBP_DownloadDeniedForMaxDownloadsPerAccount = -61,
-    
+
     /** Permission to download an asset was denied due to maximum lifetime downloads for asset rules */
     kVBP_DownloadDeniedForMaxLifetimeDownloadsPerAsset = -62,
-    
+
     /** Permission to download an asset was denied due to external policy restrictions */
     kVBP_DownloadDeniedForExternalPolicy = -63,
-    
+
     /** Permission to download an asset was denied due to maximum copies of asset per account rules */
     kVBP_DownloadDeniedForMaxCopiesOfAssetPerAccount = -64,
 };
@@ -177,14 +180,10 @@ typedef NS_ENUM(NSInteger, kVDE_EngineStartupCode)
     
     /** Virtuoso was already started; no action occurred */
     kVDE_EngineStartupAlreadyStarted = -1,
-    
+
     /** Virtuoso started up, but couldn't reach the  Backplane */
     kVDE_EngineStartupSuccessNoBackplane = -2,
-    
-    /** Virtuoso failed to start up. Error codes from the Backplane
-        will be sent via NSNotificationCenter */
-    kVDE_EngineStartupFailed = -3,
-    
+
     /** Virtuoso can't start up with the parameters provided */
     kVDE_EngineStartupInvalidOptions = -4,
 };
@@ -199,59 +198,44 @@ typedef NS_ENUM(NSInteger, kVDE_EngineStartupCode)
 typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
 {
     /** The file length advertised by the HTTP server doesn't match the expected size.
-        If file size validation is off, then the download proceeds anyway. If it's on, 
+        If file size validation is off, then the download proceeds anyway. If it's on,
         Virtuoso aborts the download and sets the appropriate error codes. */
     kVDE_ServerFileSizeDisagreesWithExpectedFileSize = -1,
-    
-    /** When the download completed, the observed final size didn't match the expected size.  
-        If file size validation is on, Virtuoso deletes the file and retries the download. 
-        If it's off, Virtuoso marks the download complete and successful. */
-    kVDE_FileLengthMismatch = -2,
-    
-    /** If you supplied an expected MD5 for the file AND the observed MD5 didn't match, then
-        Virtuoso deletes the file and restarts the download. */
-    kVDE_FileMD5Mismatch = -3,
-    
-    /** If the MIME type returned from the HTTP server doesn't match the required MIME types 
+
+    /** If the MIME type returned from the HTTP server doesn't match the required MIME types
         whitelist you provided earlier, then Virtuoso aborts the download. */
     kVDE_InvalidMimeType = -4,
-    
+
     /** Some network issue (HTTP 404,416,etc) caused the download to fail. */
     kVDE_NetworkError = -5,
-    
-    /** The OS couldn't write the file to disk. In most cases, the root cause is a full disk. */
-    kVDE_FileSystemError = -6,
-    
-    /** The asset requires a dynamic CDN base URL, and one was not available. */
-    kVDE_CDNError = -7,
-    
+
     /** The asset was configured with an invalid protection type. */
     kVDE_InvalidProtectionType = -8,
-    
+
     /** There was an internal error.  Please contact Penthera support. */
     kVDE_InternalError = -9,
-    
+
     /** Virtuoso was unable to obtain permission to download the asset because the lifetime download limit for this asset was reached. */
     kVDE_PermissionsErrorLifetimeDownloadLimit = -10,
-    
+
     /** Virtuoso was unable to obtain permission to download the asset because the account has reached its maximum download limit. */
     kVDE_PermissionsErrorMaximumDownloadsPerAccount = -11,
-    
+
     /** Virtuoso was unable to obtain permission to download the asset because the external policy service denied permission. */
     kVDE_PermissionsErrorExternalPolicyServiceDenied = -12,
 
     /** Virtuoso was unable to create the VirtuosoAsset due to configuration restrictions. */
     kVDE_InvalidConfigurationOptions = -13,
-    
+
     /** Virtuoso was unable to obtain permission to download the asset because too many copies of this asset are already in the account. */
     kVDE_PermissionsErrorMaximumCopiesPerAccount = -14,
-    
+
     /** Virtuoso was unable to create the VirtuosoAsset due to invalid manifest. */
     kVDE_InvalidManifest = -15,
-    
+
     /** Virtuoso was unable to create the VirtuosoAsset due to asset being deleted. */
     kVDE_AssetDeleted = -16,
-    
+
     /** Virtuoso was unable to create a VirtuosoSegment. */
     kVDE_CreateSegmentFailed = -17,
     
@@ -355,6 +339,10 @@ typedef NS_ENUM(NSInteger, kVF_SegmentType)
     
     /** The file is a video stream closed captioning segment (HLS/HSS/DASH) */
     kVF_SegmentTypeStreamCC = 6,
+    
+    /** The file is a ancillary */
+    kVF_SegmentTypeAncillary = 7,
+
 };
 
 /*!
@@ -641,10 +629,19 @@ typedef void(^AssetAddToQueueCompleteBlock)(VirtuosoAsset* asset, NSError* error
  */
 typedef NS_ENUM(NSInteger, kVDM_ManifestType)
 {
+    /** The master manifest */
     hlsManifestTypeMaster = 0,
+    
+    /** A sub-manifest defining a video rendition */
     hlsManifestTypeBitrate = 1,
+    
+    /** A sub-manifest defining an audio track */
     hlsManifestTypeAudio = 2,
+    
+    /** A sub-manifest defining a closed caption track */
     hlsManifestTypeCC = 3,
+    
+    /** A sub-manifest defining I-Frames */
     hlsManifestTypeIFRAME = 4,
 };
 

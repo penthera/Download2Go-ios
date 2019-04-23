@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoLicenseManager.html">
+	<File path="Classes/VirtuosoDevice.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoLicenseManager</TokenIdentifier>
-			<Abstract type="html">VirtuosoLicenseManager is a static class that handles interactions with DRM platforms.</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoDevice</TokenIdentifier>
+			<Abstract type="html">Represents a specific device known to Virtuoso</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
@@ -13,269 +13,518 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/widevineAvailable</TokenIdentifier>
-			<Abstract type="html">Indicates whether built-in DASH video playback and Widevine DRM is available</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoDevice/currentDevice</TokenIdentifier>
+			<Abstract type="html">Retrieves the current device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)widevineAvailable</Declaration>
+			<Declaration>+ (VirtuosoDevice *_Nullable)currentDevice</Declaration>
 			
 			
-			<Anchor>//api/name/widevineAvailable</Anchor>
+			<Anchor>//api/name/currentDevice</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/fairplayStreamingAvailable</TokenIdentifier>
-			<Abstract type="html">Indicates whether FairPlay DRM for streaming video is available</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setNickname:</TokenIdentifier>
+			<Abstract type="html">This device&apos;s nickname. Same as the device ID, by default.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)fairplayStreamingAvailable</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *nickname</Declaration>
 			
 			
-			<Anchor>//api/name/fairplayStreamingAvailable</Anchor>
+			<Anchor>//api/name/nickname</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/fairplayPersistenceAvailable</TokenIdentifier>
-			<Abstract type="html">Indicates whether FairPlay DRM for downloaded video is available</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/nickname</TokenIdentifier>
+			<Abstract type="html">This device&apos;s nickname. Same as the device ID, by default.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)fairplayPersistenceAvailable</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *nickname</Declaration>
 			
 			
-			<Anchor>//api/name/fairplayPersistenceAvailable</Anchor>
+			<Anchor>//api/name/nickname</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setLicenseServerURL:forDRM:</TokenIdentifier>
-			<Abstract type="html">Sets the license server URL for a particular DRM type</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/nickname</TokenIdentifier>
+			<Abstract type="html">This device&apos;s nickname. Same as the device ID, by default.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (void)setLicenseServerURL:(nonnull NSString *)url forDRM:(kVLM_DRMType)type</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *nickname</Declaration>
+			
+			
+			<Anchor>//api/name/nickname</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/updateNickname:onComplete:</TokenIdentifier>
+			<Abstract type="html">Sets a new nickname for this device.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>- (void)updateNickname:(nonnull NSString *)newNickname onComplete:(nullable DeviceUpdateResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL to the license server for the given DRM type</Abstract>
-				</Parameter><Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The DRM type to configure</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setLicenseServerURL:forDRM:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/licenseServerURLForDRM:</TokenIdentifier>
-			<Abstract type="html">Retrieves the configured license server URL for a particular DRM type</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (nullable NSString *)licenseServerURLForDRM:(kVLM_DRMType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The DRM type to retrieve the license URL for</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The configured license server URL for the given DRM type</Abstract></ReturnValue>
-			<Anchor>//api/name/licenseServerURLForDRM:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/downloadClientAppCertificateFromURL:forDRM:</TokenIdentifier>
-			<Abstract type="html">Downloads the client app certificate from the provided URL</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)downloadClientAppCertificateFromURL:(nonnull NSString *)url forDRM:(kVLM_DRMType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL to the client app certificate</Abstract>
-				</Parameter><Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The DRM type to configure</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/downloadClientAppCertificateFromURL:forDRM:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setClientAppCertificate:forDRM:</TokenIdentifier>
-			<Abstract type="html">Sets the client app certificate from a previously downloaded or internal source</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)setClientAppCertificate:(nonnull NSData *)certificate forDRM:(kVLM_DRMType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>certificate</Name>
-					<Abstract type="html">The data representing the client app certificate</Abstract>
-				</Parameter><Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The DRM type to configure</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setClientAppCertificate:forDRM:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/clientAppCertificateForDRM:</TokenIdentifier>
-			<Abstract type="html">Retrieves the previously downloaded client app security certificate, if it exists</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (nullable NSData *)clientAppCertificateForDRM:(kVLM_DRMType)type</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>type</Name>
-					<Abstract type="html">The DRM type to configure</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The client app security certificate, if it exists, for the given DRM type</Abstract></ReturnValue>
-			<Anchor>//api/name/clientAppCertificateForDRM:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/downloadOfflineLicenseForAsset:</TokenIdentifier>
-			<Abstract type="html">Downloads a DRM playback license for later offline playback</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)downloadOfflineLicenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The asset requiring an offline playback license</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/downloadOfflineLicenseForAsset:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/removeLicenseForAsset:whenComplete:</TokenIdentifier>
-			<Abstract type="html">Asynchronously deletes any previously downloaded license for the given asset</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset whenComplete:(nullable void ( ^ ) ( void ))onComplete</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The asset to remove DRM licensing for</Abstract>
+					<Name>newNickname</Name>
+					<Abstract type="html">The new nickname for this device</Abstract>
 				</Parameter><Parameter>
 					<Name>onComplete</Name>
-					<Abstract type="html">A block to call when DRM licenses have been removed</Abstract>
+					<Abstract type="html">A callback block indicating the result of the update</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/removeLicenseForAsset:whenComplete:</Anchor>
+			<Anchor>//api/name/updateNickname:onComplete:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/removeLicenseForAsset:</TokenIdentifier>
-			<Abstract type="html">Synchronously deletes any previously downloaded license for the given asset</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setDownloadEnabled:</TokenIdentifier>
+			<Abstract type="html">Whether this device should allow downloads</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The asset to remove DRM licensing for</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) Boolean downloadEnabled</Declaration>
 			
-			<Anchor>//api/name/removeLicenseForAsset:</Anchor>
+			
+			<Anchor>//api/name/downloadEnabled</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/licenseForAsset:</TokenIdentifier>
-			<Abstract type="html">Returns the DRM license for the provided asset, or nil if a license does not exist</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/downloadEnabled</TokenIdentifier>
+			<Abstract type="html">Whether this device should allow downloads</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (nullable NSData *)licenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The asset to remove DRM licensing for</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The DRM license for the asset, if it is accessible</Abstract></ReturnValue>
-			<Anchor>//api/name/licenseForAsset:</Anchor>
+			<Declaration>@property (nonatomic, readonly) Boolean downloadEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/downloadEnabled</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setLicense:forAsset:</TokenIdentifier>
-			<Abstract type="html">Sets the DRM license for the provided asset</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/downloadEnabled</TokenIdentifier>
+			<Abstract type="html">Whether this device should allow downloads</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (void)setLicense:(nonnull NSData *)license forAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Declaration>@property (nonatomic, readonly) Boolean downloadEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/downloadEnabled</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/updateDownloadEnabled:onComplete:</TokenIdentifier>
+			<Abstract type="html">Enables (or disables) downloads for this device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>- (void)updateDownloadEnabled:(Boolean)enabled onComplete:(nullable DeviceUpdateResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>license</Name>
-					<Abstract type="html">The opaque DRM license data object for the asset</Abstract>
+					<Name>enabled</Name>
+					<Abstract type="html">The requested new &apos;download-enabled&apos; flag for this device.</Abstract>
 				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The asset to set DRM licensing for</Abstract>
+					<Name>onComplete</Name>
+					<Abstract type="html">A callback block indicating the result of the update</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setLicense:forAsset:</Anchor>
+			<Anchor>//api/name/updateDownloadEnabled:onComplete:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/registerAVAssetResourceLoaderDelegate:</TokenIdentifier>
-			<Abstract type="html">Configures the VirtuosoLicenseManager to utilize a particular AVAssetResourceLoaderDelegate class</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setDeviceID:</TokenIdentifier>
+			<Abstract type="html">Virtuoso automatically generates a unique ID for each device.
+This UUID is not tied to any iOS-defined UUID.  It will persist across application
+upgrades and reinstalls, but will not persist across device restores.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
 			
-			<Declaration>+ (void)registerAVAssetResourceLoaderDelegate:(nonnull Class&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)resourceLoaderDelegateClass</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
+			
+			
+			<Anchor>//api/name/deviceID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/deviceID</TokenIdentifier>
+			<Abstract type="html">Virtuoso automatically generates a unique ID for each device.
+This UUID is not tied to any iOS-defined UUID.  It will persist across application
+upgrades and reinstalls, but will not persist across device restores.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
+			
+			
+			<Anchor>//api/name/deviceID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/deviceID</TokenIdentifier>
+			<Abstract type="html">Virtuoso automatically generates a unique ID for each device.
+This UUID is not tied to any iOS-defined UUID.  It will persist across application
+upgrades and reinstalls, but will not persist across device restores.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceID</Declaration>
+			
+			
+			<Anchor>//api/name/deviceID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setExternalDeviceID:</TokenIdentifier>
+			<Abstract type="html">When you call the VirtuosoDownloadEngine&apos;s startupWithBackplane method,
+you may supply your own, optional, external device ID.
+Virtuoso reports this value to the Backplane, which maintains this
+value along with the Virtuoso-assigned device ID.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/externalDeviceID</TokenIdentifier>
+			<Abstract type="html">When you call the VirtuosoDownloadEngine&apos;s startupWithBackplane method,
+you may supply your own, optional, external device ID.
+Virtuoso reports this value to the Backplane, which maintains this
+value along with the Virtuoso-assigned device ID.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/externalDeviceID</TokenIdentifier>
+			<Abstract type="html">When you call the VirtuosoDownloadEngine&apos;s startupWithBackplane method,
+you may supply your own, optional, external device ID.
+Virtuoso reports this value to the Backplane, which maintains this
+value along with the Virtuoso-assigned device ID.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setClientVersion:</TokenIdentifier>
+			<Abstract type="html">The Virtuoso version reported by the CFBundleVersion info.plist entry.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *clientVersion</Declaration>
+			
+			
+			<Anchor>//api/name/clientVersion</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/clientVersion</TokenIdentifier>
+			<Abstract type="html">The Virtuoso version reported by the CFBundleVersion info.plist entry.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *clientVersion</Declaration>
+			
+			
+			<Anchor>//api/name/clientVersion</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/clientVersion</TokenIdentifier>
+			<Abstract type="html">The Virtuoso version reported by the CFBundleVersion info.plist entry.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *clientVersion</Declaration>
+			
+			
+			<Anchor>//api/name/clientVersion</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setDeviceModel:</TokenIdentifier>
+			<Abstract type="html">The device model reported by the operating system (e.g. &quot;iPhone5&quot;)</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceModel</Declaration>
+			
+			
+			<Anchor>//api/name/deviceModel</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/deviceModel</TokenIdentifier>
+			<Abstract type="html">The device model reported by the operating system (e.g. &quot;iPhone5&quot;)</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceModel</Declaration>
+			
+			
+			<Anchor>//api/name/deviceModel</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/deviceModel</TokenIdentifier>
+			<Abstract type="html">The device model reported by the operating system (e.g. &quot;iPhone5&quot;)</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceModel</Declaration>
+			
+			
+			<Anchor>//api/name/deviceModel</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setDeviceVersion:</TokenIdentifier>
+			<Abstract type="html">The OS version reported by the operating system (e.g. &quot;6.1&quot;)</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceVersion</Declaration>
+			
+			
+			<Anchor>//api/name/deviceVersion</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/deviceVersion</TokenIdentifier>
+			<Abstract type="html">The OS version reported by the operating system (e.g. &quot;6.1&quot;)</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceVersion</Declaration>
+			
+			
+			<Anchor>//api/name/deviceVersion</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/deviceVersion</TokenIdentifier>
+			<Abstract type="html">The OS version reported by the operating system (e.g. &quot;6.1&quot;)</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *deviceVersion</Declaration>
+			
+			
+			<Anchor>//api/name/deviceVersion</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setLastSyncDate:</TokenIdentifier>
+			<Abstract type="html">When this device last synced with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastSyncDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastSyncDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/lastSyncDate</TokenIdentifier>
+			<Abstract type="html">When this device last synced with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastSyncDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastSyncDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/lastSyncDate</TokenIdentifier>
+			<Abstract type="html">When this device last synced with the Backplane</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastSyncDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastSyncDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setLastModifiedDate:</TokenIdentifier>
+			<Abstract type="html">When this device&apos;s info was last changed</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastModifiedDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastModifiedDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/lastModifiedDate</TokenIdentifier>
+			<Abstract type="html">When this device&apos;s info was last changed</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastModifiedDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastModifiedDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/lastModifiedDate</TokenIdentifier>
+			<Abstract type="html">When this device&apos;s info was last changed</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *lastModifiedDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastModifiedDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setCreatedDate:</TokenIdentifier>
+			<Abstract type="html">When the Backplane created a record for this device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *createdDate</Declaration>
+			
+			
+			<Anchor>//api/name/createdDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/createdDate</TokenIdentifier>
+			<Abstract type="html">When the Backplane created a record for this device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *createdDate</Declaration>
+			
+			
+			<Anchor>//api/name/createdDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/createdDate</TokenIdentifier>
+			<Abstract type="html">When the Backplane created a record for this device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *createdDate</Declaration>
+			
+			
+			<Anchor>//api/name/createdDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setPushToken:</TokenIdentifier>
+			<Abstract type="html">The current push token associated with this device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *pushToken</Declaration>
+			
+			
+			<Anchor>//api/name/pushToken</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/pushToken</TokenIdentifier>
+			<Abstract type="html">The current push token associated with this device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *pushToken</Declaration>
+			
+			
+			<Anchor>//api/name/pushToken</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/pushToken</TokenIdentifier>
+			<Abstract type="html">The current push token associated with this device</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *pushToken</Declaration>
+			
+			
+			<Anchor>//api/name/pushToken</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/setIsThisDevice:</TokenIdentifier>
+			<Abstract type="html">Whether this object represents the device we&apos;re running on now</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isThisDevice</Declaration>
+			
+			
+			<Anchor>//api/name/isThisDevice</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/isThisDevice</TokenIdentifier>
+			<Abstract type="html">Whether this object represents the device we&apos;re running on now</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isThisDevice</Declaration>
+			
+			
+			<Anchor>//api/name/isThisDevice</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDevice/isThisDevice</TokenIdentifier>
+			<Abstract type="html">Whether this object represents the device we&apos;re running on now</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isThisDevice</Declaration>
+			
+			
+			<Anchor>//api/name/isThisDevice</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDevice/unregisterOnComplete:</TokenIdentifier>
+			<Abstract type="html">Unregisters this device from the Backplane.</Abstract>
+			<DeclaredIn>VirtuosoDevice.h</DeclaredIn>
+			
+			<Declaration>- (void)unregisterOnComplete:(nullable DeviceUpdateResultBlock)onComplete</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>resourceLoaderDelegateClass</Name>
-					<Abstract type="html">A Class instance type to use for internal AVAssetResourceLoaderDelegate operations</Abstract>
+					<Name>onComplete</Name>
+					<Abstract type="html">A callback block indicating the result of the update</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/registerAVAssetResourceLoaderDelegate:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/registeredAVAssetResourceLoaderDelegate</TokenIdentifier>
-			<Abstract type="html">Returns the currently configured AVAssetResourceLoaderDelegate class</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (nonnull Class&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)registeredAVAssetResourceLoaderDelegate</Declaration>
-			
-			<ReturnValue><Abstract type="html">The currently configured AVAssetResourceLoaderDelegate class</Abstract></ReturnValue>
-			<Anchor>//api/name/registeredAVAssetResourceLoaderDelegate</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Sets the license manager delegate</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)setDelegate:(nullable id&lt;VirtuosoLicenseManagerDelegate&gt;)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The delegate that will provide license ID and license token lookups</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setDelegate:</Anchor>
+			<Anchor>//api/name/unregisterOnComplete:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

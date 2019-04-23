@@ -72,6 +72,10 @@
 		
 		<option value="//api/name/licenseServerURLForDRM:">+ licenseServerURLForDRM:</option>
 		
+		<option value="//api/name/refreshLicenseForAsset:">+ refreshLicenseForAsset:</option>
+		
+		<option value="//api/name/refreshLicenseForAsset:whenComplete:">+ refreshLicenseForAsset:whenComplete:</option>
+		
 		<option value="//api/name/registerAVAssetResourceLoaderDelegate:">+ registerAVAssetResourceLoaderDelegate:</option>
 		
 		<option value="//api/name/registeredAVAssetResourceLoaderDelegate">+ registeredAVAssetResourceLoaderDelegate</option>
@@ -581,7 +585,7 @@ certificate from a remote location.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)downloadOfflineLicenseForAsset:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (Boolean)downloadOfflineLicenseForAsset:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
 
 		    
 			
@@ -598,6 +602,11 @@ certificate from a remote location.</p>
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean true if success</p>
+			</div>
 			
 
 			
@@ -616,6 +625,117 @@ properly access or register the generated license.</p>
 <p>If the DRM implementation requires a license ID or token to acquire the license, you must
 set these parameters via setID:andLicenseToken: prior to calling this method.</p>
 			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshLicenseForAsset:whenComplete:" title="refreshLicenseForAsset:whenComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshLicenseForAsset:whenComplete:">+&nbsp;refreshLicenseForAsset:whenComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asynchronously refreshes any previously downloaded license for the given asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)refreshLicenseForAsset:(nonnull VirtuosoAsset *)<em>asset</em> whenComplete:(nullable LicenseRefreshComplete)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset to refresh DRM licensing for</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A block to call when DRM licenses have been refreshed. This block will be called on a background thread. If you need to access the main thread, make sure to switch contexts.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshLicenseForAsset:" title="refreshLicenseForAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshLicenseForAsset:">+&nbsp;refreshLicenseForAsset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Synchronously refreshes any previously downloaded license for the given asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)refreshLicenseForAsset:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset to refresh DRM licensing for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -1041,7 +1161,7 @@ these values, set the delegate here and Virtuoso will ask for them as needed.</p
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-04-03</p>
+						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-04-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

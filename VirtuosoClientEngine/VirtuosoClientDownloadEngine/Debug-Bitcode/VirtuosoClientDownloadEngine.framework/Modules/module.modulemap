@@ -3,10 +3,12 @@ framework module VirtuosoClientDownloadEngine {
 
   export *
   module * { export * }
-  
+
+  header "CastLabsAVAssetResourceLoaderDelegate.h"
   header "VirtuosoConstants.h"
   header "VirtuosoNotifications.h"
   header "VirtuosoDownloadEngine.h"
+  header "VirtuosoAncillaryFile.h"
   header "VirtuosoAsset.h"
   header "VirtuosoAsset+SegmentedVideo.h"
   header "VirtuosoAsset+HLS.h"
@@ -26,5 +28,13 @@ framework module VirtuosoClientDownloadEngine {
   header "VirtuosoPlayerViewController.h"
   header "VirtuosoPlayerView.h"
   header "VirtuosoEncryption.h"
-  
+  header "VirtuosoAdsProvider.h"
+  header "VirtuosoSubscriptionDataSource.h"
+  header "VirtuosoSubscriptionDefaultDataSource.h"
+  header "VirtuosoSubscriptionManager.h"
+  header "VirtuosoDownloadEngineNotificationsManager.h"
+  header "VirtuosoBackplaneNotificationsManager.h"
+  header "VirtuosoSubscriptionNotificationsManager.h"
+  header "VirtuosoAdsNotificationsManager.h"
+
 }

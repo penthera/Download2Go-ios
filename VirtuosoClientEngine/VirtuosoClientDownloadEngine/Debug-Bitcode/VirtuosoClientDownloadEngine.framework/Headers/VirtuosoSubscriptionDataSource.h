@@ -41,10 +41,19 @@ typedef NS_ENUM(NSInteger, kVSM_MediaTypeCode)
     /** Value used for range checking.  Should not be used by Caller. */
     kVSM_MediaTypeCodeFirst       = 0,
     
+    /** Straight binary file */
     kVSM_MediaTypeCodeFile        = 0,
+    
+    /** Audio file. E.G. MP3 */
     kVSM_MediaTypeCodeAudio       = 1,
+    
+    /** Video file. E.G. MP4 */
     kVSM_MediaTypeCodeVideo       = 2,
+    
+    /** HLS Video Manifest */
     kVSM_MediaTypeCodeHLS         = 3,
+    
+    /** HSS Video Manifest */
     kVSM_MediaTypeCodeHSS         = 5,
     
     /** Value used for range checking.  Should not be used by Caller. */

@@ -140,6 +140,26 @@
  */
 @property (nonatomic, readonly) BOOL isPlaying;
 
+/*!
+ *  @abstract Convenience method to set/return the current player progress as a value from 0.0 - 1.0 inclusive.
+ */
+@property (nonatomic, assign) double currentProgress;
+
+/*!
+ *  @abstract Convenience method to return the current playback position, in seconds.
+ */
+@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition;
+
+/*!
+ *  @abstract Convenience method to return the total duration of the loaded video, in seconds.
+ */
+@property (nonatomic, readonly) NSTimeInterval duration;
+
+/*!
+ *  @abstract Convenience method to return the playback time remaining, in seconds.
+ */
+@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining;
+
 /**---------------------------------------------------------------------------------------
  * @name User Interface
  *  ---------------------------------------------------------------------------------------
@@ -180,5 +200,35 @@
  *  @abstract Button shown in the top HUD overlay, allowing the user to select subtitle language options
  */
 @property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton;
+
+/**---------------------------------------------------------------------------------------
+ * @name Alternative Language Options
+ *  ---------------------------------------------------------------------------------------
+ */
+
+/*!
+ *  @abstract Convenience interface used to retrieve the available audio and subtitle track options.
+ *
+ *  @discussion This method returns the available media selection options (languages) for either audio or subtitle tracks.
+ *              Only AVMediaCharacteristicAudible and AVMediaCharacteristicLegible are valid inputs.  Specifying any other
+ *              media characteristic will return null.
+ *
+ *  @param characteristic Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible
+ *
+ *  @return An NSArray containing the available media selection options for the given characteristic
+ */
+- (nullable NSArray<AVMediaSelectionOption*>*)mediaOptionsForMediaCharacteristic:(nonnull AVMediaCharacteristic)characteristic;
+
+/*!
+ *  @abstract Convenience interface used to set a particular audio/subtitle language option in the player.
+ *
+ *  @discussion Only AVMediaCharacteristicAudible and AVMediaCharacteristicLegible are valid inputs.  Specifying any other
+ *              media characteristic will have no effect.
+ *
+ *  @param characteristic Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible
+ *
+ *  @param option One of the options returned from mediaOptionsForMediaCharacteristic:
+ */
+- (void)setMediaSelectionOption:(nullable AVMediaSelectionOption*)option forMediaCharacteristic:(nonnull AVMediaCharacteristic)characteristic;
 
 @end

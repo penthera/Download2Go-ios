@@ -162,7 +162,6 @@
  */
 @property (nonatomic, assign) Boolean iframeSupportEnabled;
 
-
 /*!
  *  @abstract Amount of time, in seconds, between when Virtuoso finishes downloading an asset
  *            and when it deletes that downloaded asset.
@@ -183,6 +182,14 @@
  *              A values zero or less means "never expire."
  */
 @property (nonatomic,readonly) long long defaultExpiryAfterPlay;
+
+/*!
+ *  @abstract If YES, Virtuoso will disable.  Defaults to NO.
+ *
+ *  @discussion Normally, the download engine will automatically renew DRM license in 48 hours,
+ *              but user can disable this feature using this property
+ */
+@property (nonatomic, assign) Boolean disableAutoRenewDRMLicense;
 
 /**---------------------------------------------------------------------------------------
  * @name Push Notice Configuration
@@ -370,21 +377,6 @@
 @property (nonatomic,assign,nullable) NSDictionary* additionalNetworkHeaders;
 
 /*!
- *  @abstract Enables Penthera's StreamPackager service for background download of segmented VirtuosoAssets (HLS, HSS, DASH, etc).
- *
- *  @discussion Penthera's StreamPackager (a server proxy) allows Virtuoso to more efficiently download
- *              segmented VirtuosoAsset formats even when the enclosing app isn't in the foreground.
- *              To disable this feature (and continue with slower background downloads), set this property to NO.
- *              Default is YES.
- *
- *  @warning Since Virtuoso uses this value during startup, you must supply this value before
- *           calling any other Virtuoso methods. Changes to this value won't take effect
- *           until the next time you call startup.
- */
-@property (nonatomic,assign) Boolean useStreamPackagerForBackgroundDownloads;
-
-
-/*!
  *  @abstract An explicit device ID to use when authenticating and syncing with the Backplane.
  *
  *  @discussion By default, Virtuoso will use an internally generated UUID to authenticate
@@ -482,6 +474,10 @@
  *
  *  @warning In order for this feature to be supported, your master manifests must properly specify the audio codecs
  *           in the CODECS field of the #EXT-X-STREAM-INF definitions.
+ *
+ *  @warning It is possibe to configure a download with values that are not natively supported on the Device. To protect
+ *           against this, always test against the actual device.
+ *
  */
 @property (nonatomic,strong,nullable) NSArray* audioCodecsToDownload;
 

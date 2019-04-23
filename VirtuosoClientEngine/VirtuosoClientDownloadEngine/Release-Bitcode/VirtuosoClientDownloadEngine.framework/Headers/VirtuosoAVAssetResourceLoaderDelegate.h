@@ -19,11 +19,19 @@
 @protocol VirtuosoAVAssetResourceLoaderDelegate;
 @class VirtuosoAsset;
 
-typedef enum
+/*!
+ *  @typedef kVAV_ErrorCode
+ *
+ *  @abstract Resource loader error codes
+ */
+typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
 {
+    /** Error generated when no FairPlay certificate is available */
     kVAV_NoCertificate = -1,
+    
+    /** Error generated when the FairPlay license expires while the device is offline */
     kVAV_ExpiredWhileOffline = -2
-} kVAV_ErrorCode;
+};
 
 /*!
  *  @abstract Provides a mechanism to easily identify and handle errors encountered during the DRM licensing process

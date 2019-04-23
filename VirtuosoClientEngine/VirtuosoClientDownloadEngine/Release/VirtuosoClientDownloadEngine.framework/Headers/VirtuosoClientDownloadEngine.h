@@ -26,12 +26,13 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #endif
 
 #pragma mark
-#pragma mark Download SDK
+#pragma mark Downloads
 #pragma mark
 
 #import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoNotifications.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoDownloadEngine.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAncillaryFile.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset+SegmentedVideo.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset+HLS.h>
@@ -48,6 +49,21 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoSecureClock.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAVAssetResourceLoaderDelegate.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoDefaultAVAssetResourceLoaderDelegate.h>
+#import <VirtuosoClientDownloadEngine/CastLabsAVAssetResourceLoaderDelegate.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAdsProvider.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoDownloadEngineNotificationsManager.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoBackplaneNotificationsManager.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoSubscriptionNotificationsManager.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAdsNotificationsManager.h>
+
+
+#pragma mark
+#pragma mark Subscriptions
+#pragma mark
+
+#import <VirtuosoClientDownloadEngine/VirtuosoSubscriptionDataSource.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoSubscriptionDefaultDataSource.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoSubscriptionManager.h>
 
 #pragma mark
 #pragma mark Common

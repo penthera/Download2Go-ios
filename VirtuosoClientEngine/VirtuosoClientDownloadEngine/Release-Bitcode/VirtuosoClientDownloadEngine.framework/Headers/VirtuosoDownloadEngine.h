@@ -89,7 +89,9 @@
  *
  *  @param backplaneURL A root URL pointing to the location of the Backplane endpoints
  *
- *  @param user The Backplane user to use
+ *  @param user The Backplane user to use.  This is a string representing your authenticated user ID.
+ *              It could be your actual user ID, or a hash of your user ID.  The only requirements are that
+ *              it uniqely identifies your user and the value must be less than 512 characters long.
  *
  *  @param externalDeviceID An optional externally-defined device UUID
  *

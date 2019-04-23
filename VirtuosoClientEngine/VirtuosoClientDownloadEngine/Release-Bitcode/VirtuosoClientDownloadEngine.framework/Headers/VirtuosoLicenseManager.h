@@ -18,6 +18,8 @@
 @class VirtuosoAsset;
 @protocol VirtuosoAVAssetResourceLoaderDelegate;
 
+typedef void (^LicenseRefreshComplete)(Boolean);
+
 /*!
  *  @typedef kVLM_DRMType
  *
@@ -160,8 +162,25 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *              set these parameters via setID:andLicenseToken: prior to calling this method.
  *
  *  @param asset The asset requiring an offline playback license
+ *
+ *  @return Boolean true if success
  */
-+ (void)downloadOfflineLicenseForAsset:(nonnull VirtuosoAsset *)asset;
++ (Boolean)downloadOfflineLicenseForAsset:(nonnull VirtuosoAsset *)asset;
+
+/*!
+ *  @abstract Asynchronously refreshes any previously downloaded license for the given asset
+ *
+ *  @param asset The asset to refresh DRM licensing for
+ *  @param onComplete A block to call when DRM licenses have been refreshed. This block will be called on a background thread. If you need to access the main thread, make sure to switch contexts.
+ */
++ (void)refreshLicenseForAsset:(nonnull VirtuosoAsset*)asset whenComplete:(nullable LicenseRefreshComplete)onComplete;
+
+/*!
+ *  @abstract Synchronously refreshes any previously downloaded license for the given asset
+ *
+ *  @param asset The asset to refresh DRM licensing for
+ */
++ (void)refreshLicenseForAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
  *  @abstract Asynchronously deletes any previously downloaded license for the given asset

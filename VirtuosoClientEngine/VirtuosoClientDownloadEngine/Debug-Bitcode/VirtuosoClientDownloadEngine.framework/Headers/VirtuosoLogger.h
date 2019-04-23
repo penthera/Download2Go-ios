@@ -32,10 +32,19 @@
  */
 typedef NS_ENUM(NSInteger, kVL_LoggingLevel)
 {
+    /** Only log errors */
     kVL_LogError = 0,
+    
+    /** Log errors and warnings */
     kVL_LogWarning = 1,
+    
+    /** Log errors, warnings, and information */
     kVL_LogInformation = 2,
+    
+    /** Log errors, warnings, information, and debug */
     kVL_LogDebug = 3,
+    
+    /** Full logging */
     kVL_LogVerbose = 4,
 };
 
@@ -95,6 +104,12 @@ typedef NS_ENUM(NSInteger, kVL_LogEvent)
     /** The download limit imposed by the rules for either MDA or MAD has been reached and the asset with asset_id
         cannot be downloaded. */
     kVLE_DownloadLimitReached = 15,
+
+    /** Generated the first time SDK detects the asset has been played. */
+    kVLE_InitialPlayback = 16,
+    
+    /** Generic event used to allow event types easily in loops */
+    kVLE_LastEvent = kVLE_InitialPlayback + 1
 };
 
 /*!

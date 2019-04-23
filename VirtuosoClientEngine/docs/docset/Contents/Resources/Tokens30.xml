@@ -1,49 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_AssetProtectionType.html">
+	<File path="Protocols/VirtuosoPrepareUrlDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetProtectionType</TokenIdentifier>
-			<Abstract type="html">@typedef kVDE_AssetProtectionType</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPrepareUrlDelegate</TokenIdentifier>
+			<Abstract type="html">This delegate defines the methods that can be implemented
+to allow modification of Asset URL&apos;s before downloading.
+
+This is an advanced feature which is entirely optional.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
 			
 			<NodeRef refid="30"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypePassthrough</TokenIdentifier>
-            <Abstract type="html">The asset is not protected, is protected by an external DRM system, or is protected by some form of
-        native encryption.  This value indicates that no special handling is required for download or playback
-        of this asset, and is the default value. </Abstract>
-            <Declaration>kVDE_AssetProtectionTypePassthrough</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSubManifestURL:manifestType:forAsset:</TokenIdentifier>
+			<Abstract type="html">Allows modification of the sub-manifest Url prior to download.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)prepareSubManifestURL:(NSString *_Nonnull)url manifestType:(kVDM_ManifestType)manifestType forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL that is about to be downloaded</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestType</Name>
+					<Abstract type="html">The manifest type for the URL that is about to be downloaded</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareSubManifestURL:manifestType:forAsset:</Anchor>
             <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeFairPlay</TokenIdentifier>
-            <Abstract type="html">The asset is protected by Apple FairPlay DRM.</Abstract>
-            <Declaration>kVDE_AssetProtectionTypeFairPlay</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSegmentURL:forAsset:</TokenIdentifier>
+			<Abstract type="html">Allows modification of the Segment Url prior to download.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)prepareSegmentURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL that is about to be downloaded</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareSegmentURL:forAsset:</Anchor>
             <NodeRef refid="30"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeWidevine</TokenIdentifier>
-            <Abstract type="html">The asset is protected by Google Widevine DRM.</Abstract>
-            <Declaration>kVDE_AssetProtectionTypeWidevine</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareEncryptionKeyURL:forAsset:</TokenIdentifier>
+			<Abstract type="html">Allows modification of the video encryption key URL prior to download.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)prepareEncryptionKeyURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL that is about to be downloaded</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareEncryptionKeyURL:forAsset:</Anchor>
             <NodeRef refid="30"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>
