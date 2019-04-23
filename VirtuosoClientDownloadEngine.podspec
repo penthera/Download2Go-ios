@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'http://penthera.com'
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
   s.author           = { 'josh-penthera' => 'josh.pressnell@penthera.com' }
-  s.source           = { :http => 'https://github.com/penthera/Cache-and-Carry-ios/releases/download/v3.15.0/VirtuosoClientDownloadEngine.zip' }
+  s.source           = { :http => 'https://github.com/penthera/Cache-and-Carry-ios/releases/download/v3.15.0/VirtuosoClientDownloadEngine.framework.zip' }
 
   s.ios.deployment_target = '8.0'
 
