@@ -147,6 +147,16 @@ Virtuoso also marks the individual asset with an error code.</Abstract>
             <NodeRef refid="39"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVirtuosoDownloadEngineErrorTooManySimultaneousDownloads</TokenIdentifier>
+            <Abstract type="html">User has exceeded the simultaneous access limit.</Abstract>
+            <Declaration>kVirtuosoDownloadEngineErrorTooManySimultaneousDownloads</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="39"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

@@ -239,7 +239,8 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     /** Virtuoso was unable to create a VirtuosoSegment. */
     kVDE_CreateSegmentFailed = -17,
     
-
+    /** User has exceeded the simultaneous access limit. */
+    kVirtuosoDownloadEngineErrorTooManySimultaneousDownloads = -18
 };
 
 
