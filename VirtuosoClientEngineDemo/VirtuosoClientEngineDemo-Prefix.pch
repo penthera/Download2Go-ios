@@ -22,5 +22,4 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <VirtuosoClientDownloadEngine/VirtuosoClientDownloadEngine.h>
-    #import <VirtuosoClientSubscriptionManager/VirtuosoSubscriptionManager.h>
 #endif

@@ -45,6 +45,11 @@
 @property (nonatomic, strong, nullable) VirtuosoAsset* asset;
 
 /*!
+ *  @abstract The "time to first frame" from the last playback session.
+ */
+@property (nonatomic, readonly) NSTimeInterval timeToFirstFrame;
+
+/*!
  *  @abstract Prepares the player to play
  *
  *  @discussion Calling this method is optional.  If you do not call this method, it will automatically be

@@ -86,6 +86,42 @@ VirtuosoPlayer protocol.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setTimeToFirstFrame:</TokenIdentifier>
+			<Abstract type="html">The &quot;time to first frame&quot; from the last playback session.</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToFirstFrame</Declaration>
+			
+			
+			<Anchor>//api/name/timeToFirstFrame</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/timeToFirstFrame</TokenIdentifier>
+			<Abstract type="html">The &quot;time to first frame&quot; from the last playback session.</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToFirstFrame</Declaration>
+			
+			
+			<Anchor>//api/name/timeToFirstFrame</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/timeToFirstFrame</TokenIdentifier>
+			<Abstract type="html">The &quot;time to first frame&quot; from the last playback session.</Abstract>
+			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToFirstFrame</Declaration>
+			
+			
+			<Anchor>//api/name/timeToFirstFrame</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/prepareToPlay</TokenIdentifier>
 			<Abstract type="html">Prepares the player to play</Abstract>
 			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>

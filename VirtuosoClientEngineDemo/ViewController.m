@@ -23,7 +23,6 @@
 #import "AddNewItemViewController.h"
 #import "MBProgressHUD/MBProgressHUD.h"
 #import "AppDelegate.h"
-#import <VirtuosoClientSubscriptionManager/VirtuosoSubscriptionManager.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientDownloadEngine.h>
 #import "VirtuosoMoviePlayerViewController.h"
 #import "UIAlertView+MKBlockAdditions.h"
@@ -691,10 +690,7 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
     [settings registerDefaults:@{@"BackplaneURL":backplaneUrl,
                                  @"PrivateKey":privateKey,
                                  @"PublicKey":publicKey,
-                                 @"MaxBackgroundDownload":@(0),
-                                 @"UsePackager":@(YES)}];
-    
-    [VirtuosoSettings instance].useStreamPackagerForBackgroundDownloads = [[NSUserDefaults standardUserDefaults]boolForKey:@"UsePackager"];
+                                 @"MaxBackgroundDownload":@(0)}];
     
     // For the purposes of this demo, we'll let the engine sync as often as possible.  For normal production clients, you should
     // probably leave this at the default of 15 minutes.
@@ -714,11 +710,11 @@ typedef void(^UIActionSheetCompleteBlock)(UIActionSheet* actionSheet, NSInteger 
     }];
      */
     
-    [engine startupWithBackplane:[settings objectForKey:@"BackplaneURL"]
+    [engine startupWithBackplane:backplaneUrl
                             user:user
                 externalDeviceID:nil
-                      privateKey:[settings objectForKey:@"PrivateKey"]
-                       publicKey:[settings objectForKey:@"PublicKey"]];
+                      privateKey:privateKey
+                       publicKey:publicKey];
     
     // Setup any client-side SSL certificates required
     if( [[NSUserDefaults standardUserDefaults] objectForKey:@"UseClientSSL"] == nil )

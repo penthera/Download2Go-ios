@@ -13,8 +13,6 @@
 		0363E5F519D4561800FB6411 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A620CF1591066700CF7A85 /* MediaPlayer.framework */; };
 		0367BD1D21CD727E008C95D5 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */; };
 		0367BD1F21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */; };
-		0367BD2121CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */; };
-		0367BD2321CD72AA008C95D5 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0367BD2521CD72AA008C95D5 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0367BD2721CD72AA008C95D5 /* widevine_cdm_sdk_release.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03D5862717A05B9600057F1F /* NSObject+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D5862217A05B9600057F1F /* NSObject+MKBlockAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -65,7 +63,6 @@
 			files = (
 				0367BD2521CD72AA008C95D5 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
 				0367BD2721CD72AA008C95D5 /* widevine_cdm_sdk_release.framework in Embed Frameworks */,
-				0367BD2321CD72AA008C95D5 /* VirtuosoClientSubscriptionManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		030568A922AACBD300787234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		032FCF3B188F034500190180 /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		032FCF46188F037D00190180 /* UIBlockSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBlockSwitch.h; sourceTree = "<group>"; };
 		032FCF47188F037D00190180 /* UIBlockSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBlockSwitch.m; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 		0336A09D16850B5000CF4012 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = widevine_cdm_sdk_release.framework; path = ThirdParty/Widevine/release/widevine_cdm_sdk_release.framework; sourceTree = SOURCE_ROOT; };
 		0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.framework; sourceTree = SOURCE_ROOT; };
-		0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientSubscriptionManager.framework; path = VirtuosoClientEngine/VirtuosoClientSubscriptionManager/Release/VirtuosoClientSubscriptionManager.framework; sourceTree = SOURCE_ROOT; };
 		039E664D17007A3500B427F3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		03D5862017A05B9600057F1F /* MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBlockAdditions.h; sourceTree = "<group>"; };
 		03D5862117A05B9600057F1F /* NSObject+MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKBlockAdditions.h"; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		8419EFA0156AA6A300B383B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8419EFA2156AA6A300B383B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8419EFA3156AA6A300B383B3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8419EFA6156AA6A300B383B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		8419EFC3156AABF100B383B3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8419F158156C057E00B383B3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		8419F159156C057E00B383B3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -139,7 +135,6 @@
 				032FCF43188F035700190180 /* libMBProgressHUD.a in Frameworks */,
 				8419EF91156AA6A300B383B3 /* UIKit.framework in Frameworks */,
 				8419EF93156AA6A300B383B3 /* Foundation.framework in Frameworks */,
-				0367BD2121CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +263,6 @@
 		84A6201D158FC24600CF7A85 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				0367BD2021CD7297008C95D5 /* VirtuosoClientSubscriptionManager.framework */,
 				0367BD1E21CD728E008C95D5 /* VirtuosoClientDownloadEngine.framework */,
 				0367BD1C21CD727E008C95D5 /* widevine_cdm_sdk_release.framework */,
 			);
@@ -304,7 +298,7 @@
 		8419EF83156AA6A300B383B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					8419EF8B156AA6A300B383B3 = {
 						DevelopmentTeam = L5M4866SC8;
@@ -313,11 +307,11 @@
 			};
 			buildConfigurationList = 8419EF86156AA6A300B383B3 /* Build configuration list for PBXProject "VirtuosoClientEngineDemo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 8419EF81156AA6A300B383B3;
 			productRefGroup = 8419EF8D156AA6A300B383B3 /* Products */;
@@ -420,7 +414,7 @@
 		8419EFA5156AA6A300B383B3 /* ViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8419EFA6156AA6A300B383B3 /* en */,
+				030568A922AACBD300787234 /* Base */,
 			);
 			name = ViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -432,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -479,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;

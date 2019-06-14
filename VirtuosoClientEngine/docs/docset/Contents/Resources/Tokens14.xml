@@ -220,6 +220,28 @@ Only the static methods provided with this interface should be used.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/logPlaybackStartedForAsset:withTTFF:</TokenIdentifier>
+			<Abstract type="html">Logs &quot;play&quot; event for an asset, including optional &quot;time to first frame&quot; data.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)logPlaybackStartedForAsset:(nonnull VirtuosoAsset *)asset withTTFF:(NSTimeInterval)ttff</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The played asset</Abstract>
+				</Parameter><Parameter>
+					<Name>ttff</Name>
+					<Abstract type="html">If this play event represents initial playback (from time 0), then you may optionally
+include the &quot;time to first frame&quot; measurement in the event data.  If you do not have
+this value, use the version of this method that does not include this parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/logPlaybackStartedForAsset:withTTFF:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLogger/logPlaybackStoppedForAsset:withSecondsSinceLastStart:</TokenIdentifier>
 			<Abstract type="html">Logs &quot;stop-play&quot; event for an asset</Abstract>
 			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>

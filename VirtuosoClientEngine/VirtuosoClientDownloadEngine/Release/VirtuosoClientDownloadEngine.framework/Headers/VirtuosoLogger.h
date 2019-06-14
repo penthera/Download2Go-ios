@@ -349,6 +349,20 @@ extern long long kLoggerDataValueInvalid;
 + (void) logPlaybackStartedForAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
+ *  @abstract Logs "play" event for an asset, including optional "time to first frame" data.
+ *
+ *  @discussion Virtuoso cannot automatically detect a 'play' event, since this occurs at the app
+ *              level, "above" Virtuoso. This method allows you to log the event.
+ *              Note that a "pause" event is equivalent to a stop event followed by a start event.
+ *
+ *  @param asset The played asset
+ *  @param ttff  If this play event represents initial playback (from time 0), then you may optionally
+ *               include the "time to first frame" measurement in the event data.  If you do not have
+ *               this value, use the version of this method that does not include this parameter.
+ */
++ (void) logPlaybackStartedForAsset:(nonnull VirtuosoAsset*)asset withTTFF:(NSTimeInterval)ttff;
+
+/*!
  *  @abstract Logs "stop-play" event for an asset
  *
  *  @discussion Virtuoso cannot automatically detect a 'stop play' event, since this occurs at the app 
