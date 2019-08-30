@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSettings.html">
+	<File path="Classes/VirtuosoPlayerView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSettings</TokenIdentifier>
-			<Abstract type="html">An encapsulation for all Virtuoso SDK configuration settings.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlayerView</TokenIdentifier>
+			<Abstract type="html">A convenience UIView subclass that includes a VirtuosoAVPlayer, a basic user interface, and implements
+the VirtuosoPlayer protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,1520 +14,722 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoSettings/instance</TokenIdentifier>
-			<Abstract type="html">The singleton instance access method</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/play</TokenIdentifier>
+			<Abstract type="html">Begins or resumes video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>+ (nonnull VirtuosoSettings *)instance</Declaration>
+			<Declaration>- (void)play</Declaration>
 			
-			<ReturnValue><Abstract type="html">Returns the VirtuosoSettings object instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/instance</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDefaultOfflineViewingPeriod:</TokenIdentifier>
-			<Abstract type="html">Once the time since last Backplane sync exceeds this value, Virtuoso makes the downloaded assets inaccessible</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultOfflineViewingPeriod</Declaration>
-			
-			
-			<Anchor>//api/name/defaultOfflineViewingPeriod</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/defaultOfflineViewingPeriod</TokenIdentifier>
-			<Abstract type="html">Once the time since last Backplane sync exceeds this value, Virtuoso makes the downloaded assets inaccessible</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultOfflineViewingPeriod</Declaration>
-			
-			
-			<Anchor>//api/name/defaultOfflineViewingPeriod</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/defaultOfflineViewingPeriod</TokenIdentifier>
-			<Abstract type="html">Once the time since last Backplane sync exceeds this value, Virtuoso makes the downloaded assets inaccessible</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultOfflineViewingPeriod</Declaration>
-			
-			
-			<Anchor>//api/name/defaultOfflineViewingPeriod</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setNumberOfDevicesEnabled:</TokenIdentifier>
-			<Abstract type="html">The total number of unique enabled devices for the current user</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long numberOfDevicesEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/numberOfDevicesEnabled</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/numberOfDevicesEnabled</TokenIdentifier>
-			<Abstract type="html">The total number of unique enabled devices for the current user</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long numberOfDevicesEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/numberOfDevicesEnabled</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/numberOfDevicesEnabled</TokenIdentifier>
-			<Abstract type="html">The total number of unique enabled devices for the current user</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long numberOfDevicesEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/numberOfDevicesEnabled</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxDevicesForDownload:</TokenIdentifier>
-			<Abstract type="html">The maximum number of devices per user that the Backplane allows to be enabled for download</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDevicesForDownload</Declaration>
-			
-			
-			<Anchor>//api/name/maxDevicesForDownload</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxDevicesForDownload</TokenIdentifier>
-			<Abstract type="html">The maximum number of devices per user that the Backplane allows to be enabled for download</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDevicesForDownload</Declaration>
-			
-			
-			<Anchor>//api/name/maxDevicesForDownload</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxDevicesForDownload</TokenIdentifier>
-			<Abstract type="html">The maximum number of devices per user that the Backplane allows to be enabled for download</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDevicesForDownload</Declaration>
-			
-			
-			<Anchor>//api/name/maxDevicesForDownload</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxDownloadedAssetsOnDevice:</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsOnDevice</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssetsOnDevice</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxDownloadedAssetsOnDevice</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsOnDevice</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssetsOnDevice</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxDownloadedAssetsOnDevice</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist on the device at any given time</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsOnDevice</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssetsOnDevice</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxDownloadedAssetsPerAccount:</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist across all devices on the account at any given time</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsPerAccount</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssetsPerAccount</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxDownloadedAssetsPerAccount</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist across all devices on the account at any given time</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsPerAccount</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssetsPerAccount</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxDownloadedAssetsPerAccount</TokenIdentifier>
-			<Abstract type="html">The maximum number of downloads that can exist across all devices on the account at any given time</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxDownloadedAssetsPerAccount</Declaration>
-			
-			
-			<Anchor>//api/name/maxDownloadedAssetsPerAccount</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxLifetimeDownloadsForAsset:</TokenIdentifier>
-			<Abstract type="html">The maximum number of times any single asset can be downloaded</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxLifetimeDownloadsForAsset</Declaration>
-			
-			
-			<Anchor>//api/name/maxLifetimeDownloadsForAsset</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxLifetimeDownloadsForAsset</TokenIdentifier>
-			<Abstract type="html">The maximum number of times any single asset can be downloaded</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxLifetimeDownloadsForAsset</Declaration>
-			
-			
-			<Anchor>//api/name/maxLifetimeDownloadsForAsset</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxLifetimeDownloadsForAsset</TokenIdentifier>
-			<Abstract type="html">The maximum number of times any single asset can be downloaded</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxLifetimeDownloadsForAsset</Declaration>
-			
-			
-			<Anchor>//api/name/maxLifetimeDownloadsForAsset</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxCopiesOfAssetPerAccount:</TokenIdentifier>
-			<Abstract type="html">The maximum number of copies of this asset that can be stored in all devices in the account</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxCopiesOfAssetPerAccount</Declaration>
-			
-			
-			<Anchor>//api/name/maxCopiesOfAssetPerAccount</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxCopiesOfAssetPerAccount</TokenIdentifier>
-			<Abstract type="html">The maximum number of copies of this asset that can be stored in all devices in the account</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxCopiesOfAssetPerAccount</Declaration>
-			
-			
-			<Anchor>//api/name/maxCopiesOfAssetPerAccount</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxCopiesOfAssetPerAccount</TokenIdentifier>
-			<Abstract type="html">The maximum number of copies of this asset that can be stored in all devices in the account</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long maxCopiesOfAssetPerAccount</Declaration>
-			
-			
-			<Anchor>//api/name/maxCopiesOfAssetPerAccount</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAcquirePermissionWhenQueued:</TokenIdentifier>
-			<Abstract type="html">Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued</Declaration>
-			
-			
-			<Anchor>//api/name/acquirePermissionWhenQueued</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/acquirePermissionWhenQueued</TokenIdentifier>
-			<Abstract type="html">Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued</Declaration>
-			
-			
-			<Anchor>//api/name/acquirePermissionWhenQueued</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/acquirePermissionWhenQueued</TokenIdentifier>
-			<Abstract type="html">Whether the engine should acquire download permissions when the asset is queued or when it starts downloading</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Boolean acquirePermissionWhenQueued</Declaration>
-			
-			
-			<Anchor>//api/name/acquirePermissionWhenQueued</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAlwaysRequestDownloadPermission:</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean alwaysRequestDownloadPermission</Declaration>
-			
-			
-			<Anchor>//api/name/alwaysRequestDownloadPermission</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/alwaysRequestDownloadPermission</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean alwaysRequestDownloadPermission</Declaration>
-			
-			
-			<Anchor>//api/name/alwaysRequestDownloadPermission</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/alwaysRequestDownloadPermission</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean alwaysRequestDownloadPermission</Declaration>
-			
-			
-			<Anchor>//api/name/alwaysRequestDownloadPermission</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setIframeSupportEnabled:</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean iframeSupportEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/iframeSupportEnabled</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/iframeSupportEnabled</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean iframeSupportEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/iframeSupportEnabled</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/iframeSupportEnabled</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will enable IFRAME support in HLS.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean iframeSupportEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/iframeSupportEnabled</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDefaultExpiryAfterDownload:</TokenIdentifier>
-			<Abstract type="html">Amount of time, in seconds, between when Virtuoso finishes downloading an asset
-and when it deletes that downloaded asset.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultExpiryAfterDownload</Declaration>
-			
-			
-			<Anchor>//api/name/defaultExpiryAfterDownload</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/defaultExpiryAfterDownload</TokenIdentifier>
-			<Abstract type="html">Amount of time, in seconds, between when Virtuoso finishes downloading an asset
-and when it deletes that downloaded asset.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultExpiryAfterDownload</Declaration>
-			
-			
-			<Anchor>//api/name/defaultExpiryAfterDownload</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/defaultExpiryAfterDownload</TokenIdentifier>
-			<Abstract type="html">Amount of time, in seconds, between when Virtuoso finishes downloading an asset
-and when it deletes that downloaded asset.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultExpiryAfterDownload</Declaration>
-			
-			
-			<Anchor>//api/name/defaultExpiryAfterDownload</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDefaultExpiryAfterPlay:</TokenIdentifier>
-			<Abstract type="html">Default amount of time after the first playback of a downloaded asset before Virtuoso deletes it</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultExpiryAfterPlay</Declaration>
-			
-			
-			<Anchor>//api/name/defaultExpiryAfterPlay</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/defaultExpiryAfterPlay</TokenIdentifier>
-			<Abstract type="html">Default amount of time after the first playback of a downloaded asset before Virtuoso deletes it</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultExpiryAfterPlay</Declaration>
-			
-			
-			<Anchor>//api/name/defaultExpiryAfterPlay</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/defaultExpiryAfterPlay</TokenIdentifier>
-			<Abstract type="html">Default amount of time after the first playback of a downloaded asset before Virtuoso deletes it</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) long long defaultExpiryAfterPlay</Declaration>
-			
-			
-			<Anchor>//api/name/defaultExpiryAfterPlay</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDisableAutoRenewDRMLicense:</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will disable.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean disableAutoRenewDRMLicense</Declaration>
-			
-			
-			<Anchor>//api/name/disableAutoRenewDRMLicense</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/disableAutoRenewDRMLicense</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will disable.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean disableAutoRenewDRMLicense</Declaration>
-			
-			
-			<Anchor>//api/name/disableAutoRenewDRMLicense</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/disableAutoRenewDRMLicense</TokenIdentifier>
-			<Abstract type="html">If YES, Virtuoso will disable.  Defaults to NO.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean disableAutoRenewDRMLicense</Declaration>
-			
-			
-			<Anchor>//api/name/disableAutoRenewDRMLicense</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDevicePushToken:</TokenIdentifier>
-			<Abstract type="html">The device push token used for remote push notices</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
-			
-			
-			<Anchor>//api/name/devicePushToken</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/devicePushToken</TokenIdentifier>
-			<Abstract type="html">The device push token used for remote push notices</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
-			
-			
-			<Anchor>//api/name/devicePushToken</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/devicePushToken</TokenIdentifier>
-			<Abstract type="html">The device push token used for remote push notices</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
-			
-			
-			<Anchor>//api/name/devicePushToken</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setHeadroom:</TokenIdentifier>
-			<Abstract type="html">Returns the headroom configuration value.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideHeadroom:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetHeadroomToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) long long headroom</Declaration>
-			
-			<ReturnValue><Abstract type="html">The headroom setting (in MB).</Abstract></ReturnValue>
-			<Anchor>//api/name/headroom</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/headroom</TokenIdentifier>
-			<Abstract type="html">Returns the headroom configuration value.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideHeadroom:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetHeadroomToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) long long headroom</Declaration>
-			
-			<ReturnValue><Abstract type="html">The headroom setting (in MB).</Abstract></ReturnValue>
-			<Anchor>//api/name/headroom</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/headroom</TokenIdentifier>
-			<Abstract type="html">Returns the headroom configuration value.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideHeadroom:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetHeadroomToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) long long headroom</Declaration>
-			
-			<ReturnValue><Abstract type="html">The headroom setting (in MB).</Abstract></ReturnValue>
-			<Anchor>//api/name/headroom</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideHeadroom:</TokenIdentifier>
-			<Abstract type="html">Allows you to override the default value for the headroom setting.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/headroom</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetHeadroomToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)overrideHeadroom:(long long)newHeadroom</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>newHeadroom</Name>
-					<Abstract type="html">The new headroom setting Virtuoso should use (in MB)</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/overrideHeadroom:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetHeadroomToDefault</TokenIdentifier>
-			<Abstract type="html">Resets Virtuoso&apos;s headroom setting to the default (1 GB)</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/headroom</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideHeadroom:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)resetHeadroomToDefault</Declaration>
-			
-			
-			<Anchor>//api/name/resetHeadroomToDefault</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaxStorageAllowed:</TokenIdentifier>
-			<Abstract type="html">Returns the max storage configuration value, in MB.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideMaxStorageAllowed:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetMaxStorageAllowedToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) long long maxStorageAllowed</Declaration>
-			
-			
-			<Anchor>//api/name/maxStorageAllowed</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maxStorageAllowed</TokenIdentifier>
-			<Abstract type="html">Returns the max storage configuration value, in MB.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideMaxStorageAllowed:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetMaxStorageAllowedToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) long long maxStorageAllowed</Declaration>
-			
-			
-			<Anchor>//api/name/maxStorageAllowed</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxStorageAllowed</TokenIdentifier>
-			<Abstract type="html">Returns the max storage configuration value, in MB.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideMaxStorageAllowed:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetMaxStorageAllowedToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) long long maxStorageAllowed</Declaration>
-			
-			
-			<Anchor>//api/name/maxStorageAllowed</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideMaxStorageAllowed:</TokenIdentifier>
-			<Abstract type="html">Allows you to override the default value for max storage.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxStorageAllowed</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetMaxStorageAllowedToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)overrideMaxStorageAllowed:(long long)maxStorageAllowed</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>maxStorageAllowed</Name>
-					<Abstract type="html">The new max storage value (in MB).</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/overrideMaxStorageAllowed:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetMaxStorageAllowedToDefault</TokenIdentifier>
-			<Abstract type="html">Resets Virtuoso&apos;s maximum storage to the default (5 GB)</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maxStorageAllowed</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideMaxStorageAllowed:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)resetMaxStorageAllowedToDefault</Declaration>
-			
-			
-			<Anchor>//api/name/resetMaxStorageAllowedToDefault</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDownloadOverCellular:</TokenIdentifier>
-			<Abstract type="html">Returns the cellular download permission value.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideDownloadOverCellular:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetDownloadOverCellularToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) Boolean downloadOverCellular</Declaration>
-			
-			
-			<Anchor>//api/name/downloadOverCellular</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/downloadOverCellular</TokenIdentifier>
-			<Abstract type="html">Returns the cellular download permission value.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideDownloadOverCellular:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetDownloadOverCellularToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) Boolean downloadOverCellular</Declaration>
-			
-			
-			<Anchor>//api/name/downloadOverCellular</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/downloadOverCellular</TokenIdentifier>
-			<Abstract type="html">Returns the cellular download permission value.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideDownloadOverCellular:</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetDownloadOverCellularToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>@property (nonatomic, readonly) Boolean downloadOverCellular</Declaration>
-			
-			
-			<Anchor>//api/name/downloadOverCellular</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideDownloadOverCellular:</TokenIdentifier>
-			<Abstract type="html">Allows you to override Virtuoso&apos;s default value for the cellular download permission setting.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/downloadOverCellular</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetDownloadOverCellularToDefault</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)overrideDownloadOverCellular:(Boolean)downloadOverCellular</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>downloadOverCellular</Name>
-					<Abstract type="html">The new cellular download setting</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/overrideDownloadOverCellular:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/resetDownloadOverCellularToDefault</TokenIdentifier>
-			<Abstract type="html">Reset Virtuoso&apos;s cellular download setting to the default (false)</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/downloadOverCellular</TokenIdentifier>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/overrideDownloadOverCellular:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)resetDownloadOverCellularToDefault</Declaration>
-			
-			
-			<Anchor>//api/name/resetDownloadOverCellularToDefault</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMaximumAssetsForBackgroundDownload:</TokenIdentifier>
-			<Abstract type="html">How many assets the SDK will attempt to download after the app is suspended.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSUInteger maximumAssetsForBackgroundDownload</Declaration>
-			
 			
-			<Anchor>//api/name/maximumAssetsForBackgroundDownload</Anchor>
+			<Anchor>//api/name/play</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/maximumAssetsForBackgroundDownload</TokenIdentifier>
-			<Abstract type="html">How many assets the SDK will attempt to download after the app is suspended.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/pause</TokenIdentifier>
+			<Abstract type="html">Pauses video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger maximumAssetsForBackgroundDownload</Declaration>
+			<Declaration>- (void)pause</Declaration>
 			
 			
-			<Anchor>//api/name/maximumAssetsForBackgroundDownload</Anchor>
+			<Anchor>//api/name/pause</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/maximumAssetsForBackgroundDownload</TokenIdentifier>
-			<Abstract type="html">How many assets the SDK will attempt to download after the app is suspended.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger maximumAssetsForBackgroundDownload</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
-			<Anchor>//api/name/maximumAssetsForBackgroundDownload</Anchor>
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setNumberOfSegmentsPerDirectDownloadBatch:</TokenIdentifier>
-			<Abstract type="html">When downloading without the packager, the number of direct-download segments to startup for
-background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
-invalid.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger numberOfSegmentsPerDirectDownloadBatch</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
-			<Anchor>//api/name/numberOfSegmentsPerDirectDownloadBatch</Anchor>
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/numberOfSegmentsPerDirectDownloadBatch</TokenIdentifier>
-			<Abstract type="html">When downloading without the packager, the number of direct-download segments to startup for
-background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
-invalid.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger numberOfSegmentsPerDirectDownloadBatch</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
 			
-			<Anchor>//api/name/numberOfSegmentsPerDirectDownloadBatch</Anchor>
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/numberOfSegmentsPerDirectDownloadBatch</TokenIdentifier>
-			<Abstract type="html">When downloading without the packager, the number of direct-download segments to startup for
-background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
-invalid.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger numberOfSegmentsPerDirectDownloadBatch</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
-			<Anchor>//api/name/numberOfSegmentsPerDirectDownloadBatch</Anchor>
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setPermittedSegmentDownloadErrors:</TokenIdentifier>
-			<Abstract type="html">Whether or not the engine stops downloading if an error occurs while downloading individual segments.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger permittedSegmentDownloadErrors</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
-			<Anchor>//api/name/permittedSegmentDownloadErrors</Anchor>
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/permittedSegmentDownloadErrors</TokenIdentifier>
-			<Abstract type="html">Whether or not the engine stops downloading if an error occurs while downloading individual segments.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger permittedSegmentDownloadErrors</Declaration>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
 			
-			<Anchor>//api/name/permittedSegmentDownloadErrors</Anchor>
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/permittedSegmentDownloadErrors</TokenIdentifier>
-			<Abstract type="html">Whether or not the engine stops downloading if an error occurs while downloading individual segments.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setAllowsExternalPlayback:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSUInteger permittedSegmentDownloadErrors</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
 			
 			
-			<Anchor>//api/name/permittedSegmentDownloadErrors</Anchor>
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setNetworkTimeout:</TokenIdentifier>
-			<Abstract type="html">The network connection timeout for Virtuoso HTTP requests, in seconds.  Default is 60.0s.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSTimeInterval networkTimeout</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
 			
 			
-			<Anchor>//api/name/networkTimeout</Anchor>
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/networkTimeout</TokenIdentifier>
-			<Abstract type="html">The network connection timeout for Virtuoso HTTP requests, in seconds.  Default is 60.0s.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSTimeInterval networkTimeout</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
 			
 			
-			<Anchor>//api/name/networkTimeout</Anchor>
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/networkTimeout</TokenIdentifier>
-			<Abstract type="html">The network connection timeout for Virtuoso HTTP requests, in seconds.  Default is 60.0s.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/cleanup</TokenIdentifier>
+			<Abstract type="html">Must be called when playback permanently stops (E.G. when the view controller exits)</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSTimeInterval networkTimeout</Declaration>
+			<Declaration>- (void)cleanup</Declaration>
 			
 			
-			<Anchor>//api/name/networkTimeout</Anchor>
+			<Anchor>//api/name/cleanup</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAdditionalNetworkHeaders:</TokenIdentifier>
-			<Abstract type="html">A dictionary of additional HTTP headers that Virtuoso will send (along with the
-default set of HTTP headers) in every HTTP request. Takes precedence over the default
-HTTP headers.  These headers may also be overridden by additionalNetworkHeaders
-specified on the VirtuosoAsset individually.
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/viewWillTransitionToSize:withTransitionCoordinator:</TokenIdentifier>
+			<Abstract type="html">Notifies the container that the size of its view is about to change.
 
-Example:
-engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quot;};</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, nullable) NSDictionary *additionalNetworkHeaders</Declaration>
-			
-			
-			<Anchor>//api/name/additionalNetworkHeaders</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/additionalNetworkHeaders</TokenIdentifier>
-			<Abstract type="html">A dictionary of additional HTTP headers that Virtuoso will send (along with the
-default set of HTTP headers) in every HTTP request. Takes precedence over the default
-HTTP headers.  These headers may also be overridden by additionalNetworkHeaders
-specified on the VirtuosoAsset individually.
+@description UIKit calls this method on a view controller before changing the size of a presented view controller’s view.
+You should override this method in your own view controller and use it to perform additional tasks related to
+the size change. At a minimum, you must call this method to allow VirtuosoPlayerView to properly resize its user
+interface.
 
-Example:
-engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quot;};</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+If you override this method in your custom view controllers, always call super at some point in your implementation
+so that UIKit can forward the size change message appropriately.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, nullable) NSDictionary *additionalNetworkHeaders</Declaration>
-			
-			
-			<Anchor>//api/name/additionalNetworkHeaders</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/additionalNetworkHeaders</TokenIdentifier>
-			<Abstract type="html">A dictionary of additional HTTP headers that Virtuoso will send (along with the
-default set of HTTP headers) in every HTTP request. Takes precedence over the default
-HTTP headers.  These headers may also be overridden by additionalNetworkHeaders
-specified on the VirtuosoAsset individually.
-
-Example:
-engine.additionalNetworkHeaders = @{&quot;AccessKey&quot;:&quot;&lt;UUID&gt;&quot;};</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, nullable) NSDictionary *additionalNetworkHeaders</Declaration>
-			
-			
-			<Anchor>//api/name/additionalNetworkHeaders</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setManualDeviceUDID:</TokenIdentifier>
-			<Abstract type="html">An explicit device ID to use when authenticating and syncing with the Backplane.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *manualDeviceUDID</Declaration>
-			
-			
-			<Anchor>//api/name/manualDeviceUDID</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/manualDeviceUDID</TokenIdentifier>
-			<Abstract type="html">An explicit device ID to use when authenticating and syncing with the Backplane.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *manualDeviceUDID</Declaration>
-			
-			
-			<Anchor>//api/name/manualDeviceUDID</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/manualDeviceUDID</TokenIdentifier>
-			<Abstract type="html">An explicit device ID to use when authenticating and syncing with the Backplane.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *manualDeviceUDID</Declaration>
-			
-			
-			<Anchor>//api/name/manualDeviceUDID</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setEngineSetsNetworkActivityIndicator:</TokenIdentifier>
-			<Abstract type="html">Whether Virtuoso should set the app&apos;s network activity indicator</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean engineSetsNetworkActivityIndicator</Declaration>
-			
-			
-			<Anchor>//api/name/engineSetsNetworkActivityIndicator</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/engineSetsNetworkActivityIndicator</TokenIdentifier>
-			<Abstract type="html">Whether Virtuoso should set the app&apos;s network activity indicator</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean engineSetsNetworkActivityIndicator</Declaration>
-			
-			
-			<Anchor>//api/name/engineSetsNetworkActivityIndicator</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/engineSetsNetworkActivityIndicator</TokenIdentifier>
-			<Abstract type="html">Whether Virtuoso should set the app&apos;s network activity indicator</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean engineSetsNetworkActivityIndicator</Declaration>
-			
-			
-			<Anchor>//api/name/engineSetsNetworkActivityIndicator</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setMinimumBackplaneSyncInterval:</TokenIdentifier>
-			<Abstract type="html">The minimum amount of time between Backplane syncs</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSTimeInterval minimumBackplaneSyncInterval</Declaration>
-			
-			
-			<Anchor>//api/name/minimumBackplaneSyncInterval</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/minimumBackplaneSyncInterval</TokenIdentifier>
-			<Abstract type="html">The minimum amount of time between Backplane syncs</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSTimeInterval minimumBackplaneSyncInterval</Declaration>
-			
-			
-			<Anchor>//api/name/minimumBackplaneSyncInterval</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/minimumBackplaneSyncInterval</TokenIdentifier>
-			<Abstract type="html">The minimum amount of time between Backplane syncs</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSTimeInterval minimumBackplaneSyncInterval</Declaration>
-			
-			
-			<Anchor>//api/name/minimumBackplaneSyncInterval</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/permittedMimeTypesForAssetType:andDataType:</TokenIdentifier>
-			<Abstract type="html">The permitted MIME types for a particular asset and segment type</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray *)permittedMimeTypesForAssetType:(kVDE_AssetType)assetType andDataType:(kVF_DownloadDataType)dataType</Declaration>
+			<Declaration>- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id&lt;UIViewControllerTransitionCoordinator&gt;)coordinator</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>assetType</Name>
-					<Abstract type="html">The asset type to validate</Abstract>
+					<Name>size</Name>
+					<Abstract type="html">The new size for the container&apos;s view</Abstract>
 				</Parameter><Parameter>
-					<Name>dataType</Name>
-					<Abstract type="html">The data type to validate</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An array of strings representing MIME types Virtuoso will allow for download</Abstract></ReturnValue>
-			<Anchor>//api/name/permittedMimeTypesForAssetType:andDataType:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/allowAdditionalMimeTypes:forAssetType:andDataType:</TokenIdentifier>
-			<Abstract type="html">Configures additional MIME types for asset manifest and segment file validation</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>- (void)allowAdditionalMimeTypes:(nonnull NSArray *)additionalMimeTypes forAssetType:(kVDE_AssetType)assetType andDataType:(kVF_DownloadDataType)dataType</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>additionalMimeTypes</Name>
-					<Abstract type="html">An array of string MIME type values add to the default list, or nil</Abstract>
-				</Parameter><Parameter>
-					<Name>assetType</Name>
-					<Abstract type="html">The asset type to validate</Abstract>
-				</Parameter><Parameter>
-					<Name>dataType</Name>
-					<Abstract type="html">The data type to validate</Abstract>
+					<Name>coordinator</Name>
+					<Abstract type="html">The transition coordinator object managing the size change. You can use this object to animate your changes
+or get information about the transition that is in progress.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/allowAdditionalMimeTypes:forAssetType:andDataType:</Anchor>
+			<Anchor>//api/name/viewWillTransitionToSize:withTransitionCoordinator:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAudioLanguagesToDownload:</TokenIdentifier>
-			<Abstract type="html">Configures which audio languages will be downloaded from assets that contain multiple
-audio versions</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setDelegate:</TokenIdentifier>
+			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioLanguagesToDownload</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/audioLanguagesToDownload</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/audioLanguagesToDownload</TokenIdentifier>
-			<Abstract type="html">Configures which audio languages will be downloaded from assets that contain multiple
-audio versions</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/delegate</TokenIdentifier>
+			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioLanguagesToDownload</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/audioLanguagesToDownload</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/audioLanguagesToDownload</TokenIdentifier>
-			<Abstract type="html">Configures which audio languages will be downloaded from assets that contain multiple
-audio versions</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/delegate</TokenIdentifier>
+			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioLanguagesToDownload</Declaration>
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/audioLanguagesToDownload</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setAudioCodecsToDownload:</TokenIdentifier>
-			<Abstract type="html">Configures which audio codecs will be downloaded from assets that contain multiple
-audio codecs in the master manifest</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayer:</TokenIdentifier>
+			<Abstract type="html">You may use access to the AVPlayer object to perform custom player actions, such as modifying the
+playback rate or seeking to a particular time in the playback stream.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioCodecsToDownload</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
 			
 			
-			<Anchor>//api/name/audioCodecsToDownload</Anchor>
+			<Anchor>//api/name/player</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/audioCodecsToDownload</TokenIdentifier>
-			<Abstract type="html">Configures which audio codecs will be downloaded from assets that contain multiple
-audio codecs in the master manifest</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/player</TokenIdentifier>
+			<Abstract type="html">You may use access to the AVPlayer object to perform custom player actions, such as modifying the
+playback rate or seeking to a particular time in the playback stream.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioCodecsToDownload</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
 			
 			
-			<Anchor>//api/name/audioCodecsToDownload</Anchor>
+			<Anchor>//api/name/player</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/audioCodecsToDownload</TokenIdentifier>
-			<Abstract type="html">Configures which audio codecs will be downloaded from assets that contain multiple
-audio codecs in the master manifest</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/player</TokenIdentifier>
+			<Abstract type="html">You may use access to the AVPlayer object to perform custom player actions, such as modifying the
+playback rate or seeking to a particular time in the playback stream.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *audioCodecsToDownload</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
 			
 			
-			<Anchor>//api/name/audioCodecsToDownload</Anchor>
+			<Anchor>//api/name/player</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setSubtitleLanguagesToDownload:</TokenIdentifier>
-			<Abstract type="html">Configures which subtitle languages will be downloaded from assets that contain subtitles</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setIsPlaying:</TokenIdentifier>
+			<Abstract type="html">Whether the player is currently playing</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *subtitleLanguagesToDownload</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isPlaying</Declaration>
 			
 			
-			<Anchor>//api/name/subtitleLanguagesToDownload</Anchor>
+			<Anchor>//api/name/isPlaying</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/subtitleLanguagesToDownload</TokenIdentifier>
-			<Abstract type="html">Configures which subtitle languages will be downloaded from assets that contain subtitles</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/isPlaying</TokenIdentifier>
+			<Abstract type="html">Whether the player is currently playing</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *subtitleLanguagesToDownload</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isPlaying</Declaration>
 			
 			
-			<Anchor>//api/name/subtitleLanguagesToDownload</Anchor>
+			<Anchor>//api/name/isPlaying</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/subtitleLanguagesToDownload</TokenIdentifier>
-			<Abstract type="html">Configures which subtitle languages will be downloaded from assets that contain subtitles</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/isPlaying</TokenIdentifier>
+			<Abstract type="html">Whether the player is currently playing</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSArray *subtitleLanguagesToDownload</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isPlaying</Declaration>
 			
 			
-			<Anchor>//api/name/subtitleLanguagesToDownload</Anchor>
+			<Anchor>//api/name/isPlaying</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/allowRestrictedMimeTypesForEncryptionKeys:</TokenIdentifier>
-			<Abstract type="html">Configures the download engine to allow restricted MIME types</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setCurrentProgress:</TokenIdentifier>
+			<Abstract type="html">Convenience method to set/return the current player progress as a value from 0.0 - 1.0 inclusive.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
 			
-			<Declaration>- (void)allowRestrictedMimeTypesForEncryptionKeys:(Boolean)allow</Declaration>
+			<Declaration>@property (nonatomic, assign) double currentProgress</Declaration>
+			
+			
+			<Anchor>//api/name/currentProgress</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/currentProgress</TokenIdentifier>
+			<Abstract type="html">Convenience method to set/return the current player progress as a value from 0.0 - 1.0 inclusive.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double currentProgress</Declaration>
+			
+			
+			<Anchor>//api/name/currentProgress</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/currentProgress</TokenIdentifier>
+			<Abstract type="html">Convenience method to set/return the current player progress as a value from 0.0 - 1.0 inclusive.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double currentProgress</Declaration>
+			
+			
+			<Anchor>//api/name/currentProgress</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setCurrentPlaybackPosition:</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the current playback position, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackPosition</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/currentPlaybackPosition</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the current playback position, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackPosition</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/currentPlaybackPosition</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the current playback position, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackPosition</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setDuration:</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the total duration of the loaded video, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/duration</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the total duration of the loaded video, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/duration</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the total duration of the loaded video, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlaybackTimeRemaining:</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the playback time remaining, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining</Declaration>
+			
+			
+			<Anchor>//api/name/playbackTimeRemaining</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playbackTimeRemaining</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the playback time remaining, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining</Declaration>
+			
+			
+			<Anchor>//api/name/playbackTimeRemaining</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playbackTimeRemaining</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the playback time remaining, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining</Declaration>
+			
+			
+			<Anchor>//api/name/playbackTimeRemaining</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayerControlsHidden:</TokenIdentifier>
+			<Abstract type="html">Whether the built-in player user interface is displayed.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL playerControlsHidden</Declaration>
+			
+			
+			<Anchor>//api/name/playerControlsHidden</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playerControlsHidden</TokenIdentifier>
+			<Abstract type="html">Whether the built-in player user interface is displayed.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL playerControlsHidden</Declaration>
+			
+			
+			<Anchor>//api/name/playerControlsHidden</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playerControlsHidden</TokenIdentifier>
+			<Abstract type="html">Whether the built-in player user interface is displayed.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL playerControlsHidden</Declaration>
+			
+			
+			<Anchor>//api/name/playerControlsHidden</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayPauseButton:</TokenIdentifier>
+			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
+			
+			
+			<Anchor>//api/name/playPauseButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playPauseButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
+			
+			
+			<Anchor>//api/name/playPauseButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playPauseButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
+			
+			
+			<Anchor>//api/name/playPauseButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setProgressBar:</TokenIdentifier>
+			<Abstract type="html">Slider shown in the top HUD overlay, allowing the user to see playback progress and scrub
+to a particular location in the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
+			
+			
+			<Anchor>//api/name/progressBar</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/progressBar</TokenIdentifier>
+			<Abstract type="html">Slider shown in the top HUD overlay, allowing the user to see playback progress and scrub
+to a particular location in the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
+			
+			
+			<Anchor>//api/name/progressBar</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/progressBar</TokenIdentifier>
+			<Abstract type="html">Slider shown in the top HUD overlay, allowing the user to see playback progress and scrub
+to a particular location in the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
+			
+			
+			<Anchor>//api/name/progressBar</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayBackTime:</TokenIdentifier>
+			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playBackTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playBackTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayBackTotalTime:</TokenIdentifier>
+			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTotalTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playBackTotalTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTotalTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playBackTotalTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTotalTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setLanguageSelectionButton:</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select audio language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/languageSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/languageSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select audio language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/languageSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/languageSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select audio language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/languageSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setCcSelectionButton:</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select subtitle language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/ccSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/ccSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select subtitle language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/ccSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/ccSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select subtitle language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/ccSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/mediaOptionsForMediaCharacteristic:</TokenIdentifier>
+			<Abstract type="html">Convenience interface used to retrieve the available audio and subtitle track options.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSArray&lt;AVMediaSelectionOption*&gt; *)mediaOptionsForMediaCharacteristic:(nonnull AVMediaCharacteristic)characteristic</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>allow</Name>
-					<Abstract type="html">Whether to allow restricted MIME types for encryption key downloads</Abstract>
+					<Name>characteristic</Name>
+					<Abstract type="html">Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray containing the available media selection options for the given characteristic</Abstract></ReturnValue>
+			<Anchor>//api/name/mediaOptionsForMediaCharacteristic:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setMediaSelectionOption:forMediaCharacteristic:</TokenIdentifier>
+			<Abstract type="html">Convenience interface used to set a particular audio/subtitle language option in the player.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)setMediaSelectionOption:(nullable AVMediaSelectionOption *)option forMediaCharacteristic:(nonnull AVMediaCharacteristic)characteristic</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>option</Name>
+					<Abstract type="html">One of the options returned from mediaOptionsForMediaCharacteristic:</Abstract>
+				</Parameter><Parameter>
+					<Name>characteristic</Name>
+					<Abstract type="html">Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/allowRestrictedMimeTypesForEncryptionKeys:</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/restrictedMimeTypesForEncryptionKeysAllowed</TokenIdentifier>
-			<Abstract type="html">Whether restricted MIME types are allowed for encryption keys</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>- (Boolean)restrictedMimeTypesForEncryptionKeysAllowed</Declaration>
-			
-			
-			<Anchor>//api/name/restrictedMimeTypesForEncryptionKeysAllowed</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setSendHTTPErrorForErroredSegments:</TokenIdentifier>
-			<Abstract type="html">Configures proxy playback behavior when errored segments are requested.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean sendHTTPErrorForErroredSegments</Declaration>
-			
-			
-			<Anchor>//api/name/sendHTTPErrorForErroredSegments</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/sendHTTPErrorForErroredSegments</TokenIdentifier>
-			<Abstract type="html">Configures proxy playback behavior when errored segments are requested.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean sendHTTPErrorForErroredSegments</Declaration>
-			
-			
-			<Anchor>//api/name/sendHTTPErrorForErroredSegments</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/sendHTTPErrorForErroredSegments</TokenIdentifier>
-			<Abstract type="html">Configures proxy playback behavior when errored segments are requested.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean sendHTTPErrorForErroredSegments</Declaration>
-			
-			
-			<Anchor>//api/name/sendHTTPErrorForErroredSegments</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setClientSSLCertificatePath:</TokenIdentifier>
-			<Abstract type="html">The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePath</Declaration>
-			
-			
-			<Anchor>//api/name/clientSSLCertificatePath</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/clientSSLCertificatePath</TokenIdentifier>
-			<Abstract type="html">The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePath</Declaration>
-			
-			
-			<Anchor>//api/name/clientSSLCertificatePath</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/clientSSLCertificatePath</TokenIdentifier>
-			<Abstract type="html">The path to the client SSL cert to use for all SSL auth challenges.  Can be nil.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePath</Declaration>
-			
-			
-			<Anchor>//api/name/clientSSLCertificatePath</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setClientSSLCertificatePassword:</TokenIdentifier>
-			<Abstract type="html">The password required to use the client SSL cert.  Can be nil.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePassword</Declaration>
-			
-			
-			<Anchor>//api/name/clientSSLCertificatePassword</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/clientSSLCertificatePassword</TokenIdentifier>
-			<Abstract type="html">The password required to use the client SSL cert.  Can be nil.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePassword</Declaration>
-			
-			
-			<Anchor>//api/name/clientSSLCertificatePassword</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/clientSSLCertificatePassword</TokenIdentifier>
-			<Abstract type="html">The password required to use the client SSL cert.  Can be nil.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *clientSSLCertificatePassword</Declaration>
-			
-			
-			<Anchor>//api/name/clientSSLCertificatePassword</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setTrustSelfSignedServerCertificates:</TokenIdentifier>
-			<Abstract type="html">Whether Virtuoso will trust self-signed SSL certs</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean trustSelfSignedServerCertificates</Declaration>
-			
-			
-			<Anchor>//api/name/trustSelfSignedServerCertificates</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/trustSelfSignedServerCertificates</TokenIdentifier>
-			<Abstract type="html">Whether Virtuoso will trust self-signed SSL certs</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean trustSelfSignedServerCertificates</Declaration>
-			
-			
-			<Anchor>//api/name/trustSelfSignedServerCertificates</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/trustSelfSignedServerCertificates</TokenIdentifier>
-			<Abstract type="html">Whether Virtuoso will trust self-signed SSL certs</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean trustSelfSignedServerCertificates</Declaration>
-			
-			
-			<Anchor>//api/name/trustSelfSignedServerCertificates</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDrmUserName:</TokenIdentifier>
-			<Abstract type="html">The user name to use with the DRM system.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *drmUserName</Declaration>
-			
-			
-			<Anchor>//api/name/drmUserName</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/drmUserName</TokenIdentifier>
-			<Abstract type="html">The user name to use with the DRM system.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *drmUserName</Declaration>
-			
-			
-			<Anchor>//api/name/drmUserName</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/drmUserName</TokenIdentifier>
-			<Abstract type="html">The user name to use with the DRM system.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *drmUserName</Declaration>
-			
-			
-			<Anchor>//api/name/drmUserName</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDrmPassword:</TokenIdentifier>
-			<Abstract type="html">The password to use with the DRM system.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *drmPassword</Declaration>
-			
-			
-			<Anchor>//api/name/drmPassword</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/drmPassword</TokenIdentifier>
-			<Abstract type="html">The password to use with the DRM system.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *drmPassword</Declaration>
-			
-			
-			<Anchor>//api/name/drmPassword</Anchor>
-            <NodeRef refid="18"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSettings/drmPassword</TokenIdentifier>
-			<Abstract type="html">The password to use with the DRM system.</Abstract>
-			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *drmPassword</Declaration>
-			
-			
-			<Anchor>//api/name/drmPassword</Anchor>
+			<Anchor>//api/name/setMediaSelectionOption:forMediaCharacteristic:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

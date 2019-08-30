@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVF_SegmentType.html">
+	<File path="Constants/kVDE_ProxyErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVF_SegmentType</TokenIdentifier>
-			<Abstract type="html">Allowable Virtuoso types for segments</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ProxyErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
+NSNotificationCenter. These codes are included in the NSError that is sent.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +15,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeUnknown</TokenIdentifier>
-            <Abstract type="html">The file is of unknown type (default)</Abstract>
-            <Declaration>kVF_SegmentTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneAuthorizationTimedOut</TokenIdentifier>
+            <Abstract type="html">For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
+        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. </Abstract>
+            <Declaration>kVDE_BackplaneAuthorizationTimedOut</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +26,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeSubRange</TokenIdentifier>
-            <Abstract type="html">The file is a sub-range of a larger monolithic file (MP4)</Abstract>
-            <Declaration>kVF_SegmentTypeSubRange</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetOutsideViewingWindow</TokenIdentifier>
+            <Abstract type="html">You attempted to play an asset outside its availability window.</Abstract>
+            <Declaration>kVDE_PlayedAssetOutsideViewingWindow</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +36,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamEncryptionKey</TokenIdentifier>
-            <Abstract type="html">The file is a video stream encryption key (HLS/HSS)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamEncryptionKey</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetExpired</TokenIdentifier>
+            <Abstract type="html">You attempted to play an expired asset.</Abstract>
+            <Declaration>kVDE_PlayedAssetExpired</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,9 +46,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamSegment</TokenIdentifier>
-            <Abstract type="html">The file is a video stream segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamSegment</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidAsset</TokenIdentifier>
+            <Abstract type="html">The VirtuosoAsset used to initialize the proxy wasn&apos;t an invalid asset or the asset protection type was not
+        kVDE_AssetProtectionTypePassthrough. </Abstract>
+            <Declaration>kVDE_InvalidAsset</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -54,29 +57,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamAudio</TokenIdentifier>
-            <Abstract type="html">The file is a video stream audio segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamAudio</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamCC</TokenIdentifier>
-            <Abstract type="html">The file is a video stream closed captioning segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamCC</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeAncillary</TokenIdentifier>
-            <Abstract type="html">The file is a ancillary</Abstract>
-            <Declaration>kVF_SegmentTypeAncillary</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PortInUse</TokenIdentifier>
+            <Abstract type="html">The HTTP server was unable to listen on the selected port</Abstract>
+            <Declaration>kVDE_PortInUse</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

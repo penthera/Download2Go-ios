@@ -10,7 +10,7 @@
  *  Distributing and/or reproducing this information is forbidden unless
  *  prior written permission is obtained from Penthera Inc.
  *
- *  @copyright (c) 2018 Penthera Inc. All Rights Reserved.
+ *  @copyright (c) 2019 Penthera Inc. All Rights Reserved.
  *
  */
 
@@ -538,6 +538,10 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorType)
     /** Virtuoso has received notice from the server that the user has downloaded this asset the
         maximum number of times for this account.  Downloads cannot continue for this asset. */
     kVDE_LifetimeDownloadLimitReached = 6,
+    
+    /** Virtuoso has attempted to start downloading an asset for which DRM is required before downloading
+        and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. */
+    kVDE_BlockedOnDRM = 7,
 };
 
 /*!

@@ -10,7 +10,7 @@
  *  Distributing and/or reproducing this information is forbidden unless
  *  prior written permission is obtained from Penthera Inc.
  *
- *  @copyright (c) 2018 Penthera Inc. All Rights Reserved.
+ *  @copyright (c) 2019 Penthera Inc. All Rights Reserved.
  *
  */
 
@@ -66,6 +66,18 @@ typedef void(^DeviceUpdateResultBlock)(Boolean success,  NSError* _Nullable  err
  *  @param onComplete A callback block indicating the result of the update
  */
 - (void) updateNickname:(nonnull NSString*)newNickname onComplete:(nullable DeviceUpdateResultBlock)onComplete;
+
+/*!
+ *  @abstract Sets a new externalID for this device.
+ *
+ *  @warning You can only call this method from the device itself.
+ *           If you try to call this method from a different device, it will have no effect.
+ *
+ *  @param externalID The new externalDeviceID for this device
+ *
+ *  @param onComplete A callback block indicating the result of the update
+ */
+- (void) updateExternalID:(nonnull NSString*)externalID onComplete:(nullable DeviceUpdateResultBlock)onComplete;
 
 /*!
  *  @abstract Whether this device should allow downloads

@@ -10,7 +10,7 @@
  *  Distributing and/or reproducing this information is forbidden unless
  *  prior written permission is obtained from Penthera Inc.
  *
- *  @copyright (c) 2018 Penthera Inc. All Rights Reserved.
+ *  @copyright (c) 2019 Penthera Inc. All Rights Reserved.
  *
  */
 
@@ -190,6 +190,29 @@
  *              but user can disable this feature using this property
  */
 @property (nonatomic, assign) Boolean disableAutoRenewDRMLicense;
+
+/*!
+ *  @abstract If YES, Virtuoso will require a successful DRM license request before allowing download.
+ *
+ *  @discussion Normally, during asset creation, Virtuoso attempts to perform all asset creation processes
+ *              asynchronously in order to setup and start the asset download as fast as possible.  The normal
+ *              flow is that the manifests will be parsed.  As soon as enough segments are identified from the
+ *              manifests to begin download, download will begin while the rest of the manifest structure is parsed
+ *              and created.  Any DRM license required is asynchronously requested during this process.  If the DRM
+ *              license fails to load, the asset continues to download, and Virtuoso will re-attempt to retrieve the
+ *              DRM license when the download completes.  Virtuoso will continue to attempt to aquire a DRM license
+ *              at opportune times if the license request continues to fail.
+ *
+ *              If you would prefer that the asset not be parsed at all if the DRM request fails, you can enable this
+ *              setting, which defaults to NO.  If set to YES, if the DRM request fails, then the new asset will *not*
+ *              be parsed and, instead, will be created but flagged as 'too many errors'.  If this occurs,
+ *              the parse complete callback will be fired, containing the asset and an error indicating that the DRM
+ *              license failed.  It is expected that you will message the user appropriate and then delete the returned asset.
+ *
+ *  @warning    If you enable this setting, Virtuoso will take longer before reporting download start and progress, as normal
+ *              parsing and download activities will be delayed until the DRM license can be confirmed.
+ */
+@property (nonatomic,assign) Boolean requireDRMLicensePriorToAssetParse;
 
 /**---------------------------------------------------------------------------------------
  * @name Push Notice Configuration

@@ -10,12 +10,13 @@
  *  Distributing and/or reproducing this information is forbidden unless
  *  prior written permission is obtained from Penthera Inc.
  *
- *  @copyright (c) 2018 Penthera Inc. All Rights Reserved.
+ *  @copyright (c) 2019 Penthera Inc. All Rights Reserved.
  *
  */
 
 #import <Foundation/Foundation.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientDownloadEngine.h>
+#import "VirtuosoDefaultAVAssetResourceLoaderDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @abstract  Allows Virtuoso to request the enclosing application for asset specific DRM
  *             values when requesting CastLabs (DrmToday) FairPlay license keys.
  */
-@interface CastLabsDrmConfig : NSObject
+@interface CastLabsDrmConfig : VirtuosoDrmConfig
 
 /*!
  *  @abstract  The CastLabs user ID.
@@ -39,22 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @abstract  The CastLabs Merchant ID
  */
 @property (nonatomic,strong) NSString* clCustomerName;
-@end
-
-/*!
- *  @abstract  Allows Virtuoso to request the enclosing application for asset specific DRM
- *             values when requesting CastLabs (DrmToday) FairPlay license keys.
- */
-@protocol CastLabsDrmConfigDelegate <NSObject>
-
-/*!
- *  @abstract  Called when the DRM subsystem needs a DRM configuration to make a licensing request.
- *
- *  @param asset The VirtuosoAsset object that will request a FairPlay license.
- *
- *  @return A properly configured CastLabsDrmConfig object containing proper licensing details for the asset.
- */
-- (CastLabsDrmConfig*)drmConfigForAsset:(VirtuosoAsset*)asset;
 @end
 
 /*!
@@ -75,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param delegate The delegate to call curing licensing requests.
  */
-+ (void)setDrmConfigDelegate:(id<CastLabsDrmConfigDelegate>)delegate;
++ (void)setDrmConfigDelegate:(id<VirtuosoDrmConfigDelegate>)delegate;
 @end
 
 NS_ASSUME_NONNULL_END

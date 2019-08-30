@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoAdsProvider.html">
+	<File path="Classes/CastLabsDrmConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsProvider</TokenIdentifier>
-			<Abstract type="html">@header VirtuosoAdsProvider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CastLabsDrmConfig</TokenIdentifier>
+			<Abstract type="html">Allows Virtuoso to request the enclosing application for asset specific DRM
+values when requesting CastLabs (DrmToday) FairPlay license keys.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>
@@ -13,62 +14,110 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/serverAdsProvider</TokenIdentifier>
-			<Abstract type="html">BETA Feature. Class convienence method to create a server-side Ads Provider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CastLabsDrmConfig/setClUserID:</TokenIdentifier>
+			<Abstract type="html">The CastLabs user ID.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoAdsProvider *_Nonnull)serverAdsProvider</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *clUserID</Declaration>
 			
-			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider object.</Abstract></ReturnValue>
-			<Anchor>//api/name/serverAdsProvider</Anchor>
+			
+			<Anchor>//api/name/clUserID</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/disableAds</TokenIdentifier>
-			<Abstract type="html">BETA Feature. Class convienence method to create a default Ads Provider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CastLabsDrmConfig/clUserID</TokenIdentifier>
+			<Abstract type="html">The CastLabs user ID.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoAdsProvider *_Nonnull)disableAds</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *clUserID</Declaration>
 			
-			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider object.</Abstract></ReturnValue>
-			<Anchor>//api/name/disableAds</Anchor>
+			
+			<Anchor>//api/name/clUserID</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setRequireAds:</TokenIdentifier>
-			<Abstract type="html">BETA Feature. True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/CastLabsDrmConfig/clUserID</TokenIdentifier>
+			<Abstract type="html">The CastLabs user ID.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *clUserID</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/clUserID</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/requireAds</TokenIdentifier>
-			<Abstract type="html">BETA Feature. True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CastLabsDrmConfig/setClSessionID:</TokenIdentifier>
+			<Abstract type="html">A CastLabs session ID appropriate for the asset.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *clSessionID</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/clSessionID</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/requireAds</TokenIdentifier>
-			<Abstract type="html">BETA Feature. True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CastLabsDrmConfig/clSessionID</TokenIdentifier>
+			<Abstract type="html">A CastLabs session ID appropriate for the asset.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, strong) NSString *clSessionID</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/clSessionID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CastLabsDrmConfig/clSessionID</TokenIdentifier>
+			<Abstract type="html">A CastLabs session ID appropriate for the asset.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clSessionID</Declaration>
+			
+			
+			<Anchor>//api/name/clSessionID</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CastLabsDrmConfig/setClCustomerName:</TokenIdentifier>
+			<Abstract type="html">The CastLabs Merchant ID</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clCustomerName</Declaration>
+			
+			
+			<Anchor>//api/name/clCustomerName</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CastLabsDrmConfig/clCustomerName</TokenIdentifier>
+			<Abstract type="html">The CastLabs Merchant ID</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clCustomerName</Declaration>
+			
+			
+			<Anchor>//api/name/clCustomerName</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CastLabsDrmConfig/clCustomerName</TokenIdentifier>
+			<Abstract type="html">The CastLabs Merchant ID</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clCustomerName</Declaration>
+			
+			
+			<Anchor>//api/name/clCustomerName</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

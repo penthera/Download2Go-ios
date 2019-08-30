@@ -1,67 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoSubscriptionDataSource.html">
+	<File path="Protocols/VirtuosoPlayer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoSubscriptionDataSource</TokenIdentifier>
-			<Abstract type="html">Provides a configurable and dynamic mechanism for retrieving required data about subscription content.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayer</TokenIdentifier>
+			<Abstract type="html">Defines the minimum API required for basic playback of segmented (HLS, HSS, DASH, etc.) video</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
             
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionDefaultDataSource</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<NodeRef refid="31"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithSubscriptions:</TokenIdentifier>
-			<Abstract type="html">Initializes a data source with subscriptions that require data lookups</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>- (nonnull id)initWithSubscriptions:(nonnull NSArray *)subscriptions</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>subscriptions</Name>
-					<Abstract type="html">A list of subscription data</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSubscriptions:</Anchor>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithAssets:</TokenIdentifier>
-			<Abstract type="html">Initializes a data source with individual assets that require data lookups</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>- (nonnull id)initWithAssets:(nonnull NSArray *)assets</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>assets</Name>
-					<Abstract type="html">A list of asset data</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAssets:</Anchor>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/process</TokenIdentifier>
-			<Abstract type="html">Processes a data lookup operation using the initalized subscription data</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
 			
-			<Declaration>- (nonnull NSObject *)process</Declaration>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
-			<ReturnValue><Abstract type="html">If the data source was initialized with subscriptions, via the initWithSubscriptions method, then a NSDictionary where the keys are subscription IDs and
-the values are NSArrays containing NSDictionaries representing asset data, with key-value data as defined in SubscriptionAssetDataAttributes.  If the
-data source was initialized with assets, via the initWithAssets method, then a single NSArray is returned directly, without the top NSDictionary package.</Abstract></ReturnValue>
-			<Anchor>//api/name/process</Anchor>
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

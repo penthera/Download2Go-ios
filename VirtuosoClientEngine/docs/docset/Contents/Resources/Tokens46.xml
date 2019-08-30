@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_ProxyErrorCode.html">
+	<File path="Constants/kVDE_ErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ProxyErrorCode</TokenIdentifier>
-			<Abstract type="html">Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
-NSNotificationCenter. These codes are included in the NSError that is sent.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors or warnings encountered by Virtuoso. Included in the NSError object sent
+via NSNotificationCenter when issues are reported.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -15,10 +15,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneAuthorizationTimedOut</TokenIdentifier>
-            <Abstract type="html">For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
-        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. </Abstract>
-            <Declaration>kVDE_BackplaneAuthorizationTimedOut</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneURLError</TokenIdentifier>
+            <Abstract type="html">The supplied Backplane URL contains an invalid format</Abstract>
+            <Declaration>kVDE_BackplaneURLError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -26,9 +25,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetOutsideViewingWindow</TokenIdentifier>
-            <Abstract type="html">You attempted to play an asset outside its availability window.</Abstract>
-            <Declaration>kVDE_PlayedAssetOutsideViewingWindow</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneNotReachableError</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to reach the Backplane</Abstract>
+            <Declaration>kVDE_BackplaneNotReachableError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -36,9 +35,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetExpired</TokenIdentifier>
-            <Abstract type="html">You attempted to play an expired asset.</Abstract>
-            <Declaration>kVDE_PlayedAssetExpired</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileMoveToFinalPathError</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to move the downloaded asset to the final destination</Abstract>
+            <Declaration>kVDE_FileMoveToFinalPathError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -46,10 +45,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidAsset</TokenIdentifier>
-            <Abstract type="html">The VirtuosoAsset used to initialize the proxy wasn&apos;t an invalid asset or the asset protection type was not
-        kVDE_AssetProtectionTypePassthrough. </Abstract>
-            <Declaration>kVDE_InvalidAsset</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnexpectedFileSizeWarning</TokenIdentifier>
+            <Abstract type="html">The observed final file size doesn&apos;t match the expected file size</Abstract>
+            <Declaration>kVDE_UnexpectedFileSizeWarning</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -57,9 +55,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PortInUse</TokenIdentifier>
-            <Abstract type="html">The HTTP server was unable to listen on the selected port</Abstract>
-            <Declaration>kVDE_PortInUse</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnserializableUserInfoError</TokenIdentifier>
+            <Abstract type="html">The userInfo dictionary contains objects that cannot be serialized</Abstract>
+            <Declaration>kVDE_UnserializableUserInfoError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

@@ -10,7 +10,7 @@
  *  Distributing and/or reproducing this information is forbidden unless
  *  prior written permission is obtained from Penthera Inc.
  *
- *  @copyright (c) 2018 Penthera Inc. All Rights Reserved.
+ *  @copyright (c) 2019 Penthera Inc. All Rights Reserved.
  *
  */
 
@@ -56,6 +56,12 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoSubscriptionNotificationsManager.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAdsNotificationsManager.h>
 
+#pragma mark
+#pragma mark DRM Integrations
+#pragma mark
+
+#import <VirtuosoClientDownloadEngine/BuyDRMAVAssetResourceLoaderDelegate.h>
+#import <VirtuosoClientDownloadEngine/CastLabsAVAssetResourceLoaderDelegate.h>
 
 #pragma mark
 #pragma mark Subscriptions

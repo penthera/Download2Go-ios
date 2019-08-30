@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoAVPlayer.html">
+	<File path="Classes/CastLabsAVAssetResourceLoaderDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAVPlayer</TokenIdentifier>
-			<Abstract type="html">A subclass of AVPlayer that is directly integrated with the Virtuoso SDK via the
-VirtuosoPlayer protocol.</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/CastLabsAVAssetResourceLoaderDelegate</TokenIdentifier>
+			<Abstract type="html">A convenience subclass that automatically handles CastLabs FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="3"/>
@@ -14,134 +13,19 @@ VirtuosoPlayer protocol.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setContentURL:</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/CastLabsAVAssetResourceLoaderDelegate/setDrmConfigDelegate:</TokenIdentifier>
+			<Abstract type="html">An object to call to reuest asset-specific drm configuration details during licensing.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			<Declaration>+ (void)setDrmConfigDelegate:(id&lt;VirtuosoDrmConfigDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate to call curing licensing requests.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/contentURL</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
-			
-			
-			<Anchor>//api/name/contentURL</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file you wish to play</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
-			
-			
-			<Anchor>//api/name/contentURL</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setAsset:</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/setTimeToFirstFrame:</TokenIdentifier>
-			<Abstract type="html">The &quot;time to first frame&quot; from the last playback session.</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToFirstFrame</Declaration>
-			
-			
-			<Anchor>//api/name/timeToFirstFrame</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/timeToFirstFrame</TokenIdentifier>
-			<Abstract type="html">The &quot;time to first frame&quot; from the last playback session.</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToFirstFrame</Declaration>
-			
-			
-			<Anchor>//api/name/timeToFirstFrame</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAVPlayer/timeToFirstFrame</TokenIdentifier>
-			<Abstract type="html">The &quot;time to first frame&quot; from the last playback session.</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToFirstFrame</Declaration>
-			
-			
-			<Anchor>//api/name/timeToFirstFrame</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/prepareToPlay</TokenIdentifier>
-			<Abstract type="html">Prepares the player to play</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>- (void)prepareToPlay</Declaration>
-			
-			
-			<Anchor>//api/name/prepareToPlay</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAVPlayer/cleanup</TokenIdentifier>
-			<Abstract type="html">Must be called when playback permanently stops (E.G. when the view controller exits)</Abstract>
-			<DeclaredIn>VirtuosoAVPlayer.h</DeclaredIn>
-			
-			<Declaration>- (void)cleanup</Declaration>
-			
-			
-			<Anchor>//api/name/cleanup</Anchor>
+			<Anchor>//api/name/setDrmConfigDelegate:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

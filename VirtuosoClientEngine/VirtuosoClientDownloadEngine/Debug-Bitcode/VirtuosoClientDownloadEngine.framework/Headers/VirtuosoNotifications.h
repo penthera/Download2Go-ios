@@ -10,7 +10,7 @@
  *  Distributing and/or reproducing this information is forbidden unless
  *  prior written permission is obtained from Penthera Inc.
  *
- *  @copyright (c) 2018 Penthera Inc. All Rights Reserved.
+ *  @copyright (c) 2019 Penthera Inc. All Rights Reserved.
  *
  */
 
@@ -121,12 +121,16 @@ extern NSString* kDownloadEngineStatusDidChangeNotification;
 extern NSString* kDownloadEngineDidStartDownloadingAssetNotification;
 
 /*!
- *  @constant kDownloadEngineDRMRefreshForAssetNotification
+ *  @constant kDownloadEngineDRMResultForAssetNotification
  *
- *  @abstract Fired after Virtuoso has updated DRM for an Asset.  The userInfo dictionary
- *            will contain the asset (in 'kDownloadEngineNotificationAssetKey').
+ *  @abstract Fired after Virtuoso has attempted to acquire a DRM license for a
+ *            VirtuosoAsset.  The userInfo dictionary will contain the asset
+ *            in 'kDownloadEngineNotificationAssetKey'.  The key 'kDownloadEngineNotificationSuccessValueKey'
+ *            will contain a Boolean indication of success.  If that value is NO, then
+ *            the key 'kDownloadEngineNotificationErrorKey' will contain an error indicating
+ *            the failure result.
  */
-extern NSString* kDownloadEngineDRMRefreshForAssetNotification;
+extern NSString* kDownloadEngineDRMResultForAssetNotification;
 
 /*!
  *  @constant kDownloadEngineProgressUpdatedForAssetNotification

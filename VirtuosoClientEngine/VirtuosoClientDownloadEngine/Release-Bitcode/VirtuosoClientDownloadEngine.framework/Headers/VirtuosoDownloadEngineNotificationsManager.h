@@ -37,10 +37,10 @@
 -(void)downloadEngineProgressUpdatedForAsset:(VirtuosoAsset* _Nonnull)asset;
 
 /*
- *  Called whenever the Engine reports refresh of DRM
+ *  Called whenever the Engine reports result of DRM
  */
 // kDownloadEngineDRMRefreshForAssetNotification
--(void)downloadEngineDRMRefreshForAsset:(VirtuosoAsset* _Nonnull)asset;
+-(void)downloadEngineDRMResultForAsset:(VirtuosoAsset* _Nonnull)asset withError:(NSError* _Nullable)error;
 
 /*
  *  Called when an asset is being processed after background transfer

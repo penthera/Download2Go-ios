@@ -5,6 +5,7 @@ framework module VirtuosoClientDownloadEngine {
   module * { export * }
 
   header "CastLabsAVAssetResourceLoaderDelegate.h"
+  header "BuyDRMAVAssetResourceLoaderDelegate.h"
   header "VirtuosoConstants.h"
   header "VirtuosoNotifications.h"
   header "VirtuosoDownloadEngine.h"
