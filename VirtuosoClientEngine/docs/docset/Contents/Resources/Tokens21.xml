@@ -536,7 +536,7 @@ and when it deletes that downloaded asset.</Abstract>
 			<Abstract type="html">The device push token used for remote push notices</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *devicePushToken</Declaration>
 			
 			
 			<Anchor>//api/name/devicePushToken</Anchor>
@@ -548,7 +548,7 @@ and when it deletes that downloaded asset.</Abstract>
 			<Abstract type="html">The device push token used for remote push notices</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *devicePushToken</Declaration>
 			
 			
 			<Anchor>//api/name/devicePushToken</Anchor>
@@ -560,10 +560,22 @@ and when it deletes that downloaded asset.</Abstract>
 			<Abstract type="html">The device push token used for remote push notices</Abstract>
 			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) NSString *devicePushToken</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *devicePushToken</Declaration>
 			
 			
 			<Anchor>//api/name/devicePushToken</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSettings/setDevicePushToken:</TokenIdentifier>
+			<Abstract type="html">Sets the device push token used for remote push notices</Abstract>
+			<DeclaredIn>VirtuosoSettings.h</DeclaredIn>
+			
+			<Declaration>- (void)setDevicePushToken:(NSData *_Nullable)pushToken</Declaration>
+			
+			
+			<Anchor>//api/name/setDevicePushToken:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		

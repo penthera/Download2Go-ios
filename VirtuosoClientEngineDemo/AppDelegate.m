@@ -104,7 +104,7 @@
     // to the Backplane.  See the Backplane documentation for additional details.
     
     if( [VirtuosoDownloadEngine instance].started )
-        [VirtuosoSettings instance].devicePushToken = [deviceToken description];
+        [VirtuosoSettings instance].devicePushToken = deviceToken;
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error

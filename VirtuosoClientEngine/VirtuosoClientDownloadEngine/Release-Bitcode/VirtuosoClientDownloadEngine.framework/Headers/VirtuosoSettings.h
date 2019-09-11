@@ -231,7 +231,17 @@
  *              app's push token from the OS. If you cannot access the push token (e.g. the user disabled
  *              push notifications for the device), then set this value to nil.
  */
-@property (nonatomic,strong,nullable) NSString* devicePushToken;
+@property (nonatomic,readonly,nullable) NSString* devicePushToken;
+
+/*!
+ *  @abstract Sets the device push token used for remote push notices
+ *
+ *  @discussion Virtuoso uses push notifications in various ways.
+ *              For push notifications to work, you must set this value as soon as you get the
+ *              app's push token from the OS. If you cannot access the push token (e.g. the user disabled
+ *              push notifications for the device), then set this value to nil.
+ */
+- (void)setDevicePushToken:(NSData* _Nullable)pushToken;
 
 /**---------------------------------------------------------------------------------------
  * @name Policy/Configuration
