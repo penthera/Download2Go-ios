@@ -921,6 +921,28 @@
             <Name>VirtuosoLicenseProcessingDelegate</Name>
             <Path>Protocols/VirtuosoLicenseProcessingDelegate.html</Path>
             
+                <Subnodes>
+                <Node type="section">
+                    <Path>Protocols/VirtuosoLicenseProcessingDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Protocols/VirtuosoLicenseProcessingDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Protocols/VirtuosoLicenseProcessingDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
         </Node>
 		<Node id="30" type="file" documentType="reference">
             <Name>VirtuosoLoggerDelegate</Name>

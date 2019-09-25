@@ -48,6 +48,8 @@
 
 	
 	
+	<option value="tasks">Tasks</option>
+	
 	
 
 	
@@ -55,6 +57,16 @@
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/extractCIDForAsset:fromFairPlayRequest:">- extractCIDForAsset:fromFairPlayRequest:</option>
+		
+		<option value="//api/name/extractCKCFromLicenseResponse:">- extractCKCFromLicenseResponse:</option>
+		
+		<option value="//api/name/prepareSPCForLicenseRequest:">- prepareSPCForLicenseRequest:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -89,6 +101,225 @@
 
 					
 					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/extractCIDForAsset:fromFairPlayRequest:" title="extractCIDForAsset:fromFairPlayRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/extractCIDForAsset:fromFairPlayRequest:">&ndash;&nbsp;extractCIDForAsset:fromFairPlayRequest:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows a custom CID to be used with the SDK default AVAssetResourceLoaderDelegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)extractCIDForAsset:(VirtuosoAsset *)<em>asset</em> fromFairPlayRequest:(NSURL *)<em>fpRequest</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> the licensing request is for</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fpRequest</code></th>
+						<td><p>The URL provided to the AVAssetResourceLoaderDelegate for the licensing request</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The CID value to use during SPC creation</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, the asset CID is extracted from the FairPlay license URL, which takes the form
+skd://<contentID>.  Some license servers put the required content ID elsewhere.  If you
+don&rsquo;t need to adjust the content ID, you can return nil and the SDK will use the default value
+it detects.  If you need to override this value, you can return the proper content ID to use from
+this method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDefaultAVAssetResourceLoaderDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareSPCForLicenseRequest:" title="prepareSPCForLicenseRequest:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareSPCForLicenseRequest:">&ndash;&nbsp;prepareSPCForLicenseRequest:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows custom processing of the FairPlay POST body before it is send.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSData *)prepareSPCForLicenseRequest:(NSData *)<em>spc</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>spc</code></th>
+						<td><p>The Apple-generated SPC data value</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An NSData object suitable for the license server POST body</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, the SPC data is posted as binary as the POST body to the fairplay server.
+If this is the case, you can just return the spc input without modification.  If your
+server requires some custom format (base64 encoding or JSON wrapping, for example), then you
+should receive the input SPC and return an NSData object suitable for posting in the POST body
+to your licensing server.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDefaultAVAssetResourceLoaderDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/extractCKCFromLicenseResponse:" title="extractCKCFromLicenseResponse:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/extractCKCFromLicenseResponse:">&ndash;&nbsp;extractCKCFromLicenseResponse:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows custom processing of the FairPlay license server response</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSData *)extractCKCFromLicenseResponse:(NSData *)<em>response</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>response</code></th>
+						<td><p>The received response from the license server</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>CKC data value suitable for handing to the player for DRM licensing</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, the license server responds to a FairPlay request with binary representing
+the license response (CKC).  Some license servers wrap this CKC data with other encodings,
+such as base64 or JSON wrappers.  If your license server returns something other than raw
+CKC data, you will need to implement this method.  You should parse the response data and return
+the raw CKC data object, suitable for handing back to the player in the AVASsetResourceLoaderDelegate response.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDefaultAVAssetResourceLoaderDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
@@ -99,7 +330,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-09-20</p>
+						<p class="copyright">Copyright &copy; 2019 Penthera Inc. All rights reserved. Updated: 2019-09-25</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
