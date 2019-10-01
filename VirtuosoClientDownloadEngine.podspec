@@ -8,12 +8,12 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VirtuosoClientDownloadEngine'
-  s.version          = '3.15.6'
+  s.version          = '3.15.7'
   s.summary          = 'A best-of-breed download and offline viewing solution for video.'
   s.homepage         = 'http://penthera.com'
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
   s.author           = { 'josh-penthera' => 'josh.pressnell@penthera.com' }
-  s.source           = { :http => 'https://github.com/penthera/Cache-and-Carry-ios/releases/download/v3.15.6/VirtuosoClientDownloadEngine.framework.zip' }
+  s.source           = { :http => 'https://github.com/penthera/Cache-and-Carry-ios/releases/download/v3.15.7/VirtuosoClientDownloadEngine.framework.zip' }
 
   s.ios.deployment_target = '8.0'
 

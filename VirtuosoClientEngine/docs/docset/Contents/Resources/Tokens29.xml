@@ -33,36 +33,42 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/prepareSPCForLicenseRequest:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/prepareSPCForAsset:inLicenseRequest:</TokenIdentifier>
 			<Abstract type="html">Allows custom processing of the FairPlay POST body before it is send.</Abstract>
 			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (NSData *)prepareSPCForLicenseRequest:(NSData *)spc</Declaration>
+			<Declaration>- (NSData *)prepareSPCForAsset:(VirtuosoAsset *)asset inLicenseRequest:(NSData *)spc</Declaration>
 			<Parameters>
 				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+				</Parameter><Parameter>
 					<Name>spc</Name>
 					<Abstract type="html">The Apple-generated SPC data value</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSData object suitable for the license server POST body</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSPCForLicenseRequest:</Anchor>
+			<Anchor>//api/name/prepareSPCForAsset:inLicenseRequest:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCKCFromLicenseResponse:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCKCForAsset:inLicenseResponse:</TokenIdentifier>
 			<Abstract type="html">Allows custom processing of the FairPlay license server response</Abstract>
 			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (NSData *)extractCKCFromLicenseResponse:(NSData *)response</Declaration>
+			<Declaration>- (NSData *)extractCKCForAsset:(VirtuosoAsset *)asset inLicenseResponse:(NSData *)response</Declaration>
 			<Parameters>
 				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+				</Parameter><Parameter>
 					<Name>response</Name>
 					<Abstract type="html">The received response from the license server</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">CKC data value suitable for handing to the player for DRM licensing</Abstract></ReturnValue>
-			<Anchor>//api/name/extractCKCFromLicenseResponse:</Anchor>
+			<Anchor>//api/name/extractCKCForAsset:inLicenseResponse:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		

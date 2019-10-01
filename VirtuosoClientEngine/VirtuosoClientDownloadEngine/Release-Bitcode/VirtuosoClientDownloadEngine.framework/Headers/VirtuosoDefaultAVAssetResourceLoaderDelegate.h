@@ -73,10 +73,11 @@
  *              should receive the input SPC and return an NSData object suitable for posting in the POST body
  *              to your licensing server.
  *
+ *  @param asset The VirtuosoAsset the licensing request is for
  *  @param spc The Apple-generated SPC data value
  *  @return An NSData object suitable for the license server POST body
  */
-- (NSData*)prepareSPCForLicenseRequest:(NSData*)spc;
+- (NSData*)prepareSPCForAsset:(VirtuosoAsset*)asset inLicenseRequest:(NSData*)spc;
 
 /*!
  *  @abstract Allows custom processing of the FairPlay license server response
@@ -87,10 +88,11 @@
  *              CKC data, you will need to implement this method.  You should parse the response data and return
  *              the raw CKC data object, suitable for handing back to the player in the AVASsetResourceLoaderDelegate response.
  *
+ *  @param asset The VirtuosoAsset the licensing request is for
  *  @param response The received response from the license server
  *  @return CKC data value suitable for handing to the player for DRM licensing
  */
-- (NSData*)extractCKCFromLicenseResponse:(NSData*)response;
+- (NSData*)extractCKCForAsset:(VirtuosoAsset*)asset inLicenseResponse:(NSData*)response;
 
 @end
 
