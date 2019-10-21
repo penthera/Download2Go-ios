@@ -54,6 +54,42 @@ This is an advanced feature which is entirely optional.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAncillaryFile/setUuid:</TokenIdentifier>
+			<Abstract type="html">Unique ID of the ancillary.</Abstract>
+			<DeclaredIn>VirtuosoAncillaryFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAncillaryFile/uuid</TokenIdentifier>
+			<Abstract type="html">Unique ID of the ancillary.</Abstract>
+			<DeclaredIn>VirtuosoAncillaryFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAncillaryFile/uuid</TokenIdentifier>
+			<Abstract type="html">Unique ID of the ancillary.</Abstract>
+			<DeclaredIn>VirtuosoAncillaryFile.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, copy) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAncillaryFile/setTag:</TokenIdentifier>
 			<Abstract type="html">tag optional string that can be used to identify</Abstract>
 			<DeclaredIn>VirtuosoAncillaryFile.h</DeclaredIn>

@@ -41,6 +41,13 @@
 @property (nonatomic,readonly)NSString* _Nonnull fileDownloadURL;
 
 /*!
+*  @abstract Unique ID of the ancillary.
+*
+*  @discussion Value is only set after Ancillary has been created in the Asset.
+*/
+@property (nonatomic, readonly, copy)NSString* _Nullable uuid;
+
+/*!
  *  @abstract tag optional string that can be used to identify
  *
  *  @discussion Specifying a tag will allow targeted searches
