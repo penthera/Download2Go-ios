@@ -44,7 +44,7 @@
 /*!
  *  @abstract The internal player view
  */
-@property (nonatomic, readonly, nonnull) VirtuosoPlayerView* playerView;
+@property (nonatomic, readwrite, nonnull) VirtuosoPlayerView* playerView;
 
 /*!
  *  @abstract A Boolean value that indicates whether the player allows switching to external playback mode.

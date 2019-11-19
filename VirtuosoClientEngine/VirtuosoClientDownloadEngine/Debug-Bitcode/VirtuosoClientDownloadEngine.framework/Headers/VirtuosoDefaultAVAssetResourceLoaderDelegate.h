@@ -15,6 +15,7 @@
  */
 #import <Foundation/Foundation.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAVAssetResourceLoaderDelegate.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoLicenseManager.h>
 
 /*!
  *  @abstract  Allows Virtuoso to request the enclosing application for asset specific DRM
