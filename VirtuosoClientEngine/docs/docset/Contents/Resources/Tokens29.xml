@@ -17,7 +17,7 @@
 			<Abstract type="html">Allows a custom CID to be used with the SDK default AVAssetResourceLoaderDelegate</Abstract>
 			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)extractCIDForAsset:(VirtuosoAsset *)asset fromFairPlayRequest:(NSURL *)fpRequest</Declaration>
+			<Declaration>- (NSString *_Nullable)extractCIDForAsset:(VirtuosoAsset *_Nonnull)asset fromFairPlayRequest:(NSURL *_Nonnull)fpRequest</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -37,7 +37,7 @@
 			<Abstract type="html">Allows custom processing of the FairPlay POST body before it is send.</Abstract>
 			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (NSData *)prepareSPCForAsset:(VirtuosoAsset *)asset inLicenseRequest:(NSData *)spc</Declaration>
+			<Declaration>- (NSData *_Nullable)prepareSPCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseRequest:(NSData *_Nonnull)spc</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -57,7 +57,7 @@
 			<Abstract type="html">Allows custom processing of the FairPlay license server response</Abstract>
 			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (NSData *)extractCKCForAsset:(VirtuosoAsset *)asset inLicenseResponse:(NSData *)response</Declaration>
+			<Declaration>- (NSData *_Nullable)extractCKCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseResponse:(NSData *_Nonnull)response</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
@@ -69,6 +69,23 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">CKC data value suitable for handing to the player for DRM licensing</Abstract></ReturnValue>
 			<Anchor>//api/name/extractCKCForAsset:inLicenseResponse:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/drmSubTypeForAsset:</TokenIdentifier>
+			<Abstract type="html">If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nonnull)drmSubTypeForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset to resolve DRM SubType for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">non-nil string ideitifying the DRM SubType for the Asset.</Abstract></ReturnValue>
+			<Anchor>//api/name/drmSubTypeForAsset:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		

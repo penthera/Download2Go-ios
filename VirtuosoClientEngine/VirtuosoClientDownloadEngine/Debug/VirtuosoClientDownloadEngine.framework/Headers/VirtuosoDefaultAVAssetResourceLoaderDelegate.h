@@ -41,7 +41,7 @@
  *           configured AVAssetResourceLoaderDelegate subclass, you should return an appropriate
  *           DRMConfig subclass from the available options.
  */
-- (VirtuosoDrmConfig*)drmConfigForAsset:(VirtuosoAsset*)asset;
+- (VirtuosoDrmConfig*_Nonnull)drmConfigForAsset:(VirtuosoAsset*_Nonnull)asset;
 
 @end
 
@@ -63,7 +63,7 @@
  *  @param fpRequest The URL provided to the AVAssetResourceLoaderDelegate for the licensing request
  *  @return The CID value to use during SPC creation
  */
-- (NSString*)extractCIDForAsset:(VirtuosoAsset*)asset fromFairPlayRequest:(NSURL*)fpRequest;
+- (NSString* _Nullable)extractCIDForAsset:(VirtuosoAsset* _Nonnull)asset fromFairPlayRequest:(NSURL* _Nonnull)fpRequest;
 
 /*!
  *  @abstract Allows custom processing of the FairPlay POST body before it is send.
@@ -78,7 +78,7 @@
  *  @param spc The Apple-generated SPC data value
  *  @return An NSData object suitable for the license server POST body
  */
-- (NSData*)prepareSPCForAsset:(VirtuosoAsset*)asset inLicenseRequest:(NSData*)spc;
+- (NSData* _Nullable)prepareSPCForAsset:(VirtuosoAsset* _Nonnull)asset inLicenseRequest:(NSData* _Nonnull)spc;
 
 /*!
  *  @abstract Allows custom processing of the FairPlay license server response
@@ -93,7 +93,22 @@
  *  @param response The received response from the license server
  *  @return CKC data value suitable for handing to the player for DRM licensing
  */
-- (NSData*)extractCKCForAsset:(VirtuosoAsset*)asset inLicenseResponse:(NSData*)response;
+- (NSData* _Nullable)extractCKCForAsset:(VirtuosoAsset* _Nonnull)asset inLicenseResponse:(NSData* _Nonnull)response;
+
+@optional
+/*!
+ * @abstract If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.
+ *
+ * @discussion Normally, the resource loader will use the kVLM_FairPlay DRM type to process all requests using the configuration
+ *                           stored in the VirtuosoLicenseManager.  However, if you need to use different DRM systems for different assets you
+ *                           wish to download, you can set configuratins with VirtuosoLicenseManager using custom DRM type codes and
+ *                           implement this method to indicate which DRM SubType should be used for the asset. The SubType is an arbitrary, non-nil string that uniquely identifies ths DRM system.
+ *
+ *
+ *  @param asset The VirtuosoAsset to resolve DRM SubType for.
+ *  @return non-nil string ideitifying the DRM SubType for the Asset.
+ */
+- (NSString* _Nonnull)drmSubTypeForAsset:(VirtuosoAsset*  _Nonnull)asset;
 
 @end
 
@@ -108,6 +123,19 @@
  */
 @interface VirtuosoDefaultAVAssetResourceLoaderDelegate : NSObject<VirtuosoAVAssetResourceLoaderDelegate>
 
-+ (void)setLicenseProcessingDelegate:(id<VirtuosoLicenseProcessingDelegate>)delegate;
+/*!
+ *  @abstract If you have custom work unrelated to FairPlay DRM, you may need to set a child delegate.  For all calls that the VIrtuoso SDK does not
+ *            directly handle, the call will be handed to the child delegate to service.
+ *
+ *  @param subdelegate A secondary delegate to call for non-FairPlay requests
+ */
+- (void)setChildAVAssetResourceLoaderDelegate:(id<AVAssetResourceLoaderDelegate>_Nonnull)subdelegate;
+
+/*!
+ *  @abstract Sets the license processing delegate
+ *
+ *  @param The license processing delegate 
+ */
++ (void)setLicenseProcessingDelegate:(id<VirtuosoLicenseProcessingDelegate>_Nonnull)delegate;
 
 @end

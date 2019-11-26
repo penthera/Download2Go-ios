@@ -101,7 +101,7 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @param type The DRM type to configure
  */
 + (void)setLicenseServerURL:(nonnull NSString*)url forDRM:(kVLM_DRMType)type;
-
++ (void)setLicenseServerURL:(nonnull NSString*)url forDRM:(kVLM_DRMType)type andSubType:(nonnull NSString*)subType;
 /*!
  *  @abstract Retrieves the configured license server URL for a particular DRM type
  *
@@ -110,6 +110,7 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @return The configured license server URL for the given DRM type
  */
 + (nullable NSString*)licenseServerURLForDRM:(kVLM_DRMType)type;
++ (nullable NSString*)licenseServerURLForDRM:(kVLM_DRMType)type andSubType:(nonnull NSString*)subType;
 
 /*!
  *  @abstract Downloads the client app certificate from the provided URL
@@ -137,6 +138,7 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @param type The DRM type to configure
  */
 + (void)setClientAppCertificate:(nonnull NSData*)certificate forDRM:(kVLM_DRMType)type;
++ (void)setClientAppCertificate:(nonnull NSData*)cert forDRM:(kVLM_DRMType)type  andSubType:(nonnull NSString*)subType;
 
 /*!
  *  @abstract Retrieves the previously downloaded client app security certificate, if it exists
@@ -146,7 +148,7 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @return The client app security certificate, if it exists, for the given DRM type
  */
 + (nullable NSData*)clientAppCertificateForDRM:(kVLM_DRMType)type;
-
++ (nullable NSData*)clientAppCertificateForDRM:(kVLM_DRMType)type  andSubType:(nonnull NSString*)subType;
 /*!
  *  @abstract Downloads a DRM playback license for later offline playback
  *

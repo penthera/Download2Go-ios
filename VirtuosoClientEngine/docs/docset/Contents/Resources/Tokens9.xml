@@ -218,6 +218,35 @@ indicating the problem.</Abstract></ReturnValue>
             <NodeRef refid="9"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/fairPlayLicenseServerURL</TokenIdentifier>
+			<Abstract type="html">Local playback URL for FiarPlay license server request to download license for asset</Abstract>
+			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nonnull)fairPlayLicenseServerURL</Declaration>
+			
+			
+			<Anchor>//api/name/fairPlayLicenseServerURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/fairPlayCertificateDataURLForSubType:</TokenIdentifier>
+			<Abstract type="html">Local playback URL for FairPlay certificate data download request</Abstract>
+			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nonnull)fairPlayCertificateDataURLForSubType:(NSString *_Nullable)subType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>subType</Name>
+					<Abstract type="html">optional string specifying the optional subtype</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/fairPlayCertificateDataURLForSubType:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
         
         
 	</File>

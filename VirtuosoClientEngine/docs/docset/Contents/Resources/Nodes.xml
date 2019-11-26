@@ -400,6 +400,34 @@
             <Name>VirtuosoDefaultAVAssetResourceLoaderDelegate</Name>
             <Path>Classes/VirtuosoDefaultAVAssetResourceLoaderDelegate.html</Path>
             
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/VirtuosoDefaultAVAssetResourceLoaderDelegate.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/VirtuosoDefaultAVAssetResourceLoaderDelegate.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/VirtuosoDefaultAVAssetResourceLoaderDelegate.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/VirtuosoDefaultAVAssetResourceLoaderDelegate.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
         </Node>
 		<Node id="11" type="file" documentType="reference">
             <Name>VirtuosoDevice</Name>

@@ -18,7 +18,7 @@ values when requesting FairPlay license keys.</Abstract>
 			<Abstract type="html">Called when the DRM subsystem needs a DRM configuration to make a licensing request.</Abstract>
 			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (VirtuosoDrmConfig *)drmConfigForAsset:(VirtuosoAsset *)asset</Declaration>
+			<Declaration>- (VirtuosoDrmConfig *_Nonnull)drmConfigForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>

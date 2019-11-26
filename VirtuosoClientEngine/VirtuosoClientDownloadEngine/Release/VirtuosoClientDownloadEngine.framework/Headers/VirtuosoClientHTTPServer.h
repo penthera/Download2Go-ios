@@ -162,6 +162,18 @@
  */
 @property (nonatomic,readonly,nonnull) NSString* playbackURL;
 
+/*!
+*  @abstract Local playback URL for FiarPlay license server request to download license for asset
+*/
+-(NSString* _Nonnull)fairPlayLicenseServerURL;
+
+/*!
+*  @abstract Local playback URL for FairPlay certificate data download request
+*
+* @param subType optional string specifying the optional subtype
+*/
+-(NSString* _Nonnull)fairPlayCertificateDataURLForSubType:(NSString* _Nullable)subType;
+
 @end
 
 #endif
