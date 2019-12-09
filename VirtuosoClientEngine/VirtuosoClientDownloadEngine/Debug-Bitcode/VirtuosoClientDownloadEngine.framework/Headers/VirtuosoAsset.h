@@ -598,15 +598,46 @@ typedef void (^BasicCompletionBlock)(void);
 #pragma mark
 
 /*!
+*  @abstract The internally defined maximum number of times the asset will be retried prior to reporting blocked
+*
+*  @discussion If Virtuoso fails to download an asset in the queue, it will retry the download this
+*              number of times, before moving to the next item in the queue.  In this way,
+*              Virtuoso cycles through the entire queue. Virtuoso will perform this
+*              number of repeat attempts for each previously-failed download,
+*              before stopping and reporting that the queue is blocked.
+*
+*  @see downloadRetryCount
+*  @see maximumRetriesExceeded
+*/
+@property (nonatomic, readonly, class) NSInteger retryLimit;
+
+/*!
  *  @abstract How many passes Virtuoso has made attempting to download this asset
  *
- *  @discussion If Virtuoso fails to download an asset in the queue, it will retry the download a certain
- *              (internally-defined) number of times, before moving to the next item in the queue.  In this way,
- *              Virtuoso cycles through the entire queue. Virtuoso will perform a certain (internally-defined)
+ *  @discussion If Virtuoso fails to download an asset in the queue, it will retry the download
+ *              retryLimit times, before moving to the next item in the queue.  In this way,
+ *              Virtuoso cycles through the entire queue. Virtuoso will perform retryLimit
  *              number of repeat attempts for each previously-failed download,
  *              before stopping and reporting that the queue is blocked.
+ *
+ *  @see retryLimit
+ *  @see maximumRetriesExceeded
  */
 @property (nonatomic, readonly) int downloadRetryCount;
+
+/*!
+*  @abstract Indicates if this asset is blocked because it has been retried and failed too many times
+*
+*  @discussion If Virtuoso fails to download an asset in the queue, it will retry the download
+*              retryLimit times, before moving to the next item in the queue.  In this way,
+*              Virtuoso cycles through the entire queue. Virtuoso will perform retryLimit
+*              number of repeat attempts for each previously-failed download,
+*              before stopping and reporting that the queue is blocked.
+*
+*  @see retryLimit
+*  @see downloadRetryCount
+*/
+@property (nonatomic,readonly) Boolean maximumRetriesExceeded;
 
 /*!
  *  @abstract Clears this asset's internal retry count, so Virtuoso will retry downloading it
