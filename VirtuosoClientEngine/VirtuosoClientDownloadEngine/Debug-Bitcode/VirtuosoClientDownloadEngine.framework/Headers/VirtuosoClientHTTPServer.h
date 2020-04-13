@@ -173,7 +173,6 @@
 * @param subType optional string specifying the optional subtype
 */
 -(NSString* _Nonnull)fairPlayCertificateDataURLForSubType:(NSString* _Nullable)subType;
-
 @end
 
 #endif

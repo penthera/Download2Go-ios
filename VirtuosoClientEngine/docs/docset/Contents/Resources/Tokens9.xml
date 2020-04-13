@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoClientHTTPServer.html">
+	<File path="Classes/VirtuosoAsset.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoClientHTTPServer</TokenIdentifier>
-			<Abstract type="html">A proxy layer that sits between the video player and a Virtuoso-managed (video) asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAsset</TokenIdentifier>
+			<Abstract type="html">Represents a conceptual &quot;file&quot; object in Virtuoso.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
@@ -13,237 +13,3568 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initWithAsset:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on a random port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/storageUsed</TokenIdentifier>
+			<Abstract type="html">Returns the total device storage (in bytes) currently used by all downloaded Virtuoso files</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Declaration>+ (long long)storageUsed</Declaration>
+			
+			<ReturnValue><Abstract type="html">The total device storage (in bytes) currently used by all downloaded Virtuoso files</Abstract></ReturnValue>
+			<Anchor>//api/name/storageUsed</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/allowableStorageRemaining</TokenIdentifier>
+			<Abstract type="html">Returns the amount of device storage (in bytes) still available for Virtuoso to use</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (long long)allowableStorageRemaining</Declaration>
+			
+			<ReturnValue><Abstract type="html">The total disk space (in bytes) still available to Virtuoso for downloads</Abstract></ReturnValue>
+			<Anchor>//api/name/allowableStorageRemaining</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setPrepareUrlDelegate:</TokenIdentifier>
+			<Abstract type="html">If set, this delegate is called as described in VirtuosoPrepareUrlDelegate.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, class) id&lt;VirtuosoPrepareUrlDelegate&gt; _Nullable prepareUrlDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/prepareUrlDelegate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/prepareUrlDelegate</TokenIdentifier>
+			<Abstract type="html">If set, this delegate is called as described in VirtuosoPrepareUrlDelegate.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, class) id&lt;VirtuosoPrepareUrlDelegate&gt; _Nullable prepareUrlDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/prepareUrlDelegate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/prepareUrlDelegate</TokenIdentifier>
+			<Abstract type="html">If set, this delegate is called as described in VirtuosoPrepareUrlDelegate.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, class) id&lt;VirtuosoPrepareUrlDelegate&gt; _Nullable prepareUrlDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/prepareUrlDelegate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/setRequestAdditionalParametersBlock:</TokenIdentifier>
+			<Abstract type="html">If set, this block is called whenever an asset is about to request data from
+a network resource.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (void)setRequestAdditionalParametersBlock:(nullable RequestAdditionalParametersBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">A callback block used to retrieve additional URL parameters when downloading asset data.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRequestAdditionalParametersBlock:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithConfig:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithConfig:(nonnull VirtuosoAssetConfig *)config</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>config</Name>
+					<Abstract type="html">Instance of VirtuosoAssetConfig with properties set appropriately to download the Asset.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new VirtuosoAsset object, or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithConfig:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithConfig:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithConfig:(nonnull VirtuosoAssetConfig *)config onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>config</Name>
+					<Abstract type="html">Instance of VirtuosoAssetConfig with properties set appropriately to download the Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new VirtuosoAsset object, or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithConfig:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithRemoteURL:assetID:description:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithRemoteURL:(nonnull NSString *)assetURL assetID:(nonnull NSString *)assetID description:(nonnull NSString *)description publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetURL</Name>
+					<Abstract type="html">The remote URL for the file (where to download from).</Abstract>
+				</Parameter><Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new VirtuosoAsset object, or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithRemoteURL:assetID:description:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithRemoteURL:assetID:description:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithRemoteURL:(nonnull NSString *)assetURL assetID:(nonnull NSString *)assetID description:(nonnull NSString *)description publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetURL</Name>
+					<Abstract type="html">The remote URL for the file (where to download from).</Abstract>
+				</Parameter><Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of asset that
+Virtuoso will delete the asset. In seconds.  &lt;=0.0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds.  &lt;=0.0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new VirtuosoAsset object, or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithRemoteURL:assetID:description:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithRemoteURL:assetID:description:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithRemoteURL:(nonnull NSString *)assetURL assetID:(nonnull NSString *)assetID description:(nonnull NSString *)description publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay ancillaries:(nullable NSArray *)ancillaries adsProvider:(nullable VirtuosoAdsProvider *)adsProvider userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetURL</Name>
+					<Abstract type="html">The remote URL for the file (where to download from).</Abstract>
+				</Parameter><Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of asset that
+Virtuoso will delete the asset. In seconds.  &lt;=0.0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds.  &lt;=0.0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>ancillaries</Name>
+					<Abstract type="html">Optional array of VirtuosoAncillaryFile to be downloaded</Abstract>
+				</Parameter><Parameter>
+					<Name>adsProvider</Name>
+					<Abstract type="html">Optional AdsProvider to use with this Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new VirtuosoAsset object, or nil if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithRemoteURL:assetID:description:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/addAncillaryFile:</TokenIdentifier>
+			<Abstract type="html">Adds an ancillary file to the download for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)addAncillaryFile:(VirtuosoAncillaryFile *_Nonnull)file</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">VirtuosoAncillaryFile object describing the file to be downloaded</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating success or failure</Abstract></ReturnValue>
+			<Anchor>//api/name/addAncillaryFile:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/addAncillaryFile:inAsset:</TokenIdentifier>
+			<Abstract type="html">Adds an ancillary file to the download for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (Boolean)addAncillaryFile:(VirtuosoAncillaryFile *_Nonnull)file inAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">VirtuosoAncillaryFile object describing the file to be downloaded</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">VirtuosoAsset object to add an ancillary file download to</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating success or failure</Abstract></ReturnValue>
+			<Anchor>//api/name/addAncillaryFile:inAsset:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/removeAncillaryFile:completion:</TokenIdentifier>
+			<Abstract type="html">Removes an ancillary file from this asset, deleting any download.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)removeAncillaryFile:(NSString *_Nonnull)downloadUrl completion:(CompletionBlockWithOptionalError _Nullable)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>downloadUrl</Name>
+					<Abstract type="html">Ancillary file URL</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">optional callback which is invoked once the ancillary has been deleted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean indicating success or failure</Abstract></ReturnValue>
+			<Anchor>//api/name/removeAncillaryFile:completion:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/findAllAncillaries</TokenIdentifier>
+			<Abstract type="html">Retrieves all of the ancillary files assocated awith this asset
+
+@description This is a BLOCKING call that will query CoreData for all ancillary files.
+See findAllCompleted for a non-blocking call.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;VirtuosoAncillaryFile*&gt; *_Nonnull)findAllAncillaries</Declaration>
+			
+			<ReturnValue><Abstract type="html">Array of VirtuosoAncillaryFile objects. Empty if none.</Abstract></ReturnValue>
+			<Anchor>//api/name/findAllAncillaries</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/findAllAncillariesWithTag:</TokenIdentifier>
+			<Abstract type="html">Retrieves ancillary files with the specified tag for this asset
+
+@description This is a BLOCKING call that will query CoreData for all ancillary files.
+See findAllCompleted for a non-blocking call.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;VirtuosoAncillaryFile*&gt; *_Nonnull)findAllAncillariesWithTag:(NSString *_Nonnull)tag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">The tag to filter on</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Array of VirtuosoAncillaryFile objects with the specified tag. Empty if none.</Abstract></ReturnValue>
+			<Anchor>//api/name/findAllAncillariesWithTag:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/findCompletedAncillaries</TokenIdentifier>
+			<Abstract type="html">Retrieves ancillaries that have completed downloading.
+
+@description This is a non-blocking call that will be faster than findAllAncillaries
+and it will only return Ancillaries that have downloaded.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;VirtuosoAncillaryFile*&gt; *_Nonnull)findCompletedAncillaries</Declaration>
+			
+			<ReturnValue><Abstract type="html">Array of VirtuosoAncillaryFile objects. Empty if none.</Abstract></ReturnValue>
+			<Anchor>//api/name/findCompletedAncillaries</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/findCompletedAncillariesWithTag:</TokenIdentifier>
+			<Abstract type="html">Retrieves ancillaries that have completed downloading with the specified tag.
+
+@description This is a non-blocking call that will be faster than findAllAncillariesWithTag
+and it will only return Ancillaries that have downloaded with the specified tag.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;VirtuosoAncillaryFile*&gt; *_Nonnull)findCompletedAncillariesWithTag:(NSString *_Nonnull)tag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">The tag to filter on</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Array of VirtuosoAncillaryFile objects with the specified tag. Empty if none.</Abstract></ReturnValue>
+			<Anchor>//api/name/findCompletedAncillariesWithTag:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetsWithAvailabilityFilter:</TokenIdentifier>
+			<Abstract type="html">Returns an array of all assets.  This method only returns non-ad content.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSArray *)assetsWithAvailabilityFilter:(Boolean)availabilityFilter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the returned array against the availability window.
+If NO, then all VirtuosoAsset objects are returned.
+If YES, then Virtuoso filters out all assets that are unavailable,
+based on their publishDate and expiry constraints.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray of VirtuosoAsset objects</Abstract></ReturnValue>
+			<Anchor>//api/name/assetsWithAvailabilityFilter:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/pendingAssetsWithAvailabilityFilter:</TokenIdentifier>
+			<Abstract type="html">Returns an array of all pending (undownloaded) assets.  This method only returns non-ad content.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSArray *)pendingAssetsWithAvailabilityFilter:(Boolean)availabilityFilter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the returned array against the availability window.
+If NO, then all VirtuosoAsset objects are returned.
+If YES, then Virtuoso filters out all assets that are unavailable,
+based on their publishDate and expiry constraints.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray of VirtuosoAsset objects</Abstract></ReturnValue>
+			<Anchor>//api/name/pendingAssetsWithAvailabilityFilter:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/completedAssetsWithAvailabilityFilter:</TokenIdentifier>
+			<Abstract type="html">Returns an array of all completed (downloaded) assets.  This method only returns non-ad content.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSArray *)completedAssetsWithAvailabilityFilter:(Boolean)availabilityFilter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the returned array against the availability window.
+If NO, then all VirtuosoAsset objects are returned.
+If YES, then Virtuoso filters out all assets that are unavailable,
+based on their publishDate and expiry constraints.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray of VirtuosoAsset objects</Abstract></ReturnValue>
+			<Anchor>//api/name/completedAssetsWithAvailabilityFilter:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithUUID:availabilityFilter:</TokenIdentifier>
+			<Abstract type="html">Lookup an asset by UUID.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithUUID:(nonnull NSString *)uuid availabilityFilter:(Boolean)availabilityFilter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>uuid</Name>
+					<Abstract type="html">The UUID (universally unique identifier) corresponding to the asset</Abstract>
+				</Parameter><Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the return value against the availability window.
+If NO, then the asset will be returned if it exists.
+If YES, then Virtuoso will return nil for the asset if it is unavailable,
+based on its publishDate and expiry constraints.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instantiated VirtuosoAsset object or nil, if the asset doesn&apos;t exist or is unavailable.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithUUID:availabilityFilter:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:availabilityFilter:</TokenIdentifier>
+			<Abstract type="html">Lookup an asset by assetID.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID availabilityFilter:(Boolean)availabilityFilter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">The assetID corresponding to the asset</Abstract>
+				</Parameter><Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the return value against the availability window.
+If NO, then the asset will be returned if it exists.
+If YES, then Virtuoso will return nil for the asset if it is unavailable,
+based on its publishDate and expiry constraints.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instantiated VirtuosoAsset object or nil, if the asset does not exist or is unavailable.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:availabilityFilter:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/findAssetWithUUID:availabilityFilter:assetCallback:</TokenIdentifier>
+			<Abstract type="html">Find an asset by UUID.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (void)findAssetWithUUID:(nonnull NSString *)uuid availabilityFilter:(Boolean)availabilityFilter assetCallback:(nonnull AssetQueryCallback)callback</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>uuid</Name>
+					<Abstract type="html">The UUID (universally unique identifier) corresponding to the asset</Abstract>
+				</Parameter><Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the return value against the availability window.
+If NO, then the asset will be returned if it exists.
+If YES, then Virtuoso will return nil for the asset if it is unavailable,
+based on its publishDate and expiry constraints.</Abstract>
+				</Parameter><Parameter>
+					<Name>callback</Name>
+					<Abstract type="html">AssetQueryCallback callback that is invoked when the asset is retrieved. Callback happens on callers NSOperationQueue
+If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/findAssetWithUUID:availabilityFilter:assetCallback:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/findAssetWithUUID:availabilityFilter:queue:assetCallback:</TokenIdentifier>
+			<Abstract type="html">Find an asset by UUID.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (void)findAssetWithUUID:(nonnull NSString *)uuid availabilityFilter:(Boolean)availabilityFilter queue:(nullable NSOperationQueue *)queue assetCallback:(nonnull AssetQueryCallback)callback</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>uuid</Name>
+					<Abstract type="html">The UUID (universally unique identifier) corresponding to the asset</Abstract>
+				</Parameter><Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the return value against the availability window.
+If NO, then the asset will be returned if it exists.
+If YES, then Virtuoso will return nil for the asset if it is unavailable,
+based on its publishDate and expiry constraints.</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">NSNotificationQueue on which to make the callback. If nil is specified the SDK will use
+VirtuosoDownloadEngine.notificationQueue if non-nil, otherwise it will use NSOperationQueue.currentQueue</Abstract>
+				</Parameter><Parameter>
+					<Name>callback</Name>
+					<Abstract type="html">AssetQueryCallback callback that is invoked when the asset is retrieved.
+If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/findAssetWithUUID:availabilityFilter:queue:assetCallback:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/findAssetWithAssetID:availabilityFilter:assetCallback:</TokenIdentifier>
+			<Abstract type="html">Find an asset by assetID.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (void)findAssetWithAssetID:(nonnull NSString *)assetID availabilityFilter:(Boolean)availabilityFilter assetCallback:(nonnull AssetQueryCallback)callback</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">The assetID corresponding to the asset</Abstract>
+				</Parameter><Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the return value against the availability window.
+If NO, then the asset will be returned if it exists.
+If YES, then Virtuoso will return nil for the asset if it is unavailable,
+based on its publishDate and expiry constraints.</Abstract>
+				</Parameter><Parameter>
+					<Name>callback</Name>
+					<Abstract type="html">AssetQueryCallback callback that is invoked when the asset is retrieved. Callback happens on callers NSOperationQueue
+If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/findAssetWithAssetID:availabilityFilter:assetCallback:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/findAssetWithAssetID:availabilityFilter:queue:assetCallback:</TokenIdentifier>
+			<Abstract type="html">Find an asset by assetID.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (void)findAssetWithAssetID:(nonnull NSString *)assetID availabilityFilter:(Boolean)availabilityFilter queue:(nullable NSOperationQueue *)queue assetCallback:(nonnull AssetQueryCallback)callback</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">The assetID corresponding to the asset</Abstract>
+				</Parameter><Parameter>
+					<Name>availabilityFilter</Name>
+					<Abstract type="html">Whether to filter the return value against the availability window.
+If NO, then the asset will be returned if it exists.
+If YES, then Virtuoso will return nil for the asset if it is unavailable,
+based on its publishDate and expiry constraints.</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">NSNotificationQueue on which to make the callback. If nil is specified the SDK will use
+VirtuosoDownloadEngine.notificationQueue if non-nil, otherwise it will use NSOperationQueue.currentQueue</Abstract>
+				</Parameter><Parameter>
+					<Name>callback</Name>
+					<Abstract type="html">AssetQueryCallback callback that is invoked when the asset is retrieved.
+If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/findAssetWithAssetID:availabilityFilter:queue:assetCallback:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/refreshManifestAndDownload:</TokenIdentifier>
+			<Abstract type="html">Reparses the main mainfest to add additional Audio, Closed Caption data, and download the changes.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)refreshManifestAndDownload:(AssetParsingCompletedBlock _Nullable)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">An optional block that will be called on completion</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">TRUE indicates the reparse was successfully started.</Abstract></ReturnValue>
+			<Anchor>//api/name/refreshManifestAndDownload:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/refreshOnComplete:</TokenIdentifier>
+			<Abstract type="html">Refreshes the data in this object from the persistent data store</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)refreshOnComplete:(nullable AsyncCompleteBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">An optional block that will be called when the refresh is complete</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/refreshOnComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/saveOnComplete:</TokenIdentifier>
+			<Abstract type="html">Persists the VirtuosoAsset object for later use</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)saveOnComplete:(nullable AsyncCompleteBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">An optional block that will be called when the refresh is complete</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/saveOnComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/deleteAsset</TokenIdentifier>
+			<Abstract type="html">Deletes this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteAsset</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAsset</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/deleteAssetOnComplete:</TokenIdentifier>
+			<Abstract type="html">Deletes this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteAssetOnComplete:(nullable AsyncCompleteBlock)deletedBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deletedBlock</Name>
+					<Abstract type="html">Notifies that Virtuoso has finished deleting all asset resources from disk.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteAssetOnComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/deleteAll</TokenIdentifier>
+			<Abstract type="html">Deletes all assets.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (void)deleteAll</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAll</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/isPlayable:callback:</TokenIdentifier>
+			<Abstract type="html">Check if asset is currently playable.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>+ (void)isPlayable:(VirtuosoAsset *_Nonnull)asset callback:(IsPlayableCompleteBlock _Nonnull)callback</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAsset:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initOnPort:withAsset:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on the specified port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>- (nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset *)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>port</Name>
-					<Abstract type="html">The local port to open with the localhost server</Abstract>
+					<Abstract type="html">Asset to play</Abstract>
 				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
+					<Name>callback</Name>
+					<Abstract type="html">Callback with a Boolean parameter indicating whether the Asset is Playable.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initOnPort:withAsset:</Anchor>
+			
+			<Anchor>//api/name/isPlayable:callback:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initWithAsset:usingFastPlay:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on a random port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/isPlayable:operationQueue:callback:</TokenIdentifier>
+			<Abstract type="html">Check if asset is currently playable.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)asset usingFastPlay:(Boolean)usingFastPlay</Declaration>
+			<Declaration>+ (void)isPlayable:(VirtuosoAsset *_Nonnull)asset operationQueue:(NSOperationQueue *_Nonnull)operationQueue callback:(IsPlayableCompleteBlock _Nonnull)callback</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
+					<Abstract type="html">Asset to play</Abstract>
 				</Parameter><Parameter>
-					<Name>usingFastPlay</Name>
-					<Abstract type="html">If YES, then the service is setup for FastPlay playback.  The server will
-return a FastPlay playback manifest suitable for online streaming with FastPlay
-playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
-playback is not currently available, then this method returns nil.</Abstract>
+					<Name>operationQueue</Name>
+					<Abstract type="html">NSOpertionQueue to be used for the callback.</Abstract>
+				</Parameter><Parameter>
+					<Name>callback</Name>
+					<Abstract type="html">Callback with a Boolean parameter indicating whether the Asset is Playable.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAsset:usingFastPlay:</Anchor>
+			
+			<Anchor>//api/name/isPlayable:operationQueue:callback:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/initOnPort:withAsset:usingFastPlay:</TokenIdentifier>
-			<Abstract type="html">Creates a local HTTP proxy on the specified port using the specified asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/isPlayable:dispatchQueue:callback:</TokenIdentifier>
+			<Abstract type="html">Check if asset is currently playable.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)initOnPort:(NSInteger)port withAsset:(nonnull VirtuosoAsset *)asset usingFastPlay:(Boolean)usingFastPlay</Declaration>
+			<Declaration>+ (void)isPlayable:(VirtuosoAsset *_Nonnull)asset dispatchQueue:(dispatch_queue_t _Nonnull)dispatchQueue callback:(IsPlayableCompleteBlock _Nonnull)callback</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>port</Name>
-					<Abstract type="html">The local port to open with the localhost server</Abstract>
-				</Parameter><Parameter>
 					<Name>asset</Name>
-					<Abstract type="html">A VirtuosoAsset object to base streamed playback from.
-The server will use the internal data from the VirtuosoAsset
-to dynamically contruct the playback URL for the player.</Abstract>
+					<Abstract type="html">Asset to play</Abstract>
 				</Parameter><Parameter>
-					<Name>usingFastPlay</Name>
-					<Abstract type="html">If YES, then the service is setup for FastPlay playback.  The server will
-return a FastPlay playback manifest suitable for online streaming with FastPlay
-playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
-playback is not currently available, then this method returns nil.</Abstract>
+					<Name>dispatchQueue</Name>
+					<Abstract type="html">DispatchQueue to be used for the callback.</Abstract>
+				</Parameter><Parameter>
+					<Name>callback</Name>
+					<Abstract type="html">Callback with a Boolean parameter indicating whether the Asset is Playable.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A started (running VirtuosoClientHTTPServer object.
-Returns nil if the VirtuosoAsset is outside its availability window, is expired,
-or if the VirtuosoDownloadEngine instance is outside its Backplane communications
-window. If this method returns nil, it also sends errors via NSNotificationCenter
-indicating the problem.</Abstract></ReturnValue>
-			<Anchor>//api/name/initOnPort:withAsset:usingFastPlay:</Anchor>
+			
+			<Anchor>//api/name/isPlayable:dispatchQueue:callback:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/shutdown</TokenIdentifier>
-			<Abstract type="html">Shuts down a running proxy instance</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/logPlayback</TokenIdentifier>
+			<Abstract type="html">Logs the asset as having been played back, incrementing the stored playback counts on the Backplane</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>- (void)shutdown</Declaration>
+			<Declaration>- (void)logPlayback</Declaration>
 			
 			
-			<Anchor>//api/name/shutdown</Anchor>
+			<Anchor>//api/name/logPlayback</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/startup</TokenIdentifier>
-			<Abstract type="html">Restarts a previously shutdown proxy instance.  Does nothing if the receiver is already running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/playUsingPlaybackType:fromViewController:onSuccess:onFail:</TokenIdentifier>
+			<Abstract type="html">Plays this asset by presenting a standard MPMoviePlayerViewController from the
+specified parent view controller.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
 			
-			<Declaration>- (void)startup</Declaration>
-			
-			
-			<Anchor>//api/name/startup</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/setRunning:</TokenIdentifier>
-			<Abstract type="html">Indicates whether the receiver is currently running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Boolean running</Declaration>
-			
-			
-			<Anchor>//api/name/running</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/running</TokenIdentifier>
-			<Abstract type="html">Indicates whether the receiver is currently running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Boolean running</Declaration>
-			
-			
-			<Anchor>//api/name/running</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientHTTPServer/running</TokenIdentifier>
-			<Abstract type="html">Indicates whether the receiver is currently running.</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) Boolean running</Declaration>
-			
-			
-			<Anchor>//api/name/running</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/setPlaybackURL:</TokenIdentifier>
-			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
-			
-			
-			<Anchor>//api/name/playbackURL</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/playbackURL</TokenIdentifier>
-			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
-			
-			
-			<Anchor>//api/name/playbackURL</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientHTTPServer/playbackURL</TokenIdentifier>
-			<Abstract type="html">The dynamically-generated playback URL string. Pass this URL to a video player for playback</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSString *playbackURL</Declaration>
-			
-			
-			<Anchor>//api/name/playbackURL</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/fairPlayLicenseServerURL</TokenIdentifier>
-			<Abstract type="html">Local playback URL for FiarPlay license server request to download license for asset</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nonnull)fairPlayLicenseServerURL</Declaration>
-			
-			
-			<Anchor>//api/name/fairPlayLicenseServerURL</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientHTTPServer/fairPlayCertificateDataURLForSubType:</TokenIdentifier>
-			<Abstract type="html">Local playback URL for FairPlay certificate data download request</Abstract>
-			<DeclaredIn>VirtuosoClientHTTPServer.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nonnull)fairPlayCertificateDataURLForSubType:(NSString *_Nullable)subType</Declaration>
+			<Declaration>- (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType fromViewController:(nonnull UIViewController *)parent onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>subType</Name>
-					<Abstract type="html">optional string specifying the optional subtype</Abstract>
+					<Name>playbackType</Name>
+					<Abstract type="html">Whether to play the downloaded copy or the online copy</Abstract>
+				</Parameter><Parameter>
+					<Name>parent</Name>
+					<Abstract type="html">The parent view controller to present the movie player from</Abstract>
+				</Parameter><Parameter>
+					<Name>onSuccess</Name>
+					<Abstract type="html">Called when playback succeeds</Abstract>
+				</Parameter><Parameter>
+					<Name>onFail</Name>
+					<Abstract type="html">Called when playback fails</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/fairPlayCertificateDataURLForSubType:</Anchor>
+			<Anchor>//api/name/playUsingPlaybackType:fromViewController:onSuccess:onFail:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/playUsingPlaybackType:andPlayer:onSuccess:onFail:</TokenIdentifier>
+			<Abstract type="html">Plays this asset using a custom player class.  You are responsible for presentation.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType andPlayer:(nonnull id&lt;VirtuosoPlayer&gt;)player onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>playbackType</Name>
+					<Abstract type="html">Whether to play the downloaded copy or the online copy</Abstract>
+				</Parameter><Parameter>
+					<Name>player</Name>
+					<Abstract type="html">An object that follows the VirtuosoPlayer protocol.</Abstract>
+				</Parameter><Parameter>
+					<Name>onSuccess</Name>
+					<Abstract type="html">Called when playback succeeds</Abstract>
+				</Parameter><Parameter>
+					<Name>onFail</Name>
+					<Abstract type="html">Called when playback fails</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/playUsingPlaybackType:andPlayer:onSuccess:onFail:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/stoppedPlaying</TokenIdentifier>
+			<Abstract type="html">Called when playback finishes (the video player exits) to cleanup the session.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)stoppedPlaying</Declaration>
+			
+			
+			<Anchor>//api/name/stoppedPlaying</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setRetryLimit:</TokenIdentifier>
+			<Abstract type="html">The internally defined maximum number of times the asset will be retried prior to reporting blocked</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, class) NSInteger retryLimit</Declaration>
+			
+			
+			<Anchor>//api/name/retryLimit</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/retryLimit</TokenIdentifier>
+			<Abstract type="html">The internally defined maximum number of times the asset will be retried prior to reporting blocked</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, class) NSInteger retryLimit</Declaration>
+			
+			
+			<Anchor>//api/name/retryLimit</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/retryLimit</TokenIdentifier>
+			<Abstract type="html">The internally defined maximum number of times the asset will be retried prior to reporting blocked</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, class) NSInteger retryLimit</Declaration>
+			
+			
+			<Anchor>//api/name/retryLimit</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setDownloadRetryCount:</TokenIdentifier>
+			<Abstract type="html">How many passes Virtuoso has made attempting to download this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/retryLimit</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) int downloadRetryCount</Declaration>
+			
+			
+			<Anchor>//api/name/downloadRetryCount</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+			<Abstract type="html">How many passes Virtuoso has made attempting to download this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/retryLimit</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) int downloadRetryCount</Declaration>
+			
+			
+			<Anchor>//api/name/downloadRetryCount</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+			<Abstract type="html">How many passes Virtuoso has made attempting to download this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/retryLimit</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) int downloadRetryCount</Declaration>
+			
+			
+			<Anchor>//api/name/downloadRetryCount</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setMaximumRetriesExceeded:</TokenIdentifier>
+			<Abstract type="html">Indicates if this asset is blocked because it has been retried and failed too many times</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/retryLimit</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) Boolean maximumRetriesExceeded</Declaration>
+			
+			
+			<Anchor>//api/name/maximumRetriesExceeded</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+			<Abstract type="html">Indicates if this asset is blocked because it has been retried and failed too many times</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/retryLimit</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) Boolean maximumRetriesExceeded</Declaration>
+			
+			
+			<Anchor>//api/name/maximumRetriesExceeded</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/maximumRetriesExceeded</TokenIdentifier>
+			<Abstract type="html">Indicates if this asset is blocked because it has been retried and failed too many times</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/retryLimit</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadRetryCount</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) Boolean maximumRetriesExceeded</Declaration>
+			
+			
+			<Anchor>//api/name/maximumRetriesExceeded</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setIsConsistencyScanActive:</TokenIdentifier>
+			<Abstract type="html">Checks whether the asset is currently being processed by the Consistency scan</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isConsistencyScanActive</Declaration>
+			
+			
+			<Anchor>//api/name/isConsistencyScanActive</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/isConsistencyScanActive</TokenIdentifier>
+			<Abstract type="html">Checks whether the asset is currently being processed by the Consistency scan</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isConsistencyScanActive</Declaration>
+			
+			
+			<Anchor>//api/name/isConsistencyScanActive</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isConsistencyScanActive</TokenIdentifier>
+			<Abstract type="html">Checks whether the asset is currently being processed by the Consistency scan</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isConsistencyScanActive</Declaration>
+			
+			
+			<Anchor>//api/name/isConsistencyScanActive</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/clearRetryCountOnComplete:</TokenIdentifier>
+			<Abstract type="html">Clears this asset&apos;s internal retry count, so Virtuoso will retry downloading it</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)clearRetryCountOnComplete:(nullable BasicCompletionBlock)onComplete</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>onComplete</Name>
+					<Abstract type="html">A block to call when the engine has finished resetting the error count</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/clearRetryCountOnComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/forceExpire:</TokenIdentifier>
+			<Abstract type="html">Sets the inForcedExpire flag for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)forceExpire:(Boolean)expired</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expired</Name>
+					<Abstract type="html">Whether this asset should be marked as inForcedExpire.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/forceExpire:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAvailabilityFrom:to:</TokenIdentifier>
+			<Abstract type="html">Sets this asset&apos;s availability window</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)setAvailabilityFrom:(nullable NSDate *)start to:(nullable NSDate *)end</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>start</Name>
+					<Abstract type="html">When this asset should be made available for access (publishDate</Abstract>
+				</Parameter><Parameter>
+					<Name>end</Name>
+					<Abstract type="html">When this asset should be made unavailable for access (expiryDate</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAvailabilityFrom:to:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setUuid:</TokenIdentifier>
+			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/uuid</TokenIdentifier>
+			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/uuid</TokenIdentifier>
+			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setType:</TokenIdentifier>
+			<Abstract type="html">The asset type</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/type</TokenIdentifier>
+			<Abstract type="html">The asset type</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/type</TokenIdentifier>
+			<Abstract type="html">The asset type</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAssetID:</TokenIdentifier>
+			<Abstract type="html">A unique identifier that you provide when instantiating this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetID</TokenIdentifier>
+			<Abstract type="html">A unique identifier that you provide when instantiating this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/assetID</TokenIdentifier>
+			<Abstract type="html">A unique identifier that you provide when instantiating this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAssetHash:</TokenIdentifier>
+			<Abstract type="html">A SHA256 hash generated from this particular asset instance.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetHash</Declaration>
+			
+			
+			<Anchor>//api/name/assetHash</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetHash</TokenIdentifier>
+			<Abstract type="html">A SHA256 hash generated from this particular asset instance.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetHash</Declaration>
+			
+			
+			<Anchor>//api/name/assetHash</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/assetHash</TokenIdentifier>
+			<Abstract type="html">A SHA256 hash generated from this particular asset instance.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetHash</Declaration>
+			
+			
+			<Anchor>//api/name/assetHash</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAssetURL:</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on the Internet</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetURL</Declaration>
+			
+			
+			<Anchor>//api/name/assetURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetURL</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on the Internet</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetURL</Declaration>
+			
+			
+			<Anchor>//api/name/assetURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/assetURL</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on the Internet</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *assetURL</Declaration>
+			
+			
+			<Anchor>//api/name/assetURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setFilePath:</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on disk</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/type</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isWithinViewingWindow</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isExpired</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isPlayable</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *filePath</Declaration>
+			
+			
+			<Anchor>//api/name/filePath</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/filePath</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on disk</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/type</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isWithinViewingWindow</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isExpired</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isPlayable</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *filePath</Declaration>
+			
+			
+			<Anchor>//api/name/filePath</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/filePath</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on disk</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/type</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isWithinViewingWindow</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isExpired</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isPlayable</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *filePath</Declaration>
+			
+			
+			<Anchor>//api/name/filePath</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setFileURL:</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on disk</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/filePath</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, nullable) NSURL *fileURL</Declaration>
+			
+			
+			<Anchor>//api/name/fileURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/fileURL</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on disk</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/filePath</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, nullable) NSURL *fileURL</Declaration>
+			
+			
+			<Anchor>//api/name/fileURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/fileURL</TokenIdentifier>
+			<Abstract type="html">Where this asset exists on disk</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/filePath</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly, nullable) NSURL *fileURL</Declaration>
+			
+			
+			<Anchor>//api/name/fileURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setDescription:</TokenIdentifier>
+			<Abstract type="html">A human-readable description for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/description</TokenIdentifier>
+			<Abstract type="html">A human-readable description for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/description</TokenIdentifier>
+			<Abstract type="html">A human-readable description for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSString *description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setEstimatedSize:</TokenIdentifier>
+			<Abstract type="html">Estimated size of this asset, in bytes</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long estimatedSize</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedSize</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/estimatedSize</TokenIdentifier>
+			<Abstract type="html">Estimated size of this asset, in bytes</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long estimatedSize</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedSize</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/estimatedSize</TokenIdentifier>
+			<Abstract type="html">Estimated size of this asset, in bytes</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long estimatedSize</Declaration>
+			
+			
+			<Anchor>//api/name/estimatedSize</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setDownloadPermission:</TokenIdentifier>
+			<Abstract type="html">Whether the backplane has given permission to download this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetPermissionType downloadPermission</Declaration>
+			
+			
+			<Anchor>//api/name/downloadPermission</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/downloadPermission</TokenIdentifier>
+			<Abstract type="html">Whether the backplane has given permission to download this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetPermissionType downloadPermission</Declaration>
+			
+			
+			<Anchor>//api/name/downloadPermission</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadPermission</TokenIdentifier>
+			<Abstract type="html">Whether the backplane has given permission to download this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_AssetPermissionType downloadPermission</Declaration>
+			
+			
+			<Anchor>//api/name/downloadPermission</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setCurrentSize:</TokenIdentifier>
+			<Abstract type="html">The current size of this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long currentSize</Declaration>
+			
+			
+			<Anchor>//api/name/currentSize</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/currentSize</TokenIdentifier>
+			<Abstract type="html">The current size of this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long currentSize</Declaration>
+			
+			
+			<Anchor>//api/name/currentSize</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/currentSize</TokenIdentifier>
+			<Abstract type="html">The current size of this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long currentSize</Declaration>
+			
+			
+			<Anchor>//api/name/currentSize</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setFractionComplete:</TokenIdentifier>
+			<Abstract type="html">How much of this asset Virtuoso has already downloaded, as a fraction between 0.0 and 1.0</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double fractionComplete</Declaration>
+			
+			
+			<Anchor>//api/name/fractionComplete</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/fractionComplete</TokenIdentifier>
+			<Abstract type="html">How much of this asset Virtuoso has already downloaded, as a fraction between 0.0 and 1.0</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double fractionComplete</Declaration>
+			
+			
+			<Anchor>//api/name/fractionComplete</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/fractionComplete</TokenIdentifier>
+			<Abstract type="html">How much of this asset Virtuoso has already downloaded, as a fraction between 0.0 and 1.0</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double fractionComplete</Declaration>
+			
+			
+			<Anchor>//api/name/fractionComplete</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setDuration:</TokenIdentifier>
+			<Abstract type="html">The detected duration of the asset, in seconds, or kInvalidDuration if no duration has been detected.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/duration</TokenIdentifier>
+			<Abstract type="html">The detected duration of the asset, in seconds, or kInvalidDuration if no duration has been detected.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/duration</TokenIdentifier>
+			<Abstract type="html">The detected duration of the asset, in seconds, or kInvalidDuration if no duration has been detected.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setStatus:</TokenIdentifier>
+			<Abstract type="html">The current status of this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadStatusType status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/status</TokenIdentifier>
+			<Abstract type="html">The current status of this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadStatusType status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/status</TokenIdentifier>
+			<Abstract type="html">The current status of this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadStatusType status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setError:</TokenIdentifier>
+			<Abstract type="html">Errors Virtuoso encountered while downloading this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadErrorType error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/error</TokenIdentifier>
+			<Abstract type="html">Errors Virtuoso encountered while downloading this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadErrorType error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/error</TokenIdentifier>
+			<Abstract type="html">Errors Virtuoso encountered while downloading this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) kVDE_DownloadErrorType error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setUserInfo:</TokenIdentifier>
+			<Abstract type="html">The generic userInfo metadata for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDictionary *userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/userInfo</TokenIdentifier>
+			<Abstract type="html">The generic userInfo metadata for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDictionary *userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/userInfo</TokenIdentifier>
+			<Abstract type="html">The generic userInfo metadata for this asset</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDictionary *userInfo</Declaration>
+			
+			
+			<Anchor>//api/name/userInfo</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setRefreshAdsStatus:</TokenIdentifier>
+			<Abstract type="html">Indicates status of Ads refresh on this Asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) AssetAdStatus refreshAdsStatus</Declaration>
+			
+			
+			<Anchor>//api/name/refreshAdsStatus</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/refreshAdsStatus</TokenIdentifier>
+			<Abstract type="html">Indicates status of Ads refresh on this Asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) AssetAdStatus refreshAdsStatus</Declaration>
+			
+			
+			<Anchor>//api/name/refreshAdsStatus</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/refreshAdsStatus</TokenIdentifier>
+			<Abstract type="html">Indicates status of Ads refresh on this Asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) AssetAdStatus refreshAdsStatus</Declaration>
+			
+			
+			<Anchor>//api/name/refreshAdsStatus</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/reloadAds</TokenIdentifier>
+			<Abstract type="html">Starts async process to refresh Advertisements associated with this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (void)reloadAds</Declaration>
+			
+			
+			<Anchor>//api/name/reloadAds</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setInForcedExpire:</TokenIdentifier>
+			<Abstract type="html">Whether this asset has been force-expired</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/forceExpire:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) Boolean inForcedExpire</Declaration>
+			
+			
+			<Anchor>//api/name/inForcedExpire</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/inForcedExpire</TokenIdentifier>
+			<Abstract type="html">Whether this asset has been force-expired</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/forceExpire:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) Boolean inForcedExpire</Declaration>
+			
+			
+			<Anchor>//api/name/inForcedExpire</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/inForcedExpire</TokenIdentifier>
+			<Abstract type="html">Whether this asset has been force-expired</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/forceExpire:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, readonly) Boolean inForcedExpire</Declaration>
+			
+			
+			<Anchor>//api/name/inForcedExpire</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setPublishDate:</TokenIdentifier>
+			<Abstract type="html">When this asset should become available</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithUUID:availabilityFilter:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *publishDate</Declaration>
+			
+			
+			<Anchor>//api/name/publishDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/publishDate</TokenIdentifier>
+			<Abstract type="html">When this asset should become available</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithUUID:availabilityFilter:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *publishDate</Declaration>
+			
+			
+			<Anchor>//api/name/publishDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/publishDate</TokenIdentifier>
+			<Abstract type="html">When this asset should become available</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/expiryDate</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithUUID:availabilityFilter:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *publishDate</Declaration>
+			
+			
+			<Anchor>//api/name/publishDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setExpiryDate:</TokenIdentifier>
+			<Abstract type="html">As soon as possible after &apos;expiryDate&apos; has passed, Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *expiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/expiryDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/expiryDate</TokenIdentifier>
+			<Abstract type="html">As soon as possible after &apos;expiryDate&apos; has passed, Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *expiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/expiryDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/expiryDate</TokenIdentifier>
+			<Abstract type="html">As soon as possible after &apos;expiryDate&apos; has passed, Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *expiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/expiryDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setLastDRMRefresh:</TokenIdentifier>
+			<Abstract type="html">When this asset&apos;s DRM was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *lastDRMRefresh</Declaration>
+			
+			
+			<Anchor>//api/name/lastDRMRefresh</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/lastDRMRefresh</TokenIdentifier>
+			<Abstract type="html">When this asset&apos;s DRM was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *lastDRMRefresh</Declaration>
+			
+			
+			<Anchor>//api/name/lastDRMRefresh</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/lastDRMRefresh</TokenIdentifier>
+			<Abstract type="html">When this asset&apos;s DRM was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *lastDRMRefresh</Declaration>
+			
+			
+			<Anchor>//api/name/lastDRMRefresh</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setExpiryAfterDownload:</TokenIdentifier>
+			<Abstract type="html">After the asset has completed download, as soon as possible after &apos;expiryAfterDownload&apos;
+time has elapsed, Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSTimeInterval expiryAfterDownload</Declaration>
+			
+			
+			<Anchor>//api/name/expiryAfterDownload</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/expiryAfterDownload</TokenIdentifier>
+			<Abstract type="html">After the asset has completed download, as soon as possible after &apos;expiryAfterDownload&apos;
+time has elapsed, Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSTimeInterval expiryAfterDownload</Declaration>
+			
+			
+			<Anchor>//api/name/expiryAfterDownload</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/expiryAfterDownload</TokenIdentifier>
+			<Abstract type="html">After the asset has completed download, as soon as possible after &apos;expiryAfterDownload&apos;
+time has elapsed, Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSTimeInterval expiryAfterDownload</Declaration>
+			
+			
+			<Anchor>//api/name/expiryAfterDownload</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setExpiryAfterPlay:</TokenIdentifier>
+			<Abstract type="html">After the asset is first played, as soon as possible after &apos;expiryAfterPlay&apos; time has elapsed,
+Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/firstPlayDateTime</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) NSTimeInterval expiryAfterPlay</Declaration>
+			
+			
+			<Anchor>//api/name/expiryAfterPlay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/expiryAfterPlay</TokenIdentifier>
+			<Abstract type="html">After the asset is first played, as soon as possible after &apos;expiryAfterPlay&apos; time has elapsed,
+Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/firstPlayDateTime</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) NSTimeInterval expiryAfterPlay</Declaration>
+			
+			
+			<Anchor>//api/name/expiryAfterPlay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/expiryAfterPlay</TokenIdentifier>
+			<Abstract type="html">After the asset is first played, as soon as possible after &apos;expiryAfterPlay&apos; time has elapsed,
+Virtuoso automatically deletes the asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/firstPlayDateTime</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>@property (nonatomic, assign) NSTimeInterval expiryAfterPlay</Declaration>
+			
+			
+			<Anchor>//api/name/expiryAfterPlay</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setIsWithinViewingWindow:</TokenIdentifier>
+			<Abstract type="html">Is this asset within its availability window?</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isWithinViewingWindow</Declaration>
+			
+			
+			<Anchor>//api/name/isWithinViewingWindow</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/isWithinViewingWindow</TokenIdentifier>
+			<Abstract type="html">Is this asset within its availability window?</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isWithinViewingWindow</Declaration>
+			
+			
+			<Anchor>//api/name/isWithinViewingWindow</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isWithinViewingWindow</TokenIdentifier>
+			<Abstract type="html">Is this asset within its availability window?</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isWithinViewingWindow</Declaration>
+			
+			
+			<Anchor>//api/name/isWithinViewingWindow</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setIsExpired:</TokenIdentifier>
+			<Abstract type="html">Has this asset already expired?</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isExpired</Declaration>
+			
+			
+			<Anchor>//api/name/isExpired</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/isExpired</TokenIdentifier>
+			<Abstract type="html">Has this asset already expired?</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isExpired</Declaration>
+			
+			
+			<Anchor>//api/name/isExpired</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isExpired</TokenIdentifier>
+			<Abstract type="html">Has this asset already expired?</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isExpired</Declaration>
+			
+			
+			<Anchor>//api/name/isExpired</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setIsPlayable:</TokenIdentifier>
+			<Abstract type="html">Whether this asset is currently playable.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isPlayable</Declaration>
+			
+			
+			<Anchor>//api/name/isPlayable</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/isPlayable</TokenIdentifier>
+			<Abstract type="html">Whether this asset is currently playable.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isPlayable</Declaration>
+			
+			
+			<Anchor>//api/name/isPlayable</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isPlayable</TokenIdentifier>
+			<Abstract type="html">Whether this asset is currently playable.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isPlayable</Declaration>
+			
+			
+			<Anchor>//api/name/isPlayable</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setEffectiveExpiryDate:</TokenIdentifier>
+			<Abstract type="html">When Virtuoso predicts this asset will expire.
+Returns the soonest date based on all the expiry constraints for this asset.
+A return value of nil means the item never expires.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *effectiveExpiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/effectiveExpiryDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/effectiveExpiryDate</TokenIdentifier>
+			<Abstract type="html">When Virtuoso predicts this asset will expire.
+Returns the soonest date based on all the expiry constraints for this asset.
+A return value of nil means the item never expires.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *effectiveExpiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/effectiveExpiryDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/effectiveExpiryDate</TokenIdentifier>
+			<Abstract type="html">When Virtuoso predicts this asset will expire.
+Returns the soonest date based on all the expiry constraints for this asset.
+A return value of nil means the item never expires.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *effectiveExpiryDate</Declaration>
+			
+			
+			<Anchor>//api/name/effectiveExpiryDate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setDownloadCompleteDateTime:</TokenIdentifier>
+			<Abstract type="html">When Virtuoso finished downloading this asset.  Nil if Virtuoso hasn&apos;t completed the download yet.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *downloadCompleteDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/downloadCompleteDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/downloadCompleteDateTime</TokenIdentifier>
+			<Abstract type="html">When Virtuoso finished downloading this asset.  Nil if Virtuoso hasn&apos;t completed the download yet.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *downloadCompleteDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/downloadCompleteDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/downloadCompleteDateTime</TokenIdentifier>
+			<Abstract type="html">When Virtuoso finished downloading this asset.  Nil if Virtuoso hasn&apos;t completed the download yet.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *downloadCompleteDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/downloadCompleteDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setCreationDateTime:</TokenIdentifier>
+			<Abstract type="html">When a VirtuosoAsset was created.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *creationDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/creationDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/creationDateTime</TokenIdentifier>
+			<Abstract type="html">When a VirtuosoAsset was created.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *creationDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/creationDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/creationDateTime</TokenIdentifier>
+			<Abstract type="html">When a VirtuosoAsset was created.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *creationDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/creationDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setFirstPlayDateTime:</TokenIdentifier>
+			<Abstract type="html">When this asset was first played.  Nil if Virtuoso is not aware of this asset being played yet.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *firstPlayDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/firstPlayDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/firstPlayDateTime</TokenIdentifier>
+			<Abstract type="html">When this asset was first played.  Nil if Virtuoso is not aware of this asset being played yet.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *firstPlayDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/firstPlayDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/firstPlayDateTime</TokenIdentifier>
+			<Abstract type="html">When this asset was first played.  Nil if Virtuoso is not aware of this asset being played yet.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) NSDate *firstPlayDateTime</Declaration>
+			
+			
+			<Anchor>//api/name/firstPlayDateTime</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setFastPlayEnabled:</TokenIdentifier>
+			<Abstract type="html">Whether this asset supports FastPlay</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean fastPlayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/fastPlayEnabled</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/fastPlayEnabled</TokenIdentifier>
+			<Abstract type="html">Whether this asset supports FastPlay</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean fastPlayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/fastPlayEnabled</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/fastPlayEnabled</TokenIdentifier>
+			<Abstract type="html">Whether this asset supports FastPlay</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean fastPlayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/fastPlayEnabled</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setFastPlayReady:</TokenIdentifier>
+			<Abstract type="html">If this asset is ready to begin FastPlay playback</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean fastPlayReady</Declaration>
+			
+			
+			<Anchor>//api/name/fastPlayReady</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/fastPlayReady</TokenIdentifier>
+			<Abstract type="html">If this asset is ready to begin FastPlay playback</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean fastPlayReady</Declaration>
+			
+			
+			<Anchor>//api/name/fastPlayReady</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/fastPlayReady</TokenIdentifier>
+			<Abstract type="html">If this asset is ready to begin FastPlay playback</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean fastPlayReady</Declaration>
+			
+			
+			<Anchor>//api/name/fastPlayReady</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAssetDownloadLimit:</TokenIdentifier>
+			<Abstract type="html">The asset-specific lifetime download limit.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int assetDownloadLimit</Declaration>
+			
+			
+			<Anchor>//api/name/assetDownloadLimit</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetDownloadLimit</TokenIdentifier>
+			<Abstract type="html">The asset-specific lifetime download limit.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int assetDownloadLimit</Declaration>
+			
+			
+			<Anchor>//api/name/assetDownloadLimit</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/assetDownloadLimit</TokenIdentifier>
+			<Abstract type="html">The asset-specific lifetime download limit.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int assetDownloadLimit</Declaration>
+			
+			
+			<Anchor>//api/name/assetDownloadLimit</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAdsProvider:</TokenIdentifier>
+			<Abstract type="html">AdsProvider assocated with the Asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAdsProvider *adsProvider</Declaration>
+			
+			
+			<Anchor>//api/name/adsProvider</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/adsProvider</TokenIdentifier>
+			<Abstract type="html">AdsProvider assocated with the Asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAdsProvider *adsProvider</Declaration>
+			
+			
+			<Anchor>//api/name/adsProvider</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/adsProvider</TokenIdentifier>
+			<Abstract type="html">AdsProvider assocated with the Asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAdsProvider *adsProvider</Declaration>
+			
+			
+			<Anchor>//api/name/adsProvider</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setIsPaused:</TokenIdentifier>
+			<Abstract type="html">Whether this asset is currently paused or resumed.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean isPaused</Declaration>
+			
+			
+			<Anchor>//api/name/isPaused</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/isPaused</TokenIdentifier>
+			<Abstract type="html">Whether this asset is currently paused or resumed.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean isPaused</Declaration>
+			
+			
+			<Anchor>//api/name/isPaused</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/isPaused</TokenIdentifier>
+			<Abstract type="html">Whether this asset is currently paused or resumed.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) Boolean isPaused</Declaration>
+			
+			
+			<Anchor>//api/name/isPaused</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory DASH VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description mpdUrl:(nonnull NSString *)mpdUrl protectionType:(kVDE_AssetProtectionType)protectionType maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>mpdUrl</Name>
+					<Abstract type="html">Where the media presentation description (mpd) file lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory DASH VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description mpdUrl:(nonnull NSString *)mpdUrl protectionType:(kVDE_AssetProtectionType)protectionType maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>mpdUrl</Name>
+					<Abstract type="html">Where the media presentation description (mpd) file lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory DASH VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description mpdUrl:(nonnull NSString *)mpdUrl protectionType:(kVDE_AssetProtectionType)protectionType maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay ancillaries:(nullable NSArray *)ancillaries adsProvider:(nullable VirtuosoAdsProvider *)adsProvider userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>mpdUrl</Name>
+					<Abstract type="html">Where the media presentation description (mpd) file lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>ancillaries</Name>
+					<Abstract type="html">Optional array of VirtuosoAncillaryFile to be downloaded</Abstract>
+				</Parameter><Parameter>
+					<Name>adsProvider</Name>
+					<Abstract type="html">Optional AdsProvider to use with this Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if an error occured.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:mpdUrl:protectionType:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Adds a mpd URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
+not a DASH asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+DASH.h</DeclaredIn>
+			
+			<Declaration>- (void)setMpdURL:(nonnull NSString *)mpdUrl withMaximumVideoBitrate:(long long)maximumVideoBitrate andMaximumAudioBitrate:(long long)maximumAudioBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mpdUrl</Name>
+					<Abstract type="html">Where the media presentation description (mpd) lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For mpd files containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.  If the audio for
+this asset is contained within the video profile, this value is ignored.</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setMpdURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay ancillaries:(nullable NSArray *)ancillaries adsProvider:(nullable VirtuosoAdsProvider *)adsProvider userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>ancillaries</Name>
+					<Abstract type="html">Optional array of VirtuosoAncillaryFile&apos;s</Abstract>
+				</Parameter><Parameter>
+					<Name>adsProvider</Name>
+					<Abstract type="html">Instance of AdsProvider to use with this Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay ancillaries:(nullable NSArray *)ancillaries adsProvider:(nullable VirtuosoAdsProvider *)adsProvider userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of file that
+Virtuoso will delete the file. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>ancillaries</Name>
+					<Abstract type="html">Optional array of VirtuosoAncillaryFile&apos;s</Abstract>
+				</Parameter><Parameter>
+					<Name>adsProvider</Name>
+					<Abstract type="html">Instance of AdsProvider to use with this Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new empty HSS VirtuosoAsset object, identified by the provided manifest URL.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of file that
+Virtuoso will delete the file. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Adds a manifest URL to an existing VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>- (void)setManifestURL:(nonnull NSString *)manifestUrl withMaximumVideoBitrate:(long long)maximumVideoBitrate andMaximumAudioBitrate:(long long)maximumAudioBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HLS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HLS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl protectionType:(kVDE_AssetProtectionType)protectionType includeEncryptionKeys:(Boolean)includeEncryption maximumBitrate:(long long)maximumBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
+				</Parameter><Parameter>
+					<Name>includeEncryption</Name>
+					<Abstract type="html">If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HLS VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HLS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl protectionType:(kVDE_AssetProtectionType)protectionType includeEncryptionKeys:(Boolean)includeEncryption maximumBitrate:(long long)maximumBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
+				</Parameter><Parameter>
+					<Name>includeEncryption</Name>
+					<Abstract type="html">If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HLS VirtuosoAsset object.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HLS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl protectionType:(kVDE_AssetProtectionType)protectionType includeEncryptionKeys:(Boolean)includeEncryption maximumBitrate:(long long)maximumBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay ancillaries:(nullable NSArray *)ancillaries adsProvider:(nullable VirtuosoAdsProvider *)adsProvider userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>protectionType</Name>
+					<Abstract type="html">You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</Abstract>
+				</Parameter><Parameter>
+					<Name>includeEncryption</Name>
+					<Abstract type="html">If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>ancillaries</Name>
+					<Abstract type="html">Optional array of VirtuosoAncillaryFile&apos;s</Abstract>
+				</Parameter><Parameter>
+					<Name>adsProvider</Name>
+					<Abstract type="html">Instance of AdsProvider to use with this Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Adds a manifest URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
+not an HLS asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HLS.h</DeclaredIn>
+			
+			<Declaration>- (void)setManifestURL:(nonnull NSString *)manifestUrl includeEncryptionKeys:(Boolean)includeEncryption withMaximumBitrate:(long long)maximumBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>includeEncryption</Name>
+					<Abstract type="html">If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/hlsManifestLocalPathForType:forSubtype:</TokenIdentifier>
+			<Abstract type="html">Returns the local file path for the HLS manifest of the given type and subtype</Abstract>
+			<DeclaredIn>VirtuosoAsset+HLS.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)hlsManifestLocalPathForType:(kVDM_ManifestType)type forSubtype:(nullable NSString *)subtype</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The HLS manifest type to return</Abstract>
+				</Parameter><Parameter>
+					<Name>subtype</Name>
+					<Abstract type="html">The subtype of the manifest to return</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The local file path for the HLS manifest of the given type and subtype</Abstract></ReturnValue>
+			<Anchor>//api/name/hlsManifestLocalPathForType:forSubtype:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/hlsManifestFastPlayPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved FastPlay manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+HLS.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)hlsManifestFastPlayPath</Declaration>
+			
+			
+			<Anchor>//api/name/hlsManifestFastPlayPath</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/segmentDownloadErrors</TokenIdentifier>
+			<Abstract type="html">The number of segments that could not be downloaded in this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)segmentDownloadErrors</Declaration>
+			
+			
+			<Anchor>//api/name/segmentDownloadErrors</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestRemoteURL:</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
+			
+			
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestLocalPath:</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestLocalPath</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setVideoStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAudioStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setSelectedAudio:</TokenIdentifier>
+			<Abstract type="html">The audio languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/selectedAudio</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/selectedAudio</TokenIdentifier>
+			<Abstract type="html">The audio languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/selectedAudio</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/selectedAudio</TokenIdentifier>
+			<Abstract type="html">The audio languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/selectedAudio</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setSelectedSubtitles:</TokenIdentifier>
+			<Abstract type="html">The subtitle languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</Declaration>
+			
+			
+			<Anchor>//api/name/selectedSubtitles</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/selectedSubtitles</TokenIdentifier>
+			<Abstract type="html">The subtitle languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</Declaration>
+			
+			
+			<Anchor>//api/name/selectedSubtitles</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/selectedSubtitles</TokenIdentifier>
+			<Abstract type="html">The subtitle languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</Declaration>
+			
+			
+			<Anchor>//api/name/selectedSubtitles</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

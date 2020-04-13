@@ -19,9 +19,28 @@
 
 #import <Foundation/Foundation.h>
 #import "VirtuosoConstants.h"
+#import "VirtuosoEngineConfig.h"
 
 @class VirtuosoAsset;
 @class VirtuosoDevice;
+@class VirtuosoEngineStatusInfo;
+
+/*!
+*  @typedef StartupCompleteStatusCallback
+*
+*  @discussion Callback invoked from VirtuosoDownloadEngine method startup
+*
+*  @param status Status as defined by kVDE_EngineStartupCode for engine startup.
+*/
+typedef void (^StartupCompleteStatusCallback)(kVDE_EngineStartupCode status);
+
+/*!
+*  @typedef ShutdownCompleteCallback
+*
+*  @discussion Callback invoked from VirtuosoDownloadEngine method shutdown:(ShutdownCompleteCallback)callback;
+*
+*/
+typedef void (^ShutdownCompleteCallback)(void);
 
 /*!
  *  @abstract The central control for all download-related activities.
@@ -77,8 +96,76 @@
 #pragma mark Startup and Shutdown Actions
 #pragma mark
 
+
 /*!
- *  @abstract You must call this method to initialize Virtuoso before you call any other Virtuoso method.
+*  @abstract Invoke this method once you have the requisite parameters (see VirtuosoEngineConfig) to start the Virtuoso download engine.
+*            This method should invoked once, repeated calls will impact performance. The callback will be invoked on MainThread.
+*            Once callback returns success, you can begin creating assets for downloading.
+*
+*  @discussion Sets up Virtuoso for use with a Backplane instance and peforms other initialzation tasks as may be required.
+*              This method will return immediately and startup will continue asyncronously. Once the engine is started,
+*              StartupCompleteStatusCallback will be called with a parameter kVDE_EngineStartupCode which indicates
+*              results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.
+*
+*  @warning    Except as otherwise documented, if you attempt to call other methods before
+*              this one, you'll get an exception. If you catch and ignore the exceptions,
+*              Virtuoso behavior will be undefined. If you attempt to use the VirtuosoSubscriptionManager
+*              before starting up, its instance method will return nil.
+*
+*  @param config Provides all needed configuration info needed to start the Engine
+*
+*  @param startupCallback Optional callback that will be invoked when startup completes.
+*/
+-(void)startup:(VirtuosoEngineConfig* _Nonnull)config startupCallback:(StartupCompleteStatusCallback _Nonnull)startupCallback;
+
+/*!
+ *  @abstract Invoke this method once you have the requisite parameters (see VirtuosoEngineConfig) to start the Virtuoso download engine.
+ *            This method should invoked once, repeated calls will impact performance. Once the callback returns success, you can
+ *            begin creating assets for downloading.
+ *
+ *  @discussion Sets up Virtuoso for use with a Backplane instance and peforms other initialzation tasks as may be required.
+ *              This method will return immediately and startup will continue asyncronously. Once the engine is started,
+ *              StartupCompleteStatusCallback will be called with a parameter kVDE_EngineStartupCode which indicates
+ *              results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.
+ *
+ *  @warning    Except as otherwise documented, if you attempt to call other methods before
+ *              this one, you'll get an exception. If you catch and ignore the exceptions,
+ *              Virtuoso behavior will be undefined. If you attempt to use the VirtuosoSubscriptionManager
+ *              before starting up, its instance method will return nil.
+ *
+ *  @param config Provides all needed configuration info needed to start the Engine
+ *
+ *  @param operationQueue Optional NSOperationQueue that should be used to invoke startupCallback. If nil the callback will happen on [NSOperationQueue mainQueue]
+ *
+ *  @param startupCallback Optional callback that will be invoked when startup completes.
+ */
+-(void)startup:(VirtuosoEngineConfig* _Nonnull)config operationQueue:(NSOperationQueue* _Nullable)operationQueue startupCallback:(StartupCompleteStatusCallback _Nonnull)startupCallback;
+
+/*!
+*  @abstract Invoke this method once you have the requisite parameters (see VirtuosoEngineConfig) to start the Virtuoso download engine.
+*            This method should invoked once, repeated calls will impact performance. Once the callback returns success, you can
+*            begin creating assets for downloading.
+*
+*  @discussion Sets up Virtuoso for use with a Backplane instance and peforms other initialzation tasks as may be required.
+*              This method will return immediately and startup will continue asyncronously. Once the engine is started,
+*              StartupCompleteStatusCallback will be called with a parameter kVDE_EngineStartupCode which indicates
+*              results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.
+*
+*  @warning    Except as otherwise documented, if you attempt to call other methods before
+*              this one, you'll get an exception. If you catch and ignore the exceptions,
+*              Virtuoso behavior will be undefined. If you attempt to use the VirtuosoSubscriptionManager
+*              before starting up, its instance method will return nil.
+*
+*  @param config Provides all needed configuration info needed to start the Engine
+*
+*  @param dispatchQueue DispatchQueue used to invoke startupCallback.
+*
+*  @param startupCallback Optional callback that will be invoked when startup completes.
+*/
+-(void)startup:(VirtuosoEngineConfig* _Nonnull)config  dispatchQueue:(dispatch_queue_t _Nonnull)dispatchQueue startupCallback:(StartupCompleteStatusCallback _Nonnull)startupCallback;
+
+/*!
+ *  @abstract Deprecated by startup:callbackQueue:startupCallback:
  *
  *  @discussion Sets up Virtuoso for use with a Backplane instance.
  *
@@ -105,7 +192,7 @@
                                           user:(nonnull NSString*)user
                               externalDeviceID:(nullable NSString*)externalDeviceID
                                     privateKey:(nonnull NSString*)privateKey
-                                     publicKey:(nonnull NSString*)publicKey;
+                                     publicKey:(nonnull NSString*)publicKey  __attribute__((deprecated("use startup:callbackQueue:startupCallback:")));
 
 /*!
  *  @abstract Resets Virtuoso without unregistering the device or deleting assets.
@@ -116,17 +203,35 @@
  *              when the user logs out (if you want to allow the same user to log back in without losing 
  *              downloads, for instance), then you would use this method, rather than the device unregister method.
  *
- *              After this method has been called, you must call 
- *              startupWithBackplane:user:externalDeviceID:privateKey:publicKey: again befor you call any other
- *              Virtuoso method.  
+ *              This method is a blocking call, invoke it from a background thread.
+ *
+ *              After this method has been called, you must call
+ *              startup:(VirtuosoEngineConfig*) again befor you call any other Virtuoso method.
  *
  *  @warning    After calling this method, except as otherwise documented, if you attempt to call other methods
- *              before calling startupWithBackplane:user:externalDeviceID:privateKey:publicKey:, you'll get an
- *              exception. If you catch and ignore the exceptions, Virtuoso behavior will be undefined. If you 
- *              attempt to use the VirtuosoSubscriptionManager before starting up, its instance method will return nil.
+ *              before calling startup:(VirtuosoEngineConfig*), the results are undefined.
  */
 - (void)shutdown;
 
+/*!
+*  @abstract Resets Virtuoso without unregistering the device or deleting assets.
+*
+*  @discussion Normally, if a user logs out of the enclosing app, you would call the device unregister
+*              method for the user's device, which deletes all assets, removes the device from the backplane,
+*              and resets the engine state.  If complex business logic requires that you do not do these things
+*              when the user logs out (if you want to allow the same user to log back in without losing
+*              downloads, for instance), then you would use this method, rather than the device unregister method.
+*
+*              This method is an async call, it will return immediately. Once shutdown has compleed, the callback is invoked
+*               using the thread queue set for [VirtuosoDownloadEngine notificationQueue] which defaults to main thread.
+*
+*              After this method has been called, you must call
+*              startup:(VirtuosoEngineConfig*) again befor you call any other Virtuoso method.
+*
+*  @warning    After calling this method, except as otherwise documented, if you attempt to call other methods
+*              before calling startup:(VirtuosoEngineConfig*), the results are undefined.
+*/
+- (void)shutdown:(nonnull ShutdownCompleteCallback)callback;
 /**---------------------------------------------------------------------------------------
  * @name Backplane
  *  ---------------------------------------------------------------------------------------
@@ -177,6 +282,11 @@
  */
 @property (nonatomic,readonly,nonnull) NSString* key;
 
+/*!
+*  @abstract Instance of VirtuosoEngineConfig used to config
+*/
+@property (nonatomic,readonly,nonnull)VirtuosoEngineConfig* config;
+
 /**---------------------------------------------------------------------------------------
  * @name Engine Status
  *  ---------------------------------------------------------------------------------------
@@ -194,6 +304,8 @@
  *              Virtuoso will be blocked and will not download. Virtuoso does not modify this switch, but you
  *              may do so, if you wish. Once you set a value, that value persists across app restarts. 
  *              Default is YES.
+ *
+ *              Setting this property is a long running operation and may delay UI updates. Consider using a background thread when setting this property.
  */
 @property (nonatomic,assign) Boolean enabled;
 
@@ -279,6 +391,14 @@
 #pragma mark
 #pragma mark Queue Management
 #pragma mark
+
+/*!
+ *  @abstract Queue used to post Engine status notifications. Default is MainThread.
+ *
+ *  @discussion If you need Notifications on a different thread from the default (MainThread), set
+ *              this class property with the NSOperationQueue you want to receive Engine notifications.
+ */
+@property (nonatomic, strong, class)NSOperationQueue* _Nonnull notificationQueue;
 
 /*!
  *  @abstract Returns an ordered array of UUID strings for VirtuosoAsset items in the download queue.
@@ -395,6 +515,11 @@
 @property (nonatomic,readonly) Boolean diskStatusOK;
 
 /*!
+ *  @abstract Whether out of memory occured 
+ */
+@property (nonatomic,readonly) Boolean memoryStatusOK;
+
+/*!
  *  @abstract Whether queue state permits downloading
  */
 @property (nonatomic,readonly) Boolean queueStatusOK;
@@ -408,6 +533,11 @@
  *  @abstract Whether the Virtuoso SDK license is currently valid
  */
 @property (nonatomic,readonly) Boolean authenticationOK;
+
+/*!
+ *  @abstract Composite object returning the state of network, disk, queue, account, and authentication.
+ */
+@property (nonatomic,readonly)VirtuosoEngineStatusInfo* _Nonnull engineStatusInfo;
 
 @end
 

@@ -25,6 +25,8 @@ The SDK offers an extensive range of capabilities. Check out the Client Develope
 
 This repository contains the Download2Go SDK binaries, along with a sample application (with source code) that demonstrates how to use the SDK. A complete startup guide is included in the Client Developers' Guide documentation for each operating system.  
 
+See the Tutorials folders for getting started source code.
+
 Official SDK Locations
 - [Download2Go - iOS](https://github.com/penthera/Download2Go-ios)
 - [Download2Go - MacOS](https://github.com/penthera/Download2Go-MacOS)

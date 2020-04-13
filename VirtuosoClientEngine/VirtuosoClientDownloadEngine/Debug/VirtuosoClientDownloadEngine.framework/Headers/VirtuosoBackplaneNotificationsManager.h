@@ -17,17 +17,15 @@
 -(void)backplaneSyncCompleteWithStatus:(Boolean)status error:(NSError* _Nullable)error;
 
 /*
- *  Called whenever the Backplane deletes assets
- */
-// kBackplaneAssetDeletedNotification
--(void)backplaneDeletedAssetId:(NSString* _Nonnull)assetID;
-
-/*
  *  The Backplane issued a remote kill request.  The SDK will have reverted back to an uninitialized state and we must call the startup method again.  In this demo,
  *  we query the User for the Group and User to use, so we're going to revert ourselves back to startup state and ask for those values again, before calling startup.
  */
-// kBackplaneRemoteKillNotification
 -(void)backplaneRemoteKill;
+
+/*
+ *  The Backplane is starting a remote kill
+ */
+-(void)backplaneStartingRemoteKill;
 
 /*
  * When the Backplane notifies us that our device was unregistered, treat it like a remote wipe request.  The unregister action will already have cleared

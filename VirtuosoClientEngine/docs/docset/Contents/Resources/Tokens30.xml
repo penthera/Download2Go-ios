@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoLoggerDelegate.html">
+	<File path="Classes/VirtuosoPlayerViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLoggerDelegate</TokenIdentifier>
-			<Abstract type="html">For those who wish to use their own logging system or report metrics to
-non-Virtuoso locations/trackers. Virtuoso will send all log events to the registered
-delegate if the VirtuosoLogger would have otherwise processed them.</Abstract>
-			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlayerViewController</TokenIdentifier>
+			<Abstract type="html">A convenience UIViewController subclass that includes a VirtuosoPlayerView and implements
+the VirtuosoPlayer protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
             
 			
 			<NodeRef refid="30"/>
@@ -15,94 +14,170 @@ delegate if the VirtuosoLogger would have otherwise processed them.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withData:</TokenIdentifier>
-			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
-			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withData:(long long)data</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">The type of event</Abstract>
-				</Parameter><Parameter>
-					<Name>fileID</Name>
-					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
-				</Parameter><Parameter>
-					<Name>bearer</Name>
-					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
-the network state.</Abstract>
-				</Parameter><Parameter>
-					<Name>data</Name>
-					<Abstract type="html">A numeric value semantically unique to the specific event.  Will be 0 when not required.
-Example: For the download-paused event, contains total bytes downloaded so far for this asset.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
-			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withData:</Anchor>
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withStringData:</TokenIdentifier>
-			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
-			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withStringData:(nullable NSString *)data</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">The type of event</Abstract>
-				</Parameter><Parameter>
-					<Name>fileID</Name>
-					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
-				</Parameter><Parameter>
-					<Name>bearer</Name>
-					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
-the network state.</Abstract>
-				</Parameter><Parameter>
-					<Name>data</Name>
-					<Abstract type="html">A string value semantically unique to the specific event.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
-			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withStringData:</Anchor>
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoCustomEventOccurred:</TokenIdentifier>
-			<Abstract type="html">Reports on a custom event not tracked by the standard event list.</Abstract>
-			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary *)event</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">An NSDictionary containing the logged event data</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
 			
-			<Anchor>//api/name/virtuosoCustomEventOccurred:</Anchor>
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoDebugEventOccurred:atLevel:</TokenIdentifier>
-			<Abstract type="html">Reports debug data.</Abstract>
-			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)virtuosoDebugEventOccurred:(nonnull NSString *)data atLevel:(kVL_LoggingLevel)level</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>data</Name>
-					<Abstract type="html">A string containing the debug event data</Abstract>
-				</Parameter><Parameter>
-					<Name>level</Name>
-					<Abstract type="html">The severity level of the log item</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
 			
-			<Anchor>//api/name/virtuosoDebugEventOccurred:atLevel:</Anchor>
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setPlayerView:</TokenIdentifier>
+			<Abstract type="html">The internal player view</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, nonnull) VirtuosoPlayerView *playerView</Declaration>
+			
+			
+			<Anchor>//api/name/playerView</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/playerView</TokenIdentifier>
+			<Abstract type="html">The internal player view</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, nonnull) VirtuosoPlayerView *playerView</Declaration>
+			
+			
+			<Anchor>//api/name/playerView</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/playerView</TokenIdentifier>
+			<Abstract type="html">The internal player view</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readwrite, nonnull) VirtuosoPlayerView *playerView</Declaration>
+			
+			
+			<Anchor>//api/name/playerView</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/setAllowsExternalPlayback:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerViewController/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/play</TokenIdentifier>
+			<Abstract type="html">Begins or resumes video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)play</Declaration>
+			
+			
+			<Anchor>//api/name/play</Anchor>
+            <NodeRef refid="30"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerViewController/pause</TokenIdentifier>
+			<Abstract type="html">Pauses video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)pause</Declaration>
+			
+			
+			<Anchor>//api/name/pause</Anchor>
             <NodeRef refid="30"/>
 		</Token>
 		

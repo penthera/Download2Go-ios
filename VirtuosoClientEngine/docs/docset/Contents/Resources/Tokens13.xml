@@ -1,17 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoDrmConfig.html">
+	<File path="Classes/VirtuosoClientAdsPlaybackProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoDrmConfig</TokenIdentifier>
-			<Abstract type="html">Allows Virtuoso to request the enclosing application for asset specific DRM
-values when requesting FairPlay license keys.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoClientAdsPlaybackProvider</TokenIdentifier>
+			<Abstract type="html">Process client side ads for Playback.</Abstract>
+			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/setAsset:</TokenIdentifier>
+			<Abstract type="html">Asset to process client ads for.</Abstract>
+			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/asset</TokenIdentifier>
+			<Abstract type="html">Asset to process client ads for.</Abstract>
+			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientAdsPlaybackProvider/asset</TokenIdentifier>
+			<Abstract type="html">Asset to process client ads for.</Abstract>
+			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/initWithAsset:</TokenIdentifier>
+			<Abstract type="html">Asset to process client ads for.</Abstract>
+			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">asset for which client ads exist</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">instance of this object. nil on failure to create which will only happen if the asset is invalid.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAsset:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/process</TokenIdentifier>
+			<Abstract type="html">Begins processing of client ads. The returned array contains client ads.</Abstract>
+			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			
+			<Declaration>- (NSMutableArray&lt;VirtuosoClientAdInfo*&gt; *)process</Declaration>
+			
+			<ReturnValue><Abstract type="html">Mutable array of VirtuosoClientAdInfo for the ads. A mutable array is provided so that the caller can pop ads off the array as they are played.</Abstract></ReturnValue>
+			<Anchor>//api/name/process</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
 		
         
         

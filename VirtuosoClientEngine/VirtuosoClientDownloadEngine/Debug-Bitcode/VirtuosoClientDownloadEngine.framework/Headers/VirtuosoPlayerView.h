@@ -128,9 +128,7 @@
 @property (nonatomic, weak, nullable) id <VirtuosoPlayerViewDelegate> delegate;
 
 /*!
- *  @abstract The internal player
- *
- *  @abstract You may use access to the AVPlayer object to perform custom player actions, such as modifying the 
+ *  @abstract You may use access to the AVPlayer object to perform custom player actions, such as modifying the
  *            playback rate or seeking to a particular time in the playback stream.
  */
 @property (nonatomic, readonly, nonnull) AVPlayer *player;

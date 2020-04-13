@@ -1,47 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_NetworkStatus.html">
+	<File path="Protocols/VirtuosoPlayer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_NetworkStatus</TokenIdentifier>
-			<Abstract type="html">Engine-local versions of Reachability status.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayer</TokenIdentifier>
+			<Abstract type="html">Defines the minimum API required for basic playback of segmented (HLS, HSS, DASH, etc.) video</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_NotReachable</TokenIdentifier>
-            <Abstract type="html">The network is not currently reachable</Abstract>
-            <Declaration>kVDE_NotReachable</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="47"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_ReachableViaWiFi</TokenIdentifier>
-            <Abstract type="html">The network is currently reachable via WiFi</Abstract>
-            <Declaration>kVDE_ReachableViaWiFi</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="47"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_ReachableViaWWAN</TokenIdentifier>
-            <Abstract type="html">The network is currently reachable via cellular</Abstract>
-            <Declaration>kVDE_ReachableViaWWAN</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="47"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="47"/>
+		</Token>
+		
         
         
 	</File>

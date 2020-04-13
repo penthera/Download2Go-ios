@@ -1,70 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_ProxyErrorCode.html">
+	<File path="Protocols/VirtuosoPlaylistManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ProxyErrorCode</TokenIdentifier>
-			<Abstract type="html">Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
-NSNotificationCenter. These codes are included in the NSError that is sent.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlaylistManagerDelegate</TokenIdentifier>
+			<Abstract type="html">This delegate defines the method(s) that must be implemented to support Smart Downloads.
+Methods in this delegate are called from a background thread, make sure your code
+can properly execute from a Thread other than the thread that created this delegate.
+
+This is an advanced feature which is entirely optional.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneAuthorizationTimedOut</TokenIdentifier>
-            <Abstract type="html">For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
-        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. </Abstract>
-            <Declaration>kVDE_BackplaneAuthorizationTimedOut</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlaylistManagerDelegate/assetForAssetID:tryAgainLater:</TokenIdentifier>
+			<Abstract type="html">Requests the next asset that should be downlaoded for the named Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (VirtuosoAssetConfig *_Nullable)assetForAssetID:(NSString *_Nonnull)assetID tryAgainLater:(Boolean *)tryAgainLater</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">The ID of the Asset in the specificed Playlist.</Abstract>
+				</Parameter><Parameter>
+					<Name>tryAgainLater</Name>
+					<Abstract type="html">Out parameter client sets if PlaylistManager should try to retrieve this item again at a later time.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return an instance of VirtuosoAssetConfig for the specified Asset. If a valid instance is returned, the asset is parsed and automatically downloaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetForAssetID:tryAgainLater:</Anchor>
             <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetOutsideViewingWindow</TokenIdentifier>
-            <Abstract type="html">You attempted to play an asset outside its availability window.</Abstract>
-            <Declaration>kVDE_PlayedAssetOutsideViewingWindow</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetExpired</TokenIdentifier>
-            <Abstract type="html">You attempted to play an expired asset.</Abstract>
-            <Declaration>kVDE_PlayedAssetExpired</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidAsset</TokenIdentifier>
-            <Abstract type="html">The VirtuosoAsset used to initialize the proxy wasn&apos;t an invalid asset or the asset protection type was not
-        kVDE_AssetProtectionTypePassthrough. </Abstract>
-            <Declaration>kVDE_InvalidAsset</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PortInUse</TokenIdentifier>
-            <Abstract type="html">The HTTP server was unable to listen on the selected port</Abstract>
-            <Declaration>kVDE_PortInUse</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="49"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

@@ -15,9 +15,56 @@
  */
 #import <Foundation/Foundation.h>
 
+/*!
+*  @typedef VirtuosoLicenseConfiguration
+*
+*  @abstract Configuration object used to initialize LicenseManager
+*/
+@interface VirtuosoLicenseConfiguration : NSObject
+
+/*!
+*  @abstract  A URL suffix to be appended to the base license URL.
+*/
+@property (nonatomic, strong)NSString* _Nullable urlSuffix;
+
+/*!
+*  @abstract  A NSDate timestamp indicating when the license should be renewed
+*/
+@property (nonatomic, strong)NSDate* _Nullable renewalDate;
+
+/*!
+*  @abstract   A dictionary of key-value pairs to be added to the license request as URL parameters
+*/
+@property (nonatomic, strong)NSDictionary* _Nullable customParameters;
+
+/*!
+*  @abstract    A dictionary of key-value pairs to be added to the DRM request headers
+*/
+@property (nonatomic, strong)NSDictionary* _Nullable customHeaders;
+
+/*!
+*  @abstract Creates License configuration object with specified parameters
+*
+*  @param suffix        A URL suffix to be appended to the base license URL.
+*  @param renewal      A NSDate timestamp indicating when the license should be renewed
+*  @param parameters A dictionary of key-value pairs to be added to the license request as URL parameters
+*  @param headers    A dictionary of key-value pairs to be added to the DRM request headers
+**/
+-(instancetype _Nullable )initWithSuffix:(NSString* _Nullable)suffix
+                                 renewal:(NSDate* _Nullable)renewal
+                              parameters:(NSDictionary* _Nullable)parameters
+                                 headers:(NSDictionary* _Nullable)headers;
+
+@end
+
 @class VirtuosoAsset;
 @protocol VirtuosoAVAssetResourceLoaderDelegate;
 
+/*!
+ *  @typedef LicenseRefreshComplete
+ *
+ *  @abstract Callback method invoked when a DRM license refresh is completed.
+ */
 typedef void (^LicenseRefreshComplete)(Boolean);
 
 /*!
@@ -71,6 +118,8 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
                    renewalDate:(NSDate* _Nonnull * _Nullable)renewalDate
                       forAsset:(VirtuosoAsset* _Nonnull)asset;
 
+-(VirtuosoLicenseConfiguration* _Nullable)lookupLicenseForAsset:(VirtuosoAsset* _Nonnull)asset;
+
 @end
 
 
@@ -97,11 +146,18 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
 /*!
  *  @abstract Sets the license server URL for a particular DRM type
  *
- *  @param url The URL to the license server for the given DRM type
+ *  @param url The URL to the license server for the given DRM type, a nil value will remove the license server URL.
  *  @param type The DRM type to configure
  */
-+ (void)setLicenseServerURL:(nonnull NSString*)url forDRM:(kVLM_DRMType)type;
-+ (void)setLicenseServerURL:(nonnull NSString*)url forDRM:(kVLM_DRMType)type andSubType:(nonnull NSString*)subType;
++ (void)setLicenseServerURL:(NSString* _Nullable)url forDRM:(kVLM_DRMType)type;
+/*!
+*  @abstract Sets the license server URL for a particular DRM type
+*
+*  @param url The URL to the license server for the given DRM type
+*  @param type The DRM type to configure
+*  @param subType String identifying the DRM subtype
+ */
++ (void)setLicenseServerURL:(NSString* _Nonnull)url forDRM:(kVLM_DRMType)type andSubType:(NSString* _Nonnull)subType;
 /*!
  *  @abstract Retrieves the configured license server URL for a particular DRM type
  *
@@ -110,7 +166,16 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @return The configured license server URL for the given DRM type
  */
 + (nullable NSString*)licenseServerURLForDRM:(kVLM_DRMType)type;
-+ (nullable NSString*)licenseServerURLForDRM:(kVLM_DRMType)type andSubType:(nonnull NSString*)subType;
+
+/*!
+*  @abstract Retrieves the configured license server URL for a particular DRM type
+*
+*  @param type The DRM type to retrieve the license URL for
+*  @param subType String identifying the DRM subtype
+*
+*  @return The configured license server URL for the given DRM type
+*/
++ (nullable NSString*)licenseServerURLForDRM:(kVLM_DRMType)type andSubType:(NSString* _Nonnull)subType;
 
 /*!
  *  @abstract Downloads the client app certificate from the provided URL
@@ -124,6 +189,19 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @param type The DRM type to configure
  */
 + (void)downloadClientAppCertificateFromURL:(nonnull NSString*)url forDRM:(kVLM_DRMType)type;
+/*!
+*  @abstract Downloads the client app certificate from the provided URL
+*
+*  @discussion As a part of DRM processing, some DRM platforms require a client security
+*              certificate.  Best practices dictate that this certificate is not hard-coded
+*              in the client app.  This method is used to load the required client app
+*              certificate from a remote location.
+*
+*  @param url The URL to the client app certificate
+*  @param type The DRM type to configure
+*  @param subType String identifying the DRM subtype
+*/
++ (void)downloadClientAppCertificateFromURL:(nonnull NSString*)url forDRM:(kVLM_DRMType)type andSubType:(NSString* _Nonnull)subType;
 
 /*!
  *  @abstract Sets the client app certificate from a previously downloaded or internal source
@@ -134,12 +212,24 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *              in the client app.  This method is used to load the required client app
  *              certificate from a remote location.
  *
- *  @param certificate The data representing the client app certificate
+ *  @param certificate The data representing the client app certificate. If this parameter is nil the certificate is removed.
  *  @param type The DRM type to configure
  */
-+ (void)setClientAppCertificate:(nonnull NSData*)certificate forDRM:(kVLM_DRMType)type;
-+ (void)setClientAppCertificate:(nonnull NSData*)cert forDRM:(kVLM_DRMType)type  andSubType:(nonnull NSString*)subType;
-
++ (void)setClientAppCertificate:(NSData* _Nullable)certificate forDRM:(kVLM_DRMType)type;
+/*!
+*  @abstract Sets the client app certificate from a previously downloaded or internal source
+*
+*
+*  @discussion As a part of DRM processing, some DRM platforms require a client security
+*              certificate.  Best practices dictate that this certificate is not hard-coded
+*              in the client app.  This method is used to load the required client app
+*              certificate from a remote location.
+*
+*  @param certificate The data representing the client app certificate. If this parameter is nil the certificate is removed.
+*  @param type The DRM type to configure
+*  @param subType String identifying the DRM subtype
+*/
++ (void)setClientAppCertificate:(NSData* _Nullable)certificate forDRM:(kVLM_DRMType)type andSubType:(NSString* _Nonnull)subType;
 /*!
  *  @abstract Retrieves the previously downloaded client app security certificate, if it exists
  *
@@ -148,7 +238,15 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @return The client app security certificate, if it exists, for the given DRM type
  */
 + (nullable NSData*)clientAppCertificateForDRM:(kVLM_DRMType)type;
-+ (nullable NSData*)clientAppCertificateForDRM:(kVLM_DRMType)type  andSubType:(nonnull NSString*)subType;
+/*!
+*  @abstract Retrieves the previously downloaded client app security certificate, if it exists
+*
+*  @param type The DRM type to configure
+*  @param subType String identifying the DRM subtype
+*
+*  @return The client app security certificate, if it exists, for the given DRM type
+*/
++ (nullable NSData*)clientAppCertificateForDRM:(kVLM_DRMType)type andSubType:(nullable NSString*)subType;
 /*!
  *  @abstract Downloads a DRM playback license for later offline playback
  *
@@ -166,8 +264,20 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @param asset The asset requiring an offline playback license
  *
  *  @return Boolean true if success
+ *
  */
 + (Boolean)downloadOfflineLicenseForAsset:(nonnull VirtuosoAsset *)asset;
+
+/*!
+ *  @abstract Indicates whether the license for the given asset needs to be refreshed
+ *
+ *  @discussion Assets with pass through protection will always return false
+ *
+ *  @param asset The asset to query refreshing DRM licensing for
+ *
+ *  @return Boolean true if downloaded license needs to be refreshed
+ */
++ (BOOL)doesLicenseForAssetRequireRefresh:(nonnull VirtuosoAsset*)asset;
 
 /*!
  *  @abstract Asynchronously refreshes any previously downloaded license for the given asset

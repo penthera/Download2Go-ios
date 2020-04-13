@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPlayer.html">
+	<File path="Classes/VirtuosoPlaylist.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayer</TokenIdentifier>
-			<Abstract type="html">Defines the minimum API required for basic playback of segmented (HLS, HSS, DASH, etc.) video</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylist</TokenIdentifier>
+			<Abstract type="html">Defines a smart-download Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -13,74 +13,181 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setContentURL:</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/initWithName:assets:config:</TokenIdentifier>
+			<Abstract type="html">Creates playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
-			
-			
-			<Anchor>//api/name/contentURL</Anchor>
+			<Declaration>- (_Nonnull instancetype)initWithName:(NSString *_Nonnull)name assets:(NSArray&lt;NSString*&gt; *_Nonnull)assets config:(VirtuosoPlaylistConfig *_Nullable)config</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">String that uniquely identifies this Playlist.</Abstract>
+				</Parameter><Parameter>
+					<Name>assets</Name>
+					<Abstract type="html">Array of Strings which uniquely identify the Assets (via AssetID) that will become part of this playlist.</Abstract>
+				</Parameter><Parameter>
+					<Name>config</Name>
+					<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">non-nil instance if successful, otherwise nil. Errors are logged.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithName:assets:config:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setName:</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/contentURL</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/name</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/contentURL</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setAsset:</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/name</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setItems:</TokenIdentifier>
+			<Abstract type="html">Items contained in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/items</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/items</TokenIdentifier>
+			<Abstract type="html">Items contained in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/items</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/items</TokenIdentifier>
+			<Abstract type="html">Items contained in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
+			
+			
+			<Anchor>//api/name/items</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setConfig:</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/config</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/config</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setStatus:</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/status</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/status</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/statusAsString</TokenIdentifier>
+			<Abstract type="html">String formatted representation of status</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)statusAsString</Declaration>
+			
+			
+			<Anchor>//api/name/statusAsString</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

@@ -41,7 +41,7 @@
  *           configured AVAssetResourceLoaderDelegate subclass, you should return an appropriate
  *           DRMConfig subclass from the available options.
  */
-- (VirtuosoDrmConfig*_Nonnull)drmConfigForAsset:(VirtuosoAsset*_Nonnull)asset;
+- (VirtuosoDrmConfig* _Nonnull)drmConfigForAsset:(VirtuosoAsset* _Nonnull)asset;
 
 @end
 
@@ -97,18 +97,18 @@
 
 @optional
 /*!
- * @abstract If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.
- *
- * @discussion Normally, the resource loader will use the kVLM_FairPlay DRM type to process all requests using the configuration
- *                           stored in the VirtuosoLicenseManager.  However, if you need to use different DRM systems for different assets you
- *                           wish to download, you can set configuratins with VirtuosoLicenseManager using custom DRM type codes and
- *                           implement this method to indicate which DRM SubType should be used for the asset. The SubType is an arbitrary, non-nil string that uniquely identifies ths DRM system.
- *
- *
- *  @param asset The VirtuosoAsset to resolve DRM SubType for.
- *  @return non-nil string ideitifying the DRM SubType for the Asset.
- */
-- (NSString* _Nonnull)drmSubTypeForAsset:(VirtuosoAsset*  _Nonnull)asset;
+* @abstract If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.
+*
+* @discussion Normally, the resource loader will use the kVLM_FairPlay DRM type to process all requests using the configuration
+*                           stored in the VirtuosoLicenseManager.  However, if you need to use different DRM systems for different assets you
+*                           wish to download, you can set configuratins with VirtuosoLicenseManager using custom DRM type codes and
+*                           implement this method to indicate which DRM SubType should be used for the asset. The SubType is an arbitrary, non-nil string that uniquely identifies ths DRM system.
+*
+*
+*  @param asset The VirtuosoAsset to resolve DRM SubType for.
+*  @return non-nil string ideitifying the DRM SubType for the Asset.
+*/
+- (NSString* _Nullable)drmSubTypeForAsset:(VirtuosoAsset* _Nonnull)asset;
 
 @end
 
@@ -129,12 +129,13 @@
  *
  *  @param subdelegate A secondary delegate to call for non-FairPlay requests
  */
-- (void)setChildAVAssetResourceLoaderDelegate:(id<AVAssetResourceLoaderDelegate>_Nonnull)subdelegate;
+- (void)setChildAVAssetResourceLoaderDelegate:(id<AVAssetResourceLoaderDelegate>_Nullable)subdelegate;
+
 
 /*!
  *  @abstract Sets the license processing delegate
  *
- *  @param The license processing delegate 
+ *  @param delegate The license processing delegate
  */
 + (void)setLicenseProcessingDelegate:(id<VirtuosoLicenseProcessingDelegate>_Nonnull)delegate;
 

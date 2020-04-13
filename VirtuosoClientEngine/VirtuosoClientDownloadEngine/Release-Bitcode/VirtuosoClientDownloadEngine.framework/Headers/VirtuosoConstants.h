@@ -129,7 +129,7 @@ typedef NS_ENUM(NSInteger, kVBP_StatusCode)
 
     /** The Backplane reported denied due to device enablement limit reached */
     kVBP_DeviceEnablementLimitReached = -14,
-    
+
     /** Permission to download an asset was denied due to maximum download per account rules */
     kVBP_DownloadDeniedForMaxDownloadsPerAccount = -61,
 
@@ -141,6 +141,7 @@ typedef NS_ENUM(NSInteger, kVBP_StatusCode)
 
     /** Permission to download an asset was denied due to maximum copies of asset per account rules */
     kVBP_DownloadDeniedForMaxCopiesOfAssetPerAccount = -64,
+    
 };
 
 /*!
@@ -186,6 +187,14 @@ typedef NS_ENUM(NSInteger, kVDE_EngineStartupCode)
 
     /** Virtuoso can't start up with the parameters provided */
     kVDE_EngineStartupInvalidOptions = -4,
+    
+    /** Virtuoso can't change user account when invoked on MainThread */
+    kVDE_EngineStartupMethodIsDeprecated = -5,
+
+    /** Virtuoso encountered an internal exception during startup */
+    kVDE_EngineStartupInternalException = -6,
+    
+
 };
 
 
@@ -240,7 +249,18 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     kVDE_CreateSegmentFailed = -17,
     
     /** User has exceeded the simultaneous access limit. */
-    kVirtuosoDownloadEngineErrorTooManySimultaneousDownloads = -18
+    kVirtuosoDownloadEngineErrorTooManySimultaneousDownloads = -18,
+
+    /** User has exceeded the simultaneous access limit. */
+    kVirtuosoDownloadEngineErrorAdsRefreshError = -19,
+    
+    /** Virtuoso API received invalid parameter  */
+    kVDE_InvalidParameter = -20,
+
+    /** Virtuoso timeout waiting  */
+    kVDE_TimeOutWaiting = -21
+
+
 };
 
 
@@ -284,6 +304,7 @@ typedef NS_ENUM(NSInteger, kVDE_PlayerErrorCode)
         directly supported.  Integration with other DRM systems is possible, but may require additional integration. 
         Attempts to play any other asset type will result in this error. */
     kVDE_PlayerErrorAssetTypeNotSupported = -10,
+    kVDE_UnableToPlayAsset = -11,
 };
 
 
@@ -298,6 +319,7 @@ typedef NS_ENUM(NSInteger, kVDE_PlayerErrorCode)
  *            when Virtuoso fails to acquire download permission
  */
 extern NSString* kAssetPermissionErrorAssetDataKey;
+
 
 /*!
  *  @constant kAssetPermissionErrorAccountDataKey
@@ -384,11 +406,14 @@ typedef NS_ENUM(NSInteger, kVDE_AssetType)
     /** A HTTP Live Streaming (HLS) asset */
     kVDE_AssetTypeHLS = 1,
     
-    /** A HTTP Smooth Streaming (HSS) asset */
-    kVDE_AssetTypeHSS = 2,
-    
     /** A MPEG-DASH asset */
     kVDE_AssetTypeDASH = 3,
+    
+    /** DEPRECATED  starting in v4.0, do not use. A HTTP Smooth Streaming (HSS) asset
+     @deprecated This attribute is deprecated starting v4.0 */
+    kVDE_AssetTypeHSS = 2,
+    
+
 };
 
 /*!
@@ -507,6 +532,13 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadStatusType)
     
     /** Asset is in download queue, waiting its turn, and has not been granted download permissions yet */
     kVDE_DownloadPendingOnPermission = 8,
+    
+    /** Asset is download complete, now scanning local content to verify everything matches manifest. */
+    kVDE_DownloadConsistencyScan = 9,
+    
+    /** Asset is being deleted. */
+    kVDE_DeleteInProcess = 10,
+
 };
 
 /*!
@@ -540,7 +572,7 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorType)
     kVDE_LifetimeDownloadLimitReached = 6,
     
     /** Virtuoso has attempted to start downloading an asset for which DRM is required before downloading
-        and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. */
+     and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. */
     kVDE_BlockedOnDRM = 7,
 };
 
@@ -656,5 +688,62 @@ typedef NS_ENUM(NSInteger, kVDM_ManifestType)
 #pragma mark
 
 extern NSTimeInterval kDownloadEngineSyncIntervalMinimum;
+
+#pragma mark
+#pragma mark Health Monitor Settings
+#pragma mark
+
+/*!
+ *  @constant kHealthMonitor_DisableHealthMonitor
+ *
+ *  @abstract NSUserDefault bool value to disable Health Monitor
+ */
+extern NSString* kHealthMonitor_DisableHealthMonitor;
+
+/*!
+ *  @constant kHealthMonitor_DefaultMonitorSleepInSeconds
+ *
+ *  @abstract NSUserDefault int value for default sleep time (seconds) between Health Monitor checks
+ *
+ *            The default value is 60 seconds.
+ */
+extern NSString* kHealthMonitor_DefaultMonitorSleepInSeconds;
+
+/*!
+ *  @constant kHealthMonitor_MinimumMonitorSleepInSeconds
+ *
+ *  @abstract NSUserDefault int value for MIMIMUM sleep time (seconds) between Health Monitor checks.
+ *            When Engine issues are detected the Health Monitor will sleep this duration which is
+ *            expected to be shorter than the default (kHealthMonitor_DefaultMonitorSleepInSeconds)
+ *
+ *            The default value is 20 seconds.
+ 
+ *            This value must be at least as long as kHealthMonitor_MaxInterviewBetweenDownloads.
+ */
+extern NSString* kHealthMonitor_MinimumMonitorSleepInSeconds;
+
+/*!
+ *  @constant kHealthMonitor_IntervalBetweenDownloadsInSeconds
+ *
+ *  @abstract NSUserDefault int value in seconds for the maximum expected duration between Asset segment
+ *            downloads. While the Engine is actively downloading, the HealthMonitor expects to see segments
+ *            downloading continuously until the download is complete. If the HealthMonitor detects a time
+ *            interval greater than this value, it starts checking Engine download health.
+ *
+ *            The default value is 20 seconds.
+ */
+extern NSString* kHealthMonitor_IntervalBetweenDownloadsInSeconds;
+
+#pragma mark
+#pragma mark Engine Consistency Scan Settings
+#pragma mark
+
+/*!
+ *  @constant kVFM_DisableConsistencyScan
+ *
+ *  @abstract NSUserDefault bool value to disable consistency scan
+ */
+extern NSString* kVFM_DisableConsistencyScan;
+
 
 #endif

@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVSM_Status.html">
+	<File path="Constants/kVDE_AssetProtectionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVSM_Status</TokenIdentifier>
-			<Abstract type="html">The kVSM_Status values indicate the current activity status of the Manager.
-
-@constant kVSM_Unknown
-@constant kVSM_Offline
-@constant kVSM_Started
-@constant kVSM_Receiving
-@constant kVSM_Errors</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetProtectionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetProtectionType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="59"/>
@@ -20,53 +14,33 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Unknown</TokenIdentifier>
-            <Abstract type="html">The Manager hasn&apos;t finished starting up yet and status has not yet been determined</Abstract>
-            <Declaration>kVSM_Unknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypePassthrough</TokenIdentifier>
+            <Abstract type="html">The asset is not protected, is protected by an external DRM system, or is protected by some form of
+        native encryption.  This value indicates that no special handling is required for download or playback
+        of this asset, and is the default value. </Abstract>
+            <Declaration>kVDE_AssetProtectionTypePassthrough</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-            
-            <NodeRef refid="59"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Offline</TokenIdentifier>
-            <Abstract type="html">The Manager cannot take any action, as the device is currently offline</Abstract>
-            <Declaration>kVSM_Offline</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="59"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Started</TokenIdentifier>
-            <Abstract type="html">The Manager has successfully authenticated, but hasn&apos;t received any data yet</Abstract>
-            <Declaration>kVSM_Started</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeFairPlay</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Apple FairPlay DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeFairPlay</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-            
-            <NodeRef refid="59"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Receiving</TokenIdentifier>
-            <Abstract type="html">The Manager is operational and receiving content from the Backplane</Abstract>
-            <Declaration>kVSM_Receiving</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="59"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Errors</TokenIdentifier>
-            <Abstract type="html">Errors occurred while processing subscriptions that prevent the Manager from
-        continuing.  Recoverable errors will be reported, but Manager status will remain
-        at kVSM_Receiving. </Abstract>
-            <Declaration>kVSM_Errors</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeWidevine</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Google Widevine DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeWidevine</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="59"/>
         </Token>

@@ -1,89 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_DownloadEngineStatus.html">
+	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegateErrorHandler.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadEngineStatus</TokenIdentifier>
-			<Abstract type="html">Current activity status of Virtuoso&apos;s download engine.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegateErrorHandler</TokenIdentifier>
+			<Abstract type="html">Provides a mechanism to easily identify and handle errors encountered during the DRM licensing process</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="41"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Unknown</TokenIdentifier>
-            <Abstract type="html">Virtuoso hasn&apos;t finished starting up; status isn&apos;t determined</Abstract>
-            <Declaration>kVDE_Unknown</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegateErrorHandler/resourceLoaderDelegate:generatedError:</TokenIdentifier>
+			<Abstract type="html">Called when an error has been encountered during the DRM licensing process</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)resourceLoaderDelegate:(nonnull id&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)delegate generatedError:(nonnull NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The VirtuosoAVAssetResourceLoaderDelegate that encountered the error</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error describing the issue.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/resourceLoaderDelegate:generatedError:</Anchor>
             <NodeRef refid="41"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Downloading</TokenIdentifier>
-            <Abstract type="html">Virtuoso is actively downloading</Abstract>
-            <Declaration>kVDE_Downloading</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="41"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Idle</TokenIdentifier>
-            <Abstract type="html">Downloading is enabled, but queue is empty</Abstract>
-            <Declaration>kVDE_Idle</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="41"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Disabled</TokenIdentifier>
-            <Abstract type="html">You have disabled downloading, or the backplane has disabled download for this device</Abstract>
-            <Declaration>kVDE_Disabled</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="41"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Blocked</TokenIdentifier>
-            <Abstract type="html">Downloading is enabled and the queue is non-empty, but environmental conditions
-        (power/network/disk) prevent download. </Abstract>
-            <Declaration>kVDE_Blocked</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="41"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Errors</TokenIdentifier>
-            <Abstract type="html">Errors occurred while downloading. There are pending downloads, but Virtuoso cannot
-        proceed without manual intervention (e.g. calling reset). </Abstract>
-            <Declaration>kVDE_Errors</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="41"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AuthenticationFailure</TokenIdentifier>
-            <Abstract type="html">SDK licensing failed.  Please contact Penthera support in this case.</Abstract>
-            <Declaration>kVDE_AuthenticationFailure</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="41"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

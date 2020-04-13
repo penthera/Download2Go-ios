@@ -213,6 +213,16 @@ extern NSString* _Nonnull const kSubscriptionManagerDidFinishSyncNotification;
 
 @interface VirtuosoSubscriptionManager : NSObject
 
+/*!
+ *  @abstract Queue used to post Notifications and closure callbacks. Default is MainThread.
+ *
+ *  @discussion If you need Notifications and closures to execute on a different thread
+ *              from the default (MainThread), set this class property with the NSOperationQueue
+ *              you want to receive notifications.
+ */
+@property (nonatomic, strong, class)NSOperationQueue* _Nonnull notificationQueue;
+
+
 /**---------------------------------------------------------------------------------------
  * @name Utility
  *  ---------------------------------------------------------------------------------------

@@ -30,7 +30,26 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
     kVAV_NoCertificate = -1,
     
     /** Error generated when the FairPlay license expires while the device is offline */
-    kVAV_ExpiredWhileOffline = -2
+    kVAV_ExpiredWhileOffline = -2,
+
+    /** The resource loading delegate must be configured with delegate prior to use. */
+    kVAV_NotConfiguredWithDelegate = -3,
+    
+    /** The resource loading delegate must be configured with a VirtuosoAsset prior to use */
+    kVAV_NotConfiguredWithAsset = -4,
+
+    /** The resoruce loader delegate must be configured with an instance of VirtuosoDrmConfig */
+    kVAV_NotConfiguredWithDrmConfig = -5,
+
+    /** The VirtuosoDrmConfig returned invalid configuration values.*/
+    kVAV_DrmConfigInvalidValues = -6,
+
+    /** Generated nil SPC */
+    kVAV_InvalidSPCValue = -7,
+    
+    /** Could not find assetID in SDK data */
+    kVAV_InvalidAssetIDValue = -8,
+
 };
 
 /*!

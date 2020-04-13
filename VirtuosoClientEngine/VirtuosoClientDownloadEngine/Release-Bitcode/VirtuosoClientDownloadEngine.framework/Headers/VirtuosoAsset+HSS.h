@@ -40,7 +40,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -86,7 +88,7 @@
                              enableFastPlay:(Boolean)enableFastPlay
                                    userInfo:(nullable NSDictionary*)userInfo
                          onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("Support for HSS is deprecated and will be removed in a future release.")));
 
 /*!
  *  @abstract Creates a new in-memory HSS VirtuosoAsset.
@@ -96,7 +98,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -123,7 +127,7 @@
  *
  *  @param ancillaries Optional array of VirtuosoAncillaryFile's
  *
- *  @param adsProvider BETA Feature. Instance of AdsProvider to use with this Asset.
+ *  @param adsProvider Instance of AdsProvider to use with this Asset.
  *
  *  @param userInfo A convenience field allowing you to associate arbitrary data with an asset.
  *                  Virtuoso will serialize this data and store it, but not explicitly use this data.
@@ -148,7 +152,7 @@
                        adsProvider:(nullable VirtuosoAdsProvider*)adsProvider
                           userInfo:(nullable NSDictionary *)userInfo
                 onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                   onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("Support for HSS is deprecated and will be removed in a future release.")));
 
 
 /*!
@@ -159,7 +163,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -192,7 +198,7 @@
  *
  *  @param ancillaries Optional array of VirtuosoAncillaryFile's
  *
- *  @param adsProvider BETA Feature. Instance of AdsProvider to use with this Asset.
+ *  @param adsProvider Instance of AdsProvider to use with this Asset.
  *
  *  @param userInfo A convenience field allowing you to associate arbitrary data with an asset.
  *                  Virtuoso will serialize this data and store it, but not explicitly use this data.
@@ -219,7 +225,7 @@
                        adsProvider:(nullable VirtuosoAdsProvider*)adsProvider
                           userInfo:(nullable NSDictionary *)userInfo
                 onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                   onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                   onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("Support for HSS is deprecated and will be removed in a future release.")));
 
 /*!
  *  @abstract Creates a new empty HSS VirtuosoAsset object, identified by the provided manifest URL.
@@ -228,7 +234,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -283,7 +291,7 @@
                              enableFastPlay:(Boolean)enableFastPlay
                                    userInfo:(nullable NSDictionary*)userInfo
                          onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                            onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("Support for HSS is deprecated and will be removed in a future release.")));
 
 /**---------------------------------------------------------------------------------------
  * @name Update HSS Assets
@@ -309,7 +317,7 @@
 - (void)setManifestURL:(nonnull NSString*)manifestUrl
 withMaximumVideoBitrate:(long long)maximumVideoBitrate
 andMaximumAudioBitrate:(long long)maximumAudioBitrate
-       onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+       onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("Support for HSS is deprecated and will be removed in a future release.")));
 
 @end
 

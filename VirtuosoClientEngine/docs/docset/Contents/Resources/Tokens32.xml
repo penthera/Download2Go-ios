@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPlayerViewDelegate.html">
+	<File path="Classes/VirtuosoPlaylistConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayerViewDelegate</TokenIdentifier>
-			<Abstract type="html">If you are using VirtuosoPlayerView directly, then you will need to configure
-a delegate to handle playback events.  If you are using VirtuosoPlayerViewController,
-then the delegate calls are handled internally.</Abstract>
-			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylistConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="32"/>
@@ -15,36 +13,146 @@ then the delegate calls are handled internally.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerFinishedPlayback:</TokenIdentifier>
-			<Abstract type="html">Called when the player has reached the end of the video.</Abstract>
-			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/setStatus:</TokenIdentifier>
+			<Abstract type="html">Indicates Playlist status</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
 			
-			<Declaration>- (void)playerFinishedPlayback:(nonnull VirtuosoPlayerView *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The VirtuosoPlayerView object that finished playing</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
 			
-			<Anchor>//api/name/playerFinishedPlayback:</Anchor>
+			
+			<Anchor>//api/name/status</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerDoneButtonClicked:</TokenIdentifier>
-			<Abstract type="html">Called when the user taps the done button.</Abstract>
-			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/status</TokenIdentifier>
+			<Abstract type="html">Indicates Playlist status</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
 			
-			<Declaration>- (void)playerDoneButtonClicked:(nonnull VirtuosoPlayerView *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The VirtuosoPlayerView object requesting to finish</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
 			
-			<Anchor>//api/name/playerDoneButtonClicked:</Anchor>
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistConfig/status</TokenIdentifier>
+			<Abstract type="html">Indicates Playlist status</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/setIsPlaybackRequired:</TokenIdentifier>
+			<Abstract type="html">Controls smart-download trigger logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isPlaybackRequired</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaybackRequired</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/isPlaybackRequired</TokenIdentifier>
+			<Abstract type="html">Controls smart-download trigger logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isPlaybackRequired</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaybackRequired</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistConfig/isPlaybackRequired</TokenIdentifier>
+			<Abstract type="html">Controls smart-download trigger logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isPlaybackRequired</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaybackRequired</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/setIsAssetHistoryConsidered:</TokenIdentifier>
+			<Abstract type="html">Controls smart-download next download selection logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isAssetHistoryConsidered</Declaration>
+			
+			
+			<Anchor>//api/name/isAssetHistoryConsidered</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/isAssetHistoryConsidered</TokenIdentifier>
+			<Abstract type="html">Controls smart-download next download selection logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isAssetHistoryConsidered</Declaration>
+			
+			
+			<Anchor>//api/name/isAssetHistoryConsidered</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistConfig/isAssetHistoryConsidered</TokenIdentifier>
+			<Abstract type="html">Controls smart-download next download selection logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isAssetHistoryConsidered</Declaration>
+			
+			
+			<Anchor>//api/name/isAssetHistoryConsidered</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/setIsSearchFromBeginningEnabled:</TokenIdentifier>
+			<Abstract type="html">Controls smart-download next playlist item search logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isSearchFromBeginningEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/isSearchFromBeginningEnabled</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistConfig/isSearchFromBeginningEnabled</TokenIdentifier>
+			<Abstract type="html">Controls smart-download next playlist item search logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isSearchFromBeginningEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/isSearchFromBeginningEnabled</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistConfig/isSearchFromBeginningEnabled</TokenIdentifier>
+			<Abstract type="html">Controls smart-download next playlist item search logic.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readwrite) Boolean isSearchFromBeginningEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/isSearchFromBeginningEnabled</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		

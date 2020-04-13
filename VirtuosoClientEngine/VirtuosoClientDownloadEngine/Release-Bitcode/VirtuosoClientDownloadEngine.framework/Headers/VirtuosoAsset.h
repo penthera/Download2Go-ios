@@ -32,6 +32,44 @@
 
 @class VirtuosoAncillaryFile;
 @class VirtuosoAdsProvider;
+@class VirtuosoAssetConfig;
+
+/*!
+ *  @typedef AssetQueryCallback
+ *
+ *  @discussion Callback for findAsset methods
+ *
+ *  @param asset Reference to the asset, nil if not found.
+ *  @param error If an error was encountered, most likely invalid parameter provided
+ */
+typedef void(^AssetQueryCallback)(VirtuosoAsset* _Nullable asset, NSError*  _Nullable error);
+
+
+/*!
+ *  @typedef AssetAdStatus
+ *
+ *  @abstract Asset Ads status
+ */
+typedef NS_ENUM(NSInteger, AssetAdStatus)
+{
+    /** Ads not initialized */
+    AssetAdStatus_Uninitialized,
+    
+    /** Ads refresh in process */
+    AssetAdStatus_RefreshInProcess,
+    
+    /** Ads refresh completed successfully */
+    AssetAdStatus_RefreshComplete,
+    
+    /** Ads refresh completed with errors */
+    AssetAdStatus_RefreshCompleteWithErrors,
+    
+    /** Ads refresh failed */
+    AssetAdStatus_RefreshFailure,
+    
+    /** Ads refresh has been queued for refresh once Network is available. */
+    AssetAdStatus_QueuedForRefresh,
+};
 
 /**---------------------------------------------------------------------------------------
  * @name Download engine Delegates
@@ -56,9 +94,9 @@
  *
  *  @discussion Fires during asset parsing, prior to the start of a download.
  *
- *  @param url The URL that is about to be downloaded
- *  @param manifestType The manifest type for the URL that is about to be downloaded
- *  @param asset The VirtuosoAsset
+ *  @param url The URL that is about to be downloaded.
+ *  @param manifestType Type of sub-manifest for this URL.
+ *  @param asset The VirtuosoAsset.
  *
  *  @return Return the updated url, or nil to use the original url.
  */
@@ -69,8 +107,8 @@
  *
  *  @discussion Fires during asset parsing, prior to the start of a download.
  *
- *  @param url The URL that is about to be downloaded
- *  @param asset The VirtuosoAsset
+ *  @param url The URL that is about to be downloaded.
+ *  @param asset The VirtuosoAsset.
  *
  *  @return Return the updated url, or nil to use the original url.
  */
@@ -81,8 +119,8 @@
  *
  *  @discussion Fires during asset parsing, prior to the start of a download.
  *
- *  @param url The URL that is about to be downloaded
- *  @param asset The VirtuosoAsset
+ *  @param url The URL that is about to be downloaded.
+ *  @param asset The VirtuosoAsset.
  *
  *  @return Return the updated url, or nil to use the original url.
  */
@@ -95,6 +133,40 @@
  *  @abstract Basic completion block used generically in methods
  */
 typedef void (^BasicCompletionBlock)(void);
+
+/*!
+*  @typedef IsPlayableCompleteBlock
+*
+*  @discussion Callback for VirtuosoAsset isPlayable methods
+*
+*  @param isPlayable Boolean indicating whether asset is currently playable
+*/
+typedef void (^IsPlayableCompleteBlock)(Boolean isPlayable);
+
+/*!
+ *  @abstract If set, this block is called whenever an asset is about to request data from
+ *            a network resource.
+ *
+ *  @discussion Certain types of DRM or CDN may require that additional parameters be placed on URLs
+ *              beyond what is contained in the asset manifest.  In some cases, those security tokens
+ *              are dynamically generated and short lived.  If set, whenever Virtuoso is about to access
+ *              a network resource, you can return additional URL parameters to include in the request
+ *              in this block and they will be appended to the network URL.  If you do not need to use
+ *              additional URL parameters, do not set this block.
+ *
+ *              In order to maximize performance, Virtuoso will store your returned response in memory.
+ *              Therefore, this block may not be called for every network request, but it will be called
+ *              as-needed.
+ *
+ *              The dictionary you return should include the URL parameter names as the keys and the
+ *              parameter value as the values.
+ */
+typedef NSDictionary<NSString*,NSString*>*_Nullable(^RequestAdditionalParametersBlock)(VirtuosoAsset* _Nonnull asset);
+
+/*!
+ *  @abstract Basic completion block used generically in methods
+ */
+typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 
 /*!
  *  @abstract Represents a conceptual "file" object in Virtuoso.
@@ -120,6 +192,8 @@ typedef void (^BasicCompletionBlock)(void);
 /*!
  *  @abstract Returns the total device storage (in bytes) currently used by all downloaded Virtuoso files
  *
+ *  @discussion This property makes blocking calls to the file system for each asset. This is a slow process and will block UI refreshes, best practice is to make this call using a background thread.
+ *
  *  @return The total device storage (in bytes) currently used by all downloaded Virtuoso files
  */
 + (long long)storageUsed;
@@ -130,6 +204,8 @@ typedef void (^BasicCompletionBlock)(void);
  *  @discussion allowableStorageRemaining isn't the same as "free disk space." It's
  *              the amount of disk space Virtuoso can use without violating any storage constraints,
  *              e.g. max storage and headroom.
+ *
+ *              This property makes blocking calls to the file system for each asset. This is a slow process and will block UI refreshes, best practice is to make this call using a background thread.
  *
  *  @return The total disk space (in bytes) still available to Virtuoso for downloads
  */
@@ -163,16 +239,72 @@ typedef void (^BasicCompletionBlock)(void);
 #pragma mark
 
 /*!
+ *  @abstract If set, this block is called whenever an asset is about to request data from
+ *            a network resource.
+ *
+ *  @discussion Certain types of DRM or CDN may require that additional parameters be placed on URLs
+ *              beyond what is contained in the asset manifest.  In some cases, those security tokens
+ *              are dynamically generated and short lived.  If set, whenever Virtuoso is about to access
+ *              a network resource, you can return additional URL parameters to include in the request
+ *              in this block and they will be appended to the network URL.  If you do not need to use
+ *              additional URL parameters, do not set this block.
+ *
+ *              In order to maximize performance, Virtuoso will store your returned response in memory.
+ *              Therefore, this block may not be called for every network request, but it will be called
+ *              as-needed.
+ *
+ *              The dictionary you return should include the URL parameter names as the keys and the
+ *              parameter value as the values.
+ *
+ *  @param block A callback block used to retrieve additional URL parameters when downloading asset data.
+ */
++ (void)setRequestAdditionalParametersBlock:(nullable RequestAdditionalParametersBlock)block __attribute__((deprecated("method replaced by  prepareUrlDelegate property.")));
+
+
+/*!
+ *  @abstract Creates a new in-memory VirtuosoAsset object.
+ *
+ *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
+ *              This is a blocking call, avoid using this method from MainThread
+  *
+ *  @param config Instance of VirtuosoAssetConfig with properties set appropriately to download the Asset.
+ *
+ *  @return A new VirtuosoAsset object, or nil if an error occurred.
+ */
++ (nullable VirtuosoAsset*)assetWithConfig:(nonnull VirtuosoAssetConfig*)config;
+
+/*!
+ *  @abstract Creates a new in-memory VirtuosoAsset object.
+ *
+ *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
+ *              This is a blocking call, avoid using this method from MainThread
+ *
+ *  @param config Instance of VirtuosoAssetConfig with properties set appropriately to download the Asset.
+ *
+ *  @param readyBlock Called when the asset is ready to be added to the download queue
+ *
+ *  @param completeBlock Called when asset parsing completes. May be nil.
+ *
+ *  @return A new VirtuosoAsset object, or nil if an error occurred.
+ */
++ (nullable VirtuosoAsset*)assetWithConfig:(nonnull VirtuosoAssetConfig*)config
+                           onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
+                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+
+/*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
  *
  *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
  *              This one relies on the default expiry-after-download and expiry-after-play rules.
+ *              This is a blocking call, avoid using this method from MainThread
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
  *  @param assetURL The remote URL for the file (where to download from).
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -214,12 +346,15 @@ typedef void (^BasicCompletionBlock)(void);
  *
  *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
  *              This constructor sets the expiry after download and play intervals explicitly.
+ *              This is a blocking call, avoid using this method from MainThread
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
  *  @param assetURL The remote URL for the file (where to download from).
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -269,12 +404,15 @@ typedef void (^BasicCompletionBlock)(void);
  *
  *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
  *              This constructor sets the expiry after download and play intervals explicitly.
+ *              This is a blocking call, avoid using this method from MainThread
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
  *  @param assetURL The remote URL for the file (where to download from).
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -298,7 +436,7 @@ typedef void (^BasicCompletionBlock)(void);
  *
  *  @param ancillaries Optional array of VirtuosoAncillaryFile to be downloaded
  *
- *  @param adsProvider BETA Feature. Optional AdsProvider to use with this Asset.
+ *  @param adsProvider Optional AdsProvider to use with this Asset.
  *
  *  @param userInfo A convenience field allowing you to associate arbitrary data with an asset.
  *                  Virtuoso will serialize this data and store it, but not explicitly use this data.
@@ -345,7 +483,21 @@ typedef void (^BasicCompletionBlock)(void);
 + (Boolean)addAncillaryFile:(VirtuosoAncillaryFile* _Nonnull)file inAsset:(VirtuosoAsset* _Nonnull)asset;
 
 /*!
- *  @abstract Retrieves all of the ancillary files assocated with this asset
+ *  @abstract Removes an ancillary file from this asset, deleting any download.
+ *
+ *  @param downloadUrl Ancillary file URL
+ *
+ *  @param completion optional callback which is invoked once the ancillary has been deleted.
+ *
+ *  @return Boolean indicating success or failure
+ */
+-(Boolean)removeAncillaryFile:(NSString* _Nonnull)downloadUrl completion:(CompletionBlockWithOptionalError _Nullable)completion;
+
+/*!
+ *  @abstract Retrieves all of the ancillary files assocated awith this asset
+ *
+ *  @description This is a BLOCKING call that will query CoreData for all ancillary files.
+ *               See findAllCompleted for a non-blocking call.
  *
  *  @return Array of VirtuosoAncillaryFile objects. Empty if none.
  */
@@ -354,11 +506,38 @@ typedef void (^BasicCompletionBlock)(void);
 /*!
  *  @abstract Retrieves ancillary files with the specified tag for this asset
  *
+ *  @description This is a BLOCKING call that will query CoreData for all ancillary files.
+ *               See findAllCompleted for a non-blocking call.
+ *
  *  @param tag The tag to filter on
  *
  *  @return Array of VirtuosoAncillaryFile objects with the specified tag. Empty if none.
  */
 -(NSArray<VirtuosoAncillaryFile*>*_Nonnull)findAllAncillariesWithTag:(NSString* _Nonnull)tag;
+
+/*!
+ *  @abstract Retrieves ancillaries that have completed downloading.
+ *
+ *  @description This is a non-blocking call that will be faster than findAllAncillaries
+ *               and it will only return Ancillaries that have downloaded.
+ *
+ *  @return Array of VirtuosoAncillaryFile objects. Empty if none.
+ */
+-(NSArray<VirtuosoAncillaryFile*>*_Nonnull)findCompletedAncillaries;
+
+/*!
+ *  @abstract Retrieves ancillaries that have completed downloading with the specified tag.
+ *
+ *  @description This is a non-blocking call that will be faster than findAllAncillariesWithTag
+ *               and it will only return Ancillaries that have downloaded with the specified tag.
+ *
+ *  @param tag The tag to filter on
+ *
+ *  @return Array of VirtuosoAncillaryFile objects with the specified tag. Empty if none.
+ */
+-(NSArray<VirtuosoAncillaryFile*>*_Nonnull)findCompletedAncillariesWithTag:(NSString* _Nonnull)tag;
+
+
 
 /**---------------------------------------------------------------------------------------
  * @name Retrieval
@@ -431,6 +610,7 @@ typedef void (^BasicCompletionBlock)(void);
  *
  *  @discussion Every asset has a UUID, which Virtuoso assigns to the asset when you instantiate it.
  *              The return value may be nil (if no object exists with the given UUID).
+ *              This is a blocking call, avoid using this method from MainThread
  *
  *  @param uuid The UUID (universally unique identifier) corresponding to the asset
  *
@@ -448,6 +628,7 @@ typedef void (^BasicCompletionBlock)(void);
  *
  *  @discussion Each asset requires an assetID value, which you provided when you instantiated the asset.
  *              The returned object may be nil (if no object exists with the given assetID.)
+ *              This is a blocking call, avoid using this method from MainThread
  *
  *  @param assetID The assetID corresponding to the asset
  *
@@ -460,6 +641,91 @@ typedef void (^BasicCompletionBlock)(void);
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID availabilityFilter:(Boolean)availabilityFilter;
 
+/*!
+*  @abstract Find an asset by UUID.
+*
+*  @discussion Every asset has a UUID, which Virtuoso assigns to the asset when you instantiate it.
+*
+*  @param uuid The UUID (universally unique identifier) corresponding to the asset
+*
+*  @param availabilityFilter Whether to filter the return value against the availability window.
+*                            If NO, then the asset will be returned if it exists.
+*                            If YES, then Virtuoso will return nil for the asset if it is unavailable,
+*                            based on its publishDate and expiry constraints.
+*
+* @param callback AssetQueryCallback callback that is invoked when the asset is retrieved. Callback happens on callers NSOperationQueue
+*                              If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.
+*/
++ (void)findAssetWithUUID:(nonnull NSString*)uuid
+       availabilityFilter:(Boolean)availabilityFilter
+            assetCallback:(nonnull AssetQueryCallback)callback;
+
+/*!
+*  @abstract Find an asset by UUID.
+*
+*  @discussion Every asset has a UUID, which Virtuoso assigns to the asset when you instantiate it.
+*
+*  @param uuid The UUID (universally unique identifier) corresponding to the asset
+*
+*  @param availabilityFilter Whether to filter the return value against the availability window.
+*                            If NO, then the asset will be returned if it exists.
+*                            If YES, then Virtuoso will return nil for the asset if it is unavailable,
+*                            based on its publishDate and expiry constraints.
+*
+* @param queue NSNotificationQueue on which to make the callback. If nil is specified the SDK will use
+*                          VirtuosoDownloadEngine.notificationQueue if non-nil, otherwise it will use NSOperationQueue.currentQueue
+*
+* @param callback AssetQueryCallback callback that is invoked when the asset is retrieved.
+*                              If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.
+*/
++ (void)findAssetWithUUID:(nonnull NSString*)uuid
+       availabilityFilter:(Boolean)availabilityFilter
+                    queue:(nullable NSOperationQueue*)queue
+            assetCallback:(nonnull AssetQueryCallback)callback;
+
+/*!
+*  @abstract Find an asset by assetID.
+*
+*  @discussion Each asset requires an assetID value, which you provided when you instantiated the asset.
+*
+*  @param assetID The assetID corresponding to the asset
+*
+*  @param availabilityFilter Whether to filter the return value against the availability window.
+*                            If NO, then the asset will be returned if it exists.
+*                            If YES, then Virtuoso will return nil for the asset if it is unavailable,
+*                            based on its publishDate and expiry constraints.
+*
+* @param callback AssetQueryCallback callback that is invoked when the asset is retrieved. Callback happens on callers NSOperationQueue
+*                              If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.
+*/
++ (void)findAssetWithAssetID:(nonnull NSString*)assetID
+          availabilityFilter:(Boolean)availabilityFilter
+               assetCallback:(nonnull AssetQueryCallback)callback;
+
+/*!
+*  @abstract Find an asset by assetID.
+*
+*  @discussion Each asset requires an assetID value, which you provided when you instantiated the asset.
+*
+*  @param assetID The assetID corresponding to the asset
+*
+*  @param availabilityFilter Whether to filter the return value against the availability window.
+*                            If NO, then the asset will be returned if it exists.
+*                            If YES, then Virtuoso will return nil for the asset if it is unavailable,
+*                            based on its publishDate and expiry constraints.
+*
+* @param queue NSNotificationQueue on which to make the callback. If nil is specified the SDK will use
+*                          VirtuosoDownloadEngine.notificationQueue if non-nil, otherwise it will use NSOperationQueue.currentQueue
+*
+* @param callback AssetQueryCallback callback that is invoked when the asset is retrieved.
+*                              If an error is encountered NSError will be set. If the asset was found a reference will be returned. If asset is nil, it was not found.
+*/
++ (void)findAssetWithAssetID:(nonnull NSString*)assetID
+          availabilityFilter:(Boolean)availabilityFilter
+                       queue:(nullable NSOperationQueue*)queue
+               assetCallback:(nonnull AssetQueryCallback)callback;
+
+
 /**---------------------------------------------------------------------------------------
  * @name Update And Delete
  *  ---------------------------------------------------------------------------------------
@@ -468,6 +734,18 @@ typedef void (^BasicCompletionBlock)(void);
 #pragma mark
 #pragma mark Update and Delete
 #pragma mark
+
+/*!
+ *  @abstract Reparses the main mainfest to add additional Audio, Closed Caption data, and download the changes.
+ *
+ *  @discussion The primary use case for this method would be to add additional Audio languages to the previous
+ *              download. These new languages must be enabled in Settings.
+ *
+ *  @param completeBlock An optional block that will be called on completion
+ *
+ *  @return TRUE indicates the reparse was successfully started.
+ */
+-(Boolean)refreshManifestAndDownload:(AssetParsingCompletedBlock _Nullable)completeBlock;
 
 /*!
  *  @abstract Refreshes the data in this object from the persistent data store
@@ -504,6 +782,15 @@ typedef void (^BasicCompletionBlock)(void);
 - (void)saveOnComplete:(nullable AsyncCompleteBlock)completeBlock;
 
 /*!
+*  @abstract Deletes this asset
+*
+*  @discussion Deletes this asset.
+*
+*/
+    
+- (void)deleteAsset;
+
+/*!
  *  @abstract Deletes this asset
  *
  *  @discussion Deletes this asset.  If you pass a non-NULL deletedBlock, then the method is
@@ -516,8 +803,12 @@ typedef void (^BasicCompletionBlock)(void);
 
 - (void)deleteAssetOnComplete:(nullable AsyncCompleteBlock)deletedBlock;
 
+    
 /*!
  *  @abstract Deletes all assets.
+ *
+ *  @discussion Deletes all assets in the database. During delete, the Engine stops all parsing
+ *              and downloading.
  */
 + (void)deleteAll;
 
@@ -531,6 +822,50 @@ typedef void (^BasicCompletionBlock)(void);
 #pragma mark
 
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
+
+/*!
+*  @abstract Check if asset is currently playable.
+*
+*  @discussion This method will return the same state as property isPlayable but will perform the check
+*              in a thread-safe way which avoids SPRINGBOARD exceptions if the MainThread is blocked. The
+*             the callback is invoked on MainThread.
+*
+*  @param asset Asset to play
+*
+*  @param callback Callback with a Boolean parameter indicating whether the Asset is Playable.
+*
+*/
++(void)isPlayable:(VirtuosoAsset* _Nonnull)asset callback:(IsPlayableCompleteBlock _Nonnull)callback;
+
+/*!
+ *  @abstract Check if asset is currently playable.
+ *
+ *  @discussion This method will return the same state as property isPlayable but will perform the check
+ *              in a thread-safe way which avoids SPRINGBOARD exceptions if the MainThread is blocked.
+ *
+ *  @param asset Asset to play
+ *
+ *  @param operationQueue NSOpertionQueue to be used for the callback.
+ *
+ *  @param callback Callback with a Boolean parameter indicating whether the Asset is Playable.
+ *
+ */
++(void)isPlayable:(VirtuosoAsset* _Nonnull)asset operationQueue:(NSOperationQueue* _Nonnull)operationQueue callback:(IsPlayableCompleteBlock _Nonnull)callback;
+
+/*!
+*  @abstract Check if asset is currently playable.
+*
+*  @discussion This method will return the same state as property isPlayable but will perform the check
+*              in a thread-safe way which avoids SPRINGBOARD exceptions if the MainThread is blocked.
+*
+*  @param asset Asset to play
+*
+*  @param dispatchQueue DispatchQueue to be used for the callback.
+*
+*  @param callback Callback with a Boolean parameter indicating whether the Asset is Playable.
+*
+*/
++(void)isPlayable:(VirtuosoAsset* _Nonnull)asset dispatchQueue:(dispatch_queue_t _Nonnull)dispatchQueue callback:(IsPlayableCompleteBlock _Nonnull)callback;
 
 /*!
  *  @abstract Logs the asset as having been played back, incrementing the stored playback counts on the Backplane
@@ -547,12 +882,18 @@ typedef void (^BasicCompletionBlock)(void);
  *              via a custom (perhaps DRM-enabled) video player, or if you require a more
  *              complex integration, use the VirtuosoClientHTTPServer class directly to setup playback.
  *
+ *              This property requries blocking calls to CoreData. If accessed from MainThread, this call will
+ *              block and wait for the call to complete BUT will run the MainThread NSRunLoop while the call
+ *              completes. This may result in unusual sequencing of events in the UI Layer. For example, invoking
+ *              this method in viewWillAppear may result in viewDidAppear executing before the call in viewWillAppear
+ *              copletes executing the call to Asset.isPlayable. If critical initailzation is required i viewWillAppear is necessary
+ *              before viewDidAppear is called, make sure that code is execute BEFORE invoking this method.
+ *              Alternatively, invoke this method using async on the MainThread should resolve any timing issues.
+*
  *  @param playbackType Whether to play the downloaded copy or the online copy
  *  @param parent    The parent view controller to present the movie player from
  *  @param onSuccess Called when playback succeeds
  *  @param onFail    Called when playback fails
- *
- *  @return Returns NO if the playback cannot be set up for some reason
  */
 - (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType fromViewController:(nonnull UIViewController*)parent
                     onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail;
@@ -570,8 +911,6 @@ typedef void (^BasicCompletionBlock)(void);
  *  @param player An object that follows the VirtuosoPlayer protocol.
  *  @param onSuccess Called when playback succeeds
  *  @param onFail    Called when playback fails
- *
- *  @return Returns NO if the playback cannot be set up for some reason
  */
 - (void)playUsingPlaybackType:(kVDE_AssetPlaybackType)playbackType andPlayer:(nonnull id<VirtuosoPlayer>)player
                     onSuccess:(nullable BasicCompletionBlock)onSuccess onFail:(nullable BasicCompletionBlock)onFail;
@@ -581,7 +920,7 @@ typedef void (^BasicCompletionBlock)(void);
 /*!
  *  @abstract Called when playback finishes (the video player exits) to cleanup the session.
  *
- *  @discussion Should only be called if playback was started using playUsingPlayer:.  If you
+ *  @discussion Should only be called if playback was started using playUsingPlaybackType:.  If you
  *              started playback using VirtuosoClientHTTPServer directly, you should call the shutdown
  *              method of that class instead.
  */
@@ -638,6 +977,12 @@ typedef void (^BasicCompletionBlock)(void);
 *  @see downloadRetryCount
 */
 @property (nonatomic,readonly) Boolean maximumRetriesExceeded;
+
+
+/*!
+ *  @abstract Checks whether the asset is currently being processed by the Consistency scan
+ */
+@property (nonatomic, readonly)Boolean isConsistencyScanActive;
 
 /*!
  *  @abstract Clears this asset's internal retry count, so Virtuoso will retry downloading it
@@ -790,18 +1135,18 @@ typedef void (^BasicCompletionBlock)(void);
 /*!
  *  @abstract Whether the backplane has given permission to download this asset
  *
- *  @discussion If the backplane settings for 'maximum downloads per account' or 'lifetime asset download limit'
- *              are configured, then download permissions must be coordinated with the backplane in order to 
- *              insure these business rules are properly enforced.  Once the backplane has given permission
- *              for the asset to be downloaded, that permission is retained until a download error occurs, the 
- *              download completes successfully, or the download is deleted.
+ *  @discussion If the backplane settings for 'maximum downloads per account', 'lifetime asset download limit',
+ *              or 'maximum copies of asset per account' are configured, then download permissions must be
+ *              coordinated with the backplane in order to insure these business rules are properly enforced.
+ *              Once the backplane has given permission for the asset to be downloaded, that permission is retained
+ *              until a download error occurs, the download completes successfully, or the download is deleted.
  */
 @property (nonatomic,readonly) kVDE_AssetPermissionType downloadPermission;
 
 /*!
  *  @abstract The current size of this asset
  *
- *  @discussion The amount of data that Virtuoso has downloaded for this asset (in bytes)
+ *  @discussion The amount of data that Virtuoso has downloaded for this asset (in bytes). This property may return a cached value. Calls from MainThread always return a cached value. Calls from background threads may return a cached value. To ensure most current results, invoke asset.refreshOnComplete to refresh asset state.
  */
 @property (nonatomic,readonly) long long currentSize;
 
@@ -860,6 +1205,30 @@ typedef void (^BasicCompletionBlock)(void);
  */
 @property (nonatomic,readonly) kVDE_AssetProtectionType assetProtectionType;
 
+#pragma mark
+#pragma mark Ads Support
+#pragma mark
+
+/*!
+ *  @abstract Indicates status of Ads refresh on this Asset.
+ *
+ *  @discussion Indicates status of Ads refresh on this Asset.
+ *              Set this property to AssetAdStatus_Uninitialized and invoke reloadAds to manually refresh Ads.
+ */
+@property (nonatomic,assign,readonly)AssetAdStatus refreshAdsStatus;
+
+/*!
+ *  @abstract Starts async process to refresh Advertisements associated with this asset.
+ *
+ *  @discussion This method starts an async process to refresh ads assocated with this asset.
+ *              NSNotification kReloadAdsCompleteNotification is raised when this call completes.
+ *
+ *              NSNotification UserInfo:
+ *              - kDownloadEngineNotificationAssetKey: VirtuosoAsset* to which reloadAds was called
+ *              - kDownloadEngineNotificationSuccessValueKey: NSNumber* Boolean TRUE = Success
+ *              - kDownloadEngineNotificationErrorKey: NSError* identifies cause of error
+ */
+- (void)reloadAds;
 
 /**---------------------------------------------------------------------------------------
  * @name Windowing/Expiry Related Properties
@@ -944,7 +1313,18 @@ typedef void (^BasicCompletionBlock)(void);
  *  @abstract Whether this asset is currently playable.
  *
  *  @discussion This value is calculated by evaluating download state, expiry rules, and ad requirements,
- *              and indicates whether attempts to play this asset will succeed.
+ *              and indicates whether attempts to play this asset will succeed. Note also, this property
+ *              This property requries blocking calls to CoreData. If accessed from MainThread, this call will
+ *              block and wait for the call to complete BUT will run the MainThread NSRunLoop while the call
+ *              completes. This may result in unusual sequencing of events in the UI Layer. For example, invoking
+ *              this method in viewWillAppear may result in viewDidAppear executing before the call in viewWillAppear
+ *              copletes executing the call to Asset.isPlayable. If critical initailzation is required i viewWillAppear is necessary
+ *              before viewDidAppear is called, make sure that code is execute BEFORE invoking this method.
+ *              Alternatively, invoke this method using async on the MainThread should resolve any timing issues.
+ *
+ *              For non-blocking scnearios:
+ *              +(void)isPlayable:(VirtuosoAsset* _Nonnull)asset operationQueue:(NSOperationQueue* _Nonnull)operationQueue callback:(CompletionBlockWithStatus _Nonnull)callback;
+ *              +(void)isPlayable:(VirtuosoAsset* _Nonnull)asset dispatchQueue:(dispatch_queue_t _Nonnull)dispatchQueue callback:(CompletionBlockWithStatus _Nonnull)callback;
  */
 @property (nonatomic,readonly) Boolean isPlayable;
 
@@ -1007,10 +1387,17 @@ typedef void (^BasicCompletionBlock)(void);
 @property (nonatomic,readonly) int assetDownloadLimit;
 
 /*!
- *  @abstract BETA Feature. AdsProvider assocated with the Asset.
+ *  @abstract AdsProvider assocated with the Asset.
  *
  */
 @property (nonatomic, strong, readonly)VirtuosoAdsProvider* _Nonnull adsProvider;
+
+/*!
+ *  @abstract Whether this asset is currently paused or resumed.
+ *
+ *  @discussion Updates to this property are applied asynchronously
+ */
+@property (nonatomic,assign) Boolean isPaused;
 
 @end
 

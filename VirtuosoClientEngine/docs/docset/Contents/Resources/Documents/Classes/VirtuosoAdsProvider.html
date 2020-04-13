@@ -56,6 +56,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/refreshIntervalInDays">refreshIntervalInDays</option>
+		
 		<option value="//api/name/requireAds">requireAds</option>
 		
 	</optgroup>
@@ -64,13 +66,23 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/disableAds">+ disableAds</option>
+		<option value="//api/name/clientFreewheelAds:">+ clientFreewheelAds:</option>
+		
+		<option value="//api/name/clientGoogleAds:">+ clientGoogleAds:</option>
 		
 		<option value="//api/name/serverAdsProvider">+ serverAdsProvider</option>
 		
 	</optgroup>
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/playbackAdsUrl:">- playbackAdsUrl:</option>
+		
+		<option value="//api/name/prepareTrackingUrl:url:">- prepareTrackingUrl:url:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -101,23 +113,6 @@
 
                     
 					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>@header VirtuosoAdsProvider</p>
-
-<p>PENTHERA CONFIDENTIAL</p>
-
-<p>Notice: This file is the property of Penthera Inc.
-The concepts contained herein are proprietary to Penthera Inc.
-and may be covered by U.S. and/or foreign patents and/or patent
-applications, and are protected by trade secret or copyright law.
-Distributing and/or reproducing this information is forbidden unless
-prior written permission is obtained from Penthera Inc.</p>
-
-<p>@copyright &copy; 2019 Penthera Inc. All Rights Reserved.</p>
-					</div>
-					
 					
 
 					
@@ -142,58 +137,12 @@ prior written permission is obtained from Penthera Inc.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>BETA Feature. Class convienence method to create a server-side Ads Provider</p>
+				<p>Class convienence method to create a server-side Ads Provider</p>
 			</div>
 			
 		    
 
 			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nonnull)serverAdsProvider</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new VirtuosoAdsProvider object.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/disableAds" title="disableAds"></a>
-	<h3 class="method-title"><code><a href="#//api/name/disableAds">+&nbsp;disableAds</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>BETA Feature. Class convienence method to create a default Ads Provider</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nonnull)disableAds</code></div>
 
 		    
 			
@@ -234,7 +183,7 @@ prior written permission is obtained from Penthera Inc.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>BETA Feature. True if Ads are required for this Asset</p>
+				<p>True if Ads are required for this Asset</p>
 			</div>
 			
 		    
@@ -268,6 +217,287 @@ prior written permission is obtained from Penthera Inc.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/playbackAdsUrl:" title="playbackAdsUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playbackAdsUrl:">&ndash;&nbsp;playbackAdsUrl:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Url for Ads Map needed during Playback</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nullable)playbackAdsUrl:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>asset for ads playback</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientFreewheelAds:" title="clientFreewheelAds:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientFreewheelAds:">+&nbsp;clientFreewheelAds:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class convienence method to create a client Freewheel Ads provider</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)clientFreewheelAds:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refreshUrl</code></th>
+						<td><p>Ads refresh url</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new VirtuosoAdsProvider instance, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clientGoogleAds:" title="clientGoogleAds:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientGoogleAds:">+&nbsp;clientGoogleAds:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class convienence method to create a client Google Ads provider</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)clientGoogleAds:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refreshUrl</code></th>
+						<td><p>Ads refresh url</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new VirtuosoAdsProvider instance, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareTrackingUrl:url:" title="prepareTrackingUrl:url:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareTrackingUrl:url:">&ndash;&nbsp;prepareTrackingUrl:url:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows Provider to update the Tracking URL with any appropriate information before posting.</p>
+
+<p>@description This callback is invoked when Ads Tracking URL&rsquo;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)<em>asset</em> url:(NSString *_Nonnull)<em>url</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><ul>
+<li>Asset reporting an Ads tracking event.</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><ul>
+<li>Tracking url that will be reported.</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Updated url. Returning nil will result in using the original, unchanged url.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshIntervalInDays" title="refreshIntervalInDays"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshIntervalInDays">&nbsp;&nbsp;refreshIntervalInDays</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Interval in days for when Ads should be refreshed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger refreshIntervalInDays</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -283,7 +513,7 @@ prior written permission is obtained from Penthera Inc.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-01-31</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-04-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

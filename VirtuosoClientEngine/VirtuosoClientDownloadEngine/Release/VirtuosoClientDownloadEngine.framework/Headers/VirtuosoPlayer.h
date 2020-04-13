@@ -24,7 +24,7 @@
 /*!
  *  @abstract Defines the minimum API required for basic playback of segmented (HLS, HSS, DASH, etc.) video
  *
- *  @discussion When calling the playUsingPlayer: method of an VirtuosoAsset, you must provide a player
+ *  @discussion When calling the playUsingPlaybackType: method of an VirtuosoAsset, you must provide a player
  *              object that follows this protocol.  Virtuoso will automatically handle all playback-related setup,
  *              e.g. create/configure a VirtuosoClientHTTPServer instance. It's your responsibility to configure 
  *              the player and present it in the view hierarchy.

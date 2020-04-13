@@ -60,7 +60,13 @@
 		
 		<option value="//api/name/clientAppCertificateForDRM:">+ clientAppCertificateForDRM:</option>
 		
+		<option value="//api/name/clientAppCertificateForDRM:andSubType:">+ clientAppCertificateForDRM:andSubType:</option>
+		
+		<option value="//api/name/doesLicenseForAssetRequireRefresh:">+ doesLicenseForAssetRequireRefresh:</option>
+		
 		<option value="//api/name/downloadClientAppCertificateFromURL:forDRM:">+ downloadClientAppCertificateFromURL:forDRM:</option>
+		
+		<option value="//api/name/downloadClientAppCertificateFromURL:forDRM:andSubType:">+ downloadClientAppCertificateFromURL:forDRM:andSubType:</option>
 		
 		<option value="//api/name/downloadOfflineLicenseForAsset:">+ downloadOfflineLicenseForAsset:</option>
 		
@@ -71,6 +77,8 @@
 		<option value="//api/name/licenseForAsset:">+ licenseForAsset:</option>
 		
 		<option value="//api/name/licenseServerURLForDRM:">+ licenseServerURLForDRM:</option>
+		
+		<option value="//api/name/licenseServerURLForDRM:andSubType:">+ licenseServerURLForDRM:andSubType:</option>
 		
 		<option value="//api/name/refreshLicenseForAsset:">+ refreshLicenseForAsset:</option>
 		
@@ -86,11 +94,15 @@
 		
 		<option value="//api/name/setClientAppCertificate:forDRM:">+ setClientAppCertificate:forDRM:</option>
 		
+		<option value="//api/name/setClientAppCertificate:forDRM:andSubType:">+ setClientAppCertificate:forDRM:andSubType:</option>
+		
 		<option value="//api/name/setDelegate:">+ setDelegate:</option>
 		
 		<option value="//api/name/setLicense:forAsset:">+ setLicense:forAsset:</option>
 		
 		<option value="//api/name/setLicenseServerURL:forDRM:">+ setLicenseServerURL:forDRM:</option>
+		
+		<option value="//api/name/setLicenseServerURL:forDRM:andSubType:">+ setLicenseServerURL:forDRM:andSubType:</option>
 		
 		<option value="//api/name/widevineAvailable">+ widevineAvailable</option>
 		
@@ -279,7 +291,65 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)setLicenseServerURL:(nonnull NSString *)<em>url</em> forDRM:(kVLM_DRMType)<em>type</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setLicenseServerURL:(NSString *_Nullable)<em>url</em> forDRM:(kVLM_DRMType)<em>type</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>The URL to the license server for the given DRM type, a nil value will remove the license server URL.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The DRM type to configure</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLicenseServerURL:forDRM:andSubType:" title="setLicenseServerURL:forDRM:andSubType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLicenseServerURL:forDRM:andSubType:">+&nbsp;setLicenseServerURL:forDRM:andSubType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the license server URL for a particular DRM type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setLicenseServerURL:(NSString *_Nonnull)<em>url</em> forDRM:(kVLM_DRMType)<em>type</em> andSubType:(NSString *_Nonnull)<em>subType</em></code></div>
 
 		    
 			
@@ -295,6 +365,11 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>type</code></th>
 						<td><p>The DRM type to configure</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subType</code></th>
+						<td><p>String identifying the DRM subtype</p></td>
 					</tr>
 				
 				</table>
@@ -348,6 +423,69 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>type</code></th>
 						<td><p>The DRM type to retrieve the license URL for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The configured license server URL for the given DRM type</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/licenseServerURLForDRM:andSubType:" title="licenseServerURLForDRM:andSubType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licenseServerURLForDRM:andSubType:">+&nbsp;licenseServerURLForDRM:andSubType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieves the configured license server URL for a particular DRM type</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)licenseServerURLForDRM:(kVLM_DRMType)<em>type</em> andSubType:(NSString *_Nonnull)<em>subType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The DRM type to retrieve the license URL for</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subType</code></th>
+						<td><p>String identifying the DRM subtype</p></td>
 					</tr>
 				
 				</table>
@@ -445,6 +583,77 @@ certificate from a remote location.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/downloadClientAppCertificateFromURL:forDRM:andSubType:" title="downloadClientAppCertificateFromURL:forDRM:andSubType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadClientAppCertificateFromURL:forDRM:andSubType:">+&nbsp;downloadClientAppCertificateFromURL:forDRM:andSubType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Downloads the client app certificate from the provided URL</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)downloadClientAppCertificateFromURL:(nonnull NSString *)<em>url</em> forDRM:(kVLM_DRMType)<em>type</em> andSubType:(NSString *_Nonnull)<em>subType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>The URL to the client app certificate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The DRM type to configure</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subType</code></th>
+						<td><p>String identifying the DRM subtype</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>As a part of DRM processing, some DRM platforms require a client security
+certificate.  Best practices dictate that this certificate is not hard-coded
+in the client app.  This method is used to load the required client app
+certificate from a remote location.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/setClientAppCertificate:forDRM:" title="setClientAppCertificate:forDRM:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/setClientAppCertificate:forDRM:">+&nbsp;setClientAppCertificate:forDRM:</a></code>
 </h3>
@@ -461,7 +670,7 @@ certificate from a remote location.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)setClientAppCertificate:(nonnull NSData *)<em>certificate</em> forDRM:(kVLM_DRMType)<em>type</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setClientAppCertificate:(NSData *_Nullable)<em>certificate</em> forDRM:(kVLM_DRMType)<em>type</em></code></div>
 
 		    
 			
@@ -471,12 +680,83 @@ certificate from a remote location.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>certificate</code></th>
-						<td><p>The data representing the client app certificate</p></td>
+						<td><p>The data representing the client app certificate. If this parameter is nil the certificate is removed.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>type</code></th>
 						<td><p>The DRM type to configure</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>As a part of DRM processing, some DRM platforms require a client security
+certificate.  Best practices dictate that this certificate is not hard-coded
+in the client app.  This method is used to load the required client app
+certificate from a remote location.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setClientAppCertificate:forDRM:andSubType:" title="setClientAppCertificate:forDRM:andSubType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setClientAppCertificate:forDRM:andSubType:">+&nbsp;setClientAppCertificate:forDRM:andSubType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the client app certificate from a previously downloaded or internal source</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setClientAppCertificate:(NSData *_Nullable)<em>certificate</em> forDRM:(kVLM_DRMType)<em>type</em> andSubType:(NSString *_Nonnull)<em>subType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>certificate</code></th>
+						<td><p>The data representing the client app certificate. If this parameter is nil the certificate is removed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The DRM type to configure</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subType</code></th>
+						<td><p>String identifying the DRM subtype</p></td>
 					</tr>
 				
 				</table>
@@ -569,6 +849,69 @@ certificate from a remote location.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/clientAppCertificateForDRM:andSubType:" title="clientAppCertificateForDRM:andSubType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientAppCertificateForDRM:andSubType:">+&nbsp;clientAppCertificateForDRM:andSubType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieves the previously downloaded client app security certificate, if it exists</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSData *)clientAppCertificateForDRM:(kVLM_DRMType)<em>type</em> andSubType:(nullable NSString *)<em>subType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The DRM type to configure</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subType</code></th>
+						<td><p>String identifying the DRM subtype</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The client app security certificate, if it exists, for the given DRM type</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/downloadOfflineLicenseForAsset:" title="downloadOfflineLicenseForAsset:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/downloadOfflineLicenseForAsset:">+&nbsp;downloadOfflineLicenseForAsset:</a></code>
 </h3>
@@ -624,6 +967,69 @@ properly access or register the generated license.</p>
 
 <p>If the DRM implementation requires a license ID or token to acquire the license, you must
 set these parameters via setID:andLicenseToken: prior to calling this method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/doesLicenseForAssetRequireRefresh:" title="doesLicenseForAssetRequireRefresh:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/doesLicenseForAssetRequireRefresh:">+&nbsp;doesLicenseForAssetRequireRefresh:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates whether the license for the given asset needs to be refreshed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)doesLicenseForAssetRequireRefresh:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset to query refreshing DRM licensing for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean true if downloaded license needs to be refreshed</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Assets with pass through protection will always return false</p>
 			</div>
 			
 
@@ -1161,7 +1567,7 @@ these values, set the delegate here and Virtuoso will ask for them as needed.</p
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-01-31</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-04-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

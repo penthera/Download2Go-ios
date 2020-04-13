@@ -1,67 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoSubscriptionDataSource.html">
+	<File path="Classes/VirtuosoPlaylistManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoSubscriptionDataSource</TokenIdentifier>
-			<Abstract type="html">Provides a configurable and dynamic mechanism for retrieving required data about subscription content.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylistManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
             
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionDefaultDataSource</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<NodeRef refid="34"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithSubscriptions:</TokenIdentifier>
-			<Abstract type="html">Initializes a data source with subscriptions that require data lookups</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Sets the delegate that will be called when an asset is needed for downloading from Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>- (nonnull id)initWithSubscriptions:(nonnull NSArray *)subscriptions</Declaration>
+			<Declaration>+ (void)setDelegate:(id&lt;VirtuosoPlaylistManagerDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>subscriptions</Name>
-					<Abstract type="html">A list of subscription data</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">Reference to delegate implementing the VirtuosoAssetQueueManagerDelegate protocol.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithSubscriptions:</Anchor>
+			
+			<Anchor>//api/name/setDelegate:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithAssets:</TokenIdentifier>
-			<Abstract type="html">Initializes a data source with individual assets that require data lookups</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistManager/instance</TokenIdentifier>
+			<Abstract type="html">Returns the singleton instance managing the Asset Playlist. Use this method and not the init method.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>- (nonnull id)initWithAssets:(nonnull NSArray *)assets</Declaration>
+			<Declaration>+ (instancetype)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">Singleton instance of VirtuosoAssetQueueManager</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/setPingServer:</TokenIdentifier>
+			<Abstract type="html">Server that is used to verify Internet accessibility via Ping.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *pingServer</Declaration>
+			
+			
+			<Anchor>//api/name/pingServer</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/pingServer</TokenIdentifier>
+			<Abstract type="html">Server that is used to verify Internet accessibility via Ping.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *pingServer</Declaration>
+			
+			
+			<Anchor>//api/name/pingServer</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistManager/pingServer</TokenIdentifier>
+			<Abstract type="html">Server that is used to verify Internet accessibility via Ping.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *pingServer</Declaration>
+			
+			
+			<Anchor>//api/name/pingServer</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/create:assets:config:</TokenIdentifier>
+			<Abstract type="html">Creates Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)create:(NSString *_Nonnull)name assets:(NSArray&lt;NSString*&gt; *_Nonnull)assets config:(VirtuosoPlaylistConfig *_Nullable)config</Declaration>
 			<Parameters>
 				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">Name of the Playlist.</Abstract>
+				</Parameter><Parameter>
 					<Name>assets</Name>
-					<Abstract type="html">A list of asset data</Abstract>
+					<Abstract type="html">Array of Asset ID&apos;s to be added to the specified Playlist. Assets in the Playlist are indexed based on the order of items in this array.</Abstract>
+				</Parameter><Parameter>
+					<Name>config</Name>
+					<Abstract type="html">Configuration options for the Playlist.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAssets:</Anchor>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/create:assets:config:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/process</TokenIdentifier>
-			<Abstract type="html">Processes a data lookup operation using the initalized subscription data</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/create:</TokenIdentifier>
+			<Abstract type="html">Creates Playlist&apos;s</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>- (nonnull NSObject *)process</Declaration>
+			<Declaration>- (Boolean)create:(VirtuosoPlaylist *_Nonnull)item</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>item</Name>
+					<Abstract type="html">Playlist to create</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/create:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/createWithItems:</TokenIdentifier>
+			<Abstract type="html">Creates Playlist&apos;s</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<ReturnValue><Abstract type="html">If the data source was initialized with subscriptions, via the initWithSubscriptions method, then a NSDictionary where the keys are subscription IDs and
-the values are NSArrays containing NSDictionaries representing asset data, with key-value data as defined in SubscriptionAssetDataAttributes.  If the
-data source was initialized with assets, via the initWithAssets method, then a single NSArray is returned directly, without the top NSDictionary package.</Abstract></ReturnValue>
-			<Anchor>//api/name/process</Anchor>
+			<Declaration>- (Boolean)createWithItems:(NSArray&lt;VirtuosoPlaylist*&gt; *_Nonnull)items</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>items</Name>
+					<Abstract type="html">Array of Playlists to create</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/createWithItems:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/append:</TokenIdentifier>
+			<Abstract type="html">Appends to a Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)append:(VirtuosoPlaylist *_Nonnull)item</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>item</Name>
+					<Abstract type="html">Playlist data to append</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/append:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/appendItems:</TokenIdentifier>
+			<Abstract type="html">Appends to a Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)appendItems:(NSArray&lt;VirtuosoPlaylist*&gt; *_Nonnull)items</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>items</Name>
+					<Abstract type="html">Playlist items to be appended</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/appendItems:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/clear:</TokenIdentifier>
+			<Abstract type="html">Clears all items in the specified Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)clear:(NSString *_Nonnull)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">Name of the Asset Playlist.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/clear:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/clearAll</TokenIdentifier>
+			<Abstract type="html">Clears all Playlist content</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)clearAll</Declaration>
+			
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/clearAll</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/find:</TokenIdentifier>
+			<Abstract type="html">Finds Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (VirtuosoPlaylist *)find:(NSString *_Nonnull)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">Name of the Playlist.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VirtuosoPlaylist, nil if not found.</Abstract></ReturnValue>
+			<Anchor>//api/name/find:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/findAllItems</TokenIdentifier>
+			<Abstract type="html">Finds all Playlist&apos;s</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;VirtuosoPlaylist*&gt; *)findAllItems</Declaration>
+			
+			<ReturnValue><Abstract type="html">ArrayVirtuosoPlaylist, nil if not found.</Abstract></ReturnValue>
+			<Anchor>//api/name/findAllItems</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistManager/processPendingItems</TokenIdentifier>
+			<Abstract type="html">Asks the PlaylistManager to process any pending Smart-Downloads</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)processPendingItems</Declaration>
+			
+			<ReturnValue><Abstract type="html">True indicates PlaylistManager started. False is returned if Network is unreachable.</Abstract></ReturnValue>
+			<Anchor>//api/name/processPendingItems</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistManager/createTimeoutDefaultInSeconds</TokenIdentifier>
+			<Abstract type="html">Default timeout waiting for Playlist asset to be created (excluding time to download).</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>+ (long)createTimeoutDefaultInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/createTimeoutDefaultInSeconds</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistManager/createTimeoutMinimumInSeconds</TokenIdentifier>
+			<Abstract type="html">Minimum timeout waiting for Playlist asset to be created. Setting a value less than this will be
+overridden. The minumum timeout is 30 seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>+ (long)createTimeoutMinimumInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/createTimeoutMinimumInSeconds</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistManager/createTimeoutMaximumInSeconds</TokenIdentifier>
+			<Abstract type="html">Maximum timeout waiting for Playlist asset to be created. Setting a value greater than this will be
+overridden. The maximum timeout is 600 seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>+ (long)createTimeoutMaximumInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/createTimeoutMaximumInSeconds</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistManager/createTimeoutInSeconds</TokenIdentifier>
+			<Abstract type="html">Get the current value for asset creation timeout wait.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>+ (long)createTimeoutInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/createTimeoutInSeconds</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistManager/setCreateTimeoutInSeconds:</TokenIdentifier>
+			<Abstract type="html">Set the current value for asset creation timeout wait. The input value must be at least
+createTimeoutMinimumInSeconds and less than createTimeoutMaximumInSeconds. This method
+returns the final value following range checks.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>+ (long)setCreateTimeoutInSeconds:(long)seconds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seconds</Name>
+					<Abstract type="html">value for timeout in seconds</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCreateTimeoutInSeconds:</Anchor>
             <NodeRef refid="34"/>
 		</Token>
 		

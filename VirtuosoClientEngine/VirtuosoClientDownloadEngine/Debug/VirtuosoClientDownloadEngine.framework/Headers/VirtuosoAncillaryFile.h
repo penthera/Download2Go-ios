@@ -34,18 +34,18 @@
 @interface VirtuosoAncillaryFile : NSObject
 
 /*!
+ *  @abstract UUID of the ancillary
+ *
+ *  @discussion Property is set once Ancillary has been created
+ */
+@property (nonatomic, readonly)NSString* _Nullable uuid;
+
+/*!
  *  @abstract URL for this ancillary
  *
  *  @discussion The remote URL for the ancillary
  */
 @property (nonatomic,readonly)NSString* _Nonnull fileDownloadURL;
-
-/*!
-*  @abstract Unique ID of the ancillary.
-*
-*  @discussion Value is only set after Ancillary has been created in the Asset.
-*/
-@property (nonatomic, readonly, copy)NSString* _Nullable uuid;
 
 /*!
  *  @abstract tag optional string that can be used to identify
@@ -76,6 +76,13 @@
 @property (nonatomic,readonly) long long expectedSize;
 
 /*!
+ *  @abstract Indicates the ancillary has been downloaded
+ *
+ *  @discussion Boolean value true when downloaded
+ */
+@property (nonatomic,readonly)Boolean isDownloaded;
+
+/*!
  *  @abstract Image representing this Ancillary
  *
  *  @discussion Returns an instance of the Image representing this ancillary. The ancillary must be a valid image.
@@ -87,11 +94,11 @@
 #endif
 
 /*!
- *  @abstract Indicates the ancillary has been downloaded
+ *  @abstract Indicates the ancillary is client ad media content
  *
  *  @discussion Boolean value true when downloaded
  */
-@property (nonatomic,readonly)Boolean isDownloaded;
+@property (nonatomic,assign, readonly)Boolean isAd;
 
 /*!
  *  @abstract Creates instance of Ancillary file

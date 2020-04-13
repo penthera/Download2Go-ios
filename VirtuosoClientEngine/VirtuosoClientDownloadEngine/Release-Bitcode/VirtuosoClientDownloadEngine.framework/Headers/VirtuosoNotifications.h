@@ -34,6 +34,14 @@
 extern NSString* kDownloadEngineAssetIDKey;
 
 /*!
+ *  @constant kDownloadEngineAssetUUIDKey
+ *
+ *  @abstract Key for the uuid of an Asset in the userInfo dictionary
+ */
+extern NSString* kDownloadEngineAssetUUIDKey;
+
+
+/*!
  *  @constant kDownloadEngineStatusDidChangeNotificationKey
  *
  *  @abstract Key for the new download status in the userInfo dictionary
@@ -80,11 +88,64 @@ extern NSString* kDownloadEngineNotificationPausingAssetsKey;
 extern NSString* kDownloadEngineNotificationErrorKey;
 
 /*!
+ *  @constant kDownloadEngineNotificationErrorTaskKey
+ *
+ *  @abstract Key for the NSURLSessionTask object in the userInfo dictionary
+ */
+extern NSString* kDownloadEngineNotificationErrorTaskKey;
+
+/*!
+ *  @constant kDownloadEngineNotificationErrorDataKey
+ *
+ *  @abstract Key for the NSData object in the userInfo dictionary
+ */
+extern NSString* kDownloadEngineNotificationErrorDataKey;
+
+/*!
+ *  @constant kDownloadEngineNotificationErrorResponseStatusCodeKey
+ *
+ *  @abstract Key for the NSHTTPURLResponse.statusCode object in the userInfo dictionary
+ */
+extern NSString* kDownloadEngineNotificationErrorResponseStatusCodeKey;
+
+/*!
  *  @constant kDownloadEngineNotificationSuccessValueKey
  *
  *  @abstract Key indicating success or failure of a particular action. Found in the userInfo dictionary.
  */
 extern NSString* kDownloadEngineNotificationSuccessValueKey;
+
+/*!
+ *  @constant kDownloadEngineStatusDidChangeNotificationStatusInfoKey
+ *
+ *  @abstract The key in userInfo dictionary kDownloadEngineStatusDidChangeNotification notification to return
+ *            VirtuosoEngineStatusInfo object.
+ */
+extern NSString* kDownloadEngineStatusDidChangeNotificationStatusInfoKey;
+
+/*!
+ *  @constant kDownloadEngineStartupCompleteStatusKey
+ *
+ *  @abstract The key in userInfo dictionary kDownloadEngineStartupCompleteNotification notification to return
+ *            a boolean value indicating succesful completion of download engine startup.
+ */
+extern NSString* kDownloadEngineStartupCompleteStatusKey;
+
+/*!
+*  @constant kDownloadEngineNetworkReachabilityChangePreviousNetworkReachabilityKey
+*
+*  @abstract The key in userInfo dictionary kDownloadEngineNetworkReachabilityChangeNotification notification to return
+*            the enum kVL_BearerType indicating the previous network reachability state.
+*/
+extern NSString* kDownloadEngineNetworkReachabilityChangePreviousNetworkReachabilityKey;
+
+/*!
+*  @constant kDownloadEngineNetworkReachabilityChangeCurrentNetworkReachabilityKey
+*
+*  @abstract The key in userInfo dictionary kDownloadEngineNetworkReachabilityChangeNotification notification to return
+*            the enum kVL_BearerType indicating the current network reachability state.
+*/
+extern NSString* kDownloadEngineNetworkReachabilityChangeCurrentNetworkReachabilityKey;
 
 /**---------------------------------------------------------------------------------------
  * @name NSNotification Names
@@ -132,6 +193,7 @@ extern NSString* kDownloadEngineDidStartDownloadingAssetNotification;
  */
 extern NSString* kDownloadEngineDRMResultForAssetNotification;
 
+
 /*!
  *  @constant kDownloadEngineProgressUpdatedForAssetNotification
  *
@@ -177,12 +239,30 @@ extern NSString* kDownloadEngineInternalQueueUpdateNotification;
 extern NSString* kDownloadEngineDidFinishDownloadingAssetNotification;
 
 /*!
+ *  @constant kDownloadEngineDidFinishConsistencyScanAssetNotification
+ *
+ *  @abstract Fired when an asset consistency scan completes.  The userInfo dictionary will contain the asset (in
+ *            'kDownloadEngineNotificationAssetKey').
+ */
+extern NSString* kDownloadEngineDidFinishConsistencyScanAssetNotification;
+
+
+/*!
  *  @constant kDownloadEngineDidFinishedAncillaryDownloadNotification
  *
  *  @abstract Fired when an ancillary download completes.  The userInfo dictionary will contain the ancillary file object (in
  *            'kDownloadEngineNotificationAncillaryKey') and the asset object (in 'kDownloadEngineNotificationAssetKey').
  */
 extern NSString* kDownloadEngineDidFinishedAncillaryDownloadNotification;
+
+
+/*!
+*  @constant kDownloadEngineFastPlayReadyNotification
+*
+*  @abstract Fired when a FastPlay asset is ready to play.
+*            userInfo key 'kDownloadEngineNotificationAssetKey') contains the asset.
+*/
+extern NSString* kDownloadEngineFastPlayReadyNotification;
 
 /*!
  *  @constant kDownloadEngineDidEncounterErrorNotification
@@ -291,6 +371,13 @@ extern NSString* kBackplaneDeviceSaveResultNotification;
 extern NSString* kBackplaneLogsSentNotification;
 
 /*!
+ *  @constant kBackplaneStartingRemoteKillNotification
+ *
+ *  @abstract Fired when Virtuoso receives a remote-wipe command from Backplane and before the remote wipe starts.
+ */
+extern NSString* kBackplaneStartingRemoteKillNotification;
+
+/*!
  *  @constant kBackplaneRemoteKillNotification
  *
  *  @abstract Fired after Virtuoso receives a remote-wipe command from Backplane and has performed the wipe.
@@ -305,7 +392,7 @@ extern NSString* kBackplaneRemoteKillNotification;
 /*!
  *  @constant kBackplaneAssetDeletedNotification
  *
- *  @abstract Fired after Virtuoso receives a remote delete command from the Backplane and has performed the delete.
+ *  @abstract Fired after an Asset is deleted
  *
  *  @discussion The userInfo dictionary will contain the asset of the deleted object (kDownloadEngineAssetIDKey)
  */
@@ -347,11 +434,19 @@ extern NSString* kDownloadEngineDidBeginDataStoreUpgradeNotification;
 extern NSString* kDownloadEngineDidFinishDataStoreUpgradeNotification;
 
 /*!
- *  @constant kReloadAdsCompleteNotification
+ *  @constant kAdsRefreshStatusUpdateNotification
  *
  *  @abstract Fires when ads refresh finishes.
  */
-extern NSString* kReloadAdsCompleteNotification;
+extern NSString* kAdsRefreshStatusUpdateNotification;
+
+/*!
+ *  @constant kAdsRefreshFailureNotification
+ *
+ *  @abstract Fires when ads refresh fails.
+ */
+extern NSString* kAdsRefreshFailureNotification;
+
 
 /*!
  *  @constant kDownloadEngineEnableDisableChangeNotificationKey
@@ -359,5 +454,55 @@ extern NSString* kReloadAdsCompleteNotification;
  *  @abstract Key for the engine enable or disable in the userInfo dictionary
  */
 extern NSString* kDownloadEngineEnableDisableChangeNotificationKey;
+
+/*!
+ *  @constant kDownloadEngineNotificationUrlKey
+ *
+ *  @abstract Key for the engine Url in NSNotification userInfo dictionary
+ */
+extern NSString* kDownloadEngineNotificationUrlKey;
+
+/*!
+ *  @constant kDownloadEngineEnableAdsErrorNotification
+ *
+ *  @abstract Fired when Ads has posted an error to the Ads server
+ */
+extern NSString* kDownloadEngineEnableAdsErrorNotification;
+
+/*!
+ *  @constant kDownloadEngineEnableAdsTrackingNotification
+ *
+ *  @abstract Fired when Ads has posted tracking to the Ads server
+ */
+extern NSString* kDownloadEngineEnableAdsTrackingNotification;
+
+
+/*!
+ *  @constant kDownloadEngineAllAssetsDeletedNotification
+ *
+ *  @abstract Fired when Asset.deleteAll completes
+ */
+extern NSString* kDownloadEngineAllAssetsDeletedNotification;
+
+/*!
+ *  @constant kDownloadEngineStartupCompleteNotification
+ *
+ *  @abstract Fired when startupWithBackplane completes
+ */
+extern NSString* kDownloadEngineStartupCompleteNotification;
+
+/*!
+ *  @constant kDownloadEngineStartupUserDeleteNotification
+ *
+ *  @abstract Fired when startupWithBackplane detects user change resulting in a delay to delete previous user assets
+ */
+extern NSString* kDownloadEngineStartupUserDeleteStartedNotification;
+
+/*!
+*  @constant kDownloadEngineNetworkReachabilityChangeNotification
+*
+*  @abstract Fired when the operating system detects a change in network reachabilotu
+*/
+extern NSString* kDownloadEngineNetworkReachabilityChangeNotification;
 
 #endif

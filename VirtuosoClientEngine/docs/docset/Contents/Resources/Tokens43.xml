@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_DownloadErrorType.html">
+	<File path="Protocols/VirtuosoFileSegment.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadErrorType</TokenIdentifier>
-			<Abstract type="html">Error states that Virtuoso can be in when downloading an asset.  Returned via the &apos;error&apos; property.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoFileSegment</TokenIdentifier>
+			<Abstract type="html">An interface representing the basic information about an individual file segment download</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -12,89 +12,186 @@
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNoError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered no errors downloading this asset</Abstract>
-            <Declaration>kVDE_DownloadNoError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setUuid:</TokenIdentifier>
+			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this segment.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
             <NodeRef refid="43"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNetworkError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered a network problem downloading asset, e.g. 404 or 416 HTTP error</Abstract>
-            <Declaration>kVDE_DownloadNetworkError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/uuid</TokenIdentifier>
+			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this segment.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
             <NodeRef refid="43"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadReachabilityError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because it couldn&apos;t reach the remote server</Abstract>
-            <Declaration>kVDE_DownloadReachabilityError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/uuid</TokenIdentifier>
+			<Abstract type="html">A universally unique identifier (UUID) that Virtuoso generates when it created this segment.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
             <NodeRef refid="43"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadFileCopyError</TokenIdentifier>
-            <Abstract type="html">Virtuoso downloaded this asset, but couldn&apos;t move it to its final location on disk</Abstract>
-            <Declaration>kVDE_DownloadFileCopyError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setAssetUUID:</TokenIdentifier>
+			<Abstract type="html">The universally unique identifier (UUID) of the Virtuoso asset that this segment is a part of.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *assetUUID</Declaration>
+			
+			
+			<Anchor>//api/name/assetUUID</Anchor>
             <NodeRef refid="43"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadEngineError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because of an internal issue</Abstract>
-            <Declaration>kVDE_DownloadEngineError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/assetUUID</TokenIdentifier>
+			<Abstract type="html">The universally unique identifier (UUID) of the Virtuoso asset that this segment is a part of.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *assetUUID</Declaration>
+			
+			
+			<Anchor>//api/name/assetUUID</Anchor>
             <NodeRef refid="43"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadMaxRetriesExceeded</TokenIdentifier>
-            <Abstract type="html">Virtuoso has attempted to download this asset the max times permitted. Will not try again
-        until you call reset or clearRetryCount </Abstract>
-            <Declaration>kVDE_DownloadMaxRetriesExceeded</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/assetUUID</TokenIdentifier>
+			<Abstract type="html">The universally unique identifier (UUID) of the Virtuoso asset that this segment is a part of.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *assetUUID</Declaration>
+			
+			
+			<Anchor>//api/name/assetUUID</Anchor>
             <NodeRef refid="43"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_LifetimeDownloadLimitReached</TokenIdentifier>
-            <Abstract type="html">Virtuoso has received notice from the server that the user has downloaded this asset the
-        maximum number of times for this account.  Downloads cannot continue for this asset. </Abstract>
-            <Declaration>kVDE_LifetimeDownloadLimitReached</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setSegmentURL:</TokenIdentifier>
+			<Abstract type="html">The remote URL where this segment resides on the internet.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *segmentURL</Declaration>
+			
+			
+			<Anchor>//api/name/segmentURL</Anchor>
             <NodeRef refid="43"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BlockedOnDRM</TokenIdentifier>
-            <Abstract type="html">Virtuoso has attempted to start downloading an asset for which DRM is required before downloading
-        and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. </Abstract>
-            <Declaration>kVDE_BlockedOnDRM</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/segmentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL where this segment resides on the internet.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *segmentURL</Declaration>
+			
+			
+			<Anchor>//api/name/segmentURL</Anchor>
             <NodeRef refid="43"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/segmentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL where this segment resides on the internet.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *segmentURL</Declaration>
+			
+			
+			<Anchor>//api/name/segmentURL</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setSegmentType:</TokenIdentifier>
+			<Abstract type="html">The type of segment (E.G. video, encryption key, audio)</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) kVF_SegmentType segmentType</Declaration>
+			
+			
+			<Anchor>//api/name/segmentType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/segmentType</TokenIdentifier>
+			<Abstract type="html">The type of segment (E.G. video, encryption key, audio)</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) kVF_SegmentType segmentType</Declaration>
+			
+			
+			<Anchor>//api/name/segmentType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/segmentType</TokenIdentifier>
+			<Abstract type="html">The type of segment (E.G. video, encryption key, audio)</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) kVF_SegmentType segmentType</Declaration>
+			
+			
+			<Anchor>//api/name/segmentType</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/setSegmentSubtype:</TokenIdentifier>
+			<Abstract type="html">If this segment is a CC or Audio segment type, then this property indicates the language.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *segmentSubtype</Declaration>
+			
+			
+			<Anchor>//api/name/segmentSubtype</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoFileSegment/segmentSubtype</TokenIdentifier>
+			<Abstract type="html">If this segment is a CC or Audio segment type, then this property indicates the language.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *segmentSubtype</Declaration>
+			
+			
+			<Anchor>//api/name/segmentSubtype</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoFileSegment/segmentSubtype</TokenIdentifier>
+			<Abstract type="html">If this segment is a CC or Audio segment type, then this property indicates the language.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *segmentSubtype</Declaration>
+			
+			
+			<Anchor>//api/name/segmentSubtype</Anchor>
+            <NodeRef refid="43"/>
+		</Token>
+		
         
         
 	</File>

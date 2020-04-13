@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegate.html">
+	<File path="Classes/VirtuosoGoogleAdsClientProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegate</TokenIdentifier>
-			<Abstract type="html">Provides a mechanism to automatically handle FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoGoogleAdsClientProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VirtuosoGoogleAdsClientProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -13,110 +13,24 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setAsset:</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoGoogleAdsClientProvider/prepareTrackingUrl:url:</TokenIdentifier>
+			<Abstract type="html">Allows Provider to update the Tracking URL with any appropriate information before posting.
+
+@description This callback is invoked when Ads Tracking URL&apos;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</Abstract>
+			<DeclaredIn>VirtuosoGoogleAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setLoadPersistentLicense:</TokenIdentifier>
-			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
-			
-			
-			<Anchor>//api/name/loadPersistentLicense</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
-			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
-			
-			
-			<Anchor>//api/name/loadPersistentLicense</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
-			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
-			
-			
-			<Anchor>//api/name/loadPersistentLicense</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setErrorHandler:</TokenIdentifier>
-			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
-			
-			
-			<Anchor>//api/name/errorHandler</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
-			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
-			
-			
-			<Anchor>//api/name/errorHandler</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
-			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
-			
-			
-			<Anchor>//api/name/errorHandler</Anchor>
+			<Declaration>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)asset url:(NSString *_Nonnull)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">Asset reporting an Ads tracking event.</Abstract>
+				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">Tracking url that will be reported.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Updated url. Returning nil will result in using the original, unchanged url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareTrackingUrl:url:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

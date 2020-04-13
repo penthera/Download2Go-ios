@@ -21,6 +21,8 @@
 
 #define VLog(level, fmt, ...) [VirtuosoLogger addDebugEvent:[NSString stringWithFormat:(@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] atLevel:level]
 
+#define VXLog(level, fmt, ...) [VirtuosoLogger addDebugEvent:[NSString stringWithFormat:(@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] atLevel:level force:true]
+
 #define INCLUDE_DEV_LOGGING 0
 
 @class VirtuosoAsset;
@@ -81,7 +83,8 @@ typedef NS_ENUM(NSInteger, kVL_LogEvent)
     kVLE_FileExpired = 7,
     
     /** Virtuoso successfully synced with the Backplane */
-    kVLE_SyncWithServer = 8,
+    // Deprecated 3.16
+    // kVLE_SyncWithServer,
     
     /** The enclosing app played a video asset */
     kVLE_PlayStart = 9,
@@ -109,7 +112,7 @@ typedef NS_ENUM(NSInteger, kVL_LogEvent)
     kVLE_InitialPlayback = 16,
     
     /** Generic event used to allow event types easily in loops */
-    kVLE_LastEvent = kVLE_InitialPlayback + 1
+    kVLE_LastEvent = kVLE_InitialPlayback + 1,
 };
 
 /*!
@@ -205,6 +208,13 @@ extern long long kLoggerDataValueInvalid;
  */
 - (void)virtuosoDebugEventOccurred:(nonnull NSString*)data atLevel:(kVL_LoggingLevel)level;
 
+/*!
+ *  @abstract Reports raw event being saved
+ *
+ *  @param event Dictionary description of event
+ */
+- (void)virtuosoRawEventSave:(nonnull NSDictionary*)event;
+
 @end
 
 
@@ -217,10 +227,70 @@ extern long long kLoggerDataValueInvalid;
  */
 @interface VirtuosoLogger : NSObject
 
+/*!
+ *  @abstract Class property to globally enable / disable Virtuoso logging.
+ *
+ *  @discussion Global Logging enable switch.
+ *              Examples:
+ *                  VirtuosoLogger.enable = true;  // enables logging
+ *                  VirtuosoLogger.enable = false; // disables logging
+ *
+ *              Default is true
+ *              This setting does not persist across App restarts.
+ *              Recommend setting in AppDelegate as early as possible if disable is required.
+ */
+@property (nonatomic, assign, class)Boolean enable;
+
+/*!
+ *  @abstract Class property to globally enable / disable Backplane logging.
+ *
+ *  @discussion Global Backplane logging
+ *              Examples:
+ *                  VirtuosoLogger.backplaneLoggingEnabled = true;  // enables logging
+ *                  VirtuosoLogger.backplaneLoggingEnabled = false; // disables logging
+ *
+ *              Default is true
+ *              This setting persist's across App restarts.
+ *              Recommend setting in AppDelegate as early as possible if disable is required.
+ */
+@property (nonatomic, assign, class)Boolean backplaneLoggingEnabled;
+
+/*!
+ *  @abstract Class property to globally enable / disable Proxy logging.
+ *
+ *  @discussion Global Proxy logging
+ *              Examples:
+ *                  VirtuosoLogger.proxyLoggingEnabled = true;  // enables logging
+ *                  VirtuosoLogger.proxyLoggingEnabled = false; // disables logging
+ *
+ *              Default is true
+ *              This setting persist's across App restarts.
+ *              Recommend setting in AppDelegate as early as possible if disable is required.
+ */
+@property (nonatomic, assign, class)Boolean proxyLoggingEnabled;
+
+
+/*!
+ *  @abstract Queue used to post Logger delegate notifications. Default is MainThread.
+ *
+ *  @discussion If you need Notifications on a different thread from the default (MainThread), set
+ *              this class property with the NSOperationQueue you want to receive Logger delegate notifications.
+ */
+@property (nonatomic, strong, class)NSOperationQueue* _Nonnull notificationQueue;
+
 /**---------------------------------------------------------------------------------------
  * @name Startup And Configuration
  *  ---------------------------------------------------------------------------------------
  */
+
+/*!
+ *  @abstract Returns English localized string for the kVL_LogEvent enum value
+ *
+ *  @discussion Returns English localized string for the kVL_LogEvent enum value
+ *
+ *  @param event kVL_LogEvent enum value
+ */
++(NSString* _Nonnull)eventTypeToString:(kVL_LogEvent)event;
 
 /*!
  *  @abstract Enables/disables file-based logging.
@@ -260,40 +330,6 @@ extern long long kLoggerDataValueInvalid;
 + (kVL_LoggingLevel)logLevel;
 
 /**---------------------------------------------------------------------------------------
- * @name Event Log Filtering
- *  ---------------------------------------------------------------------------------------
- */
-
-/*!
- *  @abstract Sets all Virtuoso events as enabled
- *
- *  @discussion Virtuoso sends a variety of events to the Backplane for tracking.
- *              This method allows you to enable (or disable) all event logging with a single call.
-*               By default, all event logging is disabled.
- *
- *  @param enabled Whether to enable all Backplane-tracked log events
- */
-+ (void) setLoggingEnabledForAllEvents:(Boolean)enabled;
-
-/*!
- *  @abstract Enables/disables logging for a specific event
- *
- *  @param enabled Whether to enable logging for this event
- *
- *  @param event The event
- */
-+ (void) setLoggingEnabled:(Boolean)enabled forEvent:(kVL_LogEvent)event;
-
-/*!
- *  @abstract Whether a particular Backplane-tracked event is enabled
- *
- *  @param event The event
- *
- *  @return Returns whether a particular Backplane-tracked event is enabled
- */
-+ (Boolean) isLoggingEnabledForEvent:(kVL_LogEvent)event;
-
-/**---------------------------------------------------------------------------------------
  * @name Manually Generated Events
  *  ---------------------------------------------------------------------------------------
  */
@@ -326,6 +362,18 @@ extern long long kLoggerDataValueInvalid;
  */
 + (void) addDebugEvent:(nonnull NSString*)eventData atLevel:(kVL_LoggingLevel)level;
 
+/*!
+ *  @abstract Adds a debug event.
+ *
+ *  @discussion Virtuoso does not post these events to the Backplane.
+ *              However, Virtuoso will show them on the console if verbose console is enabled.
+ *              Virtuoso will write them to the log file, if file logging is enabled.
+ *
+ *  @param eventData A string containing arbitrary debug data for logging
+ *  @param level     The log level this event is associated with
+ *  @param force     Log even when logging is disabled
+ */
++ (void) addDebugEvent:(nonnull NSString*)eventData atLevel:(kVL_LoggingLevel)level force:(Boolean)force;
 
 /*!
  *  @abstract Logs "expire" event for an asset

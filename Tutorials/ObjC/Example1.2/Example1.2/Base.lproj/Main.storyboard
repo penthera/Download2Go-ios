@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="74U-oi-9qR">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="y49-ft-9N0">
+            <objects>
+                <viewController id="74U-oi-9qR" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="54o-I2-Wkv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="XdH-8w-JKp">
+                                <rect key="frame" x="20" y="322.5" width="374" height="251.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdF-Gx-nza" userLabel="pauseStack">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause Downloading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="587-a3-3me">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Wd-z0-J2z">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="pauseClicked:" destination="74U-oi-9qR" eventType="valueChanged" id="fSL-Xd-wJY"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HRe-RL-6Tt">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXK-Ic-OkC">
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Download">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="downloadBtnClicked:" destination="74U-oi-9qR" eventType="touchUpInside" id="fMU-Td-kP9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQi-Z6-VkQ">
+                                                <rect key="frame" x="128" y="0.0" width="118" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playBtnClicked:" destination="74U-oi-9qR" eventType="touchUpInside" id="I7M-LZ-gat"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByP-cL-yT1">
+                                                <rect key="frame" x="256" y="0.0" width="118" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteClicked:" destination="74U-oi-9qR" eventType="touchUpInside" id="hXe-NB-Vw8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="LOx-6j-HJV"/>
+                                        </constraints>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oqL-R9-Lht">
+                                        <rect key="frame" x="0.0" y="189" width="374" height="2"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TPd-yh-5e0">
+                                        <rect key="frame" x="0.0" y="230" width="374" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kht-8V-i3g">
+                                <rect key="frame" x="20" y="614" width="374" height="228"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XdH-8w-JKp" firstAttribute="leading" secondItem="c59-4h-7UR" secondAttribute="leading" constant="20" id="4ok-Cd-ymf"/>
+                            <constraint firstItem="c59-4h-7UR" firstAttribute="bottom" secondItem="kht-8V-i3g" secondAttribute="bottom" constant="20" id="CVE-FM-Mtv"/>
+                            <constraint firstItem="kht-8V-i3g" firstAttribute="leading" secondItem="c59-4h-7UR" secondAttribute="leading" constant="20" id="N9M-mb-5TA"/>
+                            <constraint firstItem="kht-8V-i3g" firstAttribute="top" secondItem="XdH-8w-JKp" secondAttribute="bottom" constant="40" id="Z61-ar-6G6"/>
+                            <constraint firstItem="c59-4h-7UR" firstAttribute="trailing" secondItem="XdH-8w-JKp" secondAttribute="trailing" constant="20" id="cH3-lI-aSz"/>
+                            <constraint firstItem="c59-4h-7UR" firstAttribute="trailing" secondItem="kht-8V-i3g" secondAttribute="trailing" constant="20" id="kgo-HO-kZ5"/>
+                            <constraint firstItem="XdH-8w-JKp" firstAttribute="centerX" secondItem="54o-I2-Wkv" secondAttribute="centerX" id="pQo-UG-Htb"/>
+                            <constraint firstItem="XdH-8w-JKp" firstAttribute="centerY" secondItem="54o-I2-Wkv" secondAttribute="centerY" id="sjV-NH-EbG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c59-4h-7UR"/>
+                    </view>
+                    <connections>
+                        <outlet property="ancillaryImage" destination="kht-8V-i3g" id="13N-Wl-S3h"/>
+                        <outlet property="deleteBtn" destination="ByP-cL-yT1" id="zsc-jt-RrU"/>
+                        <outlet property="downloadBtn" destination="AXK-Ic-OkC" id="uBo-Qf-O6W"/>
+                        <outlet property="pausingLabel" destination="587-a3-3me" id="nE4-YX-Fw0"/>
+                        <outlet property="pausingSwitch" destination="2Wd-z0-J2z" id="taY-t2-TUL"/>
+                        <outlet property="playBtn" destination="NQi-Z6-VkQ" id="YzK-GJ-sLY"/>
+                        <outlet property="statusLabel" destination="TPd-yh-5e0" id="Qna-4H-BOE"/>
+                        <outlet property="statusProgressBar" destination="oqL-R9-Lht" id="sfN-fP-2E8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dI6-XF-rlh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>

@@ -40,7 +40,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -100,8 +102,10 @@
  *  @discussion This constructor allows you to set custom expiry rules.
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
- *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+*
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -170,7 +174,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -207,7 +213,7 @@
  *
  *  @param ancillaries Optional array of VirtuosoAncillaryFile to be downloaded
  *
- *  @param adsProvider BETA Feature. Optional AdsProvider to use with this Asset.
+ *  @param adsProvider Optional AdsProvider to use with this Asset.
  *
  *  @param userInfo A convenience field allowing you to associate arbitrary data with an asset.
  *                  Virtuoso will serialize this data and store it, but not explicitly use this data.

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVF_SegmentType.html">
+	<File path="Constants/AssetAdStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVF_SegmentType</TokenIdentifier>
-			<Abstract type="html">Allowable Virtuoso types for segments</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/AssetAdStatus</TokenIdentifier>
+			<Abstract type="html">Asset Ads status</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
 			
 			<NodeRef refid="52"/>
@@ -14,71 +14,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeUnknown</TokenIdentifier>
-            <Abstract type="html">The file is of unknown type (default)</Abstract>
-            <Declaration>kVF_SegmentTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_Uninitialized</TokenIdentifier>
+            <Abstract type="html">Ads not initialized</Abstract>
+            <Declaration>AssetAdStatus_Uninitialized</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="52"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeSubRange</TokenIdentifier>
-            <Abstract type="html">The file is a sub-range of a larger monolithic file (MP4)</Abstract>
-            <Declaration>kVF_SegmentTypeSubRange</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="52"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamEncryptionKey</TokenIdentifier>
-            <Abstract type="html">The file is a video stream encryption key (HLS/HSS)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamEncryptionKey</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshInProcess</TokenIdentifier>
+            <Abstract type="html">Ads refresh in process</Abstract>
+            <Declaration>AssetAdStatus_RefreshInProcess</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="52"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamSegment</TokenIdentifier>
-            <Abstract type="html">The file is a video stream segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamSegment</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="52"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamAudio</TokenIdentifier>
-            <Abstract type="html">The file is a video stream audio segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamAudio</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshComplete</TokenIdentifier>
+            <Abstract type="html">Ads refresh completed successfully</Abstract>
+            <Declaration>AssetAdStatus_RefreshComplete</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="52"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamCC</TokenIdentifier>
-            <Abstract type="html">The file is a video stream closed captioning segment (HLS/HSS/DASH)</Abstract>
-            <Declaration>kVF_SegmentTypeStreamCC</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="52"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeAncillary</TokenIdentifier>
-            <Abstract type="html">The file is a ancillary</Abstract>
-            <Declaration>kVF_SegmentTypeAncillary</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshCompleteWithErrors</TokenIdentifier>
+            <Abstract type="html">Ads refresh completed with errors</Abstract>
+            <Declaration>AssetAdStatus_RefreshCompleteWithErrors</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshFailure</TokenIdentifier>
+            <Abstract type="html">Ads refresh failed</Abstract>
+            <Declaration>AssetAdStatus_RefreshFailure</Declaration>
+            
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+            
+            <NodeRef refid="52"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_QueuedForRefresh</TokenIdentifier>
+            <Abstract type="html">Ads refresh has been queued for refresh once Network is available.</Abstract>
+            <Declaration>AssetAdStatus_QueuedForRefresh</Declaration>
+            
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="52"/>
         </Token>

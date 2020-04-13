@@ -40,7 +40,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -101,7 +103,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -170,7 +174,9 @@
  *
  *  @warning The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.
  *
- *  @param assetID A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID's are not allowed.
+ *  @param assetID A globally unique identifier for the asset. Used in all log events.
+ *                 IMPORTANT: This value must be globally unique across all assets within the Catalog.
+ *                 Dupicate AssetID's are not allowed.
  *
  *  @param description A description of the asset.  Virtuoso only uses this in log output.
  *
@@ -207,7 +213,7 @@
  *
  *  @param ancillaries Optional array of VirtuosoAncillaryFile's
  *
- *  @param adsProvider BETA Feature. Instance of AdsProvider to use with this Asset.
+ *  @param adsProvider Instance of AdsProvider to use with this Asset.
  *
  *  @param userInfo A convenience field allowing you to associate arbitrary data with an asset.
  *                  Virtuoso will serialize this data and store it, but not explicitly use this data.
@@ -288,22 +294,6 @@
  */
 - (nullable NSString*)hlsManifestLocalPathForType:(kVDM_ManifestType)type forSubtype:(nullable NSString*)subtype;
 
-/**---------------------------------------------------------------------------------------
- * @name HLS Ads
- *  ---------------------------------------------------------------------------------------
- */
-/*!
- *  @abstract Starts async process to refresh Advertisements associated with this asset.
- *
- *  @discussion This method starts an async process to refresh ads assocated with this asset.
- *              NSNotification kReloadAdsCompleteNotification is raised when this call completes.
- *
- *              NSNotification UserInfo:
- *              - kDownloadEngineNotificationAssetKey: VirtuosoAsset* to which reloadAds was called
- *              - kDownloadEngineNotificationSuccessValueKey: NSNumber* Boolean TRUE = Success
- *              - kDownloadEngineNotificationErrorKey: NSError* identifies cause of error
- */
-- (void)reloadAds;
 
 /**---------------------------------------------------------------------------------------
  * @name HLS Properties

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoEventHandler.html">
+	<File path="Classes/VirtuosoDefaultAVAssetResourceLoaderDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoEventHandler</TokenIdentifier>
-			<Abstract type="html">Provides a common static interface for all Virtuoso modules to handle incoming app delegate events.</Abstract>
-			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoDefaultAVAssetResourceLoaderDelegate</TokenIdentifier>
+			<Abstract type="html">A convenience subclass that automatically handles basic FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,76 +13,37 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processBackgroundSessionWake:completionHandler:</TokenIdentifier>
-			<Abstract type="html">Handles processing of background download session notices</Abstract>
-			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDefaultAVAssetResourceLoaderDelegate/setChildAVAssetResourceLoaderDelegate:</TokenIdentifier>
+			<Abstract type="html">If you have custom work unrelated to FairPlay DRM, you may need to set a child delegate.  For all calls that the VIrtuoso SDK does not
+directly handle, the call will be handed to the child delegate to service.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>+ (Boolean)processBackgroundSessionWake:(nonnull NSString *)identifier completionHandler:(nonnull void ( ^ ) ( void ))completionHandler</Declaration>
+			<Declaration>- (void)setChildAVAssetResourceLoaderDelegate:(id&lt;AVAssetResourceLoaderDelegate&gt; _Nullable)subdelegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">The background session identifier the wake is for</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The handler callback provided by the iOS7+ UIApplicationDelegate background session method</Abstract>
+					<Name>subdelegate</Name>
+					<Abstract type="html">A secondary delegate to call for non-FairPlay requests</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Whether Virtuoso handled the session wake</Abstract></ReturnValue>
-			<Anchor>//api/name/processBackgroundSessionWake:completionHandler:</Anchor>
+			
+			<Anchor>//api/name/setChildAVAssetResourceLoaderDelegate:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processRemotePushNotice:withCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Handles remote push notices</Abstract>
-			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoDefaultAVAssetResourceLoaderDelegate/setLicenseProcessingDelegate:</TokenIdentifier>
+			<Abstract type="html">Sets the license processing delegate</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)userInfo withCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Declaration>+ (void)setLicenseProcessingDelegate:(id&lt;VirtuosoLicenseProcessingDelegate&gt; _Nonnull)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">The userInfo dictionary provided by the remote push notice</Abstract>
-				</Parameter><Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Whether Virtuoso handled the push notice</Abstract></ReturnValue>
-			<Anchor>//api/name/processRemotePushNotice:withCompletionHandler:</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processFetchWithCompletionHandler:</TokenIdentifier>
-			<Abstract type="html">Handles background fetch</Abstract>
-			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
-			
-			<Declaration>+ (void)processFetchWithCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>completionHandler</Name>
-					<Abstract type="html">The handler callback provided by the iOS 7 UIApplicationDelegate remote push method</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">The license processing delegate</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/processFetchWithCompletionHandler:</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processRemotePushNotice:</TokenIdentifier>
-			<Abstract type="html">Handles remote push notices</Abstract>
-			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
-			
-			<Declaration>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)userInfo</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">The userInfo dictionary provided by the remote push notice</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Whether Virtuoso handled the push notice</Abstract></ReturnValue>
-			<Anchor>//api/name/processRemotePushNotice:</Anchor>
+			<Anchor>//api/name/setLicenseProcessingDelegate:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

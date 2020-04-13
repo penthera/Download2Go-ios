@@ -1,67 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDM_ManifestType.html">
+	<File path="Protocols/VirtuosoPrepareUrlDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDM_ManifestType</TokenIdentifier>
-			<Abstract type="html">@typedef kVDM_ManifestType</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPrepareUrlDelegate</TokenIdentifier>
+			<Abstract type="html">This delegate defines the methods that can be implemented
+to allow modification of Asset URL&apos;s before downloading.
+
+This is an advanced feature which is entirely optional.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
 			
 			<NodeRef refid="50"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeMaster</TokenIdentifier>
-            <Abstract type="html">The master manifest</Abstract>
-            <Declaration>hlsManifestTypeMaster</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSubManifestURL:manifestType:forAsset:</TokenIdentifier>
+			<Abstract type="html">Allows modification of the sub-manifest Url prior to download.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)prepareSubManifestURL:(NSString *_Nonnull)url manifestType:(kVDM_ManifestType)manifestType forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestType</Name>
+					<Abstract type="html">Type of sub-manifest for this URL.</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareSubManifestURL:manifestType:forAsset:</Anchor>
             <NodeRef refid="50"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeBitrate</TokenIdentifier>
-            <Abstract type="html">A sub-manifest defining a video rendition</Abstract>
-            <Declaration>hlsManifestTypeBitrate</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSegmentURL:forAsset:</TokenIdentifier>
+			<Abstract type="html">Allows modification of the Segment Url prior to download.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)prepareSegmentURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareSegmentURL:forAsset:</Anchor>
             <NodeRef refid="50"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeAudio</TokenIdentifier>
-            <Abstract type="html">A sub-manifest defining an audio track</Abstract>
-            <Declaration>hlsManifestTypeAudio</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareEncryptionKeyURL:forAsset:</TokenIdentifier>
+			<Abstract type="html">Allows modification of the video encryption key URL prior to download.</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)prepareEncryptionKeyURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareEncryptionKeyURL:forAsset:</Anchor>
             <NodeRef refid="50"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeCC</TokenIdentifier>
-            <Abstract type="html">A sub-manifest defining a closed caption track</Abstract>
-            <Declaration>hlsManifestTypeCC</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="50"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/hlsManifestTypeIFRAME</TokenIdentifier>
-            <Abstract type="html">A sub-manifest defining I-Frames</Abstract>
-            <Declaration>hlsManifestTypeIFRAME</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="50"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

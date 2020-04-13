@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoAdsProvider.html">
+	<File path="Classes/VirtuosoAdsClientProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsProvider</TokenIdentifier>
-			<Abstract type="html">@header VirtuosoAdsProvider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsClientProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,62 +13,187 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/serverAdsProvider</TokenIdentifier>
-			<Abstract type="html">BETA Feature. Class convienence method to create a server-side Ads Provider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/setType:</TokenIdentifier>
+			<Abstract type="html">Type of client Ad</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoAdsProvider *_Nonnull)serverAdsProvider</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ClientAdProvider type</Declaration>
 			
-			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider object.</Abstract></ReturnValue>
-			<Anchor>//api/name/serverAdsProvider</Anchor>
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/disableAds</TokenIdentifier>
-			<Abstract type="html">BETA Feature. Class convienence method to create a default Ads Provider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/type</TokenIdentifier>
+			<Abstract type="html">Type of client Ad</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoAdsProvider *_Nonnull)disableAds</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ClientAdProvider type</Declaration>
 			
-			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider object.</Abstract></ReturnValue>
-			<Anchor>//api/name/disableAds</Anchor>
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setRequireAds:</TokenIdentifier>
-			<Abstract type="html">BETA Feature. True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsClientProvider/type</TokenIdentifier>
+			<Abstract type="html">Type of client Ad</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) ClientAdProvider type</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/requireAds</TokenIdentifier>
-			<Abstract type="html">BETA Feature. True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/setRefreshUrl:</TokenIdentifier>
+			<Abstract type="html">URL for Ads Server</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *refreshUrl</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/refreshUrl</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/requireAds</TokenIdentifier>
-			<Abstract type="html">BETA Feature. True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/refreshUrl</TokenIdentifier>
+			<Abstract type="html">URL for Ads Server</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *refreshUrl</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/refreshUrl</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsClientProvider/refreshUrl</TokenIdentifier>
+			<Abstract type="html">URL for Ads Server</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *refreshUrl</Declaration>
+			
+			
+			<Anchor>//api/name/refreshUrl</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsClientProvider/GoogleAdsProvider:</TokenIdentifier>
+			<Abstract type="html">Creates a Google Client Ads Provider</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype _Nullable)GoogleAdsProvider:(NSString *_Nonnull)refreshUrl</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>refreshUrl</Name>
+					<Abstract type="html">Url to use to retrieve Client Ads VAST/VMAP.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of VirtuosoAdsClientProvider</Abstract></ReturnValue>
+			<Anchor>//api/name/GoogleAdsProvider:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsClientProvider/FreewheelAdsProvider:</TokenIdentifier>
+			<Abstract type="html">Creates a Freewheel Client Ads Provider</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype _Nullable)FreewheelAdsProvider:(NSString *_Nonnull)refreshUrl</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>refreshUrl</Name>
+					<Abstract type="html">Url to use to retrieve Client Ads VAST/VMAP.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of VirtuosoAdsClientProvider</Abstract></ReturnValue>
+			<Anchor>//api/name/FreewheelAdsProvider:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/initWithType:refreshUrl:</TokenIdentifier>
+			<Abstract type="html">Create instance of Client-Side Ads Provider.</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithType:(ClientAdProvider)type refreshUrl:(NSString *_Nonnull)refreshUrl</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">ClientAdProvider type indicating type of client ads provider.</Abstract>
+				</Parameter><Parameter>
+					<Name>refreshUrl</Name>
+					<Abstract type="html">Url to use to retrieve Client Ads VAST/VMAP.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithType:refreshUrl:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/refreshAds:error:</TokenIdentifier>
+			<Abstract type="html">Refresh Client Side Ads content</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)refreshAds:(VirtuosoAsset *_Nonnull)asset error:(NSError *_Nullable *_Nullable)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">Asset to refresh Ads for</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Receives any NSError* encountered during Ads refresh</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True indicates success.</Abstract></ReturnValue>
+			<Anchor>//api/name/refreshAds:error:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/playbackAdsUrl:</TokenIdentifier>
+			<Abstract type="html">Returns the Ads Playback URL that should be used during Ads Playback.</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)playbackAdsUrl:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">Asset to refresh Ads for</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Url to use to retrieve Client Ads VAST/VMAP.</Abstract></ReturnValue>
+			<Anchor>//api/name/playbackAdsUrl:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/prepareTrackingUrl:url:</TokenIdentifier>
+			<Abstract type="html">Allows Provider to update the Tracking URL with any appropriate information before posting.
+
+@description This callback is invoked when Ads Tracking URL&apos;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)asset url:(NSString *_Nonnull)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">Asset reporting an Ads tracking event.</Abstract>
+				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">Tracking url that will be reported.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Updated url. Returning nil will result in using the original, unchanged url.</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareTrackingUrl:url:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

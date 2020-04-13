@@ -54,6 +54,18 @@
 
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/backplaneLoggingEnabled">backplaneLoggingEnabled</option>
+		
+		<option value="//api/name/enable">enable</option>
+		
+		<option value="//api/name/notificationQueue">notificationQueue</option>
+		
+		<option value="//api/name/proxyLoggingEnabled">proxyLoggingEnabled</option>
+		
+	</optgroup>
+	
 
 	
 	<optgroup label="Class Methods">
@@ -64,13 +76,15 @@
 		
 		<option value="//api/name/addDebugEvent:atLevel:">+ addDebugEvent:atLevel:</option>
 		
+		<option value="//api/name/addDebugEvent:atLevel:force:">+ addDebugEvent:atLevel:force:</option>
+		
 		<option value="//api/name/addDelegate:">+ addDelegate:</option>
 		
 		<option value="//api/name/delegates">+ delegates</option>
 		
 		<option value="//api/name/enableLogsToFile:">+ enableLogsToFile:</option>
 		
-		<option value="//api/name/isLoggingEnabledForEvent:">+ isLoggingEnabledForEvent:</option>
+		<option value="//api/name/eventTypeToString:">+ eventTypeToString:</option>
 		
 		<option value="//api/name/isLoggingToFile">+ isLoggingToFile</option>
 		
@@ -87,10 +101,6 @@
 		<option value="//api/name/removeDelegate:">+ removeDelegate:</option>
 		
 		<option value="//api/name/setLogLevel:">+ setLogLevel:</option>
-		
-		<option value="//api/name/setLoggingEnabled:forEvent:">+ setLoggingEnabled:forEvent:</option>
-		
-		<option value="//api/name/setLoggingEnabledForAllEvents:">+ setLoggingEnabledForAllEvents:</option>
 		
 	</optgroup>
 	
@@ -140,11 +150,283 @@ Only the static methods provided with this interface should be used.</p></div>
 						<a title="Tasks" name="tasks"></a>
 						
 
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/enable" title="enable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enable">&nbsp;&nbsp;enable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class property to globally enable / disable Virtuoso logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, class) Boolean enable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Global Logging enable switch.
+Examples:
+VirtuosoLogger.enable = true;  // enables logging
+VirtuosoLogger.enable = false; // disables logging</p>
+
+<p>Default is true
+This setting does not persist across App restarts.
+Recommend setting in AppDelegate as early as possible if disable is required.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/backplaneLoggingEnabled" title="backplaneLoggingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/backplaneLoggingEnabled">&nbsp;&nbsp;backplaneLoggingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class property to globally <a href="#//api/name/enable">enable</a> / disable Backplane logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, class) Boolean backplaneLoggingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Global Backplane logging
+Examples:
+VirtuosoLogger.backplaneLoggingEnabled = true;  // enables logging
+VirtuosoLogger.backplaneLoggingEnabled = false; // disables logging</p>
+
+<p>Default is true
+This setting persist&rsquo;s across App restarts.
+Recommend setting in AppDelegate as early as possible if disable is required.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/proxyLoggingEnabled" title="proxyLoggingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/proxyLoggingEnabled">&nbsp;&nbsp;proxyLoggingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class property to globally <a href="#//api/name/enable">enable</a> / disable Proxy logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, class) Boolean proxyLoggingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Global Proxy logging
+Examples:
+VirtuosoLogger.proxyLoggingEnabled = true;  // enables logging
+VirtuosoLogger.proxyLoggingEnabled = false; // disables logging</p>
+
+<p>Default is true
+This setting persist&rsquo;s across App restarts.
+Recommend setting in AppDelegate as early as possible if disable is required.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/notificationQueue" title="notificationQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notificationQueue">&nbsp;&nbsp;notificationQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Queue used to post Logger delegate notifications. Default is MainThread.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, class) NSOperationQueue *notificationQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you need Notifications on a different thread from the default (MainThread), set
+this class property with the NSOperationQueue you want to receive Logger delegate notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
 						<a title="Startup And Configuration" name="task_Startup And Configuration"></a>
 						<h2 class="task-title">Startup And Configuration</h2>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/eventTypeToString:" title="eventTypeToString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/eventTypeToString:">+&nbsp;eventTypeToString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns English localized string for the <a href="../Constants/kVL_LogEvent.html">kVL_LogEvent</a> enum value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)eventTypeToString:(kVL_LogEvent)<em>event</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p><a href="../Constants/kVL_LogEvent.html">kVL_LogEvent</a> enum value</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns English localized string for the <a href="../Constants/kVL_LogEvent.html">kVL_LogEvent</a> enum value</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/enableLogsToFile:" title="enableLogsToFile:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/enableLogsToFile:">+&nbsp;enableLogsToFile:</a></code>
 </h3>
@@ -171,7 +453,7 @@ Only the static methods provided with this interface should be used.</p></div>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>enable</code></th>
-						<td><p>Whether to enable file-based logging</p></td>
+						<td><p>Whether to <a href="#//api/name/enable">enable</a> file-based logging</p></td>
 					</tr>
 				
 				</table>
@@ -361,190 +643,6 @@ log level and lower.</p>
 						</div>
 						
 
-						<a title="Event Log Filtering" name="task_Event Log Filtering"></a>
-						<h2 class="task-title">Event Log Filtering</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/setLoggingEnabledForAllEvents:" title="setLoggingEnabledForAllEvents:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setLoggingEnabledForAllEvents:">+&nbsp;setLoggingEnabledForAllEvents:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets all Virtuoso events as enabled</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)setLoggingEnabledForAllEvents:(Boolean)<em>enabled</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enabled</code></th>
-						<td><p>Whether to enable all Backplane-tracked log events</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Virtuoso sends a variety of events to the Backplane for tracking.
-This method allows you to enable (or disable) all event logging with a single call.
-By default, all event logging is disabled.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setLoggingEnabled:forEvent:" title="setLoggingEnabled:forEvent:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setLoggingEnabled:forEvent:">+&nbsp;setLoggingEnabled:forEvent:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Enables/disables logging for a specific event</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)setLoggingEnabled:(Boolean)<em>enabled</em> forEvent:(kVL_LogEvent)<em>event</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enabled</code></th>
-						<td><p>Whether to enable logging for this event</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>event</code></th>
-						<td><p>The event</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/isLoggingEnabledForEvent:" title="isLoggingEnabledForEvent:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isLoggingEnabledForEvent:">+&nbsp;isLoggingEnabledForEvent:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Whether a particular Backplane-tracked event is enabled</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (Boolean)isLoggingEnabledForEvent:(kVL_LogEvent)<em>event</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>event</code></th>
-						<td><p>The event</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Returns whether a particular Backplane-tracked event is enabled</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
 						<a title="Manually Generated Events" name="task_Manually Generated Events"></a>
 						<h2 class="task-title">Manually Generated Events</h2>
 
@@ -698,6 +796,76 @@ By default, all event logging is disabled.</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>level</code></th>
 						<td><p>The log level this event is associated with</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso does not post these events to the Backplane.
+However, Virtuoso will show them on the console if verbose console is enabled.
+Virtuoso will write them to the log file, if file logging is enabled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDebugEvent:atLevel:force:" title="addDebugEvent:atLevel:force:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDebugEvent:atLevel:force:">+&nbsp;addDebugEvent:atLevel:force:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a debug event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addDebugEvent:(nonnull NSString *)<em>eventData</em> atLevel:(kVL_LoggingLevel)<em>level</em> force:(Boolean)<em>force</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventData</code></th>
+						<td><p>A string containing arbitrary debug data for logging</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>The log level this event is associated with</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>force</code></th>
+						<td><p>Log even when logging is disabled</p></td>
 					</tr>
 				
 				</table>
@@ -1162,7 +1330,7 @@ Note that a &ldquo;pause&rdquo; event is equivalent to a stop event followed by 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-01-31</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-04-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

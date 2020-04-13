@@ -157,18 +157,20 @@ typedef void(^DeviceUpdateResultBlock)(Boolean success,  NSError* _Nullable  err
 @property (nonatomic,readonly) Boolean   isThisDevice;
 
 /*!
- *  @abstract Unregisters this device from the Backplane.
+ *  @abstract Unregisters the device's from the Backplane.
  *
  *  @discussion Removes the device record from the Backplane. Removes all downloaded assets from Device.
  *  If you wish to use this device again, you must call startup in VirtuosoDownloadEngine.
+ *  This call is async, will return once the process is started. If you want to know when the device has been
+ *  removed provide the DeviceUpdateResultBlock callback and it will be called on the queue assocated
+ *  with [VirtuosoDownloadEngine notificationQueue] which defaults to MainThread, once the device has been unregistered.
  *
  *  @param onComplete A callback block indicating the result of the update
  *
- *  @warning You can only unregister the current device, as opposed to other devices for the same userID.
- *           Attempts to unregister other devices will have no effect.
  */
 - (void) unregisterOnComplete:(nullable DeviceUpdateResultBlock)onComplete;
 
 @end
 
 #endif
+

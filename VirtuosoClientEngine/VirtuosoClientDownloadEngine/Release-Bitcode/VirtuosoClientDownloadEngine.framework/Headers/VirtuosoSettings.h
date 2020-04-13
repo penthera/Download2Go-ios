@@ -19,7 +19,7 @@
 
 #import <Foundation/Foundation.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
-
+#import <VirtuosoClientDownloadEngine/VirtuosoSettingsBase.h>
 /*!
  *  @abstract An encapsulation for all Virtuoso SDK configuration settings.
  *
@@ -30,7 +30,7 @@
  *            The VirtuosoSettings is a singleton and should only be accessed via the
  *           provided instance method.
  */
-@interface VirtuosoSettings : NSObject
+@interface VirtuosoSettings : VirtuosoSettingsBase
 
 /**---------------------------------------------------------------------------------------
  * @name Utility
@@ -161,6 +161,15 @@
  *              for HLS video content. This improves fast-forward and rewind experience during playback.
  */
 @property (nonatomic, assign) Boolean iframeSupportEnabled;
+
+/*!
+ *  @abstract If YES, Virtuoso will block duplicate asset creation. Defaults to YES.
+ *
+ *  @discussion Duplicate assets are assets with the same assetID property value. This check is performed
+ *              when VirtuosoAssetConfig is created. If this value is YES, and an asset already exists with
+ *              this assetID, VirtuosoAssetConfig initializer will return nil.
+ */
+@property (nonatomic, assign) Boolean blockDuplicateAssetCreation;
 
 /*!
  *  @abstract Amount of time, in seconds, between when Virtuoso finishes downloading an asset

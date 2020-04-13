@@ -1,35 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_PlayerErrorCode.html">
+	<File path="Protocols/VirtuosoPlayerViewDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_PlayerErrorCode</TokenIdentifier>
-			<Abstract type="html">Errors issued from VirtuosoAVPlayer and associated classes.  Will be reported via the AVPlayer
-error property when the status property changes to AVPlayerStatusFailed.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayerViewDelegate</TokenIdentifier>
+			<Abstract type="html">If you are using VirtuosoPlayerView directly, then you will need to configure
+a delegate to handle playback events.  If you are using VirtuosoPlayerViewController,
+then the delegate calls are handled internally.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
             
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAVPlayer</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<NodeRef refid="48"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayerErrorAssetTypeNotSupported</TokenIdentifier>
-            <Abstract type="html">VirtuosoAVPlayer supports playback of MP4, HLS, and MPEG-DASH assets.  FairPlay and Widevine DRM is
-        directly supported.  Integration with other DRM systems is possible, but may require additional integration. 
-        Attempts to play any other asset type will result in this error. </Abstract>
-            <Declaration>kVDE_PlayerErrorAssetTypeNotSupported</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerFinishedPlayback:</TokenIdentifier>
+			<Abstract type="html">Called when the player has reached the end of the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)playerFinishedPlayback:(nonnull VirtuosoPlayerView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The VirtuosoPlayerView object that finished playing</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/playerFinishedPlayback:</Anchor>
             <NodeRef refid="48"/>
-        </Token>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerDoneButtonClicked:</TokenIdentifier>
+			<Abstract type="html">Called when the user taps the done button.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)playerDoneButtonClicked:(nonnull VirtuosoPlayerView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">The VirtuosoPlayerView object requesting to finish</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/playerDoneButtonClicked:</Anchor>
+            <NodeRef refid="48"/>
+		</Token>
+		
         
         
 	</File>

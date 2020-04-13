@@ -1,68 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_ErrorCode.html">
+	<File path="Protocols/VirtuosoLoggerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ErrorCode</TokenIdentifier>
-			<Abstract type="html">Errors or warnings encountered by Virtuoso. Included in the NSError object sent
-via NSNotificationCenter when issues are reported.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLoggerDelegate</TokenIdentifier>
+			<Abstract type="html">For those who wish to use their own logging system or report metrics to
+non-Virtuoso locations/trackers. Virtuoso will send all log events to the registered
+delegate if the VirtuosoLogger would have otherwise processed them.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
 			
 			<NodeRef refid="46"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneURLError</TokenIdentifier>
-            <Abstract type="html">The supplied Backplane URL contains an invalid format</Abstract>
-            <Declaration>kVDE_BackplaneURLError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withData:</TokenIdentifier>
+			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withData:(long long)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The type of event</Abstract>
+				</Parameter><Parameter>
+					<Name>fileID</Name>
+					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>bearer</Name>
+					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
+the network state.</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A numeric value semantically unique to the specific event.  Will be 0 when not required.
+Example: For the download-paused event, contains total bytes downloaded so far for this asset.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withData:</Anchor>
             <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneNotReachableError</TokenIdentifier>
-            <Abstract type="html">Virtuoso was unable to reach the Backplane</Abstract>
-            <Declaration>kVDE_BackplaneNotReachableError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withStringData:</TokenIdentifier>
+			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withStringData:(nullable NSString *)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The type of event</Abstract>
+				</Parameter><Parameter>
+					<Name>fileID</Name>
+					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>bearer</Name>
+					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
+the network state.</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A string value semantically unique to the specific event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withStringData:</Anchor>
             <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileMoveToFinalPathError</TokenIdentifier>
-            <Abstract type="html">Virtuoso was unable to move the downloaded asset to the final destination</Abstract>
-            <Declaration>kVDE_FileMoveToFinalPathError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoCustomEventOccurred:</TokenIdentifier>
+			<Abstract type="html">Reports on a custom event not tracked by the standard event list.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">An NSDictionary containing the logged event data</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoCustomEventOccurred:</Anchor>
             <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnexpectedFileSizeWarning</TokenIdentifier>
-            <Abstract type="html">The observed final file size doesn&apos;t match the expected file size</Abstract>
-            <Declaration>kVDE_UnexpectedFileSizeWarning</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoDebugEventOccurred:atLevel:</TokenIdentifier>
+			<Abstract type="html">Reports debug data.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoDebugEventOccurred:(nonnull NSString *)data atLevel:(kVL_LoggingLevel)level</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A string containing the debug event data</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">The severity level of the log item</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoDebugEventOccurred:atLevel:</Anchor>
             <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnserializableUserInfoError</TokenIdentifier>
-            <Abstract type="html">The userInfo dictionary contains objects that cannot be serialized</Abstract>
-            <Declaration>kVDE_UnserializableUserInfoError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoRawEventSave:</TokenIdentifier>
+			<Abstract type="html">Reports raw event being saved</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			
+			<Declaration>- (void)virtuosoRawEventSave:(nonnull NSDictionary *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">Dictionary description of event</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/virtuosoRawEventSave:</Anchor>
             <NodeRef refid="46"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

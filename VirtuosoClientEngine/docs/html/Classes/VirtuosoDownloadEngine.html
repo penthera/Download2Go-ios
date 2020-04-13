@@ -62,6 +62,8 @@
 		
 		<option value="//api/name/backplaneURL">backplaneURL</option>
 		
+		<option value="//api/name/config">config</option>
+		
 		<option value="//api/name/currentlyDownloadingAsset">currentlyDownloadingAsset</option>
 		
 		<option value="//api/name/deviceID">deviceID</option>
@@ -78,6 +80,8 @@
 		
 		<option value="//api/name/enabled">enabled</option>
 		
+		<option value="//api/name/engineStatusInfo">engineStatusInfo</option>
+		
 		<option value="//api/name/externalDeviceID">externalDeviceID</option>
 		
 		<option value="//api/name/key">key</option>
@@ -86,7 +90,11 @@
 		
 		<option value="//api/name/licenseExpiry">licenseExpiry</option>
 		
+		<option value="//api/name/memoryStatusOK">memoryStatusOK</option>
+		
 		<option value="//api/name/networkStatusOK">networkStatusOK</option>
+		
+		<option value="//api/name/notificationQueue">notificationQueue</option>
 		
 		<option value="//api/name/offlineTimedOut">offlineTimedOut</option>
 		
@@ -134,6 +142,14 @@
 		
 		<option value="//api/name/shutdown">- shutdown</option>
 		
+		<option value="//api/name/shutdown:">- shutdown:</option>
+		
+		<option value="//api/name/startup:dispatchQueue:startupCallback:">- startup:dispatchQueue:startupCallback:</option>
+		
+		<option value="//api/name/startup:operationQueue:startupCallback:">- startup:operationQueue:startupCallback:</option>
+		
+		<option value="//api/name/startup:startupCallback:">- startup:startupCallback:</option>
+		
 		<option value="//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">- startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</option>
 		
 		<option value="//api/name/syncWithBackplaneNow:">- syncWithBackplaneNow:</option>
@@ -174,7 +190,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>A singleton object that handles all download activity and monitoring conditions and settings.
 Maintains the download queue, which is a list of <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> objects enqueued for download.
-Receives config values from the Backplane. Monitors device state. Ensures that downloads
+Receives <a href="#//api/name/config">config</a> values from the Backplane. Monitors device state. Ensures that downloads
 only occur consistent with the current configuration.</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this type directly.
 The VirtuosoDownloadEngine is a singleton and should only be accessed via the
 provided <a href="#//api/name/instance">instance</a> method.</p></div>
@@ -306,6 +322,229 @@ for documentation and debugging purposes.</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/startup:startupCallback:" title="startup:startupCallback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startup:startupCallback:">&ndash;&nbsp;startup:startupCallback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke this method once you have the requisite parameters (see <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a>) to start the Virtuoso download engine.
+This method should invoked once, repeated calls will impact performance. The callback will be invoked on MainThread.
+Once callback returns success, you can begin creating assets for downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startup:(VirtuosoEngineConfig *_Nonnull)<em>config</em> startupCallback:(StartupCompleteStatusCallback _Nonnull)<em>startupCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides all needed configuration info needed to start the Engine</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startupCallback</code></th>
+						<td><p>Optional callback that will be invoked when startup completes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets up Virtuoso for use with a Backplane <a href="#//api/name/instance">instance</a> and peforms other initialzation tasks as may be required.
+This method will return immediately and startup will continue asyncronously. Once the engine is <a href="#//api/name/started">started</a>,
+<a href="../Blocks/StartupCompleteStatusCallback.html">StartupCompleteStatusCallback</a> will be called with a parameter <a href="../Constants/kVDE_EngineStartupCode.html">kVDE_EngineStartupCode</a> which indicates
+results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.</p><div class="warning"><p><strong>Warning:</strong> Except as otherwise documented, if you attempt to call other methods before
+this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
+Virtuoso behavior will be undefined. If you attempt to use the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a>
+before starting up, its <a href="#//api/name/instance">instance</a> method will return nil.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startup:operationQueue:startupCallback:" title="startup:operationQueue:startupCallback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startup:operationQueue:startupCallback:">&ndash;&nbsp;startup:operationQueue:startupCallback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke this method once you have the requisite parameters (see <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a>) to start the Virtuoso download engine.
+This method should invoked once, repeated calls will impact performance. Once the callback returns success, you can
+begin creating assets for downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startup:(VirtuosoEngineConfig *_Nonnull)<em>config</em> operationQueue:(NSOperationQueue *_Nullable)<em>operationQueue</em> startupCallback:(StartupCompleteStatusCallback _Nonnull)<em>startupCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides all needed configuration info needed to start the Engine</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>operationQueue</code></th>
+						<td><p>Optional NSOperationQueue that should be used to invoke startupCallback. If nil the callback will happen on [NSOperationQueue mainQueue]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startupCallback</code></th>
+						<td><p>Optional callback that will be invoked when startup completes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets up Virtuoso for use with a Backplane <a href="#//api/name/instance">instance</a> and peforms other initialzation tasks as may be required.
+This method will return immediately and startup will continue asyncronously. Once the engine is <a href="#//api/name/started">started</a>,
+<a href="../Blocks/StartupCompleteStatusCallback.html">StartupCompleteStatusCallback</a> will be called with a parameter <a href="../Constants/kVDE_EngineStartupCode.html">kVDE_EngineStartupCode</a> which indicates
+results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.</p><div class="warning"><p><strong>Warning:</strong> Except as otherwise documented, if you attempt to call other methods before
+this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
+Virtuoso behavior will be undefined. If you attempt to use the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a>
+before starting up, its <a href="#//api/name/instance">instance</a> method will return nil.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startup:dispatchQueue:startupCallback:" title="startup:dispatchQueue:startupCallback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startup:dispatchQueue:startupCallback:">&ndash;&nbsp;startup:dispatchQueue:startupCallback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke this method once you have the requisite parameters (see <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a>) to start the Virtuoso download engine.
+This method should invoked once, repeated calls will impact performance. Once the callback returns success, you can
+begin creating assets for downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startup:(VirtuosoEngineConfig *_Nonnull)<em>config</em> dispatchQueue:(dispatch_queue_t _Nonnull)<em>dispatchQueue</em> startupCallback:(StartupCompleteStatusCallback _Nonnull)<em>startupCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides all needed configuration info needed to start the Engine</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dispatchQueue</code></th>
+						<td><p>DispatchQueue used to invoke startupCallback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startupCallback</code></th>
+						<td><p>Optional callback that will be invoked when startup completes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets up Virtuoso for use with a Backplane <a href="#//api/name/instance">instance</a> and peforms other initialzation tasks as may be required.
+This method will return immediately and startup will continue asyncronously. Once the engine is <a href="#//api/name/started">started</a>,
+<a href="../Blocks/StartupCompleteStatusCallback.html">StartupCompleteStatusCallback</a> will be called with a parameter <a href="../Constants/kVDE_EngineStartupCode.html">kVDE_EngineStartupCode</a> which indicates
+results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.</p><div class="warning"><p><strong>Warning:</strong> Except as otherwise documented, if you attempt to call other methods before
+this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
+Virtuoso behavior will be undefined. If you attempt to use the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a>
+before starting up, its <a href="#//api/name/instance">instance</a> method will return nil.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:" title="startupWithBackplane:user:externalDeviceID:privateKey:publicKey:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">&ndash;&nbsp;startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</a></code>
 </h3>
@@ -317,7 +556,7 @@ for documentation and debugging purposes.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>You must call this method to initialize Virtuoso before you call any other Virtuoso method.</p>
+				<p>Deprecated by startup:callbackQueue:startupCallback:</p>
 			</div>
 			
 		    
@@ -428,12 +667,68 @@ and resets the engine state.  If complex business logic requires that you do not
 when the <a href="#//api/name/user">user</a> logs out (if you want to allow the same <a href="#//api/name/user">user</a> to log back in without losing
 downloads, for <a href="#//api/name/instance">instance</a>), then you would use this method, rather than the device unregister method.</p>
 
+<p>This method is a blocking call, invoke it from a background thread.</p>
+
 <p>After this method has been called, you must call
-<a href="#//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</a> again befor you call any other
-Virtuoso method.</p><div class="warning"><p><strong>Warning:</strong> After calling this method, except as otherwise documented, if you attempt to call other methods
-before calling <a href="#//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</a>, you&rsquo;ll get an
-exception. If you catch and ignore the exceptions, Virtuoso behavior will be undefined. If you
-attempt to use the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a> before starting up, its <a href="#//api/name/instance">instance</a> method will return nil.</p></div>
+startup:(VirtuosoEngineConfig*) again befor you call any other Virtuoso method.</p><div class="warning"><p><strong>Warning:</strong> After calling this method, except as otherwise documented, if you attempt to call other methods
+before calling startup:(VirtuosoEngineConfig*), the results are undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shutdown:" title="shutdown:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shutdown:">&ndash;&nbsp;shutdown:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets Virtuoso without unregistering the device or deleting assets.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)shutdown:(nonnull ShutdownCompleteCallback)<em>callback</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, if a user logs out of the enclosing app, you would call the device unregister
+method for the user&rsquo;s device, which deletes all assets, removes the device from the backplane,
+and resets the engine state.  If complex business logic requires that you do not do these things
+when the user logs out (if you want to allow the same user to log back in without losing
+downloads, for instance), then you would use this method, rather than the device unregister method.</p>
+
+<p>This method is an async call, it will return immediately. Once shutdown has compleed, the callback is invoked
+using the thread queue set for <a href="#//api/name/notificationQueue">[VirtuosoDownloadEngine notificationQueue]</a> which defaults to main thread.</p>
+
+<p>After this method has been called, you must call
+startup:(VirtuosoEngineConfig*) again befor you call any other Virtuoso method.</p><div class="warning"><p><strong>Warning:</strong> After calling this method, except as otherwise documented, if you attempt to call other methods
+before calling startup:(VirtuosoEngineConfig*), the results are undefined.</p></div>
 			</div>
 			
 
@@ -764,6 +1059,47 @@ then pass YES to the parameter.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/config" title="config"></a>
+	<h3 class="method-title"><code><a href="#//api/name/config">&nbsp;&nbsp;config</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instance of <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a> used to config</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) VirtuosoEngineConfig *config</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -806,6 +1142,8 @@ When Virtuoso is disabled, you can change settings and manipulate the download q
 Virtuoso will be blocked and will not download. Virtuoso does not modify this switch, but you
 may do so, if you wish. Once you set a value, that value persists across app restarts.
 Default is YES.</p>
+
+<p>Setting this property is a long running operation and may delay UI updates. Consider using a background thread when setting this property.</p>
 			</div>
 			
 
@@ -1283,6 +1621,53 @@ The array is current as of the last sync with the Backplane.</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/notificationQueue" title="notificationQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notificationQueue">&nbsp;&nbsp;notificationQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Queue used to post Engine <a href="#//api/name/status">status</a> notifications. Default is MainThread.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, class) NSOperationQueue *notificationQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you need Notifications on a different thread from the default (MainThread), set
+this class property with the NSOperationQueue you want to receive Engine notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/assetsInQueue" title="assetsInQueue"></a>
 	<h3 class="method-title"><code><a href="#//api/name/assetsInQueue">&ndash;&nbsp;assetsInQueue</a></code>
 </h3>
@@ -1842,6 +2227,47 @@ efficient to access the asset in the queue by known index or UUID value.</p></di
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/memoryStatusOK" title="memoryStatusOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/memoryStatusOK">&nbsp;&nbsp;memoryStatusOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether out of memory occured</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean memoryStatusOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/queueStatusOK" title="queueStatusOK"></a>
 	<h3 class="method-title"><code><a href="#//api/name/queueStatusOK">&nbsp;&nbsp;queueStatusOK</a></code>
 </h3>
@@ -1964,6 +2390,47 @@ efficient to access the asset in the queue by known index or UUID value.</p></di
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/engineStatusInfo" title="engineStatusInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/engineStatusInfo">&nbsp;&nbsp;engineStatusInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Composite object returning the state of network, disk, queue, account, and authentication.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) VirtuosoEngineStatusInfo *engineStatusInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1979,7 +2446,7 @@ efficient to access the asset in the queue by known index or UUID value.</p></di
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-01-31</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-04-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

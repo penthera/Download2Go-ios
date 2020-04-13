@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVL_BearerType.html">
+	<File path="Constants/PlaylistItemState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVL_BearerType</TokenIdentifier>
-			<Abstract type="html">Type of network the device was on when the log event was created.</Abstract>
-			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PlaylistItemState</TokenIdentifier>
+			<Abstract type="html">Status of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
 			
 			<NodeRef refid="54"/>
@@ -14,41 +14,71 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_BearerWifi</TokenIdentifier>
-            <Abstract type="html">A wifi network</Abstract>
-            <Declaration>kVL_BearerWifi</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Uninitialized</TokenIdentifier>
+            <Abstract type="html">Item initialized</Abstract>
+            <Declaration>PlaylistItemState_Uninitialized</Declaration>
             
-            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
-            
-            <NodeRef refid="54"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_BearerCellular</TokenIdentifier>
-            <Abstract type="html">A cellular network</Abstract>
-            <Declaration>kVL_BearerCellular</Declaration>
-            
-            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_BearerNone</TokenIdentifier>
-            <Abstract type="html">No network detected</Abstract>
-            <Declaration>kVL_BearerNone</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NextItem</TokenIdentifier>
+            <Abstract type="html">Item is next item to be processed</Abstract>
+            <Declaration>PlaylistItemState_NextItem</Declaration>
             
-            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVL_Invalid</TokenIdentifier>
-            <Abstract type="html">Used for events that don&apos;t relate to network state</Abstract>
-            <Declaration>kVL_Invalid</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Created</TokenIdentifier>
+            <Abstract type="html">Item created successfully</Abstract>
+            <Declaration>PlaylistItemState_Created</Declaration>
             
-            <DeclaredIn>VirtuosoLogger.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateInProcess</TokenIdentifier>
+            <Abstract type="html">Item create currently in process</Abstract>
+            <Declaration>PlaylistItemState_CreateInProcess</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateFailed</TokenIdentifier>
+            <Abstract type="html">Item creation failed</Abstract>
+            <Declaration>PlaylistItemState_CreateFailed</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NotFound</TokenIdentifier>
+            <Abstract type="html">Item was not found when delegate was called</Abstract>
+            <Declaration>PlaylistItemState_NotFound</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="54"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_UserDeleted</TokenIdentifier>
+            <Abstract type="html">Item was deleted by user</Abstract>
+            <Declaration>PlaylistItemState_UserDeleted</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="54"/>
         </Token>

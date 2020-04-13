@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -61,8 +59,6 @@
 		<option value="//api/name/processBackgroundSessionWake:completionHandler:">+ processBackgroundSessionWake:completionHandler:</option>
 		
 		<option value="//api/name/processFetchWithCompletionHandler:">+ processFetchWithCompletionHandler:</option>
-		
-		<option value="//api/name/processRemotePushNotice:">+ processRemotePushNotice:</option>
 		
 		<option value="//api/name/processRemotePushNotice:withCompletionHandler:">+ processRemotePushNotice:withCompletionHandler:</option>
 		
@@ -98,21 +94,6 @@
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Virtuoso modules may handle a variety of event types that iOS normally routes to the Application
-Delegate.  These event types may include various kinds of push notices or NSURLSession notices.
-To centralize responsibility and simplify code in the enclosing Application Delegate,
-VirtuosoEventHandler provides a single point of entry for incoming event messages.  The
-VirtuosoEventHandler will route the event within Virtuoso as-needed and will return whether
-or not the event was handled.  If the event was handled, you have no further responsibility.
-If not, then Virtuoso took no action with it, and it is your responsibility to parse the
-iOS-provided event data and take action.</p>
-					</div>
-					
-					
 
 					
 					
@@ -121,8 +102,8 @@ iOS-provided event data and take action.</p>
 						
 
 						<a title="iOS Event Handling Methods" name="task_iOS Event Handling Methods"></a>
-						<h2 class="task-title">iOS Event Handling Methods</h2>
-
+						
+<h2 class="task-title">iOS Event Handling Methods</h2>
 						<div class="task-list">
 							<div class="section-method">
 	<a name="//api/name/processBackgroundSessionWake:completionHandler:" title="processBackgroundSessionWake:completionHandler:"></a>
@@ -215,7 +196,7 @@ If this method returns NO, then the wake wasn&rsquo;t intended for Virtuoso; you
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)<em>userInfo</em> withCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)<em>userInfo</em> withCompletionHandler:(nullable void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -340,83 +321,6 @@ how to properly implement this method.</p></div>
 </div>
 						</div>
 						
-
-						<a title="Mac Event Handling Methods" name="task_Mac Event Handling Methods"></a>
-						<h2 class="task-title">Mac Event Handling Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/processRemotePushNotice:" title="processRemotePushNotice:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/processRemotePushNotice:">+&nbsp;processRemotePushNotice:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Handles remote push notices</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)<em>userInfo</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>userInfo</code></th>
-						<td><p>The userInfo dictionary provided by the remote push notice</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Whether Virtuoso handled the push notice</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The Backplane sends push notices to instruct Virtuoso to perform certain actions:
-delete an asset, enqueue an asset, etc. The Backplane sends these notices to Virtuoso by
-way of the enclosing app.
-Whenever the enclosing app receives a remote notice via any of the standard app delegate methods,
-it must call this method first, to let Virtuoso have a crack at it. If this method returns YES,
-that means Virtuoso handled the notice. If this method returns NO, then Virtuoso did not
-handle the push notice, and the enclosing app should handle it.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoEventHandler.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
 					</div>
 					
 					
@@ -429,7 +333,7 @@ handle the push notice, and the enclosing app should handle it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-01-31</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-04-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

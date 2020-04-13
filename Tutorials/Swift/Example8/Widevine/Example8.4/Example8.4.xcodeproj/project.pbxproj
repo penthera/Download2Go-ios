@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D702F50A23EDCCD600AD2DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F50923EDCCD600AD2DBB /* AppDelegate.swift */; };
+		D702F50E23EDCCD600AD2DBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F50D23EDCCD600AD2DBB /* ViewController.swift */; };
+		D702F51123EDCCD600AD2DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D702F50F23EDCCD600AD2DBB /* Main.storyboard */; };
+		D702F51323EDCCD700AD2DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D702F51223EDCCD700AD2DBB /* Assets.xcassets */; };
+		D702F51623EDCCD700AD2DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D702F51423EDCCD700AD2DBB /* LaunchScreen.storyboard */; };
+		D702F52923EDCD7600AD2DBB /* WidevineLicenseProcessingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F52423EDCD7600AD2DBB /* WidevineLicenseProcessingDelegate.swift */; };
+		D702F52B23EDCD7600AD2DBB /* WidevinePlayDrmSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F52623EDCD7600AD2DBB /* WidevinePlayDrmSetup.swift */; };
+		D702F52C23EDCD7600AD2DBB /* DemoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F52823EDCD7600AD2DBB /* DemoPlayerViewController.swift */; };
+		D757E71823EDDC00000BC907 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757E71423EDDBA2000BC907 /* VirtuosoClientDownloadEngine.framework */; };
+		D757E71923EDDC00000BC907 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D757E71423EDDBA2000BC907 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D757E71E23EDDD4B000BC907 /* widevine_cdm_sdk_release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D757E71C23EDDD45000BC907 /* widevine_cdm_sdk_release.framework */; };
+		D757E71F23EDDD4B000BC907 /* widevine_cdm_sdk_release.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D757E71C23EDDD45000BC907 /* widevine_cdm_sdk_release.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D702F52123EDCD6800AD2DBB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D757E71923EDDC00000BC907 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				D757E71F23EDDD4B000BC907 /* widevine_cdm_sdk_release.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D702F50623EDCCD600AD2DBB /* Example8.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example8.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D702F50923EDCCD600AD2DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D702F50D23EDCCD600AD2DBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D702F51023EDCCD600AD2DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D702F51223EDCCD700AD2DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D702F51523EDCCD700AD2DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D702F51723EDCCD700AD2DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D702F52223EDCD7600AD2DBB /* Example8.4-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Example8.4-Bridging-Header.h"; sourceTree = "<group>"; };
+		D702F52423EDCD7600AD2DBB /* WidevineLicenseProcessingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidevineLicenseProcessingDelegate.swift; sourceTree = "<group>"; };
+		D702F52623EDCD7600AD2DBB /* WidevinePlayDrmSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidevinePlayDrmSetup.swift; sourceTree = "<group>"; };
+		D702F52823EDCD7600AD2DBB /* DemoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPlayerViewController.swift; sourceTree = "<group>"; };
+		D757E71423EDDBA2000BC907 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = ../../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.framework; sourceTree = "<group>"; };
+		D757E71C23EDDD45000BC907 /* widevine_cdm_sdk_release.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = widevine_cdm_sdk_release.framework; path = ../../../../../ThirdParty/Widevine/release/widevine_cdm_sdk_release.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D702F50323EDCCD600AD2DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D757E71823EDDC00000BC907 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				D757E71E23EDDD4B000BC907 /* widevine_cdm_sdk_release.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D702F4FD23EDCCD600AD2DBB = {
+			isa = PBXGroup;
+			children = (
+				D757E71C23EDDD45000BC907 /* widevine_cdm_sdk_release.framework */,
+				D757E71423EDDBA2000BC907 /* VirtuosoClientDownloadEngine.framework */,
+				D702F50823EDCCD600AD2DBB /* Example8.4 */,
+				D702F50723EDCCD600AD2DBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D702F50723EDCCD600AD2DBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D702F50623EDCCD600AD2DBB /* Example8.4.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D702F50823EDCCD600AD2DBB /* Example8.4 */ = {
+			isa = PBXGroup;
+			children = (
+				D702F52323EDCD7600AD2DBB /* DRM */,
+				D702F52223EDCD7600AD2DBB /* Example8.4-Bridging-Header.h */,
+				D702F52723EDCD7600AD2DBB /* Player */,
+				D702F50923EDCCD600AD2DBB /* AppDelegate.swift */,
+				D702F50D23EDCCD600AD2DBB /* ViewController.swift */,
+				D702F50F23EDCCD600AD2DBB /* Main.storyboard */,
+				D702F51223EDCCD700AD2DBB /* Assets.xcassets */,
+				D702F51423EDCCD700AD2DBB /* LaunchScreen.storyboard */,
+				D702F51723EDCCD700AD2DBB /* Info.plist */,
+			);
+			path = Example8.4;
+			sourceTree = "<group>";
+		};
+		D702F52323EDCD7600AD2DBB /* DRM */ = {
+			isa = PBXGroup;
+			children = (
+				D702F52423EDCD7600AD2DBB /* WidevineLicenseProcessingDelegate.swift */,
+				D702F52623EDCD7600AD2DBB /* WidevinePlayDrmSetup.swift */,
+			);
+			path = DRM;
+			sourceTree = "<group>";
+		};
+		D702F52723EDCD7600AD2DBB /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				D702F52823EDCD7600AD2DBB /* DemoPlayerViewController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D702F50523EDCCD600AD2DBB /* Example8.4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D702F51A23EDCCD700AD2DBB /* Build configuration list for PBXNativeTarget "Example8.4" */;
+			buildPhases = (
+				D702F50223EDCCD600AD2DBB /* Sources */,
+				D702F50323EDCCD600AD2DBB /* Frameworks */,
+				D702F50423EDCCD600AD2DBB /* Resources */,
+				D702F52123EDCD6800AD2DBB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Example8.4;
+			productName = Example8.4;
+			productReference = D702F50623EDCCD600AD2DBB /* Example8.4.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D702F4FE23EDCCD600AD2DBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Penthera;
+				TargetAttributes = {
+					D702F50523EDCCD600AD2DBB = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = D702F50123EDCCD600AD2DBB /* Build configuration list for PBXProject "Example8.4" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D702F4FD23EDCCD600AD2DBB;
+			productRefGroup = D702F50723EDCCD600AD2DBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D702F50523EDCCD600AD2DBB /* Example8.4 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D702F50423EDCCD600AD2DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D702F51623EDCCD700AD2DBB /* LaunchScreen.storyboard in Resources */,
+				D702F51323EDCCD700AD2DBB /* Assets.xcassets in Resources */,
+				D702F51123EDCCD600AD2DBB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D702F50223EDCCD600AD2DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D702F50E23EDCCD600AD2DBB /* ViewController.swift in Sources */,
+				D702F52B23EDCD7600AD2DBB /* WidevinePlayDrmSetup.swift in Sources */,
+				D702F52923EDCD7600AD2DBB /* WidevineLicenseProcessingDelegate.swift in Sources */,
+				D702F52C23EDCD7600AD2DBB /* DemoPlayerViewController.swift in Sources */,
+				D702F50A23EDCCD600AD2DBB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D702F50F23EDCCD600AD2DBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D702F51023EDCCD600AD2DBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D702F51423EDCCD700AD2DBB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D702F51523EDCCD700AD2DBB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D702F51823EDCCD700AD2DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D702F51923EDCCD700AD2DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D702F51B23EDCCD700AD2DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5M4866SC8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					../../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release,
+					../../../../../ThirdParty/Widevine/release,
+				);
+				INFOPLIST_FILE = Example8.4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.penthera.Example8-4";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example8.4/Example8.4-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D702F51C23EDCCD700AD2DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5M4866SC8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					../../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release,
+					../../../../../ThirdParty/Widevine/release,
+				);
+				INFOPLIST_FILE = Example8.4/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.penthera.Example8-4";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example8.4/Example8.4-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D702F50123EDCCD600AD2DBB /* Build configuration list for PBXProject "Example8.4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D702F51823EDCCD700AD2DBB /* Debug */,
+				D702F51923EDCCD700AD2DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D702F51A23EDCCD700AD2DBB /* Build configuration list for PBXNativeTarget "Example8.4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D702F51B23EDCCD700AD2DBB /* Debug */,
+				D702F51C23EDCCD700AD2DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D702F4FE23EDCCD600AD2DBB /* Project object */;
+}

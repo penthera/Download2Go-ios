@@ -45,12 +45,13 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  *  @abstract An object to call to reuest asset-specific drm configuration details during licensing.
  *
- *  @warning A proper CastLabsDrmConfigDelegate MUST be configured and the delegate MUST provide all values
- *           from the CastLabsDrmConfig class when called or licensing will fail.
+ *  @warning A proper BuyDRMConfigDelegate MUST be configured and the delegate MUST provide all values
+ *           from the BuyDRMConfig class when called or licensing will fail.
  *
  *  @param delegate The delegate to call curing licensing requests.
  */
 + (void)setDrmConfigDelegate:(id<VirtuosoDrmConfigDelegate>)delegate;
+
 @end
 
 NS_ASSUME_NONNULL_END

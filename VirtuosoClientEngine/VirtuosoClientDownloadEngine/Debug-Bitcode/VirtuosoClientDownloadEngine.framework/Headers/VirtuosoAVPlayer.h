@@ -45,7 +45,7 @@
 @property (nonatomic, strong, nullable) VirtuosoAsset* asset;
 
 /*!
- *  @abstract The "time to first frame" from the last playback session.
+ *  @abstract The "time to first frame" from the last playback session
  */
 @property (nonatomic, readonly) NSTimeInterval timeToFirstFrame;
 
