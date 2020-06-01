@@ -14,10 +14,9 @@ class HelloWorld: UIViewController, VirtuosoDownloadEngineNotificationsDelegate
     // IMPORTANT:
     // The following three values must be initialzied, please contact support@penthera.com to obtain these keys
     // ---------------------------------------------------------------------------------------------------------
-    let backplaneUrl = "https://qa.penthera.com"                                        // <-- change this
-    let publicKey = "c9adba5e6ceeed7d7a5bfc9ac24197971bbb4b2c34813dd5c674061a961a899e"  // <-- change this
-    let privateKey = "41cc269275e04dcb4f2527b0af6e0ea11d227319fa743e4364255d07d7ed2830" // <-- change this
-    
+    let backplaneUrl = "replace_with_your_backplane_url"
+    let publicKey = "replace_with_your_public_key"
+    let privateKey = "replace_with_your_private_key"
     //
     // MARK: Instance data
     //
