@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsClientProvider</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Ads provider for Client-Side ads</Abstract>
 			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
             
 			
@@ -85,11 +85,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsClientProvider/GoogleAdsProvider:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsClientProvider/GoogleAdsProviderWithRefreshUrl:</TokenIdentifier>
 			<Abstract type="html">Creates a Google Client Ads Provider</Abstract>
 			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype _Nullable)GoogleAdsProvider:(NSString *_Nonnull)refreshUrl</Declaration>
+			<Declaration>+ (instancetype _Nullable)GoogleAdsProviderWithRefreshUrl:(NSString *_Nonnull)refreshUrl</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>refreshUrl</Name>
@@ -97,16 +97,16 @@
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Instance of VirtuosoAdsClientProvider</Abstract></ReturnValue>
-			<Anchor>//api/name/GoogleAdsProvider:</Anchor>
+			<Anchor>//api/name/GoogleAdsProviderWithRefreshUrl:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsClientProvider/FreewheelAdsProvider:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsClientProvider/FreewheelAdsProviderWithRefreshUrl:</TokenIdentifier>
 			<Abstract type="html">Creates a Freewheel Client Ads Provider</Abstract>
 			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype _Nullable)FreewheelAdsProvider:(NSString *_Nonnull)refreshUrl</Declaration>
+			<Declaration>+ (instancetype _Nullable)FreewheelAdsProviderWithRefreshUrl:(NSString *_Nonnull)refreshUrl</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>refreshUrl</Name>
@@ -114,7 +114,7 @@
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Instance of VirtuosoAdsClientProvider</Abstract></ReturnValue>
-			<Anchor>//api/name/FreewheelAdsProvider:</Anchor>
+			<Anchor>//api/name/FreewheelAdsProviderWithRefreshUrl:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
@@ -177,9 +177,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsClientProvider/prepareTrackingUrl:url:</TokenIdentifier>
-			<Abstract type="html">Allows Provider to update the Tracking URL with any appropriate information before posting.
-
-@description This callback is invoked when Ads Tracking URL&apos;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</Abstract>
+			<Abstract type="html">Allows Provider to update the Tracking URL with any appropriate information before posting.</Abstract>
 			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
 			
 			<Declaration>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)asset url:(NSString *_Nonnull)url</Declaration>

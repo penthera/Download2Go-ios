@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoClientAdsPlaybackProvider.html">
+	<File path="Classes/VirtuosoBackplaneNotificationsManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoClientAdsPlaybackProvider</TokenIdentifier>
-			<Abstract type="html">Process client side ads for Playback.</Abstract>
-			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoBackplaneNotificationsManager</TokenIdentifier>
+			<Abstract type="html">Listens to Backplane notications.</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,67 +13,111 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/setAsset:</TokenIdentifier>
-			<Abstract type="html">Asset to process client ads for.</Abstract>
-			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoBackplaneNotificationsManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoBackplaneNotificationsDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/asset</TokenIdentifier>
-			<Abstract type="html">Asset to process client ads for.</Abstract>
-			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoBackplaneNotificationsManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoBackplaneNotificationsDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientAdsPlaybackProvider/asset</TokenIdentifier>
-			<Abstract type="html">Asset to process client ads for.</Abstract>
-			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoBackplaneNotificationsManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoBackplaneNotificationsDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/initWithAsset:</TokenIdentifier>
-			<Abstract type="html">Asset to process client ads for.</Abstract>
-			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoBackplaneNotificationsManager/setQueue:</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoBackplaneNotificationsManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoBackplaneNotificationsManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoBackplaneNotificationsManager/initWithDelegate:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoBackplaneNotificationsDelegate&gt; _Nonnull)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">asset for which client ads exist</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">instance of this object. nil on failure to create which will only happen if the asset is invalid.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithAsset:</Anchor>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdsPlaybackProvider/process</TokenIdentifier>
-			<Abstract type="html">Begins processing of client ads. The returned array contains client ads.</Abstract>
-			<DeclaredIn>VirtuosoClientAdsPlaybackProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoBackplaneNotificationsManager/initWithDelegate:queue:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>- (NSMutableArray&lt;VirtuosoClientAdInfo*&gt; *)process</Declaration>
-			
-			<ReturnValue><Abstract type="html">Mutable array of VirtuosoClientAdInfo for the ads. A mutable array is provided so that the caller can pop ads off the array as they are played.</Abstract></ReturnValue>
-			<Anchor>//api/name/process</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoBackplaneNotificationsDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:queue:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

@@ -1,97 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVAV_ErrorCode.html">
+	<File path="Protocols/VirtuosoPlayer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVAV_ErrorCode</TokenIdentifier>
-			<Abstract type="html">Resource loader error codes</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayer</TokenIdentifier>
+			<Abstract type="html">Defines the minimum API required for basic playback of segmented (HLS, HSS, DASH, etc.) video</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
             
 			
 			<NodeRef refid="55"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_NoCertificate</TokenIdentifier>
-            <Abstract type="html">Error generated when no FairPlay certificate is available</Abstract>
-            <Declaration>kVAV_NoCertificate</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_ExpiredWhileOffline</TokenIdentifier>
-            <Abstract type="html">Error generated when the FairPlay license expires while the device is offline</Abstract>
-            <Declaration>kVAV_ExpiredWhileOffline</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithDelegate</TokenIdentifier>
-            <Abstract type="html">The resource loading delegate must be configured with delegate prior to use.</Abstract>
-            <Declaration>kVAV_NotConfiguredWithDelegate</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/contentURL</TokenIdentifier>
+			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
             <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithAsset</TokenIdentifier>
-            <Abstract type="html">The resource loading delegate must be configured with a VirtuosoAsset prior to use</Abstract>
-            <Declaration>kVAV_NotConfiguredWithAsset</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithDrmConfig</TokenIdentifier>
-            <Abstract type="html">The resoruce loader delegate must be configured with an instance of VirtuosoDrmConfig</Abstract>
-            <Declaration>kVAV_NotConfiguredWithDrmConfig</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_DrmConfigInvalidValues</TokenIdentifier>
-            <Abstract type="html">The VirtuosoDrmConfig returned invalid configuration values.</Abstract>
-            <Declaration>kVAV_DrmConfigInvalidValues</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
+			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
             <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_InvalidSPCValue</TokenIdentifier>
-            <Abstract type="html">Generated nil SPC</Abstract>
-            <Declaration>kVAV_InvalidSPCValue</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
-            <NodeRef refid="55"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVAV_InvalidAssetIDValue</TokenIdentifier>
-            <Abstract type="html">Could not find assetID in SDK data</Abstract>
-            <Declaration>kVAV_InvalidAssetIDValue</Declaration>
-            
-            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
-            
-            <NodeRef refid="55"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

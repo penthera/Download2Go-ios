@@ -9,8 +9,8 @@
 # Specifications for the local installation of the VituosoClientDownloadEngine with Bitcode
 
 Pod::Spec.new do |s|
-  s.name             = 'VirtuosoClientDownloadEngine'
-  s.version          = '4.0'
+  s.name             = 'VirtuosoClientDownloadEngineBitcode'
+  s.version          = '4.00'
   s.summary          = 'A best-of-breed download and offline viewing solution for video.'
   s.homepage         = 'http://penthera.com'
   s.license          = { :type => 'Custom', :file => 'LICENSE' }

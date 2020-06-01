@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoLicenseDelegateHelper.html">
+	<File path="Classes/VirtuosoEventHandler.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoLicenseDelegateHelper</TokenIdentifier>
-			<Abstract type="html">Implments a general purpose delegate for VirtuosoLicenseManagerDelegate.</Abstract>
-			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoEventHandler</TokenIdentifier>
+			<Abstract type="html">Handles processing of various events including pushes, background wakes from downloading, etc.</Abstract>
+			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,43 +13,59 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoLicenseDelegateHelper/addLicense:forAssetID:</TokenIdentifier>
-			<Abstract type="html">Adds VirtuosoLicenseConfiguration for the specified AssetID.
-
-config Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license
-assetID Identifies the asset to which this License applies.</Abstract>
-			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processBackgroundSessionWake:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Handles processing of background download session notices</Abstract>
+			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
 			
-			<Declaration>- (Boolean)addLicense:(VirtuosoLicenseConfiguration *)config forAssetID:(NSString *)assetID</Declaration>
-			
-			<ReturnValue><Abstract type="html">True if successful. False indicates one of the required parameters was invalid.</Abstract></ReturnValue>
-			<Anchor>//api/name/addLicense:forAssetID:</Anchor>
+			<Declaration>+ (Boolean)processBackgroundSessionWake:(nonnull NSString *)identifier completionHandler:(nonnull void ( ^ ) ( void ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">The background session identifier the wake is for</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The handler callback provided by the iOS7+ UIApplicationDelegate background session method</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Whether Virtuoso handled the session wake</Abstract></ReturnValue>
+			<Anchor>//api/name/processBackgroundSessionWake:completionHandler:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoLicenseDelegateHelper/addLicense:</TokenIdentifier>
-			<Abstract type="html">Adds VirtuosoLicenseConfiguration for use with any asset that does not have a specific instance of VirtuosoLicenseConfiguration.
-
-config Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license</Abstract>
-			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processRemotePushNotice:withCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Handles remote push notices</Abstract>
+			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
 			
-			<Declaration>- (Boolean)addLicense:(VirtuosoLicenseConfiguration *)config</Declaration>
-			
-			<ReturnValue><Abstract type="html">True if successful. False indicates one of the required parameters was invalid.</Abstract></ReturnValue>
-			<Anchor>//api/name/addLicense:</Anchor>
+			<Declaration>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)userInfo withCompletionHandler:(nullable void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">The userInfo dictionary provided by the remote push notice</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Whether Virtuoso handled the push notice</Abstract></ReturnValue>
+			<Anchor>//api/name/processRemotePushNotice:withCompletionHandler:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoLicenseDelegateHelper/isConfigured</TokenIdentifier>
-			<Abstract type="html">Verifies internal configuration has been setup.</Abstract>
-			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoEventHandler/processFetchWithCompletionHandler:</TokenIdentifier>
+			<Abstract type="html">Handles background fetch</Abstract>
+			<DeclaredIn>VirtuosoEventHandler.h</DeclaredIn>
 			
-			<Declaration>- (Boolean)isConfigured</Declaration>
+			<Declaration>+ (void)processFetchWithCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The handler callback provided by the iOS 7 UIApplicationDelegate remote push method</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<ReturnValue><Abstract type="html">True if contains valid VirtuosoLicenseConfiguration settings.</Abstract></ReturnValue>
-			<Anchor>//api/name/isConfigured</Anchor>
+			<Anchor>//api/name/processFetchWithCompletionHandler:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

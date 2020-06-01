@@ -13,6 +13,12 @@
 #import "VirtuosoAdsClientProvider.h"
 NS_ASSUME_NONNULL_BEGIN
 
+/*!
+*
+*  @typedef VirtuosoGoogleAdsClientProvider
+*
+*  @abstract Ads provider for Google Client-Side ads
+*/
 @interface VirtuosoGoogleAdsClientProvider : VirtuosoAdsClientProvider
 
 -(instancetype _Nullable)initWithRefreshUrl:(NSString*_Nonnull)refreshUrl;

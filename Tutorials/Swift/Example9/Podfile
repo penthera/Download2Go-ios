@@ -8,7 +8,7 @@ local = true
 bitcode = false
 
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 if !local
   source 'https://github.com/penthera/Cache-and-Carry-specs.git'
@@ -23,7 +23,7 @@ target 'Example9' do
 
   if local
     if bitcode
-      pod 'VirtuosoClientDownloadEngine', :podspec => "../../CocoaPodsConfig/VirtuosoClientDownloadEngineBitcode.podspec"
+      pod 'VirtuosoClientDownloadEngineBitcode', :podspec => "../../CocoaPodsConfig/VirtuosoClientDownloadEngineBitcode.podspec"
     else
       pod 'VirtuosoClientDownloadEngine', :podspec => "../../CocoaPodsConfig/VirtuosoClientDownloadEngine.podspec"
     end
@@ -32,12 +32,12 @@ target 'Example9' do
       # IMPORTANT - Include the most current Penthera SDK
       pod 'VirtuosoClientDownloadEngineBitcode'
       # ALTERNATIVE - Specify a specific version of Penthera SDK
-      # pod 'VirtuosoClientDownloadEngineBitcode', '~> 3.15.13'
+      # pod 'VirtuosoClientDownloadEngineBitcode', '~> 4.00'
     else
       # IMPORTANT - Include the most current Penthera SDK
       pod 'VirtuosoClientDownloadEngine'
       # ALTERNATIVE - Specify a specific version of Penthera SDK
-      # pod 'VirtuosoClientDownloadEngine', '~> 3.15.13'
+      # pod 'VirtuosoClientDownloadEngine', '~> 4.00'
     end
   end
 

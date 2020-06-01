@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVSM_Status.html">
+	<File path="Constants/kVDE_ProxyErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVSM_Status</TokenIdentifier>
-			<Abstract type="html">The kVSM_Status values indicate the current activity status of the Manager.
-
-@constant kVSM_Unknown
-@constant kVSM_Offline
-@constant kVSM_Started
-@constant kVSM_Receiving
-@constant kVSM_Errors</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ProxyErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
+NSNotificationCenter. These codes are included in the NSError that is sent.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="80"/>
@@ -20,53 +15,53 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Unknown</TokenIdentifier>
-            <Abstract type="html">The Manager hasn&apos;t finished starting up yet and status has not yet been determined</Abstract>
-            <Declaration>kVSM_Unknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneAuthorizationTimedOut</TokenIdentifier>
+            <Abstract type="html">For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
+        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. </Abstract>
+            <Declaration>kVDE_BackplaneAuthorizationTimedOut</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Offline</TokenIdentifier>
-            <Abstract type="html">The Manager cannot take any action, as the device is currently offline</Abstract>
-            <Declaration>kVSM_Offline</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="80"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Started</TokenIdentifier>
-            <Abstract type="html">The Manager has successfully authenticated, but hasn&apos;t received any data yet</Abstract>
-            <Declaration>kVSM_Started</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetOutsideViewingWindow</TokenIdentifier>
+            <Abstract type="html">You attempted to play an asset outside its availability window.</Abstract>
+            <Declaration>kVDE_PlayedAssetOutsideViewingWindow</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Receiving</TokenIdentifier>
-            <Abstract type="html">The Manager is operational and receiving content from the Backplane</Abstract>
-            <Declaration>kVSM_Receiving</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="80"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_Errors</TokenIdentifier>
-            <Abstract type="html">Errors occurred while processing subscriptions that prevent the Manager from
-        continuing.  Recoverable errors will be reported, but Manager status will remain
-        at kVSM_Receiving. </Abstract>
-            <Declaration>kVSM_Errors</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetExpired</TokenIdentifier>
+            <Abstract type="html">You attempted to play an expired asset.</Abstract>
+            <Declaration>kVDE_PlayedAssetExpired</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="80"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidAsset</TokenIdentifier>
+            <Abstract type="html">The VirtuosoAsset used to initialize the proxy wasn&apos;t an invalid asset or the asset protection type was not
+        kVDE_AssetProtectionTypePassthrough. </Abstract>
+            <Declaration>kVDE_InvalidAsset</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="80"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_PortInUse</TokenIdentifier>
+            <Abstract type="html">The HTTP server was unable to listen on the selected port</Abstract>
+            <Declaration>kVDE_PortInUse</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="80"/>
         </Token>

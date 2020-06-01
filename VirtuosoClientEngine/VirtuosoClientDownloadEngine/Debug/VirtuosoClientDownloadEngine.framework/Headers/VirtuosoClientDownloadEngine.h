@@ -53,15 +53,17 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 
 #import <VirtuosoClientDownloadEngine/VirtuosoEngineConfig.h>
 
-
 #import <VirtuosoClientDownloadEngine/VirtuosoAdsProvider.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAdsClientProvider.h>
-#import <VirtuosoClientDownloadEngine/VirtuosoGoogleAdsClientProvider.h>
-#import <VirtuosoClientDownloadEngine/VirtuosoFreewheelAdsClientProvider.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientAdsPlaybackProvider.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientAdInfo.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientAdMedia.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientAdTracking.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAdsServerProvider.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoGoogleAdsClientProvider.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoGoogleAdsServerProvider.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoFreewheelAdsClientProvider.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoVerizonAdsServerProvider.h>
 
 #import <VirtuosoClientDownloadEngine/VirtuosoDownloadEngineNotificationsManager.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoBackplaneNotificationsManager.h>

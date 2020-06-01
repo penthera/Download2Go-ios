@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_NetworkStatus.html">
+	<File path="Constants/kVDE_AssetPermissionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_NetworkStatus</TokenIdentifier>
-			<Abstract type="html">Engine-local versions of Reachability status.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetPermissionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetPermissionType</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_NotReachable</TokenIdentifier>
-            <Abstract type="html">The network is not currently reachable</Abstract>
-            <Declaration>kVDE_NotReachable</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionNotRequested</TokenIdentifier>
+            <Abstract type="html">Permissions have not yet been requested for the asset</Abstract>
+            <Declaration>kVDE_AssetPermissionNotRequested</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_ReachableViaWiFi</TokenIdentifier>
-            <Abstract type="html">The network is currently reachable via WiFi</Abstract>
-            <Declaration>kVDE_ReachableViaWiFi</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionGranted</TokenIdentifier>
+            <Abstract type="html">Permission has been granted for the asset to download</Abstract>
+            <Declaration>kVDE_AssetPermissionGranted</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +34,30 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_ReachableViaWWAN</TokenIdentifier>
-            <Abstract type="html">The network is currently reachable via cellular</Abstract>
-            <Declaration>kVDE_ReachableViaWWAN</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAccountMaxReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because the account has reached is maximum limit</Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedAccountMaxReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="67"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedLifetimeLimitReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because the global asset download limit as been reached</Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedLifetimeLimitReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="67"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because too many copies of this asset already exist on
+        devices in this account </Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

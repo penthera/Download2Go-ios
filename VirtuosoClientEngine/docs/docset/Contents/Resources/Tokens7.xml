@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoAdsProvider.html">
+	<File path="Classes/VirtuosoAdsNotificationsManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsProvider</TokenIdentifier>
-			<Abstract type="html">Base class for all AdsProviders</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsNotificationsManager</TokenIdentifier>
+			<Abstract type="html">Listens for Ads related Engine notifications.</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -13,159 +13,170 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/serverAdsProvider</TokenIdentifier>
-			<Abstract type="html">Class convienence method to create a server-side Ads Provider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoAdsProvider *_Nonnull)serverAdsProvider</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoAdsManagerNotificationDelegate&gt; _Nonnull delegate</Declaration>
 			
-			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider object.</Abstract></ReturnValue>
-			<Anchor>//api/name/serverAdsProvider</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setRequireAds:</TokenIdentifier>
-			<Abstract type="html">True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoAdsManagerNotificationDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/requireAds</TokenIdentifier>
-			<Abstract type="html">True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsNotificationsManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoAdsManagerNotificationDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/requireAds</TokenIdentifier>
-			<Abstract type="html">True if Ads are required for this Asset</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/setQueue:</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean requireAds</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
 			
 			
-			<Anchor>//api/name/requireAds</Anchor>
+			<Anchor>//api/name/queue</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/playbackAdsUrl:</TokenIdentifier>
-			<Abstract type="html">Url for Ads Map needed during Playback</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)playbackAdsUrl:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsNotificationsManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/setAssetID:</TokenIdentifier>
+			<Abstract type="html">Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (atomic, copy) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/assetID</TokenIdentifier>
+			<Abstract type="html">Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (atomic, copy) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsNotificationsManager/assetID</TokenIdentifier>
+			<Abstract type="html">Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (atomic, copy) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/initWithDelegate:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoAdsManagerNotificationDelegate&gt; _Nonnull)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">asset for ads playback</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/playbackAdsUrl:</Anchor>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/clientFreewheelAds:</TokenIdentifier>
-			<Abstract type="html">Class convienence method to create a client Freewheel Ads provider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/initWithDelegate:queue:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoAdsProvider *_Nullable)clientFreewheelAds:(NSString *_Nonnull)refreshUrl</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoAdsManagerNotificationDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>refreshUrl</Name>
-					<Abstract type="html">Ads refresh url</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider instance, or nil if failure.</Abstract></ReturnValue>
-			<Anchor>//api/name/clientFreewheelAds:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/clientGoogleAds:</TokenIdentifier>
-			<Abstract type="html">Class convienence method to create a client Google Ads provider</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
-			
-			<Declaration>+ (VirtuosoAdsProvider *_Nullable)clientGoogleAds:(NSString *_Nonnull)refreshUrl</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>refreshUrl</Name>
-					<Abstract type="html">Ads refresh url</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider instance, or nil if failure.</Abstract></ReturnValue>
-			<Anchor>//api/name/clientGoogleAds:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/prepareTrackingUrl:url:</TokenIdentifier>
-			<Abstract type="html">Allows Provider to update the Tracking URL with any appropriate information before posting.
-
-@description This callback is invoked when Ads Tracking URL&apos;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)asset url:(NSString *_Nonnull)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">- Asset reporting an Ads tracking event.</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
 				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">- Tracking url that will be reported.</Abstract>
+					<Name>queue</Name>
+					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Updated url. Returning nil will result in using the original, unchanged url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareTrackingUrl:url:</Anchor>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:queue:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setRefreshIntervalInDays:</TokenIdentifier>
-			<Abstract type="html">Interval in days for when Ads should be refreshed</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/initWithDelegate:queue:assetID:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) NSInteger refreshIntervalInDays</Declaration>
-			
-			
-			<Anchor>//api/name/refreshIntervalInDays</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/refreshIntervalInDays</TokenIdentifier>
-			<Abstract type="html">Interval in days for when Ads should be refreshed</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger refreshIntervalInDays</Declaration>
-			
-			
-			<Anchor>//api/name/refreshIntervalInDays</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/refreshIntervalInDays</TokenIdentifier>
-			<Abstract type="html">Interval in days for when Ads should be refreshed</Abstract>
-			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) NSInteger refreshIntervalInDays</Declaration>
-			
-			
-			<Anchor>//api/name/refreshIntervalInDays</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoAdsManagerNotificationDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue assetID:(NSString *_Nullable)assetID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">Asset ID for the asset to filter on, nil to skip filtering.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:queue:assetID:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

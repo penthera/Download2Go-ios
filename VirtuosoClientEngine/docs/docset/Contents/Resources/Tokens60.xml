@@ -1,57 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_AssetType.html">
+	<File path="Protocols/VirtuosoSubscriptionsManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetType</TokenIdentifier>
-			<Abstract type="html">@typedef kVDE_AssetType</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoSubscriptionsManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate interface for Subscriptions notifications</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="60"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeNonSegmented</TokenIdentifier>
-            <Abstract type="html">A single-file asset (E.G. MP4)</Abstract>
-            <Declaration>kVDE_AssetTypeNonSegmented</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionsManagerDelegate/subscriptionManagerAssetDelete:</TokenIdentifier>
+			<Abstract type="html">Subscription manager has deleted assets.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)subscriptionManagerAssetDelete:(NSArray&lt;NSString*&gt; *_Nonnull)assetIdentifiers</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetIdentifiers</Name>
+					<Abstract type="html">Array of Asset.assetID&apos;s for the assets that have been deleted.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/subscriptionManagerAssetDelete:</Anchor>
             <NodeRef refid="60"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHLS</TokenIdentifier>
-            <Abstract type="html">A HTTP Live Streaming (HLS) asset</Abstract>
-            <Declaration>kVDE_AssetTypeHLS</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionsManagerDelegate/subscriptionManagerAddedAssets:</TokenIdentifier>
+			<Abstract type="html">Subscription manager has created assets.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)subscriptionManagerAddedAssets:(NSArray&lt;VirtuosoAsset*&gt; *_Nonnull)assets</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assets</Name>
+					<Abstract type="html">Array of VirtuosoAsset that have been created</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/subscriptionManagerAddedAssets:</Anchor>
             <NodeRef refid="60"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeDASH</TokenIdentifier>
-            <Abstract type="html">A MPEG-DASH asset</Abstract>
-            <Declaration>kVDE_AssetTypeDASH</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="60"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHSS</TokenIdentifier>
-            <Abstract type="html">DEPRECATED  starting in v4.0, do not use. A HTTP Smooth Streaming (HSS) asset (&lt;b class=&quot;deprecated&quot;&gt;Deprecated:&lt;/b&gt;&lt;span class=&quot;deprecated&quot;&gt; This attribute is deprecated starting v4.0 &lt;/span&gt;)</Abstract>
-            <Declaration>kVDE_AssetTypeHSS</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="60"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

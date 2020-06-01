@@ -42,12 +42,10 @@ typedef NS_ENUM(NSInteger, PlaylistItemState)
 
 
 /*!
- *
- *  @typedef VirtuosoPlaylistItem
- *
- *  @abstract Individual item within a Playlist
- */
-
+*  @abstract Defines a smart-download VirtuosoPlaylistItem
+*
+*  @discussion A VirtuosoPlaylist will contain a collection of VirtuosoPlaylistItem. Each VirtuosoPlaylistItem represents a single VirtuosoAsset that is part of the VirtuosoPlaylist.
+*/
 @interface VirtuosoPlaylistItem : NSObject
 
 /*!
@@ -119,6 +117,11 @@ typedef NS_ENUM(NSInteger, PlaylistItemState)
 
 /*!
  *  @abstract String formatted representation of itemState
+ *
+ *  @discussion Returns a string representation of PlaylistItemState.
+ *
+ *  @param state PlaylistItemState enum for which we will return a string representation.
+ *
  */
 +(NSString*)statusAsString:(PlaylistItemState)state;
 @end

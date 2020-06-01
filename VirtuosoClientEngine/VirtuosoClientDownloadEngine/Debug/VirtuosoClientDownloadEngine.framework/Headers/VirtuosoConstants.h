@@ -194,6 +194,9 @@ typedef NS_ENUM(NSInteger, kVDE_EngineStartupCode)
     /** Virtuoso encountered an internal exception during startup */
     kVDE_EngineStartupInternalException = -6,
     
+    /** Virtuoso encountered an error initializing the CoreData database during startup */
+    kVDE_EngineDataMigrationError = -7,
+    
 
 };
 
@@ -258,7 +261,11 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     kVDE_InvalidParameter = -20,
 
     /** Virtuoso timeout waiting  */
-    kVDE_TimeOutWaiting = -21
+    kVDE_TimeOutWaiting = -21,
+
+    /** Asset was created for FastPlay download only */
+    kVDE_FastPlayDownloadOnly = -22,
+
 
 
 };
@@ -304,6 +311,8 @@ typedef NS_ENUM(NSInteger, kVDE_PlayerErrorCode)
         directly supported.  Integration with other DRM systems is possible, but may require additional integration. 
         Attempts to play any other asset type will result in this error. */
     kVDE_PlayerErrorAssetTypeNotSupported = -10,
+    
+    /** VirtuosoAVPlayer was unable to play the asset */
     kVDE_UnableToPlayAsset = -11,
 };
 
@@ -410,9 +419,8 @@ typedef NS_ENUM(NSInteger, kVDE_AssetType)
     kVDE_AssetTypeDASH = 3,
     
     /** DEPRECATED  starting in v4.0, do not use. A HTTP Smooth Streaming (HSS) asset
-     @deprecated This attribute is deprecated starting v4.0 */
+     This attribute is deprecated starting v4.0 */
     kVDE_AssetTypeHSS = 2,
-    
 
 };
 

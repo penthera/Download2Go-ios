@@ -24,6 +24,9 @@
 
 /*!
  *  @discussion Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.
+  *
+  * @deprecated HSS Asset types deprecated and will be removed in the future.
+ *
  */
 @interface VirtuosoAsset (HSS)
 
@@ -76,6 +79,9 @@
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
  *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
+  *
+  * @deprecated HSS Asset types deprecated and will be removed in the future.
+ *
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
                                 description:(nonnull NSString*)description
@@ -138,6 +144,9 @@
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
  *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
+  *
+  * @deprecated HSS Asset types deprecated and will be removed in the future.
+ *
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
                        description:(nonnull NSString *)description
@@ -209,6 +218,9 @@
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
  *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
+  *
+  * @deprecated HSS Asset types deprecated and will be removed in the future.
+ *
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
                        description:(nonnull NSString *)description
@@ -276,6 +288,8 @@
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
  *  @return A new (empty) VirtuosoAsset object, or nil if there was an error.
+  *
+  * @deprecated HSS Asset types deprecated and will be removed in the future.
  *
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID
@@ -313,6 +327,9 @@
  *  @param maximumAudioBitrate Same as maximumVideoBitrate, but for the audio portion of the stream.
  *
  *  @param completeBlock Called when asset parsing completes. May be nil.
+  *
+  * @deprecated HSS Asset types deprecated and will be removed in the future.
+ *
  */
 - (void)setManifestURL:(nonnull NSString*)manifestUrl
 withMaximumVideoBitrate:(long long)maximumVideoBitrate

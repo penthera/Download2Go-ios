@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @class VirtuosoPlaylistConfig;
 
 /*!
+ *  @typedef VirtuosoPlaylistManagerDelegate
+ *
  *  @abstract This delegate defines the method(s) that must be implemented to support Smart Downloads.
  *            Methods in this delegate are called from a background thread, make sure your code
  *            can properly execute from a Thread other than the thread that created this delegate.
@@ -41,6 +43,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/*!
+*  @abstract VirtuosoPlaylistManager defines the top level object used to create and manage a VirtuosoPlaylist.
+*
+*  @discussion VirtuosoPlaylistManager is used to manage VirtuosoPlaylist's.  Each VirtuosoPlaylist contains a collection of VirtuosoPlaylistItem. VirtuosoPlaylistItem's represents a single VirtuosoAsset that is part of the Playlist.
+*  The VirtuosoPlaylistManager is used to manage creation, updates to, and deletion of Playlists.
+ *
+*/
 @interface VirtuosoPlaylistManager : NSObject
 
 /*!

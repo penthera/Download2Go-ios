@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoDefaultAVAssetResourceLoaderDelegate.html">
+	<File path="Classes/VirtuosoClientAdMedia.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoDefaultAVAssetResourceLoaderDelegate</TokenIdentifier>
-			<Abstract type="html">A convenience subclass that automatically handles basic FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoClientAdMedia</TokenIdentifier>
+			<Abstract type="html">Object describing Ad Media</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -13,37 +13,213 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDefaultAVAssetResourceLoaderDelegate/setChildAVAssetResourceLoaderDelegate:</TokenIdentifier>
-			<Abstract type="html">If you have custom work unrelated to FairPlay DRM, you may need to set a child delegate.  For all calls that the VIrtuoso SDK does not
-directly handle, the call will be handed to the child delegate to service.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/setUrl:</TokenIdentifier>
+			<Abstract type="html">Ad Media URL</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
 			
-			<Declaration>- (void)setChildAVAssetResourceLoaderDelegate:(id&lt;AVAssetResourceLoaderDelegate&gt; _Nullable)subdelegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>subdelegate</Name>
-					<Abstract type="html">A secondary delegate to call for non-FairPlay requests</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *url</Declaration>
 			
-			<Anchor>//api/name/setChildAVAssetResourceLoaderDelegate:</Anchor>
+			
+			<Anchor>//api/name/url</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoDefaultAVAssetResourceLoaderDelegate/setLicenseProcessingDelegate:</TokenIdentifier>
-			<Abstract type="html">Sets the license processing delegate</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/url</TokenIdentifier>
+			<Abstract type="html">Ad Media URL</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
 			
-			<Declaration>+ (void)setLicenseProcessingDelegate:(id&lt;VirtuosoLicenseProcessingDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientAdMedia/url</TokenIdentifier>
+			<Abstract type="html">Ad Media URL</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/setBreakId:</TokenIdentifier>
+			<Abstract type="html">Ad Break</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *breakId</Declaration>
+			
+			
+			<Anchor>//api/name/breakId</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/breakId</TokenIdentifier>
+			<Abstract type="html">Ad Break</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *breakId</Declaration>
+			
+			
+			<Anchor>//api/name/breakId</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientAdMedia/breakId</TokenIdentifier>
+			<Abstract type="html">Ad Break</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *breakId</Declaration>
+			
+			
+			<Anchor>//api/name/breakId</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/setTimeOffset:</TokenIdentifier>
+			<Abstract type="html">Time-offset for ad</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *timeOffset</Declaration>
+			
+			
+			<Anchor>//api/name/timeOffset</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/timeOffset</TokenIdentifier>
+			<Abstract type="html">Time-offset for ad</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *timeOffset</Declaration>
+			
+			
+			<Anchor>//api/name/timeOffset</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientAdMedia/timeOffset</TokenIdentifier>
+			<Abstract type="html">Time-offset for ad</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *timeOffset</Declaration>
+			
+			
+			<Anchor>//api/name/timeOffset</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/setAdInfo:</TokenIdentifier>
+			<Abstract type="html">Ad this Ad Media is assocated with</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, readonly) VirtuosoClientAdInfo *adInfo</Declaration>
+			
+			
+			<Anchor>//api/name/adInfo</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/adInfo</TokenIdentifier>
+			<Abstract type="html">Ad this Ad Media is assocated with</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, readonly) VirtuosoClientAdInfo *adInfo</Declaration>
+			
+			
+			<Anchor>//api/name/adInfo</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoClientAdMedia/adInfo</TokenIdentifier>
+			<Abstract type="html">Ad this Ad Media is assocated with</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, readonly) VirtuosoClientAdInfo *adInfo</Declaration>
+			
+			
+			<Anchor>//api/name/adInfo</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/initWithUrl:breakId:timeOffset:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithUrl:(NSString *)url breakId:(NSString *_Nullable)breakId timeOffset:(NSString *_Nullable)timeOffset</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The license processing delegate</Abstract>
+					<Name>url</Name>
+					<Abstract type="html">URL for the Media</Abstract>
+				</Parameter><Parameter>
+					<Name>breakId</Name>
+					<Abstract type="html">Break details</Abstract>
+				</Parameter><Parameter>
+					<Name>timeOffset</Name>
+					<Abstract type="html">time when the ad should play</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">Instance, nil if failure</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUrl:breakId:timeOffset:</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/isPreroll</TokenIdentifier>
+			<Abstract type="html">True of this Ad is a pre-roll Ad</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
 			
-			<Anchor>//api/name/setLicenseProcessingDelegate:</Anchor>
+			<Declaration>- (Boolean)isPreroll</Declaration>
+			
+			
+			<Anchor>//api/name/isPreroll</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/isPostroll</TokenIdentifier>
+			<Abstract type="html">True of this Ad is a post-roll Ad</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)isPostroll</Declaration>
+			
+			
+			<Anchor>//api/name/isPostroll</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoClientAdMedia/shouldPlayAdNow:duration:</TokenIdentifier>
+			<Abstract type="html">True if this Ad should be played now</Abstract>
+			<DeclaredIn>VirtuosoClientAdMedia.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)shouldPlayAdNow:(NSTimeInterval)current duration:(NSTimeInterval)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>current</Name>
+					<Abstract type="html">current percent complete</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">duration in miliseconds</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if ads should be played</Abstract></ReturnValue>
+			<Anchor>//api/name/shouldPlayAdNow:duration:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

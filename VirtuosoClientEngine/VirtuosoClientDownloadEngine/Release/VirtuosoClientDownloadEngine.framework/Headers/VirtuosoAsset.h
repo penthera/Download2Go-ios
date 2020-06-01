@@ -44,7 +44,6 @@
  */
 typedef void(^AssetQueryCallback)(VirtuosoAsset* _Nullable asset, NSError*  _Nullable error);
 
-
 /*!
  *  @typedef AssetAdStatus
  *
@@ -212,24 +211,6 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 + (long long)allowableStorageRemaining;
 
 /**---------------------------------------------------------------------------------------
- * @name Class Properties
- *  ---------------------------------------------------------------------------------------
- */
-
-#pragma mark
-#pragma mark Class Properties
-#pragma mark
-
-/*!
- *  @abstract If set, this delegate is called as described in VirtuosoPrepareUrlDelegate.
- *
- *  @discussion This is an advanced feature. It allows the Customer to modify the various download
- *              Url's before downloading. See VirtuosoPrepareUrlDelegate for more information.
- */
-@property (nonatomic, weak, class)id <VirtuosoPrepareUrlDelegate> _Nullable prepareUrlDelegate;
-
-
-/**---------------------------------------------------------------------------------------
  * @name Creation
  *  ---------------------------------------------------------------------------------------
  */
@@ -239,33 +220,10 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 #pragma mark
 
 /*!
- *  @abstract If set, this block is called whenever an asset is about to request data from
- *            a network resource.
- *
- *  @discussion Certain types of DRM or CDN may require that additional parameters be placed on URLs
- *              beyond what is contained in the asset manifest.  In some cases, those security tokens
- *              are dynamically generated and short lived.  If set, whenever Virtuoso is about to access
- *              a network resource, you can return additional URL parameters to include in the request
- *              in this block and they will be appended to the network URL.  If you do not need to use
- *              additional URL parameters, do not set this block.
- *
- *              In order to maximize performance, Virtuoso will store your returned response in memory.
- *              Therefore, this block may not be called for every network request, but it will be called
- *              as-needed.
- *
- *              The dictionary you return should include the URL parameter names as the keys and the
- *              parameter value as the values.
- *
- *  @param block A callback block used to retrieve additional URL parameters when downloading asset data.
- */
-+ (void)setRequestAdditionalParametersBlock:(nullable RequestAdditionalParametersBlock)block __attribute__((deprecated("method replaced by  prepareUrlDelegate property.")));
-
-
-/*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
  *
- *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
- *              This is a blocking call, avoid using this method from MainThread
+ *  @discussion Creates instance of VirtuosoAsset using the parameters in VirtuosoAssetConfig.
+ *  The asset will be created and (config.autoAddToQueue = TRUE) then automatically added to the download queue.
   *
  *  @param config Instance of VirtuosoAssetConfig with properties set appropriately to download the Asset.
  *
@@ -276,8 +234,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 /*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
  *
- *  @discussion One of several constructors for creating an in-memory VirtuosoAsset object.
- *              This is a blocking call, avoid using this method from MainThread
+ *  @discussion Creates instance of VirtuosoAsset using the parameters in VirtuosoAssetConfig and provide callbacks.
  *
  *  @param config Instance of VirtuosoAssetConfig with properties set appropriately to download the Asset.
  *
@@ -290,6 +247,15 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 + (nullable VirtuosoAsset*)assetWithConfig:(nonnull VirtuosoAssetConfig*)config
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
                               onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+
+/**---------------------------------------------------------------------------------------
+ * @name Creation (Deprecated)
+ *  ---------------------------------------------------------------------------------------
+ */
+
+#pragma mark
+#pragma mark Creation (Deprecated)
+#pragma mark
 
 /*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
@@ -329,7 +295,10 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
  *  @return A new VirtuosoAsset object, or nil if an error occurred.
+  *
+  *  @deprecated This method has been deprecated and replaced by VirtuosoAsset method assetWithConfig.
  */
+
 + (nullable VirtuosoAsset*)assetWithRemoteURL:(nonnull NSString*)assetURL
                                       assetID:(nonnull NSString*)assetID
                                   description:(nonnull NSString*)description
@@ -339,7 +308,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
                                enableFastPlay:(Boolean)enableFastPlay
                                      userInfo:(nullable NSDictionary*)userInfo
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("method replaced by  assetWithConfig.")));
 
 /*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
@@ -385,6 +354,8 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
  *  @return A new VirtuosoAsset object, or nil if an error occurred.
+ *
+ *  @deprecated This method has been deprecated and replaced by VirtuosoAsset method assetWithConfig.
  */
 + (nullable VirtuosoAsset*)assetWithRemoteURL:(nonnull NSString*)assetURL
                                       assetID:(nonnull NSString*)assetID
@@ -397,7 +368,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
                                enableFastPlay:(Boolean)enableFastPlay
                                      userInfo:(nullable NSDictionary*)userInfo
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("method replaced by  assetWithConfig.")));
 
 /*!
  *  @abstract Creates a new in-memory VirtuosoAsset object.
@@ -447,6 +418,8 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @param completeBlock Called when asset parsing completes. May be nil.
  *
  *  @return A new VirtuosoAsset object, or nil if an error occurred.
+ *
+ *  @deprecated This method has been deprecated and replaced by VirtuosoAsset method assetWithConfig.
  */
 + (nullable VirtuosoAsset*)assetWithRemoteURL:(nonnull NSString*)assetURL
                                       assetID:(nonnull NSString*)assetID
@@ -461,7 +434,16 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
                                   adsProvider:(nullable VirtuosoAdsProvider*)adsProvider
                                      userInfo:(nullable NSDictionary*)userInfo
                            onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock
-                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock;
+                              onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock __attribute__((deprecated("method replaced by  assetWithConfig.")));
+
+/**---------------------------------------------------------------------------------------
+ * @name Ancillaries
+ *  ---------------------------------------------------------------------------------------
+ */
+
+#pragma mark
+#pragma mark Ancillaries
+#pragma mark
 
 /*!
  *  @abstract Adds an ancillary file to the download for this asset
@@ -496,7 +478,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 /*!
  *  @abstract Retrieves all of the ancillary files assocated awith this asset
  *
- *  @description This is a BLOCKING call that will query CoreData for all ancillary files.
+ *  @discussion This is a BLOCKING call that will query CoreData for all ancillary files.
  *               See findAllCompleted for a non-blocking call.
  *
  *  @return Array of VirtuosoAncillaryFile objects. Empty if none.
@@ -506,7 +488,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 /*!
  *  @abstract Retrieves ancillary files with the specified tag for this asset
  *
- *  @description This is a BLOCKING call that will query CoreData for all ancillary files.
+ *  @discussion This is a BLOCKING call that will query CoreData for all ancillary files.
  *               See findAllCompleted for a non-blocking call.
  *
  *  @param tag The tag to filter on
@@ -518,7 +500,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 /*!
  *  @abstract Retrieves ancillaries that have completed downloading.
  *
- *  @description This is a non-blocking call that will be faster than findAllAncillaries
+ *  @discussion This is a non-blocking call that will be faster than findAllAncillaries
  *               and it will only return Ancillaries that have downloaded.
  *
  *  @return Array of VirtuosoAncillaryFile objects. Empty if none.
@@ -528,7 +510,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 /*!
  *  @abstract Retrieves ancillaries that have completed downloading with the specified tag.
  *
- *  @description This is a non-blocking call that will be faster than findAllAncillariesWithTag
+ *  @discussion This is a non-blocking call that will be faster than findAllAncillariesWithTag
  *               and it will only return Ancillaries that have downloaded with the specified tag.
  *
  *  @param tag The tag to filter on
@@ -832,7 +814,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 *
 *  @param asset Asset to play
 *
-*  @param callback Callback with a Boolean parameter indicating whether the Asset is Playable.
+*  @param callback Callback with a Boolean parameter indicating whether the Asset is Playable. See IsPlayableCompleteBlock.
 *
 */
 +(void)isPlayable:(VirtuosoAsset* _Nonnull)asset callback:(IsPlayableCompleteBlock _Nonnull)callback;
@@ -1205,9 +1187,39 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  */
 @property (nonatomic,readonly) kVDE_AssetProtectionType assetProtectionType;
 
+/*!
+ *  @abstract Asset was created for fast-play download.
+ */
+@property (nonatomic,readonly) Boolean fastPlayEnabled;
+
+/*!
+ *  @abstract Asset was created for offline playback.
+ */
+@property (nonatomic,readonly) Boolean offlinePlayEnabled;
+
+/*!
+ *  @abstract Asset is ready for fastplay.
+ *
+ *  @discussion In order for an asset to successfully FastPlay, a small amount of the asset must be pre-downloaded.
+ *              Avoid checks on this property from MainThread as this property must make blocking calls to CoreData.
+ */
+@property (nonatomic,readonly) Boolean fastPlayReady;
+
+
+/**---------------------------------------------------------------------------------------
+* @name Ads Support
+*  ---------------------------------------------------------------------------------------
+*/
 #pragma mark
 #pragma mark Ads Support
 #pragma mark
+
+/*!
+ *  @abstract AdsProvider assocated with the Asset.
+ *
+ */
+@property (nonatomic, strong, readonly)VirtuosoAdsProvider* _Nonnull adsProvider;
+
 
 /*!
  *  @abstract Indicates status of Ads refresh on this Asset.
@@ -1361,20 +1373,6 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 @property (nonatomic,strong,nullable) NSDate* firstPlayDateTime;
 
 /*!
- *  @abstract Whether this asset supports FastPlay
- */
-@property (nonatomic,readonly) Boolean fastPlayEnabled;
-
-/*!
- *  @abstract If this asset is ready to begin FastPlay playback
- *
- *  @discussion In order for an asset to successfully FastPlay, a small amount of the asset must be pre-downloaded.
- *              Until that initial download has completed, playing the asset will behave as if FastPlay was not
- *              enabled.
- */
-@property (nonatomic,readonly) Boolean fastPlayReady;
-
-/*!
  *  @abstract The asset-specific lifetime download limit.
  *
  *  @discussion The Backplane specifies a globally applied lifetime download limit for all assets.  An individual
@@ -1387,17 +1385,52 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 @property (nonatomic,readonly) int assetDownloadLimit;
 
 /*!
- *  @abstract AdsProvider assocated with the Asset.
- *
- */
-@property (nonatomic, strong, readonly)VirtuosoAdsProvider* _Nonnull adsProvider;
-
-/*!
  *  @abstract Whether this asset is currently paused or resumed.
  *
  *  @discussion Updates to this property are applied asynchronously
  */
 @property (nonatomic,assign) Boolean isPaused;
+
+/**---------------------------------------------------------------------------------------
+ * @name Advanced Download Control
+ *  ---------------------------------------------------------------------------------------
+ */
+
+#pragma mark
+#pragma mark Advanced Download Control
+#pragma mark
+
+/*!
+ *  @abstract If set, this delegate is called as described in VirtuosoPrepareUrlDelegate.
+ *
+ *  @discussion This is an advanced feature. It allows the Customer to modify the various download
+ *              Url's before downloading. See VirtuosoPrepareUrlDelegate for more information.
+ */
+@property (nonatomic, weak, class)id <VirtuosoPrepareUrlDelegate> _Nullable prepareUrlDelegate;
+
+/*!
+ *  @abstract If set, this block is called whenever an asset is about to request data from
+ *            a network resource.
+ *
+ *  @discussion Certain types of DRM or CDN may require that additional parameters be placed on URLs
+ *              beyond what is contained in the asset manifest.  In some cases, those security tokens
+ *              are dynamically generated and short lived.  If set, whenever Virtuoso is about to access
+ *              a network resource, you can return additional URL parameters to include in the request
+ *              in this block and they will be appended to the network URL.  If you do not need to use
+ *              additional URL parameters, do not set this block.
+ *
+ *              In order to maximize performance, Virtuoso will store your returned response in memory.
+ *              Therefore, this block may not be called for every network request, but it will be called
+ *              as-needed.
+ *
+ *              The dictionary you return should include the URL parameter names as the keys and the
+ *              parameter value as the values.
+ *
+ *  @param block A callback block used to retrieve additional URL parameters when downloading asset data.
+ */
++ (void)setRequestAdditionalParametersBlock:(nullable RequestAdditionalParametersBlock)block __attribute__((deprecated("method replaced by  prepareUrlDelegate property.")));
+
+
 
 @end
 

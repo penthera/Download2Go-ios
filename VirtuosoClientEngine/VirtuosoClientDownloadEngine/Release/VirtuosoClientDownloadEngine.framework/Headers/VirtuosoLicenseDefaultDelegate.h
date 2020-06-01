@@ -23,8 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
 *  @abstract Adds VirtuosoLicenseConfiguration for the specified AssetID.
 *
-* config Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license
-* assetID Identifies the asset to which this License applies.
+* @param config Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license
+* @param assetID Identifies the asset to which this License applies.
 *
 *  @return True if successful. False indicates one of the required parameters was invalid.
 */
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
 *  @abstract Adds VirtuosoLicenseConfiguration for use with any asset that does not have a specific instance of VirtuosoLicenseConfiguration.
 *
-* config Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license
+* @param config Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license
 *
 *  @return True if successful. False indicates one of the required parameters was invalid.
 */

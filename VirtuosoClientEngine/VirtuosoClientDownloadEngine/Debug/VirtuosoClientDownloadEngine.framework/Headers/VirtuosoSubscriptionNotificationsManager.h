@@ -13,31 +13,69 @@
 
 @class VirtuosoAsset;
 
+/*!
+*  @abstract Delegate interface for Subscriptions notifications
+*/
 @protocol VirtuosoSubscriptionsManagerDelegate <NSObject>
 
 @required
-/*
- *  The Subscription Manager may auto-delete assets that exceed the maximum items per feed.  If you are maintaining your own metadata and
- *  are linking the VirtuosoAsset UUID values to your own metadata, then you should update your bookeeping here.
- */
-// kSubscriptionManagerAssetDeletedNotification
+
+/*!
+*  @abstract Subscription manager has deleted assets.
+ *
+ * @param assetIdentifiers Array of Asset.assetID's for the assets that have been deleted.
+*/
 -(void)subscriptionManagerAssetDelete:(NSArray<NSString*>* _Nonnull)assetIdentifiers;
 
-/*
- *  When the Subscription Manager adds new assets, we need to refresh the views, so the new assets get shown
- */
-// kSubscriptionManagerAssetAddedNotification
+/*!
+*  @abstract Subscription manager has created assets.
+ *
+ * @param assets Array of VirtuosoAsset that have been created
+*/
 -(void)subscriptionManagerAddedAssets:(NSArray<VirtuosoAsset*>* _Nonnull)assets;
 
 @end
 
 
+/*!
+*  @abstract Listens for Subscription related notifications.
+*
+*  @discussion Use this class to monitor Subscription related notitications. Implement the VirtuosoSubscriptionsManagerDelegate and register it using  VirtuosoSubscriptionNotificationsManager to receive Notifications.
+*/
 @interface VirtuosoSubscriptionNotificationsManager : NSObject
 
-@property (nonatomic, strong, readonly)id<VirtuosoSubscriptionsManagerDelegate> _Nonnull delegate;
+
+/*!
+*  @abstract Operation queue upon which the callbacks will happen
+*/
 @property (nonatomic, strong, readonly)NSOperationQueue* _Nonnull queue;
 
+/*!
+*  @abstract Delegate callback
+*/
+@property (nonatomic, strong, readonly)id<VirtuosoSubscriptionsManagerDelegate> _Nonnull delegate;
+
+
+/*!
+*  @abstract Creates an instance
+*
+*  @param delegate Delegate that will be called
+*
+*  @return Instance of this component, nil on failure.
+*
+*/
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoSubscriptionsManagerDelegate> _Nonnull)delegate;
+
+/*!
+*  @abstract Creates an instance
+*
+*  @param delegate Delegate that will be called
+*
+*  @param queue NSOperationQueue the callback will be invoked on.
+*
+*  @return Instance of this component, nil on failure.
+*
+*/
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoSubscriptionsManagerDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue;
 
 @end

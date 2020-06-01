@@ -19,7 +19,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define VLog(level, fmt, ...) [VirtuosoLogger addDebugEvent:[NSString stringWithFormat:(@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] atLevel:level]
+#define VLog(level, fmt, ...) if (VirtuosoLogger.logLevel >= level) [VirtuosoLogger addDebugEvent:[NSString stringWithFormat:(@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] atLevel:level]
 
 #define VXLog(level, fmt, ...) [VirtuosoLogger addDebugEvent:[NSString stringWithFormat:(@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] atLevel:level force:true]
 

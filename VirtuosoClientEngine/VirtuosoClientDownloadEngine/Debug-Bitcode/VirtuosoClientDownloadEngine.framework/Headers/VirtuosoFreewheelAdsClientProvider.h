@@ -14,12 +14,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/*!
+*
+*  @typedef VirtuosoFreewheelAdsClientProvider
+*
+*  @abstract Ads provider for Freewheel Client-Side ads
+*/
 @interface VirtuosoFreewheelAdsClientProvider : VirtuosoAdsClientProvider
 
 -(instancetype _Nullable)initWithRefreshUrl:(NSString*_Nonnull)refreshUrl;
 
 -(NSString*_Nullable)prepareTrackingUrl:(VirtuosoAsset*_Nonnull)asset url:(NSString*_Nonnull)url;
-
 
 @end
 

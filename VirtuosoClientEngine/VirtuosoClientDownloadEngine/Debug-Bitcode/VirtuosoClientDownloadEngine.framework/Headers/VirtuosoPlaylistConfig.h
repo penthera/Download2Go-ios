@@ -21,12 +21,20 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistStatus)
     /** Playlist is actively enabled */
     PlaylistStatus_Active     = 0,
     
+    /** Playlist Asset creation failed */
     PlaylistStatus_AssetCreateFailed,
     
+    /** Playlist Asset creation failed and no more assets exist */
     PlaylistStatus_AssetCreateFailedNoAssetsLeft = 500,
     
 };
 
+
+/*!
+*  @abstract Defines the various confiuration options that can be used to create a VirtuosoPlaylist.
+*
+*  @discussion Create this object and set the various properties to control how the VirtuosoPlaylist will be manged.
+*/
 @interface VirtuosoPlaylistConfig : NSObject
 
 -(instancetype)initWithName:(NSString*)name;

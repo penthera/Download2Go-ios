@@ -1,16 +1,377 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSettingsBase.html">
+	<File path="Classes/VirtuosoPlaylistItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSettingsBase</TokenIdentifier>
-			<Abstract type="html">@header Virtuoso Settings</Abstract>
-			<DeclaredIn>VirtuosoSettingsBase.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylistItem</TokenIdentifier>
+			<Abstract type="html">Defines a smart-download VirtuosoPlaylistItem</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
 			
 			<NodeRef refid="37"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/initWithName:assetID:</TokenIdentifier>
+			<Abstract type="html">Creates an item for a playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>- (_Nullable instancetype)initWithName:(NSString *_Nonnull)name assetID:(NSString *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">Name for the playlist item</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">Asset for the playlist item</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this object</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithName:assetID:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setName:</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/name</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/name</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setAssetID:</TokenIdentifier>
+			<Abstract type="html">AssetID of asset in playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/assetID</TokenIdentifier>
+			<Abstract type="html">AssetID of asset in playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/assetID</TokenIdentifier>
+			<Abstract type="html">AssetID of asset in playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSString *assetID</Declaration>
+			
+			
+			<Anchor>//api/name/assetID</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setDownloadComplete:</TokenIdentifier>
+			<Abstract type="html">date download was completed on this item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *downloadComplete</Declaration>
+			
+			
+			<Anchor>//api/name/downloadComplete</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/downloadComplete</TokenIdentifier>
+			<Abstract type="html">date download was completed on this item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *downloadComplete</Declaration>
+			
+			
+			<Anchor>//api/name/downloadComplete</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/downloadComplete</TokenIdentifier>
+			<Abstract type="html">date download was completed on this item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *downloadComplete</Declaration>
+			
+			
+			<Anchor>//api/name/downloadComplete</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setIndex:</TokenIdentifier>
+			<Abstract type="html">ordinal index of this item in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSInteger index</Declaration>
+			
+			
+			<Anchor>//api/name/index</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/index</TokenIdentifier>
+			<Abstract type="html">ordinal index of this item in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSInteger index</Declaration>
+			
+			
+			<Anchor>//api/name/index</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/index</TokenIdentifier>
+			<Abstract type="html">ordinal index of this item in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) NSInteger index</Declaration>
+			
+			
+			<Anchor>//api/name/index</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setPending:</TokenIdentifier>
+			<Abstract type="html">True indicates this item is pending processing for next Smartdownload</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) Boolean pending</Declaration>
+			
+			
+			<Anchor>//api/name/pending</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/pending</TokenIdentifier>
+			<Abstract type="html">True indicates this item is pending processing for next Smartdownload</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) Boolean pending</Declaration>
+			
+			
+			<Anchor>//api/name/pending</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/pending</TokenIdentifier>
+			<Abstract type="html">True indicates this item is pending processing for next Smartdownload</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) Boolean pending</Declaration>
+			
+			
+			<Anchor>//api/name/pending</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setPendingDate:</TokenIdentifier>
+			<Abstract type="html">date item became pending next smart-download</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *pendingDate</Declaration>
+			
+			
+			<Anchor>//api/name/pendingDate</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/pendingDate</TokenIdentifier>
+			<Abstract type="html">date item became pending next smart-download</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *pendingDate</Declaration>
+			
+			
+			<Anchor>//api/name/pendingDate</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/pendingDate</TokenIdentifier>
+			<Abstract type="html">date item became pending next smart-download</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *pendingDate</Declaration>
+			
+			
+			<Anchor>//api/name/pendingDate</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setPlaybackDate:</TokenIdentifier>
+			<Abstract type="html">date item played</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *playbackDate</Declaration>
+			
+			
+			<Anchor>//api/name/playbackDate</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/playbackDate</TokenIdentifier>
+			<Abstract type="html">date item played</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *playbackDate</Declaration>
+			
+			
+			<Anchor>//api/name/playbackDate</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/playbackDate</TokenIdentifier>
+			<Abstract type="html">date item played</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable, readonly) NSDate *playbackDate</Declaration>
+			
+			
+			<Anchor>//api/name/playbackDate</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setUserDeleted:</TokenIdentifier>
+			<Abstract type="html">True indicates the user deleted this item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) Boolean userDeleted</Declaration>
+			
+			
+			<Anchor>//api/name/userDeleted</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/userDeleted</TokenIdentifier>
+			<Abstract type="html">True indicates the user deleted this item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) Boolean userDeleted</Declaration>
+			
+			
+			<Anchor>//api/name/userDeleted</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/userDeleted</TokenIdentifier>
+			<Abstract type="html">True indicates the user deleted this item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) Boolean userDeleted</Declaration>
+			
+			
+			<Anchor>//api/name/userDeleted</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/setItemState:</TokenIdentifier>
+			<Abstract type="html">Enum indicating state of playlist item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) PlaylistItemState itemState</Declaration>
+			
+			
+			<Anchor>//api/name/itemState</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistItem/itemState</TokenIdentifier>
+			<Abstract type="html">Enum indicating state of playlist item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) PlaylistItemState itemState</Declaration>
+			
+			
+			<Anchor>//api/name/itemState</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistItem/itemState</TokenIdentifier>
+			<Abstract type="html">Enum indicating state of playlist item</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) PlaylistItemState itemState</Declaration>
+			
+			
+			<Anchor>//api/name/itemState</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylistItem/statusAsString:</TokenIdentifier>
+			<Abstract type="html">String formatted representation of itemState</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)statusAsString:(PlaylistItemState)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>state</Name>
+					<Abstract type="html">PlaylistItemState enum for which we will return a string representation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/statusAsString:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
 		
         
         

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_PlaylistStatus.html">
+	<File path="Constants/kVDE_AssetProtectionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_PlaylistStatus</TokenIdentifier>
-			<Abstract type="html">Status of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetProtectionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetProtectionType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="69"/>
@@ -14,31 +14,33 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_Active</TokenIdentifier>
-            <Abstract type="html">Playlist is actively enabled</Abstract>
-            <Declaration>PlaylistStatus_Active</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypePassthrough</TokenIdentifier>
+            <Abstract type="html">The asset is not protected, is protected by an external DRM system, or is protected by some form of
+        native encryption.  This value indicates that no special handling is required for download or playback
+        of this asset, and is the default value. </Abstract>
+            <Declaration>kVDE_AssetProtectionTypePassthrough</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
-            
-            <NodeRef refid="69"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_AssetCreateFailed</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>PlaylistStatus_AssetCreateFailed</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="69"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_AssetCreateFailedNoAssetsLeft</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>PlaylistStatus_AssetCreateFailedNoAssetsLeft</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeFairPlay</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Apple FairPlay DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeFairPlay</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="69"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeWidevine</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Google Widevine DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeWidevine</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="69"/>
         </Token>

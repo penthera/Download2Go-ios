@@ -163,6 +163,13 @@
 @property (nonatomic, assign) Boolean iframeSupportEnabled;
 
 /*!
+ *  @abstract Minumum segments required for FastPlay
+ *
+ *  @discussion Default value is 5 segments, minimum value is 1.
+ */
+@property (nonatomic, assign) NSInteger fastPlayMinimumSegmentCount;
+
+/*!
  *  @abstract If YES, Virtuoso will block duplicate asset creation. Defaults to YES.
  *
  *  @discussion Duplicate assets are assets with the same assetID property value. This check is performed
@@ -249,6 +256,9 @@
  *              For push notifications to work, you must set this value as soon as you get the
  *              app's push token from the OS. If you cannot access the push token (e.g. the user disabled
  *              push notifications for the device), then set this value to nil.
+ *
+ *  @param pushToken The APNS push token.
+ *
  */
 - (void)setDevicePushToken:(NSData* _Nullable)pushToken;
 

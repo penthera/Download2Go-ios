@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoEngineStatusInfo.html">
+	<File path="Classes/VirtuosoDownloadEngineNotificationManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoEngineStatusInfo</TokenIdentifier>
-			<Abstract type="html">A convenience class to define the various possible
-reasons the download engine might be blocked.</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoDownloadEngineNotificationManager</TokenIdentifier>
+			<Abstract type="html">Listens for Download Engine Notifications and invokes the VirtuosoDownloadEngineNotificationsDelegate callbacks.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
@@ -14,218 +13,170 @@ reasons the download engine might be blocked.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/setIsNetworkOK:</TokenIdentifier>
-			<Abstract type="html">Whether current network state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isNetworkOK</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoDownloadEngineNotificationsDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/isNetworkOK</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/isNetworkOK</TokenIdentifier>
-			<Abstract type="html">Whether current network state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isNetworkOK</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoDownloadEngineNotificationsDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/isNetworkOK</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineStatusInfo/isNetworkOK</TokenIdentifier>
-			<Abstract type="html">Whether current network state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngineNotificationManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isNetworkOK</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoDownloadEngineNotificationsDelegate&gt; _Nonnull delegate</Declaration>
 			
 			
-			<Anchor>//api/name/isNetworkOK</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/setIsDiskOK:</TokenIdentifier>
-			<Abstract type="html">Whether disk usage state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/setQueue:</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isDiskOK</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
 			
 			
-			<Anchor>//api/name/isDiskOK</Anchor>
+			<Anchor>//api/name/queue</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/isDiskOK</TokenIdentifier>
-			<Abstract type="html">Whether disk usage state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isDiskOK</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
 			
 			
-			<Anchor>//api/name/isDiskOK</Anchor>
+			<Anchor>//api/name/queue</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineStatusInfo/isDiskOK</TokenIdentifier>
-			<Abstract type="html">Whether disk usage state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngineNotificationManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isDiskOK</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
 			
 			
-			<Anchor>//api/name/isDiskOK</Anchor>
+			<Anchor>//api/name/queue</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/setIsMemoryOK:</TokenIdentifier>
-			<Abstract type="html">Whether out of memory occured</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/setAssetID:</TokenIdentifier>
+			<Abstract type="html">Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isMemoryOK</Declaration>
+			<Declaration>@property (atomic, copy) NSString *assetID</Declaration>
 			
 			
-			<Anchor>//api/name/isMemoryOK</Anchor>
+			<Anchor>//api/name/assetID</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/isMemoryOK</TokenIdentifier>
-			<Abstract type="html">Whether out of memory occured</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/assetID</TokenIdentifier>
+			<Abstract type="html">Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isMemoryOK</Declaration>
+			<Declaration>@property (atomic, copy) NSString *assetID</Declaration>
 			
 			
-			<Anchor>//api/name/isMemoryOK</Anchor>
+			<Anchor>//api/name/assetID</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineStatusInfo/isMemoryOK</TokenIdentifier>
-			<Abstract type="html">Whether out of memory occured</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoDownloadEngineNotificationManager/assetID</TokenIdentifier>
+			<Abstract type="html">Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isMemoryOK</Declaration>
+			<Declaration>@property (atomic, copy) NSString *assetID</Declaration>
 			
 			
-			<Anchor>//api/name/isMemoryOK</Anchor>
+			<Anchor>//api/name/assetID</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/setIsQueueOK:</TokenIdentifier>
-			<Abstract type="html">Whether queue state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/initWithDelegate:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isQueueOK</Declaration>
-			
-			
-			<Anchor>//api/name/isQueueOK</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoDownloadEngineNotificationsDelegate&gt; _Nonnull)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/isQueueOK</TokenIdentifier>
-			<Abstract type="html">Whether queue state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/initWithDelegate:queue:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isQueueOK</Declaration>
-			
-			
-			<Anchor>//api/name/isQueueOK</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoDownloadEngineNotificationsDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:queue:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineStatusInfo/isQueueOK</TokenIdentifier>
-			<Abstract type="html">Whether queue state permits downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoDownloadEngineNotificationManager/initWithDelegate:queue:assetID:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoDownloadEngineNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean isQueueOK</Declaration>
-			
-			
-			<Anchor>//api/name/isQueueOK</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/setIsAccountOK:</TokenIdentifier>
-			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean isAccountOK</Declaration>
-			
-			
-			<Anchor>//api/name/isAccountOK</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/isAccountOK</TokenIdentifier>
-			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean isAccountOK</Declaration>
-			
-			
-			<Anchor>//api/name/isAccountOK</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineStatusInfo/isAccountOK</TokenIdentifier>
-			<Abstract type="html">Whether account-level business rules permit downloading</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean isAccountOK</Declaration>
-			
-			
-			<Anchor>//api/name/isAccountOK</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/setAuthenticationOK:</TokenIdentifier>
-			<Abstract type="html">Whether the Virtuoso SDK license is currently valid</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean authenticationOK</Declaration>
-			
-			
-			<Anchor>//api/name/authenticationOK</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineStatusInfo/authenticationOK</TokenIdentifier>
-			<Abstract type="html">Whether the Virtuoso SDK license is currently valid</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean authenticationOK</Declaration>
-			
-			
-			<Anchor>//api/name/authenticationOK</Anchor>
-            <NodeRef refid="21"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineStatusInfo/authenticationOK</TokenIdentifier>
-			<Abstract type="html">Whether the Virtuoso SDK license is currently valid</Abstract>
-			<DeclaredIn>VirtuosoEngineStatusInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean authenticationOK</Declaration>
-			
-			
-			<Anchor>//api/name/authenticationOK</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoDownloadEngineNotificationsDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue assetID:(NSString *_Nullable)assetID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">Asset ID for the asset to filter on, nil to skip filtering.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:queue:assetID:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		

@@ -12,3 +12,4 @@ For information on the React-Native environment, visit https://facebook.github.i
 
 * Download2GoHelloWorld - minimal example showing download and offline playback
 * Example1_1 - Pause / resume downloading
+* Example10 - FastPlay example

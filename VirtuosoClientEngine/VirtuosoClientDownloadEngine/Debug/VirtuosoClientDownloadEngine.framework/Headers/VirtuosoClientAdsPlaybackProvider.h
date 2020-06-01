@@ -1,5 +1,5 @@
 //
-//  VirtuosoClientAdsPlaybackProvider.h
+//  VirtuosoPlayerViewAdsDelegateProvider.h
 //  VirtuosoClientDownloadEngine
 //
 //  Created by Penthera on 5/29/19.
@@ -12,7 +12,6 @@
 NS_ASSUME_NONNULL_BEGIN
 @class VirtuosoClientAdInfo;
 @class VirtuosoAsset;
-
 
 /*!
  *  @abstract Process client side ads for Playback.

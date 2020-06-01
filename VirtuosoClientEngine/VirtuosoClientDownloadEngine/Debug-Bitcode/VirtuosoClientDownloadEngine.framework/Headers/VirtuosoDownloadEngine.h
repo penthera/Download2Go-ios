@@ -135,7 +135,7 @@ typedef void (^ShutdownCompleteCallback)(void);
  *
  *  @param config Provides all needed configuration info needed to start the Engine
  *
- *  @param operationQueue Optional NSOperationQueue that should be used to invoke startupCallback. If nil the callback will happen on [NSOperationQueue mainQueue]
+ *  @param operationQueue Optional NSOperationQueue that should be used to invoke startupCallback. If nil the callback will happen on MainThread.
  *
  *  @param startupCallback Optional callback that will be invoked when startup completes.
  */
@@ -230,6 +230,8 @@ typedef void (^ShutdownCompleteCallback)(void);
 *
 *  @warning    After calling this method, except as otherwise documented, if you attempt to call other methods
 *              before calling startup:(VirtuosoEngineConfig*), the results are undefined.
+*
+*  @param callback Callback closure that is invoked when shutdown is complete.
 */
 - (void)shutdown:(nonnull ShutdownCompleteCallback)callback;
 /**---------------------------------------------------------------------------------------
@@ -295,6 +297,14 @@ typedef void (^ShutdownCompleteCallback)(void);
 #pragma mark
 #pragma mark Engine Status
 #pragma mark
+
+/*!
+ *  @abstract Queue used to post Engine status notifications. Default is MainThread.
+ *
+ *  @discussion If you need Notifications on a different thread from the default (MainThread), set
+ *              this class property with the NSOperationQueue you want to receive Engine notifications.
+ */
+@property (nonatomic, strong, class)NSOperationQueue* _Nonnull notificationQueue;
 
 /*!
  *  @abstract Virtuoso's global 'enable' state
@@ -391,14 +401,6 @@ typedef void (^ShutdownCompleteCallback)(void);
 #pragma mark
 #pragma mark Queue Management
 #pragma mark
-
-/*!
- *  @abstract Queue used to post Engine status notifications. Default is MainThread.
- *
- *  @discussion If you need Notifications on a different thread from the default (MainThread), set
- *              this class property with the NSOperationQueue you want to receive Engine notifications.
- */
-@property (nonatomic, strong, class)NSOperationQueue* _Nonnull notificationQueue;
 
 /*!
  *  @abstract Returns an ordered array of UUID strings for VirtuosoAsset items in the download queue.

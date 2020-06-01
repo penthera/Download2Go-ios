@@ -72,19 +72,21 @@
 		
 		<option value="//api/name/autoAddToQueue">autoAddToQueue</option>
 		
-		<option value="//api/name/enableFastPlay">enableFastPlay</option>
-		
 		<option value="//api/name/expiryAfterDownload">expiryAfterDownload</option>
 		
 		<option value="//api/name/expiryAfterPlay">expiryAfterPlay</option>
 		
 		<option value="//api/name/expiryDate">expiryDate</option>
 		
+		<option value="//api/name/fastPlayEnabled">fastPlayEnabled</option>
+		
 		<option value="//api/name/includeEncryption">includeEncryption</option>
 		
 		<option value="//api/name/maximumAudioBitrate">maximumAudioBitrate</option>
 		
 		<option value="//api/name/maximumBitrate">maximumBitrate</option>
+		
+		<option value="//api/name/offlinePlayEnabled">offlinePlayEnabled</option>
 		
 		<option value="//api/name/playlists">playlists</option>
 		
@@ -143,15 +145,36 @@ When property <a href="#//api/name/autoAddToQueue">autoAddToQueue</a> when set t
 to the download queue once created. This means you no longer need to provide the callbacks when
 creating the asset and then manually invoking addToQueue.</p>
 
-<p>Default values:
-VirtuosoAssetConfig..<a href="#//api/name/autoAddToQueue">autoAddToQueue</a> = TRUE;
-VirtuosoAssetConfig..<a href="#//api/name/maximumBitrate">maximumBitrate</a> = INT_MAX;
-VirtuosoAssetConfig..<a href="#//api/name/maximumAudioBitrate">maximumAudioBitrate</a> = INT_MAX;
-VirtuosoAssetConfig..protectionType = kVDE_AssetProtectionTypePassthrough;
-VirtuosoAssetConfig.<a href="#//api/name/includeEncryption">includeEncryption</a> = YES;
-VirtuosoAssetConfig.<a href="#//api/name/assetDownloadLimit">assetDownloadLimit</a> = -1;
-VirtuosoAssetConfig.<a href="#//api/name/expiryAfterPlay">expiryAfterPlay</a> = kInvalidExpiryTimeInterval;     // -42.0
-VirtuosoAssetConfig.<a href="#//api/name/expiryAfterDownload">expiryAfterDownload</a> = kInvalidExpiryTimeInterval; // -42.0</p>
+<p>Default values:</p>
+
+<ul>
+<li>VirtuosoAssetConfig..<a href="#//api/name/autoAddToQueue">autoAddToQueue</a> = TRUE;</li>
+<li>VirtuosoAssetConfig..<a href="#//api/name/maximumBitrate">maximumBitrate</a> = INT_MAX;</li>
+<li>VirtuosoAssetConfig..<a href="#//api/name/maximumAudioBitrate">maximumAudioBitrate</a> = INT_MAX;</li>
+<li>VirtuosoAssetConfig..protectionType = kVDE_AssetProtectionTypePassthrough;</li>
+<li>VirtuosoAssetConfig.<a href="#//api/name/includeEncryption">includeEncryption</a> = YES;</li>
+<li>VirtuosoAssetConfig.<a href="#//api/name/assetDownloadLimit">assetDownloadLimit</a> = -1;</li>
+<li>VirtuosoAssetConfig.<a href="#//api/name/expiryAfterPlay">expiryAfterPlay</a> = kInvalidExpiryTimeInterval;     // -42.0</li>
+<li>VirtuosoAssetConfig.<a href="#//api/name/expiryAfterDownload">expiryAfterDownload</a> = kInvalidExpiryTimeInterval; // -42.0</li>
+<li>VirtuosoAssetConfig.<a href="#//api/name/offlinePlayEnabled">offlinePlayEnabled</a> = TRUE;</li>
+</ul>
+
+
+<p>FastPlay quckest download should use the following:</p>
+
+<ul>
+<li>VirtuosoAssetConfig.<a href="#//api/name/fastPlayEnabled">fastPlayEnabled</a> = TRUE;</li>
+<li>VirtuosoAssetConfig.<a href="#//api/name/offlinePlayEnabled">offlinePlayEnabled</a> = FALSE;</li>
+</ul>
+
+
+<p>Download for both FastPlay and Offline playback:</p>
+
+<ul>
+<li>VirtuosoAssetConfig.<a href="#//api/name/fastPlayEnabled">fastPlayEnabled</a> = TRUE;</li>
+<li>VirtuosoAssetConfig.<a href="#//api/name/offlinePlayEnabled">offlinePlayEnabled</a> = TRUE; // Default is TRUE</li>
+</ul>
+
 					</div>
 					
 					
@@ -178,7 +201,7 @@ VirtuosoAssetConfig.<a href="#//api/name/expiryAfterDownload">expiryAfterDownloa
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Name of the download queue to associate with this Asset.</p>
+				<p>Optional Playlists that this asset should be added to.</p>
 			</div>
 			
 		    
@@ -404,7 +427,7 @@ You provided this value when instantiating this asset.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>If YES, then this method will download any encryption keys in manifest.
+				<p>If YES, then the asset will download any encryption keys in manifest.
 Normally, you would pass YES, but this allows for custom behaviors.</p>
 			</div>
 			
@@ -783,8 +806,8 @@ defined value.  This value is provided during creation of the asset and cannot b
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/enableFastPlay" title="enableFastPlay"></a>
-	<h3 class="method-title"><code><a href="#//api/name/enableFastPlay">&nbsp;&nbsp;enableFastPlay</a></code>
+	<a name="//api/name/fastPlayEnabled" title="fastPlayEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fastPlayEnabled">&nbsp;&nbsp;fastPlayEnabled</a></code>
 </h3>
 
 	<div class="method-info">
@@ -794,12 +817,12 @@ defined value.  This value is provided during creation of the asset and cannot b
 			
 			
 			<div class="method-subsection brief-description">
-				<p>If this asset is ready to begin FastPlay playback</p>
+				<p>Prepare download for fastplay playback.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean enableFastPlay</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean fastPlayEnabled</code></div>
 
 		    
 			
@@ -811,9 +834,58 @@ defined value.  This value is provided during creation of the asset and cannot b
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>In order for an asset to successfully FastPlay, a small amount of the asset must be pre-downloaded.
-Until that initial download has completed, playing the asset will behave as if FastPlay was not
-enabled.</p>
+				<p>This option will download the asset for Fastplay playback.
+In addition, quickest download option for fastplay playback can be achieved by setting <a href="#//api/name/offlinePlayEnabled">offlinePlayEnabled</a> = FALSE.
+This reduces the amount of data downloaded and will result in asset become ready for fasatplay playback as quickly as possible.
+Default is disabled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAssetConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/offlinePlayEnabled" title="offlinePlayEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offlinePlayEnabled">&nbsp;&nbsp;offlinePlayEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prepare download for Offline playback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean offlinePlayEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This option will download the asset for Offline playback.
+Preparing for both fastplay and offline playback will take longer than just preparing for fastplay.
+Default is enabled.</p>
 			</div>
 			
 
@@ -842,7 +914,7 @@ enabled.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>If true the asset is automatically added to the download queue.</p>
+				<p>If true the asset is automatically added to the download queue. Default is true.</p>
 			</div>
 			
 		    
@@ -924,7 +996,7 @@ enabled.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>AdsProvider assocated with the Asset.</p>
+				<p>AdsProvider assocated with the Asset if Ads are enabled.</p>
 			</div>
 			
 		    
@@ -1097,7 +1169,7 @@ Dupicate AssetID&rsquo;s are not allowed.</p></td>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-04-13</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-06-01</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

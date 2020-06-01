@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSecureClock.html">
+	<File path="Classes/VirtuosoPlaylist.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSecureClock</TokenIdentifier>
-			<Abstract type="html">A basic secure clock implementation</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylist</TokenIdentifier>
+			<Abstract type="html">Defines a smart-download Playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
@@ -13,102 +13,181 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoSecureClock/instance</TokenIdentifier>
-			<Abstract type="html">The singleton instance access method</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/initWithName:assets:config:</TokenIdentifier>
+			<Abstract type="html">Creates playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>+ (nonnull VirtuosoSecureClock *)instance</Declaration>
-			
-			<ReturnValue><Abstract type="html">Returns the VirtuosoSecureClock object instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/instance</Anchor>
+			<Declaration>- (_Nonnull instancetype)initWithName:(NSString *_Nonnull)name assets:(NSArray&lt;NSString*&gt; *_Nonnull)assets config:(VirtuosoPlaylistConfig *_Nullable)config</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">String that uniquely identifies this Playlist.</Abstract>
+				</Parameter><Parameter>
+					<Name>assets</Name>
+					<Abstract type="html">Array of Strings which uniquely identify the Assets (via AssetID) that will become part of this playlist.</Abstract>
+				</Parameter><Parameter>
+					<Name>config</Name>
+					<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">non-nil instance if successful, otherwise nil. Errors are logged.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithName:assets:config:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/update</TokenIdentifier>
-			<Abstract type="html">Requests an update to the secure clock time.  This method is called internal to the SDK
-automatically at opportune times and you should not normally need to call it manually.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setName:</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>- (void)update</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/update</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setSecureDate:</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/name</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/secureDate</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/secureDate</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/name</TokenIdentifier>
+			<Abstract type="html">Name of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/secureDate</Anchor>
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/secureDate</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setItems:</TokenIdentifier>
+			<Abstract type="html">Items contained in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
 			
 			
-			<Anchor>//api/name/secureDate</Anchor>
+			<Anchor>//api/name/items</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setDate:</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/items</TokenIdentifier>
+			<Abstract type="html">Items contained in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
 			
 			
-			<Anchor>//api/name/date</Anchor>
+			<Anchor>//api/name/items</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/date</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/items</TokenIdentifier>
+			<Abstract type="html">Items contained in the playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
 			
 			
-			<Anchor>//api/name/date</Anchor>
+			<Anchor>//api/name/items</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/date</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setConfig:</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
 			
 			
-			<Anchor>//api/name/date</Anchor>
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/config</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/config</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setStatus:</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/status</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/status</TokenIdentifier>
+			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			
+			
+			<Anchor>//api/name/status</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/statusAsString</TokenIdentifier>
+			<Abstract type="html">String formatted representation of status</Abstract>
+			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)statusAsString</Declaration>
+			
+			
+			<Anchor>//api/name/statusAsString</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

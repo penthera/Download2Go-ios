@@ -28,11 +28,17 @@ typedef NS_ENUM(NSInteger, ClientAdProvider)
     ClientAdProvider_Freewheel,
     
     /** Google Client Ads. */
-    ClientAdProvider_Google,
+    ClientAdProvider_Google
 };
 
 @class VirtuosoAsset;
 
+/*!
+*
+*  @typedef VirtuosoAdsClientProvider
+*
+*  @abstract Ads provider for Client-Side ads
+*/
 @interface VirtuosoAdsClientProvider : VirtuosoAdsProvider
 
 /*!
@@ -52,7 +58,7 @@ typedef NS_ENUM(NSInteger, ClientAdProvider)
  *
  * @return Instance of VirtuosoAdsClientProvider
  */
-+(instancetype _Nullable)GoogleAdsProvider:(NSString* _Nonnull)refreshUrl;
++(instancetype _Nullable)GoogleAdsProviderWithRefreshUrl:(NSString* _Nonnull)refreshUrl;
 
 /*!
  * @abstract Creates a Freewheel Client Ads Provider
@@ -61,7 +67,7 @@ typedef NS_ENUM(NSInteger, ClientAdProvider)
  *
  * @return Instance of VirtuosoAdsClientProvider
  */
-+(instancetype _Nullable)FreewheelAdsProvider:(NSString* _Nonnull)refreshUrl;
++(instancetype _Nullable)FreewheelAdsProviderWithRefreshUrl:(NSString* _Nonnull)refreshUrl;
 
 /*!
  * @abstract Create instance of Client-Side Ads Provider.
@@ -97,7 +103,7 @@ typedef NS_ENUM(NSInteger, ClientAdProvider)
 /*!
  * @abstract Allows Provider to update the Tracking URL with any appropriate information before posting.
  *
- * @description This callback is invoked when Ads Tracking URL's are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.
+ * @discussion This callback is invoked when Ads Tracking URL's are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.
  *
  * @param asset Asset reporting an Ads tracking event.
  *

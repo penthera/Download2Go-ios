@@ -13,7 +13,6 @@
  *  @copyright (c) 2019 Penthera Inc. All Rights Reserved.
  */
 
-
 #ifndef VirtuosoAdsProvider_Included
 #define VirtuosoAdsProvider_Included
 
@@ -26,13 +25,6 @@
  *
  */
 @interface VirtuosoAdsProvider : NSObject
-
-/*!
- *  @abstract Class convienence method to create a server-side Ads Provider
- *
- *  @return A new VirtuosoAdsProvider object.
- */
-+(VirtuosoAdsProvider* _Nonnull)serverAdsProvider;
 
 /*!
  *  @abstract True if Ads are required for this Asset
@@ -57,7 +49,7 @@
  *
  *  @return A new VirtuosoAdsProvider instance, or nil if failure.
  */
-+(VirtuosoAdsProvider*_Nullable)clientFreewheelAds:(NSString*_Nonnull)refreshUrl;
++(VirtuosoAdsProvider*_Nullable)clientFreewheelAdsWithRefreshUrl:(NSString*_Nonnull)refreshUrl;
 
 /*!
  *  @abstract Class convienence method to create a client Google Ads provider
@@ -66,12 +58,26 @@
  *
  *  @return A new VirtuosoAdsProvider instance, or nil if failure.
  */
-+(VirtuosoAdsProvider*_Nullable)clientGoogleAds:(NSString*_Nonnull)refreshUrl;
++(VirtuosoAdsProvider*_Nullable)clientGoogleAdsWithRefreshUrl:(NSString*_Nonnull)refreshUrl;
+
+/*!
+ *  @abstract Class convienence method to create a server Google Ads provider
+ *
+ *  @return A new VirtuosoAdsProvider instance, or nil if failure.
+ */
++(VirtuosoAdsProvider*_Nullable)serverGoogleAds;
+
+/*!
+ *  @abstract Class convienence method to create a server Verizon Ads provider
+ *
+ *  @return A new VirtuosoAdsProvider instance, or nil if failure.
+ */
++(VirtuosoAdsProvider*_Nullable)serverVerizonAds;
 
 /*!
  * @abstract Allows Provider to update the Tracking URL with any appropriate information before posting.
  *
- * @description This callback is invoked when Ads Tracking URL's are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.
+ * @discussion This callback is invoked when Ads Tracking URL's are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.
  *
  * @param asset - Asset reporting an Ads tracking event.
  *
@@ -88,7 +94,6 @@
 @property (nonatomic, assign)NSInteger refreshIntervalInDays;
 
 @end
-
 
 #endif
 

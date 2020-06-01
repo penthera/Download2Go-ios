@@ -21,3 +21,4 @@ Tutorials
 
 * Download2GoHelloWorld - minimal example showing download and offline playback
 * Example1.1 - Pause / resume downloading
+* Example10 - FastPlay example

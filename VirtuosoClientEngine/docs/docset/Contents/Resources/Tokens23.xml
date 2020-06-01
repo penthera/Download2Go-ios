@@ -1,38 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoFreewheelAdsClientProvider.html">
+	<File path="Classes/VirtuosoEncryption.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoFreewheelAdsClientProvider</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VirtuosoFreewheelAdsClientProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoEncryption</TokenIdentifier>
+			<Abstract type="html">@header VirtuosoEncryption</Abstract>
+			<DeclaredIn>VirtuosoEncryption.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoFreewheelAdsClientProvider/prepareTrackingUrl:url:</TokenIdentifier>
-			<Abstract type="html">Allows Provider to update the Tracking URL with any appropriate information before posting.
-
-@description This callback is invoked when Ads Tracking URL&apos;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</Abstract>
-			<DeclaredIn>VirtuosoFreewheelAdsClientProvider.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)asset url:(NSString *_Nonnull)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">Asset reporting an Ads tracking event.</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">Tracking url that will be reported.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Updated url. Returning nil will result in using the original, unchanged url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareTrackingUrl:url:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
 		
         
         

@@ -15,10 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @class VirtuosoPlaylistConfig;
 
 /*!
- *
- *  @typedef VirtuosoPlaylist
- *
  *  @abstract Defines a smart-download Playlist
+ *  
+ *  @discussion A VirtuosoPlaylist represents a sequenced set of Assets that are to be consecutively downloaded.
+ *  Binge watching a TV series provides an appropriate example for how Playlists are intended to be used. When TV show in the series is watched,
+ *  and deleted, the Playlist will automatically start downloading the next TV show in the series. Create an instance by providing an instance of VirtuosoPlaylistConfig which is then used to control how the VirtuosoPlaylist is managed.
  */
 @interface VirtuosoPlaylist : NSObject
 

@@ -23,6 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 @end
 
+/*!
+*
+*  @abstract Handles processing of various events including pushes, background wakes from downloading, etc.
+*
+*/
 @interface VirtuosoEventHandler : NSObject
 
 + (void)registerHandler:(_Nonnull id<VirtuosoEventHandlerDelegate>)delegate  __attribute__((deprecated("method removed")));

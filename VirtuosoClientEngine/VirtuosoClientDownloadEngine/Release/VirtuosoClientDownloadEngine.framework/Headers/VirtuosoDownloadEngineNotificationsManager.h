@@ -15,120 +15,155 @@
 @class VirtuosoAncillaryFile;
 @class VirtuosoEngineStatusInfo;
 
-/*
- *  @abstract Delegate interface for Download Engine notifications
- *
- */
+/*!
+*  @abstract Delegate interface for Download Engine notifications
+*/
 @protocol VirtuosoDownloadEngineNotificationsDelegate <NSObject>
 
 @required
-/*
+/*!
  *  @abstract Called whenever the Engine starts downloading a VirtuosoAsset object.
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDidStartDownloadingAssetNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidStartDownloadingAssetNotification
+ *
+ *  @param asset VirtuosoAsset asset
  *
  */
 -(void)downloadEngineDidStartDownloadingAsset:(VirtuosoAsset* _Nonnull)asset;
 
-/*
+/*!
  *  @abstract Called whenever the Engine reports progress for a VirtuosoAsset object
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineProgressUpdatedForAssetNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineProgressUpdatedForAssetNotification
+ *
+ *  @param asset VirtuosoAsset asset
  *
  */
 -(void)downloadEngineProgressUpdatedForAsset:(VirtuosoAsset* _Nonnull)asset;
 
-/*
+/*!
  *  @abstract Called when an asset is being processed after background transfer
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineProgressUpdatedForAssetProcessingNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineProgressUpdatedForAssetProcessingNotification
+ *
+ *  @param asset VirtuosoAsset asset
  *
  */
 -(void)downloadEngineProgressUpdatedProcessingForAsset:(VirtuosoAsset* _Nonnull)asset;
 
-/*
+/*!
  *  @abstract Called whenever the Engine reports a VirtuosoAsset as complete
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDidFinishDownloadingAssetNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidFinishDownloadingAssetNotification
+ *
+ *  @param asset VirtuosoAsset asset
  *
  */
 -(void)downloadEngineDidFinishDownloadingAsset:(VirtuosoAsset* _Nonnull)asset;
 
 @optional
-/*
+/*!
 *  @abstract Called whenever asset is deleted
 *
-*  @description This callback is invoked in-response to Notification kBackplaneAssetDeletedNotification
+*  @discussion This callback is invoked in-response to Notification kBackplaneAssetDeletedNotification
+*
+*  @param assetID VirtuosoAsset.assetID for the asset that was deleted.
 *
 */
 -(void)downloadEngineDeletedAssetId:(NSString* _Nonnull)assetID;
 
-/*
+/*!
  *  @abstract Called whenever the Engine reports a consistency scan complete for an asset
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDidFinishConsistencyScanAssetNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidFinishConsistencyScanAssetNotification
+ *
+ *  @param asset VirtuosoAsset asset
  *
  */
 -(void)downloadEngineConsistencyScanCompletedForAsset:(VirtuosoAsset* _Nonnull)asset;
 
 
-/*
+/*!
  *  @abstract Called whenever the Engine reports a VirtuosoAncillaryFile as complete
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDidFinishDownloadingAssetNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidFinishDownloadingAssetNotification
+ *
+ *  @param ancillary VirtuosoAncillaryFile that finished
+ *
+ *  @param asset VirtuosoAsset asset
  *
  */
 -(void)downloadEngineDidFinishDownloadingAncillary:(VirtuosoAncillaryFile* _Nonnull)ancillary forAsset:(VirtuosoAsset* _Nonnull)asset;
 
-/*
+/*!
  *  @abstract Called whenever the Engine reports a VirtuosoAsset has expired
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDidResetExpiredAssetsNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidResetExpiredAssetsNotification
+ *
+ *  @param asset VirtuosoAsset asset
  *
  */
 -(void)downloadEngineAssetDidExpire:(VirtuosoAsset* _Nonnull)asset;
 
-/*
+/*!
  *  @abstract Called whenever the Engine reports result of DRM
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDRMResultForAssetNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDRMResultForAssetNotification
+ *
+ *  @param asset VirtuosoAsset asset
+ *
+ *  @param error NSError indicating cause of DRM refresh failure
  *
  */
 -(void)downloadEngineDRMResultForAsset:(VirtuosoAsset* _Nonnull)asset withError:(NSError* _Nullable)error;
 
-/*
+/*!
  *  @abstract Called whenever the Engine status changes
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineStatusDidChangeNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineStatusDidChangeNotification
+ *
+ *  @param status Engine status enum kVDE_DownloadEngineStatus
+ *
+ *  @param statusInfo Engine VirtuosoEngineStatusInfo information
  *
  */
 -(void)downloadEngineStatusChange:(kVDE_DownloadEngineStatus)status statusInfo:(VirtuosoEngineStatusInfo* _Nonnull)statusInfo;
 
-/*
+/*!
  *  @abstract Called when internal logic changes queue order.  All we need to do is refresh the tables.
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineInternalQueueUpdateNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineInternalQueueUpdateNotification
  *
  */
 -(void)downloadEngineInternalQueueUpdate;
 
-/*
+/*!
  *  @abstract Called whenever the Engine encounters a recoverable issue.
  *
- *  @description Called whenever the Engine encounters a recoverable issue.  These are events that MAY be of concern to the Caller, but the Engine will
+ *  @discussion Called whenever the Engine encounters a recoverable issue.  These are events that MAY be of concern to the Caller, but the Engine will
  *  continue the download process without intervention.
  *
- *  This callback is invoked in-response to Notification kDownloadEngineDidEncounterWarningNotification
+ *  @param asset VirtuosoAsset asset
+ *
+ *  @param error optional NSError
  *
  */
 -(void)downloadEngineDidEncounterWarningForAsset:(VirtuosoAsset* _Nonnull)asset error:(NSError* _Nullable)error;
 
-/*
+/*!
  *  @abstract Called whenever the Engine encounters an error
  *
- *  @description Called whenever the Engine encounters an error that it cannot recover from.  This type of error will cause the engine to retry download of the file.  If too many errors are encountered, the Engine will move on to the next item in the queue.
+ *  @discussion Called whenever the Engine encounters an error that it cannot recover from.  This type of error will cause the engine to retry download of the file.  If too many errors are encountered, the Engine will move on to the next item in the queue.
  *
- *  This callback is invoked in-response to Notification kDownloadEngineDidFinishDataStoreUpgradeNotification
+ *  @param asset VirtuosoAsset asset
+ *
+ *  @param error NSError for indicating the error details
+ *
+ *  @param task NSURLSessionTask for the error
+ *
+ *  @param data NSData for the HTTP Response.
+ *
+ *  @param statusCode Http Status Code (NSNumber integerValue) if this was for an Http error.
  *
  */
 -(void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset* _Nonnull)asset
@@ -137,70 +172,72 @@
                                           data:(NSData* _Nullable)data
                                     statusCode:(NSNumber* _Nullable)statusCode;
 
-/*
- *  @abstract Called when the Engine is entering Background
- 
- *  @description Called some period of time after the main application has been put into the background by the User.  Depending on application configuration, the Engine will keep the app alive in the background for some period of time in order to continue active downloads.  Once the Engine cannot keep the application alive any longer, due to iOS constraints, the Engine will pause downloads and allow the application to be put to sleep.  Before going to sleep, this notification is called to allow the Caller to take potential action if downloads were still pending at this point.
+/*!
+ *  @abstract Called whenever the Engine is about to enter background
  *
- *  This callback is invoked in-response to Notification kDownloadEngineIsEnteringBackgroundNotification
+ *  @discussion Called some period of time after the main application has been put into the background by the User.  Depending on application configuration, the Engine will keep the app alive in the background for some period of time in order to continue active downloads.  Once the Engine cannot keep the application alive any longer, due to iOS constraints, the Engine will pause downloads and allow the application to be put to sleep.  Before going to sleep, this notification is called to allow the Caller to take potential action if downloads were still pending at this point.
+ *
+ *  @param continuingAssets VirtuosoAsset asset
+ *
+ *  @param pausingAssets NSError for indicating the error details
  *
  */
 -(void)downloadEngineIsEnteringBackground:(NSArray* _Nullable)continuingAssets pausingAssets:(NSArray* _Nullable)pausingAssets;
 
-/*
+/*!
  *  @abstract Called whenever the Engine enabled or disabled
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineEnableDisableChangeNotificationKey
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineEnableDisableChangeNotificationKey
  *
+ *  @param enabled True indicates engine was enabled, False was disabled
  */
 -(void)downloadEngineEnableStateChange:(Boolean)enabled;
 
-/*
+/*!
  *  @abstract Called when data store update begins
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDidBeginDataStoreUpgradeNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidBeginDataStoreUpgradeNotification
  *
  */
 -(void)downloadEngineDidBeginDataStoreUpgrade;
 
-/*
+/*!
  *  @abstract Called when data store update finishes
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineDidFinishDataStoreUpgradeNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidFinishDataStoreUpgradeNotification
  *
  */
 -(void)downloadEngineDidFinishDataStoreUpgrade;
 
-/*
+/*!
  *  @abstract Called when Asset.deleteAll completes
  *
- *  @description This callback is invoked in-response to Notification kDownloadEngineAllAssetsDeletedNotification
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineAllAssetsDeletedNotification
  *
  */
 -(void)downloadEngineAllAssetsDeleted;
 
-
-/*
+/*!
  *  @abstract Called when startupWithBackplane completes
  *
- *  @description This callback is invoked when startupWithBackplane completes.
+ *  @discussion This callback is invoked when startupWithBackplane completes.
  *
  *  @param succeeded YES indicates the backplane started successfully, NO indicates failure.
  */
 -(void)downloadEngineStartupComplete:(Boolean)succeeded;
 
-/*
+/*!
  *  @abstract Called when startupWithBackplane detects user change that will require assets be deleted.
  *
- *  @description Called when startupWithBackplane detects user change that will require assets be deleted.
+ *  @discussion Called when startupWithBackplane detects user change that will require assets be deleted.
  *
  */
 -(void)downloadEngineStartupUserDeleteStarted;
 
-/*
+/*!
 *  @abstract Called when the operating system detects a change in network reachability.
 *
-*  @description This callback is invoked when the operating system detects a change in network reachability.
+*  @discussion This callback is invoked when the operating system detects a change in network reachability.
 *
 *  @param previousNetworkReachability The previous state of network reachability.  During the first invocaton of the callback this value will always be kVL_Invalid.
 *
@@ -211,42 +248,49 @@
 -(void)downloadEngineNetworkReachabilityChange:(kVL_BearerType)previousNetworkReachability
                     currentNetworkReachability:(kVL_BearerType)currentNetworkReachability;
 
-/*
+/*!
 *  @abstract Called when a FastPlay Asset is ready to play.
 *
-*  @description This callback is invoked when a FastPlay Asset is ready to play.
+*  @discussion This callback is invoked when a FastPlay Asset is ready to play.
 *
 *  @param asset VirtuosoAsset for asset that is ready for FastPlay
 *
 */
 -(void)downloadEngineFastPlayAssetReady:(VirtuosoAsset* _Nonnull)asset;
 
+/*!
+*  @abstract Called when playback is stopped on an asset.
+*
+*  @param asset VirtuosoAsset for asset that was playing
+*
+*/
+-(void)downloadEnginePlaybackStopped:(VirtuosoAsset* _Nonnull)asset;
+
 @end
 
-/*
- *  @abstract Manages callbacks for Download Engine Notifications
+/*!
+ *  @abstract Listens for Download Engine Notifications and invokes the VirtuosoDownloadEngineNotificationsDelegate callbacks.
  *
- *  @description A view that wants to recevie delegate callbacks should hold an instance of this class and initialize it during view load. The Download engine will invoke the callbacks as events occur.
- *
+ *  @discussion Use this class to monitor Engine notitications. Implement the VirtuosoDownloadEngineNotificationsDelegate and register it using  VirtuosoDownloadEngineNotificationManager to receive Notifications.
  */
 @interface VirtuosoDownloadEngineNotificationManager : NSObject
 
-/*
+/*!
  *  @abstract Delegate callback
  */
 @property (nonatomic, strong, readonly)id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull delegate;
 
-/*
+/*!
  *  @abstract Operation queue upon which the callbacks will happen
  */
 @property (nonatomic, strong, readonly)NSOperationQueue* _Nonnull queue;
 
-/*
+/*!
  *  @abstract Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.
  */
 @property (atomic, copy)NSString* _Nullable assetID;
 
-/*
+/*!
  *  @abstract Creates an instance
  *
  *  @param delegate Delegate that will be called
@@ -256,7 +300,7 @@
  */
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate;
 
-/*
+/*!
  *  @abstract Creates an instance
  *
  *  @param delegate Delegate that will be called
@@ -269,7 +313,7 @@
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate
                                     queue:(NSOperationQueue* _Nonnull)queue;
 
-/*
+/*!
  *  @abstract Creates an instance
  *
  *  @param delegate Delegate that will be called

@@ -14,9 +14,9 @@
 // IMPORTANT:
 // The following three values must be initialzied, please contact support@penthera.com to obtain these keys
 // ---------------------------------------------------------------------------------------------------------
-static NSString* backplaneUrl = @"replace_with_your_backplane_url";                                         // <-- change this
-static NSString* publicKey = @"replace_with_your_public_key";   // <-- change this
-static NSString* privateKey = @"replace_with_your_private_key";  // <-- change this
+static NSString* backplaneUrl = @"https://qa.penthera.com";                                         // <-- change this
+static NSString* publicKey = @"c9adba5e6ceeed7d7a5bfc9ac24197971bbb4b2c34813dd5c674061a961a899e";   // <-- change this
+static NSString* privateKey = @"41cc269275e04dcb4f2527b0af6e0ea11d227319fa743e4364255d07d7ed2830";  // <-- change this
 
 
 @interface ViewController () <VirtuosoDownloadEngineNotificationsDelegate>
@@ -127,7 +127,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     if (self.exampleAsset && self.exampleAsset.fastPlayReady) {
         // Asset has already been queued for FastPlay and is ready for playback
         
-        [self playAsset: self.exampleAsset];
+        [self fastPlayAsset:self.exampleAsset];
     }
     else {
         // Queue asset for FastPlay.  When enough of the asset has been processed playblack
@@ -219,30 +219,37 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     }
 }
 
-- (void)playAsset:(VirtuosoAsset*)asset {
-    
+-(void)playAsset:(VirtuosoAsset*)asset
+{
+    [self playAsset:asset playbackType:kVDE_AssetPlaybackTypeLocal];
+}
+
+-(void)fastPlayAsset:(VirtuosoAsset*)asset
+{
+    [self playAsset:asset playbackType:kVDE_AssetPlaybackTypeFastPlay];
+}
+
+-(void)playAsset:(VirtuosoAsset*)asset playbackType:(kVDE_AssetPlaybackType)playbackType
+{
     [self setEnabledAppearance:self.fastPlayBtn enabled:YES];
     
     [VirtuosoAsset isPlayable:asset callback:^(Boolean playable) {
         if( playable )
         {
-            if( asset.type != kVDE_AssetTypeHSS )
-            {
-                UIViewController* player = [DemoPlayerViewController new];
-                self.exampleAsset = asset;
-                
-                [asset playUsingPlaybackType:kVDE_AssetPlaybackTypeLocal
-                                   andPlayer:(id<VirtuosoPlayer>)player
-                                   onSuccess:^ {
-                                       // Present the player
-                                       [self presentViewController:player animated:YES completion:nil];
-                                   }
-                                      onFail:^ {
-                                          self.exampleAsset = nil;
-                                          self.error = nil;
-                                          NSLog(@"Can't play video!");
-                                      }];
-            }
+            UIViewController* player = [DemoPlayerViewController new];
+            self.exampleAsset = asset;
+            
+            [asset playUsingPlaybackType:playbackType
+                               andPlayer:(id<VirtuosoPlayer>)player
+                               onSuccess:^ {
+                                   // Present the player
+                                   [self presentViewController:player animated:YES completion:nil];
+                               }
+                                  onFail:^ {
+                                      self.exampleAsset = nil;
+                                      self.error = nil;
+                                      NSLog(@"Can't play video!");
+                                  }];
         }
     }];
 
@@ -366,9 +373,8 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
 // ------------------------------------------------------------------------------------------------------------
 -(void)downloadEngineFastPlayAssetReady:(VirtuosoAsset *)asset
 {
-    NSLog(@"FastPlay asset reported ready to play. Asset: %@", asset);
-    
-    [self playAsset: asset];
+    NSLog(@"FastPlay asset reported ready to play. Asset: %@", asset);    
+    [self fastPlayAsset: asset];
 }
 
 // ------------------------------------------------------------------------------------------------------------

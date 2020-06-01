@@ -12,9 +12,9 @@ import AVKit
 class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDelegate {
 
     // <-- change these to your settings in production
-    let backplaneUrl = "replace_with_your_backplane_url"
-    let publicKey = "replace_with_your_public_key"
-    let privateKey = "replace_with_your_private_key"
+    let backplaneUrl = "https://qa.penthera.com"
+    let publicKey = "c9adba5e6ceeed7d7a5bfc9ac24197971bbb4b2c34813dd5c674061a961a899e"
+    let privateKey = "41cc269275e04dcb4f2527b0af6e0ea11d227319fa743e4364255d07d7ed2830"
 
     //
     // MARK: Instance data
@@ -114,7 +114,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         
         if (self.exampleAsset != nil && self.exampleAsset!.fastPlayReady)
         {
-            self.playAsset(self.exampleAsset!);
+            self.fastPlayAsset(self.exampleAsset!);
         }
         else
         {
@@ -198,8 +198,16 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     
     private func playAsset(_ asset: VirtuosoAsset)
     {
-        self.setEnabledAppearance(fastPlayBtn, enabled: true);
-        
+        self.playAsset(asset, playbackType: .vde_AssetPlaybackTypeLocal)
+    }
+    
+    private func fastPlayAsset(_ asset: VirtuosoAsset)
+    {
+        self.playAsset(asset, playbackType: .vde_AssetPlaybackTypeFastPlay)
+    }
+
+    private func playAsset(_ asset: VirtuosoAsset, playbackType: kVDE_AssetPlaybackType)
+    {
         VirtuosoAsset.isPlayable(asset) { (playable) in
             if !playable {
                 return // not playable yet
@@ -212,7 +220,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
                     
                     let demoPlayer = DemoPlayerViewController()
                 
-                    asset.play(using: .vde_AssetPlaybackTypeLocal, andPlayer: demoPlayer as VirtuosoPlayer, onSuccess: {
+                    asset.play(using: playbackType, andPlayer: demoPlayer as VirtuosoPlayer, onSuccess: {
                     self.present(demoPlayer, animated: true, completion: nil)
                     
                 }) {
@@ -223,10 +231,11 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
                 break
                 
             case .vde_AssetTypeHSS:
-                print("Playback of HSS supported in another Tutorial")
+                print("Playback not supported")
                 break
                 
             @unknown default:
+                print("Playback not supported")
                 break;
             }
         }
@@ -353,7 +362,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     {
         print("FastPlay asset reported ready to play. Asset: %@", asset);
         
-        self.playAsset(asset)
+        self.fastPlayAsset(asset)
     }
     
     // --------------------------------------------------------------

@@ -9,39 +9,82 @@
 #ifndef VirtuosoBackplaneNotificationsManager_h
 #define VirtuosoBackplaneNotificationsManager_h
 
+/*!
+*  @abstract Delegate interface for Backplane notifications
+*/
 @protocol VirtuosoBackplaneNotificationsDelegate <NSObject>
 
 @required
 
-// kBackplaneSyncResultNotification
+/*!
+*  @abstract Called when Backplane sync completes.
+*
+*  @param status Boolean (true) indicates success.
+*
+*  @param error NSError indciating the error
+*
+*/
 -(void)backplaneSyncCompleteWithStatus:(Boolean)status error:(NSError* _Nullable)error;
 
-/*
- *  The Backplane issued a remote kill request.  The SDK will have reverted back to an uninitialized state and we must call the startup method again.  In this demo,
- *  we query the User for the Group and User to use, so we're going to revert ourselves back to startup state and ask for those values again, before calling startup.
- */
+/*!
+*  @abstract Called when a Backplane requested remote kill has completed.
+*
+* @discussion  A remote kill will unregister the app from Penthera, and delete all assets that were created in Penthera.
+*/
 -(void)backplaneRemoteKill;
 
-/*
- *  The Backplane is starting a remote kill
- */
+/*!
+*  @abstract Called when a Backplane requested is about to start a remote kill.
+*/
 -(void)backplaneStartingRemoteKill;
 
-/*
- * When the Backplane notifies us that our device was unregistered, treat it like a remote wipe request.  The unregister action will already have cleared
- * out all the SDK state, so we just need to reset and ask for credentials again.
- */
-// kBackplaneDidUnregisterDeviceNotification
+/*!
+*  @abstract Called when a Backplane requested unregistering the device.
+ *
+ * @param success Boolean (true) indicates success.
+ *
+ * @param error NSError if an error occured.
+*/
 -(void)backplaneDidUnregisterDeviceWithStatus:(Boolean)success error:(NSError* _Nullable)error;
 
 @end
 
+
+/*!
+*  @abstract Listens to Backplane notications.
+*/
 @interface VirtuosoBackplaneNotificationsManager : NSObject
 
+/*!
+*  @abstract Delegate callback
+*/
 @property (nonatomic, strong, readonly)id<VirtuosoBackplaneNotificationsDelegate> _Nonnull delegate;
+
+/*!
+*  @abstract Operation queue upon which the callbacks will happen
+*/
 @property (nonatomic, strong, readonly)NSOperationQueue* _Nonnull queue;
 
+/*!
+*  @abstract Creates an instance
+*
+*  @param delegate Delegate that will be called
+*
+*  @return Instance of this component, nil on failure.
+*
+*/
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoBackplaneNotificationsDelegate> _Nonnull)delegate;
+
+/*!
+*  @abstract Creates an instance
+*
+*  @param delegate Delegate that will be called
+*
+*  @param queue NSOperationQueue the callback will be invoked on.
+*
+*  @return Instance of this component, nil on failure.
+*
+*/
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoBackplaneNotificationsDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue;
 
 @end

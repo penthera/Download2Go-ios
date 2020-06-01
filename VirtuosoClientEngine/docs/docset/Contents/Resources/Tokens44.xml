@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoLicenseManagerDelegate.html">
+	<File path="Classes/VirtuosoSubscriptionNotificationsManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLicenseManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate used to request optional license parameters for license aquisition</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionNotificationsManager</TokenIdentifier>
+			<Abstract type="html">Listens for Subscription related notifications.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -13,31 +13,111 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</TokenIdentifier>
-			<Abstract type="html">Requests optional license parameters for license aquisition</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/setQueue:</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters additionalHeaders:(NSDictionary *_Nonnull *_Nullable)customHeaders renewalDate:(NSDate *_Nonnull *_Nullable)renewalDate forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionNotificationsManager/queue</TokenIdentifier>
+			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			
+			
+			<Anchor>//api/name/queue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionNotificationsManager/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate callback</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/initWithDelegate:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>urlSuffix</Name>
-					<Abstract type="html">A URL suffix to be appended to the base license URL.</Abstract>
-				</Parameter><Parameter>
-					<Name>customParameters</Name>
-					<Abstract type="html">A dictionary of key-value pairs to be added to the license request as URL parameters</Abstract>
-				</Parameter><Parameter>
-					<Name>customHeaders</Name>
-					<Abstract type="html">A dictionary of key-value pairs to be added to the DRM request headers</Abstract>
-				</Parameter><Parameter>
-					<Name>renewalDate</Name>
-					<Abstract type="html">A NSDate timestamp indicating when the license should be renewed</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The asset requiring an offline playback license</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/initWithDelegate:queue:</TokenIdentifier>
+			<Abstract type="html">Creates an instance</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
 			
-			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">Delegate that will be called</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDelegate:queue:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		

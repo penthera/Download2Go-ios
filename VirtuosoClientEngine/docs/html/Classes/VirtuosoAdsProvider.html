@@ -66,11 +66,13 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/clientFreewheelAds:">+ clientFreewheelAds:</option>
+		<option value="//api/name/clientFreewheelAdsWithRefreshUrl:">+ clientFreewheelAdsWithRefreshUrl:</option>
 		
-		<option value="//api/name/clientGoogleAds:">+ clientGoogleAds:</option>
+		<option value="//api/name/clientGoogleAdsWithRefreshUrl:">+ clientGoogleAdsWithRefreshUrl:</option>
 		
-		<option value="//api/name/serverAdsProvider">+ serverAdsProvider</option>
+		<option value="//api/name/serverGoogleAds">+ serverGoogleAds</option>
+		
+		<option value="//api/name/serverVerizonAds">+ serverVerizonAds</option>
 		
 	</optgroup>
 	
@@ -126,52 +128,6 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/serverAdsProvider" title="serverAdsProvider"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serverAdsProvider">+&nbsp;serverAdsProvider</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Class convienence method to create a server-side Ads Provider</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nonnull)serverAdsProvider</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new VirtuosoAdsProvider object.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/requireAds" title="requireAds"></a>
 	<h3 class="method-title"><code><a href="#//api/name/requireAds">&nbsp;&nbsp;requireAds</a></code>
 </h3>
@@ -271,8 +227,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/clientFreewheelAds:" title="clientFreewheelAds:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/clientFreewheelAds:">+&nbsp;clientFreewheelAds:</a></code>
+	<a name="//api/name/clientFreewheelAdsWithRefreshUrl:" title="clientFreewheelAdsWithRefreshUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientFreewheelAdsWithRefreshUrl:">+&nbsp;clientFreewheelAdsWithRefreshUrl:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -287,7 +243,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)clientFreewheelAds:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)clientFreewheelAdsWithRefreshUrl:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
 
 		    
 			
@@ -329,8 +285,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/clientGoogleAds:" title="clientGoogleAds:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/clientGoogleAds:">+&nbsp;clientGoogleAds:</a></code>
+	<a name="//api/name/clientGoogleAdsWithRefreshUrl:" title="clientGoogleAdsWithRefreshUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clientGoogleAdsWithRefreshUrl:">+&nbsp;clientGoogleAdsWithRefreshUrl:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -345,7 +301,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)clientGoogleAds:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)clientGoogleAdsWithRefreshUrl:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
 
 		    
 			
@@ -360,6 +316,98 @@
 				
 				</table>
 			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new VirtuosoAdsProvider instance, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serverGoogleAds" title="serverGoogleAds"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serverGoogleAds">+&nbsp;serverGoogleAds</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class convienence method to create a server Google Ads provider</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)serverGoogleAds</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new VirtuosoAdsProvider instance, or nil if failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/serverVerizonAds" title="serverVerizonAds"></a>
+	<h3 class="method-title"><code><a href="#//api/name/serverVerizonAds">+&nbsp;serverVerizonAds</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class convienence method to create a server Verizon Ads provider</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (VirtuosoAdsProvider *_Nullable)serverVerizonAds</code></div>
+
+		    
 			
 
 			
@@ -399,8 +447,6 @@
 			
 			<div class="method-subsection brief-description">
 				<p>Allows Provider to update the Tracking URL with any appropriate information before posting.</p>
-
-<p>@description This callback is invoked when Ads Tracking URL&rsquo;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</p>
 			</div>
 			
 		    
@@ -442,6 +488,11 @@
 
 			
 
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked when Ads Tracking URL&rsquo;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</p>
+			</div>
 			
 
 			
@@ -513,7 +564,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-04-13</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-06-01</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

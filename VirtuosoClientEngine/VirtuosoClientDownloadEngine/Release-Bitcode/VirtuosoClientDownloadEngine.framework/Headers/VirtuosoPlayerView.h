@@ -105,7 +105,7 @@
 /*!
  *  @abstract Notifies the container that the size of its view is about to change.
  *
- *  @description UIKit calls this method on a view controller before changing the size of a presented view controller’s view.
+ *  @discussion UIKit calls this method on a view controller before changing the size of a presented view controller’s view.
  *               You should override this method in your own view controller and use it to perform additional tasks related to
  *               the size change. At a minimum, you must call this method to allow VirtuosoPlayerView to properly resize its user
  *               interface.

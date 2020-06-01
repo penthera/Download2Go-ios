@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_DownloadErrorType.html">
+	<File path="Constants/PlaylistItemState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadErrorType</TokenIdentifier>
-			<Abstract type="html">Error states that Virtuoso can be in when downloading an asset.  Returned via the &apos;error&apos; property.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PlaylistItemState</TokenIdentifier>
+			<Abstract type="html">Status of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
 			
 			<NodeRef refid="63"/>
@@ -14,84 +14,71 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNoError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered no errors downloading this asset</Abstract>
-            <Declaration>kVDE_DownloadNoError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Uninitialized</TokenIdentifier>
+            <Abstract type="html">Item initialized</Abstract>
+            <Declaration>PlaylistItemState_Uninitialized</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="63"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNetworkError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered a network problem downloading asset, e.g. 404 or 416 HTTP error</Abstract>
-            <Declaration>kVDE_DownloadNetworkError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadReachabilityError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because it couldn&apos;t reach the remote server</Abstract>
-            <Declaration>kVDE_DownloadReachabilityError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NextItem</TokenIdentifier>
+            <Abstract type="html">Item is next item to be processed</Abstract>
+            <Declaration>PlaylistItemState_NextItem</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="63"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadFileCopyError</TokenIdentifier>
-            <Abstract type="html">Virtuoso downloaded this asset, but couldn&apos;t move it to its final location on disk</Abstract>
-            <Declaration>kVDE_DownloadFileCopyError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadEngineError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because of an internal issue</Abstract>
-            <Declaration>kVDE_DownloadEngineError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Created</TokenIdentifier>
+            <Abstract type="html">Item created successfully</Abstract>
+            <Declaration>PlaylistItemState_Created</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="63"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadMaxRetriesExceeded</TokenIdentifier>
-            <Abstract type="html">Virtuoso has attempted to download this asset the max times permitted. Will not try again
-        until you call reset or clearRetryCount </Abstract>
-            <Declaration>kVDE_DownloadMaxRetriesExceeded</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_LifetimeDownloadLimitReached</TokenIdentifier>
-            <Abstract type="html">Virtuoso has received notice from the server that the user has downloaded this asset the
-        maximum number of times for this account.  Downloads cannot continue for this asset. </Abstract>
-            <Declaration>kVDE_LifetimeDownloadLimitReached</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateInProcess</TokenIdentifier>
+            <Abstract type="html">Item create currently in process</Abstract>
+            <Declaration>PlaylistItemState_CreateInProcess</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BlockedOnDRM</TokenIdentifier>
-            <Abstract type="html">Virtuoso has attempted to start downloading an asset for which DRM is required before downloading
-     and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. </Abstract>
-            <Declaration>kVDE_BlockedOnDRM</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateFailed</TokenIdentifier>
+            <Abstract type="html">Item creation failed</Abstract>
+            <Declaration>PlaylistItemState_CreateFailed</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="63"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NotFound</TokenIdentifier>
+            <Abstract type="html">Item was not found when delegate was called</Abstract>
+            <Declaration>PlaylistItemState_NotFound</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="63"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_UserDeleted</TokenIdentifier>
+            <Abstract type="html">Item was deleted by user</Abstract>
+            <Declaration>PlaylistItemState_UserDeleted</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>

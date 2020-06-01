@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_DownloadEngineStatus.html">
+	<File path="Constants/AssetAdStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadEngineStatus</TokenIdentifier>
-			<Abstract type="html">Current activity status of Virtuoso&apos;s download engine.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/AssetAdStatus</TokenIdentifier>
+			<Abstract type="html">Asset Ads status</Abstract>
+			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
 			
 			<NodeRef refid="61"/>
@@ -14,73 +14,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Unknown</TokenIdentifier>
-            <Abstract type="html">Virtuoso hasn&apos;t finished starting up; status isn&apos;t determined</Abstract>
-            <Declaration>kVDE_Unknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_Uninitialized</TokenIdentifier>
+            <Abstract type="html">Ads not initialized</Abstract>
+            <Declaration>AssetAdStatus_Uninitialized</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="61"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Downloading</TokenIdentifier>
-            <Abstract type="html">Virtuoso is actively downloading</Abstract>
-            <Declaration>kVDE_Downloading</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="61"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Idle</TokenIdentifier>
-            <Abstract type="html">Downloading is enabled, but queue is empty</Abstract>
-            <Declaration>kVDE_Idle</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshInProcess</TokenIdentifier>
+            <Abstract type="html">Ads refresh in process</Abstract>
+            <Declaration>AssetAdStatus_RefreshInProcess</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="61"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Disabled</TokenIdentifier>
-            <Abstract type="html">You have disabled downloading, or the backplane has disabled download for this device</Abstract>
-            <Declaration>kVDE_Disabled</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="61"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Blocked</TokenIdentifier>
-            <Abstract type="html">Downloading is enabled and the queue is non-empty, but environmental conditions
-        (power/network/disk) prevent download. </Abstract>
-            <Declaration>kVDE_Blocked</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshComplete</TokenIdentifier>
+            <Abstract type="html">Ads refresh completed successfully</Abstract>
+            <Declaration>AssetAdStatus_RefreshComplete</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="61"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_Errors</TokenIdentifier>
-            <Abstract type="html">Errors occurred while downloading. There are pending downloads, but Virtuoso cannot
-        proceed without manual intervention (e.g. calling reset). </Abstract>
-            <Declaration>kVDE_Errors</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="61"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AuthenticationFailure</TokenIdentifier>
-            <Abstract type="html">SDK licensing failed.  Please contact Penthera support in this case.</Abstract>
-            <Declaration>kVDE_AuthenticationFailure</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshCompleteWithErrors</TokenIdentifier>
+            <Abstract type="html">Ads refresh completed with errors</Abstract>
+            <Declaration>AssetAdStatus_RefreshCompleteWithErrors</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshFailure</TokenIdentifier>
+            <Abstract type="html">Ads refresh failed</Abstract>
+            <Declaration>AssetAdStatus_RefreshFailure</Declaration>
+            
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_QueuedForRefresh</TokenIdentifier>
+            <Abstract type="html">Ads refresh has been queued for refresh once Network is available.</Abstract>
+            <Declaration>AssetAdStatus_QueuedForRefresh</Declaration>
+            
+            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
             
             <NodeRef refid="61"/>
         </Token>

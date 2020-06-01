@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoPlaylist.html">
+	<File path="Classes/VirtuosoLicenseManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylist</TokenIdentifier>
-			<Abstract type="html">Defines a smart-download Playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoLicenseManager</TokenIdentifier>
+			<Abstract type="html">VirtuosoLicenseManager is a static class that handles interactions with DRM platforms.</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -13,181 +13,432 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/initWithName:assets:config:</TokenIdentifier>
-			<Abstract type="html">Creates playlist.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/widevineAvailable</TokenIdentifier>
+			<Abstract type="html">Indicates whether built-in DASH video playback and Widevine DRM is available</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>- (_Nonnull instancetype)initWithName:(NSString *_Nonnull)name assets:(NSArray&lt;NSString*&gt; *_Nonnull)assets config:(VirtuosoPlaylistConfig *_Nullable)config</Declaration>
+			<Declaration>+ (BOOL)widevineAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/widevineAvailable</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/fairplayStreamingAvailable</TokenIdentifier>
+			<Abstract type="html">Indicates whether FairPlay DRM for streaming video is available</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)fairplayStreamingAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/fairplayStreamingAvailable</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/fairplayPersistenceAvailable</TokenIdentifier>
+			<Abstract type="html">Indicates whether FairPlay DRM for downloaded video is available</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)fairplayPersistenceAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/fairplayPersistenceAvailable</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setLicenseServerURL:forDRM:</TokenIdentifier>
+			<Abstract type="html">Sets the license server URL for a particular DRM type</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLicenseServerURL:(NSString *_Nullable)url forDRM:(kVLM_DRMType)type</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">String that uniquely identifies this Playlist.</Abstract>
+					<Name>url</Name>
+					<Abstract type="html">The URL to the license server for the given DRM type, a nil value will remove the license server URL.</Abstract>
 				</Parameter><Parameter>
-					<Name>assets</Name>
-					<Abstract type="html">Array of Strings which uniquely identify the Assets (via AssetID) that will become part of this playlist.</Abstract>
-				</Parameter><Parameter>
-					<Name>config</Name>
-					<Abstract type="html">Settings to control how Playlist is managed</Abstract>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">non-nil instance if successful, otherwise nil. Errors are logged.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithName:assets:config:</Anchor>
+			
+			<Anchor>//api/name/setLicenseServerURL:forDRM:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setName:</TokenIdentifier>
-			<Abstract type="html">Name of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setLicenseServerURL:forDRM:andSubType:</TokenIdentifier>
+			<Abstract type="html">Sets the license server URL for a particular DRM type</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
+			<Declaration>+ (void)setLicenseServerURL:(NSString *_Nonnull)url forDRM:(kVLM_DRMType)type andSubType:(NSString *_Nonnull)subType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL to the license server for the given DRM type</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter><Parameter>
+					<Name>subType</Name>
+					<Abstract type="html">String identifying the DRM subtype</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/setLicenseServerURL:forDRM:andSubType:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/name</TokenIdentifier>
-			<Abstract type="html">Name of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/licenseServerURLForDRM:</TokenIdentifier>
+			<Abstract type="html">Retrieves the configured license server URL for a particular DRM type</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Declaration>+ (nullable NSString *)licenseServerURLForDRM:(kVLM_DRMType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to retrieve the license URL for</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The configured license server URL for the given DRM type</Abstract></ReturnValue>
+			<Anchor>//api/name/licenseServerURLForDRM:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/name</TokenIdentifier>
-			<Abstract type="html">Name of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/licenseServerURLForDRM:andSubType:</TokenIdentifier>
+			<Abstract type="html">Retrieves the configured license server URL for a particular DRM type</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Declaration>+ (nullable NSString *)licenseServerURLForDRM:(kVLM_DRMType)type andSubType:(NSString *_Nonnull)subType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to retrieve the license URL for</Abstract>
+				</Parameter><Parameter>
+					<Name>subType</Name>
+					<Abstract type="html">String identifying the DRM subtype</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The configured license server URL for the given DRM type</Abstract></ReturnValue>
+			<Anchor>//api/name/licenseServerURLForDRM:andSubType:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setItems:</TokenIdentifier>
-			<Abstract type="html">Items contained in the playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/downloadClientAppCertificateFromURL:forDRM:</TokenIdentifier>
+			<Abstract type="html">Downloads the client app certificate from the provided URL</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
+			<Declaration>+ (void)downloadClientAppCertificateFromURL:(nonnull NSString *)url forDRM:(kVLM_DRMType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL to the client app certificate</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/items</Anchor>
+			<Anchor>//api/name/downloadClientAppCertificateFromURL:forDRM:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/items</TokenIdentifier>
-			<Abstract type="html">Items contained in the playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/downloadClientAppCertificateFromURL:forDRM:andSubType:</TokenIdentifier>
+			<Abstract type="html">Downloads the client app certificate from the provided URL</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
+			<Declaration>+ (void)downloadClientAppCertificateFromURL:(nonnull NSString *)url forDRM:(kVLM_DRMType)type andSubType:(NSString *_Nonnull)subType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">The URL to the client app certificate</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter><Parameter>
+					<Name>subType</Name>
+					<Abstract type="html">String identifying the DRM subtype</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/items</Anchor>
+			<Anchor>//api/name/downloadClientAppCertificateFromURL:forDRM:andSubType:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/items</TokenIdentifier>
-			<Abstract type="html">Items contained in the playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setClientAppCertificate:forDRM:</TokenIdentifier>
+			<Abstract type="html">Sets the client app certificate from a previously downloaded or internal source</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
+			<Declaration>+ (void)setClientAppCertificate:(NSData *_Nullable)certificate forDRM:(kVLM_DRMType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>certificate</Name>
+					<Abstract type="html">The data representing the client app certificate. If this parameter is nil the certificate is removed.</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/items</Anchor>
+			<Anchor>//api/name/setClientAppCertificate:forDRM:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setConfig:</TokenIdentifier>
-			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setClientAppCertificate:forDRM:andSubType:</TokenIdentifier>
+			<Abstract type="html">Sets the client app certificate from a previously downloaded or internal source</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
+			<Declaration>+ (void)setClientAppCertificate:(NSData *_Nullable)certificate forDRM:(kVLM_DRMType)type andSubType:(NSString *_Nonnull)subType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>certificate</Name>
+					<Abstract type="html">The data representing the client app certificate. If this parameter is nil the certificate is removed.</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter><Parameter>
+					<Name>subType</Name>
+					<Abstract type="html">String identifying the DRM subtype</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/config</Anchor>
+			<Anchor>//api/name/setClientAppCertificate:forDRM:andSubType:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/config</TokenIdentifier>
-			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/clientAppCertificateForDRM:</TokenIdentifier>
+			<Abstract type="html">Retrieves the previously downloaded client app security certificate, if it exists</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
-			
-			
-			<Anchor>//api/name/config</Anchor>
+			<Declaration>+ (nullable NSData *)clientAppCertificateForDRM:(kVLM_DRMType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The client app security certificate, if it exists, for the given DRM type</Abstract></ReturnValue>
+			<Anchor>//api/name/clientAppCertificateForDRM:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/config</TokenIdentifier>
-			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/clientAppCertificateForDRM:andSubType:</TokenIdentifier>
+			<Abstract type="html">Retrieves the previously downloaded client app security certificate, if it exists</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</Declaration>
-			
-			
-			<Anchor>//api/name/config</Anchor>
+			<Declaration>+ (nullable NSData *)clientAppCertificateForDRM:(kVLM_DRMType)type andSubType:(nullable NSString *)subType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">The DRM type to configure</Abstract>
+				</Parameter><Parameter>
+					<Name>subType</Name>
+					<Abstract type="html">String identifying the DRM subtype</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The client app security certificate, if it exists, for the given DRM type</Abstract></ReturnValue>
+			<Anchor>//api/name/clientAppCertificateForDRM:andSubType:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setStatus:</TokenIdentifier>
-			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/downloadOfflineLicenseForAsset:</TokenIdentifier>
+			<Abstract type="html">Downloads a DRM playback license for later offline playback</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
+			<Declaration>+ (Boolean)downloadOfflineLicenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset requiring an offline playback license</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean true if success</Abstract></ReturnValue>
+			<Anchor>//api/name/downloadOfflineLicenseForAsset:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/status</TokenIdentifier>
-			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/doesLicenseForAssetRequireRefresh:</TokenIdentifier>
+			<Abstract type="html">Indicates whether the license for the given asset needs to be refreshed</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
+			<Declaration>+ (BOOL)doesLicenseForAssetRequireRefresh:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to query refreshing DRM licensing for</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean true if downloaded license needs to be refreshed</Abstract></ReturnValue>
+			<Anchor>//api/name/doesLicenseForAssetRequireRefresh:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/status</TokenIdentifier>
-			<Abstract type="html">Settings to control how Playlist is managed</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/refreshLicenseForAsset:whenComplete:</TokenIdentifier>
+			<Abstract type="html">Asynchronously refreshes any previously downloaded license for the given asset</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
+			<Declaration>+ (void)refreshLicenseForAsset:(nonnull VirtuosoAsset *)asset whenComplete:(nullable LicenseRefreshComplete)onComplete</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to refresh DRM licensing for</Abstract>
+				</Parameter><Parameter>
+					<Name>onComplete</Name>
+					<Abstract type="html">A block to call when DRM licenses have been refreshed. This block will be called on a background thread. If you need to access the main thread, make sure to switch contexts.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/status</Anchor>
+			<Anchor>//api/name/refreshLicenseForAsset:whenComplete:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/statusAsString</TokenIdentifier>
-			<Abstract type="html">String formatted representation of status</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/refreshLicenseForAsset:</TokenIdentifier>
+			<Abstract type="html">Synchronously refreshes any previously downloaded license for the given asset</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)statusAsString</Declaration>
+			<Declaration>+ (void)refreshLicenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to refresh DRM licensing for</Abstract>
+				</Parameter>
+			</Parameters>
 			
+			<Anchor>//api/name/refreshLicenseForAsset:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/removeLicenseForAsset:whenComplete:</TokenIdentifier>
+			<Abstract type="html">Asynchronously deletes any previously downloaded license for the given asset</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
 			
-			<Anchor>//api/name/statusAsString</Anchor>
+			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset whenComplete:(nullable void ( ^ ) ( void ))onComplete</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to remove DRM licensing for</Abstract>
+				</Parameter><Parameter>
+					<Name>onComplete</Name>
+					<Abstract type="html">A block to call when DRM licenses have been removed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeLicenseForAsset:whenComplete:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/removeLicenseForAsset:</TokenIdentifier>
+			<Abstract type="html">Synchronously deletes any previously downloaded license for the given asset</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)removeLicenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to remove DRM licensing for</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeLicenseForAsset:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/licenseForAsset:</TokenIdentifier>
+			<Abstract type="html">Returns the DRM license for the provided asset, or nil if a license does not exist</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSData *)licenseForAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to remove DRM licensing for</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The DRM license for the asset, if it is accessible</Abstract></ReturnValue>
+			<Anchor>//api/name/licenseForAsset:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setLicense:forAsset:</TokenIdentifier>
+			<Abstract type="html">Sets the DRM license for the provided asset</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLicense:(nonnull NSData *)license forAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>license</Name>
+					<Abstract type="html">The opaque DRM license data object for the asset</Abstract>
+				</Parameter><Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The asset to set DRM licensing for</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLicense:forAsset:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/registerAVAssetResourceLoaderDelegate:</TokenIdentifier>
+			<Abstract type="html">Configures the VirtuosoLicenseManager to utilize a particular AVAssetResourceLoaderDelegate class</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)registerAVAssetResourceLoaderDelegate:(nonnull Class&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)resourceLoaderDelegateClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>resourceLoaderDelegateClass</Name>
+					<Abstract type="html">A Class instance type to use for internal AVAssetResourceLoaderDelegate operations</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerAVAssetResourceLoaderDelegate:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/registeredAVAssetResourceLoaderDelegate</TokenIdentifier>
+			<Abstract type="html">Returns the currently configured AVAssetResourceLoaderDelegate class</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull Class&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)registeredAVAssetResourceLoaderDelegate</Declaration>
+			
+			<ReturnValue><Abstract type="html">The currently configured AVAssetResourceLoaderDelegate class</Abstract></ReturnValue>
+			<Anchor>//api/name/registeredAVAssetResourceLoaderDelegate</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoLicenseManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Sets the license manager delegate</Abstract>
+			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDelegate:(nullable id&lt;VirtuosoLicenseManagerDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate that will provide license ID and license token lookups</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDelegate:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

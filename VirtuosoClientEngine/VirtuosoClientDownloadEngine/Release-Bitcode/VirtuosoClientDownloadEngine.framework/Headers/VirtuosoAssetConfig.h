@@ -35,19 +35,32 @@
  *              creating the asset and then manually invoking addToQueue.
  *
  *  Default values:
- *    VirtuosoAssetConfig..autoAddToQueue = TRUE;   
- *    VirtuosoAssetConfig..maximumBitrate = INT_MAX;
- *    VirtuosoAssetConfig..maximumAudioBitrate = INT_MAX;
- *    VirtuosoAssetConfig..protectionType = kVDE_AssetProtectionTypePassthrough;
- *    VirtuosoAssetConfig.includeEncryption = YES;
- *    VirtuosoAssetConfig.assetDownloadLimit = -1;
- *    VirtuosoAssetConfig.expiryAfterPlay = kInvalidExpiryTimeInterval;     // -42.0
- *    VirtuosoAssetConfig.expiryAfterDownload = kInvalidExpiryTimeInterval; // -42.0
+ *
+ *    - VirtuosoAssetConfig..autoAddToQueue = TRUE;
+ *    - VirtuosoAssetConfig..maximumBitrate = INT_MAX;
+ *    - VirtuosoAssetConfig..maximumAudioBitrate = INT_MAX;
+ *    - VirtuosoAssetConfig..protectionType = kVDE_AssetProtectionTypePassthrough;
+ *    - VirtuosoAssetConfig.includeEncryption = YES;
+ *    - VirtuosoAssetConfig.assetDownloadLimit = -1;
+ *    - VirtuosoAssetConfig.expiryAfterPlay = kInvalidExpiryTimeInterval;     // -42.0
+ *    - VirtuosoAssetConfig.expiryAfterDownload = kInvalidExpiryTimeInterval; // -42.0
+ *    - VirtuosoAssetConfig.offlinePlayEnabled = TRUE;
+ *
+ *  FastPlay quckest download should use the following:
+ *
+ *    - VirtuosoAssetConfig.fastPlayEnabled = TRUE;
+ *    - VirtuosoAssetConfig.offlinePlayEnabled = FALSE;
+ *
+ *  Download for both FastPlay and Offline playback:
+ *  
+ *    - VirtuosoAssetConfig.fastPlayEnabled = TRUE;
+ *    - VirtuosoAssetConfig.offlinePlayEnabled = TRUE; // Default is TRUE
+ *
  */
 @interface VirtuosoAssetConfig : NSObject
 
 /*!
- *  @abstract Name of the download queue to associate with this Asset.
+ *  @abstract Optional Playlists that this asset should be added to.
  *
  */
 @property (nonatomic, strong)NSArray<VirtuosoPlaylist*>* _Nullable playlists;
@@ -94,7 +107,7 @@
 @property (nonatomic, assign)kVDE_AssetProtectionType protectionType;
 
 /*!
- *  @abstract If YES, then this method will download any encryption keys in manifest.
+ *  @abstract If YES, then the asset will download any encryption keys in manifest.
  *            Normally, you would pass YES, but this allows for custom behaviors.
  */
 @property (nonatomic, assign)Boolean includeEncryption;
@@ -167,16 +180,26 @@
 @property (nonatomic, assign)NSInteger assetDownloadLimit;
 
 /*!
- *  @abstract If this asset is ready to begin FastPlay playback
+ *  @abstract Prepare download for fastplay playback.
  *
- *  @discussion In order for an asset to successfully FastPlay, a small amount of the asset must be pre-downloaded.
- *              Until that initial download has completed, playing the asset will behave as if FastPlay was not
- *              enabled.
+ *  @discussion This option will download the asset for Fastplay playback.
+ *  In addition, quickest download option for fastplay playback can be achieved by setting offlinePlayEnabled = FALSE.
+ *  This reduces the amount of data downloaded and will result in asset become ready for fasatplay playback as quickly as possible.
+ *  Default is disabled.
  */
-@property (nonatomic, assign)Boolean enableFastPlay;
+@property (nonatomic, assign)Boolean fastPlayEnabled;
 
 /*!
- *  @abstract If true the asset is automatically added to the download queue.
+ *  @abstract Prepare download for Offline playback.
+ *
+ *  @discussion This option will download the asset for Offline playback.
+ *              Preparing for both fastplay and offline playback will take longer than just preparing for fastplay.
+ *              Default is enabled.
+ */
+@property (nonatomic, assign)Boolean offlinePlayEnabled;
+                                     
+/*!
+ *  @abstract If true the asset is automatically added to the download queue. Default is true.
  */
 @property (nonatomic, assign)Boolean autoAddToQueue;
 
@@ -186,7 +209,7 @@
 @property (nonatomic, strong)NSArray<VirtuosoAncillaryFile*>* _Nullable ancillaries;
 
 /*!
- *  @abstract AdsProvider assocated with the Asset.
+ *  @abstract AdsProvider assocated with the Asset if Ads are enabled.
  *
  */
 @property (nonatomic, strong)VirtuosoAdsProvider* _Nullable adsProvider;

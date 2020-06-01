@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_ProxyErrorCode.html">
+	<File path="Constants/kVDE_AssetType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ProxyErrorCode</TokenIdentifier>
-			<Abstract type="html">Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
-NSNotificationCenter. These codes are included in the NSError that is sent.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetType</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -15,10 +14,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneAuthorizationTimedOut</TokenIdentifier>
-            <Abstract type="html">For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
-        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. </Abstract>
-            <Declaration>kVDE_BackplaneAuthorizationTimedOut</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeNonSegmented</TokenIdentifier>
+            <Abstract type="html">A single-file asset (E.G. MP4)</Abstract>
+            <Declaration>kVDE_AssetTypeNonSegmented</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -26,9 +24,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetOutsideViewingWindow</TokenIdentifier>
-            <Abstract type="html">You attempted to play an asset outside its availability window.</Abstract>
-            <Declaration>kVDE_PlayedAssetOutsideViewingWindow</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHLS</TokenIdentifier>
+            <Abstract type="html">A HTTP Live Streaming (HLS) asset</Abstract>
+            <Declaration>kVDE_AssetTypeHLS</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -36,9 +34,9 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PlayedAssetExpired</TokenIdentifier>
-            <Abstract type="html">You attempted to play an expired asset.</Abstract>
-            <Declaration>kVDE_PlayedAssetExpired</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeDASH</TokenIdentifier>
+            <Abstract type="html">A MPEG-DASH asset</Abstract>
+            <Declaration>kVDE_AssetTypeDASH</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -46,20 +44,10 @@ NSNotificationCenter. These codes are included in the NSError that is sent.</Abs
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_InvalidAsset</TokenIdentifier>
-            <Abstract type="html">The VirtuosoAsset used to initialize the proxy wasn&apos;t an invalid asset or the asset protection type was not
-        kVDE_AssetProtectionTypePassthrough. </Abstract>
-            <Declaration>kVDE_InvalidAsset</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="70"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_PortInUse</TokenIdentifier>
-            <Abstract type="html">The HTTP server was unable to listen on the selected port</Abstract>
-            <Declaration>kVDE_PortInUse</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHSS</TokenIdentifier>
+            <Abstract type="html">DEPRECATED  starting in v4.0, do not use. A HTTP Smooth Streaming (HSS) asset
+     This attribute is deprecated starting v4.0 </Abstract>
+            <Declaration>kVDE_AssetTypeHSS</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
