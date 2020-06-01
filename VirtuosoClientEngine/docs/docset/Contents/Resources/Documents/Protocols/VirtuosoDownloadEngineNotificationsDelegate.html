@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>VirtuosoDownloadEngineNotificationsDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Cache &amp; Carry (Virtuoso) SDK - iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Penthera Inc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/downloadEngineAllAssetsDeleted">- downloadEngineAllAssetsDeleted</option>
+		
+		<option value="//api/name/downloadEngineAssetDidExpire:">- downloadEngineAssetDidExpire:</option>
+		
+		<option value="//api/name/downloadEngineConsistencyScanCompletedForAsset:">- downloadEngineConsistencyScanCompletedForAsset:</option>
+		
+		<option value="//api/name/downloadEngineDRMResultForAsset:withError:">- downloadEngineDRMResultForAsset:withError:</option>
+		
+		<option value="//api/name/downloadEngineDeletedAssetId:">- downloadEngineDeletedAssetId:</option>
+		
+		<option value="//api/name/downloadEngineDidBeginDataStoreUpgrade">- downloadEngineDidBeginDataStoreUpgrade</option>
+		
+		<option value="//api/name/downloadEngineDidEncounterErrorForAsset:error:task:data:statusCode:">- downloadEngineDidEncounterErrorForAsset:error:task:data:statusCode:</option>
+		
+		<option value="//api/name/downloadEngineDidEncounterWarningForAsset:error:">- downloadEngineDidEncounterWarningForAsset:error:</option>
+		
+		<option value="//api/name/downloadEngineDidFinishDataStoreUpgrade">- downloadEngineDidFinishDataStoreUpgrade</option>
+		
+		<option value="//api/name/downloadEngineDidFinishDownloadingAncillary:forAsset:">- downloadEngineDidFinishDownloadingAncillary:forAsset:</option>
+		
+		<option value="//api/name/downloadEngineDidFinishDownloadingAsset:">- downloadEngineDidFinishDownloadingAsset:</option>
+		
+		<option value="//api/name/downloadEngineDidStartDownloadingAsset:">- downloadEngineDidStartDownloadingAsset:</option>
+		
+		<option value="//api/name/downloadEngineEnableStateChange:">- downloadEngineEnableStateChange:</option>
+		
+		<option value="//api/name/downloadEngineFastPlayAssetReady:">- downloadEngineFastPlayAssetReady:</option>
+		
+		<option value="//api/name/downloadEngineInternalQueueUpdate">- downloadEngineInternalQueueUpdate</option>
+		
+		<option value="//api/name/downloadEngineIsEnteringBackground:pausingAssets:">- downloadEngineIsEnteringBackground:pausingAssets:</option>
+		
+		<option value="//api/name/downloadEngineNetworkReachabilityChange:currentNetworkReachability:">- downloadEngineNetworkReachabilityChange:currentNetworkReachability:</option>
+		
+		<option value="//api/name/downloadEnginePlaybackStopped:">- downloadEnginePlaybackStopped:</option>
+		
+		<option value="//api/name/downloadEngineProgressUpdatedForAsset:">- downloadEngineProgressUpdatedForAsset:</option>
+		
+		<option value="//api/name/downloadEngineProgressUpdatedProcessingForAsset:">- downloadEngineProgressUpdatedProcessingForAsset:</option>
+		
+		<option value="//api/name/downloadEngineStartupComplete:">- downloadEngineStartupComplete:</option>
+		
+		<option value="//api/name/downloadEngineStartupUserDeleteStarted">- downloadEngineStartupUserDeleteStarted</option>
+		
+		<option value="//api/name/downloadEngineStatusChange:statusInfo:">- downloadEngineStatusChange:statusInfo:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">VirtuosoDownloadEngineNotificationsDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoDownloadEngineNotificationsManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/downloadEngineDidStartDownloadingAsset:" title="downloadEngineDidStartDownloadingAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDidStartDownloadingAsset:">&ndash;&nbsp;downloadEngineDidStartDownloadingAsset:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine starts downloading a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDidStartDownloadingAsset:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDidStartDownloadingAssetNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineProgressUpdatedForAsset:" title="downloadEngineProgressUpdatedForAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineProgressUpdatedForAsset:">&ndash;&nbsp;downloadEngineProgressUpdatedForAsset:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine reports progress for a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineProgressUpdatedForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineProgressUpdatedForAssetNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineProgressUpdatedProcessingForAsset:" title="downloadEngineProgressUpdatedProcessingForAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineProgressUpdatedProcessingForAsset:">&ndash;&nbsp;downloadEngineProgressUpdatedProcessingForAsset:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when an asset is being processed after background transfer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineProgressUpdatedProcessingForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineProgressUpdatedForAssetProcessingNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDidFinishDownloadingAsset:" title="downloadEngineDidFinishDownloadingAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDidFinishDownloadingAsset:">&ndash;&nbsp;downloadEngineDidFinishDownloadingAsset:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine reports a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> as complete</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDidFinishDownloadingAsset:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDidFinishDownloadingAssetNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDeletedAssetId:" title="downloadEngineDeletedAssetId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDeletedAssetId:">&ndash;&nbsp;downloadEngineDeletedAssetId:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever asset is deleted</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDeletedAssetId:(NSString *_Nonnull)<em>assetID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetID</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>.assetID for the asset that was deleted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kBackplaneAssetDeletedNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineConsistencyScanCompletedForAsset:" title="downloadEngineConsistencyScanCompletedForAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineConsistencyScanCompletedForAsset:">&ndash;&nbsp;downloadEngineConsistencyScanCompletedForAsset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine reports a consistency scan complete for an asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineConsistencyScanCompletedForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDidFinishConsistencyScanAssetNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDidFinishDownloadingAncillary:forAsset:" title="downloadEngineDidFinishDownloadingAncillary:forAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDidFinishDownloadingAncillary:forAsset:">&ndash;&nbsp;downloadEngineDidFinishDownloadingAncillary:forAsset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine reports a <a href="../Classes/VirtuosoAncillaryFile.html">VirtuosoAncillaryFile</a> as complete</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDidFinishDownloadingAncillary:(VirtuosoAncillaryFile *_Nonnull)<em>ancillary</em> forAsset:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ancillary</code></th>
+						<td><p><a href="../Classes/VirtuosoAncillaryFile.html">VirtuosoAncillaryFile</a> that finished</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDidFinishDownloadingAssetNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineAssetDidExpire:" title="downloadEngineAssetDidExpire:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineAssetDidExpire:">&ndash;&nbsp;downloadEngineAssetDidExpire:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine reports a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> has expired</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineAssetDidExpire:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDidResetExpiredAssetsNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDRMResultForAsset:withError:" title="downloadEngineDRMResultForAsset:withError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDRMResultForAsset:withError:">&ndash;&nbsp;downloadEngineDRMResultForAsset:withError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine reports result of DRM</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDRMResultForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em> withError:(NSError *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError indicating cause of DRM refresh failure</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDRMResultForAssetNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineStatusChange:statusInfo:" title="downloadEngineStatusChange:statusInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineStatusChange:statusInfo:">&ndash;&nbsp;downloadEngineStatusChange:statusInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine status changes</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineStatusChange:(kVDE_DownloadEngineStatus)<em>status</em> statusInfo:(VirtuosoEngineStatusInfo *_Nonnull)<em>statusInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>status</code></th>
+						<td><p>Engine status enum <a href="../Constants/kVDE_DownloadEngineStatus.html">kVDE_DownloadEngineStatus</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>statusInfo</code></th>
+						<td><p>Engine <a href="../Classes/VirtuosoEngineStatusInfo.html">VirtuosoEngineStatusInfo</a> information</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineStatusDidChangeNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineInternalQueueUpdate" title="downloadEngineInternalQueueUpdate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineInternalQueueUpdate">&ndash;&nbsp;downloadEngineInternalQueueUpdate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when internal logic changes queue order.  All we need to do is refresh the tables.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineInternalQueueUpdate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineInternalQueueUpdateNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDidEncounterWarningForAsset:error:" title="downloadEngineDidEncounterWarningForAsset:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDidEncounterWarningForAsset:error:">&ndash;&nbsp;downloadEngineDidEncounterWarningForAsset:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine encounters a recoverable issue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDidEncounterWarningForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em> error:(NSError *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>optional NSError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Called whenever the Engine encounters a recoverable issue.  These are events that MAY be of concern to the Caller, but the Engine will
+continue the download process without intervention.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDidEncounterErrorForAsset:error:task:data:statusCode:" title="downloadEngineDidEncounterErrorForAsset:error:task:data:statusCode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDidEncounterErrorForAsset:error:task:data:statusCode:">&ndash;&nbsp;downloadEngineDidEncounterErrorForAsset:error:task:data:statusCode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine encounters an error</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em> error:(NSError *_Nullable)<em>error</em> task:(NSURLSessionTask *_Nullable)<em>task</em> data:(NSData *_Nullable)<em>data</em> statusCode:(NSNumber *_Nullable)<em>statusCode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError for indicating the error details</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>task</code></th>
+						<td><p>NSURLSessionTask for the error</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>NSData for the HTTP Response.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>statusCode</code></th>
+						<td><p>Http Status Code (NSNumber integerValue) if this was for an Http error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Called whenever the Engine encounters an error that it cannot recover from.  This type of error will cause the engine to retry download of the file.  If too many errors are encountered, the Engine will move on to the next item in the queue.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineIsEnteringBackground:pausingAssets:" title="downloadEngineIsEnteringBackground:pausingAssets:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineIsEnteringBackground:pausingAssets:">&ndash;&nbsp;downloadEngineIsEnteringBackground:pausingAssets:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine is about to enter background</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineIsEnteringBackground:(NSArray *_Nullable)<em>continuingAssets</em> pausingAssets:(NSArray *_Nullable)<em>pausingAssets</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>continuingAssets</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pausingAssets</code></th>
+						<td><p>NSError for indicating the error details</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Called some period of time after the main application has been put into the background by the User.  Depending on application configuration, the Engine will keep the app alive in the background for some period of time in order to continue active downloads.  Once the Engine cannot keep the application alive any longer, due to iOS constraints, the Engine will pause downloads and allow the application to be put to sleep.  Before going to sleep, this notification is called to allow the Caller to take potential action if downloads were still pending at this point.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineEnableStateChange:" title="downloadEngineEnableStateChange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineEnableStateChange:">&ndash;&nbsp;downloadEngineEnableStateChange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called whenever the Engine enabled or disabled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineEnableStateChange:(Boolean)<em>enabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enabled</code></th>
+						<td><p>True indicates engine was enabled, False was disabled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineEnableDisableChangeNotificationKey</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDidBeginDataStoreUpgrade" title="downloadEngineDidBeginDataStoreUpgrade"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDidBeginDataStoreUpgrade">&ndash;&nbsp;downloadEngineDidBeginDataStoreUpgrade</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when data store update begins</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDidBeginDataStoreUpgrade</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDidBeginDataStoreUpgradeNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineDidFinishDataStoreUpgrade" title="downloadEngineDidFinishDataStoreUpgrade"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineDidFinishDataStoreUpgrade">&ndash;&nbsp;downloadEngineDidFinishDataStoreUpgrade</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when data store update finishes</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineDidFinishDataStoreUpgrade</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineDidFinishDataStoreUpgradeNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineAllAssetsDeleted" title="downloadEngineAllAssetsDeleted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineAllAssetsDeleted">&ndash;&nbsp;downloadEngineAllAssetsDeleted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when Asset.deleteAll completes</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineAllAssetsDeleted</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked in-response to Notification kDownloadEngineAllAssetsDeletedNotification</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineStartupComplete:" title="downloadEngineStartupComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineStartupComplete:">&ndash;&nbsp;downloadEngineStartupComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when startupWithBackplane completes</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineStartupComplete:(Boolean)<em>succeeded</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>succeeded</code></th>
+						<td><p>YES indicates the backplane started successfully, NO indicates failure.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked when startupWithBackplane completes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineStartupUserDeleteStarted" title="downloadEngineStartupUserDeleteStarted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineStartupUserDeleteStarted">&ndash;&nbsp;downloadEngineStartupUserDeleteStarted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when startupWithBackplane detects user change that will require assets be deleted.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineStartupUserDeleteStarted</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Called when startupWithBackplane detects user change that will require assets be deleted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineNetworkReachabilityChange:currentNetworkReachability:" title="downloadEngineNetworkReachabilityChange:currentNetworkReachability:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineNetworkReachabilityChange:currentNetworkReachability:">&ndash;&nbsp;downloadEngineNetworkReachabilityChange:currentNetworkReachability:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when the operating system detects a change in network reachability.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineNetworkReachabilityChange:(kVL_BearerType)<em>previousNetworkReachability</em> currentNetworkReachability:(kVL_BearerType)<em>currentNetworkReachability</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>previousNetworkReachability</code></th>
+						<td><p>The previous state of network reachability.  During the first invocaton of the callback this value will always be kVL_Invalid.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currentNetworkReachability</code></th>
+						<td><p>The current state of network reachability.  Compare currentNetworkReachability with previousNetworkReachability to determine change in network reachability.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked when the operating system detects a change in network reachability.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEngineFastPlayAssetReady:" title="downloadEngineFastPlayAssetReady:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEngineFastPlayAssetReady:">&ndash;&nbsp;downloadEngineFastPlayAssetReady:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when a FastPlay Asset is ready to play.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEngineFastPlayAssetReady:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> for asset that is ready for FastPlay</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked when a FastPlay Asset is ready to play.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEnginePlaybackStopped:" title="downloadEnginePlaybackStopped:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEnginePlaybackStopped:">&ndash;&nbsp;downloadEnginePlaybackStopped:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when playback is stopped on an asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadEnginePlaybackStopped:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> for asset that was playing</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-06-01</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
