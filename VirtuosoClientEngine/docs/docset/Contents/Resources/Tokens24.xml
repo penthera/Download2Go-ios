@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegate.html">
+	<File path="Categories/VirtuosoAsset+SegmentedVideo.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegate</TokenIdentifier>
-			<Abstract type="html">Provides a mechanism to automatically handle FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/VirtuosoAsset(SegmentedVideo)</TokenIdentifier>
+			<Abstract type="html">Provides additional types and methods used to handle segmented video</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -13,110 +13,230 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setAsset:</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/segmentDownloadErrors</TokenIdentifier>
+			<Abstract type="html">The number of segments that could not be downloaded in this asset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			<Declaration>- (NSUInteger)segmentDownloadErrors</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/segmentDownloadErrors</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestRemoteURL:</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset that is going to be played</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
 			
 			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setLoadPersistentLicense:</TokenIdentifier>
-			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestRemoteURL</TokenIdentifier>
+			<Abstract type="html">Where the manifest for this asset lives on the Internet.</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</Declaration>
 			
 			
-			<Anchor>//api/name/loadPersistentLicense</Anchor>
+			<Anchor>//api/name/manifestRemoteURL</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
-			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestLocalPath:</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
 			
 			
-			<Anchor>//api/name/loadPersistentLicense</Anchor>
+			<Anchor>//api/name/manifestLocalPath</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/loadPersistentLicense</TokenIdentifier>
-			<Abstract type="html">Whether to load a persistent offline FairPlay license</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) Boolean loadPersistentLicense</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
 			
 			
-			<Anchor>//api/name/loadPersistentLicense</Anchor>
+			<Anchor>//api/name/manifestLocalPath</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/setErrorHandler:</TokenIdentifier>
-			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/manifestLocalPath</TokenIdentifier>
+			<Abstract type="html">The local file path for the saved master manifest file</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</Declaration>
 			
 			
-			<Anchor>//api/name/errorHandler</Anchor>
+			<Anchor>//api/name/manifestLocalPath</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
-			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setVideoStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
 			
 			
-			<Anchor>//api/name/errorHandler</Anchor>
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoAVAssetResourceLoaderDelegate/errorHandler</TokenIdentifier>
-			<Abstract type="html">An error handler to receive errors encountered while generating FairPlay licenses</Abstract>
-			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoAVAssetResourceLoaderDelegateErrorHandler&gt; errorHandler</Declaration>
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
 			
 			
-			<Anchor>//api/name/errorHandler</Anchor>
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/videoStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The video bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long videoStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/videoStreamBitrate</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setAudioStreamBitrate:</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/audioStreamBitrate</TokenIdentifier>
+			<Abstract type="html">The audio bitrate of this asset when downloaded</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long audioStreamBitrate</Declaration>
+			
+			
+			<Anchor>//api/name/audioStreamBitrate</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setSelectedAudio:</TokenIdentifier>
+			<Abstract type="html">The audio languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/selectedAudio</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/selectedAudio</TokenIdentifier>
+			<Abstract type="html">The audio languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/selectedAudio</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/selectedAudio</TokenIdentifier>
+			<Abstract type="html">The audio languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</Declaration>
+			
+			
+			<Anchor>//api/name/selectedAudio</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setSelectedSubtitles:</TokenIdentifier>
+			<Abstract type="html">The subtitle languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</Declaration>
+			
+			
+			<Anchor>//api/name/selectedSubtitles</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/selectedSubtitles</TokenIdentifier>
+			<Abstract type="html">The subtitle languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</Declaration>
+			
+			
+			<Anchor>//api/name/selectedSubtitles</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAsset/selectedSubtitles</TokenIdentifier>
+			<Abstract type="html">The subtitle languages to download</Abstract>
+			<DeclaredIn>VirtuosoAsset+SegmentedVideo.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</Declaration>
+			
+			
+			<Anchor>//api/name/selectedSubtitles</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

@@ -1,80 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPrepareUrlDelegate.html">
+	<File path="Protocols/VirtuosoSubscriptionDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPrepareUrlDelegate</TokenIdentifier>
-			<Abstract type="html">This delegate defines the methods that can be implemented
-to allow modification of Asset URL&apos;s before downloading.
-
-This is an advanced feature which is entirely optional.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoSubscriptionDataSource</TokenIdentifier>
+			<Abstract type="html">Provides a configurable and dynamic mechanism for retrieving required data about subscription content.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
             
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionDefaultDataSource</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<NodeRef refid="33"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSubManifestURL:manifestType:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the sub-manifest Url prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithSubscriptions:</TokenIdentifier>
+			<Abstract type="html">Initializes a data source with subscriptions that require data lookups</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)prepareSubManifestURL:(NSString *_Nonnull)url manifestType:(kVDM_ManifestType)manifestType forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (nonnull id)initWithSubscriptions:(nonnull NSArray *)subscriptions</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded</Abstract>
-				</Parameter><Parameter>
-					<Name>manifestType</Name>
-					<Abstract type="html">The manifest type for the URL that is about to be downloaded</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset</Abstract>
+					<Name>subscriptions</Name>
+					<Abstract type="html">A list of subscription data</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSubManifestURL:manifestType:forAsset:</Anchor>
+			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSubscriptions:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSegmentURL:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the Segment Url prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/initWithAssets:</TokenIdentifier>
+			<Abstract type="html">Initializes a data source with individual assets that require data lookups</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)prepareSegmentURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (nonnull id)initWithAssets:(nonnull NSArray *)assets</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset</Abstract>
+					<Name>assets</Name>
+					<Abstract type="html">A list of asset data</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSegmentURL:forAsset:</Anchor>
+			<ReturnValue><Abstract type="html">Returns an initialized unstarted data source</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAssets:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareEncryptionKeyURL:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the video encryption key URL prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionDataSource/process</TokenIdentifier>
+			<Abstract type="html">Processes a data lookup operation using the initalized subscription data</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)prepareEncryptionKeyURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareEncryptionKeyURL:forAsset:</Anchor>
+			<Declaration>- (nonnull NSObject *)process</Declaration>
+			
+			<ReturnValue><Abstract type="html">If the data source was initialized with subscriptions, via the initWithSubscriptions method, then a NSDictionary where the keys are subscription IDs and
+the values are NSArrays containing NSDictionaries representing asset data, with key-value data as defined in SubscriptionAssetDataAttributes.  If the
+data source was initialized with assets, via the initWithAssets method, then a single NSArray is returned directly, without the top NSDictionary package.</Abstract></ReturnValue>
+			<Anchor>//api/name/process</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		

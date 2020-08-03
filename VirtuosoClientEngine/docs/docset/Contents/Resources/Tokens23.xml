@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSubscriptionManager.html">
+	<File path="Categories/VirtuosoAsset+HSS.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionManager</TokenIdentifier>
-			<Abstract type="html">The central control for all subscription-related activities.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/VirtuosoAsset(HSS)</TokenIdentifier>
+			<Abstract type="html">Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,435 +13,295 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoSubscriptionManager/instance</TokenIdentifier>
-			<Abstract type="html">The singleton instance access method</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
 			
-			<Declaration>+ (nullable VirtuosoSubscriptionManager *)instance</Declaration>
-			
-			<ReturnValue><Abstract type="html">Returns the VirtuosoSubscriptionManager object instance, or nil if the VirtuosoDownloadEngine hasn&apos;t been started yet.</Abstract></ReturnValue>
-			<Anchor>//api/name/instance</Anchor>
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/syncSubscriptionsWithBackplaneNowOnComplete:</TokenIdentifier>
-			<Abstract type="html">Forces a manual subscription sync with the Backplane, using standard parameters</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)syncSubscriptionsWithBackplaneNowOnComplete:(nullable SyncCompleteBlock)onComplete</Declaration>
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay ancillaries:(nullable NSArray *)ancillaries adsProvider:(nullable VirtuosoAdsProvider *)adsProvider userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>onComplete</Name>
-					<Abstract type="html">A completion block indicating sync has completed</Abstract>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>ancillaries</Name>
+					<Abstract type="html">Optional array of VirtuosoAncillaryFile&apos;s</Abstract>
+				</Parameter><Parameter>
+					<Name>adsProvider</Name>
+					<Abstract type="html">BETA Feature. Instance of AdsProvider to use with this Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new in-memory HSS VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay ancillaries:(nullable NSArray *)ancillaries adsProvider:(nullable VirtuosoAdsProvider *)adsProvider userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of file that
+Virtuoso will delete the file. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>ancillaries</Name>
+					<Abstract type="html">Optional array of VirtuosoAncillaryFile&apos;s</Abstract>
+				</Parameter><Parameter>
+					<Name>adsProvider</Name>
+					<Abstract type="html">BETA Feature. Instance of AdsProvider to use with this Asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Creates a new empty HSS VirtuosoAsset object, identified by the provided manifest URL.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)assetID description:(nonnull NSString *)description manifestUrl:(nonnull NSString *)manifestUrl maximumVideoBitrate:(long long)maximumVideoBitrate maximumAudioBitrate:(long long)maximumAudioBitrate publishDate:(nullable NSDate *)publishDate expiryDate:(nullable NSDate *)expiryDate expiryAfterDownload:(NSTimeInterval)expiryAfterDownload expiryAfterPlay:(NSTimeInterval)expiryAfterPlay assetDownloadLimit:(int)assetDownloadLimit enableFastPlay:(Boolean)enableFastPlay userInfo:(nullable NSDictionary *)userInfo onReadyForDownload:(nullable AssetReadyForDownloadBlock)readyBlock onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">A globally unique identifier for the asset. Used in all log events. IMPORTANT: This value must be globally unique across all assets within the Catalog. Dupicate AssetID&apos;s are not allowed.</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract type="html">A description of the asset.  Virtuoso only uses this in log output.</Abstract>
+				</Parameter><Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>publishDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset until this date. Nil means &quot;now.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryDate</Name>
+					<Abstract type="html">Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterDownload</Name>
+					<Abstract type="html">Amount of time after Virtuoso completes download of file that
+Virtuoso will delete the file. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>expiryAfterPlay</Name>
+					<Abstract type="html">Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</Abstract>
+				</Parameter><Parameter>
+					<Name>assetDownloadLimit</Name>
+					<Abstract type="html">Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value &gt; 0 will be applied to download permissions checks for this asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>enableFastPlay</Name>
+					<Abstract type="html">If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided userInfo must be property-list compatible. May be nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>readyBlock</Name>
+					<Abstract type="html">Called when the asset is ready to be added to the download queue</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new (empty) VirtuosoAsset object, or nil if there was an error.</Abstract></ReturnValue>
+			<Anchor>//api/name/assetWithAssetID:description:manifestUrl:maximumVideoBitrate:maximumAudioBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAsset/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</TokenIdentifier>
+			<Abstract type="html">Adds a manifest URL to an existing VirtuosoAsset.</Abstract>
+			<DeclaredIn>VirtuosoAsset+HSS.h</DeclaredIn>
+			
+			<Declaration>- (void)setManifestURL:(nonnull NSString *)manifestUrl withMaximumVideoBitrate:(long long)maximumVideoBitrate andMaximumAudioBitrate:(long long)maximumAudioBitrate onParseComplete:(nullable AssetParsingCompletedBlock)completeBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manifestUrl</Name>
+					<Abstract type="html">Where the manifest lives on the Internet.</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumVideoBitrate</Name>
+					<Abstract type="html">For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&apos;t exceed this value. A value of 1 means &quot;use the lowest
+bitrate.&quot; If there&apos;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile. A value of INT_MAX means &quot;use the highest bitrate.&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>maximumAudioBitrate</Name>
+					<Abstract type="html">Same as maximumVideoBitrate, but for the audio portion of the stream.</Abstract>
+				</Parameter><Parameter>
+					<Name>completeBlock</Name>
+					<Abstract type="html">Called when asset parsing completes. May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/syncSubscriptionsWithBackplaneNowOnComplete:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:</TokenIdentifier>
-			<Abstract type="html">Forces a manual subscription sync with the Backplane, using custom parameters</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/syncSubscriptionsWithBackplaneNowOnComplete:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)syncSubscriptionsWithBackplaneNowForDataSince:(nullable NSDate *)since returningOnlySubscribedFeeds:(Boolean)subscribed onComplete:(nullable SyncCompleteBlock)onComplete</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>since</Name>
-					<Abstract type="html">Data will only be returned if it has been modified after this timestamp.  If nil, all data will be returned.</Abstract>
-				</Parameter><Parameter>
-					<Name>subscribed</Name>
-					<Abstract type="html">If YES, then only data for currently subscribed feeds will be returned.  If NO, then data for all subscribable feeds
-will be returned.</Abstract>
-				</Parameter><Parameter>
-					<Name>onComplete</Name>
-					<Abstract type="html">A completion block indicating sync has completed</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/setLastSubscriptionSyncTime:</TokenIdentifier>
-			<Abstract type="html">The last time the Manager successfully synced with the Backplane.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</Declaration>
-			
-			
-			<Anchor>//api/name/lastSubscriptionSyncTime</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/lastSubscriptionSyncTime</TokenIdentifier>
-			<Abstract type="html">The last time the Manager successfully synced with the Backplane.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</Declaration>
-			
-			
-			<Anchor>//api/name/lastSubscriptionSyncTime</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionManager/lastSubscriptionSyncTime</TokenIdentifier>
-			<Abstract type="html">The last time the Manager successfully synced with the Backplane.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</Declaration>
-			
-			
-			<Anchor>//api/name/lastSubscriptionSyncTime</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/unregisterSubscriptionsOnComplete:</TokenIdentifier>
-			<Abstract type="html">Cancels all subscriptions.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)unregisterSubscriptionsOnComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>onComplete</Name>
-					<Abstract type="html">A completion block indicating the unsubscription process is compplete.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/unregisterSubscriptionsOnComplete:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/registerDataSource:</TokenIdentifier>
-			<Abstract type="html">Configures the Manager to utilize a particular data source class</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)registerDataSource:(nonnull Class&lt;VirtuosoSubscriptionDataSource&gt;)dataSourceClass</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>dataSourceClass</Name>
-					<Abstract type="html">A Class instance to use for metadata lookup operations</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/registerDataSource:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/setStatus:</TokenIdentifier>
-			<Abstract type="html">The current Subscription Manager status</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) kVSM_Status status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/status</TokenIdentifier>
-			<Abstract type="html">The current Subscription Manager status</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) kVSM_Status status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionManager/status</TokenIdentifier>
-			<Abstract type="html">The current Subscription Manager status</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) kVSM_Status status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/itemsInTrackingFeed:</TokenIdentifier>
-			<Abstract type="html">Returns a list of VirtuosoAsset UUID values that represent items currently tracked in the subscription feed.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray *)itemsInTrackingFeed:(nonnull NSString *)feedAssetID</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>feedAssetID</Name>
-					<Abstract type="html">The feed to return items for</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A list of items in the subscription feed</Abstract></ReturnValue>
-			<Anchor>//api/name/itemsInTrackingFeed:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/includeItem:inTrackingFeed:</TokenIdentifier>
-			<Abstract type="html">Includes the provided episode in the Manager&apos;s feed tracking lists</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)includeItem:(nonnull VirtuosoAsset *)item inTrackingFeed:(nonnull NSString *)feedAssetID</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>item</Name>
-					<Abstract type="html">A VirtuosoAsset item to include in business rule processing</Abstract>
-				</Parameter><Parameter>
-					<Name>feedAssetID</Name>
-					<Abstract type="html">The feed to associate the item with</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/includeItem:inTrackingFeed:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/registerForSubscription:onComplete:</TokenIdentifier>
-			<Abstract type="html">Registers the Manager for updates from the Backplane relating to the provided Subscription ID</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)registerForSubscription:(nonnull NSString *)feedAssetID onComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>feedAssetID</Name>
-					<Abstract type="html">The unique externally defined feed Asset ID</Abstract>
-				</Parameter><Parameter>
-					<Name>onComplete</Name>
-					<Abstract type="html">A completion block to call with request results</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/registerForSubscription:onComplete:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:</TokenIdentifier>
-			<Abstract type="html">Registers the Manager for updates from the Backplane relating to the provided Subscription ID</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)registerForSubscription:(nonnull NSString *)feedAssetID withMaximumItems:(int)maximumSubscriptionItems andAutodeleteOldItems:(Boolean)autodelete maxBitrate:(int)maxBitrate onComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>feedAssetID</Name>
-					<Abstract type="html">The unique externally defined feed Asset ID</Abstract>
-				</Parameter><Parameter>
-					<Name>maximumSubscriptionItems</Name>
-					<Abstract type="html">The total number of items from this Subscription to keep on disk at any given time</Abstract>
-				</Parameter><Parameter>
-					<Name>autodelete</Name>
-					<Abstract type="html">Whether or not to delete previously downloaded items to make room for new ones</Abstract>
-				</Parameter><Parameter>
-					<Name>maxBitrate</Name>
-					<Abstract type="html">The maximum bitrate to use when downloading streamed video.  Ignored if the new episode is not a streamed video.  This
-value will be treated as the default for all new episodes.  Specific values provided by the Backplane metadata or data source
-will override this value.</Abstract>
-				</Parameter><Parameter>
-					<Name>onComplete</Name>
-					<Abstract type="html">A completion block to call with request results</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:</TokenIdentifier>
-			<Abstract type="html">Applies new feed options to a subscribed feed</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)updateSubscription:(nonnull NSString *)feedAssetID withMaximumItems:(int)maximumSubscriptionItems andAutodeleteOldItems:(Boolean)autodelete maxBitrate:(int)maxBitrate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>feedAssetID</Name>
-					<Abstract type="html">The unique externally defined feed Asset ID</Abstract>
-				</Parameter><Parameter>
-					<Name>maximumSubscriptionItems</Name>
-					<Abstract type="html">The total number of items from this Subscription to keep on disk at any given time</Abstract>
-				</Parameter><Parameter>
-					<Name>autodelete</Name>
-					<Abstract type="html">Whether or not to delete previously downloaded items to make room for new ones</Abstract>
-				</Parameter><Parameter>
-					<Name>maxBitrate</Name>
-					<Abstract type="html">The maximum bitrate to use when downloading streamed video.  Ignored if the new episode is not a streamed video.  This
-value will be treated as the default for all new episodes.  Specific values provided by the Backplane metadata or data source
-will override this value.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/unregisterForSubscription:onComplete:</TokenIdentifier>
-			<Abstract type="html">Unregisters the Manager for updates from the Backplane relating to the provided Subscription ID</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)unregisterForSubscription:(nonnull NSString *)feedAssetID onComplete:(nullable SubscriptionResultBlock)onComplete</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>feedAssetID</Name>
-					<Abstract type="html">The unique externally defined feed Asset ID</Abstract>
-				</Parameter><Parameter>
-					<Name>onComplete</Name>
-					<Abstract type="html">A completion block to call with request results</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/unregisterForSubscription:onComplete:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/subscriptionsOnComplete:</TokenIdentifier>
-			<Abstract type="html">Returns a list of existing subscriptions</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)subscriptionsOnComplete:(nullable SubscriptionListResultBlock)onComplete</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>onComplete</Name>
-					<Abstract type="html">A completion block to call with request results</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/subscriptionsOnComplete:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/setMaximumSubscriptionItemsPerFeed:</TokenIdentifier>
-			<Abstract type="html">The maximum number of subscription items, per feed, to keep on disk at any given time</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int maximumSubscriptionItemsPerFeed</Declaration>
-			
-			
-			<Anchor>//api/name/maximumSubscriptionItemsPerFeed</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/maximumSubscriptionItemsPerFeed</TokenIdentifier>
-			<Abstract type="html">The maximum number of subscription items, per feed, to keep on disk at any given time</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int maximumSubscriptionItemsPerFeed</Declaration>
-			
-			
-			<Anchor>//api/name/maximumSubscriptionItemsPerFeed</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionManager/maximumSubscriptionItemsPerFeed</TokenIdentifier>
-			<Abstract type="html">The maximum number of subscription items, per feed, to keep on disk at any given time</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int maximumSubscriptionItemsPerFeed</Declaration>
-			
-			
-			<Anchor>//api/name/maximumSubscriptionItemsPerFeed</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/setAutodeleteOldItems:</TokenIdentifier>
-			<Abstract type="html">Whether the Manager should delete old items to make way for new ones, based on maximumSubscriptionItemsPerFeed, or keep old items and defer
-automatic download of new ones.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean autodeleteOldItems</Declaration>
-			
-			
-			<Anchor>//api/name/autodeleteOldItems</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/autodeleteOldItems</TokenIdentifier>
-			<Abstract type="html">Whether the Manager should delete old items to make way for new ones, based on maximumSubscriptionItemsPerFeed, or keep old items and defer
-automatic download of new ones.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean autodeleteOldItems</Declaration>
-			
-			
-			<Anchor>//api/name/autodeleteOldItems</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionManager/autodeleteOldItems</TokenIdentifier>
-			<Abstract type="html">Whether the Manager should delete old items to make way for new ones, based on maximumSubscriptionItemsPerFeed, or keep old items and defer
-automatic download of new ones.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) Boolean autodeleteOldItems</Declaration>
-			
-			
-			<Anchor>//api/name/autodeleteOldItems</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/setMaxBitrate:</TokenIdentifier>
-			<Abstract type="html">The maximum bitrate to use when downloading streamed videos.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int maxBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/maxBitrate</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionManager/maxBitrate</TokenIdentifier>
-			<Abstract type="html">The maximum bitrate to use when downloading streamed videos.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int maxBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/maxBitrate</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionManager/maxBitrate</TokenIdentifier>
-			<Abstract type="html">The maximum bitrate to use when downloading streamed videos.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int maxBitrate</Declaration>
-			
-			
-			<Anchor>//api/name/maxBitrate</Anchor>
+			<Anchor>//api/name/setManifestURL:withMaximumVideoBitrate:andMaximumAudioBitrate:onParseComplete:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		

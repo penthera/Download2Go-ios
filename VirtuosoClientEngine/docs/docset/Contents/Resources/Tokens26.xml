@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoDrmConfigDelegate.html">
+	<File path="Protocols/VirtuosoAVAssetResourceLoaderDelegateErrorHandler.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoDrmConfigDelegate</TokenIdentifier>
-			<Abstract type="html">Allows Virtuoso to request the enclosing application for asset specific DRM
-values when requesting FairPlay license keys.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAVAssetResourceLoaderDelegateErrorHandler</TokenIdentifier>
+			<Abstract type="html">Provides a mechanism to easily identify and handle errors encountered during the DRM licensing process</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -14,19 +13,22 @@ values when requesting FairPlay license keys.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoDrmConfigDelegate/drmConfigForAsset:</TokenIdentifier>
-			<Abstract type="html">Called when the DRM subsystem needs a DRM configuration to make a licensing request.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAVAssetResourceLoaderDelegateErrorHandler/resourceLoaderDelegate:generatedError:</TokenIdentifier>
+			<Abstract type="html">Called when an error has been encountered during the DRM licensing process</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (VirtuosoDrmConfig *_Nonnull)drmConfigForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (void)resourceLoaderDelegate:(nonnull id&lt;VirtuosoAVAssetResourceLoaderDelegate&gt;)delegate generatedError:(nonnull NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset object that will request a FairPlay license.</Abstract>
+					<Name>delegate</Name>
+					<Abstract type="html">The VirtuosoAVAssetResourceLoaderDelegate that encountered the error</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error describing the issue.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A properly configured DrmConfig object containing proper licensing details for the asset.</Abstract></ReturnValue>
-			<Anchor>//api/name/drmConfigForAsset:</Anchor>
+			
+			<Anchor>//api/name/resourceLoaderDelegate:generatedError:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

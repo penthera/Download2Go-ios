@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_AssetType.html">
+	<File path="Constants/kVDE_DownloadEngineStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetType</TokenIdentifier>
-			<Abstract type="html">@typedef kVDE_AssetType</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadEngineStatus</TokenIdentifier>
+			<Abstract type="html">Current activity status of Virtuoso&apos;s download engine.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeNonSegmented</TokenIdentifier>
-            <Abstract type="html">A single-file asset (E.G. MP4)</Abstract>
-            <Declaration>kVDE_AssetTypeNonSegmented</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Unknown</TokenIdentifier>
+            <Abstract type="html">Virtuoso hasn&apos;t finished starting up; status isn&apos;t determined</Abstract>
+            <Declaration>kVDE_Unknown</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHLS</TokenIdentifier>
-            <Abstract type="html">A HTTP Live Streaming (HLS) asset</Abstract>
-            <Declaration>kVDE_AssetTypeHLS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Downloading</TokenIdentifier>
+            <Abstract type="html">Virtuoso is actively downloading</Abstract>
+            <Declaration>kVDE_Downloading</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHSS</TokenIdentifier>
-            <Abstract type="html">A HTTP Smooth Streaming (HSS) asset</Abstract>
-            <Declaration>kVDE_AssetTypeHSS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Idle</TokenIdentifier>
+            <Abstract type="html">Downloading is enabled, but queue is empty</Abstract>
+            <Declaration>kVDE_Idle</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,9 +44,41 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeDASH</TokenIdentifier>
-            <Abstract type="html">A MPEG-DASH asset</Abstract>
-            <Declaration>kVDE_AssetTypeDASH</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Disabled</TokenIdentifier>
+            <Abstract type="html">You have disabled downloading, or the backplane has disabled download for this device</Abstract>
+            <Declaration>kVDE_Disabled</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Blocked</TokenIdentifier>
+            <Abstract type="html">Downloading is enabled and the queue is non-empty, but environmental conditions
+        (power/network/disk) prevent download. </Abstract>
+            <Declaration>kVDE_Blocked</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_Errors</TokenIdentifier>
+            <Abstract type="html">Errors occurred while downloading. There are pending downloads, but Virtuoso cannot
+        proceed without manual intervention (e.g. calling reset). </Abstract>
+            <Declaration>kVDE_Errors</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="40"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AuthenticationFailure</TokenIdentifier>
+            <Abstract type="html">SDK licensing failed.  Please contact Penthera support in this case.</Abstract>
+            <Declaration>kVDE_AuthenticationFailure</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

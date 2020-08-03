@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoLicenseProcessingDelegate.html">
+	<File path="Protocols/VirtuosoLoggerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLicenseProcessingDelegate</TokenIdentifier>
-			<Abstract type="html">Allows custom processing of the SPC license request and the license response</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLoggerDelegate</TokenIdentifier>
+			<Abstract type="html">For those who wish to use their own logging system or report metrics to
+non-Virtuoso locations/trackers. Virtuoso will send all log events to the registered
+delegate if the VirtuosoLogger would have otherwise processed them.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
@@ -13,79 +15,94 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCIDForAsset:fromFairPlayRequest:</TokenIdentifier>
-			<Abstract type="html">Allows a custom CID to be used with the SDK default AVAssetResourceLoaderDelegate</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withData:</TokenIdentifier>
+			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)extractCIDForAsset:(VirtuosoAsset *_Nonnull)asset fromFairPlayRequest:(NSURL *_Nonnull)fpRequest</Declaration>
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withData:(long long)data</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+					<Name>event</Name>
+					<Abstract type="html">The type of event</Abstract>
 				</Parameter><Parameter>
-					<Name>fpRequest</Name>
-					<Abstract type="html">The URL provided to the AVAssetResourceLoaderDelegate for the licensing request</Abstract>
+					<Name>fileID</Name>
+					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>bearer</Name>
+					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
+the network state.</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A numeric value semantically unique to the specific event.  Will be 0 when not required.
+Example: For the download-paused event, contains total bytes downloaded so far for this asset.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The CID value to use during SPC creation</Abstract></ReturnValue>
-			<Anchor>//api/name/extractCIDForAsset:fromFairPlayRequest:</Anchor>
+			
+			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withData:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/prepareSPCForAsset:inLicenseRequest:</TokenIdentifier>
-			<Abstract type="html">Allows custom processing of the FairPlay POST body before it is send.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoEventOccurred:forFile:onBearer:withStringData:</TokenIdentifier>
+			<Abstract type="html">Reports that a tracked event was logged.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (NSData *_Nullable)prepareSPCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseRequest:(NSData *_Nonnull)spc</Declaration>
+			<Declaration>- (void)virtuosoEventOccurred:(kVL_LogEvent)event forFile:(nullable NSString *)fileID onBearer:(kVL_BearerType)bearer withStringData:(nullable NSString *)data</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+					<Name>event</Name>
+					<Abstract type="html">The type of event</Abstract>
 				</Parameter><Parameter>
-					<Name>spc</Name>
-					<Abstract type="html">The Apple-generated SPC data value</Abstract>
+					<Name>fileID</Name>
+					<Abstract type="html">The UUID of the relevant asset.  Nil for events that don&apos;t relate to a specific asset.</Abstract>
+				</Parameter><Parameter>
+					<Name>bearer</Name>
+					<Abstract type="html">The network type relating to the event.  kVL_Invalid for events that don&apos;t relate to
+the network state.</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">A string value semantically unique to the specific event.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSData object suitable for the license server POST body</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSPCForAsset:inLicenseRequest:</Anchor>
+			
+			<Anchor>//api/name/virtuosoEventOccurred:forFile:onBearer:withStringData:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCKCForAsset:inLicenseResponse:</TokenIdentifier>
-			<Abstract type="html">Allows custom processing of the FairPlay license server response</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoCustomEventOccurred:</TokenIdentifier>
+			<Abstract type="html">Reports on a custom event not tracked by the standard event list.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (NSData *_Nullable)extractCKCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseResponse:(NSData *_Nonnull)response</Declaration>
+			<Declaration>- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary *)event</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
-				</Parameter><Parameter>
-					<Name>response</Name>
-					<Abstract type="html">The received response from the license server</Abstract>
+					<Name>event</Name>
+					<Abstract type="html">An NSDictionary containing the logged event data</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">CKC data value suitable for handing to the player for DRM licensing</Abstract></ReturnValue>
-			<Anchor>//api/name/extractCKCForAsset:inLicenseResponse:</Anchor>
+			
+			<Anchor>//api/name/virtuosoCustomEventOccurred:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/drmSubTypeForAsset:</TokenIdentifier>
-			<Abstract type="html">If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLoggerDelegate/virtuosoDebugEventOccurred:atLevel:</TokenIdentifier>
+			<Abstract type="html">Reports debug data.</Abstract>
+			<DeclaredIn>VirtuosoLogger.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nonnull)drmSubTypeForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (void)virtuosoDebugEventOccurred:(nonnull NSString *)data atLevel:(kVL_LoggingLevel)level</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset to resolve DRM SubType for.</Abstract>
+					<Name>data</Name>
+					<Abstract type="html">A string containing the debug event data</Abstract>
+				</Parameter><Parameter>
+					<Name>level</Name>
+					<Abstract type="html">The severity level of the log item</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">non-nil string ideitifying the DRM SubType for the Asset.</Abstract></ReturnValue>
-			<Anchor>//api/name/drmSubTypeForAsset:</Anchor>
+			
+			<Anchor>//api/name/virtuosoDebugEventOccurred:atLevel:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		

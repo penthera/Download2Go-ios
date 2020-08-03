@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>VirtuosoSubscriptionDefaultDataSource Class Reference</title>
+	<title></title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+	
 </head>
 <body class="appledoc">
 	<header>
@@ -43,31 +43,9 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
-
-	
-	
-	<option value="tasks">Tasks</option>
-	
-	
-
-	
-	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/didProcessAssetWithMetadata:">- didProcessAssetWithMetadata:</option>
-		
-		<option value="//api/name/lookupMetadataForAssetID:usingKnownData:">- lookupMetadataForAssetID:usingKnownData:</option>
-		
-		<option value="//api/name/willAddAsset:">- willAddAsset:</option>
-		
-	</optgroup>
-	
 	
 </select>
 						</label>
@@ -81,269 +59,22 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">VirtuosoSubscriptionDefaultDataSource Class Reference</h1>
+					<h1 class="title"></h1>
 
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<th>Inherits from</th>
-	<td>NSObject</td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/VirtuosoSubscriptionDataSource.html">VirtuosoSubscriptionDataSource</a></td>
-</tr><tr>
-	<th>Declared in</th>
-	<td>VirtuosoSubscriptionDefaultDataSource.h</td>
-</tr>
-						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class provides a default implementation of a <a href="../Protocols/VirtuosoSubscriptionDataSource.html">VirtuosoSubscriptionDataSource</a> and is provided as a base class for implementations to utilize the
-<a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a> with a custom back-end catalog.  If the external catalog provides all required metadata items to the Backplane
-during asset reporting, then this default implementation is sufficient to allow automated subscription handling and download management.</p>
 
-<p>Subclassing Notes: The default implementation of this class receives data from the Backplane and automatically processes any subscription
-items that have enough metadata provided to proceed immediately.  The default implementation of all methods defined below
-do nothing, and any items that cannot be automatically processed will be ignored.  Callers using an external catalog may
-need to create a custom subclass of VirtuosoSubscriptionDefaultDataSource and define custom implementations of one or both
-methods.  If the Caller chooses to develop an entirely custom <a href="../Protocols/VirtuosoSubscriptionDataSource.html">VirtuosoSubscriptionDataSource</a> instead of starting with this
-base class, then they must insure all aspects of the protocol are followed.</p><div class="warning"><p><strong>Warning:</strong> The Caller should NEVER instantiate an object of this type directly.  The Caller should configure the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a> with the desired
-data source by calling the <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a> registerDataSource: method with the Class you wish to use.  The <a href="../Classes/VirtuosoSubscriptionManager.html">VirtuosoSubscriptionManager</a>
-instance will create appropriate instances of the data source class as needed during syncs and while processing remote push notices.</p></div>
-					</div>
-					
-					
-
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/lookupMetadataForAssetID:usingKnownData:" title="lookupMetadataForAssetID:usingKnownData:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/lookupMetadataForAssetID:usingKnownData:">&ndash;&nbsp;lookupMetadataForAssetID:usingKnownData:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Requests a synchronous metadata lookup for a known asset ID</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (nonnull NSDictionary *)lookupMetadataForAssetID:(nonnull NSString *)<em>assetID</em> usingKnownData:(nonnull NSDictionary *)<em>knownData</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetID</code></th>
-						<td><p>The asset ID representing an asset to lookup</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>knownData</code></th>
-						<td><p>The known metadata received by the backplane for this asset.  May be used as a reference
-to provide additional missing data.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A NSDictionary object containing all required keys, as defined in the data source protocol</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method is called during subscription processing, and may be used to provide additional metadata prior to the asset being enqueued by the download
-engine.  Subclasses must implement this method to provide metadata to the Manager when required metadata may be missing from the Backplane sync information.
-The Caller is expected to do a synchronous lookup of the detailed data, based on the Caller-defined external asset ID, and return a NSDictionary object
-containing all required metadata items from the <a href="../Protocols/VirtuosoSubscriptionDataSource.html">VirtuosoSubscriptionDataSource</a> protocol, at a minimum.  Any additional metadata may also be provided
-and will be utilized by the Download Engine to control subscription and download business rules.  If sufficient metadata is not returned by this method,
-then the item will be ignored.  The default implementation of this method returns the knownData values.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoSubscriptionDefaultDataSource.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/didProcessAssetWithMetadata:" title="didProcessAssetWithMetadata:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/didProcessAssetWithMetadata:">&ndash;&nbsp;didProcessAssetWithMetadata:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Indicates that an asset was succesfully processed</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)didProcessAssetWithMetadata:(nonnull NSDictionary *)<em>metadata</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>metadata</code></th>
-						<td><p>A NSDictionary object containing, at a minimum, metadata values for the keys defined in the data source protocol.  Any additional data provided by
-the Backplane or the External Catalog during a metadata lookup may also be defined, and Callers can access custom catalog data in this manner.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Any time the data source successfully parses metadata for an asset, this method will be called.  Since internal subscription and download logic
-may define which items result in new <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> items and downloads, the Caller may wish to use this method to receive and process data from the
-sync that did not result in new downloads.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoSubscriptionDefaultDataSource.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/willAddAsset:" title="willAddAsset:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/willAddAsset:">&ndash;&nbsp;willAddAsset:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Indicates a new <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> item has been created</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)willAddAsset:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>asset</code></th>
-						<td><p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> item that has just been created by the Subscription Manager</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method will be called as soon as new <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> items have been created, prior to being added to the queue or deferred.  The data source
-may further modify the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object via this method, such as adding file-unique headers or other file-unique options/metadata.  It is expected
-that the implementation of this method will call the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> save method prior to returning and that any changes made within this method will be
-done synchronously.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoSubscriptionDefaultDataSource.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
 					
 
                     
-                    
-          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-06-10</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-08-03</p>
 						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

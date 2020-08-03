@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSecureClock.html">
+	<File path="Classes/VirtuosoSubscriptionDefaultDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSecureClock</TokenIdentifier>
-			<Abstract type="html">A basic secure clock implementation</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionDefaultDataSource</TokenIdentifier>
+			<Abstract type="html">The default data source for the VirtuosoSubscriptionManager.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,102 +13,58 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoSecureClock/instance</TokenIdentifier>
-			<Abstract type="html">The singleton instance access method</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/lookupMetadataForAssetID:usingKnownData:</TokenIdentifier>
+			<Abstract type="html">Requests a synchronous metadata lookup for a known asset ID</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>+ (nonnull VirtuosoSecureClock *)instance</Declaration>
-			
-			<ReturnValue><Abstract type="html">Returns the VirtuosoSecureClock object instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/instance</Anchor>
+			<Declaration>- (nonnull NSDictionary *)lookupMetadataForAssetID:(nonnull NSString *)assetID usingKnownData:(nonnull NSDictionary *)knownData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">The asset ID representing an asset to lookup</Abstract>
+				</Parameter><Parameter>
+					<Name>knownData</Name>
+					<Abstract type="html">The known metadata received by the backplane for this asset.  May be used as a reference
+to provide additional missing data.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A NSDictionary object containing all required keys, as defined in the data source protocol</Abstract></ReturnValue>
+			<Anchor>//api/name/lookupMetadataForAssetID:usingKnownData:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/update</TokenIdentifier>
-			<Abstract type="html">Requests an update to the secure clock time.  This method is called internal to the SDK
-automatically at opportune times and you should not normally need to call it manually.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/didProcessAssetWithMetadata:</TokenIdentifier>
+			<Abstract type="html">Indicates that an asset was succesfully processed</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)update</Declaration>
+			<Declaration>- (void)didProcessAssetWithMetadata:(nonnull NSDictionary *)metadata</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>metadata</Name>
+					<Abstract type="html">A NSDictionary object containing, at a minimum, metadata values for the keys defined in the data source protocol.  Any additional data provided by
+the Backplane or the External Catalog during a metadata lookup may also be defined, and Callers can access custom catalog data in this manner.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/update</Anchor>
+			<Anchor>//api/name/didProcessAssetWithMetadata:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setSecureDate:</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/willAddAsset:</TokenIdentifier>
+			<Abstract type="html">Indicates a new VirtuosoAsset item has been created</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			<Declaration>- (void)willAddAsset:(nonnull VirtuosoAsset *)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">A VirtuosoAsset item that has just been created by the Subscription Manager</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/secureDate</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/secureDate</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
-			
-			
-			<Anchor>//api/name/secureDate</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/secureDate</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
-			
-			
-			<Anchor>//api/name/secureDate</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setDate:</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
-			
-			
-			<Anchor>//api/name/date</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/date</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
-			
-			
-			<Anchor>//api/name/date</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/date</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
-			
-			
-			<Anchor>//api/name/date</Anchor>
+			<Anchor>//api/name/willAddAsset:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

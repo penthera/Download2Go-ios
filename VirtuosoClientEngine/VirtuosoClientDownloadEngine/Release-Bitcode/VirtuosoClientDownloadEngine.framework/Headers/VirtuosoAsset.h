@@ -521,6 +521,18 @@ typedef void (^BasicCompletionBlock)(void);
  */
 + (void)deleteAll;
 
+/*!
+ *  @abstract Deletes all assets from a supplied list of assets
+ *
+ *  @discussion Deletes assets asynchronously.  If you pass a non-NULL deletionsBlock,
+ *              when all deletions have finished, the completion block will be called.
+ *              For efficiency, backplane permissions are only updated after all assets
+ *              have been deleted.
+ *
+ */
+
++ (void)deleteAssets:(nonnull NSArray<VirtuosoAsset*>*)assets onComplete:(nullable AsyncCompleteBlock)completionBlock;
+
 /**---------------------------------------------------------------------------------------
  * @name Playback
  *  ---------------------------------------------------------------------------------------
