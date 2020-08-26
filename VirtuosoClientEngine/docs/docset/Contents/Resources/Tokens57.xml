@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPlaylistManagerDelegate.html">
+	<File path="Constants/ServerAdProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlaylistManagerDelegate</TokenIdentifier>
-			<Abstract type="html">This delegate defines the method(s) that must be implemented to support Smart Downloads.
-Methods in this delegate are called from a background thread, make sure your code
-can properly execute from a Thread other than the thread that created this delegate.
-
-This is an advanced feature which is entirely optional.</Abstract>
-			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ServerAdProvider</TokenIdentifier>
+			<Abstract type="html">Defines the various types of Server Ads Providers</Abstract>
+			<DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlaylistManagerDelegate/assetForAssetID:tryAgainLater:</TokenIdentifier>
-			<Abstract type="html">Requests the next asset that should be downlaoded for the named Playlist.</Abstract>
-			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
-			
-			<Declaration>- (VirtuosoAssetConfig *_Nullable)assetForAssetID:(NSString *_Nonnull)assetID tryAgainLater:(Boolean *)tryAgainLater</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>assetID</Name>
-					<Abstract type="html">The ID of the Asset in the specificed Playlist.</Abstract>
-				</Parameter><Parameter>
-					<Name>tryAgainLater</Name>
-					<Abstract type="html">Out parameter client sets if PlaylistManager should try to retrieve this item again at a later time.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return an instance of VirtuosoAssetConfig for the specified Asset. If a valid instance is returned, the asset is parsed and automatically downloaded.</Abstract></ReturnValue>
-			<Anchor>//api/name/assetForAssetID:tryAgainLater:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ServerAdProvider_Undefined</TokenIdentifier>
+            <Abstract type="html">Undefined.</Abstract>
+            <Declaration>ServerAdProvider_Undefined</Declaration>
+            
+            <DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
+            
             <NodeRef refid="57"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ServerAdProvider_Google</TokenIdentifier>
+            <Abstract type="html">Freewheel Server Ads.</Abstract>
+            <Declaration>ServerAdProvider_Google</Declaration>
+            
+            <DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
+            
+            <NodeRef refid="57"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ServerAdProvider_Verizon</TokenIdentifier>
+            <Abstract type="html">Google Server Ads.</Abstract>
+            <Declaration>ServerAdProvider_Verizon</Declaration>
+            
+            <DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
+            
+            <NodeRef refid="57"/>
+        </Token>
         
         
 	</File>

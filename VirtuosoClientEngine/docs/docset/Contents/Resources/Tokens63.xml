@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PlaylistItemState.html">
+	<File path="Constants/kVDE_AssetType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PlaylistItemState</TokenIdentifier>
-			<Abstract type="html">Status of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="63"/>
@@ -14,71 +14,42 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Uninitialized</TokenIdentifier>
-            <Abstract type="html">Item initialized</Abstract>
-            <Declaration>PlaylistItemState_Uninitialized</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeNonSegmented</TokenIdentifier>
+            <Abstract type="html">A single-file asset (E.G. MP4)</Abstract>
+            <Declaration>kVDE_AssetTypeNonSegmented</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
-            <NodeRef refid="63"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NextItem</TokenIdentifier>
-            <Abstract type="html">Item is next item to be processed</Abstract>
-            <Declaration>PlaylistItemState_NextItem</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Created</TokenIdentifier>
-            <Abstract type="html">Item created successfully</Abstract>
-            <Declaration>PlaylistItemState_Created</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHLS</TokenIdentifier>
+            <Abstract type="html">A HTTP Live Streaming (HLS) asset</Abstract>
+            <Declaration>kVDE_AssetTypeHLS</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
-            <NodeRef refid="63"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateInProcess</TokenIdentifier>
-            <Abstract type="html">Item create currently in process</Abstract>
-            <Declaration>PlaylistItemState_CreateInProcess</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateFailed</TokenIdentifier>
-            <Abstract type="html">Item creation failed</Abstract>
-            <Declaration>PlaylistItemState_CreateFailed</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeDASH</TokenIdentifier>
+            <Abstract type="html">A MPEG-DASH asset</Abstract>
+            <Declaration>kVDE_AssetTypeDASH</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
-            <NodeRef refid="63"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NotFound</TokenIdentifier>
-            <Abstract type="html">Item was not found when delegate was called</Abstract>
-            <Declaration>PlaylistItemState_NotFound</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_UserDeleted</TokenIdentifier>
-            <Abstract type="html">Item was deleted by user</Abstract>
-            <Declaration>PlaylistItemState_UserDeleted</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetTypeHSS</TokenIdentifier>
+            <Abstract type="html">DEPRECATED  starting in v4.0, do not use. A HTTP Smooth Streaming (HSS) asset
+     This attribute is deprecated starting v4.0 </Abstract>
+            <Declaration>kVDE_AssetTypeHSS</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="63"/>
         </Token>

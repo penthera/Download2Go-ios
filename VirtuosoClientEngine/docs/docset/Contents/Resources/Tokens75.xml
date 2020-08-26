@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_EngineStartupCode.html">
+	<File path="Constants/kVF_SegmentType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_EngineStartupCode</TokenIdentifier>
-			<Abstract type="html">Returned by the various startup methods to indicate whether Virtuoso successfully started up.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVF_SegmentType</TokenIdentifier>
+			<Abstract type="html">Allowable Virtuoso types for segments</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -14,9 +14,9 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccess</TokenIdentifier>
-            <Abstract type="html">Virtuoso successfully started up</Abstract>
-            <Declaration>kVDE_EngineStartupSuccess</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeUnknown</TokenIdentifier>
+            <Abstract type="html">The file is of unknown type (default)</Abstract>
+            <Declaration>kVF_SegmentTypeUnknown</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -24,9 +24,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupAlreadyStarted</TokenIdentifier>
-            <Abstract type="html">Virtuoso was already started; no action occurred</Abstract>
-            <Declaration>kVDE_EngineStartupAlreadyStarted</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeSubRange</TokenIdentifier>
+            <Abstract type="html">The file is a sub-range of a larger monolithic file (MP4)</Abstract>
+            <Declaration>kVF_SegmentTypeSubRange</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -34,9 +34,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccessNoBackplane</TokenIdentifier>
-            <Abstract type="html">Virtuoso started up, but couldn&apos;t reach the  Backplane</Abstract>
-            <Declaration>kVDE_EngineStartupSuccessNoBackplane</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamEncryptionKey</TokenIdentifier>
+            <Abstract type="html">The file is a video stream encryption key (HLS/HSS)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamEncryptionKey</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -44,9 +44,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupInvalidOptions</TokenIdentifier>
-            <Abstract type="html">Virtuoso can&apos;t start up with the parameters provided</Abstract>
-            <Declaration>kVDE_EngineStartupInvalidOptions</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamSegment</TokenIdentifier>
+            <Abstract type="html">The file is a video stream segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamSegment</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -54,9 +54,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupMethodIsDeprecated</TokenIdentifier>
-            <Abstract type="html">Virtuoso can&apos;t change user account when invoked on MainThread</Abstract>
-            <Declaration>kVDE_EngineStartupMethodIsDeprecated</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamAudio</TokenIdentifier>
+            <Abstract type="html">The file is a video stream audio segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamAudio</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -64,9 +64,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupInternalException</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered an internal exception during startup</Abstract>
-            <Declaration>kVDE_EngineStartupInternalException</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeStreamCC</TokenIdentifier>
+            <Abstract type="html">The file is a video stream closed captioning segment (HLS/HSS/DASH)</Abstract>
+            <Declaration>kVF_SegmentTypeStreamCC</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -74,9 +74,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineDataMigrationError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered an error initializing the CoreData database during startup</Abstract>
-            <Declaration>kVDE_EngineDataMigrationError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVF_SegmentTypeAncillary</TokenIdentifier>
+            <Abstract type="html">The file is a ancillary</Abstract>
+            <Declaration>kVF_SegmentTypeAncillary</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

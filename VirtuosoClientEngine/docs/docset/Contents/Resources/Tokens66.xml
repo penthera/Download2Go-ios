@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVBP_StatusCode.html">
+	<File path="Constants/kVDE_DownloadErrorType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVBP_StatusCode</TokenIdentifier>
-			<Abstract type="html">An asynchronous status returned from various methods that access the Backplane. Typically, these are provided
-as the &quot;code&quot; property on an NSError value passed with an NSNotification or callback block.  You may also need to
-consult the notice and error description for details of the problem.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadErrorType</TokenIdentifier>
+			<Abstract type="html">Error states that Virtuoso can be in when downloading an asset.  Returned via the &apos;error&apos; property.</Abstract>
 			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
@@ -16,9 +14,9 @@ consult the notice and error description for details of the problem.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_Success</TokenIdentifier>
-            <Abstract type="html">Successful Backplane response</Abstract>
-            <Declaration>kVBP_Success</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNoError</TokenIdentifier>
+            <Abstract type="html">Virtuoso encountered no errors downloading this asset</Abstract>
+            <Declaration>kVDE_DownloadNoError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -26,9 +24,9 @@ consult the notice and error description for details of the problem.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_InternalError</TokenIdentifier>
-            <Abstract type="html">Backplane encountered an internal error</Abstract>
-            <Declaration>kVBP_InternalError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNetworkError</TokenIdentifier>
+            <Abstract type="html">Virtuoso encountered a network problem downloading asset, e.g. 404 or 416 HTTP error</Abstract>
+            <Declaration>kVDE_DownloadNetworkError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -36,9 +34,9 @@ consult the notice and error description for details of the problem.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_InvalidRequest</TokenIdentifier>
-            <Abstract type="html">The client&apos;s request to Backplane was formatted incorrectly</Abstract>
-            <Declaration>kVBP_InvalidRequest</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadReachabilityError</TokenIdentifier>
+            <Abstract type="html">Virtuoso failed to download this asset because it couldn&apos;t reach the remote server</Abstract>
+            <Declaration>kVDE_DownloadReachabilityError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -46,9 +44,9 @@ consult the notice and error description for details of the problem.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_InvalidCredentials</TokenIdentifier>
-            <Abstract type="html">The supplied credentials are invalid on the Backplane</Abstract>
-            <Declaration>kVBP_InvalidCredentials</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadFileCopyError</TokenIdentifier>
+            <Abstract type="html">Virtuoso downloaded this asset, but couldn&apos;t move it to its final location on disk</Abstract>
+            <Declaration>kVDE_DownloadFileCopyError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -56,9 +54,9 @@ consult the notice and error description for details of the problem.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_DeviceAlreadyExists</TokenIdentifier>
-            <Abstract type="html">The device is already linked with a different User account on the Backplane</Abstract>
-            <Declaration>kVBP_DeviceAlreadyExists</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadEngineError</TokenIdentifier>
+            <Abstract type="html">Virtuoso failed to download this asset because of an internal issue</Abstract>
+            <Declaration>kVDE_DownloadEngineError</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -66,9 +64,10 @@ consult the notice and error description for details of the problem.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_UnregisteredDevice</TokenIdentifier>
-            <Abstract type="html">The client attempted to use the Backplane without first registering the device</Abstract>
-            <Declaration>kVBP_UnregisteredDevice</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadMaxRetriesExceeded</TokenIdentifier>
+            <Abstract type="html">Virtuoso has attempted to download this asset the max times permitted. Will not try again
+        until you call reset or clearRetryCount </Abstract>
+            <Declaration>kVDE_DownloadMaxRetriesExceeded</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -76,9 +75,10 @@ consult the notice and error description for details of the problem.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_DeviceLimitReached</TokenIdentifier>
-            <Abstract type="html">The Backplane reported this User has reached the max enabled device limit</Abstract>
-            <Declaration>kVBP_DeviceLimitReached</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_LifetimeDownloadLimitReached</TokenIdentifier>
+            <Abstract type="html">Virtuoso has received notice from the server that the user has downloaded this asset the
+        maximum number of times for this account.  Downloads cannot continue for this asset. </Abstract>
+            <Declaration>kVDE_LifetimeDownloadLimitReached</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
@@ -86,109 +86,10 @@ consult the notice and error description for details of the problem.</Abstract>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_InvalidDeviceSettings</TokenIdentifier>
-            <Abstract type="html">The request object to save device settings is missing some required fields</Abstract>
-            <Declaration>kVBP_InvalidDeviceSettings</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_NoSuchEvent</TokenIdentifier>
-            <Abstract type="html">The client submitted an unsupported log event to the Backplane</Abstract>
-            <Declaration>kVBP_NoSuchEvent</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_InvalidEventSyntax</TokenIdentifier>
-            <Abstract type="html">The client submitted an event with invalid format to the Backplane</Abstract>
-            <Declaration>kVBP_InvalidEventSyntax</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_NoConnection</TokenIdentifier>
-            <Abstract type="html">The Backplane cannot be contacted because the device is currently offline</Abstract>
-            <Declaration>kVBP_NoConnection</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_SyncDeferred</TokenIdentifier>
-            <Abstract type="html">The current sync did not get processed because another sync is already in process</Abstract>
-            <Declaration>kVBP_SyncDeferred</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_SyncThrottled</TokenIdentifier>
-            <Abstract type="html">The current sync did not get processed because a sync with the Backplane has already occurred recently</Abstract>
-            <Declaration>kVBP_SyncThrottled</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_DeviceEnablementLimitReached</TokenIdentifier>
-            <Abstract type="html">The Backplane reported denied due to device enablement limit reached</Abstract>
-            <Declaration>kVBP_DeviceEnablementLimitReached</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_DownloadDeniedForMaxDownloadsPerAccount</TokenIdentifier>
-            <Abstract type="html">Permission to download an asset was denied due to maximum download per account rules</Abstract>
-            <Declaration>kVBP_DownloadDeniedForMaxDownloadsPerAccount</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_DownloadDeniedForMaxLifetimeDownloadsPerAsset</TokenIdentifier>
-            <Abstract type="html">Permission to download an asset was denied due to maximum lifetime downloads for asset rules</Abstract>
-            <Declaration>kVBP_DownloadDeniedForMaxLifetimeDownloadsPerAsset</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_DownloadDeniedForExternalPolicy</TokenIdentifier>
-            <Abstract type="html">Permission to download an asset was denied due to external policy restrictions</Abstract>
-            <Declaration>kVBP_DownloadDeniedForExternalPolicy</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVBP_DownloadDeniedForMaxCopiesOfAssetPerAccount</TokenIdentifier>
-            <Abstract type="html">Permission to download an asset was denied due to maximum copies of asset per account rules</Abstract>
-            <Declaration>kVBP_DownloadDeniedForMaxCopiesOfAssetPerAccount</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BlockedOnDRM</TokenIdentifier>
+            <Abstract type="html">Virtuoso has attempted to start downloading an asset for which DRM is required before downloading
+     and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. </Abstract>
+            <Declaration>kVDE_BlockedOnDRM</Declaration>
             
             <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             

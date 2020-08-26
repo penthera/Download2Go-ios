@@ -1,17 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoDrmConfig.html">
+	<File path="Classes/VirtuosoEngineConfig.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoDrmConfig</TokenIdentifier>
-			<Abstract type="html">Allows Virtuoso to request the enclosing application for asset specific DRM
-values when requesting FairPlay license keys.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoEngineConfig</TokenIdentifier>
+			<Abstract type="html">Used to configure the VirtuosoDownloadEngine during startup</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/setUser:</TokenIdentifier>
+			<Abstract type="html">user The Backplane user to use.  This is a string representing your authenticated user ID.
+It could be your actual user ID, or a hash of your user ID.  The only requirements are that
+it uniqely identifies your user and the value must be less than 512 characters long.</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/user</TokenIdentifier>
+			<Abstract type="html">user The Backplane user to use.  This is a string representing your authenticated user ID.
+It could be your actual user ID, or a hash of your user ID.  The only requirements are that
+it uniqely identifies your user and the value must be less than 512 characters long.</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineConfig/user</TokenIdentifier>
+			<Abstract type="html">user The Backplane user to use.  This is a string representing your authenticated user ID.
+It could be your actual user ID, or a hash of your user ID.  The only requirements are that
+it uniqely identifies your user and the value must be less than 512 characters long.</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *user</Declaration>
+			
+			
+			<Anchor>//api/name/user</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/setBackplaneUrl:</TokenIdentifier>
+			<Abstract type="html">backplaneURL A root URL pointing to the location of the Backplane endpoints</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *backplaneUrl</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneUrl</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/backplaneUrl</TokenIdentifier>
+			<Abstract type="html">backplaneURL A root URL pointing to the location of the Backplane endpoints</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *backplaneUrl</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneUrl</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineConfig/backplaneUrl</TokenIdentifier>
+			<Abstract type="html">backplaneURL A root URL pointing to the location of the Backplane endpoints</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *backplaneUrl</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneUrl</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/setPublicKey:</TokenIdentifier>
+			<Abstract type="html">publicKey The Penthera-provided public key</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *publicKey</Declaration>
+			
+			
+			<Anchor>//api/name/publicKey</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/publicKey</TokenIdentifier>
+			<Abstract type="html">publicKey The Penthera-provided public key</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *publicKey</Declaration>
+			
+			
+			<Anchor>//api/name/publicKey</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineConfig/publicKey</TokenIdentifier>
+			<Abstract type="html">publicKey The Penthera-provided public key</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *publicKey</Declaration>
+			
+			
+			<Anchor>//api/name/publicKey</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/setPrivateKey:</TokenIdentifier>
+			<Abstract type="html">privateKey The Penthera-provided private key</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *privateKey</Declaration>
+			
+			
+			<Anchor>//api/name/privateKey</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/privateKey</TokenIdentifier>
+			<Abstract type="html">privateKey The Penthera-provided private key</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *privateKey</Declaration>
+			
+			
+			<Anchor>//api/name/privateKey</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineConfig/privateKey</TokenIdentifier>
+			<Abstract type="html">privateKey The Penthera-provided private key</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *privateKey</Declaration>
+			
+			
+			<Anchor>//api/name/privateKey</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/setExternalDeviceID:</TokenIdentifier>
+			<Abstract type="html">externalDeviceID An optional externally-defined device UUID</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/externalDeviceID</TokenIdentifier>
+			<Abstract type="html">externalDeviceID An optional externally-defined device UUID</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoEngineConfig/externalDeviceID</TokenIdentifier>
+			<Abstract type="html">externalDeviceID An optional externally-defined device UUID</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSString *externalDeviceID</Declaration>
+			
+			
+			<Anchor>//api/name/externalDeviceID</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/initWithUser:</TokenIdentifier>
+			<Abstract type="html">Initialize the download engine.</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithUser:(NSString *)user</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>user</Name>
+					<Abstract type="html">The Backplane user to use</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">valid instance, nil on error</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUser:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/initWithUser:externalDeviceID:</TokenIdentifier>
+			<Abstract type="html">Initialize the download engine.</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithUser:(NSString *)user externalDeviceID:(NSString *)externalDeviceID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>user</Name>
+					<Abstract type="html">The Backplane user to use</Abstract>
+				</Parameter><Parameter>
+					<Name>externalDeviceID</Name>
+					<Abstract type="html">An optional externally-defined device UUID</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">valid instance, nil on error</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUser:externalDeviceID:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/initWithUser:backplaneUrl:publicKey:privateKey:</TokenIdentifier>
+			<Abstract type="html">Initialize the download engine.</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithUser:(NSString *)user backplaneUrl:(NSString *_Nonnull)backplaneUrl publicKey:(NSString *_Nonnull)publicKey privateKey:(NSString *_Nonnull)privateKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>user</Name>
+					<Abstract type="html">The Backplane user to use</Abstract>
+				</Parameter><Parameter>
+					<Name>backplaneUrl</Name>
+					<Abstract type="html">A root URL pointing to the location of the Backplane endpoints</Abstract>
+				</Parameter><Parameter>
+					<Name>publicKey</Name>
+					<Abstract type="html">The Penthera-provided public key</Abstract>
+				</Parameter><Parameter>
+					<Name>privateKey</Name>
+					<Abstract type="html">The Penthera-provided private key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">valid instance, nil on error</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUser:backplaneUrl:publicKey:privateKey:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoEngineConfig/initWithUser:backplaneUrl:publicKey:privateKey:externalDeviceID:</TokenIdentifier>
+			<Abstract type="html">Initialize the download engine.</Abstract>
+			<DeclaredIn>VirtuosoEngineConfig.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithUser:(NSString *)user backplaneUrl:(NSString *_Nonnull)backplaneUrl publicKey:(NSString *_Nonnull)publicKey privateKey:(NSString *_Nonnull)privateKey externalDeviceID:(NSString *_Nullable)externalDeviceID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>user</Name>
+					<Abstract type="html">The Backplane user to use</Abstract>
+				</Parameter><Parameter>
+					<Name>backplaneUrl</Name>
+					<Abstract type="html">A root URL pointing to the location of the Backplane endpoints</Abstract>
+				</Parameter><Parameter>
+					<Name>publicKey</Name>
+					<Abstract type="html">The Penthera-provided public key</Abstract>
+				</Parameter><Parameter>
+					<Name>privateKey</Name>
+					<Abstract type="html">The Penthera-provided private key</Abstract>
+				</Parameter><Parameter>
+					<Name>externalDeviceID</Name>
+					<Abstract type="html">An optional externally-defined device UUID</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">valid instance, nil on error</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithUser:backplaneUrl:publicKey:privateKey:externalDeviceID:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
 		
         
         

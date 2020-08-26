@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoGoogleAdsClientProvider.html">
+	<File path="Classes/VirtuosoLicenseDelegateHelper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoGoogleAdsClientProvider</TokenIdentifier>
-			<Abstract type="html">Ads provider for Google Client-Side ads</Abstract>
-			<DeclaredIn>VirtuosoGoogleAdsClientProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoLicenseDelegateHelper</TokenIdentifier>
+			<Abstract type="html">Implments a general purpose delegate for VirtuosoLicenseManagerDelegate.</Abstract>
+			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="28"/>
@@ -13,22 +13,51 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoGoogleAdsClientProvider/prepareTrackingUrl:url:</TokenIdentifier>
-			<Abstract type="html">Allows Provider to update the Tracking URL with any appropriate information before posting.</Abstract>
-			<DeclaredIn>VirtuosoGoogleAdsClientProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoLicenseDelegateHelper/addLicense:forAssetID:</TokenIdentifier>
+			<Abstract type="html">Adds VirtuosoLicenseConfiguration for the specified AssetID.</Abstract>
+			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
 			
-			<Declaration>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)asset url:(NSString *_Nonnull)url</Declaration>
+			<Declaration>- (Boolean)addLicense:(VirtuosoLicenseConfiguration *)config forAssetID:(NSString *)assetID</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">Asset reporting an Ads tracking event.</Abstract>
+					<Name>config</Name>
+					<Abstract type="html">Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license</Abstract>
 				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">Tracking url that will be reported.</Abstract>
+					<Name>assetID</Name>
+					<Abstract type="html">Identifies the asset to which this License applies.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Updated url. Returning nil will result in using the original, unchanged url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareTrackingUrl:url:</Anchor>
+			<ReturnValue><Abstract type="html">True if successful. False indicates one of the required parameters was invalid.</Abstract></ReturnValue>
+			<Anchor>//api/name/addLicense:forAssetID:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoLicenseDelegateHelper/addLicense:</TokenIdentifier>
+			<Abstract type="html">Adds VirtuosoLicenseConfiguration for use with any asset that does not have a specific instance of VirtuosoLicenseConfiguration.</Abstract>
+			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)addLicense:(VirtuosoLicenseConfiguration *)config</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>config</Name>
+					<Abstract type="html">Instance of VirtuosoLicenseConfiguration object that will be used to initialize the license</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">True if successful. False indicates one of the required parameters was invalid.</Abstract></ReturnValue>
+			<Anchor>//api/name/addLicense:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoLicenseDelegateHelper/isConfigured</TokenIdentifier>
+			<Abstract type="html">Verifies internal configuration has been setup.</Abstract>
+			<DeclaredIn>VirtuosoLicenseDefaultDelegate.h</DeclaredIn>
+			
+			<Declaration>- (Boolean)isConfigured</Declaration>
+			
+			<ReturnValue><Abstract type="html">True if contains valid VirtuosoLicenseConfiguration settings.</Abstract></ReturnValue>
+			<Anchor>//api/name/isConfigured</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		

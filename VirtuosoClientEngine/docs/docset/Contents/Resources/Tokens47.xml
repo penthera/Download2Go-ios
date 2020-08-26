@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoAdsManagerNotificationDelegate.html">
+	<File path="Protocols/VirtuosoDrmConfigDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAdsManagerNotificationDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate interface for Download Engine Ads notifications</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoDrmConfigDelegate</TokenIdentifier>
+			<Abstract type="html">Allows Virtuoso to request the enclosing application for asset specific DRM
+values when requesting FairPlay license keys.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
@@ -13,62 +14,19 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsRefreshFailure:error:</TokenIdentifier>
-			<Abstract type="html">Called when Ads refresh fails</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoDrmConfigDelegate/drmConfigForAsset:</TokenIdentifier>
+			<Abstract type="html">Called when the DRM subsystem needs a DRM configuration to make a licensing request.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (void)adsRefreshFailure:(VirtuosoAsset *_Nonnull)asset error:(NSError *_Nullable)error</Declaration>
+			<Declaration>- (VirtuosoDrmConfig *_Nonnull)drmConfigForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
-					<Abstract type="html">VirtuosoAsset for the Ad that failed to refresh.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">NSError indciating the error</Abstract>
+					<Abstract type="html">The VirtuosoAsset object that will request a FairPlay license.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/adsRefreshFailure:error:</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsRefreshStatusUpdate:</TokenIdentifier>
-			<Abstract type="html">Called when an Ad is being refreshed</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (void)adsRefreshStatusUpdate:(VirtuosoAsset *_Nonnull)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">VirtuosoAsset for the Ad that is being refreshed</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/adsRefreshStatusUpdate:</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsTrackingNotificationForAsset:url:userInfo:</TokenIdentifier>
-			<Abstract type="html">Called whenever an Ad tracking beacon has been reported</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (void)adsTrackingNotificationForAsset:(VirtuosoAsset *_Nullable)asset url:(NSString *_Nonnull)url userInfo:(NSDictionary *_Nonnull)userInfo</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">VirtuosoAsset for which the tracking beacon was reported. This will be nil if the asset has since been deleted.</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">Ads beacon URL that was reported</Abstract>
-				</Parameter><Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">NSDictionary containing both the asset.assetID (kDownloadEngineAssetIDKey) and asset.uuid (kDownloadEngineAssetUUIDKey)</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/adsTrackingNotificationForAsset:url:userInfo:</Anchor>
+			<ReturnValue><Abstract type="html">A properly configured DrmConfig object containing proper licensing details for the asset.</Abstract></ReturnValue>
+			<Anchor>//api/name/drmConfigForAsset:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		

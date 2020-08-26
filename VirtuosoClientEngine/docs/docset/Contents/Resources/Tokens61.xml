@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/AssetAdStatus.html">
+	<File path="Constants/kVDE_AssetPlaybackType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/AssetAdStatus</TokenIdentifier>
-			<Abstract type="html">Asset Ads status</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetPlaybackType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetPlaybackType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="61"/>
@@ -14,61 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_Uninitialized</TokenIdentifier>
-            <Abstract type="html">Ads not initialized</Abstract>
-            <Declaration>AssetAdStatus_Uninitialized</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeLocal</TokenIdentifier>
+            <Abstract type="html">The asset will play using downloaded version</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeLocal</Declaration>
             
-            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
-            
-            <NodeRef refid="61"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshInProcess</TokenIdentifier>
-            <Abstract type="html">Ads refresh in process</Abstract>
-            <Declaration>AssetAdStatus_RefreshInProcess</Declaration>
-            
-            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="61"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshComplete</TokenIdentifier>
-            <Abstract type="html">Ads refresh completed successfully</Abstract>
-            <Declaration>AssetAdStatus_RefreshComplete</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeStream</TokenIdentifier>
+            <Abstract type="html">The asset will play using the online stream</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeStream</Declaration>
             
-            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
-            
-            <NodeRef refid="61"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshCompleteWithErrors</TokenIdentifier>
-            <Abstract type="html">Ads refresh completed with errors</Abstract>
-            <Declaration>AssetAdStatus_RefreshCompleteWithErrors</Declaration>
-            
-            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="61"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_RefreshFailure</TokenIdentifier>
-            <Abstract type="html">Ads refresh failed</Abstract>
-            <Declaration>AssetAdStatus_RefreshFailure</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeFastPlay</TokenIdentifier>
+            <Abstract type="html">The asset will play using FastPlay, a mix of local and online data</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeFastPlay</Declaration>
             
-            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
-            
-            <NodeRef refid="61"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AssetAdStatus_QueuedForRefresh</TokenIdentifier>
-            <Abstract type="html">Ads refresh has been queued for refresh once Network is available.</Abstract>
-            <Declaration>AssetAdStatus_QueuedForRefresh</Declaration>
-            
-            <DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="61"/>
         </Token>

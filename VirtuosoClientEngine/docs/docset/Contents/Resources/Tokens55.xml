@@ -1,89 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPlayer.html">
+	<File path="Constants/ClientAdProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayer</TokenIdentifier>
-			<Abstract type="html">Defines the minimum API required for basic playback of segmented (HLS, HSS, DASH, etc.) video</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ClientAdProvider</TokenIdentifier>
+			<Abstract type="html">Defines the various types of Client Ads Providers</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="55"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setContentURL:</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
-			
-			
-			<Anchor>//api/name/contentURL</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Undefined</TokenIdentifier>
+            <Abstract type="html">Undefined.</Abstract>
+            <Declaration>ClientAdProvider_Undefined</Declaration>
+            
+            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+            
             <NodeRef refid="55"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
-			
-			
-			<Anchor>//api/name/contentURL</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Freewheel</TokenIdentifier>
+            <Abstract type="html">Freewheel Client Ads.</Abstract>
+            <Declaration>ClientAdProvider_Freewheel</Declaration>
+            
+            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+            
             <NodeRef refid="55"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
-			
-			
-			<Anchor>//api/name/contentURL</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Google</TokenIdentifier>
+            <Abstract type="html">Google Client Ads.</Abstract>
+            <Declaration>ClientAdProvider_Google</Declaration>
+            
+            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+            
             <NodeRef refid="55"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setAsset:</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="55"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="55"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="55"/>
-		</Token>
-		
+        </Token>
         
         
 	</File>

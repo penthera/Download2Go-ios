@@ -1,83 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPrepareUrlDelegate.html">
+	<File path="Constants/kVAV_ErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPrepareUrlDelegate</TokenIdentifier>
-			<Abstract type="html">This delegate defines the methods that can be implemented
-to allow modification of Asset URL&apos;s before downloading.
-
-This is an advanced feature which is entirely optional.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVAV_ErrorCode</TokenIdentifier>
+			<Abstract type="html">Resource loader error codes</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSubManifestURL:manifestType:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the sub-manifest Url prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nullable)prepareSubManifestURL:(NSString *_Nonnull)url manifestType:(kVDM_ManifestType)manifestType forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
-				</Parameter><Parameter>
-					<Name>manifestType</Name>
-					<Abstract type="html">Type of sub-manifest for this URL.</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSubManifestURL:manifestType:forAsset:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NoCertificate</TokenIdentifier>
+            <Abstract type="html">Error generated when no FairPlay certificate is available</Abstract>
+            <Declaration>kVAV_NoCertificate</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
             <NodeRef refid="58"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareSegmentURL:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the Segment Url prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nullable)prepareSegmentURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareSegmentURL:forAsset:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_ExpiredWhileOffline</TokenIdentifier>
+            <Abstract type="html">Error generated when the FairPlay license expires while the device is offline</Abstract>
+            <Declaration>kVAV_ExpiredWhileOffline</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
             <NodeRef refid="58"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPrepareUrlDelegate/prepareEncryptionKeyURL:forAsset:</TokenIdentifier>
-			<Abstract type="html">Allows modification of the video encryption key URL prior to download.</Abstract>
-			<DeclaredIn>VirtuosoAsset.h</DeclaredIn>
-			
-			<Declaration>- (NSString *_Nullable)prepareEncryptionKeyURL:(NSString *_Nonnull)url forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">The URL that is about to be downloaded.</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return the updated url, or nil to use the original url.</Abstract></ReturnValue>
-			<Anchor>//api/name/prepareEncryptionKeyURL:forAsset:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithDelegate</TokenIdentifier>
+            <Abstract type="html">The resource loading delegate must be configured with delegate prior to use.</Abstract>
+            <Declaration>kVAV_NotConfiguredWithDelegate</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
             <NodeRef refid="58"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithAsset</TokenIdentifier>
+            <Abstract type="html">The resource loading delegate must be configured with a VirtuosoAsset prior to use</Abstract>
+            <Declaration>kVAV_NotConfiguredWithAsset</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithDrmConfig</TokenIdentifier>
+            <Abstract type="html">The resoruce loader delegate must be configured with an instance of VirtuosoDrmConfig</Abstract>
+            <Declaration>kVAV_NotConfiguredWithDrmConfig</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_DrmConfigInvalidValues</TokenIdentifier>
+            <Abstract type="html">The VirtuosoDrmConfig returned invalid configuration values.</Abstract>
+            <Declaration>kVAV_DrmConfigInvalidValues</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_InvalidSPCValue</TokenIdentifier>
+            <Abstract type="html">Generated nil SPC</Abstract>
+            <Declaration>kVAV_InvalidSPCValue</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_InvalidAssetIDValue</TokenIdentifier>
+            <Abstract type="html">Could not find assetID in SDK data</Abstract>
+            <Declaration>kVAV_InvalidAssetIDValue</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
         
         
 	</File>

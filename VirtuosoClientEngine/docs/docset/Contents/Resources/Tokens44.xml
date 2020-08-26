@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSubscriptionNotificationsManager.html">
+	<File path="Protocols/VirtuosoAdsManagerNotificationDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionNotificationsManager</TokenIdentifier>
-			<Abstract type="html">Listens for Subscription related notifications.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAdsManagerNotificationDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate interface for Download Engine Ads notifications</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -13,111 +13,62 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/setQueue:</TokenIdentifier>
-			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsRefreshFailure:error:</TokenIdentifier>
+			<Abstract type="html">Called when Ads refresh fails</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
-			
-			
-			<Anchor>//api/name/queue</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/queue</TokenIdentifier>
-			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
-			
-			
-			<Anchor>//api/name/queue</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionNotificationsManager/queue</TokenIdentifier>
-			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
-			
-			
-			<Anchor>//api/name/queue</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Delegate callback</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/delegate</TokenIdentifier>
-			<Abstract type="html">Delegate callback</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionNotificationsManager/delegate</TokenIdentifier>
-			<Abstract type="html">Delegate callback</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/initWithDelegate:</TokenIdentifier>
-			<Abstract type="html">Creates an instance</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull)delegate</Declaration>
+			<Declaration>- (void)adsRefreshFailure:(VirtuosoAsset *_Nonnull)asset error:(NSError *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">Delegate that will be called</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDelegate:</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/initWithDelegate:queue:</TokenIdentifier>
-			<Abstract type="html">Creates an instance</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">Delegate that will be called</Abstract>
+					<Name>asset</Name>
+					<Abstract type="html">VirtuosoAsset for the Ad that failed to refresh.</Abstract>
 				</Parameter><Parameter>
-					<Name>queue</Name>
-					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
+					<Name>error</Name>
+					<Abstract type="html">NSError indciating the error</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDelegate:queue:</Anchor>
+			
+			<Anchor>//api/name/adsRefreshFailure:error:</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsRefreshStatusUpdate:</TokenIdentifier>
+			<Abstract type="html">Called when an Ad is being refreshed</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)adsRefreshStatusUpdate:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">VirtuosoAsset for the Ad that is being refreshed</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adsRefreshStatusUpdate:</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsTrackingNotificationForAsset:url:userInfo:</TokenIdentifier>
+			<Abstract type="html">Called whenever an Ad tracking beacon has been reported</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)adsTrackingNotificationForAsset:(VirtuosoAsset *_Nullable)asset url:(NSString *_Nonnull)url userInfo:(NSDictionary *_Nonnull)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">VirtuosoAsset for which the tracking beacon was reported. This will be nil if the asset has since been deleted.</Abstract>
+				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">Ads beacon URL that was reported</Abstract>
+				</Parameter><Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">NSDictionary containing both the asset.assetID (kDownloadEngineAssetIDKey) and asset.uuid (kDownloadEngineAssetUUIDKey)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adsTrackingNotificationForAsset:url:userInfo:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
