@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_PlaylistStatus.html">
+	<File path="Constants/kVDE_AssetPlaybackType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_PlaylistStatus</TokenIdentifier>
-			<Abstract type="html">Status of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetPlaybackType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetPlaybackType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="72"/>
@@ -14,31 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_Active</TokenIdentifier>
-            <Abstract type="html">Playlist is actively enabled</Abstract>
-            <Declaration>PlaylistStatus_Active</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeLocal</TokenIdentifier>
+            <Abstract type="html">The asset will play using downloaded version</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeLocal</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
-            
-            <NodeRef refid="72"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_AssetCreateFailed</TokenIdentifier>
-            <Abstract type="html">Playlist Asset creation failed</Abstract>
-            <Declaration>PlaylistStatus_AssetCreateFailed</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="72"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_AssetCreateFailedNoAssetsLeft</TokenIdentifier>
-            <Abstract type="html">Playlist Asset creation failed and no more assets exist</Abstract>
-            <Declaration>PlaylistStatus_AssetCreateFailedNoAssetsLeft</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeStream</TokenIdentifier>
+            <Abstract type="html">The asset will play using the online stream</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeStream</Declaration>
             
-            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="72"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPlaybackTypeFastPlay</TokenIdentifier>
+            <Abstract type="html">The asset will play using FastPlay, a mix of local and online data</Abstract>
+            <Declaration>kVDE_AssetPlaybackTypeFastPlay</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="72"/>
         </Token>

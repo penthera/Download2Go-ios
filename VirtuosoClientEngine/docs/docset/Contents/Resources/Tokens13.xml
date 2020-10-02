@@ -121,6 +121,18 @@
             <NodeRef refid="13"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoBackplaneNotificationsManager/unregister</TokenIdentifier>
+			<Abstract type="html">Unregister event listener</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)unregister</Declaration>
+			
+			
+			<Anchor>//api/name/unregister</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
         
         
 	</File>

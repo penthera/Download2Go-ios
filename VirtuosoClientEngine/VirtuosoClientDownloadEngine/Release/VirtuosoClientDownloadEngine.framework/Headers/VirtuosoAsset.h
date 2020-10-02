@@ -68,6 +68,12 @@ typedef NS_ENUM(NSInteger, AssetAdStatus)
     
     /** Ads refresh has been queued for refresh once Network is available. */
     AssetAdStatus_QueuedForRefresh,
+    
+    /** Ads have been downloaded.  Not all ad providers will set this state.*/
+    AssetAdStatus_DownloadComplete,
+    
+    /** Ads are currently playing.*/
+    AssetAdStatus_Playing
 };
 
 /**---------------------------------------------------------------------------------------
@@ -784,7 +790,6 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  */
 
 - (void)deleteAssetOnComplete:(nullable AsyncCompleteBlock)deletedBlock;
-
     
 /*!
  *  @abstract Deletes all assets.
@@ -793,6 +798,20 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              and downloading.
  */
 + (void)deleteAll;
+
+/*!
+ *  @abstract Deletes all assets from a supplied list of assets
+ *
+ *  @discussion Deletes assets asynchronously.  If you pass a non-NULL deletionsBlock,
+ *              when all deletions have finished, the completion block will be called.
+ *              For efficiency, backplane permissions are only updated after all assets
+ *              have been deleted.
+ *
+ * @param assets Array of Assets to be deleted
+ * @param completionBlock Block that is invoked upon completion of delete.
+ */
+
++ (void)deleteAssets:(nonnull NSArray<VirtuosoAsset*>*)assets onComplete:(nullable AsyncCompleteBlock)completionBlock;
 
 /**---------------------------------------------------------------------------------------
  * @name Playback
@@ -928,21 +947,21 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 *              before stopping and reporting that the queue is blocked.
 *
 *  @see downloadRetryCount
-*  @see maximumRetriesExceeded
+*  @see maximumDownloadRetriesExceeded
 */
-@property (nonatomic, readonly, class) NSInteger retryLimit;
+@property (nonatomic, readonly, class) NSInteger downloadRetryLimit;
 
 /*!
  *  @abstract How many passes Virtuoso has made attempting to download this asset
  *
  *  @discussion If Virtuoso fails to download an asset in the queue, it will retry the download
- *              retryLimit times, before moving to the next item in the queue.  In this way,
- *              Virtuoso cycles through the entire queue. Virtuoso will perform retryLimit
+ *              downloadRetryLimit times, before moving to the next item in the queue.  In this way,
+ *              Virtuoso cycles through the entire queue. Virtuoso will perform downloadRetryLimit
  *              number of repeat attempts for each previously-failed download,
  *              before stopping and reporting that the queue is blocked.
  *
- *  @see retryLimit
- *  @see maximumRetriesExceeded
+ *  @see downloadRetryLimit
+ *  @see maximumDownloadRetriesExceeded
  */
 @property (nonatomic, readonly) int downloadRetryCount;
 
@@ -950,15 +969,15 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 *  @abstract Indicates if this asset is blocked because it has been retried and failed too many times
 *
 *  @discussion If Virtuoso fails to download an asset in the queue, it will retry the download
-*              retryLimit times, before moving to the next item in the queue.  In this way,
-*              Virtuoso cycles through the entire queue. Virtuoso will perform retryLimit
+*              downloadRetryLimit times, before moving to the next item in the queue.  In this way,
+*              Virtuoso cycles through the entire queue. Virtuoso will perform downloadRetryLimit
 *              number of repeat attempts for each previously-failed download,
 *              before stopping and reporting that the queue is blocked.
 *
-*  @see retryLimit
+*  @see downloadRetryLimit
 *  @see downloadRetryCount
 */
-@property (nonatomic,readonly) Boolean maximumRetriesExceeded;
+@property (nonatomic,readonly) Boolean maximumDownloadRetriesExceeded;
 
 
 /*!
@@ -975,7 +994,8 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              download N more times. At some point, Virtuoso will have looped through the queue M times, and attempted
  *              to download the asset M*N times.
  *
- *              After M*N attempts, Virtuoso gives up, and will no longer atempt to download the asset.  When all pending
+ *              After M*N attempts, Virtuoso
+ *               gives up, and will no longer atempt to download the asset.  When all pending
  *              assets have exceeded the allowable retries, Virtuoso enters the kVDE_DownloadMaxRetriesExceeded state and
  *              stops processing downloads until new assets are enqueued or existing assets are cleared.
  *
@@ -983,7 +1003,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *
  *  @param onComplete A block to call when the engine has finished resetting the error count
  */
-- (void)clearRetryCountOnComplete:(nullable BasicCompletionBlock)onComplete;
+- (void)clearDownloadRetryCountOnComplete:(nullable BasicCompletionBlock)onComplete;
 
 
 /**---------------------------------------------------------------------------------------
@@ -1205,6 +1225,20 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  */
 @property (nonatomic,readonly) Boolean fastPlayReady;
 
+/*!
+ * @abstract Video bitrate selected for the Asset
+ */
+@property (nonatomic, readonly)long long videoBitrate;
+
+/*!
+* @abstract Audio bitrate selected for the Asset
+*/
+@property (nonatomic, readonly)long long audioBitrate;
+
+/*!
+* @abstract Video resoltion selected for the Asset. Nil if resolution not reported in manifest.
+*/
+@property (nonatomic, readonly,nullable)NSString* videoResolution;
 
 /**---------------------------------------------------------------------------------------
 * @name Ads Support
@@ -1260,7 +1294,6 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @see forceExpire:
  */
 @property (nonatomic,readonly) Boolean inForcedExpire;
-
 
 /*!
  *  @abstract When this asset should become available
@@ -1320,6 +1353,19 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @abstract Has this asset already expired?
  */
 @property (nonatomic,readonly) Boolean isExpired;
+
+/*!
+ *  @abstract Has the ad associated with asset already expired?
+ *
+ *  @discussion If an ad is not associated with the asset, returns FALSE.
+ *
+ *              If an ad has not completed the ad refresh, returns FALSE.
+ *
+ *              Use the VFM_EnableAdExpiration setting to control this check.  The default setting (FALSE) is
+ *              to NOT perform this check and return FALSE.  When set to TRUE, the value is calculated by calling
+ *              the ad provider to evaluate the ad expiration date.
+ */
+@property (nonatomic,readonly)Boolean isAdExpired;
 
 /*!
  *  @abstract Whether this asset is currently playable.

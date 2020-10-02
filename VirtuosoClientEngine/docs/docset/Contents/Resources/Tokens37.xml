@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSecureClock.html">
+	<File path="Classes/VirtuosoPlaylistDownloadAssetItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSecureClock</TokenIdentifier>
-			<Abstract type="html">A basic secure clock implementation</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylistDownloadAssetItem</TokenIdentifier>
+			<Abstract type="html">VirtuosoPlaylistDownloadAssetItem defines the response returned from VirtuosoPlaylistManagerDelegate method assetForAssetID.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="37"/>
@@ -13,102 +13,108 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoSecureClock/instance</TokenIdentifier>
-			<Abstract type="html">The singleton instance access method</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/setOption:</TokenIdentifier>
+			<Abstract type="html">Enum used to indicate how the next playlist item shoud be handled.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>+ (nonnull VirtuosoSecureClock *)instance</Declaration>
+			<Declaration>@property (nonatomic, assign) kVDE_PlaylistDownloadOption option</Declaration>
 			
-			<ReturnValue><Abstract type="html">Returns the VirtuosoSecureClock object instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/instance</Anchor>
+			
+			<Anchor>//api/name/option</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/update</TokenIdentifier>
-			<Abstract type="html">Requests an update to the secure clock time.  This method is called internal to the SDK
-automatically at opportune times and you should not normally need to call it manually.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/option</TokenIdentifier>
+			<Abstract type="html">Enum used to indicate how the next playlist item shoud be handled.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>- (void)update</Declaration>
+			<Declaration>@property (nonatomic, assign) kVDE_PlaylistDownloadOption option</Declaration>
 			
 			
-			<Anchor>//api/name/update</Anchor>
+			<Anchor>//api/name/option</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setSecureDate:</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistDownloadAssetItem/option</TokenIdentifier>
+			<Abstract type="html">Enum used to indicate how the next playlist item shoud be handled.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, assign) kVDE_PlaylistDownloadOption option</Declaration>
 			
 			
-			<Anchor>//api/name/secureDate</Anchor>
+			<Anchor>//api/name/option</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/secureDate</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/setConfig:</TokenIdentifier>
+			<Abstract type="html">Reference to the VirtuosoAssetConfig object that should be used to create the next asset in a Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, strong) VirtuosoAssetConfig *config</Declaration>
 			
 			
-			<Anchor>//api/name/secureDate</Anchor>
+			<Anchor>//api/name/config</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/secureDate</TokenIdentifier>
-			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/config</TokenIdentifier>
+			<Abstract type="html">Reference to the VirtuosoAssetConfig object that should be used to create the next asset in a Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
+			<Declaration>@property (nonatomic, strong) VirtuosoAssetConfig *config</Declaration>
 			
 			
-			<Anchor>//api/name/secureDate</Anchor>
+			<Anchor>//api/name/config</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setDate:</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistDownloadAssetItem/config</TokenIdentifier>
+			<Abstract type="html">Reference to the VirtuosoAssetConfig object that should be used to create the next asset in a Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			<Declaration>@property (nonatomic, strong) VirtuosoAssetConfig *config</Declaration>
 			
 			
-			<Anchor>//api/name/date</Anchor>
+			<Anchor>//api/name/config</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/date</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/initWithOption:</TokenIdentifier>
+			<Abstract type="html">Creates an instance of VirtuosoPlaylistDownloadAssetItem</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
-			
-			
-			<Anchor>//api/name/date</Anchor>
+			<Declaration>- (instancetype)initWithOption:(kVDE_PlaylistDownloadOption)option</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>option</Name>
+					<Abstract type="html">Enum kVDE_PlaylistDownloadOption indicating option</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return an instance of VirtuosoPlaylistDownloadAssetItem</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithOption:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/date</TokenIdentifier>
-			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
-system clock time if a secure date cannot be determined.</Abstract>
-			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/initWithAsset:</TokenIdentifier>
+			<Abstract type="html">Creates an instance of VirtuosoPlaylistDownloadAssetItem</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
-			
-			
-			<Anchor>//api/name/date</Anchor>
+			<Declaration>- (instancetype)initWithAsset:(VirtuosoAssetConfig *)config</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>config</Name>
+					<Abstract type="html">Instance of VirtuosoAssetConfig that will be used to create the next playlist download</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return an instance of VirtuosoPlaylistDownloadAssetItem</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAsset:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		

@@ -295,6 +295,9 @@ typedef NS_ENUM(NSInteger, kVDE_ProxyErrorCode)
     
     /** The HTTP server was unable to listen on the selected port */
     kVDE_PortInUse = -10,
+    
+    /** You attempted to play an asset with ads that have expired. */
+    kVDE_PlayedAssetWithAdExpired = -11,
 };
 
 /*!
@@ -393,7 +396,7 @@ typedef NS_ENUM(NSInteger, kVF_DownloadDataType)
     /** The data is for a video stream segment (HLS/HSS/DASH) */
     kVF_DataTypeStreamSegment = kVF_SegmentTypeStreamSegment,
     
-    /** The data is for a video stream audio segment (HLS/HSS/DASH) */
+    /** The data is for a audio stream audio segment (HLS/HSS/DASH) */
     kVF_DataTypeStreamAudio = kVF_SegmentTypeStreamAudio,
     
     /** The data is for a video stream closed captioning segment (HLS/HSS/DASH) */
@@ -546,7 +549,9 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadStatusType)
     
     /** Asset is being deleted. */
     kVDE_DeleteInProcess = 10,
-
+    
+    /** Virtuoso has marked the ad for the asset as expired*/
+     kVDE_DownloadAdExpired = 11,
 };
 
 /*!
@@ -565,7 +570,9 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorType)
     /** Virtuoso failed to download this asset because it couldn't reach the remote server */
     kVDE_DownloadReachabilityError = 2,
     
-    /** Virtuoso downloaded this asset, but couldn't move it to its final location on disk */
+    /** Virtuoso downloaded this asset, but couldn't move it to its final location on disk
+    DEPRECATED  starting in v4.0, do not use. A HTTP Smooth Streaming (HSS) asset
+     This attribute is deprecated starting v4.0 */
     kVDE_DownloadFileCopyError = 3,
     
     /** Virtuoso failed to download this asset because of an internal issue */

@@ -16,7 +16,9 @@
 @class VirtuosoEngineStatusInfo;
 
 /*!
-*  @abstract Delegate interface for Download Engine notifications
+*  @abstract Delegate interface for Download Engine notifications.
+ *
+ * @discussion This delegate provides an easy to use interface for monitoring the many Notifications emitted by the Download engine. Note some methods are required, while others are optional.
 */
 @protocol VirtuosoDownloadEngineNotificationsDelegate <NSObject>
 
@@ -62,10 +64,11 @@
 -(void)downloadEngineDidFinishDownloadingAsset:(VirtuosoAsset* _Nonnull)asset;
 
 @optional
+
 /*!
 *  @abstract Called whenever asset is deleted
 *
-*  @discussion This callback is invoked in-response to Notification kBackplaneAssetDeletedNotification
+*  @discussion This callback is invoked in-response to Notification kAssetDeletedNotification
 *
 *  @param assetID VirtuosoAsset.assetID for the asset that was deleted.
 *
@@ -218,6 +221,16 @@
 -(void)downloadEngineAllAssetsDeleted;
 
 /*!
+ *  @abstract Called when Asset.deleteAssets completes
+ *
+ *  @discussion This callback is invoked in-response to Notification kDownloadEnginelAssetsDeletedNotification
+ *
+ *  @param deletedAssetIDs Array of assetIDs for the deleted assets
+ *
+ */
+-(void)downloadEngineAssetsDeleted:(NSArray<NSString*>*  _Nullable)deletedAssetIDs;
+
+/*!
  *  @abstract Called when startupWithBackplane completes
  *
  *  @discussion This callback is invoked when startupWithBackplane completes.
@@ -328,6 +341,12 @@
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate
                                     queue:(NSOperationQueue* _Nonnull)queue
                                   assetID:(NSString* _Nullable)assetID;
+
+/*!
+ *  @abstract Unregister event listener
+ *  @discussion Unregister event listener will stop posting notifcations to the delegate.
+*/
+-(void)unregister;
 
 @end
 

@@ -1,49 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_AssetProtectionType.html">
+	<File path="Protocols/VirtuosoRefreshManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetProtectionType</TokenIdentifier>
-			<Abstract type="html">@typedef kVDE_AssetProtectionType</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoRefreshManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate interface that VirtuosoRefreshManager requires.</Abstract>
+			<DeclaredIn>VirtuosoRefreshManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="62"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypePassthrough</TokenIdentifier>
-            <Abstract type="html">The asset is not protected, is protected by an external DRM system, or is protected by some form of
-        native encryption.  This value indicates that no special handling is required for download or playback
-        of this asset, and is the default value. </Abstract>
-            <Declaration>kVDE_AssetProtectionTypePassthrough</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoRefreshManagerDelegate/performRefresh</TokenIdentifier>
+			<Abstract type="html">Invoked when background refresh should be performed. The callback will happen on a background thread. Do not attempt to update UI elements or otherwise use MainThread as the App user interface is not available when awakened for background processing.</Abstract>
+			<DeclaredIn>VirtuosoRefreshManager.h</DeclaredIn>
+			
+			<Declaration>- (void)performRefresh</Declaration>
+			
+			
+			<Anchor>//api/name/performRefresh</Anchor>
             <NodeRef refid="62"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeFairPlay</TokenIdentifier>
-            <Abstract type="html">The asset is protected by Apple FairPlay DRM.</Abstract>
-            <Declaration>kVDE_AssetProtectionTypeFairPlay</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="62"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeWidevine</TokenIdentifier>
-            <Abstract type="html">The asset is protected by Google Widevine DRM.</Abstract>
-            <Declaration>kVDE_AssetProtectionTypeWidevine</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="62"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

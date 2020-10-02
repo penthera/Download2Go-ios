@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoDrmConfigDelegate.html">
+	<File path="Classes/VirtuosoVerizonAdsServerProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoDrmConfigDelegate</TokenIdentifier>
-			<Abstract type="html">Allows Virtuoso to request the enclosing application for asset specific DRM
-values when requesting FairPlay license keys.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoVerizonAdsServerProvider</TokenIdentifier>
+			<Abstract type="html">Base class for Verizion VAST Ads</Abstract>
+			<DeclaredIn>VirtuosoVerizonAdsServerProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
@@ -14,19 +13,19 @@ values when requesting FairPlay license keys.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoDrmConfigDelegate/drmConfigForAsset:</TokenIdentifier>
-			<Abstract type="html">Called when the DRM subsystem needs a DRM configuration to make a licensing request.</Abstract>
-			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoVerizonAdsServerProvider/initWithPreplayUrl:</TokenIdentifier>
+			<Abstract type="html">Creates an instance of this Ads Provider</Abstract>
+			<DeclaredIn>VirtuosoVerizonAdsServerProvider.h</DeclaredIn>
 			
-			<Declaration>- (VirtuosoDrmConfig *_Nonnull)drmConfigForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (nullable instancetype)initWithPreplayUrl:(nonnull NSString *)url</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The VirtuosoAsset object that will request a FairPlay license.</Abstract>
+					<Name>url</Name>
+					<Abstract type="html">Preplay URL for Ads and Asset Manifest</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A properly configured DrmConfig object containing proper licensing details for the asset.</Abstract></ReturnValue>
-			<Anchor>//api/name/drmConfigForAsset:</Anchor>
+			<ReturnValue><Abstract type="html">Instance, nill the URL parameter was invalid</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPreplayUrl:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		

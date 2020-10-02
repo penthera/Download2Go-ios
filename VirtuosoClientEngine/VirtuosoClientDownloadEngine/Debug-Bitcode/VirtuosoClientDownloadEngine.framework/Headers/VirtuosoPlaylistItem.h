@@ -37,7 +37,10 @@ typedef NS_ENUM(NSInteger, PlaylistItemState)
     PlaylistItemState_NotFound = 500,
     
     /** Item was deleted by user */
-    PlaylistItemState_UserDeleted,    
+    PlaylistItemState_UserDeleted,
+    
+    /** Playlist cancelled auto download */
+    PlaylistItemState_AutoDownloadCancelled,
 };
 
 

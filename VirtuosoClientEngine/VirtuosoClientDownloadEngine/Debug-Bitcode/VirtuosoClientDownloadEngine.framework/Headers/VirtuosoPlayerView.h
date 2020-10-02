@@ -131,7 +131,7 @@
  *  @abstract You may use access to the AVPlayer object to perform custom player actions, such as modifying the
  *            playback rate or seeking to a particular time in the playback stream.
  */
-@property (nonatomic, readonly, nonnull) AVPlayer *player;
+@property (nonatomic, readonly, nullable) AVPlayer *player;
 
 /*!
  *  @abstract Whether the player is currently playing

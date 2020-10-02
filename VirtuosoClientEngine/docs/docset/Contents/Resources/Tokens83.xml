@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="">
+	<File path="Constants/kVDE_PlaylistDownloadOption.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_PlaylistDownloadOption</TokenIdentifier>
+			<Abstract type="html">Control option for continuing Playlist auto downloads</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="83"/>
+		</Token>
 		
 		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistDownloadOption_Download</TokenIdentifier>
+            <Abstract type="html">Continue normal downloading</Abstract>
+            <Declaration>PlaylistDownloadOption_Download</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistDownloadOption_SkipToNext</TokenIdentifier>
+            <Abstract type="html">Skip to next item in playlist and attempt to download</Abstract>
+            <Declaration>PlaylistDownloadOption_SkipToNext</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistDownloadOption_TryAgainLater</TokenIdentifier>
+            <Abstract type="html">Try again later</Abstract>
+            <Declaration>PlaylistDownloadOption_TryAgainLater</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistDownloadOption_CancelDownloading</TokenIdentifier>
+            <Abstract type="html">Cancel downloading</Abstract>
+            <Declaration>PlaylistDownloadOption_CancelDownloading</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+            
+            <NodeRef refid="83"/>
+        </Token>
         
         
 	</File>

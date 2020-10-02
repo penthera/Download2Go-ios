@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVSM_MediaTypeCode.html">
+	<File path="Constants/kVDE_ErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVSM_MediaTypeCode</TokenIdentifier>
-			<Abstract type="html">A defined list of media types that the Manager is aware of and will auto-start downloads for.  The data source must include
-a media type value in the parsed data response for automatic downloads to be handled.  Any returned item that does not have one
-of these values will be ignored.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_ErrorCode</TokenIdentifier>
+			<Abstract type="html">Errors or warnings encountered by Virtuoso. Included in the NSError object sent
+via NSNotificationCenter when issues are reported.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="80"/>
@@ -16,71 +15,51 @@ of these values will be ignored.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFirst</TokenIdentifier>
-            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
-            <Declaration>kVSM_MediaTypeCodeFirst</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneURLError</TokenIdentifier>
+            <Abstract type="html">The supplied Backplane URL contains an invalid format</Abstract>
+            <Declaration>kVDE_BackplaneURLError</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeFile</TokenIdentifier>
-            <Abstract type="html">Straight binary file</Abstract>
-            <Declaration>kVSM_MediaTypeCodeFile</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="80"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeAudio</TokenIdentifier>
-            <Abstract type="html">Audio file. E.G. MP3</Abstract>
-            <Declaration>kVSM_MediaTypeCodeAudio</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_BackplaneNotReachableError</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to reach the Backplane</Abstract>
+            <Declaration>kVDE_BackplaneNotReachableError</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeVideo</TokenIdentifier>
-            <Abstract type="html">Video file. E.G. MP4</Abstract>
-            <Declaration>kVSM_MediaTypeCodeVideo</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="80"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHLS</TokenIdentifier>
-            <Abstract type="html">HLS Video Manifest</Abstract>
-            <Declaration>kVSM_MediaTypeCodeHLS</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_FileMoveToFinalPathError</TokenIdentifier>
+            <Abstract type="html">Virtuoso was unable to move the downloaded asset to the final destination</Abstract>
+            <Declaration>kVDE_FileMoveToFinalPathError</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
-            
-            <NodeRef refid="80"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeHSS</TokenIdentifier>
-            <Abstract type="html">HSS Video Manifest</Abstract>
-            <Declaration>kVSM_MediaTypeCodeHSS</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="80"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_MediaTypeCodeLast</TokenIdentifier>
-            <Abstract type="html">Value used for range checking.  Should not be used by Caller.</Abstract>
-            <Declaration>kVSM_MediaTypeCodeLast</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnexpectedFileSizeWarning</TokenIdentifier>
+            <Abstract type="html">The observed final file size doesn&apos;t match the expected file size</Abstract>
+            <Declaration>kVDE_UnexpectedFileSizeWarning</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionDataSource.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="80"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_UnserializableUserInfoError</TokenIdentifier>
+            <Abstract type="html">The userInfo dictionary contains objects that cannot be serialized</Abstract>
+            <Declaration>kVDE_UnserializableUserInfoError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="80"/>
         </Token>

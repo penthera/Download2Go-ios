@@ -111,8 +111,11 @@ typedef NS_ENUM(NSInteger, kVL_LogEvent)
     /** Generated the first time SDK detects the asset has been played. */
     kVLE_InitialPlayback = 16,
     
+    /** Generated the first time SDK detects the asset has been played. */
+    kVLE_DownloadWarning = 17,
+    
     /** Generic event used to allow event types easily in loops */
-    kVLE_LastEvent = kVLE_InitialPlayback + 1,
+    kVLE_LastEvent,
 };
 
 /*!
@@ -397,6 +400,18 @@ extern long long kLoggerDataValueInvalid;
 + (void) logPlaybackStartedForAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
+*  @abstract Logs playback progress for the specified asset
+*
+*  @discussion This method can be used to report playback progess. Virtuoso will attempt to automatically report playback progress event for Virtuoso Assets that are played using Apple's AVPlayer.
+*              For customers that do not use AVPlayer, this method can be used to report playback progress. This event should only be reported once, for example, after playback has been stopped.
+*
+*  @param asset The played asset
+*  @param start Reported starting percent. If player does not start playing at zero, set this parameter to the percent where playback started.
+*  @param progress Reported ending percent played.
+*/
++(void)logPlaybackProgress:(nonnull VirtuosoAsset*)asset start:(double)start progress:(double)progress;
+
+/*!
  *  @abstract Logs "play" event for an asset, including optional "time to first frame" data.
  *
  *  @discussion Virtuoso cannot automatically detect a 'play' event, since this occurs at the app
@@ -411,7 +426,7 @@ extern long long kLoggerDataValueInvalid;
 + (void) logPlaybackStartedForAsset:(nonnull VirtuosoAsset*)asset withTTFF:(NSTimeInterval)ttff;
 
 /*!
- *  @abstract Logs "stop-play" event for an asset
+ *  @abstract Logs "stop-play" event for an asset when playback has ended.
  *
  *  @discussion Virtuoso cannot automatically detect a 'stop play' event, since this occurs at the app 
  *              level, "above" Virtuoso. This method allows you to log the event. 
@@ -423,6 +438,20 @@ extern long long kLoggerDataValueInvalid;
  *                 (e.g. play time since 'start' was reported)
  */
 + (void) logPlaybackStoppedForAsset:(nonnull VirtuosoAsset*)asset withSecondsSinceLastStart:(long long)seconds;
+
+/*!
+ *  @abstract Logs "stop-play" event for an asset and should only be used when playback is PAUSED during playback.
+ *
+ *  @discussion Virtuoso cannot automatically detect a 'stop play' event, since this occurs at the app
+ *              level, "above" Virtuoso. This method allows you to log the event.
+ *              Note that a "pause" event is equivalent to a stop event followed by a start event.
+ *
+ *  @param asset The asset that was playing and which is now paused playback.
+ *
+ *  @param seconds The number of seconds the asset was played before it was stopped or paused
+ *                 (e.g. play time since 'start' was reported)
+ */
++ (void) logPlaybackPausedForAsset:(nonnull VirtuosoAsset*)asset withSecondsSinceLastStart:(long long)seconds;
 
 
 /**---------------------------------------------------------------------------------------

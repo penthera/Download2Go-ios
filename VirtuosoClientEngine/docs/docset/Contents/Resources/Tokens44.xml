@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoAdsManagerNotificationDelegate.html">
+	<File path="Classes/VirtuosoSubscriptionDefaultDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoAdsManagerNotificationDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate interface for Download Engine Ads notifications</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionDefaultDataSource</TokenIdentifier>
+			<Abstract type="html">The default data source for the VirtuosoSubscriptionManager.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -13,62 +13,58 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsRefreshFailure:error:</TokenIdentifier>
-			<Abstract type="html">Called when Ads refresh fails</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/lookupMetadataForAssetID:usingKnownData:</TokenIdentifier>
+			<Abstract type="html">Requests a synchronous metadata lookup for a known asset ID</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)adsRefreshFailure:(VirtuosoAsset *_Nonnull)asset error:(NSError *_Nullable)error</Declaration>
+			<Declaration>- (nonnull NSDictionary *)lookupMetadataForAssetID:(nonnull NSString *)assetID usingKnownData:(nonnull NSDictionary *)knownData</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">VirtuosoAsset for the Ad that failed to refresh.</Abstract>
+					<Name>assetID</Name>
+					<Abstract type="html">The asset ID representing an asset to lookup</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">NSError indciating the error</Abstract>
+					<Name>knownData</Name>
+					<Abstract type="html">The known metadata received by the backplane for this asset.  May be used as a reference
+to provide additional missing data.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/adsRefreshFailure:error:</Anchor>
+			<ReturnValue><Abstract type="html">A NSDictionary object containing all required keys, as defined in the data source protocol</Abstract></ReturnValue>
+			<Anchor>//api/name/lookupMetadataForAssetID:usingKnownData:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsRefreshStatusUpdate:</TokenIdentifier>
-			<Abstract type="html">Called when an Ad is being refreshed</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/didProcessAssetWithMetadata:</TokenIdentifier>
+			<Abstract type="html">Indicates that an asset was succesfully processed</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)adsRefreshStatusUpdate:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (void)didProcessAssetWithMetadata:(nonnull NSDictionary *)metadata</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">VirtuosoAsset for the Ad that is being refreshed</Abstract>
+					<Name>metadata</Name>
+					<Abstract type="html">A NSDictionary object containing, at a minimum, metadata values for the keys defined in the data source protocol.  Any additional data provided by
+the Backplane or the External Catalog during a metadata lookup may also be defined, and Callers can access custom catalog data in this manner.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/adsRefreshStatusUpdate:</Anchor>
+			<Anchor>//api/name/didProcessAssetWithMetadata:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoAdsManagerNotificationDelegate/adsTrackingNotificationForAsset:url:userInfo:</TokenIdentifier>
-			<Abstract type="html">Called whenever an Ad tracking beacon has been reported</Abstract>
-			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionDefaultDataSource/willAddAsset:</TokenIdentifier>
+			<Abstract type="html">Indicates a new VirtuosoAsset item has been created</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionDefaultDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)adsTrackingNotificationForAsset:(VirtuosoAsset *_Nullable)asset url:(NSString *_Nonnull)url userInfo:(NSDictionary *_Nonnull)userInfo</Declaration>
+			<Declaration>- (void)willAddAsset:(nonnull VirtuosoAsset *)asset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>asset</Name>
-					<Abstract type="html">VirtuosoAsset for which the tracking beacon was reported. This will be nil if the asset has since been deleted.</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">Ads beacon URL that was reported</Abstract>
-				</Parameter><Parameter>
-					<Name>userInfo</Name>
-					<Abstract type="html">NSDictionary containing both the asset.assetID (kDownloadEngineAssetIDKey) and asset.uuid (kDownloadEngineAssetUUIDKey)</Abstract>
+					<Abstract type="html">A VirtuosoAsset item that has just been created by the Subscription Manager</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/adsTrackingNotificationForAsset:url:userInfo:</Anchor>
+			<Anchor>//api/name/willAddAsset:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		

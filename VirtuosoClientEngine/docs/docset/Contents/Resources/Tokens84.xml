@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="">
+	<File path="Constants/kVDE_PlaylistStatus.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_PlaylistStatus</TokenIdentifier>
+			<Abstract type="html">Status of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            
+			
+			<NodeRef refid="84"/>
+		</Token>
 		
 		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_Active</TokenIdentifier>
+            <Abstract type="html">Playlist is actively enabled</Abstract>
+            <Declaration>PlaylistStatus_Active</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_AutoDownloadCancelled</TokenIdentifier>
+            <Abstract type="html">Customer requested cancelling auto download</Abstract>
+            <Declaration>PlaylistStatus_AutoDownloadCancelled</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_AssetCreateFailed</TokenIdentifier>
+            <Abstract type="html">Playlist Asset creation failed</Abstract>
+            <Declaration>PlaylistStatus_AssetCreateFailed</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistStatus_AssetCreateFailedNoAssetsLeft</TokenIdentifier>
+            <Abstract type="html">Playlist Asset creation failed and no more assets exist</Abstract>
+            <Declaration>PlaylistStatus_AssetCreateFailedNoAssetsLeft</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistConfig.h</DeclaredIn>
+            
+            <NodeRef refid="84"/>
+        </Token>
         
         
 	</File>

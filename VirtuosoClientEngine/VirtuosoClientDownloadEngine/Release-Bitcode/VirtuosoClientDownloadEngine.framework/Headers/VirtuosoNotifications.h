@@ -40,7 +40,6 @@ extern NSString* kDownloadEngineAssetIDKey;
  */
 extern NSString* kDownloadEngineAssetUUIDKey;
 
-
 /*!
  *  @constant kDownloadEngineStatusDidChangeNotificationKey
  *
@@ -79,6 +78,14 @@ extern NSString* kDownloadEngineNotificationContinuingAssetsKey;
  *            *not* continue downloading in the background.
  */
 extern NSString* kDownloadEngineNotificationPausingAssetsKey;
+
+/*!
+ *  @constant kDownloadEngineNotificationDeletedAssetsKey
+ *
+ *  @abstract The key in userInfo dictionary kDownloadEnginelAssetsDeletedNotification notification to return
+ *            an array of assetID's that have been deleted.
+ */
+extern NSString* kDownloadEngineNotificationDeletedAssetsKey;
 
 /*!
  *  @constant kDownloadEngineNotificationErrorKey
@@ -390,13 +397,13 @@ extern NSString* kBackplaneStartingRemoteKillNotification;
 extern NSString* kBackplaneRemoteKillNotification;
 
 /*!
- *  @constant kBackplaneAssetDeletedNotification
+ *  @constant kAssetDeletedNotification
  *
  *  @abstract Fired after an Asset is deleted
  *
  *  @discussion The userInfo dictionary will contain the asset of the deleted object (kDownloadEngineAssetIDKey)
  */
-extern NSString* kBackplaneAssetDeletedNotification;
+extern NSString* kAssetDeletedNotification;
 
 /*!
  *  @constant kProxyDidEncounterErrorNotification
@@ -462,6 +469,14 @@ extern NSString* kDownloadEngineEnableDisableChangeNotificationKey;
  */
 extern NSString* kDownloadEngineNotificationUrlKey;
 
+
+/*!
+ *  @constant kDownloadEngineNotificationHTTPResponseCodeKey
+ *
+ *  @abstract Key for the HTTP reponse code in NSNotification userInfo dictionary
+ */
+extern NSString* kDownloadEngineNotificationHTTPResponseCodeKey;
+
 /*!
  *  @constant kDownloadEngineEnableAdsErrorNotification
  *
@@ -476,13 +491,21 @@ extern NSString* kDownloadEngineEnableAdsErrorNotification;
  */
 extern NSString* kDownloadEngineEnableAdsTrackingNotification;
 
-
 /*!
  *  @constant kDownloadEngineAllAssetsDeletedNotification
  *
  *  @abstract Fired when Asset.deleteAll completes
+ *
+ *  @discussion The userInfo dictionary will contain an array of assetID's that have been deleted (kDownloadEngineNotificationDeletedAssetsKey)
  */
 extern NSString* kDownloadEngineAllAssetsDeletedNotification;
+
+/*!
+ *  @constant kDownloadEngineAssetsDeletedNotification
+ *
+ *  @abstract Fired when Asset.deleteAssets completes
+ */
+extern NSString* kDownloadEngineAssetsDeletedNotification;
 
 /*!
  *  @constant kDownloadEngineStartupCompleteNotification

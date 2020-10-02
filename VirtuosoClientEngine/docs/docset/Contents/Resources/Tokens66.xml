@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_DownloadErrorType.html">
+	<File path="Constants/ClientAdProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_DownloadErrorType</TokenIdentifier>
-			<Abstract type="html">Error states that Virtuoso can be in when downloading an asset.  Returned via the &apos;error&apos; property.</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/ClientAdProvider</TokenIdentifier>
+			<Abstract type="html">Defines the various types of Client Ads Providers</Abstract>
+			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
             
 			
 			<NodeRef refid="66"/>
@@ -14,84 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNoError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered no errors downloading this asset</Abstract>
-            <Declaration>kVDE_DownloadNoError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Undefined</TokenIdentifier>
+            <Abstract type="html">Undefined.</Abstract>
+            <Declaration>ClientAdProvider_Undefined</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadNetworkError</TokenIdentifier>
-            <Abstract type="html">Virtuoso encountered a network problem downloading asset, e.g. 404 or 416 HTTP error</Abstract>
-            <Declaration>kVDE_DownloadNetworkError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
             
             <NodeRef refid="66"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadReachabilityError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because it couldn&apos;t reach the remote server</Abstract>
-            <Declaration>kVDE_DownloadReachabilityError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Freewheel</TokenIdentifier>
+            <Abstract type="html">Freewheel Client Ads.</Abstract>
+            <Declaration>ClientAdProvider_Freewheel</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadFileCopyError</TokenIdentifier>
-            <Abstract type="html">Virtuoso downloaded this asset, but couldn&apos;t move it to its final location on disk</Abstract>
-            <Declaration>kVDE_DownloadFileCopyError</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
             
             <NodeRef refid="66"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadEngineError</TokenIdentifier>
-            <Abstract type="html">Virtuoso failed to download this asset because of an internal issue</Abstract>
-            <Declaration>kVDE_DownloadEngineError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Google</TokenIdentifier>
+            <Abstract type="html">Google Client Ads.</Abstract>
+            <Declaration>ClientAdProvider_Google</Declaration>
             
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_DownloadMaxRetriesExceeded</TokenIdentifier>
-            <Abstract type="html">Virtuoso has attempted to download this asset the max times permitted. Will not try again
-        until you call reset or clearRetryCount </Abstract>
-            <Declaration>kVDE_DownloadMaxRetriesExceeded</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_LifetimeDownloadLimitReached</TokenIdentifier>
-            <Abstract type="html">Virtuoso has received notice from the server that the user has downloaded this asset the
-        maximum number of times for this account.  Downloads cannot continue for this asset. </Abstract>
-            <Declaration>kVDE_LifetimeDownloadLimitReached</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_BlockedOnDRM</TokenIdentifier>
-            <Abstract type="html">Virtuoso has attempted to start downloading an asset for which DRM is required before downloading
-     and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. </Abstract>
-            <Declaration>kVDE_BlockedOnDRM</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
             
             <NodeRef refid="66"/>
         </Token>

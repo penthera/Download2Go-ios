@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPlayerViewDelegate.html">
+	<File path="Protocols/VirtuosoBackplaneNotificationsDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayerViewDelegate</TokenIdentifier>
-			<Abstract type="html">If you are using VirtuosoPlayerView directly, then you will need to configure
-a delegate to handle playback events.  If you are using VirtuosoPlayerViewController,
-then the delegate calls are handled internally.</Abstract>
-			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoBackplaneNotificationsDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate interface for Backplane notifications</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="51"/>
@@ -15,36 +13,66 @@ then the delegate calls are handled internally.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerFinishedPlayback:</TokenIdentifier>
-			<Abstract type="html">Called when the player has reached the end of the video.</Abstract>
-			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneSyncCompleteWithStatus:error:</TokenIdentifier>
+			<Abstract type="html">Called when Backplane sync completes.</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>- (void)playerFinishedPlayback:(nonnull VirtuosoPlayerView *)view</Declaration>
+			<Declaration>- (void)backplaneSyncCompleteWithStatus:(Boolean)status error:(NSError *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The VirtuosoPlayerView object that finished playing</Abstract>
+					<Name>status</Name>
+					<Abstract type="html">Boolean (true) indicates success.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">NSError indciating the error</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/playerFinishedPlayback:</Anchor>
+			<Anchor>//api/name/backplaneSyncCompleteWithStatus:error:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayerViewDelegate/playerDoneButtonClicked:</TokenIdentifier>
-			<Abstract type="html">Called when the user taps the done button.</Abstract>
-			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneRemoteKill</TokenIdentifier>
+			<Abstract type="html">Called when a Backplane requested remote kill has completed.</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>- (void)playerDoneButtonClicked:(nonnull VirtuosoPlayerView *)view</Declaration>
+			<Declaration>- (void)backplaneRemoteKill</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneRemoteKill</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneStartingRemoteKill</TokenIdentifier>
+			<Abstract type="html">Called when a Backplane requested is about to start a remote kill.</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)backplaneStartingRemoteKill</Declaration>
+			
+			
+			<Anchor>//api/name/backplaneStartingRemoteKill</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneDidUnregisterDeviceWithStatus:error:</TokenIdentifier>
+			<Abstract type="html">Called when a Backplane requested unregistering the device.</Abstract>
+			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)backplaneDidUnregisterDeviceWithStatus:(Boolean)success error:(NSError *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">The VirtuosoPlayerView object requesting to finish</Abstract>
+					<Name>success</Name>
+					<Abstract type="html">Boolean (true) indicates success.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">NSError if an error occured.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/playerDoneButtonClicked:</Anchor>
+			<Anchor>//api/name/backplaneDidUnregisterDeviceWithStatus:error:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		

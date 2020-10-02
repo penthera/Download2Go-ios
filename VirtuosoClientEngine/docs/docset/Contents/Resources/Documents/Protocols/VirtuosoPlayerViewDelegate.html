@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoPlayerViewDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,29 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/playerDoneButtonClicked:">- playerDoneButtonClicked:</option>
+		
+		<option value="//api/name/playerFinishedPlayback:">- playerFinishedPlayback:</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +79,167 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoPlayerViewDelegate Protocol Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoPlayerView.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>If you are using <a href="../Classes/VirtuosoPlayerView.html">VirtuosoPlayerView</a> directly, then you will need to configure
+a delegate to handle playback events.  If you are using <a href="../Classes/VirtuosoPlayerViewController.html">VirtuosoPlayerViewController</a>,
+then the delegate calls are handled internally.</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/playerFinishedPlayback:" title="playerFinishedPlayback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playerFinishedPlayback:">&ndash;&nbsp;playerFinishedPlayback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when the player has reached the end of the video.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)playerFinishedPlayback:(nonnull VirtuosoPlayerView *)<em>view</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>view</code></th>
+						<td><p>The <a href="../Classes/VirtuosoPlayerView.html">VirtuosoPlayerView</a> object that finished playing</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playerDoneButtonClicked:" title="playerDoneButtonClicked:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playerDoneButtonClicked:">&ndash;&nbsp;playerDoneButtonClicked:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when the user taps the done button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)playerDoneButtonClicked:(nonnull VirtuosoPlayerView *)<em>view</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>view</code></th>
+						<td><p>The <a href="../Classes/VirtuosoPlayerView.html">VirtuosoPlayerView</a> object requesting to finish</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlayerView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-08-26</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-10-02</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

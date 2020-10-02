@@ -14,7 +14,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/*!
+* @abstract Base class for Verizion VAST Ads
+*
+* @discussion Implements the Verizion VAST Ads Provider
+*/
 @interface VirtuosoVerizonAdsServerProvider : VirtuosoAdsServerProvider
+
+/*!
+ * @abstract Creates an instance of this Ads Provider
+ *
+ * @param url Preplay URL for Ads and Asset Manifest
+ *
+ * @return Instance, nill the URL parameter was invalid
+ */
+-(nullable instancetype)initWithPreplayUrl:(nonnull NSString*)url;
 
 @end
 

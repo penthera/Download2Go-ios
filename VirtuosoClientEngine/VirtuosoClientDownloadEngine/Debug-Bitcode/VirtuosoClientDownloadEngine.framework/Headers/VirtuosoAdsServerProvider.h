@@ -18,7 +18,6 @@
  *  @abstract Defines the various types of Server Ads Providers
  *
  */
-
 typedef NS_ENUM(NSInteger, ServerAdProvider)
 {
     /** Undefined. */
@@ -31,10 +30,15 @@ typedef NS_ENUM(NSInteger, ServerAdProvider)
     ServerAdProvider_Verizon
 };
 
+/*!
+* @abstract Base class for Server-Side AdsProviders
+*
+* @discussion This class defines the comon methods and properties shared by all Server-Side Ads providers
+*/
 @interface VirtuosoAdsServerProvider : VirtuosoAdsProvider
 
 /*!
-* @abstract Type of server Ad
+* @abstract Type of Server Ad (see enum ServerAdProvider)
 */
 @property (nonatomic, assign, readonly)ServerAdProvider type;
 

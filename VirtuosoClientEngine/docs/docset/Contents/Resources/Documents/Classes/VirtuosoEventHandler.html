@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoEventHandler Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,31 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
 	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/processBackgroundSessionWake:completionHandler:">+ processBackgroundSessionWake:completionHandler:</option>
+		
+		<option value="//api/name/processFetchWithCompletionHandler:">+ processFetchWithCompletionHandler:</option>
+		
+		<option value="//api/name/processRemotePushNotice:withCompletionHandler:">+ processRemotePushNotice:withCompletionHandler:</option>
+		
+	</optgroup>
+	
+
+	
 	
 </select>
 						</label>
@@ -59,22 +81,266 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoEventHandler Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoEventHandler.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="iOS Event Handling Methods" name="task_iOS Event Handling Methods"></a>
+						
+<h2 class="task-title">iOS Event Handling Methods</h2>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/processBackgroundSessionWake:completionHandler:" title="processBackgroundSessionWake:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processBackgroundSessionWake:completionHandler:">+&nbsp;processBackgroundSessionWake:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Handles processing of background download session notices</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (Boolean)processBackgroundSessionWake:(nonnull NSString *)<em>identifier</em> completionHandler:(nonnull void ( ^ ) ( void ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>The background session identifier the wake is for</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The handler callback provided by the iOS7+ UIApplicationDelegate background session method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Whether Virtuoso handled the session wake</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Under iOS 7, apps may use the iOS background download APIs to download data without
+the app having to remain active. When the background download session completes, iOS wakes up
+the app via the application:handleEventsForBackgroundURLSession:completionHandler: method
+in the app delegate.  Virtuoso handles this event similarly to how it handles incoming push notices.
+You must invoke Virtuoso&rsquo;s processBackgroundSessionWake:completionHandler: method before
+taking any further actions.  If this method returns YES, then the wake was for Virtuoso.
+If this method returns NO, then the wake wasn&rsquo;t intended for Virtuoso; you need to handle it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoEventHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processRemotePushNotice:withCompletionHandler:" title="processRemotePushNotice:withCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processRemotePushNotice:withCompletionHandler:">+&nbsp;processRemotePushNotice:withCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Handles remote push notices</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (Boolean)processRemotePushNotice:(nonnull NSDictionary *)<em>userInfo</em> withCompletionHandler:(nullable void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>The userInfo dictionary provided by the remote push notice</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The handler callback provided by the iOS 7+ UIApplicationDelegate remote push method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Whether Virtuoso handled the push notice</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The Backplane sends push notices to instruct Virtuoso to perform certain actions:
+delete an asset, enqueue an asset, etc. The Backplane sends these notices to Virtuoso by
+way of the enclosing app.
+Whenever the enclosing app receives a remote notice via any of the standard app delegate methods,
+it must call this method first, to let Virtuoso have a crack at it. If this method returns YES,
+that means Virtuoso handled the notice. If this method returns NO, then Virtuoso did not
+handle the push notice, and the enclosing app should handle it.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoEventHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/processFetchWithCompletionHandler:" title="processFetchWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/processFetchWithCompletionHandler:">+&nbsp;processFetchWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Handles background fetch</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)processFetchWithCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>The handler callback provided by the iOS 7 UIApplicationDelegate remote push method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When the enclosing app enables the background fetch feature, Virtuoso can use those application
+wakes to perform standard maintenance tasks, such as posting log events to the Backplane or syncing
+with the subscription system.</p><div class="warning"><p><strong>Warning:</strong> Since several SDK entities may wish to perform work alongside the enclosing application itself,
+this method MUST NOT receive a reference to the completion handler provided by the OS.  Instead,
+the enclosing application should pass its own callback block and use that to properly call the OS
+completion handler at the appropriate time.  If you pass the OS completion handler to this method,
+the app may go to sleep unexpectedly.  Please reference the SdkDemo application for one example of
+how to properly implement this method.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoEventHandler.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-08-26</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-10-02</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

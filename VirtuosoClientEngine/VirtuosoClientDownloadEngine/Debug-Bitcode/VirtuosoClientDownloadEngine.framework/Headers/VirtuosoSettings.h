@@ -163,6 +163,11 @@
 @property (nonatomic, assign) Boolean iframeSupportEnabled;
 
 /*!
+ *  @abstract If YES, Virtuoso will enable SubscriptionManager support.  Defaults to NO.
+ */
+@property (nonatomic, assign) Boolean subscriptionsEnabled;
+
+/*!
  *  @abstract Minumum segments required for FastPlay
  *
  *  @discussion Default value is 5 segments, minimum value is 1.

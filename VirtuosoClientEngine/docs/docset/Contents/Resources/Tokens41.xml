@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoSubscriptionNotificationsManager.html">
+	<File path="Classes/VirtuosoSecureClock.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSubscriptionNotificationsManager</TokenIdentifier>
-			<Abstract type="html">Listens for Subscription related notifications.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoSecureClock</TokenIdentifier>
+			<Abstract type="html">A basic secure clock implementation</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
             
 			
 			<NodeRef refid="41"/>
@@ -13,111 +13,102 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/setQueue:</TokenIdentifier>
-			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoSecureClock/instance</TokenIdentifier>
+			<Abstract type="html">The singleton instance access method</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			<Declaration>+ (nonnull VirtuosoSecureClock *)instance</Declaration>
 			
-			
-			<Anchor>//api/name/queue</Anchor>
+			<ReturnValue><Abstract type="html">Returns the VirtuosoSecureClock object instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/queue</TokenIdentifier>
-			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/update</TokenIdentifier>
+			<Abstract type="html">Requests an update to the secure clock time.  This method is called internal to the SDK
+automatically at opportune times and you should not normally need to call it manually.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			<Declaration>- (void)update</Declaration>
 			
 			
-			<Anchor>//api/name/queue</Anchor>
+			<Anchor>//api/name/update</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionNotificationsManager/queue</TokenIdentifier>
-			<Abstract type="html">Operation queue upon which the callbacks will happen</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setSecureDate:</TokenIdentifier>
+			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSOperationQueue *queue</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
 			
 			
-			<Anchor>//api/name/queue</Anchor>
+			<Anchor>//api/name/secureDate</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Delegate callback</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/secureDate</TokenIdentifier>
+			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/secureDate</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/delegate</TokenIdentifier>
-			<Abstract type="html">Delegate callback</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/secureDate</TokenIdentifier>
+			<Abstract type="html">The current secure clock time, or nil if a secure time cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSDate *secureDate</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/secureDate</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSubscriptionNotificationsManager/delegate</TokenIdentifier>
-			<Abstract type="html">Delegate callback</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/setDate:</TokenIdentifier>
+			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
+system clock time if a secure date cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/date</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/initWithDelegate:</TokenIdentifier>
-			<Abstract type="html">Creates an instance</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSecureClock/date</TokenIdentifier>
+			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
+system clock time if a secure date cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">Delegate that will be called</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDelegate:</Anchor>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoSubscriptionNotificationsManager/initWithDelegate:queue:</TokenIdentifier>
-			<Abstract type="html">Creates an instance</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoSecureClock/date</TokenIdentifier>
+			<Abstract type="html">Similar to the secureDate property, except that this method will return the current
+system clock time if a secure date cannot be determined.</Abstract>
+			<DeclaredIn>VirtuosoSecureClock.h</DeclaredIn>
 			
-			<Declaration>- (instancetype _Nullable)initWithDelegate:(id&lt;VirtuosoSubscriptionsManagerDelegate&gt; _Nonnull)delegate queue:(NSOperationQueue *_Nonnull)queue</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">Delegate that will be called</Abstract>
-				</Parameter><Parameter>
-					<Name>queue</Name>
-					<Abstract type="html">NSOperationQueue the callback will be invoked on.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Instance of this component, nil on failure.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithDelegate:queue:</Anchor>
+			<Declaration>@property (nonatomic, readonly, nonnull) NSDate *date</Declaration>
+			
+			
+			<Anchor>//api/name/date</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		

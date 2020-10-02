@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoAdsClientProvider Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,49 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
 	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/refreshUrl">refreshUrl</option>
+		
+		<option value="//api/name/type">type</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/FreewheelAdsProviderWithRefreshUrl:">+ FreewheelAdsProviderWithRefreshUrl:</option>
+		
+		<option value="//api/name/GoogleAdsProviderWithRefreshUrl:">+ GoogleAdsProviderWithRefreshUrl:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithType:refreshUrl:">- initWithType:refreshUrl:</option>
+		
+		<option value="//api/name/playbackAdsUrl:">- playbackAdsUrl:</option>
+		
+		<option value="//api/name/prepareTrackingUrl:url:">- prepareTrackingUrl:url:</option>
+		
+		<option value="//api/name/refreshAds:error:">- refreshAds:error:</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +99,509 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoAdsClientProvider Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/VirtuosoAdsProvider.html">VirtuosoAdsProvider</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoAdsClientProvider.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class defines the comon methods and properties shared by all Client-Side Ads providers</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/type" title="type"></a>
+	<h3 class="method-title"><code><a href="#//api/name/type">&nbsp;&nbsp;type</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Type of client Ad  (see enum <a href="../Constants/ClientAdProvider.html">ClientAdProvider</a>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) ClientAdProvider type</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshUrl" title="refreshUrl"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshUrl">&nbsp;&nbsp;refreshUrl</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>URL for Ads Server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *refreshUrl</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/GoogleAdsProviderWithRefreshUrl:" title="GoogleAdsProviderWithRefreshUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/GoogleAdsProviderWithRefreshUrl:">+&nbsp;GoogleAdsProviderWithRefreshUrl:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a Google Client Ads Provider</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)GoogleAdsProviderWithRefreshUrl:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refreshUrl</code></th>
+						<td><p>Url to use to retrieve Client Ads VAST/VMAP.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Instance of VirtuosoAdsClientProvider</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/FreewheelAdsProviderWithRefreshUrl:" title="FreewheelAdsProviderWithRefreshUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/FreewheelAdsProviderWithRefreshUrl:">+&nbsp;FreewheelAdsProviderWithRefreshUrl:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a Freewheel Client Ads Provider</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)FreewheelAdsProviderWithRefreshUrl:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refreshUrl</code></th>
+						<td><p>Url to use to retrieve Client Ads VAST/VMAP.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Instance of VirtuosoAdsClientProvider</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithType:refreshUrl:" title="initWithType:refreshUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithType:refreshUrl:">&ndash;&nbsp;initWithType:refreshUrl:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create instance of Client-Side Ads Provider.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype _Nullable)initWithType:(ClientAdProvider)<em>type</em> refreshUrl:(NSString *_Nonnull)<em>refreshUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p><a href="../Constants/ClientAdProvider.html">ClientAdProvider</a> <a href="#//api/name/type">type</a> indicating <a href="#//api/name/type">type</a> of client ads provider.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>refreshUrl</code></th>
+						<td><p>Url to use to retrieve Client Ads VAST/VMAP.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>True indicates success.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refreshAds:error:" title="refreshAds:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refreshAds:error:">&ndash;&nbsp;refreshAds:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Refresh Client Side Ads content</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (Boolean)refreshAds:(VirtuosoAsset *_Nonnull)<em>asset</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>Asset to refresh Ads for</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Receives any NSError* encountered during Ads refresh</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>True indicates success.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playbackAdsUrl:" title="playbackAdsUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playbackAdsUrl:">&ndash;&nbsp;playbackAdsUrl:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the Ads Playback URL that should be used during Ads Playback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nullable)playbackAdsUrl:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>Asset to refresh Ads for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Url to use to retrieve Client Ads VAST/VMAP.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/prepareTrackingUrl:url:" title="prepareTrackingUrl:url:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prepareTrackingUrl:url:">&ndash;&nbsp;prepareTrackingUrl:url:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows Provider to update the Tracking URL with any appropriate information before posting.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nullable)prepareTrackingUrl:(VirtuosoAsset *_Nonnull)<em>asset</em> url:(NSString *_Nonnull)<em>url</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>Asset reporting an Ads tracking event.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>Tracking url that will be reported.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Updated url. Returning nil will result in using the original, unchanged url.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked when Ads Tracking URL&rsquo;s are requested from the Video player. The returned url will be reported once the Device receives network connectivity. Returning nil will result in the caller using the original unchanged url.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAdsClientProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-08-26</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-10-02</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

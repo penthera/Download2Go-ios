@@ -87,6 +87,12 @@
 */
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoBackplaneNotificationsDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue;
 
+/*!
+ *  @abstract Unregister event listener
+ *  @discussion Unregister event listener will stop posting notifcations to the delegate.
+*/
+-(void)unregister;
+
 @end
 
 #endif /* VirtuosoBackplaneNotificationsManager_h */

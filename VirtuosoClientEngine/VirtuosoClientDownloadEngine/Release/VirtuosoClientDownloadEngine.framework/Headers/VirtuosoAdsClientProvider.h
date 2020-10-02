@@ -34,15 +34,14 @@ typedef NS_ENUM(NSInteger, ClientAdProvider)
 @class VirtuosoAsset;
 
 /*!
+* @abstract Base class for Client-Side AdsProviders
 *
-*  @typedef VirtuosoAdsClientProvider
-*
-*  @abstract Ads provider for Client-Side ads
+* @discussion This class defines the comon methods and properties shared by all Client-Side Ads providers
 */
 @interface VirtuosoAdsClientProvider : VirtuosoAdsProvider
 
 /*!
-* @abstract Type of client Ad
+* @abstract Type of client Ad  (see enum ClientAdProvider)
 */
 @property (nonatomic, assign, readonly)ClientAdProvider type;
 

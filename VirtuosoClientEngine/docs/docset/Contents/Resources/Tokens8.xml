@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsProvider</TokenIdentifier>
-			<Abstract type="html">Base class for all AdsProviders</Abstract>
+			<Abstract type="html">Base class for AdsProviders</Abstract>
 			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
             
 			
@@ -84,7 +84,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/clientGoogleAdsWithRefreshUrl:</TokenIdentifier>
-			<Abstract type="html">Class convienence method to create a client Google Ads provider</Abstract>
+			<Abstract type="html">Class convienence method to create a Google Client-Side Ads Provider</Abstract>
 			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
 			
 			<Declaration>+ (VirtuosoAdsProvider *_Nullable)clientGoogleAdsWithRefreshUrl:(NSString *_Nonnull)refreshUrl</Declaration>
@@ -101,7 +101,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/serverGoogleAds</TokenIdentifier>
-			<Abstract type="html">Class convienence method to create a server Google Ads provider</Abstract>
+			<Abstract type="html">Class convienence method to create a Google Server-Side Ads Provider</Abstract>
 			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
 			
 			<Declaration>+ (VirtuosoAdsProvider *_Nullable)serverGoogleAds</Declaration>
@@ -112,14 +112,19 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/serverVerizonAds</TokenIdentifier>
-			<Abstract type="html">Class convienence method to create a server Verizon Ads provider</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoAdsProvider/serverVerizonAdsWithPreplayUrl:</TokenIdentifier>
+			<Abstract type="html">Class convienence method to create a Verizon Server Side Ads Provider</Abstract>
 			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
 			
-			<Declaration>+ (VirtuosoAdsProvider *_Nullable)serverVerizonAds</Declaration>
-			
+			<Declaration>+ (VirtuosoAdsProvider *_Nullable)serverVerizonAdsWithPreplayUrl:(nonnull NSString *)prePlayURL</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>prePlayURL</Name>
+					<Abstract type="html">- PrePlay URL for the Ads.</Abstract>
+				</Parameter>
+			</Parameters>
 			<ReturnValue><Abstract type="html">A new VirtuosoAdsProvider instance, or nil if failure.</Abstract></ReturnValue>
-			<Anchor>//api/name/serverVerizonAds</Anchor>
+			<Anchor>//api/name/serverVerizonAdsWithPreplayUrl:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
@@ -176,6 +181,222 @@
 			
 			
 			<Anchor>//api/name/refreshIntervalInDays</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setRefreshedOnTimeInterval:</TokenIdentifier>
+			<Abstract type="html">Time interval when the ad was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double refreshedOnTimeInterval</Declaration>
+			
+			
+			<Anchor>//api/name/refreshedOnTimeInterval</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/refreshedOnTimeInterval</TokenIdentifier>
+			<Abstract type="html">Time interval when the ad was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double refreshedOnTimeInterval</Declaration>
+			
+			
+			<Anchor>//api/name/refreshedOnTimeInterval</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/refreshedOnTimeInterval</TokenIdentifier>
+			<Abstract type="html">Time interval when the ad was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double refreshedOnTimeInterval</Declaration>
+			
+			
+			<Anchor>//api/name/refreshedOnTimeInterval</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setRefreshedDate:</TokenIdentifier>
+			<Abstract type="html">Date representation of time interval when the ad was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *refreshedDate</Declaration>
+			
+			
+			<Anchor>//api/name/refreshedDate</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/refreshedDate</TokenIdentifier>
+			<Abstract type="html">Date representation of time interval when the ad was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *refreshedDate</Declaration>
+			
+			
+			<Anchor>//api/name/refreshedDate</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/refreshedDate</TokenIdentifier>
+			<Abstract type="html">Date representation of time interval when the ad was last refreshed</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *refreshedDate</Declaration>
+			
+			
+			<Anchor>//api/name/refreshedDate</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setIsExpired:</TokenIdentifier>
+			<Abstract type="html">Flag indicating whether the ad has expired</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isExpired</Declaration>
+			
+			
+			<Anchor>//api/name/isExpired</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/isExpired</TokenIdentifier>
+			<Abstract type="html">Flag indicating whether the ad has expired</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isExpired</Declaration>
+			
+			
+			<Anchor>//api/name/isExpired</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/isExpired</TokenIdentifier>
+			<Abstract type="html">Flag indicating whether the ad has expired</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isExpired</Declaration>
+			
+			
+			<Anchor>//api/name/isExpired</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setExpirationDate:</TokenIdentifier>
+			<Abstract type="html">Date when the ad will expire.  This derived by adding the refreshIntervalInDays to the refreshedDate</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *expirationDate</Declaration>
+			
+			
+			<Anchor>//api/name/expirationDate</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/expirationDate</TokenIdentifier>
+			<Abstract type="html">Date when the ad will expire.  This derived by adding the refreshIntervalInDays to the refreshedDate</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *expirationDate</Declaration>
+			
+			
+			<Anchor>//api/name/expirationDate</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/expirationDate</TokenIdentifier>
+			<Abstract type="html">Date when the ad will expire.  This derived by adding the refreshIntervalInDays to the refreshedDate</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDate *expirationDate</Declaration>
+			
+			
+			<Anchor>//api/name/expirationDate</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setTotalDuration:</TokenIdentifier>
+			<Abstract type="html">Total duration of all ads within the asset, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double totalDuration</Declaration>
+			
+			
+			<Anchor>//api/name/totalDuration</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/totalDuration</TokenIdentifier>
+			<Abstract type="html">Total duration of all ads within the asset, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double totalDuration</Declaration>
+			
+			
+			<Anchor>//api/name/totalDuration</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/totalDuration</TokenIdentifier>
+			<Abstract type="html">Total duration of all ads within the asset, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double totalDuration</Declaration>
+			
+			
+			<Anchor>//api/name/totalDuration</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/setTotalSize:</TokenIdentifier>
+			<Abstract type="html">Total size of all ads within the asset, in bytes.</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) long long totalSize</Declaration>
+			
+			
+			<Anchor>//api/name/totalSize</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsProvider/totalSize</TokenIdentifier>
+			<Abstract type="html">Total size of all ads within the asset, in bytes.</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) long long totalSize</Declaration>
+			
+			
+			<Anchor>//api/name/totalSize</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsProvider/totalSize</TokenIdentifier>
+			<Abstract type="html">Total size of all ads within the asset, in bytes.</Abstract>
+			<DeclaredIn>VirtuosoAdsProvider.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) long long totalSize</Declaration>
+			
+			
+			<Anchor>//api/name/totalSize</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

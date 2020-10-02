@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoAdsServerProvider</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Base class for Server-Side AdsProviders</Abstract>
 			<DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
             
 			
@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsServerProvider/setType:</TokenIdentifier>
-			<Abstract type="html">Type of server Ad</Abstract>
+			<Abstract type="html">Type of Server Ad (see enum ServerAdProvider</Abstract>
 			<DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign, readonly) ServerAdProvider type</Declaration>
@@ -26,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsServerProvider/type</TokenIdentifier>
-			<Abstract type="html">Type of server Ad</Abstract>
+			<Abstract type="html">Type of Server Ad (see enum ServerAdProvider</Abstract>
 			<DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign, readonly) ServerAdProvider type</Declaration>
@@ -38,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoAdsServerProvider/type</TokenIdentifier>
-			<Abstract type="html">Type of server Ad</Abstract>
+			<Abstract type="html">Type of Server Ad (see enum ServerAdProvider</Abstract>
 			<DeclaredIn>VirtuosoAdsServerProvider.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign, readonly) ServerAdProvider type</Declaration>

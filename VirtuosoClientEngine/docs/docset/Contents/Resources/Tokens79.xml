@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVSM_ManagerFailureCode.html">
+	<File path="Constants/kVDE_EngineStartupCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVSM_ManagerFailureCode</TokenIdentifier>
-			<Abstract type="html">The kVSM_ManagerFailureCode values are used to indicate various startup failure modes in the Manager.  The
-codes can be used to diagnose potential issues with startup, including communications issues with the Backplane</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_EngineStartupCode</TokenIdentifier>
+			<Abstract type="html">Returned by the various startup methods to indicate whether Virtuoso successfully started up.</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="79"/>
@@ -15,52 +14,71 @@ codes can be used to diagnose potential issues with startup, including communica
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureAuthentication</TokenIdentifier>
-            <Abstract type="html">The provided application secret,key, or user ID is invalid</Abstract>
-            <Declaration>kVSM_ManagerFailureAuthentication</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccess</TokenIdentifier>
+            <Abstract type="html">Virtuoso successfully started up</Abstract>
+            <Declaration>kVDE_EngineStartupSuccess</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-            
-            <NodeRef refid="79"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureBackplaneUnreachable</TokenIdentifier>
-            <Abstract type="html">The provided Backplane could not be reached</Abstract>
-            <Declaration>kVSM_ManagerFailureBackplaneUnreachable</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="79"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureUnknownBackplaneError</TokenIdentifier>
-            <Abstract type="html">The Backplane encountered an internal error or returned an unexpected response</Abstract>
-            <Declaration>kVSM_ManagerFailureUnknownBackplaneError</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupAlreadyStarted</TokenIdentifier>
+            <Abstract type="html">Virtuoso was already started; no action occurred</Abstract>
+            <Declaration>kVDE_EngineStartupAlreadyStarted</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
-            
-            <NodeRef refid="79"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureNotAvailable</TokenIdentifier>
-            <Abstract type="html">The VirtuosoDownloadManager instance has not been properly started and is unavailable.
-        Manager methods will not function properly until after the VirtuosoDownloadManager has been started. </Abstract>
-            <Declaration>kVSM_ManagerFailureNotAvailable</Declaration>
-            
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="79"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVSM_ManagerFailureOffline</TokenIdentifier>
-            <Abstract type="html">The device is currently offline and cannot perform the requested call</Abstract>
-            <Declaration>kVSM_ManagerFailureOffline</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupSuccessNoBackplane</TokenIdentifier>
+            <Abstract type="html">Virtuoso started up, but couldn&apos;t reach the  Backplane</Abstract>
+            <Declaration>kVDE_EngineStartupSuccessNoBackplane</Declaration>
             
-            <DeclaredIn>VirtuosoSubscriptionManager.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="79"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupInvalidOptions</TokenIdentifier>
+            <Abstract type="html">Virtuoso can&apos;t start up with the parameters provided</Abstract>
+            <Declaration>kVDE_EngineStartupInvalidOptions</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="79"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupMethodIsDeprecated</TokenIdentifier>
+            <Abstract type="html">Virtuoso can&apos;t change user account when invoked on MainThread</Abstract>
+            <Declaration>kVDE_EngineStartupMethodIsDeprecated</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="79"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineStartupInternalException</TokenIdentifier>
+            <Abstract type="html">Virtuoso encountered an internal exception during startup</Abstract>
+            <Declaration>kVDE_EngineStartupInternalException</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="79"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_EngineDataMigrationError</TokenIdentifier>
+            <Abstract type="html">Virtuoso encountered an error initializing the CoreData database during startup</Abstract>
+            <Declaration>kVDE_EngineDataMigrationError</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="79"/>
         </Token>

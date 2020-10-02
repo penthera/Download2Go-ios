@@ -46,10 +46,12 @@
 *
 *  @param url Ads beacon URL that was reported
 *
-* @param userInfo NSDictionary containing both the asset.assetID (kDownloadEngineAssetIDKey) and asset.uuid (kDownloadEngineAssetUUIDKey)
+*  @param httpResponseCode status code for request
+*
+*  @param userInfo NSDictionary containing both the asset.assetID (kDownloadEngineAssetIDKey) and asset.uuid (kDownloadEngineAssetUUIDKey)
 *
 */
--(void)adsTrackingNotificationForAsset:(VirtuosoAsset* _Nullable)asset url:(NSString* _Nonnull)url userInfo:(NSDictionary* _Nonnull)userInfo;
+-(void)adsTrackingNotificationForAsset:(VirtuosoAsset* _Nullable)asset url:(NSString* _Nonnull)url httpResponseCode:(NSInteger)httpResponseCode userInfo:(NSDictionary* _Nonnull)userInfo;
 @end
 
 /*!
@@ -109,6 +111,12 @@
  *
 */
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoAdsManagerNotificationDelegate> _Nonnull)delegate queue:(NSOperationQueue* _Nonnull)queue assetID:(NSString* _Nullable)assetID;
+
+/*!
+ *  @abstract Unregister event listener
+ *  @discussion Unregister event listener will stop posting notifcations to the delegate.
+*/
+-(void)unregister;
 
 @end
 

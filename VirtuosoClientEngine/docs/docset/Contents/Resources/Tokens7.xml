@@ -180,6 +180,18 @@
             <NodeRef refid="7"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoAdsNotificationsManager/unregister</TokenIdentifier>
+			<Abstract type="html">Unregister event listener</Abstract>
+			<DeclaredIn>VirtuosoAdsNotificationsManager.h</DeclaredIn>
+			
+			<Declaration>- (void)unregister</Declaration>
+			
+			
+			<Anchor>//api/name/unregister</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
         
         
 	</File>

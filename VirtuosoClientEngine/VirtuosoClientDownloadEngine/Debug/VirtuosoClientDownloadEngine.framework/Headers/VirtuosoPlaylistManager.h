@@ -16,9 +16,74 @@ NS_ASSUME_NONNULL_BEGIN
 @class VirtuosoPlaylistConfig;
 
 /*!
- *  @typedef VirtuosoPlaylistManagerDelegate
  *
- *  @abstract This delegate defines the method(s) that must be implemented to support Smart Downloads.
+ *  @typedef kVDE_PlaylistDownloadOption
+ *
+ *  @abstract Control option for continuing Playlist auto downloads
+ */
+typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
+{
+    /** Continue normal downloading */
+    PlaylistDownloadOption_Download,
+    
+    /** Skip to next item in playlist and attempt to download */
+    PlaylistDownloadOption_SkipToNext,
+    
+    /** Try again later */
+    PlaylistDownloadOption_TryAgainLater,
+
+    /** Cancel downloading */
+    PlaylistDownloadOption_CancelDownloading,
+};
+
+/*!
+*  @abstract VirtuosoPlaylistDownloadAssetItem defines the response returned from VirtuosoPlaylistManagerDelegate method assetForAssetID.
+*
+*  @discussion VirtuosoPlaylistDownloadAssetItem is returned by VirtuosoPlaylistManagerDelegate method assetForAssetID when the next asset in a Playlist needs to be downloaded.
+ *
+*/
+@interface VirtuosoPlaylistDownloadAssetItem : NSObject
+    
+/*!
+*  @abstract Enum used to indicate how the next playlist item shoud be handled.
+*/
+@property (nonatomic, assign)kVDE_PlaylistDownloadOption option;
+
+/*!
+*  @abstract Reference to the VirtuosoAssetConfig object that should be used to create the next asset in a Playlist.
+*/
+@property (nonatomic, strong)VirtuosoAssetConfig* _Nullable config;
+
+/*!
+*  @abstract Creates an instance of VirtuosoPlaylistDownloadAssetItem
+*
+*  @discussion This constructor can be used to return when no AssetConfig is being returned for cases like PlaylistDownloadOption_SkipToNext, PlaylistDownloadOption_TryAgainLater or PlaylistDownloadOption_CancelDownloading.
+*
+*  @param option Enum kVDE_PlaylistDownloadOption indicating option
+ *
+ * @return Return an instance of VirtuosoPlaylistDownloadAssetItem
+ *
+*/
+-(instancetype)initWithOption:(kVDE_PlaylistDownloadOption)option;
+
+/*!
+*  @abstract Creates an instance of VirtuosoPlaylistDownloadAssetItem
+*
+*  @discussion This constructor should be used when you want to return an instance of VirtuosoAssetConfig. Property option will be set to PlaylistDownloadOption_Success when the instance of VirtuosoAssetConfig is a non-nil value. Otherwise, property option is set to PlaylistDownloadOption_SkipToNext.
+*
+*  @param config Instance of VirtuosoAssetConfig that will be used to create the next playlist download
+ *
+ * @return Return an instance of VirtuosoPlaylistDownloadAssetItem
+ *
+*/
+-(instancetype)initWithAsset:(VirtuosoAssetConfig*)config;
+
+@end
+
+/*!
+ *  @abstract Delegate that must be implemented in order to provide Asset's to the VirtuosoPlaylistManager.
+ *
+ *  @discussion This delegate defines the method(s) that must be implemented to support automatic downloads for Playlists.
  *            Methods in this delegate are called from a background thread, make sure your code
  *            can properly execute from a Thread other than the thread that created this delegate.
  *
@@ -35,11 +100,10 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param assetID The ID of the Asset in the specificed Playlist.
  *
- *  @param tryAgainLater Out parameter client sets if PlaylistManager should try to retrieve this item again at a later time.
- *
- *  @return Return an instance of VirtuosoAssetConfig for the specified Asset. If a valid instance is returned, the asset is parsed and automatically downloaded.
+ *  @return Return an instance of VirtuosoPlaylistNextAssetDownloadItem
  */
--(VirtuosoAssetConfig* _Nullable)assetForAssetID:(NSString* _Nonnull)assetID tryAgainLater:(Boolean*)tryAgainLater;
+
+-(VirtuosoPlaylistDownloadAssetItem*)assetForAssetID:(NSString* _Nonnull)assetID;
 
 @end
 
@@ -69,22 +133,11 @@ NS_ASSUME_NONNULL_BEGIN
 +(instancetype)instance;
 
 /*!
- *  @abstract Server that is used to verify Internet accessibility via Ping.
- *
- *  @discussion Smart-Downloads will verify this server is reachable via Ping before attempting next smart-download.
- *              Consider overriding the default when you would prefer to verify Internet reachability for the servers
- *              hosting your Asset content. Verification is done via Ping.
- *
- *              Example: www.google.com
- *
- *              Default is a well-known web address with high availability.
- */
-@property (nonatomic, strong, readwrite)NSString* pingServer;
-
-/*!
  *  @abstract Creates Playlist
  *
  *  @discussion Creates and replaces any previous contents for the specified Playlist.
+ *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
  *  @param name Name of the Playlist.
  *
@@ -99,7 +152,9 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  *  @abstract Creates Playlist's
  *
- *  @discussion Creates and replaces any previous contents for the specified Playlist's
+ *  @discussion Creates and replaces any previous contents for the specified Playlist's.
+ *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
  *  @param item Playlist to create
  *
@@ -110,7 +165,9 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  *  @abstract Creates Playlist's
  *
- *  @discussion Creates and replaces any previous contents for the specified Playlist's
+ *  @discussion Creates and replaces any previous contents for the specified Playlist's.
+ *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
  *  @param items Array of Playlists to create
  *
@@ -121,7 +178,13 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  *  @abstract Appends to a Playlist
  *
- *  @discussion Appends to an existing Playlist
+ *  @discussion Appends to existing Playlist. You can also append using VirtuosoPlaylist method append once the playlist has been created.
+ *
+ *  If the Playlist does not exist it will be created and configured using Playlist.config.
+ *
+ *  If the Playlist exists, items are append but changes to Playlist.config are not applied once the playlist has been created.
+ *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
  *  @param item Playlist data to append
  *
@@ -130,20 +193,31 @@ NS_ASSUME_NONNULL_BEGIN
 -(Boolean)append:(VirtuosoPlaylist* _Nonnull)item;
 
 /*!
- *  @abstract Appends to a Playlist
+ *  @abstract Appends to items to each of the specified Playlist in the input array.
  *
- *  @discussion Appends to an existing Playlist
+ *  @discussion Appends to existing Playlists. You can also append using VirtuosoPlaylist method append once the playlist has been created.
  *
- *  @param items Playlist items to be appended
+ *  If the Playlist does not exist it will be created and configured using Playlist.config.
+ *
+ *  If the Playlist exists, items are append but changes to Playlist.config are not applied once the playlist has been created.
+ *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
+ *
+ *  @param items Array of Playlists to have items appended. See append method for details.
  *
  *  @return True indicates success.
+ *
+ *  @see VirtosoPlaylist.append.
+ *
  */
 -(Boolean)appendItems:(NSArray<VirtuosoPlaylist*>* _Nonnull)items;
 
 /*!
  *  @abstract Clears all items in the specified Playlist
  *
- *  @discussion Clears all items in the specified Playlist
+ *  @discussion Clears all items in the specified Playlist.
+ *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
  *  @param name Name of the Asset Playlist.
  *
@@ -154,8 +228,10 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  *  @abstract Clears all Playlist content
  *
- *  @discussion Clears all Playlist content
+ *  @discussion Clears all Playlist content.
  *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
+*
  *  @return True indicates success.
  */
 -(Boolean)clearAll;
@@ -163,8 +239,10 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  *  @abstract Finds Playlist
  *
- *  @discussion Finds the specified playlist
+ *  @discussion Finds the specified playlist.
  *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
+*
  *  @param name Name of the Playlist.
  *
  *  @return VirtuosoPlaylist, nil if not found.
@@ -175,7 +253,9 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  *  @abstract Finds all Playlist's
  *
- *  @discussion Finds all playlists
+ *  @discussion Finds all playlists.
+ *
+ *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
  *  @return Array<VirtuosoPlaylist>, nil if not found.
  */

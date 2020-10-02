@@ -1,68 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/kVDE_AssetPermissionType.html">
+	<File path="Protocols/VirtuosoPlaylistManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetPermissionType</TokenIdentifier>
-			<Abstract type="html">@typedef kVDE_AssetPermissionType</Abstract>
-			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlaylistManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate that must be implemented in order to provide Asset&apos;s to the VirtuosoPlaylistManager.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="60"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionNotRequested</TokenIdentifier>
-            <Abstract type="html">Permissions have not yet been requested for the asset</Abstract>
-            <Declaration>kVDE_AssetPermissionNotRequested</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlaylistManagerDelegate/assetForAssetID:</TokenIdentifier>
+			<Abstract type="html">Requests the next asset that should be downlaoded for the named Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (VirtuosoPlaylistDownloadAssetItem *)assetForAssetID:(NSString *_Nonnull)assetID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetID</Name>
+					<Abstract type="html">The ID of the Asset in the specificed Playlist.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return an instance of VirtuosoPlaylistNextAssetDownloadItem</Abstract></ReturnValue>
+			<Anchor>//api/name/assetForAssetID:</Anchor>
             <NodeRef refid="60"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionGranted</TokenIdentifier>
-            <Abstract type="html">Permission has been granted for the asset to download</Abstract>
-            <Declaration>kVDE_AssetPermissionGranted</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="60"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAccountMaxReached</TokenIdentifier>
-            <Abstract type="html">Permission to download has been denied because the account has reached is maximum limit</Abstract>
-            <Declaration>kVDE_AssetPermissionDeniedAccountMaxReached</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="60"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedLifetimeLimitReached</TokenIdentifier>
-            <Abstract type="html">Permission to download has been denied because the global asset download limit as been reached</Abstract>
-            <Declaration>kVDE_AssetPermissionDeniedLifetimeLimitReached</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="60"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</TokenIdentifier>
-            <Abstract type="html">Permission to download has been denied because too many copies of this asset already exist on
-        devices in this account </Abstract>
-            <Declaration>kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</Declaration>
-            
-            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
-            
-            <NodeRef refid="60"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

@@ -21,6 +21,9 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistStatus)
     /** Playlist is actively enabled */
     PlaylistStatus_Active     = 0,
     
+    /** Customer requested cancelling auto download */
+    PlaylistStatus_AutoDownloadCancelled,
+    
     /** Playlist Asset creation failed */
     PlaylistStatus_AssetCreateFailed,
     
@@ -40,13 +43,6 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistStatus)
 -(instancetype)initWithName:(NSString*)name;
 
 @property (nonatomic, copy, readonly)NSString* name;
-
-/*!
- *  @abstract Indicates Playlist status
- *
- *  @discussion Active Playlists are enabled for smart-download. Any other status indicates smart-download is disable.
- */
-@property (nonatomic, assign, readonly)kVDE_PlaylistStatus status;
 
 /*!
  *  @abstract Controls smart-download trigger logic.
@@ -111,7 +107,6 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistStatus)
  *                     does not exist on the device, and which has not been previously downloaded and deleted.
  */
 @property (nonatomic, assign, readwrite)Boolean isSearchFromBeginningEnabled;
-
 
 @end
 

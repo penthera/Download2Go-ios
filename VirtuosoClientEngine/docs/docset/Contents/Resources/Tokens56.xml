@@ -1,87 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/PlaylistItemState.html">
+	<File path="Protocols/VirtuosoLicenseProcessingDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/PlaylistItemState</TokenIdentifier>
-			<Abstract type="html">Status of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLicenseProcessingDelegate</TokenIdentifier>
+			<Abstract type="html">Allows custom processing of the SPC license request and the license response</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="56"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Uninitialized</TokenIdentifier>
-            <Abstract type="html">Item initialized</Abstract>
-            <Declaration>PlaylistItemState_Uninitialized</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCIDForAsset:fromFairPlayRequest:</TokenIdentifier>
+			<Abstract type="html">Allows a custom CID to be used with the SDK default AVAssetResourceLoaderDelegate</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)extractCIDForAsset:(VirtuosoAsset *_Nonnull)asset fromFairPlayRequest:(NSURL *_Nonnull)fpRequest</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+				</Parameter><Parameter>
+					<Name>fpRequest</Name>
+					<Abstract type="html">The URL provided to the AVAssetResourceLoaderDelegate for the licensing request</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CID value to use during SPC creation</Abstract></ReturnValue>
+			<Anchor>//api/name/extractCIDForAsset:fromFairPlayRequest:</Anchor>
             <NodeRef refid="56"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NextItem</TokenIdentifier>
-            <Abstract type="html">Item is next item to be processed</Abstract>
-            <Declaration>PlaylistItemState_NextItem</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/prepareSPCForAsset:inLicenseRequest:</TokenIdentifier>
+			<Abstract type="html">Allows custom processing of the FairPlay POST body before it is send.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>- (NSData *_Nullable)prepareSPCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseRequest:(NSData *_Nonnull)spc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+				</Parameter><Parameter>
+					<Name>spc</Name>
+					<Abstract type="html">The Apple-generated SPC data value</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSData object suitable for the license server POST body</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareSPCForAsset:inLicenseRequest:</Anchor>
             <NodeRef refid="56"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Created</TokenIdentifier>
-            <Abstract type="html">Item created successfully</Abstract>
-            <Declaration>PlaylistItemState_Created</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCKCForAsset:inLicenseResponse:</TokenIdentifier>
+			<Abstract type="html">Allows custom processing of the FairPlay license server response</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>- (NSData *_Nullable)extractCKCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseResponse:(NSData *_Nonnull)response</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+				</Parameter><Parameter>
+					<Name>response</Name>
+					<Abstract type="html">The received response from the license server</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">CKC data value suitable for handing to the player for DRM licensing</Abstract></ReturnValue>
+			<Anchor>//api/name/extractCKCForAsset:inLicenseResponse:</Anchor>
             <NodeRef refid="56"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateInProcess</TokenIdentifier>
-            <Abstract type="html">Item create currently in process</Abstract>
-            <Declaration>PlaylistItemState_CreateInProcess</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/drmSubTypeForAsset:</TokenIdentifier>
+			<Abstract type="html">If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)drmSubTypeForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset to resolve DRM SubType for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">non-nil string ideitifying the DRM SubType for the Asset.</Abstract></ReturnValue>
+			<Anchor>//api/name/drmSubTypeForAsset:</Anchor>
             <NodeRef refid="56"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateFailed</TokenIdentifier>
-            <Abstract type="html">Item creation failed</Abstract>
-            <Declaration>PlaylistItemState_CreateFailed</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
-            <NodeRef refid="56"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NotFound</TokenIdentifier>
-            <Abstract type="html">Item was not found when delegate was called</Abstract>
-            <Declaration>PlaylistItemState_NotFound</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
-            <NodeRef refid="56"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_UserDeleted</TokenIdentifier>
-            <Abstract type="html">Item was deleted by user</Abstract>
-            <Declaration>PlaylistItemState_UserDeleted</Declaration>
-            
-            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
-            
-            <NodeRef refid="56"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>
