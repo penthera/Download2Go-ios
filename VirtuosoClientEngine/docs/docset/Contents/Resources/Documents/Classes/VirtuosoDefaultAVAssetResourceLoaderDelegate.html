@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>VirtuosoDefaultAVAssetResourceLoaderDelegate Class Reference</title>
+	<title></title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+	
 </head>
 <body class="appledoc">
 	<header>
@@ -43,33 +43,9 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
-	
-	<option value="tasks">Tasks</option>
-	
-	
 
-	
-	
-
-	
-	<optgroup label="Class Methods">
-		
-		<option value="//api/name/setLicenseProcessingDelegate:">+ setLicenseProcessingDelegate:</option>
-		
-	</optgroup>
-	
-
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/setChildAVAssetResourceLoaderDelegate:">- setChildAVAssetResourceLoaderDelegate:</option>
-		
-	</optgroup>
-	
 	
 </select>
 						</label>
@@ -83,163 +59,15 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">VirtuosoDefaultAVAssetResourceLoaderDelegate Class Reference</h1>
+					<h1 class="title"></h1>
 
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<th>Inherits from</th>
-	<td>NSObject</td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/VirtuosoAVAssetResourceLoaderDelegate.html">VirtuosoAVAssetResourceLoaderDelegate</a></td>
-</tr><tr>
-	<th>Declared in</th>
-	<td>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</td>
-</tr>
-						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The VirtuosoDefaultAVAssetResourceLoaderDelegate automatically uses the configured <a href="../Classes/VirtuosoLicenseManager.html">VirtuosoLicenseManager</a> settings to request
-streaming or persistent FairPlay licenses.  If you attempt to use FairPlay licensing on a version of iOS that does not
-support persistence, this class automatically degrades to requesting streaming-only keys, and playback of the downloaded
-content will only work while the device is online and capable of re-requesting streaming keys.</p>
-					</div>
-					
-					
 
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/setChildAVAssetResourceLoaderDelegate:" title="setChildAVAssetResourceLoaderDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setChildAVAssetResourceLoaderDelegate:">&ndash;&nbsp;setChildAVAssetResourceLoaderDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>If you have custom work unrelated to FairPlay DRM, you may need to set a child delegate.  For all calls that the VIrtuoso SDK does not
-directly handle, the call will be handed to the child delegate to service.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setChildAVAssetResourceLoaderDelegate:(id&lt;AVAssetResourceLoaderDelegate&gt; _Nullable)<em>subdelegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>subdelegate</code></th>
-						<td><p>A secondary delegate to call for non-FairPlay requests</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoDefaultAVAssetResourceLoaderDelegate.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setLicenseProcessingDelegate:" title="setLicenseProcessingDelegate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setLicenseProcessingDelegate:">+&nbsp;setLicenseProcessingDelegate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Sets the license processing delegate</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)setLicenseProcessingDelegate:(id&lt;VirtuosoLicenseProcessingDelegate&gt; _Nonnull)<em>delegate</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>The license processing delegate</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoDefaultAVAssetResourceLoaderDelegate.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
 					
 
                     
-                    
-          
 				</main>
 
 				<footer>
@@ -247,8 +75,6 @@ directly handle, the call will be handed to the child delegate to service.</p>
 						
 						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-10-05</p>
 						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

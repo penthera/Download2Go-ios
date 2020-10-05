@@ -1,34 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPlaylistManagerDelegate.html">
+	<File path="Constants/PlaylistItemState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlaylistManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate that must be implemented in order to provide Asset&apos;s to the VirtuosoPlaylistManager.</Abstract>
-			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/PlaylistItemState</TokenIdentifier>
+			<Abstract type="html">Status of playlist</Abstract>
+			<DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
             
 			
 			<NodeRef refid="60"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlaylistManagerDelegate/assetForAssetID:</TokenIdentifier>
-			<Abstract type="html">Requests the next asset that should be downlaoded for the named Playlist.</Abstract>
-			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
-			
-			<Declaration>- (VirtuosoPlaylistDownloadAssetItem *)assetForAssetID:(NSString *_Nonnull)assetID</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>assetID</Name>
-					<Abstract type="html">The ID of the Asset in the specificed Playlist.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return an instance of VirtuosoPlaylistNextAssetDownloadItem</Abstract></ReturnValue>
-			<Anchor>//api/name/assetForAssetID:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Uninitialized</TokenIdentifier>
+            <Abstract type="html">Item initialized</Abstract>
+            <Declaration>PlaylistItemState_Uninitialized</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
             <NodeRef refid="60"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NextItem</TokenIdentifier>
+            <Abstract type="html">Item is next item to be processed</Abstract>
+            <Declaration>PlaylistItemState_NextItem</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="60"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_Created</TokenIdentifier>
+            <Abstract type="html">Item created successfully</Abstract>
+            <Declaration>PlaylistItemState_Created</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="60"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateInProcess</TokenIdentifier>
+            <Abstract type="html">Item create currently in process</Abstract>
+            <Declaration>PlaylistItemState_CreateInProcess</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="60"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_CreateFailed</TokenIdentifier>
+            <Abstract type="html">Item creation failed</Abstract>
+            <Declaration>PlaylistItemState_CreateFailed</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="60"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_NotFound</TokenIdentifier>
+            <Abstract type="html">Item was not found when delegate was called</Abstract>
+            <Declaration>PlaylistItemState_NotFound</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="60"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_UserDeleted</TokenIdentifier>
+            <Abstract type="html">Item was deleted by user</Abstract>
+            <Declaration>PlaylistItemState_UserDeleted</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="60"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/PlaylistItemState_AutoDownloadCancelled</TokenIdentifier>
+            <Abstract type="html">Playlist cancelled auto download</Abstract>
+            <Declaration>PlaylistItemState_AutoDownloadCancelled</Declaration>
+            
+            <DeclaredIn>VirtuosoPlaylistItem.h</DeclaredIn>
+            
+            <NodeRef refid="60"/>
+        </Token>
         
         
 	</File>

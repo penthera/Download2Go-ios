@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoBackplaneNotificationsDelegate.html">
+	<File path="Protocols/VirtuosoLicenseProcessingDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoBackplaneNotificationsDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate interface for Backplane notifications</Abstract>
-			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLicenseProcessingDelegate</TokenIdentifier>
+			<Abstract type="html">Allows custom processing of the SPC license request and the license response</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="51"/>
@@ -13,66 +13,79 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneSyncCompleteWithStatus:error:</TokenIdentifier>
-			<Abstract type="html">Called when Backplane sync completes.</Abstract>
-			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCIDForAsset:fromFairPlayRequest:</TokenIdentifier>
+			<Abstract type="html">Allows a custom CID to be used with the SDK default AVAssetResourceLoaderDelegate</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (void)backplaneSyncCompleteWithStatus:(Boolean)status error:(NSError *_Nullable)error</Declaration>
+			<Declaration>- (NSString *_Nullable)extractCIDForAsset:(VirtuosoAsset *_Nonnull)asset fromFairPlayRequest:(NSURL *_Nonnull)fpRequest</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>status</Name>
-					<Abstract type="html">Boolean (true) indicates success.</Abstract>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">NSError indciating the error</Abstract>
+					<Name>fpRequest</Name>
+					<Abstract type="html">The URL provided to the AVAssetResourceLoaderDelegate for the licensing request</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/backplaneSyncCompleteWithStatus:error:</Anchor>
+			<ReturnValue><Abstract type="html">The CID value to use during SPC creation</Abstract></ReturnValue>
+			<Anchor>//api/name/extractCIDForAsset:fromFairPlayRequest:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneRemoteKill</TokenIdentifier>
-			<Abstract type="html">Called when a Backplane requested remote kill has completed.</Abstract>
-			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/prepareSPCForAsset:inLicenseRequest:</TokenIdentifier>
+			<Abstract type="html">Allows custom processing of the FairPlay POST body before it is send.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Declaration>- (void)backplaneRemoteKill</Declaration>
-			
-			
-			<Anchor>//api/name/backplaneRemoteKill</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneStartingRemoteKill</TokenIdentifier>
-			<Abstract type="html">Called when a Backplane requested is about to start a remote kill.</Abstract>
-			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (void)backplaneStartingRemoteKill</Declaration>
-			
-			
-			<Anchor>//api/name/backplaneStartingRemoteKill</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoBackplaneNotificationsDelegate/backplaneDidUnregisterDeviceWithStatus:error:</TokenIdentifier>
-			<Abstract type="html">Called when a Backplane requested unregistering the device.</Abstract>
-			<DeclaredIn>VirtuosoBackplaneNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (void)backplaneDidUnregisterDeviceWithStatus:(Boolean)success error:(NSError *_Nullable)error</Declaration>
+			<Declaration>- (NSData *_Nullable)prepareSPCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseRequest:(NSData *_Nonnull)spc</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>success</Name>
-					<Abstract type="html">Boolean (true) indicates success.</Abstract>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">NSError if an error occured.</Abstract>
+					<Name>spc</Name>
+					<Abstract type="html">The Apple-generated SPC data value</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">An NSData object suitable for the license server POST body</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareSPCForAsset:inLicenseRequest:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/extractCKCForAsset:inLicenseResponse:</TokenIdentifier>
+			<Abstract type="html">Allows custom processing of the FairPlay license server response</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
 			
-			<Anchor>//api/name/backplaneDidUnregisterDeviceWithStatus:error:</Anchor>
+			<Declaration>- (NSData *_Nullable)extractCKCForAsset:(VirtuosoAsset *_Nonnull)asset inLicenseResponse:(NSData *_Nonnull)response</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset the licensing request is for</Abstract>
+				</Parameter><Parameter>
+					<Name>response</Name>
+					<Abstract type="html">The received response from the license server</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">CKC data value suitable for handing to the player for DRM licensing</Abstract></ReturnValue>
+			<Anchor>//api/name/extractCKCForAsset:inLicenseResponse:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseProcessingDelegate/drmSubTypeForAsset:</TokenIdentifier>
+			<Abstract type="html">If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.</Abstract>
+			<DeclaredIn>VirtuosoDefaultAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>- (NSString *_Nullable)drmSubTypeForAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>asset</Name>
+					<Abstract type="html">The VirtuosoAsset to resolve DRM SubType for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">non-nil string ideitifying the DRM SubType for the Asset.</Abstract></ReturnValue>
+			<Anchor>//api/name/drmSubTypeForAsset:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		

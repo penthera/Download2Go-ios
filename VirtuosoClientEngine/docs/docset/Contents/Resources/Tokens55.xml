@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoLicenseManagerDelegate.html">
+	<File path="Protocols/VirtuosoPlaylistManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoLicenseManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate used to request optional license parameters for license aquisition</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlaylistManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate that must be implemented in order to provide Asset&apos;s to the VirtuosoPlaylistManager.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="55"/>
@@ -13,31 +13,19 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoLicenseManagerDelegate/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</TokenIdentifier>
-			<Abstract type="html">Requests optional license parameters for license aquisition</Abstract>
-			<DeclaredIn>VirtuosoLicenseManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlaylistManagerDelegate/assetForAssetID:</TokenIdentifier>
+			<Abstract type="html">Requests the next asset that should be downlaoded for the named Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>- (void)lookupLicenseURLSuffix:(NSString *_Nonnull *_Nullable)urlSuffix andParameters:(NSDictionary *_Nonnull *_Nullable)customParameters additionalHeaders:(NSDictionary *_Nonnull *_Nullable)customHeaders renewalDate:(NSDate *_Nonnull *_Nullable)renewalDate forAsset:(VirtuosoAsset *_Nonnull)asset</Declaration>
+			<Declaration>- (VirtuosoPlaylistDownloadAssetItem *)assetForAssetID:(NSString *_Nonnull)assetID</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>urlSuffix</Name>
-					<Abstract type="html">A URL suffix to be appended to the base license URL.</Abstract>
-				</Parameter><Parameter>
-					<Name>customParameters</Name>
-					<Abstract type="html">A dictionary of key-value pairs to be added to the license request as URL parameters</Abstract>
-				</Parameter><Parameter>
-					<Name>customHeaders</Name>
-					<Abstract type="html">A dictionary of key-value pairs to be added to the DRM request headers</Abstract>
-				</Parameter><Parameter>
-					<Name>renewalDate</Name>
-					<Abstract type="html">A NSDate timestamp indicating when the license should be renewed</Abstract>
-				</Parameter><Parameter>
-					<Name>asset</Name>
-					<Abstract type="html">The asset requiring an offline playback license</Abstract>
+					<Name>assetID</Name>
+					<Abstract type="html">The ID of the Asset in the specificed Playlist.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/lookupLicenseURLSuffix:andParameters:additionalHeaders:renewalDate:forAsset:</Anchor>
+			<ReturnValue><Abstract type="html">Return an instance of VirtuosoPlaylistNextAssetDownloadItem</Abstract></ReturnValue>
+			<Anchor>//api/name/assetForAssetID:</Anchor>
             <NodeRef refid="55"/>
 		</Token>
 		

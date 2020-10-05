@@ -55,9 +55,6 @@
 						<NodeRef refid="42"/>
 						<NodeRef refid="43"/>
 						<NodeRef refid="44"/>
-						<NodeRef refid="45"/>
-						<NodeRef refid="46"/>
-						<NodeRef refid="47"/>
 						
 					</Subnodes>
 				</Node>
@@ -68,6 +65,9 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="45"/>
+						<NodeRef refid="46"/>
+						<NodeRef refid="47"/>
 						<NodeRef refid="48"/>
 						<NodeRef refid="49"/>
 						<NodeRef refid="50"/>
@@ -79,12 +79,6 @@
 						<NodeRef refid="56"/>
 						<NodeRef refid="57"/>
 						<NodeRef refid="58"/>
-						<NodeRef refid="59"/>
-						<NodeRef refid="60"/>
-						<NodeRef refid="61"/>
-						<NodeRef refid="62"/>
-						<NodeRef refid="63"/>
-						<NodeRef refid="64"/>
 						
 					</Subnodes>
 				</Node>
@@ -94,6 +88,12 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="59"/>
+						<NodeRef refid="60"/>
+						<NodeRef refid="61"/>
+						<NodeRef refid="62"/>
+						<NodeRef refid="63"/>
+						<NodeRef refid="64"/>
 						<NodeRef refid="65"/>
 						<NodeRef refid="66"/>
 						<NodeRef refid="67"/>
@@ -116,15 +116,6 @@
 						<NodeRef refid="84"/>
 						<NodeRef refid="85"/>
 						<NodeRef refid="86"/>
-						<NodeRef refid="87"/>
-						<NodeRef refid="88"/>
-						<NodeRef refid="89"/>
-						<NodeRef refid="90"/>
-						<NodeRef refid="91"/>
-						<NodeRef refid="92"/>
-						<NodeRef refid="93"/>
-						<NodeRef refid="94"/>
-						<NodeRef refid="95"/>
 						
 					</Subnodes>
 				</Node>
@@ -134,21 +125,16 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
+                        <NodeRef refid="87"/>
+                        <NodeRef refid="88"/>
+                        <NodeRef refid="89"/>
+                        <NodeRef refid="90"/>
+                        <NodeRef refid="91"/>
+                        <NodeRef refid="92"/>
+                        <NodeRef refid="93"/>
+                        <NodeRef refid="94"/>
+                        <NodeRef refid="95"/>
                         <NodeRef refid="96"/>
-                        <NodeRef refid="97"/>
-                        <NodeRef refid="98"/>
-                        <NodeRef refid="99"/>
-                        <NodeRef refid="100"/>
-                        <NodeRef refid="101"/>
-                        <NodeRef refid="102"/>
-                        <NodeRef refid="103"/>
-                        <NodeRef refid="104"/>
-                        <NodeRef refid="105"/>
-                        <NodeRef refid="106"/>
-                        <NodeRef refid="107"/>
-                        <NodeRef refid="108"/>
-                        <NodeRef refid="109"/>
-                        <NodeRef refid="110"/>
                         
                     </Subnodes>
                 </Node>
@@ -753,84 +739,6 @@
             
         </Node>
 		<Node id="19" type="file" documentType="reference">
-            <Name>VirtuosoDevice</Name>
-            <Path>Classes/VirtuosoDevice.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/VirtuosoDevice.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/VirtuosoDevice.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoDevice.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoDevice.html</Path>
-                    <Name>Class Methods</Name>
-                    <Anchor>class_methods</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoDevice.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="20" type="file" documentType="reference">
-            <Name>VirtuosoDownloadEngine</Name>
-            <Path>Classes/VirtuosoDownloadEngine.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/VirtuosoDownloadEngine.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/VirtuosoDownloadEngine.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoDownloadEngine.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoDownloadEngine.html</Path>
-                    <Name>Class Methods</Name>
-                    <Anchor>class_methods</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoDownloadEngine.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="21" type="file" documentType="reference">
             <Name>VirtuosoDownloadEngineNotificationManager</Name>
             <Path>Classes/VirtuosoDownloadEngineNotificationManager.html</Path>
             
@@ -863,17 +771,17 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>VirtuosoDrmConfig</Name>
             <Path>Classes/VirtuosoDrmConfig.html</Path>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>VirtuosoEncryption</Name>
             <Path>Classes/VirtuosoEncryption.html</Path>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>VirtuosoEngineConfig</Name>
             <Path>Classes/VirtuosoEngineConfig.html</Path>
             
@@ -906,7 +814,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>VirtuosoEngineStatusInfo</Name>
             <Path>Classes/VirtuosoEngineStatusInfo.html</Path>
             
@@ -933,7 +841,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>VirtuosoEventHandler</Name>
             <Path>Classes/VirtuosoEventHandler.html</Path>
             
@@ -960,7 +868,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
             <Name>VirtuosoFreewheelAdsClientProvider</Name>
             <Path>Classes/VirtuosoFreewheelAdsClientProvider.html</Path>
             
@@ -987,7 +895,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>VirtuosoGoogleAdsClientProvider</Name>
             <Path>Classes/VirtuosoGoogleAdsClientProvider.html</Path>
             
@@ -1014,7 +922,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="29" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
             <Name>VirtuosoLicenseConfiguration</Name>
             <Path>Classes/VirtuosoLicenseConfiguration.html</Path>
             
@@ -1047,7 +955,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="30" type="file" documentType="reference">
+		<Node id="28" type="file" documentType="reference">
             <Name>VirtuosoLicenseDelegateHelper</Name>
             <Path>Classes/VirtuosoLicenseDelegateHelper.html</Path>
             
@@ -1074,7 +982,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="31" type="file" documentType="reference">
+		<Node id="29" type="file" documentType="reference">
             <Name>VirtuosoLicenseManager</Name>
             <Path>Classes/VirtuosoLicenseManager.html</Path>
             
@@ -1101,7 +1009,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="32" type="file" documentType="reference">
+		<Node id="30" type="file" documentType="reference">
             <Name>VirtuosoLogger</Name>
             <Path>Classes/VirtuosoLogger.html</Path>
             
@@ -1134,7 +1042,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="33" type="file" documentType="reference">
+		<Node id="31" type="file" documentType="reference">
             <Name>VirtuosoPlayerView</Name>
             <Path>Classes/VirtuosoPlayerView.html</Path>
             
@@ -1167,7 +1075,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="34" type="file" documentType="reference">
+		<Node id="32" type="file" documentType="reference">
             <Name>VirtuosoPlayerViewController</Name>
             <Path>Classes/VirtuosoPlayerViewController.html</Path>
             
@@ -1200,7 +1108,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="35" type="file" documentType="reference">
+		<Node id="33" type="file" documentType="reference">
             <Name>VirtuosoPlaylist</Name>
             <Path>Classes/VirtuosoPlaylist.html</Path>
             
@@ -1239,7 +1147,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="36" type="file" documentType="reference">
+		<Node id="34" type="file" documentType="reference">
             <Name>VirtuosoPlaylistConfig</Name>
             <Path>Classes/VirtuosoPlaylistConfig.html</Path>
             
@@ -1266,7 +1174,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="37" type="file" documentType="reference">
+		<Node id="35" type="file" documentType="reference">
             <Name>VirtuosoPlaylistDownloadAssetItem</Name>
             <Path>Classes/VirtuosoPlaylistDownloadAssetItem.html</Path>
             
@@ -1299,7 +1207,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="38" type="file" documentType="reference">
+		<Node id="36" type="file" documentType="reference">
             <Name>VirtuosoPlaylistItem</Name>
             <Path>Classes/VirtuosoPlaylistItem.html</Path>
             
@@ -1338,7 +1246,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="39" type="file" documentType="reference">
+		<Node id="37" type="file" documentType="reference">
             <Name>VirtuosoPlaylistManager</Name>
             <Path>Classes/VirtuosoPlaylistManager.html</Path>
             
@@ -1371,7 +1279,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="40" type="file" documentType="reference">
+		<Node id="38" type="file" documentType="reference">
             <Name>VirtuosoRefreshManager</Name>
             <Path>Classes/VirtuosoRefreshManager.html</Path>
             
@@ -1404,7 +1312,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="41" type="file" documentType="reference">
+		<Node id="39" type="file" documentType="reference">
             <Name>VirtuosoSecureClock</Name>
             <Path>Classes/VirtuosoSecureClock.html</Path>
             
@@ -1443,7 +1351,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="42" type="file" documentType="reference">
+		<Node id="40" type="file" documentType="reference">
             <Name>VirtuosoSettings</Name>
             <Path>Classes/VirtuosoSettings.html</Path>
             
@@ -1482,12 +1390,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="43" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>VirtuosoSettingsBase</Name>
             <Path>Classes/VirtuosoSettingsBase.html</Path>
             
         </Node>
-		<Node id="44" type="file" documentType="reference">
+		<Node id="42" type="file" documentType="reference">
             <Name>VirtuosoSubscriptionDefaultDataSource</Name>
             <Path>Classes/VirtuosoSubscriptionDefaultDataSource.html</Path>
             
@@ -1514,46 +1422,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="45" type="file" documentType="reference">
-            <Name>VirtuosoSubscriptionManager</Name>
-            <Path>Classes/VirtuosoSubscriptionManager.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Classes/VirtuosoSubscriptionManager.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Classes/VirtuosoSubscriptionManager.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoSubscriptionManager.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoSubscriptionManager.html</Path>
-                    <Name>Class Methods</Name>
-                    <Anchor>class_methods</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Classes/VirtuosoSubscriptionManager.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="46" type="file" documentType="reference">
+		<Node id="43" type="file" documentType="reference">
             <Name>VirtuosoSubscriptionNotificationsManager</Name>
             <Path>Classes/VirtuosoSubscriptionNotificationsManager.html</Path>
             
@@ -1586,7 +1455,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="47" type="file" documentType="reference">
+		<Node id="44" type="file" documentType="reference">
             <Name>VirtuosoVerizonAdsServerProvider</Name>
             <Path>Classes/VirtuosoVerizonAdsServerProvider.html</Path>
             
@@ -1615,7 +1484,7 @@
         </Node>
 		
 		
-        <Node id="48" type="file" documentType="reference">
+        <Node id="45" type="file" documentType="reference">
             <Name>VirtuosoAVAssetResourceLoaderDelegate</Name>
             <Path>Protocols/VirtuosoAVAssetResourceLoaderDelegate.html</Path>
             
@@ -1642,7 +1511,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="49" type="file" documentType="reference">
+		<Node id="46" type="file" documentType="reference">
             <Name>VirtuosoAVAssetResourceLoaderDelegateErrorHandler</Name>
             <Path>Protocols/VirtuosoAVAssetResourceLoaderDelegateErrorHandler.html</Path>
             
@@ -1669,7 +1538,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="50" type="file" documentType="reference">
+		<Node id="47" type="file" documentType="reference">
             <Name>VirtuosoAdsManagerNotificationDelegate</Name>
             <Path>Protocols/VirtuosoAdsManagerNotificationDelegate.html</Path>
             
@@ -1696,7 +1565,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="51" type="file" documentType="reference">
+		<Node id="48" type="file" documentType="reference">
             <Name>VirtuosoBackplaneNotificationsDelegate</Name>
             <Path>Protocols/VirtuosoBackplaneNotificationsDelegate.html</Path>
             
@@ -1723,7 +1592,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="52" type="file" documentType="reference">
+		<Node id="49" type="file" documentType="reference">
             <Name>VirtuosoDownloadEngineNotificationsDelegate</Name>
             <Path>Protocols/VirtuosoDownloadEngineNotificationsDelegate.html</Path>
             
@@ -1750,7 +1619,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="53" type="file" documentType="reference">
+		<Node id="50" type="file" documentType="reference">
             <Name>VirtuosoDrmConfigDelegate</Name>
             <Path>Protocols/VirtuosoDrmConfigDelegate.html</Path>
             
@@ -1777,61 +1646,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="54" type="file" documentType="reference">
-            <Name>VirtuosoFileSegment</Name>
-            <Path>Protocols/VirtuosoFileSegment.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Protocols/VirtuosoFileSegment.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Protocols/VirtuosoFileSegment.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                <Node type="section">
-                    <Path>Protocols/VirtuosoFileSegment.html</Path>
-                    <Name>Properties</Name>
-                    <Anchor>properties</Anchor>
-                </Node>
-                
-                
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="55" type="file" documentType="reference">
-            <Name>VirtuosoLicenseManagerDelegate</Name>
-            <Path>Protocols/VirtuosoLicenseManagerDelegate.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Protocols/VirtuosoLicenseManagerDelegate.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Protocols/VirtuosoLicenseManagerDelegate.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                
-                
-                <Node type="section">
-                    <Path>Protocols/VirtuosoLicenseManagerDelegate.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="56" type="file" documentType="reference">
+		<Node id="51" type="file" documentType="reference">
             <Name>VirtuosoLicenseProcessingDelegate</Name>
             <Path>Protocols/VirtuosoLicenseProcessingDelegate.html</Path>
             
@@ -1858,7 +1673,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="57" type="file" documentType="reference">
+		<Node id="52" type="file" documentType="reference">
             <Name>VirtuosoLoggerDelegate</Name>
             <Path>Protocols/VirtuosoLoggerDelegate.html</Path>
             
@@ -1885,7 +1700,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="58" type="file" documentType="reference">
+		<Node id="53" type="file" documentType="reference">
             <Name>VirtuosoPlayer</Name>
             <Path>Protocols/VirtuosoPlayer.html</Path>
             
@@ -1912,7 +1727,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="59" type="file" documentType="reference">
+		<Node id="54" type="file" documentType="reference">
             <Name>VirtuosoPlayerViewDelegate</Name>
             <Path>Protocols/VirtuosoPlayerViewDelegate.html</Path>
             
@@ -1939,7 +1754,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="60" type="file" documentType="reference">
+		<Node id="55" type="file" documentType="reference">
             <Name>VirtuosoPlaylistManagerDelegate</Name>
             <Path>Protocols/VirtuosoPlaylistManagerDelegate.html</Path>
             
@@ -1966,34 +1781,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="61" type="file" documentType="reference">
-            <Name>VirtuosoPrepareUrlDelegate</Name>
-            <Path>Protocols/VirtuosoPrepareUrlDelegate.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Protocols/VirtuosoPrepareUrlDelegate.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Protocols/VirtuosoPrepareUrlDelegate.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                
-                
-                <Node type="section">
-                    <Path>Protocols/VirtuosoPrepareUrlDelegate.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
-		<Node id="62" type="file" documentType="reference">
+		<Node id="56" type="file" documentType="reference">
             <Name>VirtuosoRefreshManagerDelegate</Name>
             <Path>Protocols/VirtuosoRefreshManagerDelegate.html</Path>
             
@@ -2020,7 +1808,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="63" type="file" documentType="reference">
+		<Node id="57" type="file" documentType="reference">
             <Name>VirtuosoSubscriptionDataSource</Name>
             <Path>Protocols/VirtuosoSubscriptionDataSource.html</Path>
             
@@ -2047,7 +1835,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="64" type="file" documentType="reference">
+		<Node id="58" type="file" documentType="reference">
             <Name>VirtuosoSubscriptionsManagerDelegate</Name>
             <Path>Protocols/VirtuosoSubscriptionsManagerDelegate.html</Path>
             
@@ -2075,233 +1863,193 @@
             
         </Node>
 		
-        <Node id="65" type="file" documentType="reference">
-            <Name>AssetAdStatus</Name>
-            <Path>Constants/AssetAdStatus.html</Path>
-            
-        </Node>
-		<Node id="66" type="file" documentType="reference">
+        <Node id="59" type="file" documentType="reference">
             <Name>ClientAdProvider</Name>
             <Path>Constants/ClientAdProvider.html</Path>
             
         </Node>
-		<Node id="67" type="file" documentType="reference">
+		<Node id="60" type="file" documentType="reference">
             <Name>PlaylistItemState</Name>
             <Path>Constants/PlaylistItemState.html</Path>
             
         </Node>
-		<Node id="68" type="file" documentType="reference">
+		<Node id="61" type="file" documentType="reference">
             <Name>ServerAdProvider</Name>
             <Path>Constants/ServerAdProvider.html</Path>
             
         </Node>
-		<Node id="69" type="file" documentType="reference">
+		<Node id="62" type="file" documentType="reference">
             <Name>kVAV_ErrorCode</Name>
             <Path>Constants/kVAV_ErrorCode.html</Path>
             
         </Node>
-		<Node id="70" type="file" documentType="reference">
+		<Node id="63" type="file" documentType="reference">
             <Name>kVBP_StatusCode</Name>
             <Path>Constants/kVBP_StatusCode.html</Path>
             
         </Node>
-		<Node id="71" type="file" documentType="reference">
+		<Node id="64" type="file" documentType="reference">
             <Name>kVDE_AssetPermissionType</Name>
             <Path>Constants/kVDE_AssetPermissionType.html</Path>
             
         </Node>
-		<Node id="72" type="file" documentType="reference">
+		<Node id="65" type="file" documentType="reference">
             <Name>kVDE_AssetPlaybackType</Name>
             <Path>Constants/kVDE_AssetPlaybackType.html</Path>
             
         </Node>
-		<Node id="73" type="file" documentType="reference">
+		<Node id="66" type="file" documentType="reference">
             <Name>kVDE_AssetProtectionType</Name>
             <Path>Constants/kVDE_AssetProtectionType.html</Path>
             
         </Node>
-		<Node id="74" type="file" documentType="reference">
+		<Node id="67" type="file" documentType="reference">
             <Name>kVDE_AssetType</Name>
             <Path>Constants/kVDE_AssetType.html</Path>
             
         </Node>
-		<Node id="75" type="file" documentType="reference">
+		<Node id="68" type="file" documentType="reference">
             <Name>kVDE_DownloadEngineStatus</Name>
             <Path>Constants/kVDE_DownloadEngineStatus.html</Path>
             
         </Node>
-		<Node id="76" type="file" documentType="reference">
+		<Node id="69" type="file" documentType="reference">
             <Name>kVDE_DownloadErrorCode</Name>
             <Path>Constants/kVDE_DownloadErrorCode.html</Path>
             
         </Node>
-		<Node id="77" type="file" documentType="reference">
+		<Node id="70" type="file" documentType="reference">
             <Name>kVDE_DownloadErrorType</Name>
             <Path>Constants/kVDE_DownloadErrorType.html</Path>
             
         </Node>
-		<Node id="78" type="file" documentType="reference">
+		<Node id="71" type="file" documentType="reference">
             <Name>kVDE_DownloadStatusType</Name>
             <Path>Constants/kVDE_DownloadStatusType.html</Path>
             
         </Node>
-		<Node id="79" type="file" documentType="reference">
+		<Node id="72" type="file" documentType="reference">
             <Name>kVDE_EngineStartupCode</Name>
             <Path>Constants/kVDE_EngineStartupCode.html</Path>
             
         </Node>
-		<Node id="80" type="file" documentType="reference">
+		<Node id="73" type="file" documentType="reference">
             <Name>kVDE_ErrorCode</Name>
             <Path>Constants/kVDE_ErrorCode.html</Path>
             
         </Node>
-		<Node id="81" type="file" documentType="reference">
+		<Node id="74" type="file" documentType="reference">
             <Name>kVDE_NetworkStatus</Name>
             <Path>Constants/kVDE_NetworkStatus.html</Path>
             
         </Node>
-		<Node id="82" type="file" documentType="reference">
+		<Node id="75" type="file" documentType="reference">
             <Name>kVDE_PlayerErrorCode</Name>
             <Path>Constants/kVDE_PlayerErrorCode.html</Path>
             
         </Node>
-		<Node id="83" type="file" documentType="reference">
+		<Node id="76" type="file" documentType="reference">
             <Name>kVDE_PlaylistDownloadOption</Name>
             <Path>Constants/kVDE_PlaylistDownloadOption.html</Path>
             
         </Node>
-		<Node id="84" type="file" documentType="reference">
+		<Node id="77" type="file" documentType="reference">
             <Name>kVDE_PlaylistStatus</Name>
             <Path>Constants/kVDE_PlaylistStatus.html</Path>
             
         </Node>
-		<Node id="85" type="file" documentType="reference">
+		<Node id="78" type="file" documentType="reference">
             <Name>kVDE_ProxyErrorCode</Name>
             <Path>Constants/kVDE_ProxyErrorCode.html</Path>
             
         </Node>
-		<Node id="86" type="file" documentType="reference">
-            <Name>kVDM_ManifestType</Name>
-            <Path>Constants/kVDM_ManifestType.html</Path>
-            
-        </Node>
-		<Node id="87" type="file" documentType="reference">
+		<Node id="79" type="file" documentType="reference">
             <Name>kVF_DownloadDataType</Name>
             <Path>Constants/kVF_DownloadDataType.html</Path>
             
         </Node>
-		<Node id="88" type="file" documentType="reference">
+		<Node id="80" type="file" documentType="reference">
             <Name>kVF_SegmentType</Name>
             <Path>Constants/kVF_SegmentType.html</Path>
             
         </Node>
-		<Node id="89" type="file" documentType="reference">
-            <Name>kVLM_DRMType</Name>
-            <Path>Constants/kVLM_DRMType.html</Path>
-            
-        </Node>
-		<Node id="90" type="file" documentType="reference">
+		<Node id="81" type="file" documentType="reference">
             <Name>kVL_BearerType</Name>
             <Path>Constants/kVL_BearerType.html</Path>
             
         </Node>
-		<Node id="91" type="file" documentType="reference">
+		<Node id="82" type="file" documentType="reference">
             <Name>kVL_LogEvent</Name>
             <Path>Constants/kVL_LogEvent.html</Path>
             
         </Node>
-		<Node id="92" type="file" documentType="reference">
+		<Node id="83" type="file" documentType="reference">
             <Name>kVL_LoggingLevel</Name>
             <Path>Constants/kVL_LoggingLevel.html</Path>
             
         </Node>
-		<Node id="93" type="file" documentType="reference">
+		<Node id="84" type="file" documentType="reference">
             <Name>kVSM_ManagerFailureCode</Name>
             <Path>Constants/kVSM_ManagerFailureCode.html</Path>
             
         </Node>
-		<Node id="94" type="file" documentType="reference">
+		<Node id="85" type="file" documentType="reference">
             <Name>kVSM_MediaTypeCode</Name>
             <Path>Constants/kVSM_MediaTypeCode.html</Path>
             
         </Node>
-		<Node id="95" type="file" documentType="reference">
+		<Node id="86" type="file" documentType="reference">
             <Name>kVSM_Status</Name>
             <Path>Constants/kVSM_Status.html</Path>
             
         </Node>
 		
-        <Node id="96" type="file" documentType="reference">
-            <Name>AssetAddToQueueCompleteBlock</Name>
-            <Path>Blocks/AssetAddToQueueCompleteBlock.html</Path>
-            
-        </Node>
-        <Node id="97" type="file" documentType="reference">
-            <Name>AssetParsingCompletedBlock</Name>
-            <Path>Blocks/AssetParsingCompletedBlock.html</Path>
-            
-        </Node>
-        <Node id="98" type="file" documentType="reference">
+        <Node id="87" type="file" documentType="reference">
             <Name>AssetQueryCallback</Name>
             <Path>Blocks/AssetQueryCallback.html</Path>
             
         </Node>
-        <Node id="99" type="file" documentType="reference">
-            <Name>AssetReadyForDownloadBlock</Name>
-            <Path>Blocks/AssetReadyForDownloadBlock.html</Path>
-            
-        </Node>
-        <Node id="100" type="file" documentType="reference">
+        <Node id="88" type="file" documentType="reference">
             <Name>AsyncCompleteBlock</Name>
             <Path>Blocks/AsyncCompleteBlock.html</Path>
             
         </Node>
-        <Node id="101" type="file" documentType="reference">
+        <Node id="89" type="file" documentType="reference">
             <Name>BasicCompletionBlock</Name>
             <Path>Blocks/BasicCompletionBlock.html</Path>
             
         </Node>
-        <Node id="102" type="file" documentType="reference">
+        <Node id="90" type="file" documentType="reference">
             <Name>CompletionBlockWithOptionalError</Name>
             <Path>Blocks/CompletionBlockWithOptionalError.html</Path>
             
         </Node>
-        <Node id="103" type="file" documentType="reference">
+        <Node id="91" type="file" documentType="reference">
             <Name>DeviceUpdateResultBlock</Name>
             <Path>Blocks/DeviceUpdateResultBlock.html</Path>
             
         </Node>
-        <Node id="104" type="file" documentType="reference">
-            <Name>IsPlayableCompleteBlock</Name>
-            <Path>Blocks/IsPlayableCompleteBlock.html</Path>
-            
-        </Node>
-        <Node id="105" type="file" documentType="reference">
+        <Node id="92" type="file" documentType="reference">
             <Name>LicenseRefreshComplete</Name>
             <Path>Blocks/LicenseRefreshComplete.html</Path>
             
         </Node>
-        <Node id="106" type="file" documentType="reference">
+        <Node id="93" type="file" documentType="reference">
             <Name>ShutdownCompleteCallback</Name>
             <Path>Blocks/ShutdownCompleteCallback.html</Path>
             
         </Node>
-        <Node id="107" type="file" documentType="reference">
+        <Node id="94" type="file" documentType="reference">
             <Name>StartupCompleteStatusCallback</Name>
             <Path>Blocks/StartupCompleteStatusCallback.html</Path>
             
         </Node>
-        <Node id="108" type="file" documentType="reference">
-            <Name>SubscriptionListResultBlock</Name>
-            <Path>Blocks/SubscriptionListResultBlock.html</Path>
-            
-        </Node>
-        <Node id="109" type="file" documentType="reference">
+        <Node id="95" type="file" documentType="reference">
             <Name>SubscriptionResultBlock</Name>
             <Path>Blocks/SubscriptionResultBlock.html</Path>
             
         </Node>
-        <Node id="110" type="file" documentType="reference">
+        <Node id="96" type="file" documentType="reference">
             <Name>SyncCompleteBlock</Name>
             <Path>Blocks/SyncCompleteBlock.html</Path>
             

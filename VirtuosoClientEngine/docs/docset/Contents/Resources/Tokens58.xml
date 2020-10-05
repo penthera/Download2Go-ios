@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoPlayer.html">
+	<File path="Protocols/VirtuosoSubscriptionsManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoPlayer</TokenIdentifier>
-			<Abstract type="html">Defines the minimum API required for basic playback of segmented (HLS, HSS, DASH, etc.) video</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoSubscriptionsManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Delegate interface for Subscriptions notifications</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
@@ -13,74 +13,36 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setContentURL:</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionsManagerDelegate/subscriptionManagerAssetDelete:</TokenIdentifier>
+			<Abstract type="html">Subscription manager has deleted assets.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			<Declaration>- (void)subscriptionManagerAssetDelete:(NSArray&lt;NSString*&gt; *_Nonnull)assetIdentifiers</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assetIdentifiers</Name>
+					<Abstract type="html">Array of Asset.assetID&apos;s for the assets that have been deleted.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/contentURL</Anchor>
+			<Anchor>//api/name/subscriptionManagerAssetDelete:</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionsManagerDelegate/subscriptionManagerAddedAssets:</TokenIdentifier>
+			<Abstract type="html">Subscription manager has created assets.</Abstract>
+			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			<Declaration>- (void)subscriptionManagerAddedAssets:(NSArray&lt;VirtuosoAsset*&gt; *_Nonnull)assets</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>assets</Name>
+					<Abstract type="html">Array of VirtuosoAsset that have been created</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/contentURL</Anchor>
-            <NodeRef refid="58"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/contentURL</TokenIdentifier>
-			<Abstract type="html">The remote URL for the manifest file to play</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
-			
-			
-			<Anchor>//api/name/contentURL</Anchor>
-            <NodeRef refid="58"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/setAsset:</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="58"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
-            <NodeRef refid="58"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/VirtuosoPlayer/asset</TokenIdentifier>
-			<Abstract type="html">The VirtuosoAsset object representing the video to be played</Abstract>
-			<DeclaredIn>VirtuosoPlayer.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
-			
-			
-			<Anchor>//api/name/asset</Anchor>
+			<Anchor>//api/name/subscriptionManagerAddedAssets:</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		

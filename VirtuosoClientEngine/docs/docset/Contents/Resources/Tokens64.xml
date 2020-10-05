@@ -1,51 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoSubscriptionsManagerDelegate.html">
+	<File path="Constants/kVDE_AssetPermissionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoSubscriptionsManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate interface for Subscriptions notifications</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetPermissionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetPermissionType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="64"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionsManagerDelegate/subscriptionManagerAssetDelete:</TokenIdentifier>
-			<Abstract type="html">Subscription manager has deleted assets.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (void)subscriptionManagerAssetDelete:(NSArray&lt;NSString*&gt; *_Nonnull)assetIdentifiers</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>assetIdentifiers</Name>
-					<Abstract type="html">Array of Asset.assetID&apos;s for the assets that have been deleted.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/subscriptionManagerAssetDelete:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionNotRequested</TokenIdentifier>
+            <Abstract type="html">Permissions have not yet been requested for the asset</Abstract>
+            <Declaration>kVDE_AssetPermissionNotRequested</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
             <NodeRef refid="64"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoSubscriptionsManagerDelegate/subscriptionManagerAddedAssets:</TokenIdentifier>
-			<Abstract type="html">Subscription manager has created assets.</Abstract>
-			<DeclaredIn>VirtuosoSubscriptionNotificationsManager.h</DeclaredIn>
-			
-			<Declaration>- (void)subscriptionManagerAddedAssets:(NSArray&lt;VirtuosoAsset*&gt; *_Nonnull)assets</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>assets</Name>
-					<Abstract type="html">Array of VirtuosoAsset that have been created</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/subscriptionManagerAddedAssets:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionGranted</TokenIdentifier>
+            <Abstract type="html">Permission has been granted for the asset to download</Abstract>
+            <Declaration>kVDE_AssetPermissionGranted</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
             <NodeRef refid="64"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAccountMaxReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because the account has reached is maximum limit</Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedAccountMaxReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedLifetimeLimitReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because the global asset download limit as been reached</Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedLifetimeLimitReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</TokenIdentifier>
+            <Abstract type="html">Permission to download has been denied because too many copies of this asset already exist on
+        devices in this account </Abstract>
+            <Declaration>kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="64"/>
+        </Token>
         
         
 	</File>

@@ -1,29 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VirtuosoRefreshManagerDelegate.html">
+	<File path="Constants/kVAV_ErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VirtuosoRefreshManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Delegate interface that VirtuosoRefreshManager requires.</Abstract>
-			<DeclaredIn>VirtuosoRefreshManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVAV_ErrorCode</TokenIdentifier>
+			<Abstract type="html">Resource loader error codes</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
             
 			
 			<NodeRef refid="62"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VirtuosoRefreshManagerDelegate/performRefresh</TokenIdentifier>
-			<Abstract type="html">Invoked when background refresh should be performed. The callback will happen on a background thread. Do not attempt to update UI elements or otherwise use MainThread as the App user interface is not available when awakened for background processing.</Abstract>
-			<DeclaredIn>VirtuosoRefreshManager.h</DeclaredIn>
-			
-			<Declaration>- (void)performRefresh</Declaration>
-			
-			
-			<Anchor>//api/name/performRefresh</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NoCertificate</TokenIdentifier>
+            <Abstract type="html">Error generated when no FairPlay certificate is available</Abstract>
+            <Declaration>kVAV_NoCertificate</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
             <NodeRef refid="62"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_ExpiredWhileOffline</TokenIdentifier>
+            <Abstract type="html">Error generated when the FairPlay license expires while the device is offline</Abstract>
+            <Declaration>kVAV_ExpiredWhileOffline</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="62"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithDelegate</TokenIdentifier>
+            <Abstract type="html">The resource loading delegate must be configured with delegate prior to use.</Abstract>
+            <Declaration>kVAV_NotConfiguredWithDelegate</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="62"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithAsset</TokenIdentifier>
+            <Abstract type="html">The resource loading delegate must be configured with a VirtuosoAsset prior to use</Abstract>
+            <Declaration>kVAV_NotConfiguredWithAsset</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="62"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NotConfiguredWithDrmConfig</TokenIdentifier>
+            <Abstract type="html">The resoruce loader delegate must be configured with an instance of VirtuosoDrmConfig</Abstract>
+            <Declaration>kVAV_NotConfiguredWithDrmConfig</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="62"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_DrmConfigInvalidValues</TokenIdentifier>
+            <Abstract type="html">The VirtuosoDrmConfig returned invalid configuration values.</Abstract>
+            <Declaration>kVAV_DrmConfigInvalidValues</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="62"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_InvalidSPCValue</TokenIdentifier>
+            <Abstract type="html">Generated nil SPC</Abstract>
+            <Declaration>kVAV_InvalidSPCValue</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="62"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_InvalidAssetIDValue</TokenIdentifier>
+            <Abstract type="html">Could not find assetID in SDK data</Abstract>
+            <Declaration>kVAV_InvalidAssetIDValue</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="62"/>
+        </Token>
         
         
 	</File>

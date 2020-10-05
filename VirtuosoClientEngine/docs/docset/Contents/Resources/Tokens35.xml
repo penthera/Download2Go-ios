@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VirtuosoPlaylist.html">
+	<File path="Classes/VirtuosoPlaylistDownloadAssetItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylist</TokenIdentifier>
-			<Abstract type="html">Defines a smart-download Playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlaylistDownloadAssetItem</TokenIdentifier>
+			<Abstract type="html">VirtuosoPlaylistDownloadAssetItem defines the response returned from VirtuosoPlaylistManagerDelegate method assetForAssetID.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="35"/>
@@ -13,337 +13,108 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/initWithConfig:assets:</TokenIdentifier>
-			<Abstract type="html">Creates playlist.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/setOption:</TokenIdentifier>
+			<Abstract type="html">Enum used to indicate how the next playlist item shoud be handled.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
 			
-			<Declaration>- (_Nonnull instancetype)initWithConfig:(VirtuosoPlaylistConfig *_Nullable)config assets:(NSArray&lt;NSString*&gt; *_Nonnull)assets</Declaration>
+			<Declaration>@property (nonatomic, assign) kVDE_PlaylistDownloadOption option</Declaration>
+			
+			
+			<Anchor>//api/name/option</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/option</TokenIdentifier>
+			<Abstract type="html">Enum used to indicate how the next playlist item shoud be handled.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) kVDE_PlaylistDownloadOption option</Declaration>
+			
+			
+			<Anchor>//api/name/option</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistDownloadAssetItem/option</TokenIdentifier>
+			<Abstract type="html">Enum used to indicate how the next playlist item shoud be handled.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) kVDE_PlaylistDownloadOption option</Declaration>
+			
+			
+			<Anchor>//api/name/option</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/setConfig:</TokenIdentifier>
+			<Abstract type="html">Reference to the VirtuosoAssetConfig object that should be used to create the next asset in a Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) VirtuosoAssetConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/config</TokenIdentifier>
+			<Abstract type="html">Reference to the VirtuosoAssetConfig object that should be used to create the next asset in a Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) VirtuosoAssetConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylistDownloadAssetItem/config</TokenIdentifier>
+			<Abstract type="html">Reference to the VirtuosoAssetConfig object that should be used to create the next asset in a Playlist.</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) VirtuosoAssetConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/initWithOption:</TokenIdentifier>
+			<Abstract type="html">Creates an instance of VirtuosoPlaylistDownloadAssetItem</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithOption:(kVDE_PlaylistDownloadOption)option</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>option</Name>
+					<Abstract type="html">Enum kVDE_PlaylistDownloadOption indicating option</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return an instance of VirtuosoPlaylistDownloadAssetItem</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithOption:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylistDownloadAssetItem/initWithAsset:</TokenIdentifier>
+			<Abstract type="html">Creates an instance of VirtuosoPlaylistDownloadAssetItem</Abstract>
+			<DeclaredIn>VirtuosoPlaylistManager.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithAsset:(VirtuosoAssetConfig *)config</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>config</Name>
-					<Abstract type="html">Settings to control how Playlist is managed</Abstract>
-				</Parameter><Parameter>
-					<Name>assets</Name>
-					<Abstract type="html">Array of Strings which uniquely identify the Assets (via AssetID) that will become part of this playlist.</Abstract>
+					<Abstract type="html">Instance of VirtuosoAssetConfig that will be used to create the next playlist download</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">non-nil instance if successful, otherwise nil. Errors are logged.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithConfig:assets:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VirtuosoPlaylist/findPlaylist:</TokenIdentifier>
-			<Abstract type="html">Finds instance of specified playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>+ (instancetype _Nullable)findPlaylist:(NSString *)name</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">String that uniquely identifies this Playlist.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">non-nil instance if successful, otherwise nil. Errors are logged.</Abstract></ReturnValue>
-			<Anchor>//api/name/findPlaylist:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/contains:</TokenIdentifier>
-			<Abstract type="html">Check whether Playlist.items contains the specified assetID</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>- (Boolean)contains:(NSString *)assetID</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>assetID</Name>
-					<Abstract type="html">AssetID of asset to search for</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">True if the playlist contains the specified AssetID</Abstract></ReturnValue>
-			<Anchor>//api/name/contains:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/append:</TokenIdentifier>
-			<Abstract type="html">Appends assets to the playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>- (void)append:(NSArray *)assets</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>assets</Name>
-					<Abstract type="html">Array of AssetID&apos;s for the Assets to be added. Duplicate Assets are not allowed in the Playlist.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/append:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setName:</TokenIdentifier>
-			<Abstract type="html">Name of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/name</TokenIdentifier>
-			<Abstract type="html">Name of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/name</TokenIdentifier>
-			<Abstract type="html">Name of playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setItems:</TokenIdentifier>
-			<Abstract type="html">Items contained in the playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
-			
-			
-			<Anchor>//api/name/items</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/items</TokenIdentifier>
-			<Abstract type="html">Items contained in the playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
-			
-			
-			<Anchor>//api/name/items</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/items</TokenIdentifier>
-			<Abstract type="html">Items contained in the playlist</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;VirtuosoPlaylistItem*&gt; *items</Declaration>
-			
-			
-			<Anchor>//api/name/items</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setStatus:</TokenIdentifier>
-			<Abstract type="html">Indicates Playlist status</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/status</TokenIdentifier>
-			<Abstract type="html">Indicates Playlist status</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/status</TokenIdentifier>
-			<Abstract type="html">Indicates Playlist status</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) kVDE_PlaylistStatus status</Declaration>
-			
-			
-			<Anchor>//api/name/status</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/statusAsString</TokenIdentifier>
-			<Abstract type="html">String formatted representation of status</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)statusAsString</Declaration>
-			
-			
-			<Anchor>//api/name/statusAsString</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setIsAssetHistoryConsidered:</TokenIdentifier>
-			<Abstract type="html">Controls smart-download next download selection logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isAssetHistoryConsidered</Declaration>
-			
-			
-			<Anchor>//api/name/isAssetHistoryConsidered</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/isAssetHistoryConsidered</TokenIdentifier>
-			<Abstract type="html">Controls smart-download next download selection logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isAssetHistoryConsidered</Declaration>
-			
-			
-			<Anchor>//api/name/isAssetHistoryConsidered</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/isAssetHistoryConsidered</TokenIdentifier>
-			<Abstract type="html">Controls smart-download next download selection logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isAssetHistoryConsidered</Declaration>
-			
-			
-			<Anchor>//api/name/isAssetHistoryConsidered</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setIsSearchFromBeginningEnabled:</TokenIdentifier>
-			<Abstract type="html">Controls smart-download next playlist item search logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isSearchFromBeginningEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/isSearchFromBeginningEnabled</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/isSearchFromBeginningEnabled</TokenIdentifier>
-			<Abstract type="html">Controls smart-download next playlist item search logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isSearchFromBeginningEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/isSearchFromBeginningEnabled</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/isSearchFromBeginningEnabled</TokenIdentifier>
-			<Abstract type="html">Controls smart-download next playlist item search logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isSearchFromBeginningEnabled</Declaration>
-			
-			
-			<Anchor>//api/name/isSearchFromBeginningEnabled</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setIsPlaybackRequired:</TokenIdentifier>
-			<Abstract type="html">Controls smart-download trigger logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isPlaybackRequired</Declaration>
-			
-			
-			<Anchor>//api/name/isPlaybackRequired</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/isPlaybackRequired</TokenIdentifier>
-			<Abstract type="html">Controls smart-download trigger logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isPlaybackRequired</Declaration>
-			
-			
-			<Anchor>//api/name/isPlaybackRequired</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/isPlaybackRequired</TokenIdentifier>
-			<Abstract type="html">Controls smart-download trigger logic.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) Boolean isPlaybackRequired</Declaration>
-			
-			
-			<Anchor>//api/name/isPlaybackRequired</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/setPendingCount:</TokenIdentifier>
-			<Abstract type="html">Count of assets that will auto-download if the Playlist has new items appended.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger pendingCount</Declaration>
-			
-			
-			<Anchor>//api/name/pendingCount</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlaylist/pendingCount</TokenIdentifier>
-			<Abstract type="html">Count of assets that will auto-download if the Playlist has new items appended.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger pendingCount</Declaration>
-			
-			
-			<Anchor>//api/name/pendingCount</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlaylist/pendingCount</TokenIdentifier>
-			<Abstract type="html">Count of assets that will auto-download if the Playlist has new items appended.</Abstract>
-			<DeclaredIn>VirtuosoPlaylist.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSInteger pendingCount</Declaration>
-			
-			
-			<Anchor>//api/name/pendingCount</Anchor>
+			<ReturnValue><Abstract type="html">Return an instance of VirtuosoPlaylistDownloadAssetItem</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAsset:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/ClientAdProvider.html">
+	<File path="Constants/kVDE_AssetProtectionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/ClientAdProvider</TokenIdentifier>
-			<Abstract type="html">Defines the various types of Client Ads Providers</Abstract>
-			<DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/kVDE_AssetProtectionType</TokenIdentifier>
+			<Abstract type="html">@typedef kVDE_AssetProtectionType</Abstract>
+			<DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
 			
 			<NodeRef refid="66"/>
@@ -14,31 +14,33 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Undefined</TokenIdentifier>
-            <Abstract type="html">Undefined.</Abstract>
-            <Declaration>ClientAdProvider_Undefined</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypePassthrough</TokenIdentifier>
+            <Abstract type="html">The asset is not protected, is protected by an external DRM system, or is protected by some form of
+        native encryption.  This value indicates that no special handling is required for download or playback
+        of this asset, and is the default value. </Abstract>
+            <Declaration>kVDE_AssetProtectionTypePassthrough</Declaration>
             
-            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
-            
-            <NodeRef refid="66"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Freewheel</TokenIdentifier>
-            <Abstract type="html">Freewheel Client Ads.</Abstract>
-            <Declaration>ClientAdProvider_Freewheel</Declaration>
-            
-            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="66"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/ClientAdProvider_Google</TokenIdentifier>
-            <Abstract type="html">Google Client Ads.</Abstract>
-            <Declaration>ClientAdProvider_Google</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeFairPlay</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Apple FairPlay DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeFairPlay</Declaration>
             
-            <DeclaredIn>VirtuosoAdsClientProvider.h</DeclaredIn>
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
+            
+            <NodeRef refid="66"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVDE_AssetProtectionTypeWidevine</TokenIdentifier>
+            <Abstract type="html">The asset is protected by Google Widevine DRM.</Abstract>
+            <Declaration>kVDE_AssetProtectionTypeWidevine</Declaration>
+            
+            <DeclaredIn>VirtuosoConstants.h</DeclaredIn>
             
             <NodeRef refid="66"/>
         </Token>
