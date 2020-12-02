@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>VirtuosoDownloadEngine Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Cache &amp; Carry (Virtuoso) SDK - iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Penthera Inc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/accountStatusOK">accountStatusOK</option>
+		
+		<option value="//api/name/authenticationOK">authenticationOK</option>
+		
+		<option value="//api/name/backplaneURL">backplaneURL</option>
+		
+		<option value="//api/name/config">config</option>
+		
+		<option value="//api/name/currentlyDownloadingAsset">currentlyDownloadingAsset</option>
+		
+		<option value="//api/name/deviceID">deviceID</option>
+		
+		<option value="//api/name/devices">devices</option>
+		
+		<option value="//api/name/diskStatusOK">diskStatusOK</option>
+		
+		<option value="//api/name/downloadBandwidth">downloadBandwidth</option>
+		
+		<option value="//api/name/downloadBandwidthString">downloadBandwidthString</option>
+		
+		<option value="//api/name/downloadEnabled">downloadEnabled</option>
+		
+		<option value="//api/name/enabled">enabled</option>
+		
+		<option value="//api/name/engineStatusInfo">engineStatusInfo</option>
+		
+		<option value="//api/name/externalDeviceID">externalDeviceID</option>
+		
+		<option value="//api/name/key">key</option>
+		
+		<option value="//api/name/lastBackplaneSyncTime">lastBackplaneSyncTime</option>
+		
+		<option value="//api/name/licenseExpiry">licenseExpiry</option>
+		
+		<option value="//api/name/memoryStatusOK">memoryStatusOK</option>
+		
+		<option value="//api/name/networkStatusOK">networkStatusOK</option>
+		
+		<option value="//api/name/notificationQueue">notificationQueue</option>
+		
+		<option value="//api/name/offlineTimedOut">offlineTimedOut</option>
+		
+		<option value="//api/name/queueStatusOK">queueStatusOK</option>
+		
+		<option value="//api/name/secret">secret</option>
+		
+		<option value="//api/name/started">started</option>
+		
+		<option value="//api/name/status">status</option>
+		
+		<option value="//api/name/user">user</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/instance">+ instance</option>
+		
+		<option value="//api/name/versionString">+ versionString</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addToQueue:atIndex:onComplete:">- addToQueue:atIndex:onComplete:</option>
+		
+		<option value="//api/name/assetInQueueWithURL:">- assetInQueueWithURL:</option>
+		
+		<option value="//api/name/assetInQueueWithUUID:">- assetInQueueWithUUID:</option>
+		
+		<option value="//api/name/assetsInQueue">- assetsInQueue</option>
+		
+		<option value="//api/name/currentNetworkStatus">- currentNetworkStatus</option>
+		
+		<option value="//api/name/flushQueue">- flushQueue</option>
+		
+		<option value="//api/name/moveAsset:inQueueToIndex:">- moveAsset:inQueueToIndex:</option>
+		
+		<option value="//api/name/removeFromQueue:">- removeFromQueue:</option>
+		
+		<option value="//api/name/shutdown">- shutdown</option>
+		
+		<option value="//api/name/shutdown:">- shutdown:</option>
+		
+		<option value="//api/name/startup:dispatchQueue:startupCallback:">- startup:dispatchQueue:startupCallback:</option>
+		
+		<option value="//api/name/startup:operationQueue:startupCallback:">- startup:operationQueue:startupCallback:</option>
+		
+		<option value="//api/name/startup:startupCallback:">- startup:startupCallback:</option>
+		
+		<option value="//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">- startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</option>
+		
+		<option value="//api/name/syncWithBackplaneNow:">- syncWithBackplaneNow:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">VirtuosoDownloadEngine Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoDownloadEngine.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A singleton object that handles all download activity and monitoring conditions and settings.
+Maintains the download queue, which is a list of <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> objects enqueued for download.
+Receives <a href="#//api/name/config">config</a> values from the Backplane. Monitors device state. Ensures that downloads
+only occur consistent with the current configuration.</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this type directly.
+The VirtuosoDownloadEngine is a singleton and should only be accessed via the
+provided <a href="#//api/name/instance">instance</a> method.</p></div>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Utility" name="task_Utility"></a>
+						<h2 class="task-title">Utility</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/instance" title="instance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/instance">+&nbsp;instance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The singleton instance access method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull VirtuosoDownloadEngine *)instance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the VirtuosoDownloadEngine object instance.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You must never instantiate a local copy of the VirtuosoDownloadEngine object.  This object
+is intended to be a static singleton accessed through the instance method only.  Instantiating a local
+copy will throw an exception.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/versionString" title="versionString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/versionString">+&nbsp;versionString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the version of this build.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)versionString</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The compile-time configured version of this Virtuoso build</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The Virtuoso version is set at compile-time.  You may use this version as a reference
+for documentation and debugging purposes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Startup and Shutdown" name="task_Startup and Shutdown"></a>
+						<h2 class="task-title">Startup and Shutdown</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/startup:startupCallback:" title="startup:startupCallback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startup:startupCallback:">&ndash;&nbsp;startup:startupCallback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke this method once you have the requisite parameters (see <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a>) to start the Virtuoso download engine.
+This method should invoked once, repeated calls will impact performance. The callback will be invoked on MainThread.
+Once callback returns success, you can begin creating assets for downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startup:(VirtuosoEngineConfig *_Nonnull)<em>config</em> startupCallback:(StartupCompleteStatusCallback _Nonnull)<em>startupCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides all needed configuration info needed to start the Engine</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startupCallback</code></th>
+						<td><p>Optional callback that will be invoked when startup completes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets up Virtuoso for use with a Backplane <a href="#//api/name/instance">instance</a> and peforms other initialzation tasks as may be required.
+This method will return immediately and startup will continue asyncronously. Once the engine is <a href="#//api/name/started">started</a>,
+<a href="../Blocks/StartupCompleteStatusCallback.html">StartupCompleteStatusCallback</a> will be called with a parameter <a href="../Constants/kVDE_EngineStartupCode.html">kVDE_EngineStartupCode</a> which indicates
+results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.</p><div class="warning"><p><strong>Warning:</strong> Except as otherwise documented, if you attempt to call other methods before
+this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
+Virtuoso behavior will be undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startup:operationQueue:startupCallback:" title="startup:operationQueue:startupCallback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startup:operationQueue:startupCallback:">&ndash;&nbsp;startup:operationQueue:startupCallback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke this method once you have the requisite parameters (see <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a>) to start the Virtuoso download engine.
+This method should invoked once, repeated calls will impact performance. Once the callback returns success, you can
+begin creating assets for downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startup:(VirtuosoEngineConfig *_Nonnull)<em>config</em> operationQueue:(NSOperationQueue *_Nullable)<em>operationQueue</em> startupCallback:(StartupCompleteStatusCallback _Nonnull)<em>startupCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides all needed configuration info needed to start the Engine</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>operationQueue</code></th>
+						<td><p>Optional NSOperationQueue that should be used to invoke startupCallback. If nil the callback will happen on MainThread.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startupCallback</code></th>
+						<td><p>Optional callback that will be invoked when startup completes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets up Virtuoso for use with a Backplane <a href="#//api/name/instance">instance</a> and peforms other initialzation tasks as may be required.
+This method will return immediately and startup will continue asyncronously. Once the engine is <a href="#//api/name/started">started</a>,
+<a href="../Blocks/StartupCompleteStatusCallback.html">StartupCompleteStatusCallback</a> will be called with a parameter <a href="../Constants/kVDE_EngineStartupCode.html">kVDE_EngineStartupCode</a> which indicates
+results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.</p><div class="warning"><p><strong>Warning:</strong> Except as otherwise documented, if you attempt to call other methods before
+this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
+Virtuoso behavior will be undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startup:dispatchQueue:startupCallback:" title="startup:dispatchQueue:startupCallback:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startup:dispatchQueue:startupCallback:">&ndash;&nbsp;startup:dispatchQueue:startupCallback:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Invoke this method once you have the requisite parameters (see <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a>) to start the Virtuoso download engine.
+This method should invoked once, repeated calls will impact performance. Once the callback returns success, you can
+begin creating assets for downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startup:(VirtuosoEngineConfig *_Nonnull)<em>config</em> dispatchQueue:(dispatch_queue_t _Nonnull)<em>dispatchQueue</em> startupCallback:(StartupCompleteStatusCallback _Nonnull)<em>startupCallback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides all needed configuration info needed to start the Engine</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dispatchQueue</code></th>
+						<td><p>DispatchQueue used to invoke startupCallback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startupCallback</code></th>
+						<td><p>Optional callback that will be invoked when startup completes.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets up Virtuoso for use with a Backplane <a href="#//api/name/instance">instance</a> and peforms other initialzation tasks as may be required.
+This method will return immediately and startup will continue asyncronously. Once the engine is <a href="#//api/name/started">started</a>,
+<a href="../Blocks/StartupCompleteStatusCallback.html">StartupCompleteStatusCallback</a> will be called with a parameter <a href="../Constants/kVDE_EngineStartupCode.html">kVDE_EngineStartupCode</a> which indicates
+results of starting the Engine. Do not attempt to create assets, and/or download until after the callback completes.</p><div class="warning"><p><strong>Warning:</strong> Except as otherwise documented, if you attempt to call other methods before
+this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
+Virtuoso behavior will be undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:" title="startupWithBackplane:user:externalDeviceID:privateKey:publicKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startupWithBackplane:user:externalDeviceID:privateKey:publicKey:">&ndash;&nbsp;startupWithBackplane:user:externalDeviceID:privateKey:publicKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deprecated by startup:callbackQueue:startupCallback:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (kVDE_EngineStartupCode)startupWithBackplane:(nonnull NSString *)<em>backplaneURL</em> user:(nonnull NSString *)<em>user</em> externalDeviceID:(nullable NSString *)<em>externalDeviceID</em> privateKey:(nonnull NSString *)<em>privateKey</em> publicKey:(nonnull NSString *)<em>publicKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>backplaneURL</code></th>
+						<td><p>A root URL pointing to the location of the Backplane endpoints</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>user</code></th>
+						<td><p>The Backplane <a href="#//api/name/user">user</a> to use.  This is a string representing your authenticated <a href="#//api/name/user">user</a> ID.
+It could be your actual <a href="#//api/name/user">user</a> ID, or a hash of your <a href="#//api/name/user">user</a> ID.  The only requirements are that
+it uniqely identifies your <a href="#//api/name/user">user</a> and the value must be less than 512 characters long.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>externalDeviceID</code></th>
+						<td><p>An optional externally-defined device UUID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>privateKey</code></th>
+						<td><p>The Penthera-provided private <a href="#//api/name/key">key</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>publicKey</code></th>
+						<td><p>The Penthera-provided public <a href="#//api/name/key">key</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A startup code indicating the result</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sets up Virtuoso for use with a Backplane <a href="#//api/name/instance">instance</a>.</p><div class="warning"><p><strong>Warning:</strong> Except as otherwise documented, if you attempt to call other methods before
+this one, you&rsquo;ll get an exception. If you catch and ignore the exceptions,
+Virtuoso behavior will be undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shutdown" title="shutdown"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shutdown">&ndash;&nbsp;shutdown</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets Virtuoso without unregistering the device or deleting assets.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)shutdown</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, if a <a href="#//api/name/user">user</a> logs out of the enclosing app, you would call the device unregister
+method for the user&rsquo;s device, which deletes all assets, removes the device from the backplane,
+and resets the engine state.  If complex business logic requires that you do not do these things
+when the <a href="#//api/name/user">user</a> logs out (if you want to allow the same <a href="#//api/name/user">user</a> to log back in without losing
+downloads, for <a href="#//api/name/instance">instance</a>), then you would use this method, rather than the device unregister method.</p>
+
+<p>This method is a blocking call, invoke it from a background thread.</p>
+
+<p>After this method has been called, you must call
+startup:(VirtuosoEngineConfig*) again befor you call any other Virtuoso method.</p><div class="warning"><p><strong>Warning:</strong> After calling this method, except as otherwise documented, if you attempt to call other methods
+before calling startup:(VirtuosoEngineConfig*), the results are undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shutdown:" title="shutdown:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shutdown:">&ndash;&nbsp;shutdown:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Resets Virtuoso without unregistering the device or deleting assets.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)shutdown:(nonnull ShutdownCompleteCallback)<em>callback</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callback</code></th>
+						<td><p>Callback closure that is invoked when <a href="#//api/name/shutdown">shutdown</a> is complete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Normally, if a user logs out of the enclosing app, you would call the device unregister
+method for the user&rsquo;s device, which deletes all assets, removes the device from the backplane,
+and resets the engine state.  If complex business logic requires that you do not do these things
+when the user logs out (if you want to allow the same user to log back in without losing
+downloads, for instance), then you would use this method, rather than the device unregister method.</p>
+
+<p>This method is an async call, it will return immediately. Once shutdown has compleed, the callback is invoked
+using the thread queue set for <a href="#//api/name/notificationQueue">[VirtuosoDownloadEngine notificationQueue]</a> which defaults to main thread.</p>
+
+<p>After this method has been called, you must call
+startup:(VirtuosoEngineConfig*) again befor you call any other Virtuoso method.</p><div class="warning"><p><strong>Warning:</strong> After calling this method, except as otherwise documented, if you attempt to call other methods
+before calling startup:(VirtuosoEngineConfig*), the results are undefined.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Backplane" name="task_Backplane"></a>
+						<h2 class="task-title">Backplane</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/syncWithBackplaneNow:" title="syncWithBackplaneNow:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/syncWithBackplaneNow:">&ndash;&nbsp;syncWithBackplaneNow:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Causes a sync with the Backplane</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)syncWithBackplaneNow:(Boolean)<em>now</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>now</code></th>
+						<td><p>Used to force a sync, even if the backplane has synced recently.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso will automatically sync with the Backplane at opportune times.  Use this method to request
+a sync based on your own logic.  If you want to force a sync, even if the backplane has synced recently,
+then pass YES to the parameter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/backplaneURL" title="backplaneURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/backplaneURL">&nbsp;&nbsp;backplaneURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The URL where the Backplane lives</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *backplaneURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/user" title="user"></a>
+	<h3 class="method-title"><code><a href="#//api/name/user">&nbsp;&nbsp;user</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The user used to authenticate with the Backplane</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *user</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/externalDeviceID" title="externalDeviceID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/externalDeviceID">&nbsp;&nbsp;externalDeviceID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The external device ID provided to Virtuoso during startup</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *externalDeviceID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceID" title="deviceID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceID">&nbsp;&nbsp;deviceID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The Virtuoso-assigned unique device ID for this device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *deviceID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/secret" title="secret"></a>
+	<h3 class="method-title"><code><a href="#//api/name/secret">&nbsp;&nbsp;secret</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The Penthera-provided application secret (unique to each customer) used to authenticate with the Backplane</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *secret</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/key" title="key"></a>
+	<h3 class="method-title"><code><a href="#//api/name/key">&nbsp;&nbsp;key</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The Penthera-provided application key (unique to each customer) used to authenticate with the Backplane</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *key</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/config" title="config"></a>
+	<h3 class="method-title"><code><a href="#//api/name/config">&nbsp;&nbsp;config</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Instance of <a href="../Classes/VirtuosoEngineConfig.html">VirtuosoEngineConfig</a> used to config</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) VirtuosoEngineConfig *config</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Engine Status" name="task_Engine Status"></a>
+						<h2 class="task-title">Engine Status</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/notificationQueue" title="notificationQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notificationQueue">&nbsp;&nbsp;notificationQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Queue used to post Engine <a href="#//api/name/status">status</a> notifications. Default is MainThread.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, class) NSOperationQueue *notificationQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you need Notifications on a different thread from the default (MainThread), set
+this class property with the NSOperationQueue you want to receive Engine notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enabled" title="enabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enabled">&nbsp;&nbsp;enabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Virtuoso&rsquo;s global &lsquo;enable&rsquo; state</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean enabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The &ldquo;master switch&rdquo; for downloading.
+When Virtuoso is disabled, you can change settings and manipulate the download queue, but
+Virtuoso will be blocked and will not download. Virtuoso does not modify this switch, but you
+may do so, if you wish. Once you set a value, that value persists across app restarts.
+Default is YES.</p>
+
+<p>Setting this property is a long running operation and may delay UI updates. Consider using a background thread when setting this property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/started" title="started"></a>
+	<h3 class="method-title"><code><a href="#//api/name/started">&nbsp;&nbsp;started</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether Virtuoso has been started (i.e. had a startup method called)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean started</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&nbsp;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current Virtuoso download Engine status</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) kVDE_DownloadEngineStatus status</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadBandwidthString" title="downloadBandwidthString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadBandwidthString">&nbsp;&nbsp;downloadBandwidthString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A convenience method to return a displayable version of the <a href="#//api/name/downloadBandwidth">downloadBandwidth</a> property.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *downloadBandwidthString</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This value will automatically adjust for human-readable display, including
+shifting and displaying appropriate units.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadBandwidth" title="downloadBandwidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadBandwidth">&nbsp;&nbsp;downloadBandwidth</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Effective download throughput in KBps</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) double downloadBandwidth</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso collects download statistics on a 10 second interval. This value is a short-term average,
+based on the most recent 30 seconds of data.  Note that it is not possible to track the throughput of
+background downloads, and this value only applies to data transferred while the app is in the foreground.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentlyDownloadingAsset" title="currentlyDownloadingAsset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentlyDownloadingAsset">&nbsp;&nbsp;currentlyDownloadingAsset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UUID for asset Virtuoso is currently downloading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *currentlyDownloadingAsset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This value is only valid when the application is active.  Once Virtuoso has transferred
+to background downloads, Virtuoso may download none, one, or all of the assets at once.
+Status for these background downloads will be updated when the application resumes operation
+in the foreground.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastBackplaneSyncTime" title="lastBackplaneSyncTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastBackplaneSyncTime">&nbsp;&nbsp;lastBackplaneSyncTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The date/time of the last successful Backplane sync</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDate *lastBackplaneSyncTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/offlineTimedOut" title="offlineTimedOut"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offlineTimedOut">&nbsp;&nbsp;offlineTimedOut</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether authorization with the Backplane has timed out</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean offlineTimedOut</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If YES, then attempts to create a VirtuosoFileProxy for any assets will return nil,
+and all attempts to access the local file paths for assets on disk via Virtuoso
+objects will also return nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/licenseExpiry" title="licenseExpiry"></a>
+	<h3 class="method-title"><code><a href="#//api/name/licenseExpiry">&nbsp;&nbsp;licenseExpiry</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When the Virtuoso SDK license expires</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDate *licenseExpiry</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If your SDK license expires, then this property returns the date/time when the license
+will expire, otherwise it returns nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEnabled" title="downloadEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEnabled">&nbsp;&nbsp;downloadEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether this device is permitted to download</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean downloadEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso ANDs this value with the <a href="#//api/name/enabled">enabled</a> property to determine if it should permit downloads.
+This property is included as a convenience to quickly access the effective download permissions
+for the current device.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/devices" title="devices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/devices">&nbsp;&nbsp;devices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of <a href="../Classes/VirtuosoDevice.html">VirtuosoDevice</a> objects associated with the registered User.
+The array is current as of the last sync with the Backplane.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSArray *devices</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Queue Management" name="task_Queue Management"></a>
+						<h2 class="task-title">Queue Management</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetsInQueue" title="assetsInQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetsInQueue">&ndash;&nbsp;assetsInQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an ordered array of UUID strings for <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> items in the download queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)assetsInQueue</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An ordered array of UUID strings representing <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> objects enqueued for download.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Items at the beginning of the queue will be downloaded first.
+This method returns a copy of the queue; changes to the returned array will have no
+effect on the active queue.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addToQueue:atIndex:onComplete:" title="addToQueue:atIndex:onComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addToQueue:atIndex:onComplete:">&ndash;&nbsp;addToQueue:atIndex:onComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an asset to the download queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSError *_Nullable)addToQueue:(nonnull VirtuosoAsset *)<em>asset</em> atIndex:(NSUInteger)<em>index</em> onComplete:(AssetAddToQueueCompleteBlock _Nullable)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset to add to the download queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>index</code></th>
+						<td><p>The index in the queue to add the asset at</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>Completion block that fires after the asset has been added to the queue</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error indicating any issues that occurred while adding the asset to the queue, or nil if no error</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the application is in the foreground, Virtuoso generally downloads assets in the order
+they appear in the queue. If Virtuoso encounters an error while downloading an asset, it may
+put that asset aside and proceed to the next one in the queue. While in the background, queue
+order is suggested, but not enforced, and assets may download in any order. You should not make
+any assumptions about the number of assets Virtuoso may download in parallel.  Providing any index
+larger than the current queue size will result in the asset being added to the end of the queue.</p>
+
+<p>If this method is called without a completion block, any required permissions checks will be done
+synchronously, and this method may block until they complete.  Any errors will be returned in the
+method&rsquo;s return value.  If this method is called with a completion block, then the method is
+asynchronous, and the asset will be added to the queue after this method returns.  In this case,
+the return value will always be nil.  In either case, the asset will be added to the queue.
+Any errors encountered while adding the asset asynchronously (E.G. permissions errors) will be
+reported with the completion block.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/moveAsset:inQueueToIndex:" title="moveAsset:inQueueToIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/moveAsset:inQueueToIndex:">&ndash;&nbsp;moveAsset:inQueueToIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reorders the download queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)moveAsset:(nonnull VirtuosoAsset *)<em>asset</em> inQueueToIndex:(NSUInteger)<em>index</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset to move in the download queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>index</code></th>
+						<td><p>The index in the queue to move the asset to</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>While the enclosing application is in the foreground, Virtuoso generally downloads assets in the order
+they appear in the queue. If Virtuoso encounters an error while downloading an asset, it may
+put that asset aside and proceed to the next one in the queue. While in the background, queue
+order is suggested, but not enforced, and assets may download in any order. You should not make
+any assumptions about the number of assets Virtuoso may download in parallel.  Providing any index
+larger than the current queue size will result in the asset being added to the end of the queue.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeFromQueue:" title="removeFromQueue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeFromQueue:">&ndash;&nbsp;removeFromQueue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove the given asset from the download queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)removeFromQueue:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset to remove from the download queue</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The location the asset was removed from, if successful, or NSNotFound if the asset was not in the queue.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetInQueueWithURL:" title="assetInQueueWithURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetInQueueWithURL:">&ndash;&nbsp;assetInQueueWithURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieves an asset in the download queue by remote URL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable VirtuosoAsset *)assetInQueueWithURL:(nonnull NSString *)<em>url</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>url</code></th>
+						<td><p>The remote url of an asset to query for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object on success or nil on failure.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> This method searches the entire queue and may block for some time.  It&rsquo;s far more
+efficient to access the asset in the queue by known index or UUID value.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetInQueueWithUUID:" title="assetInQueueWithUUID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetInQueueWithUUID:">&ndash;&nbsp;assetInQueueWithUUID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieves an asset in the download queue by UUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable VirtuosoAsset *)assetInQueueWithUUID:(nonnull NSString *)<em>uuid</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p>The universally unique identifier (UUID) of the asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object on success or nil on failure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flushQueue" title="flushQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flushQueue">&ndash;&nbsp;flushQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes all items from the download queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)flushQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Various Properties" name="task_Various Properties"></a>
+						<h2 class="task-title">Various Properties</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/currentNetworkStatus" title="currentNetworkStatus"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentNetworkStatus">&ndash;&nbsp;currentNetworkStatus</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the network <a href="#//api/name/status">status</a>, as reported by Virtuoso&rsquo;s internal Reachability <a href="#//api/name/instance">instance</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (kVDE_NetworkStatus)currentNetworkStatus</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/networkStatusOK" title="networkStatusOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/networkStatusOK">&nbsp;&nbsp;networkStatusOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether current network state permits downloading</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean networkStatusOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/diskStatusOK" title="diskStatusOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/diskStatusOK">&nbsp;&nbsp;diskStatusOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether disk usage state permits downloading</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean diskStatusOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/memoryStatusOK" title="memoryStatusOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/memoryStatusOK">&nbsp;&nbsp;memoryStatusOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether out of memory occured</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean memoryStatusOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/queueStatusOK" title="queueStatusOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queueStatusOK">&nbsp;&nbsp;queueStatusOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether queue state permits downloading</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean queueStatusOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/accountStatusOK" title="accountStatusOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accountStatusOK">&nbsp;&nbsp;accountStatusOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether account-level business rules permit downloading</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean accountStatusOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/authenticationOK" title="authenticationOK"></a>
+	<h3 class="method-title"><code><a href="#//api/name/authenticationOK">&nbsp;&nbsp;authenticationOK</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether the Virtuoso SDK license is currently valid</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean authenticationOK</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/engineStatusInfo" title="engineStatusInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/engineStatusInfo">&nbsp;&nbsp;engineStatusInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Composite object returning the state of network, disk, queue, account, and authentication.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) VirtuosoEngineStatusInfo *engineStatusInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngine.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-12-02</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
