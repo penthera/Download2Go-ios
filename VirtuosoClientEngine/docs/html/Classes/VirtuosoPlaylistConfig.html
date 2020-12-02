@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoPlaylistConfig Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,31 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/isAssetHistoryConsidered">isAssetHistoryConsidered</option>
+		
+		<option value="//api/name/isPlaybackRequired">isPlaybackRequired</option>
+		
+		<option value="//api/name/isSearchFromBeginningEnabled">isSearchFromBeginningEnabled</option>
+		
+	</optgroup>
+	
 
 	
 
+	
 	
 </select>
 						</label>
@@ -59,22 +81,238 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoPlaylistConfig Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoPlaylistConfig.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Create this object and set the various properties to control how the <a href="../Classes/VirtuosoPlaylist.html">VirtuosoPlaylist</a> will be manged.</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isPlaybackRequired" title="isPlaybackRequired"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isPlaybackRequired">&nbsp;&nbsp;isPlaybackRequired</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls smart-download trigger logic.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) Boolean isPlaybackRequired</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Controls smart-download trigger logic. Smart-download is triggered when an asset
+is deleted via <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>.deleteAsset, OR when an Asset expires after playing.
+On trigger, this property is checked to see whether the Asset must ALSO have been played.
+If isPlaybackRequired is TRUE, and the Asset has NOT been played, smart-download
+is skipped.</p>
+
+<p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>.deleteAll will NOT trigger</p>
+
+<p>Default is TRUE.</p>
+
+<p>TRUE:  Asset must have been played before smart-download starts.</p>
+
+<p>FALSE: Asset does not have to have been played before smart-download is triggered.</p><div class="warning"><p><strong>Warning:</strong> <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>.deleteAll will NOT trigger smart-download.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylistConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAssetHistoryConsidered" title="isAssetHistoryConsidered"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAssetHistoryConsidered">&nbsp;&nbsp;isAssetHistoryConsidered</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls smart-download next download selection logic.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) Boolean isAssetHistoryConsidered</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Controls smart-download next download selection logic.
+Enabling this option will cause smart-download selction logic to consider asset history
+in addition to Playlist history, when determine what the next item to be downloaded
+on a Playlist.</p>
+
+<p>Example:</p>
+
+<p>1) User downloads, plays, then deletes asset X</p>
+
+<p>2) Next month, A playlist is created for which asset X is a member.
+VirtuosoPlaylistConfig is created with following settings:
+isAssetHistoryConsidered = TRUE
+<a href="#//api/name/isPlaybackRequired">isPlaybackRequired</a> = TRUE</p>
+
+<p>3) During smart-download find next, asset X will be skipped in Playlist,
+history shows asset X was downloaded, played, then deleted.</p>
+
+<p>Default is FALSE.</p>
+
+<p>TRUE:  Check asseet history</p>
+
+<p>FALSE: Do not check asset history.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylistConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isSearchFromBeginningEnabled" title="isSearchFromBeginningEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isSearchFromBeginningEnabled">&nbsp;&nbsp;isSearchFromBeginningEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Controls smart-download next playlist item search logic.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) Boolean isSearchFromBeginningEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Controls smart-download next playlist item search logic. Default is FALSE.</p>
+
+<p>Default is FALSE.</p>
+
+<p>TRUE:  Search from beginning of playlist, for first Asset (excluding asset that triggered smart-download) that
+does not exist on the device, and which has not been previously downloaded and deleted.</p>
+
+<p>FALSE: Search from Asset that triggered smart-download to next item in playlist that
+does not exist on the device, and which has not been previously downloaded and deleted.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylistConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-10-05</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-12-02</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoLogger Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,75 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
 	
 
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/backplaneLoggingEnabled">backplaneLoggingEnabled</option>
+		
+		<option value="//api/name/enable">enable</option>
+		
+		<option value="//api/name/notificationQueue">notificationQueue</option>
+		
+		<option value="//api/name/proxyLoggingEnabled">proxyLoggingEnabled</option>
+		
+		<option value="//api/name/streamAssuredLoggingEnabled">streamAssuredLoggingEnabled</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/addCustomLogEvent:withNumericData:">+ addCustomLogEvent:withNumericData:</option>
+		
+		<option value="//api/name/addCustomLogEvent:withStringData:">+ addCustomLogEvent:withStringData:</option>
+		
+		<option value="//api/name/addDebugEvent:atLevel:">+ addDebugEvent:atLevel:</option>
+		
+		<option value="//api/name/addDebugEvent:atLevel:force:">+ addDebugEvent:atLevel:force:</option>
+		
+		<option value="//api/name/addDelegate:">+ addDelegate:</option>
+		
+		<option value="//api/name/delegates">+ delegates</option>
+		
+		<option value="//api/name/enableLogsToFile:">+ enableLogsToFile:</option>
+		
+		<option value="//api/name/eventTypeToString:">+ eventTypeToString:</option>
+		
+		<option value="//api/name/isLoggingToFile">+ isLoggingToFile</option>
+		
+		<option value="//api/name/logAssetExpired:">+ logAssetExpired:</option>
+		
+		<option value="//api/name/logLevel">+ logLevel</option>
+		
+		<option value="//api/name/logPlaybackPausedForAsset:withSecondsSinceLastStart:">+ logPlaybackPausedForAsset:withSecondsSinceLastStart:</option>
+		
+		<option value="//api/name/logPlaybackProgress:statistics:">+ logPlaybackProgress:statistics:</option>
+		
+		<option value="//api/name/logPlaybackStartedForAsset:">+ logPlaybackStartedForAsset:</option>
+		
+		<option value="//api/name/logPlaybackStartedForAsset:withTTFF:">+ logPlaybackStartedForAsset:withTTFF:</option>
+		
+		<option value="//api/name/logPlaybackStoppedForAsset:withSecondsSinceLastStart:">+ logPlaybackStoppedForAsset:withSecondsSinceLastStart:</option>
+		
+		<option value="//api/name/removeDelegate:">+ removeDelegate:</option>
+		
+		<option value="//api/name/setLogLevel:">+ setLogLevel:</option>
+		
+	</optgroup>
+	
+
+	
 	
 </select>
 						</label>
@@ -59,22 +125,1409 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoLogger Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoLogger.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A static package responsible for managing all Virtuoso logging.</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this type directly.
+Only the static methods provided with this interface should be used.</p></div>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/enable" title="enable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enable">&nbsp;&nbsp;enable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class property to globally enable / disable Virtuoso logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, class) Boolean enable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Global Logging enable switch.
+Examples:
+VirtuosoLogger.enable = true;  // enables logging
+VirtuosoLogger.enable = false; // disables logging</p>
+
+<p>Default is true
+This setting does not persist across App restarts.
+Recommend setting in AppDelegate as early as possible if disable is required.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/backplaneLoggingEnabled" title="backplaneLoggingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/backplaneLoggingEnabled">&nbsp;&nbsp;backplaneLoggingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class property to globally <a href="#//api/name/enable">enable</a> / disable Backplane logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, class) Boolean backplaneLoggingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Global Backplane logging
+Examples:
+VirtuosoLogger.backplaneLoggingEnabled = true;  // enables logging
+VirtuosoLogger.backplaneLoggingEnabled = false; // disables logging</p>
+
+<p>Default is true
+This setting persist&rsquo;s across App restarts.
+Recommend setting in AppDelegate as early as possible if disable is required.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/proxyLoggingEnabled" title="proxyLoggingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/proxyLoggingEnabled">&nbsp;&nbsp;proxyLoggingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class property to globally <a href="#//api/name/enable">enable</a> / disable Proxy logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, class) Boolean proxyLoggingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Global Proxy logging
+Examples:
+VirtuosoLogger.proxyLoggingEnabled = true;  // enables logging
+VirtuosoLogger.proxyLoggingEnabled = false; // disables logging</p>
+
+<p>Default is true
+This setting persist&rsquo;s across App restarts.
+Recommend setting in AppDelegate as early as possible if disable is required.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/streamAssuredLoggingEnabled" title="streamAssuredLoggingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/streamAssuredLoggingEnabled">&nbsp;&nbsp;streamAssuredLoggingEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Class property to globally <a href="#//api/name/enable">enable</a> / disable Stream Assured logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, class) Boolean streamAssuredLoggingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Global Proxy logging
+Examples:
+VirtuosoLogger.streamAssuredLoggingEnabled = true;  // enables logging
+VirtuosoLogger.streamAssuredLoggingEnabled = false; // disables logging</p>
+
+<p>Default is false
+This setting persist&rsquo;s across App restarts.
+Recommend setting in AppDelegate as early as possible if disable is required.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/notificationQueue" title="notificationQueue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/notificationQueue">&nbsp;&nbsp;notificationQueue</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Queue used to post Logger delegate notifications. Default is MainThread.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, class) NSOperationQueue *notificationQueue</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you need Notifications on a different thread from the default (MainThread), set
+this class property with the NSOperationQueue you want to receive Logger delegate notifications.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Startup And Configuration" name="task_Startup And Configuration"></a>
+						<h2 class="task-title">Startup And Configuration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/eventTypeToString:" title="eventTypeToString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/eventTypeToString:">+&nbsp;eventTypeToString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns English localized string for the <a href="../Constants/kVL_LogEvent.html">kVL_LogEvent</a> enum value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nonnull)eventTypeToString:(kVL_LogEvent)<em>event</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p><a href="../Constants/kVL_LogEvent.html">kVL_LogEvent</a> enum value</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns English localized string for the <a href="../Constants/kVL_LogEvent.html">kVL_LogEvent</a> enum value</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableLogsToFile:" title="enableLogsToFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableLogsToFile:">+&nbsp;enableLogsToFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enables/disables file-based logging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)enableLogsToFile:(Boolean)<em>enable</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enable</code></th>
+						<td><p>Whether to <a href="#//api/name/enable">enable</a> file-based logging</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If enabled, Virtuoso will save all logs to log.txt in the app&rsquo;s sandboxed Documents
+directory. Default is NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isLoggingToFile" title="isLoggingToFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isLoggingToFile">+&nbsp;isLoggingToFile</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether Virtuoso is currently logging to file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (Boolean)isLoggingToFile</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Whether Virtuoso is currently logging to file</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLogLevel:" title="setLogLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLogLevel:">+&nbsp;setLogLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the log level for the Virtuoso logging system</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setLogLevel:(kVL_LoggingLevel)<em>level</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>The filter level for log output</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>In a debug build, this value is ignored and Virtuoso always sends all output to the console.
+In a release build, Virtuoso will only send debug log information to console for the chosen
+log level and lower.</p>
+
+<p>Default is kVL_LogVerbose for debug builds and kVL_LogInformation for production builds.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logLevel" title="logLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logLevel">+&nbsp;logLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current log filter level</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (kVL_LoggingLevel)logLevel</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current log filter level</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Manually Generated Events" name="task_Manually Generated Events"></a>
+						<h2 class="task-title">Manually Generated Events</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addCustomLogEvent:withStringData:" title="addCustomLogEvent:withStringData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addCustomLogEvent:withStringData:">+&nbsp;addCustomLogEvent:withStringData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a arbitrary logging event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addCustomLogEvent:(nonnull NSString *)<em>eventName</em> withStringData:(nonnull NSString *)<em>eventData</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of your custom log event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventData</code></th>
+						<td><p>A string containing arbitrary data related to your log event</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addCustomLogEvent:withNumericData:" title="addCustomLogEvent:withNumericData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addCustomLogEvent:withNumericData:">+&nbsp;addCustomLogEvent:withNumericData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a arbitrary logging event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addCustomLogEvent:(nonnull NSString *)<em>eventName</em> withNumericData:(long)<em>eventData</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventName</code></th>
+						<td><p>The name of your custom log event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventData</code></th>
+						<td><p>A long value containing arbitrary data related to your log event</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDebugEvent:atLevel:" title="addDebugEvent:atLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDebugEvent:atLevel:">+&nbsp;addDebugEvent:atLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a debug event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addDebugEvent:(nonnull NSString *)<em>eventData</em> atLevel:(kVL_LoggingLevel)<em>level</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventData</code></th>
+						<td><p>A string containing arbitrary debug data for logging</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>The log level this event is associated with</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso does not post these events to the Backplane.
+However, Virtuoso will show them on the console if verbose console is enabled.
+Virtuoso will write them to the log file, if file logging is enabled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDebugEvent:atLevel:force:" title="addDebugEvent:atLevel:force:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDebugEvent:atLevel:force:">+&nbsp;addDebugEvent:atLevel:force:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a debug event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addDebugEvent:(nonnull NSString *)<em>eventData</em> atLevel:(kVL_LoggingLevel)<em>level</em> force:(Boolean)<em>force</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>eventData</code></th>
+						<td><p>A string containing arbitrary debug data for logging</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>The log level this event is associated with</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>force</code></th>
+						<td><p>Log even when logging is disabled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso does not post these events to the Backplane.
+However, Virtuoso will show them on the console if verbose console is enabled.
+Virtuoso will write them to the log file, if file logging is enabled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logAssetExpired:" title="logAssetExpired:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logAssetExpired:">+&nbsp;logAssetExpired:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logs &ldquo;expire&rdquo; event for an asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logAssetExpired:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The expired asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso cannot always detect immediately when an asset has expired.  This method
+allows you to log this event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logPlaybackStartedForAsset:" title="logPlaybackStartedForAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logPlaybackStartedForAsset:">+&nbsp;logPlaybackStartedForAsset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logs &ldquo;play&rdquo; event for an asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logPlaybackStartedForAsset:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The played asset</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso cannot automatically detect a &lsquo;play&rsquo; event, since this occurs at the app
+level, &ldquo;above&rdquo; Virtuoso. This method allows you to log the event.
+Note that a &ldquo;pause&rdquo; event is equivalent to a stop event followed by a start event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logPlaybackProgress:statistics:" title="logPlaybackProgress:statistics:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logPlaybackProgress:statistics:">+&nbsp;logPlaybackProgress:statistics:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logs playback progress for the specified asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logPlaybackProgress:(nonnull VirtuosoAsset *)<em>asset</em> statistics:(nonnull NSDictionary *)<em>statistics</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The played asset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>start</code></th>
+						<td><p>Reported starting percent. If player does not start playing at zero, set this parameter to the percent where playback started.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>Reported ending percent played.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method can be used to report playback progess. Virtuoso will attempt to automatically report playback progress event for Virtuoso Assets that are played using Apple&rsquo;s AVPlayer.
+For customers that do not use AVPlayer, this method can be used to report playback progress. This event should only be reported once, for example, after playback has been stopped.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logPlaybackStartedForAsset:withTTFF:" title="logPlaybackStartedForAsset:withTTFF:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logPlaybackStartedForAsset:withTTFF:">+&nbsp;logPlaybackStartedForAsset:withTTFF:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logs &ldquo;play&rdquo; event for an asset, including optional &ldquo;time to first frame&rdquo; data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logPlaybackStartedForAsset:(nonnull VirtuosoAsset *)<em>asset</em> withTTFF:(NSTimeInterval)<em>ttff</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The played asset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ttff</code></th>
+						<td><p>If this play event represents initial playback (from time 0), then you may optionally
+include the &ldquo;time to first frame&rdquo; measurement in the event data.  If you do not have
+this value, use the version of this method that does not include this parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso cannot automatically detect a &lsquo;play&rsquo; event, since this occurs at the app
+level, &ldquo;above&rdquo; Virtuoso. This method allows you to log the event.
+Note that a &ldquo;pause&rdquo; event is equivalent to a stop event followed by a start event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logPlaybackStoppedForAsset:withSecondsSinceLastStart:" title="logPlaybackStoppedForAsset:withSecondsSinceLastStart:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logPlaybackStoppedForAsset:withSecondsSinceLastStart:">+&nbsp;logPlaybackStoppedForAsset:withSecondsSinceLastStart:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logs &ldquo;stop-play&rdquo; event for an asset when playback has ended.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logPlaybackStoppedForAsset:(nonnull VirtuosoAsset *)<em>asset</em> withSecondsSinceLastStart:(long long)<em>seconds</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The stopped asset</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>seconds</code></th>
+						<td><p>The number of seconds the asset was played before it was stopped or paused
+(e.g. play time since &lsquo;start&rsquo; was reported)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso cannot automatically detect a &lsquo;stop play&rsquo; event, since this occurs at the app
+level, &ldquo;above&rdquo; Virtuoso. This method allows you to log the event.
+Note that a &ldquo;pause&rdquo; event is equivalent to a stop event followed by a start event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/logPlaybackPausedForAsset:withSecondsSinceLastStart:" title="logPlaybackPausedForAsset:withSecondsSinceLastStart:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/logPlaybackPausedForAsset:withSecondsSinceLastStart:">+&nbsp;logPlaybackPausedForAsset:withSecondsSinceLastStart:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Logs &ldquo;stop-play&rdquo; event for an asset and should only be used when playback is PAUSED during playback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)logPlaybackPausedForAsset:(nonnull VirtuosoAsset *)<em>asset</em> withSecondsSinceLastStart:(long long)<em>seconds</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>The asset that was playing and which is now paused playback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>seconds</code></th>
+						<td><p>The number of seconds the asset was played before it was stopped or paused
+(e.g. play time since &lsquo;start&rsquo; was reported)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Virtuoso cannot automatically detect a &lsquo;stop play&rsquo; event, since this occurs at the app
+level, &ldquo;above&rdquo; Virtuoso. This method allows you to log the event.
+Note that a &ldquo;pause&rdquo; event is equivalent to a stop event followed by a start event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Log Monitoring" name="task_Log Monitoring"></a>
+						<h2 class="task-title">Log Monitoring</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/addDelegate:" title="addDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:">+&nbsp;addDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds an object that follows the <a href="../Protocols/VirtuosoLoggerDelegate.html">VirtuosoLoggerDelegate</a> protocol to the delegate list.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)addDelegate:(nonnull id&lt;VirtuosoLoggerDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>An object that follows the <a href="../Protocols/VirtuosoLoggerDelegate.html">VirtuosoLoggerDelegate</a> protocol</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you add the same delegate twice, Virtuoso will ignore the second request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">+&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a delegate from the delegate list.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)removeDelegate:(nonnull id&lt;VirtuosoLoggerDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>An object to be removed from the delegate list</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/delegates" title="delegates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegates">+&nbsp;delegates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a current list of logging delegates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSArray *)delegates</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The current list of logging delegates.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-10-05</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-12-02</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

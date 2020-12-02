@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoLoggerDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,35 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/virtuosoCustomEventOccurred:">- virtuosoCustomEventOccurred:</option>
+		
+		<option value="//api/name/virtuosoDebugEventOccurred:atLevel:">- virtuosoDebugEventOccurred:atLevel:</option>
+		
+		<option value="//api/name/virtuosoEventOccurred:forFile:onBearer:withData:">- virtuosoEventOccurred:forFile:onBearer:withData:</option>
+		
+		<option value="//api/name/virtuosoEventOccurred:forFile:onBearer:withStringData:">- virtuosoEventOccurred:forFile:onBearer:withStringData:</option>
+		
+		<option value="//api/name/virtuosoRawEventSave:">- virtuosoRawEventSave:</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +85,370 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoLoggerDelegate Protocol Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoLogger.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>For those who wish to use their own logging system or report metrics to
+non-Virtuoso locations/trackers. Virtuoso will send all log events to the registered
+delegate if the <a href="../Classes/VirtuosoLogger.html">VirtuosoLogger</a> would have otherwise processed them.</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/virtuosoEventOccurred:forFile:onBearer:withData:" title="virtuosoEventOccurred:forFile:onBearer:withData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtuosoEventOccurred:forFile:onBearer:withData:">&ndash;&nbsp;virtuosoEventOccurred:forFile:onBearer:withData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reports that a tracked event was logged.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)virtuosoEventOccurred:(kVL_LogEvent)<em>event</em> forFile:(nullable NSString *)<em>fileID</em> onBearer:(kVL_BearerType)<em>bearer</em> withData:(long long)<em>data</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>The type of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fileID</code></th>
+						<td><p>The UUID of the relevant asset.  Nil for events that don&rsquo;t relate to a specific asset.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bearer</code></th>
+						<td><p>The network type relating to the event.  kVL_Invalid for events that don&rsquo;t relate to
+the network state.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>A numeric value semantically unique to the specific event.  Will be 0 when not required.
+Example: For the download-paused event, contains total bytes downloaded so far for this asset.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/virtuosoEventOccurred:forFile:onBearer:withStringData:" title="virtuosoEventOccurred:forFile:onBearer:withStringData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtuosoEventOccurred:forFile:onBearer:withStringData:">&ndash;&nbsp;virtuosoEventOccurred:forFile:onBearer:withStringData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reports that a tracked event was logged.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)virtuosoEventOccurred:(kVL_LogEvent)<em>event</em> forFile:(nullable NSString *)<em>fileID</em> onBearer:(kVL_BearerType)<em>bearer</em> withStringData:(nullable NSString *)<em>data</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>The type of event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fileID</code></th>
+						<td><p>The UUID of the relevant asset.  Nil for events that don&rsquo;t relate to a specific asset.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bearer</code></th>
+						<td><p>The network type relating to the event.  kVL_Invalid for events that don&rsquo;t relate to
+the network state.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>A string value semantically unique to the specific event.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/virtuosoCustomEventOccurred:" title="virtuosoCustomEventOccurred:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtuosoCustomEventOccurred:">&ndash;&nbsp;virtuosoCustomEventOccurred:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reports on a custom event not tracked by the standard event list.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary *)<em>event</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>An NSDictionary containing the logged event data</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/virtuosoDebugEventOccurred:atLevel:" title="virtuosoDebugEventOccurred:atLevel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtuosoDebugEventOccurred:atLevel:">&ndash;&nbsp;virtuosoDebugEventOccurred:atLevel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reports debug data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)virtuosoDebugEventOccurred:(nonnull NSString *)<em>data</em> atLevel:(kVL_LoggingLevel)<em>level</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>A string containing the debug event data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>level</code></th>
+						<td><p>The severity level of the log item</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For non-debug builds and when verbose console option is  off, Virtuoso won&rsquo;t send debug output
+to the debugging console. Use this method to access log debug output.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/virtuosoRawEventSave:" title="virtuosoRawEventSave:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/virtuosoRawEventSave:">&ndash;&nbsp;virtuosoRawEventSave:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reports raw event being saved</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)virtuosoRawEventSave:(nonnull NSDictionary *)<em>event</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>event</code></th>
+						<td><p>Dictionary description of event</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLogger.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-10-05</p>
+						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-12-02</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>
