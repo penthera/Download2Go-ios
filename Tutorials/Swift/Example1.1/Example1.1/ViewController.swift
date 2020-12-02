@@ -12,9 +12,10 @@ import AVKit
 class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDelegate {
 
     // <-- change these to your settings in production
-    let backplaneUrl = "replace_with_your_backplane_url"
-    let publicKey = "replace_with_your_public_key"
-    let privateKey = "replace_with_your_private_key"
+    let backplaneUrl = "https://qa.penthera.com"
+    let publicKey = "c9adba5e6ceeed7d7a5bfc9ac24197971bbb4b2c34813dd5c674061a961a899e"
+    let privateKey = "41cc269275e04dcb4f2527b0af6e0ea11d227319fa743e4364255d07d7ed2830"
+
     //
     // MARK: Instance data
     //
@@ -261,8 +262,11 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
                                                    description: "Tears of Steel",
                                                    type: kVDE_AssetType.vde_AssetTypeHLS) else {
                                                     print("create config failed")
-                                                    sender.isEnabled = true
-                                                    return
+                DispatchQueue.main.async {
+                    sender.isEnabled = true
+                    return
+                }
+                return
             }
 
             // Create asset and commence downloading.

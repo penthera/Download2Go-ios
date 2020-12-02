@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D93B3732538CD7E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3712538CD75004F08DA /* VirtuosoClientDownloadEngine.xcframework */; };
+		4D93B3742538CD7E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3712538CD75004F08DA /* VirtuosoClientDownloadEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D753103422E78CFF000E1A15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D753103322E78CFF000E1A15 /* AppDelegate.m */; };
 		D753103722E78CFF000E1A15 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D753103622E78CFF000E1A15 /* ViewController.m */; };
 		D753103A22E78CFF000E1A15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D753103822E78CFF000E1A15 /* Main.storyboard */; };
 		D753103C22E78D00000E1A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D753103B22E78D00000E1A15 /* Assets.xcassets */; };
 		D753103F22E78D00000E1A15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D753103D22E78D00000E1A15 /* LaunchScreen.storyboard */; };
 		D753104222E78D00000E1A15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D753104122E78D00000E1A15 /* main.m */; };
-		D753104922E78D2A000E1A15 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D753104822E78D2A000E1A15 /* VirtuosoClientDownloadEngine.framework */; };
-		D753104B22E78D36000E1A15 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D753104822E78D2A000E1A15 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D753105422E78DD9000E1A15 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = D753104D22E78DD8000E1A15 /* Settings.png */; };
 		D753105522E78DD9000E1A15 /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D753104E22E78DD8000E1A15 /* Settings@3x.png */; };
 		D753105622E78DD9000E1A15 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D753104F22E78DD8000E1A15 /* Settings@2x.png */; };
@@ -29,7 +29,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D753104B22E78D36000E1A15 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				4D93B3742538CD7E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D93B3712538CD75004F08DA /* VirtuosoClientDownloadEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VirtuosoClientDownloadEngine.xcframework; path = ../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.xcframework; sourceTree = "<group>"; };
 		D753102F22E78CFF000E1A15 /* Example1.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example1.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D753103222E78CFF000E1A15 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D753103322E78CFF000E1A15 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		D753103E22E78D00000E1A15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D753104022E78D00000E1A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D753104122E78D00000E1A15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D753104822E78D2A000E1A15 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode/VirtuosoClientDownloadEngine.framework"; sourceTree = "<group>"; };
 		D753104D22E78DD8000E1A15 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		D753104E22E78DD8000E1A15 /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@3x.png"; sourceTree = "<group>"; };
 		D753104F22E78DD8000E1A15 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D753104922E78D2A000E1A15 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				4D93B3732538CD7E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,6 @@
 		D753102622E78CFF000E1A15 = {
 			isa = PBXGroup;
 			children = (
-				D753104822E78D2A000E1A15 /* VirtuosoClientDownloadEngine.framework */,
 				D753103122E78CFF000E1A15 /* Example1.4 */,
 				D753103022E78CFF000E1A15 /* Products */,
 			);
@@ -89,6 +88,7 @@
 		D753103122E78CFF000E1A15 /* Example1.4 */ = {
 			isa = PBXGroup;
 			children = (
+				4D93B3712538CD75004F08DA /* VirtuosoClientDownloadEngine.xcframework */,
 				D753103222E78CFF000E1A15 /* AppDelegate.h */,
 				D753103322E78CFF000E1A15 /* AppDelegate.m */,
 				D753103B22E78D00000E1A15 /* Assets.xcassets */,
@@ -331,7 +331,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example1.4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -349,7 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example1.4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,8 @@
 		3D105753219E147900BB0BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D105751219E147900BB0BA4 /* LaunchScreen.storyboard */; };
 		3D2BF9D521B82D28001E3AD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2BF9D321B82D28001E3AD8 /* Main.storyboard */; };
 		3DEA9D6821B9A2DD00BD0B40 /* DemoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA9D6721B9A2DD00BD0B40 /* DemoPlayerViewController.swift */; };
-		D7D9FA1122C39CFD00026B44 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D9FA1022C39CFD00026B44 /* VirtuosoClientDownloadEngine.framework */; };
-		D7D9FA1222C39D1100026B44 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7D9FA1022C39CFD00026B44 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D93B3972538D498004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3952538D47E004F08DA /* VirtuosoClientDownloadEngine.xcframework */; };
+		4D93B3982538D498004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3952538D47E004F08DA /* VirtuosoClientDownloadEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D7D9FA1222C39D1100026B44 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				4D93B3982538D498004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,8 @@
 		3D1057B1219E6BA500BB0BA4 /* Download2GoHelloWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Download2GoHelloWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 		3D2BF9D421B82D28001E3AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DEA9D6721B9A2DD00BD0B40 /* DemoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPlayerViewController.swift; sourceTree = "<group>"; };
-		D7D9FA1022C39CFD00026B44 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = "../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Debug-Bitcode/VirtuosoClientDownloadEngine.framework"; sourceTree = "<group>"; };
+		4D93B3952538D47E004F08DA /* VirtuosoClientDownloadEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VirtuosoClientDownloadEngine.xcframework; path = ../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.xcframework; sourceTree = "<group>"; };
+		4DAAB58525267F8300034A80 /* Download2GoHelloWorld-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Download2GoHelloWorld-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7D9FA1122C39CFD00026B44 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				4D93B3972538D498004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,9 +78,10 @@
 		3D105747219E147600BB0BA4 /* Download2GoHelloWorld */ = {
 			isa = PBXGroup;
 			children = (
-				D7D9FA1022C39CFD00026B44 /* VirtuosoClientDownloadEngine.framework */,
+				4D93B3952538D47E004F08DA /* VirtuosoClientDownloadEngine.xcframework */,
 				3D87EF5821ACDE69000FB23D /* Player */,
 				3D105748219E147600BB0BA4 /* AppDelegate.swift */,
+				4DAAB58525267F8300034A80 /* Download2GoHelloWorld-Bridging-Header.h */,
 				3D10574A219E147600BB0BA4 /* HelloWorld.swift */,
 				3D10574F219E147900BB0BA4 /* Assets.xcassets */,
 				3D2BF9D321B82D28001E3AD8 /* Main.storyboard */,
@@ -336,7 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Download2GoHelloWorld/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Download2GoHelloWorld/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

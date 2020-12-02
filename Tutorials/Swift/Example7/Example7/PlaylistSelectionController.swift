@@ -53,9 +53,9 @@ class PlaylistSelectionController: UITableViewController {
         var detailText : String?
         detailText = "(\(playlist.items.count)) items\n"
         detailText?.append("Status: \(playlist.statusAsString())\n")
-        detailText?.append("Playback required: \(playlist.config.isPlaybackRequired ? "yes" : "no")\n")
-        detailText?.append("Asset History considered: \(playlist.config.isAssetHistoryConsidered ? "yes" : "no")\n")
-        detailText?.append("Search from beginning: \(playlist.config.isSearchFromBeginningEnabled ? "yes" : "no")\n")
+        detailText?.append("Playback required: \(playlist.isPlaybackRequired ? "yes" : "no")\n")
+        detailText?.append("Asset History considered: \(playlist.isAssetHistoryConsidered ? "yes" : "no")\n")
+        detailText?.append("Search from beginning: \(playlist.isSearchFromBeginningEnabled ? "yes" : "no")\n")
         
         cell.detailTextLabel?.text = detailText;
         if playlist.items.count > 0 {

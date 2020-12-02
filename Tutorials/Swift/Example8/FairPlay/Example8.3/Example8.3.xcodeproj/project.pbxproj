@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D93B3D32538DA92004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3D12538DA82004F08DA /* VirtuosoClientDownloadEngine.xcframework */; };
+		4D93B3D42538DA92004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3D12538DA82004F08DA /* VirtuosoClientDownloadEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7D7671423EC6FC500106024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7671323EC6FC500106024 /* AppDelegate.swift */; };
 		D7D7671823EC6FC500106024 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7671723EC6FC500106024 /* ViewController.swift */; };
 		D7D7671B23EC6FC500106024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7671923EC6FC500106024 /* Main.storyboard */; };
 		D7D7671D23EC6FC500106024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D7671C23EC6FC500106024 /* Assets.xcassets */; };
 		D7D7672023EC6FC500106024 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D7671E23EC6FC500106024 /* LaunchScreen.storyboard */; };
-		D7D7672923EC709400106024 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D7672723EC700A00106024 /* VirtuosoClientDownloadEngine.framework */; };
-		D7D7672A23EC709400106024 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7D7672723EC700A00106024 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7D7673223EC70A500106024 /* DemoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7672D23EC70A500106024 /* DemoPlayerViewController.swift */; };
 		D7D7673323EC70A500106024 /* FairPlayDrmConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7673023EC70A500106024 /* FairPlayDrmConfigDelegate.swift */; };
 		D7D7673423EC70A500106024 /* FairPlayDrmSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7673123EC70A500106024 /* FairPlayDrmSetup.swift */; };
@@ -27,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D7D7672A23EC709400106024 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				4D93B3D42538DA92004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D93B3D12538DA82004F08DA /* VirtuosoClientDownloadEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VirtuosoClientDownloadEngine.xcframework; path = ../../../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.xcframework; sourceTree = "<group>"; };
 		D7D7671023EC6FC500106024 /* Example8.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example8.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D7671323EC6FC500106024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D7671723EC6FC500106024 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		D7D7671C23EC6FC500106024 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D7671F23EC6FC500106024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7D7672123EC6FC500106024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7D7672723EC700A00106024 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = "../../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Debug-Bitcode/VirtuosoClientDownloadEngine.framework"; sourceTree = "<group>"; };
 		D7D7672D23EC70A500106024 /* DemoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPlayerViewController.swift; sourceTree = "<group>"; };
 		D7D7672E23EC70A500106024 /* Example8.3-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Example8.3-Bridging-Header.h"; sourceTree = "<group>"; };
 		D7D7673023EC70A500106024 /* FairPlayDrmConfigDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FairPlayDrmConfigDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7D7672923EC709400106024 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				4D93B3D32538DA92004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,6 @@
 		D7D7670723EC6FC500106024 = {
 			isa = PBXGroup;
 			children = (
-				D7D7672723EC700A00106024 /* VirtuosoClientDownloadEngine.framework */,
 				D7D7671223EC6FC500106024 /* Example8.3 */,
 				D7D7671123EC6FC500106024 /* Products */,
 			);
@@ -82,6 +81,7 @@
 		D7D7671223EC6FC500106024 /* Example8.3 */ = {
 			isa = PBXGroup;
 			children = (
+				4D93B3D12538DA82004F08DA /* VirtuosoClientDownloadEngine.xcframework */,
 				D7D7672F23EC70A500106024 /* DRM */,
 				D7D7672E23EC70A500106024 /* Example8.3-Bridging-Header.h */,
 				D7D7672C23EC70A500106024 /* Player */,
@@ -336,7 +336,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
-				FRAMEWORK_SEARCH_PATHS = "../../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
 				INFOPLIST_FILE = Example8.3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -356,7 +355,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
-				FRAMEWORK_SEARCH_PATHS = "../../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
 				INFOPLIST_FILE = Example8.3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

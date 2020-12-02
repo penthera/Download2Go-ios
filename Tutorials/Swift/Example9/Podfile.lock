@@ -1,16 +1,16 @@
 PODS:
-  - VirtuosoClientDownloadEngine (4.00)
+  - VirtuosoClientDownloadEngine (4.1)
 
 DEPENDENCIES:
-  - VirtuosoClientDownloadEngine (from `../../CocoaPodsConfig/VirtuosoClientDownloadEngine.podspec`)
+  - VirtuosoClientDownloadEngine (from `../../Podspecs/VirtuosoClientDownloadEngine.podspec`)
 
 EXTERNAL SOURCES:
   VirtuosoClientDownloadEngine:
-    :podspec: "../../CocoaPodsConfig/VirtuosoClientDownloadEngine.podspec"
+    :podspec: "../../Podspecs/VirtuosoClientDownloadEngine.podspec"
 
 SPEC CHECKSUMS:
-  VirtuosoClientDownloadEngine: 0570897eddb61e7b8839402177dffd023bba9ad0
+  VirtuosoClientDownloadEngine: c2465d29d0e6aff3fd97f5564f083bef1fe36ddb
 
-PODFILE CHECKSUM: eb228c4fc5027585bf65d609bc168e7a99e58697
+PODFILE CHECKSUM: e210a6cf9e62ea70b42f17eb0c67579fefec2d0d
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

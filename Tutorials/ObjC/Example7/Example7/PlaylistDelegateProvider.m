@@ -13,8 +13,8 @@
 /*
  * This method is called by PlaylistManager when it needs next item in a Playlist
  */
-- (VirtuosoAssetConfig * _Nullable)assetForAssetID:(NSString * _Nonnull)assetID tryAgainLater:(nonnull Boolean *)tryAgainLater { 
-    
+-(VirtuosoPlaylistDownloadAssetItem*)assetForAssetID:(NSString *)assetID {
+        
     VirtuosoAssetConfig* config = nil;
     if ([assetID isEqualToString:@"SEASON-1-EPISODE-2"])
     {
@@ -34,8 +34,14 @@
     {
         NSLog(@"Episode not found for assetID: %@", assetID);
     }
-    
-    return config;
+    if (config)
+    {
+        return [[VirtuosoPlaylistDownloadAssetItem alloc]initWithAsset:config];
+    }
+    else
+    {
+        return [[VirtuosoPlaylistDownloadAssetItem alloc]initWithOption:PlaylistDownloadOption_SkipToNext];
+    }
 }
 
 @end

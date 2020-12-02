@@ -60,9 +60,9 @@
     cell.textLabel.text = playlist.name;
     NSMutableString* detailText = [NSMutableString stringWithFormat:@"%lu items\n", (unsigned long)playlist.items.count];
     [detailText appendFormat:@"Status: %@\n", playlist.statusAsString];
-    [detailText appendFormat:@"Playback required: %@\n", playlist.config.isPlaybackRequired ? @"yes" : @"no"];
-    [detailText appendFormat:@"Asset History considered: %@\n", playlist.config.isAssetHistoryConsidered ? @"yes" : @"no"];
-    [detailText appendFormat:@"Search from beginning: %@\n", playlist.config.isSearchFromBeginningEnabled ? @"yes" : @"no"];
+    [detailText appendFormat:@"Playback required: %@\n", playlist.isPlaybackRequired ? @"yes" : @"no"];
+    [detailText appendFormat:@"Asset History considered: %@\n", playlist.isAssetHistoryConsidered ? @"yes" : @"no"];
+    [detailText appendFormat:@"Search from beginning: %@\n", playlist.isSearchFromBeginningEnabled ? @"yes" : @"no"];
     
     cell.detailTextLabel.text = detailText;
     if (playlist.items.count > 0) {

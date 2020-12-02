@@ -1,16 +1,16 @@
 PODS:
-  - VirtuosoClientDownloadEngine (4.0)
+  - VirtuosoClientDownloadEngine (4.1)
 
 DEPENDENCIES:
-  - VirtuosoClientDownloadEngine
+  - VirtuosoClientDownloadEngine (from `../../Podspecs/VirtuosoClientDownloadEngine.podspec`)
 
-SPEC REPOS:
-  https://github.com/penthera/Cache-and-Carry-specs.git:
-    - VirtuosoClientDownloadEngine
+EXTERNAL SOURCES:
+  VirtuosoClientDownloadEngine:
+    :podspec: "../../Podspecs/VirtuosoClientDownloadEngine.podspec"
 
 SPEC CHECKSUMS:
-  VirtuosoClientDownloadEngine: 461e81a65c5e898a133735139d2601a601899af6
+  VirtuosoClientDownloadEngine: c2465d29d0e6aff3fd97f5564f083bef1fe36ddb
 
-PODFILE CHECKSUM: 1c7673c4b6291667479644032b2df43373c9f5b0
+PODFILE CHECKSUM: 44e30c57c6e8db11b638be73cc5dad1ea65a29f0
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

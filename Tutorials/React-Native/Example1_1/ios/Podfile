@@ -2,10 +2,10 @@
 #       or pull a version from github.  For production code you would normally reference
 #       the github version.  For guaranteed compatibility with the tutorials, use the local version.
 
-#       You may also choose to use bitcode.
+#       You may also choose to use widevine.
 
 local = true
-bitcode = true # default for React-Native
+widevine = false 
 
 if !local
   source 'https://github.com/penthera/Cache-and-Carry-specs.git'
@@ -49,17 +49,17 @@ target 'Example1.1 React Native' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   if local
-    if bitcode
-      pod 'VirtuosoClientDownloadEngineBitcode', :podspec => "../../../CocoaPodsConfig/VirtuosoClientDownloadEngineBitcode.podspec"
+    if widevine
+      pod 'VirtuosoClientDownloadEngineWidevine', :podspec => "../../../Podspecs/VirtuosoClientDownloadEngineWidevine.podspec"
     else
-      pod 'VirtuosoClientDownloadEngine', :podspec => "../../../CocoaPodsConfig/VirtuosoClientDownloadEngine.podspec"
+      pod 'VirtuosoClientDownloadEngine', :podspec => "../../../Podspecs/VirtuosoClientDownloadEngine.podspec"
     end
   else
-    if bitcode
+    if widevine
       # IMPORTANT - Include the most current Penthera SDK
-      pod 'VirtuosoClientDownloadEngineBitcode'
+      pod 'VirtuosoClientDownloadEngineWidevine'
       # ALTERNATIVE - Specify a specific version of Penthera SDK
-      # pod 'VirtuosoClientDownloadEngineBitcode', '~> 4.00'
+      # pod 'VirtuosoClientDownloadEngineWidevine', '~> 4.00'
     else
       # IMPORTANT - Include the most current Penthera SDK
       pod 'VirtuosoClientDownloadEngine'
@@ -67,9 +67,9 @@ target 'Example1.1 React Native' do
       # pod 'VirtuosoClientDownloadEngine', '~> 4.00'
     end
   end
-
-  puts "Using" + (local ? " local" : " github") + " version of VirtuosoClientDownloadEngine CocoaPod" + (bitcode ? " with bitcode" : "") 
-
+  
+  puts "Using" + (local ? " local" : " github") + " version of VirtuosoClientDownloadEngine CocoaPod" + (widevine ? " for Widevine" : "") 
+  
   target 'Example1.1 React NativeTests' do
     inherit! :search_paths
     # Pods for testing

@@ -16,6 +16,9 @@ Tutorials
 * Example10 - FastPlay example
 * Example11 - Device Unregister
 * Example12 - Advanced Error Handling
+* Example14 - Background Wake Processing
+* Example15 - Server Ads sample
+* Example16 - StreamAssured sample
 
 #### The React-Native Folder contains tutorials covering the following
 

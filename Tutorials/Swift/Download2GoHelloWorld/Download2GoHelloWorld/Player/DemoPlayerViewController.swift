@@ -17,7 +17,7 @@ class DemoPlayerViewController: VirtuosoPlayerViewController, VirtuosoAVAssetRes
         self.play()
         
         // Redirect errors from FairPlay licensing here so we can handle reporting errors to the user.
-        let asset = self.playerView.player.currentItem?.asset as! AVURLAsset
+        let asset = self.playerView.player?.currentItem?.asset as! AVURLAsset
         if (asset.resourceLoader.delegate?.conforms(to: VirtuosoAVAssetResourceLoaderDelegate.self))!
         {
             let loader = asset.resourceLoader.delegate as! VirtuosoAVAssetResourceLoaderDelegate

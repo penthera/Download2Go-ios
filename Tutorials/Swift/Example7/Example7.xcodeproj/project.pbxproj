@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D93B3B32538D66F004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3B12538D665004F08DA /* VirtuosoClientDownloadEngine.xcframework */; };
+		4D93B3B42538D66F004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3B12538D665004F08DA /* VirtuosoClientDownloadEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7182D7222D61D1000652125 /* PlaylistSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7182D7122D61D1000652125 /* PlaylistSelectionController.swift */; };
 		D7182D7622D61E2600652125 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7182D7522D61E2600652125 /* PlaylistViewController.swift */; };
 		D7892E6222CAB55A001CC265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7892E6122CAB55A001CC265 /* AppDelegate.swift */; };
@@ -14,8 +16,6 @@
 		D7892E6722CAB55A001CC265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7892E6522CAB55A001CC265 /* Main.storyboard */; };
 		D7892E6922CAB55B001CC265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7892E6822CAB55B001CC265 /* Assets.xcassets */; };
 		D7892E6C22CAB55B001CC265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7892E6A22CAB55B001CC265 /* LaunchScreen.storyboard */; };
-		D7892E7A22CAB5DE001CC265 /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7892E7822CAB5D7001CC265 /* VirtuosoClientDownloadEngine.framework */; };
-		D7892E7B22CAB5DE001CC265 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7892E7822CAB5D7001CC265 /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7892E8122CAB85F001CC265 /* DemoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7892E8022CAB85F001CC265 /* DemoPlayerViewController.swift */; };
 		D7892E8322CAB9A5001CC265 /* PlaylistDelegateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7892E8222CAB9A5001CC265 /* PlaylistDelegateProvider.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D7892E7B22CAB5DE001CC265 /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				4D93B3B42538D66F004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D93B3B12538D665004F08DA /* VirtuosoClientDownloadEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VirtuosoClientDownloadEngine.xcframework; path = ../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.xcframework; sourceTree = "<group>"; };
+		4DAAB584252679D000034A80 /* Example7-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example7-Bridging-Header.h"; sourceTree = "<group>"; };
 		D7182D7122D61D1000652125 /* PlaylistSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistSelectionController.swift; path = Example7/PlaylistSelectionController.swift; sourceTree = SOURCE_ROOT; };
 		D7182D7522D61E2600652125 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		D7892E5E22CAB55A001CC265 /* Example7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example7.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,8 +46,6 @@
 		D7892E6822CAB55B001CC265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7892E6B22CAB55B001CC265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7892E6D22CAB55B001CC265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7892E7322CAB58A001CC265 /* Example7-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example7-Bridging-Header.h"; sourceTree = "<group>"; };
-		D7892E7822CAB5D7001CC265 /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode/VirtuosoClientDownloadEngine.framework"; sourceTree = "<group>"; };
 		D7892E8022CAB85F001CC265 /* DemoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPlayerViewController.swift; sourceTree = "<group>"; };
 		D7892E8222CAB9A5001CC265 /* PlaylistDelegateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDelegateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7892E7A22CAB5DE001CC265 /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				4D93B3B32538D66F004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,8 +67,6 @@
 			children = (
 				D7892E6022CAB55A001CC265 /* Example7 */,
 				D7892E5F22CAB55A001CC265 /* Products */,
-				D7892E7322CAB58A001CC265 /* Example7-Bridging-Header.h */,
-				D7892E7722CAB5D7001CC265 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,8 +81,10 @@
 		D7892E6022CAB55A001CC265 /* Example7 */ = {
 			isa = PBXGroup;
 			children = (
+				4D93B3B12538D665004F08DA /* VirtuosoClientDownloadEngine.xcframework */,
 				D7892E6122CAB55A001CC265 /* AppDelegate.swift */,
 				D7892E6822CAB55B001CC265 /* Assets.xcassets */,
+				4DAAB584252679D000034A80 /* Example7-Bridging-Header.h */,
 				D7892E6D22CAB55B001CC265 /* Info.plist */,
 				D7892E6A22CAB55B001CC265 /* LaunchScreen.storyboard */,
 				D7892E6522CAB55A001CC265 /* Main.storyboard */,
@@ -95,14 +95,6 @@
 				D7892E6322CAB55A001CC265 /* ViewController.swift */,
 			);
 			path = Example7;
-			sourceTree = "<group>";
-		};
-		D7892E7722CAB5D7001CC265 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D7892E7822CAB5D7001CC265 /* VirtuosoClientDownloadEngine.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D7892E7F22CAB85F001CC265 /* Player */ = {
@@ -340,7 +332,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example7/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -348,7 +340,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.penthera.Example7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Example7-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example7/Example7-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,7 +354,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example7/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -370,7 +362,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.penthera.Example7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Example7-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example7/Example7-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

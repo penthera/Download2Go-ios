@@ -15,8 +15,7 @@ class PlaylistDelegateProvider : NSObject, VirtuosoPlaylistManagerDelegate {
      * This method is called by PlaylistManager when it needs next item in a Playlist
      */
     
-    @objc
-    func asset(forAssetID assetID: String, tryAgainLater: UnsafeMutablePointer<DarwinBoolean>) -> VirtuosoAssetConfig? {
+    @objc func asset(forAssetID assetID: String) -> VirtuosoPlaylistDownloadAssetItem {
         
         var config: VirtuosoAssetConfig?
         
@@ -40,7 +39,10 @@ class PlaylistDelegateProvider : NSObject, VirtuosoPlaylistManagerDelegate {
             break
         }
         
-        return config;
+        guard let assetConfig = config else {
+            return VirtuosoPlaylistDownloadAssetItem(option: .PlaylistDownloadOption_SkipToNext);
+        }
+        return VirtuosoPlaylistDownloadAssetItem(asset: assetConfig);
     }
     
 }

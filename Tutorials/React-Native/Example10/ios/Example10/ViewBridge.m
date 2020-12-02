@@ -219,7 +219,7 @@ RCT_EXPORT_METHOD(fastPlay)
       
       // Enable FastPlay
       
-      config.enableFastPlay = true;
+      config.fastPlayEnabled = true;
       
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                 

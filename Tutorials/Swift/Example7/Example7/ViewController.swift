@@ -12,9 +12,9 @@ import AVKit
 class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDelegate {
     
     // <-- change these to your settings in production
-    let backplaneUrl = "replace_with_your_backplane_url"
-    let publicKey = "replace_with_your_public_key"
-    let privateKey = "replace_with_your_private_key"
+    let backplaneUrl = "https://qa.penthera.com"
+    let publicKey = "c9adba5e6ceeed7d7a5bfc9ac24197971bbb4b2c34813dd5c674061a961a899e"
+    let privateKey = "41cc269275e04dcb4f2527b0af6e0ea11d227319fa743e4364255d07d7ed2830"
     
     //
     // MARK: Instance data
@@ -279,9 +279,8 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
             var playlists : Array<VirtuosoPlaylist> = Array()
             
             // Add a Playlist to the array
-            playlists.append(VirtuosoPlaylist(name: "TEST_PLAYLIST",
-                                              assets: ["SEASON-1-EPISODE-1", "SEASON-1-EPISODE-2", "SEASON-1-EPISODE-3"],
-                                              config: playlistConfig))
+            playlists.append(VirtuosoPlaylist(config: playlistConfig,
+                                              assets: ["SEASON-1-EPISODE-1", "SEASON-1-EPISODE-2", "SEASON-1-EPISODE-3"]))
             
             // When you create an Asset, you can also create playlists that might be assocated with the Asset.
             config.playlists = playlists

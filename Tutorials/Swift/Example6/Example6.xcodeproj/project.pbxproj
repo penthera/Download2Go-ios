@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D704BA3E22C4F550001EA1AD /* VirtuosoClientDownloadEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D704BA3D22C4F550001EA1AD /* VirtuosoClientDownloadEngine.framework */; };
-		D704BA4022C4F5B2001EA1AD /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D704BA3D22C4F550001EA1AD /* VirtuosoClientDownloadEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D93B3AF2538D62E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3AD2538D624004F08DA /* VirtuosoClientDownloadEngine.xcframework */; };
+		4D93B3B02538D62E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3AD2538D624004F08DA /* VirtuosoClientDownloadEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D704BA4322C4F8E4001EA1AD /* DemoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D704BA4222C4F8E4001EA1AD /* DemoPlayerViewController.swift */; };
 		D722A23422C4F02900737B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D722A23322C4F02900737B65 /* AppDelegate.swift */; };
 		D722A23622C4F02900737B65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D722A23522C4F02900737B65 /* ViewController.swift */; };
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D704BA4022C4F5B2001EA1AD /* VirtuosoClientDownloadEngine.framework in Embed Frameworks */,
+				4D93B3B02538D62E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,8 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D704BA3922C4F4FE001EA1AD /* Example6-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example6-Bridging-Header.h"; sourceTree = "<group>"; };
-		D704BA3D22C4F550001EA1AD /* VirtuosoClientDownloadEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VirtuosoClientDownloadEngine.framework; path = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode/VirtuosoClientDownloadEngine.framework"; sourceTree = "<group>"; };
+		4D93B3AD2538D624004F08DA /* VirtuosoClientDownloadEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VirtuosoClientDownloadEngine.xcframework; path = ../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.xcframework; sourceTree = "<group>"; };
+		4DAAB5822526777200034A80 /* Example6-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example6-Bridging-Header.h"; sourceTree = "<group>"; };
 		D704BA4222C4F8E4001EA1AD /* DemoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPlayerViewController.swift; sourceTree = "<group>"; };
 		D722A23022C4F02900737B65 /* Example6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D722A23322C4F02900737B65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D704BA3E22C4F550001EA1AD /* VirtuosoClientDownloadEngine.framework in Frameworks */,
+				4D93B3AF2538D62E004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,11 +74,9 @@
 		D722A22722C4F02900737B65 = {
 			isa = PBXGroup;
 			children = (
-				D704BA3D22C4F550001EA1AD /* VirtuosoClientDownloadEngine.framework */,
 				D722A23222C4F02900737B65 /* Example6 */,
 				D722A23122C4F02900737B65 /* Products */,
 				D704BA3722C4F2D8001EA1AD /* Frameworks */,
-				D704BA3922C4F4FE001EA1AD /* Example6-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,8 +91,10 @@
 		D722A23222C4F02900737B65 /* Example6 */ = {
 			isa = PBXGroup;
 			children = (
+				4D93B3AD2538D624004F08DA /* VirtuosoClientDownloadEngine.xcframework */,
 				D704BA4122C4F8E4001EA1AD /* Player */,
 				D722A23322C4F02900737B65 /* AppDelegate.swift */,
+				4DAAB5822526777200034A80 /* Example6-Bridging-Header.h */,
 				D722A23522C4F02900737B65 /* ViewController.swift */,
 				D722A23722C4F02900737B65 /* Main.storyboard */,
 				D722A23A22C4F02900737B65 /* Assets.xcassets */,
@@ -329,17 +329,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penthera.Example6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Example6-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example6/Example6-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -354,17 +354,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release-Bitcode";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.penthera.Example6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Example6-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example6/Example6-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

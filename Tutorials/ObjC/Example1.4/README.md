@@ -1,7 +1,7 @@
 Tutorial - Example1.4: Engine Performance Settings
 =======================================
 ## Summary
-This sample demonstrates settings that can be used to tune Engine performance. See source file ***StatusViewController.swift***
+This sample demonstrates settings that can be used to tune Engine performance. See source file ***StatusViewController.m***
 
 </br>
 </br>

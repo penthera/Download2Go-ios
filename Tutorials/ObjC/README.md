@@ -15,3 +15,6 @@ Tutorials
 * Example10 - FastPlay example
 * Example11 - Unregister device(s)
 * Example12 - Advanced error handling
+* Example14 - Background Wake Processing
+* Example15 - Verizon Server ads
+* Example16 - StreamAssured

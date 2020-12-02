@@ -1,7 +1,7 @@
 Tutorial - Example1.5: Advanced Logging
 =======================================
 ## Summary
-This sample demonstrates Advanced Logging. See source file ***AppDelegate.swift*** and ***SampleLoggingDelegate.swift***
+This sample demonstrates Advanced Logging. See source file ***AppDelegate.m*** and ***SampleLoggingDelegate.m***
 
 </br>
 </br>
