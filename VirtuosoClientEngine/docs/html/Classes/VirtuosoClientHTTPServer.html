@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoClientHTTPServer Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,49 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/playbackURL">playbackURL</option>
+		
+		<option value="//api/name/running">running</option>
+		
+	</optgroup>
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/fairPlayCertificateDataURLForSubType:">- fairPlayCertificateDataURLForSubType:</option>
+		
+		<option value="//api/name/fairPlayLicenseServerURL">- fairPlayLicenseServerURL</option>
+		
+		<option value="//api/name/initOnPort:withAsset:">- initOnPort:withAsset:</option>
+		
+		<option value="//api/name/initOnPort:withAsset:usingFastPlay:">- initOnPort:withAsset:usingFastPlay:</option>
+		
+		<option value="//api/name/initWithAsset:">- initWithAsset:</option>
+		
+		<option value="//api/name/initWithAsset:usingFastPlay:">- initWithAsset:usingFastPlay:</option>
+		
+		<option value="//api/name/shutdown">- shutdown</option>
+		
+		<option value="//api/name/startup">- startup</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +99,650 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoClientHTTPServer Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoClientHTTPServer.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A localhost HTTP proxy server that enables transparent playback of downloaded video within
+Apple or 3rd party video players.</p>
 
+<p>This class abstracts the location and download state of the video from the video player.
+In the case of HLS video, for example, this class will generate an &ldquo;on the fly&rdquo;
+HLS manifest that lists a localhost URL for each manifest URL.  The server receives each
+localhost request and then returns the local or remote data, as available.</p><div class="warning"><p><strong>Warning:</strong> To use this class directly, you must retain the instantiated object within your code.
+If you release an instantiated proxy object, the proxy will immediately shut down
+and become unavailable.</p></div>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithAsset:" title="initWithAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAsset:">&ndash;&nbsp;initWithAsset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a local HTTP proxy on a random port using the specified asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object to base streamed playback from.
+The server will use the internal data from the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>
+to dynamically contruct the playback URL for the player.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A started (<a href="#//api/name/running">running</a>) VirtuosoClientHTTPServer object.
+Returns nil if the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> is outside its availability window, is expired,
+or if the <a href="../Classes/VirtuosoDownloadEngine.html">VirtuosoDownloadEngine</a> instance is outside its Backplane communications
+window. If this method returns nil, it also sends errors via NSNotificationCenter
+indicating the problem.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The proxy uses the local manifest, remote URL, and segment file root path from the provided
+<a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> to construct a streaming URL for the video player.  Use this method,
+rather than the playback methods on the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>, for more direct control of the
+proxy, which is especially useful for custom video players.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initOnPort:withAsset:" title="initOnPort:withAsset:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initOnPort:withAsset:">&ndash;&nbsp;initOnPort:withAsset:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a local HTTP proxy on the specified port using the specified asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initOnPort:(NSInteger)<em>port</em> withAsset:(nonnull VirtuosoAsset *)<em>asset</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>port</code></th>
+						<td><p>The local port to open with the localhost server</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object to base streamed playback from.
+The server will use the internal data from the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>
+to dynamically contruct the playback URL for the player.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A started (<a href="#//api/name/running">running</a>) VirtuosoClientHTTPServer object.
+Returns nil if the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> is outside its availability window, is expired,
+or if the <a href="../Classes/VirtuosoDownloadEngine.html">VirtuosoDownloadEngine</a> instance is outside its Backplane communications
+window. If this method returns nil, it also sends errors via NSNotificationCenter
+indicating the problem.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The proxy uses the local manifest, remote URL, and segment file root path from the provided
+<a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> to construct a streaming URL for the video player.  Use this method,
+rather than the playback methods on the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>, for more direct control of the
+proxy, which is especially useful for custom video players.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAsset:usingFastPlay:" title="initWithAsset:usingFastPlay:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAsset:usingFastPlay:">&ndash;&nbsp;initWithAsset:usingFastPlay:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a local HTTP proxy on a random port using the specified asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initWithAsset:(nonnull VirtuosoAsset *)<em>asset</em> usingFastPlay:(Boolean)<em>usingFastPlay</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object to base streamed playback from.
+The server will use the internal data from the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>
+to dynamically contruct the playback URL for the player.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>usingFastPlay</code></th>
+						<td><p>If YES, then the service is setup for FastPlay playback.  The server will
+return a FastPlay playback manifest suitable for online streaming with FastPlay
+playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
+playback is not currently available, then this method returns nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A started (<a href="#//api/name/running">running</a>) VirtuosoClientHTTPServer object.
+Returns nil if the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> is outside its availability window, is expired,
+or if the <a href="../Classes/VirtuosoDownloadEngine.html">VirtuosoDownloadEngine</a> instance is outside its Backplane communications
+window. If this method returns nil, it also sends errors via NSNotificationCenter
+indicating the problem.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The proxy uses the local manifest, remote URL, and segment file root path from the provided
+<a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> to construct a streaming URL for the video player.  Use this method,
+rather than the playback methods on the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>, for more direct control of the
+proxy, which is especially useful for custom video players.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initOnPort:withAsset:usingFastPlay:" title="initOnPort:withAsset:usingFastPlay:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initOnPort:withAsset:usingFastPlay:">&ndash;&nbsp;initOnPort:withAsset:usingFastPlay:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a local HTTP proxy on the specified port using the specified asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)initOnPort:(NSInteger)<em>port</em> withAsset:(nonnull VirtuosoAsset *)<em>asset</em> usingFastPlay:(Boolean)<em>usingFastPlay</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>port</code></th>
+						<td><p>The local port to open with the localhost server</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object to base streamed playback from.
+The server will use the internal data from the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>
+to dynamically contruct the playback URL for the player.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>usingFastPlay</code></th>
+						<td><p>If YES, then the service is setup for FastPlay playback.  The server will
+return a FastPlay playback manifest suitable for online streaming with FastPlay
+playback initiation. If YES and the asset is not a FastPlay-enabled asset or if FastPlay
+playback is not currently available, then this method returns nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A started (<a href="#//api/name/running">running</a>) VirtuosoClientHTTPServer object.
+Returns nil if the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> is outside its availability window, is expired,
+or if the <a href="../Classes/VirtuosoDownloadEngine.html">VirtuosoDownloadEngine</a> instance is outside its Backplane communications
+window. If this method returns nil, it also sends errors via NSNotificationCenter
+indicating the problem.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The proxy uses the local manifest, remote URL, and segment file root path from the provided
+<a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> to construct a streaming URL for the video player.  Use this method,
+rather than the playback methods on the <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>, for more direct control of the
+proxy, which is especially useful for custom video players.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shutdown" title="shutdown"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shutdown">&ndash;&nbsp;shutdown</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Shuts down a <a href="#//api/name/running">running</a> proxy instance</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)shutdown</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You can call the <a href="#//api/name/startup">startup</a> method to restart the proxy using the same settings.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startup" title="startup"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startup">&ndash;&nbsp;startup</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Restarts a previously <a href="#//api/name/shutdown">shutdown</a> proxy instance.  Does nothing if the receiver is already <a href="#//api/name/running">running</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startup</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/running" title="running"></a>
+	<h3 class="method-title"><code><a href="#//api/name/running">&nbsp;&nbsp;running</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indicates whether the receiver is currently running.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean running</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playbackURL" title="playbackURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playbackURL">&nbsp;&nbsp;playbackURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The dynamically-generated playback URL string. Pass this URL to a video player for playback</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nonnull) NSString *playbackURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This URL will represent a streaming video URL of an appropriate protocol,
+based on the &lsquo;type&rsquo; property of the provided <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fairPlayLicenseServerURL" title="fairPlayLicenseServerURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fairPlayLicenseServerURL">&ndash;&nbsp;fairPlayLicenseServerURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Local playback URL for FiarPlay license server request to download license for asset</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)fairPlayLicenseServerURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fairPlayCertificateDataURLForSubType:" title="fairPlayCertificateDataURLForSubType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fairPlayCertificateDataURLForSubType:">&ndash;&nbsp;fairPlayCertificateDataURLForSubType:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Local playback URL for FairPlay certificate data download request</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *_Nonnull)fairPlayCertificateDataURLForSubType:(NSString *_Nullable)<em>subType</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subType</code></th>
+						<td><p>optional string specifying the optional subtype</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoClientHTTPServer.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-08-03</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-01-19</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

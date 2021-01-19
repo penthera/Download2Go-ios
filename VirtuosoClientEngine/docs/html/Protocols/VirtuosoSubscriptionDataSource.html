@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>VirtuosoSubscriptionDataSource Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,31 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithAssets:">- initWithAssets:</option>
+		
+		<option value="//api/name/initWithSubscriptions:">- initWithSubscriptions:</option>
+		
+		<option value="//api/name/process">- process</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +81,258 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">VirtuosoSubscriptionDataSource Protocol Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoSubscriptionDataSource.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>When new subscription episodes are announced, the Backplane may only send an episode asset ID, or it may send complete asset metadata.
+The VirtuosoSubscriptionDataSource protocol allows the Subscription Manager to retrieve any missing episode metadata prior to automatically
+downloading new asset and it allows the Caller to customize the created Virtuoso SDK objects before they are enqueued with the download Engine.</p>
 
+<p>When the Manager needs to start new downloads, it will create a new VirtuosoSubscriptionDataSource object using the class name registered with it
+and initialize the new data source with any data provided by the Backplane.  The data source object must then retrieve <strong>at least</strong> the required metadata
+necessary to start the download in the Virtuoso Download Engine (see the dictionary keys identified in this class for descriptions of optional and
+required fields).  It may also retrieve any of the optional metadata listed in the protocol, in addition to any arbitrary values provided by the external
+catalog.</p>
+
+<p>The Virtuoso SDK provides one built-in data source, the <a href="../Classes/VirtuosoSubscriptionDefaultDataSource.html">VirtuosoSubscriptionDefaultDataSource</a>.  This data source is the default data source and will
+always be used if no other data source class is registered.  Additional external data sources may be registered with the Manager.  In addition,
+Penthera can support development of custom data sources as-needed.  Contact Penthera Support for further details.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithSubscriptions:" title="initWithSubscriptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSubscriptions:">&ndash;&nbsp;initWithSubscriptions:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a data source with subscriptions that require data lookups</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull id)initWithSubscriptions:(nonnull NSArray *)<em>subscriptions</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subscriptions</code></th>
+						<td><p>A list of subscription data</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an initialized unstarted data source</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method receives an NSArray of subscriptions that the Manager requires detailed metadata for.  The NSArray <em>will</em> contain a list of
+NSDictionary objects.  At minimum, the dictionaries will contain a single NSString value</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionDataSource.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAssets:" title="initWithAssets:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAssets:">&ndash;&nbsp;initWithAssets:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a data source with individual assets that require data lookups</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull id)initWithAssets:(nonnull NSArray *)<em>assets</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assets</code></th>
+						<td><p>A list of asset data</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns an initialized unstarted data source</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method receives an NSArray of assets that the Manager requires detailed metadata for.  The NSArray <em>will</em> contain a list of
+NSDictionary objects.  At a minimum, the dictionaries will contain a single NSString value</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionDataSource.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/process" title="process"></a>
+	<h3 class="method-title"><code><a href="#//api/name/process">&ndash;&nbsp;process</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Processes a data lookup operation using the initalized subscription data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull NSObject *)process</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>If the data source was initialized with subscriptions, via the initWithSubscriptions method, then a NSDictionary where the keys are subscription IDs and
+the values are NSArrays containing NSDictionaries representing asset data, with key-value data as defined in SubscriptionAssetDataAttributes.  If the
+data source was initialized with assets, via the initWithAssets method, then a single NSArray is returned directly, without the top NSDictionary package.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This call <em>must</em> synchronously execute using the data provided during the init call.  The Manager will handle all threading requirements.
+If an error occurs, the data source must return a nil value.  If the lookup completed successfully, but no data was available, the data
+source should return an empty container object.  The data source may also lookup additional data that may be needed by the Application in order
+to display the user interface or perform other Application-specific tasks.  That data does not need to be returned.  Since internal Manager rules
+may cause items to be downloaded or deleted, Callers should not rely on this method or data source processing to determine when items
+have been added or removed from the Download Queue or when they have been deleted.  The Caller should, rather, use the appropriate Manager notifications.</p><div class="warning"><p><strong>Warning:</strong> The Caller must not make any assumptions about which thread or operation queue this method will be executed on.  If thread-dependent calls must be made,
+to notify other code to update CoreData objects for instance, then the Caller must explicitly execute that code on the desired operation queue.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionDataSource.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2020 Penthera Inc. All rights reserved. Updated: 2020-08-03</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-01-19</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

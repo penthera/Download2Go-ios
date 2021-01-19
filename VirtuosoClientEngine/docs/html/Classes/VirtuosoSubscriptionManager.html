@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>VirtuosoSubscriptionManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Cache &amp; Carry (Virtuoso) SDK - iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Penthera Inc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/autodeleteOldItems">autodeleteOldItems</option>
+		
+		<option value="//api/name/lastSubscriptionSyncTime">lastSubscriptionSyncTime</option>
+		
+		<option value="//api/name/maxBitrate">maxBitrate</option>
+		
+		<option value="//api/name/maximumSubscriptionItemsPerFeed">maximumSubscriptionItemsPerFeed</option>
+		
+		<option value="//api/name/status">status</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/instance">+ instance</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/includeItem:inTrackingFeed:">- includeItem:inTrackingFeed:</option>
+		
+		<option value="//api/name/itemsInTrackingFeed:">- itemsInTrackingFeed:</option>
+		
+		<option value="//api/name/registerDataSource:">- registerDataSource:</option>
+		
+		<option value="//api/name/registerForSubscription:onComplete:">- registerForSubscription:onComplete:</option>
+		
+		<option value="//api/name/registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:">- registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:</option>
+		
+		<option value="//api/name/subscriptionsOnComplete:">- subscriptionsOnComplete:</option>
+		
+		<option value="//api/name/syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:">- syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:</option>
+		
+		<option value="//api/name/syncSubscriptionsWithBackplaneNowOnComplete:">- syncSubscriptionsWithBackplaneNowOnComplete:</option>
+		
+		<option value="//api/name/unregisterForSubscription:onComplete:">- unregisterForSubscription:onComplete:</option>
+		
+		<option value="//api/name/unregisterSubscriptionsOnComplete:">- unregisterSubscriptionsOnComplete:</option>
+		
+		<option value="//api/name/updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:">- updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">VirtuosoSubscriptionManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>VirtuosoSubscriptionManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A singleton object that handles all subscription activity and environment settings/<a href="#//api/name/status">status</a> monitoring relating to subscriptions.  The Manager
+associates episodes with the feed they belong to and downloads and deletes new episodes according to system preferences.</p><div class="warning"><p><strong>Warning:</strong> The Caller must NEVER instantiate an object of this type directly.  The VirtuosoSubscriptionManager is a singleton and should only be accessed via the
+provided <a href="#//api/name/instance">instance</a> method.</p></div><div class="warning"><p><strong>Warning:</strong> The VirtuosoSubscriptionManager and the entire VirtuosoClientSubscriptionService module has a link-time dependency on the VirtuosoClientDownloadEngine
+module.</p></div>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Utility" name="task_Utility"></a>
+						<h2 class="task-title">Utility</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/instance" title="instance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/instance">+&nbsp;instance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The singleton instance access method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoSubscriptionManager *)instance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the VirtuosoSubscriptionManager object instance, or nil if the <a href="../Classes/VirtuosoDownloadEngine.html">VirtuosoDownloadEngine</a> hasn&rsquo;t been started yet.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The Caller MUST NEVER instantiate a local copy of the VirtuosoSubscriptionManager object.  This object
+is intended to be a static singleton accessed through the instance method only.  Instantiating a local
+copy will throw an exception.</p><div class="warning"><p><strong>Warning:</strong> The <a href="../Classes/VirtuosoDownloadEngine.html">VirtuosoDownloadEngine</a> must be started successfully before any attempts to access the VirtuosoSubscriptionManager
+instance method.  Any attempts to access the Manager in any way prior to successful Engine startup will result
+in a nil instance.</p></div><div class="warning"><p><strong>Warning:</strong> It is best to ensure that a network connection exists prior to first calling the instance method.  This allows the
+Manager to validate it&rsquo;s configuration and proceed to a &lsquo;started&rsquo; state.  If you first call the instance method
+while the device is offline, it will begin in the &lsquo;offline&rsquo; state until you access the Manager while online.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Backplane Actions" name="task_Backplane Actions"></a>
+						<h2 class="task-title">Backplane Actions</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/syncSubscriptionsWithBackplaneNowOnComplete:" title="syncSubscriptionsWithBackplaneNowOnComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/syncSubscriptionsWithBackplaneNowOnComplete:">&ndash;&nbsp;syncSubscriptionsWithBackplaneNowOnComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Forces a manual subscription sync with the Backplane, using standard parameters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)syncSubscriptionsWithBackplaneNowOnComplete:(nullable SyncCompleteBlock)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A completion block indicating sync has completed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The Manager will automatically sync subscriptions with the Backplane every time the app is foregrounded,
+and potentially at other required moments for internal Manager consistency.  This method
+can be used to increase the sync frequency, as required by the Caller.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:">- syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:" title="syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:">&ndash;&nbsp;syncSubscriptionsWithBackplaneNowForDataSince:returningOnlySubscribedFeeds:onComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Forces a manual subscription sync with the Backplane, using custom parameters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)syncSubscriptionsWithBackplaneNowForDataSince:(nullable NSDate *)<em>since</em> returningOnlySubscribedFeeds:(Boolean)<em>subscribed</em> onComplete:(nullable SyncCompleteBlock)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>since</code></th>
+						<td><p>Data will only be returned if it has been modified after this timestamp.  If nil, all data will be returned.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subscribed</code></th>
+						<td><p>If YES, then only data for currently subscribed feeds will be returned.  If NO, then data for all subscribable feeds
+will be returned.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A completion block indicating sync has completed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Under standard conditions, automatic syncs or syncs via <a href="#//api/name/syncSubscriptionsWithBackplaneNowOnComplete:">syncSubscriptionsWithBackplaneNowOnComplete:</a> will be sufficient
+to process all incoming subscriptions.  Under some scenarios, it may be desirable to have older data
+or data about all subscribable feeds returned by the Backplane.  This method allows the Caller to manually
+specify a timestamp for data freshness and an option to return data from only currently subscribed feeds.</p><div class="warning"><p><strong>Warning:</strong> When syncing data with this method, only items that were added to the Backplane after the last sync and are within
+the current subscription list will be automatically be processed and downloaded.  Other older or unsubscribed items
+may be returned and reported in the processing results, but these outdated items will be ignored by the Manager.</p></div>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/syncSubscriptionsWithBackplaneNowOnComplete:">- syncSubscriptionsWithBackplaneNowOnComplete:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastSubscriptionSyncTime" title="lastSubscriptionSyncTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastSubscriptionSyncTime">&nbsp;&nbsp;lastSubscriptionSyncTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The last time the Manager successfully synced with the Backplane.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSDate *lastSubscriptionSyncTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterSubscriptionsOnComplete:" title="unregisterSubscriptionsOnComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterSubscriptionsOnComplete:">&ndash;&nbsp;unregisterSubscriptionsOnComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancels all subscriptions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unregisterSubscriptionsOnComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A completion block indicating the unsubscription process is compplete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Subscription Manager Status" name="task_Subscription Manager Status"></a>
+						<h2 class="task-title">Subscription Manager Status</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/registerDataSource:" title="registerDataSource:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerDataSource:">&ndash;&nbsp;registerDataSource:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configures the Manager to utilize a particular data source class</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerDataSource:(nonnull Class&lt;VirtuosoSubscriptionDataSource&gt;)<em>dataSourceClass</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dataSourceClass</code></th>
+						<td><p>A Class <a href="#//api/name/instance">instance</a> to use for metadata lookup operations</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>By default, the Manager will automatically create and start instances of the VirtuosoSubscriptionBackplaneDataSource for metadata lookups.
+Calling this method allows the Caller to specify an alternate custom class for these operations.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/status" title="status"></a>
+	<h3 class="method-title"><code><a href="#//api/name/status">&nbsp;&nbsp;status</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current Subscription Manager status</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) kVSM_Status status</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Subscription Management" name="task_Subscription Management"></a>
+						<h2 class="task-title">Subscription Management</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/itemsInTrackingFeed:" title="itemsInTrackingFeed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/itemsInTrackingFeed:">&ndash;&nbsp;itemsInTrackingFeed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a list of <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> UUID values that represent items currently tracked in the subscription feed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)itemsInTrackingFeed:(nonnull NSString *)<em>feedAssetID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>feedAssetID</code></th>
+						<td><p>The feed to return items for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A list of items in the subscription feed</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/includeItem:inTrackingFeed:" title="includeItem:inTrackingFeed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/includeItem:inTrackingFeed:">&ndash;&nbsp;includeItem:inTrackingFeed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Includes the provided episode in the Manager&rsquo;s feed tracking lists</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)includeItem:(nonnull VirtuosoAsset *)<em>item</em> inTrackingFeed:(nonnull NSString *)<em>feedAssetID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>item</code></th>
+						<td><p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> item to include in business rule processing</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>feedAssetID</code></th>
+						<td><p>The feed to associate the item with</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The Manager only enforces business rules (max items, auto-delete) on items that it downloaded as a result of subscription
+syncing.  In some cases, the caller may wish to have downloads generated externally to the Manager included in Manager
+business rule processing.  When a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> item is passed to this method, it will be included during all enforcement
+actions.  If the feed already contains &ldquo;max items&rdquo; when this method is called, then business rules will be enforced and older
+items may be deleted, as with standard processing.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForSubscription:onComplete:" title="registerForSubscription:onComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForSubscription:onComplete:">&ndash;&nbsp;registerForSubscription:onComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Registers the Manager for updates from the Backplane relating to the provided Subscription ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerForSubscription:(nonnull NSString *)<em>feedAssetID</em> onComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>feedAssetID</code></th>
+						<td><p>The unique externally defined feed Asset ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A completion block to call with request results</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Calling this method registers the Manager to receive updates about the provided Subscription ID.  The Subscription is
+a reference to any &ldquo;subscribeable&rdquo; thing, and may reference a channel, a series, a feed, or any other conceptual representation
+of a &ldquo;thing&rdquo; that provides periodic content updates.  The only requirement is that each Subscription is identified by a unique
+identifier that the Caller must provide.  This method uses the Manager defaults for <a href="#//api/name/maximumSubscriptionItemsPerFeed">maximumSubscriptionItemsPerFeed</a> and
+<a href="#//api/name/autodeleteOldItems">autodeleteOldItems</a>.</p><div class="warning"><p><strong>Warning:</strong> The provided feed must have been created on the Backplane prior to attempts to subscribe to it.  This must be done via the Backplane
+web portal or via the Backplane APIs.  See Backplane documentation for details.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:" title="registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:">&ndash;&nbsp;registerForSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:onComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Registers the Manager for updates from the Backplane relating to the provided Subscription ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerForSubscription:(nonnull NSString *)<em>feedAssetID</em> withMaximumItems:(int)<em>maximumSubscriptionItems</em> andAutodeleteOldItems:(Boolean)<em>autodelete</em> maxBitrate:(int)<em>maxBitrate</em> onComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>feedAssetID</code></th>
+						<td><p>The unique externally defined feed Asset ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumSubscriptionItems</code></th>
+						<td><p>The total number of items from this Subscription to keep on disk at any given time</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>autodelete</code></th>
+						<td><p>Whether or not to delete previously downloaded items to make room for new ones</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxBitrate</code></th>
+						<td><p>The maximum bitrate to use when downloading streamed video.  Ignored if the new episode is not a streamed video.  This
+value will be treated as the default for all new episodes.  Specific values provided by the Backplane metadata or data source
+will override this value.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A completion block to call with request results</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Calling this method registers the Manager to receive updates about the provided Subscription ID.  The Subscription is
+a reference to any &ldquo;subscribeable&rdquo; thing, and may reference a channel, a series, a feed, or any other conceptual representation
+of a &ldquo;thing&rdquo; that provides periodic content updates.  The only requirement is that each Subscription is identified by a unique
+identifier that the Caller must provide.  The Caller may also provide a per-subscription max item limit and specify an auto-delete
+option.  When new items are added, old items will be removed or new downloads will be deferred, such that only the configured
+number of items remains on disk at any one time.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:" title="updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:">&ndash;&nbsp;updateSubscription:withMaximumItems:andAutodeleteOldItems:maxBitrate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Applies new feed options to a subscribed feed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateSubscription:(nonnull NSString *)<em>feedAssetID</em> withMaximumItems:(int)<em>maximumSubscriptionItems</em> andAutodeleteOldItems:(Boolean)<em>autodelete</em> maxBitrate:(int)<em>maxBitrate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>feedAssetID</code></th>
+						<td><p>The unique externally defined feed Asset ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumSubscriptionItems</code></th>
+						<td><p>The total number of items from this Subscription to keep on disk at any given time</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>autodelete</code></th>
+						<td><p>Whether or not to delete previously downloaded items to make room for new ones</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxBitrate</code></th>
+						<td><p>The maximum bitrate to use when downloading streamed video.  Ignored if the new episode is not a streamed video.  This
+value will be treated as the default for all new episodes.  Specific values provided by the Backplane metadata or data source
+will override this value.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If a subscription already exists, this method may be used to update the feed business rules used by the manager without requiring
+an unsubscribe and resubscribe.  If a subscription does not exist for the provided asset ID, then this method does nothing.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unregisterForSubscription:onComplete:" title="unregisterForSubscription:onComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unregisterForSubscription:onComplete:">&ndash;&nbsp;unregisterForSubscription:onComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unregisters the Manager for updates from the Backplane relating to the provided Subscription ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unregisterForSubscription:(nonnull NSString *)<em>feedAssetID</em> onComplete:(nullable SubscriptionResultBlock)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>feedAssetID</code></th>
+						<td><p>The unique externally defined feed Asset ID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A completion block to call with request results</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Calling this method unregisters the Manager to receive updates about the provided Subscription ID.  The Subscription is
+a reference to any &ldquo;subscribeable&rdquo; thing, and may reference a channel, a series, a feed, or any other conceptual representation
+of a &ldquo;thing&rdquo; that provides periodic content updates.  The only requirement is that each Subscription is identified by a unique
+identifier that the Caller must provide.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/subscriptionsOnComplete:" title="subscriptionsOnComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/subscriptionsOnComplete:">&ndash;&nbsp;subscriptionsOnComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a list of existing subscriptions</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)subscriptionsOnComplete:(nullable SubscriptionListResultBlock)<em>onComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onComplete</code></th>
+						<td><p>A completion block to call with request results</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns a list of Feed Asset ID values representing Subscriptions currently being monitored by the Manager</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Settings" name="task_Settings"></a>
+						<h2 class="task-title">Settings</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/maximumSubscriptionItemsPerFeed" title="maximumSubscriptionItemsPerFeed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maximumSubscriptionItemsPerFeed">&nbsp;&nbsp;maximumSubscriptionItemsPerFeed</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum number of subscription items, per feed, to keep on disk at any given time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int maximumSubscriptionItemsPerFeed</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is a global parameter and applies to all subscriptions.  A subscription registered with an individual max value will always
+use that value instead of this global default.  A value less than or equal to 0 indicates &ldquo;no limit&rdquo;.  The default is 0.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/autodeleteOldItems" title="autodeleteOldItems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autodeleteOldItems">&nbsp;&nbsp;autodeleteOldItems</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether the Manager should delete old items to make way for new ones, based on <a href="#//api/name/maximumSubscriptionItemsPerFeed">maximumSubscriptionItemsPerFeed</a>, or keep old items and defer
+automatic download of new ones.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean autodeleteOldItems</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Determines how the SDK behaves when a new episode is available and the device is already storing its quota from this feed.
+If YES, then delete oldest episode(s) from disk. The SDK reports the deleted items in the proper notification.
+If NO, then the SDK will create a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> object for the new episode, but won’t automatically download it.
+These deferred items are reported in the proper notification.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maxBitrate" title="maxBitrate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maxBitrate">&nbsp;&nbsp;maxBitrate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum bitrate to use when downloading streamed videos.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int maxBitrate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is a global paramter and applies to all subscriptions.  A subscription registered with an individual max value will always use
+that value instead of this global default.  A value of 0 indicates &ldquo;highest possible&rdquo;.  The default is 0.  Individual episodes may further
+override this default and the feed-specific value by providing a max bitrate value in the episode metadata.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSubscriptionManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-01-19</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
