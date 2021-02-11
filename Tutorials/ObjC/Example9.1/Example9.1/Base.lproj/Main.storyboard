@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7lb-Je-QMw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="CVR-MJ-Laj">
+            <objects>
+                <viewController id="7lb-Je-QMw" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RO3-IE-IIc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="yAN-Zc-6T1">
+                                <rect key="frame" x="20" y="321.5" width="374" height="253.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h24-g3-qoT" userLabel="pauseStack">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause Downloading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOy-Te-NYm">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6r-bq-hE2">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="pauseClicked:" destination="7lb-Je-QMw" eventType="valueChanged" id="udc-rr-br2"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s7E-z0-4hT">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnM-pl-3Wq">
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Download">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="downloadBtnClicked:" destination="7lb-Je-QMw" eventType="touchUpInside" id="l1i-cE-BVv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohL-2P-3YZ">
+                                                <rect key="frame" x="128" y="0.0" width="118" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playBtnClicked:" destination="7lb-Je-QMw" eventType="touchUpInside" id="9fT-an-z2i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2n-us-U0u">
+                                                <rect key="frame" x="256" y="0.0" width="118" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteClicked:" destination="7lb-Je-QMw" eventType="touchUpInside" id="Y1i-2R-Zbs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Kqp-Bp-Tyb"/>
+                                        </constraints>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3w-Fl-qEe">
+                                        <rect key="frame" x="0.0" y="189" width="374" height="4"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dty-gk-zMY">
+                                        <rect key="frame" x="0.0" y="232" width="374" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cW8-1y-d0h"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yAN-Zc-6T1" firstAttribute="leading" secondItem="cW8-1y-d0h" secondAttribute="leading" constant="20" id="5HC-V1-wqm"/>
+                            <constraint firstItem="yAN-Zc-6T1" firstAttribute="centerY" secondItem="RO3-IE-IIc" secondAttribute="centerY" id="EaU-It-GgC"/>
+                            <constraint firstItem="yAN-Zc-6T1" firstAttribute="centerX" secondItem="RO3-IE-IIc" secondAttribute="centerX" id="FlR-CM-kSH"/>
+                            <constraint firstItem="cW8-1y-d0h" firstAttribute="trailing" secondItem="yAN-Zc-6T1" secondAttribute="trailing" constant="20" id="SZa-Uj-WnJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deleteBtn" destination="c2n-us-U0u" id="3NM-s4-q8w"/>
+                        <outlet property="downloadBtn" destination="rnM-pl-3Wq" id="eNX-R0-6A1"/>
+                        <outlet property="pausingLabel" destination="IOy-Te-NYm" id="d7d-Va-DaO"/>
+                        <outlet property="pausingSwitch" destination="y6r-bq-hE2" id="3CV-Ns-Hxt"/>
+                        <outlet property="playBtn" destination="ohL-2P-3YZ" id="b9r-ec-oft"/>
+                        <outlet property="statusLabel" destination="Dty-gk-zMY" id="iMt-17-5WH"/>
+                        <outlet property="statusProgressBar" destination="Q3w-Fl-qEe" id="xRD-cR-e5m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaS-HK-d29" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>

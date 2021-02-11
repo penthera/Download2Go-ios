@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "VirtuosoClientDownloadEngine",
+        "repositoryURL": "https://github.com/penthera/Download2Go-ios",
+        "state": {
+          "branch": "master",
+          "revision": "ab8d1f9618a1daf94f4a3638c8d6bbfdbb905315",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
