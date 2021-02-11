@@ -50,7 +50,6 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoAVAssetResourceLoaderDelegate.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoDefaultAVAssetResourceLoaderDelegate.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoLicenseDefaultDelegate.h>
-#import <VirtuosoClientDownloadEngine/VirtuosoRefreshManager.h>
 
 #import <VirtuosoClientDownloadEngine/StreamAssuredManager.h>
 #import <VirtuosoClientDownloadEngine/StreamAssuredConfig.h>

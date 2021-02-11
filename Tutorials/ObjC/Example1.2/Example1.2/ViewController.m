@@ -76,7 +76,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Setup Required"
-                                                                           message:@"Please contact support@penthera.com to setup the backplaneUrl, pulicKey, and privateKey"
+                                                                           message:@"Please contact support@penthera.com to setup the backplaneUrl, publicKey, and privateKey"
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 exit(0);

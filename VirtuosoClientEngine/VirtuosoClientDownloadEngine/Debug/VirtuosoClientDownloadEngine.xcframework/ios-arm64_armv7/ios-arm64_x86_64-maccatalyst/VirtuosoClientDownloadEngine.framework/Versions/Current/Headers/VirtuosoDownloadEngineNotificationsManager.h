@@ -284,7 +284,7 @@
 /*!
  *  @abstract Listens for Download Engine Notifications and invokes the VirtuosoDownloadEngineNotificationsDelegate callbacks.
  *
- *  @discussion Use this class to monitor Engine notitications. Implement the VirtuosoDownloadEngineNotificationsDelegate and register it using  VirtuosoDownloadEngineNotificationManager to receive Notifications.
+ *  @discussion Use this class to monitor Engine notifications. Implement the VirtuosoDownloadEngineNotificationsDelegate and register it using  VirtuosoDownloadEngineNotificationManager to receive Notifications.
  */
 @interface VirtuosoDownloadEngineNotificationManager : NSObject
 

@@ -206,9 +206,6 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *  @param items Array of Playlists to have items appended. See append method for details.
  *
  *  @return True indicates success.
- *
- *  @see VirtosoPlaylist.append.
- *
  */
 -(Boolean)appendItems:(NSArray<VirtuosoPlaylist*>* _Nonnull)items;
 

@@ -4,6 +4,8 @@
 
 #       You may also choose to use widevine.
 
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
+
 local = true
 widevine = false
 
@@ -12,7 +14,6 @@ platform :ios, '11.0'
 
 if !local
   source 'https://github.com/penthera/Cache-and-Carry-specs.git'
-  source 'https://github.com/CocoaPods/Specs.git'
 end
 
 target 'Example9' do

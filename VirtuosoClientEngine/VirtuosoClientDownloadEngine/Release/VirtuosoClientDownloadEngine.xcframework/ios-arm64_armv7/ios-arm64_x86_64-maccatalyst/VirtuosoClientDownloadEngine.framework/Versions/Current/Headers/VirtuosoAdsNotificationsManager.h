@@ -57,7 +57,7 @@
 /*!
 *  @abstract Listens for Ads related Engine notifications.
 *
-*  @discussion Use this class to monitor Ads related Engine notitications. Implement the VirtuosoAdsManagerNotificationDelegate and register it using  VirtuosoAdsNotificationsManager to receive Notifications.
+*  @discussion Use this class to monitor Ads related Engine notifications. Implement the VirtuosoAdsManagerNotificationDelegate and register it using  VirtuosoAdsNotificationsManager to receive Notifications.
 */
 @interface VirtuosoAdsNotificationsManager : NSObject
 

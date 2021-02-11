@@ -243,9 +243,7 @@
  *  @abstract The device push token used for remote push notices
  *
  *  @discussion Virtuoso uses push notifications in various ways.
- *              For push notifications to work, you must set this value as soon as you get the
- *              app's push token from the OS. If you cannot access the push token (e.g. the user disabled
- *              push notifications for the device), then set this value to nil.
+ *              The Penthera SDK swizzles code into the AppDelegate chain to receive the push token and provide it to VirtuosoSettings.  Under normal conditions your app does not need to access or set the token here in VirtuosoSettings.  If your app disables our SDK swizzle but you still wish to use APNS with our SDK, your code will need to provide the push token to VirtuosoSettings as soon as your AppDelegate receives it.  If your app cannot access the push token (e.g. the user disabled push notifications for the device), then this value should be nil.
  */
 @property (nonatomic,readonly,nullable) NSString* devicePushToken;
 
@@ -253,9 +251,7 @@
  *  @abstract Sets the device push token used for remote push notices
  *
  *  @discussion Virtuoso uses push notifications in various ways.
- *              For push notifications to work, you must set this value as soon as you get the
- *              app's push token from the OS. If you cannot access the push token (e.g. the user disabled
- *              push notifications for the device), then set this value to nil.
+ *              The Penthera SDK swizzles code into the AppDelegate chain to receive the push token and provide it to VirtuosoSettings.  Under normal conditions your app does not need to access or set the token here in VirtuosoSettings.  If your app disables our SDK swizzle but you still wish to use APNS with our SDK, your code will need to provide the push token to VirtuosoSettings as soon as your AppDelegate receives it.  If your app cannot access the push token (e.g. the user disabled push notifications for the device), then this value should be nil.
  *
  *  @param pushToken The APNS push token.
  *

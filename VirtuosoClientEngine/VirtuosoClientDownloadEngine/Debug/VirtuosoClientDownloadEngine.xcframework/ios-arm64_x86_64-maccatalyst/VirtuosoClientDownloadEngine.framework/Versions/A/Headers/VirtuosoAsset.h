@@ -815,7 +815,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @abstract Deletes all assets.
  *
  *  @discussion Deletes all assets in the database. During delete, the Engine stops all parsing
- *              and downloading. Invoking deleteAll will remove all assets and will NOT trigger Playlist downloads.
+ *              and downloading. Invoking deleteAll will remove all assets. Playlists will trigger downloads following deleteAll.
  */
 + (void)deleteAll;
 

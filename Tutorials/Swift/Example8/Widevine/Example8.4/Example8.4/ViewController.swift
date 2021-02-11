@@ -78,7 +78,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         else
         {
             DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Setup Required", message: "Please contact support@penthera.com to setup the backplaneUrl, pulicKey, and privateKey", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Setup Required", message: "Please contact support@penthera.com to setup the backplaneUrl, publicKey, and privateKey", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                     exit(0)
                 }))

@@ -13,6 +13,7 @@ Tutorials
 * Example7 - Playlists (Smart-Download) sample.
 * Example8 - DRM samples (Swift only)
 * Example9 - CocoaPods integration example.
+* Example9.1 - Swift Package Manager integration example.
 * Example10 - FastPlay example
 * Example11 - Device Unregister
 * Example12 - Advanced Error Handling

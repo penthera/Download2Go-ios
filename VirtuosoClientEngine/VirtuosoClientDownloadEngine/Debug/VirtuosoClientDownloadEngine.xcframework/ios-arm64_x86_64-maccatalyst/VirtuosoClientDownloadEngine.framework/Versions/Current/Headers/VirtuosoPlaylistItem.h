@@ -119,6 +119,11 @@ typedef NS_ENUM(NSInteger, PlaylistItemState)
 @property (nonatomic, assign, readonly)PlaylistItemState itemState;
 
 /*!
+ *  @abstract Indicates whether the item expired.
+ */
+@property (nonatomic, assign, readonly) Boolean expired;
+
+/*!
  *  @abstract String formatted representation of itemState
  *
  *  @discussion Returns a string representation of PlaylistItemState.

@@ -415,18 +415,6 @@ extern long long kLoggerDataValueInvalid;
 + (void) logPlaybackStartedForAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
-*  @abstract Logs playback progress for the specified asset
-*
-*  @discussion This method can be used to report playback progess. Virtuoso will attempt to automatically report playback progress event for Virtuoso Assets that are played using Apple's AVPlayer.
-*              For customers that do not use AVPlayer, this method can be used to report playback progress. This event should only be reported once, for example, after playback has been stopped.
-*
-*  @param asset The played asset
-*  @param start Reported starting percent. If player does not start playing at zero, set this parameter to the percent where playback started.
-*  @param progress Reported ending percent played.
-*/
-+(void)logPlaybackProgress:(nonnull VirtuosoAsset*)asset statistics:(nonnull NSDictionary*)statistics;
-
-/*!
  *  @abstract Logs "play" event for an asset, including optional "time to first frame" data.
  *
  *  @discussion Virtuoso cannot automatically detect a 'play' event, since this occurs at the app
