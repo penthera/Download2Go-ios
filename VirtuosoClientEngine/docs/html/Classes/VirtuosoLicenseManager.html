@@ -86,7 +86,11 @@
 		
 		<option value="//api/name/registerAVAssetResourceLoaderDelegate:">+ registerAVAssetResourceLoaderDelegate:</option>
 		
+		<option value="//api/name/registerAVContentKeySession:">+ registerAVContentKeySession:</option>
+		
 		<option value="//api/name/registeredAVAssetResourceLoaderDelegate">+ registeredAVAssetResourceLoaderDelegate</option>
+		
+		<option value="//api/name/registeredAVContentKeySession">+ registeredAVContentKeySession</option>
 		
 		<option value="//api/name/removeLicenseForAsset:">+ removeLicenseForAsset:</option>
 		
@@ -99,6 +103,8 @@
 		<option value="//api/name/setDelegate:">+ setDelegate:</option>
 		
 		<option value="//api/name/setLicense:forAsset:">+ setLicense:forAsset:</option>
+		
+		<option value="//api/name/setLicenseProcessingDelegate:">+ setLicenseProcessingDelegate:</option>
 		
 		<option value="//api/name/setLicenseServerURL:forDRM:">+ setLicenseServerURL:forDRM:</option>
 		
@@ -1385,6 +1391,116 @@ set these parameters via setID:andLicenseToken: prior to calling this method.</p
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/registerAVContentKeySession:" title="registerAVContentKeySession:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerAVContentKeySession:">+&nbsp;registerAVContentKeySession:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configures the VirtuosoLicenseManager to utilize a particular AVContentKeySession for licensing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)registerAVContentKeySession:(nonnull AVContentKeySession *)<em>avContentKeySession</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>avContentKeySession</code></th>
+						<td><p>An AVContentKeySession to use for internal DRM operations</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Methods in VirtuosoLicenseManager that reference AVContentKeySession APIs should be used for all devices
+on iOS >= iOS 11.0.  If you are supporting devices lower than iOS 11.0, implementing the methods for
+AVAssetResourceLoaderDelegate may also be required.  If you use the default Virtuoso implementations
+then the appropriate method is chosen automtically for you.</p>
+
+<p>By default, the VirtuosoLicenseManager will automatically use an internal AVContentKeySession for
+DRM licensing and playback.  Calling this method allows you to specify an alternate version for these operations.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registeredAVContentKeySession" title="registeredAVContentKeySession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registeredAVContentKeySession">+&nbsp;registeredAVContentKeySession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the currently configured AVContentKeySession</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull AVContentKeySession *)registeredAVContentKeySession</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The currently configured AVContentKeySession</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/registerAVAssetResourceLoaderDelegate:" title="registerAVAssetResourceLoaderDelegate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/registerAVAssetResourceLoaderDelegate:">+&nbsp;registerAVAssetResourceLoaderDelegate:</a></code>
 </h3>
@@ -1425,10 +1541,13 @@ set these parameters via setID:andLicenseToken: prior to calling this method.</p
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>By default, the VirtuosoLicenseManager will automatically create and use instances of the
-Default<a href="../Protocols/VirtuosoAVAssetResourceLoaderDelegate.html">VirtuosoAVAssetResourceLoaderDelegate</a> for DRM licensing and playback.</p>
+				<p>Methods in VirtuosoLicenseManager that reference AVAssetResourceLoader are required to support iOS devices
+on iOS &lt; iOS 11.0.  On iOS devices >= iOS 11.0, the AVContentKeySession APIs from this class are active instead,
+and any configured AVAssetResourceLoaderDelegate will never be referenced.</p>
 
-<p>Calling this method allows you to specify an alternate custom class for these operations.</p>
+<p>By default, the VirtuosoLicenseManager will automatically create and use instances of the
+Default<a href="../Protocols/VirtuosoAVAssetResourceLoaderDelegate.html">VirtuosoAVAssetResourceLoaderDelegate</a> for DRM licensing and playback.  Calling this method allows
+you to specify an alternate custom class for these operations.</p>
 			</div>
 			
 
@@ -1552,6 +1671,67 @@ these values, set the delegate here and Virtuoso will ask for them as needed.</p
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLicenseProcessingDelegate:" title="setLicenseProcessingDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLicenseProcessingDelegate:">+&nbsp;setLicenseProcessingDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets the license processing delegate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setLicenseProcessingDelegate:(nullable id&lt;VirtuosoLicenseProcessingDelegate&gt;)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The delegate that will provide license ID and license token lookups</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Some DRM implementations require that an additional unique asset license ID be appended
+to the license server URL.  Some DRM implementations may also require that an additional
+token parameter is included as a property on the license server url.  If you need to provide
+these values, set the delegate here and Virtuoso will ask for them as needed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoLicenseManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1567,7 +1747,7 @@ these values, set the delegate here and Virtuoso will ask for them as needed.</p
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-02-11</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-02-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

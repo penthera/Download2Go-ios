@@ -16,12 +16,24 @@ class PlaylistSelectionController: UITableViewController {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 80
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .done, target: self, action: #selector(clearPlaylists))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         DispatchQueue.global(qos: .userInitiated).async {
+            self.playlists = VirtuosoPlaylistManager.instance().findAllItems()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    @objc func clearPlaylists() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            VirtuosoPlaylistManager.instance().clearAll()
+            VirtuosoAsset.deleteAll()
             self.playlists = VirtuosoPlaylistManager.instance().findAllItems()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -57,6 +69,9 @@ class PlaylistSelectionController: UITableViewController {
         detailText?.append("Asset History considered: \(playlist.isAssetHistoryConsidered ? "yes" : "no")\n")
         detailText?.append("Search from beginning: \(playlist.isSearchFromBeginningEnabled ? "yes" : "no")\n")
         
+        detailText?.append("Pending Count: \(playlist.pendingCount)\n")
+        
+
         cell.detailTextLabel?.text = detailText;
         if playlist.items.count > 0 {
             cell.accessoryType = .disclosureIndicator

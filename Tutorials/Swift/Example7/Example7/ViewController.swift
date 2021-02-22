@@ -97,6 +97,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        self.refreshView()
     }
     
     func displayAsset(asset: VirtuosoAsset)

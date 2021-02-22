@@ -55,7 +55,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
             return
         }
         
-        if drmSetup.configure() {
+        if !drmSetup.configure() {
             let alert = UIAlertController(title: "Configure Incomplete", message: "Please setup the VirtuosoLicenseConfiguration parameters as shown in the configure method. App will now exit.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 exit(0)

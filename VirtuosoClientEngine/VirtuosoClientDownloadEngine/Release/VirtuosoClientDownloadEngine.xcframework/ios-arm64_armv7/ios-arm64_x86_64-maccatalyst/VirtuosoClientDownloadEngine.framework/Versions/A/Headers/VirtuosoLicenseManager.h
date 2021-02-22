@@ -14,6 +14,7 @@
  *
  */
 #import <Foundation/Foundation.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoDefaultAVAssetResourceLoaderDelegate.h>
 
 /*!
 *  @typedef VirtuosoLicenseConfiguration
@@ -58,6 +59,7 @@
 @end
 
 @class VirtuosoAsset;
+
 @protocol VirtuosoAVAssetResourceLoaderDelegate;
 
 /*!
@@ -80,6 +82,73 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
     /** DRM provided by Google Widevine */
     kVLM_Widevine = 1,
 };
+
+/*!
+ *  @abstract  Allows custom processing of the SPC license request and the license response
+ */
+@protocol VirtuosoLicenseProcessingDelegate <NSObject>
+
+/*!
+ *  @abstract Allows a custom CID to be used with the SDK default AVAssetResourceLoaderDelegate
+ *
+ *  @discussion Normally, the asset CID is extracted from the FairPlay license URL, which takes the form
+ *              skd://<contentID>.  Some license servers put the required content ID elsewhere.  If you
+ *              don't need to adjust the content ID, you can return nil and the SDK will use the default value
+ *              it detects.  If you need to override this value, you can return the proper content ID to use from
+ *              this method.
+ *
+ *  @param asset The VirtuosoAsset the licensing request is for
+ *  @param fpRequest The URL provided to the AVAssetResourceLoaderDelegate for the licensing request
+ *  @return The CID value to use during SPC creation
+ */
+- (NSString* _Nullable)extractCIDForAsset:(VirtuosoAsset* _Nonnull)asset fromFairPlayRequest:(NSURL* _Nonnull)fpRequest;
+
+/*!
+ *  @abstract Allows custom processing of the FairPlay POST body before it is send.
+ *
+ *  @discussion Normally, the SPC data is posted as binary as the POST body to the fairplay server.
+ *              If this is the case, you can just return the spc input without modification.  If your
+ *              server requires some custom format (base64 encoding or JSON wrapping, for example), then you
+ *              should receive the input SPC and return an NSData object suitable for posting in the POST body
+ *              to your licensing server.
+ *
+ *  @param asset The VirtuosoAsset the licensing request is for
+ *  @param spc The Apple-generated SPC data value
+ *  @return An NSData object suitable for the license server POST body
+ */
+- (NSData* _Nullable)prepareSPCForAsset:(VirtuosoAsset* _Nonnull)asset inLicenseRequest:(NSData* _Nonnull)spc;
+
+/*!
+ *  @abstract Allows custom processing of the FairPlay license server response
+ *
+ *  @discussion Normally, the license server responds to a FairPlay request with binary representing
+ *              the license response (CKC).  Some license servers wrap this CKC data with other encodings,
+ *              such as base64 or JSON wrappers.  If your license server returns something other than raw
+ *              CKC data, you will need to implement this method.  You should parse the response data and return
+ *              the raw CKC data object, suitable for handing back to the player in the AVASsetResourceLoaderDelegate response.
+ *
+ *  @param asset The VirtuosoAsset the licensing request is for
+ *  @param response The received response from the license server
+ *  @return CKC data value suitable for handing to the player for DRM licensing
+ */
+- (NSData* _Nullable)extractCKCForAsset:(VirtuosoAsset* _Nonnull)asset inLicenseResponse:(NSData* _Nonnull)response;
+
+@optional
+/*!
+* @abstract If you have configured custom DRM Types, this method allows you to indicate which to use for processing this asset.
+*
+* @discussion Normally, the resource loader will use the kVLM_FairPlay DRM type to process all requests using the configuration
+*                           stored in the VirtuosoLicenseManager.  However, if you need to use different DRM systems for different assets you
+*                           wish to download, you can set configuratins with VirtuosoLicenseManager using custom DRM type codes and
+*                           implement this method to indicate which DRM SubType should be used for the asset. The SubType is an arbitrary, non-nil string that uniquely identifies ths DRM system.
+*
+*
+*  @param asset The VirtuosoAsset to resolve DRM SubType for.
+*  @return non-nil string ideitifying the DRM SubType for the Asset.
+*/
+- (NSString* _Nullable)drmSubTypeForAsset:(VirtuosoAsset* _Nonnull)asset;
+
+@end
 
 /*!
  *  @abstract Delegate used to request optional license parameters for license aquisition
@@ -327,12 +396,37 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
 + (void)setLicense:(nonnull NSData*)license forAsset:(nonnull VirtuosoAsset*)asset;
 
 /*!
+ *  @abstract Configures the VirtuosoLicenseManager to utilize a particular AVContentKeySession for licensing
+ *
+ *  @discussion Methods in VirtuosoLicenseManager that reference AVContentKeySession APIs should be used for all devices
+ *              on iOS >= iOS 11.0.  If you are supporting devices lower than iOS 11.0, implementing the methods for
+ *              AVAssetResourceLoaderDelegate may also be required.  If you use the default Virtuoso implementations
+ *              then the appropriate method is chosen automtically for you.
+ *
+ *              By default, the VirtuosoLicenseManager will automatically use an internal AVContentKeySession for
+ *              DRM licensing and playback.  Calling this method allows you to specify an alternate version for these operations.
+ *
+ *  @param avContentKeySession An AVContentKeySession to use for internal DRM operations
+ */
++ (void)registerAVContentKeySession:(nonnull AVContentKeySession*)avContentKeySession;
+
+/*!
+ *  @abstract Returns the currently configured AVContentKeySession
+ *
+ *  @return The currently configured AVContentKeySession
+ */
++ (nonnull AVContentKeySession*)registeredAVContentKeySession;
+
+/*!
  *  @abstract Configures the VirtuosoLicenseManager to utilize a particular AVAssetResourceLoaderDelegate class
  *
- *  @discussion By default, the VirtuosoLicenseManager will automatically create and use instances of the
- *              DefaultVirtuosoAVAssetResourceLoaderDelegate for DRM licensing and playback.
+ *  @discussion Methods in VirtuosoLicenseManager that reference AVAssetResourceLoader are required to support iOS devices
+ *              on iOS < iOS 11.0.  On iOS devices >= iOS 11.0, the AVContentKeySession APIs from this class are active instead,
+ *              and any configured AVAssetResourceLoaderDelegate will never be referenced.
  *
- *              Calling this method allows you to specify an alternate custom class for these operations.
+ *              By default, the VirtuosoLicenseManager will automatically create and use instances of the
+ *              DefaultVirtuosoAVAssetResourceLoaderDelegate for DRM licensing and playback.  Calling this method allows
+ *              you to specify an alternate custom class for these operations.
  *
  *  @param resourceLoaderDelegateClass A Class instance type to use for internal AVAssetResourceLoaderDelegate operations
  */
@@ -356,5 +450,19 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *  @param delegate The delegate that will provide license ID and license token lookups
  */
 + (void)setDelegate:(nullable id<VirtuosoLicenseManagerDelegate>)delegate;
+
+/*!
+ *  @abstract Sets the license processing delegate
+ *
+ *  @discussion Some DRM implementations require that an additional unique asset license ID be appended
+ *              to the license server URL.  Some DRM implementations may also require that an additional
+ *              token parameter is included as a property on the license server url.  If you need to provide
+ *              these values, set the delegate here and Virtuoso will ask for them as needed.
+ *
+ *  @param delegate The delegate that will provide license ID and license token lookups
+ */
++ (void)setLicenseProcessingDelegate:(nullable id<VirtuosoLicenseProcessingDelegate>)delegate;
+
++ (nullable id<VirtuosoLicenseProcessingDelegate>)licenseProcessingDelegate;
 
 @end
