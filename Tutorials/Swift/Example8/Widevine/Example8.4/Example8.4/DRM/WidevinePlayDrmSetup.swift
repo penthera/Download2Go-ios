@@ -70,8 +70,7 @@ class WidevinePlayDrmSetup: NSObject {
             return false
         }
         VirtuosoLicenseManager.setDelegate(delegate)
-        
-        VirtuosoDefaultAVAssetResourceLoaderDelegate.setLicenseProcessing(WidevineLicenseProcessingDelegate())
+        VirtuosoLicenseManager.setLicenseProcessingDelegate(WidevineLicenseProcessingDelegate())
         
         return true
     }

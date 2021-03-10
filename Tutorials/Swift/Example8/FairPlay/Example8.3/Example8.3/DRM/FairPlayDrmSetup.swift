@@ -74,8 +74,7 @@ class FairPlayDrmSetup: NSObject {
             return false
         }
         VirtuosoLicenseManager.setDelegate(delegate)
-        
-        VirtuosoDefaultAVAssetResourceLoaderDelegate.setLicenseProcessing(FairPlayLicenseProcessingDelegate())
+        VirtuosoLicenseManager.setLicenseProcessingDelegate(FairPlayLicenseProcessingDelegate())
         
         return true
     }
