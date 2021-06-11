@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'http://penthera.com'
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
   s.author           = { 'josh-penthera' => 'josh.pressnell@penthera.com' }
-  s.source           = { :http => 'https://github.com/penthera/Download2Go-ios/releases/download/v4.2/VirtuosoClientDownloadEngineWidevine.xcframework.zip' }
+  s.source           = { :http => 'https://github.com/penthera/Download2Go-ios/releases/download/v4.2.0/VirtuosoClientDownloadEngineWidevine.xcframework.zip' }
 
   s.ios.deployment_target = '10.0'
 
