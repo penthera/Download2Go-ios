@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  Download2GoHelloWorld-Objc
+//  SmartDownloadViewController.m
 //
 //  Created by Penthera on 11/27/18.
 //  Copyright © 2018 penthera. All rights reserved.
@@ -170,34 +170,35 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
         // is played and then deleted.
         //
         // PlaylistConfig is used to control how smart-download works.
-        
-        VirtuosoPlaylistConfig* playlistConfig = [[VirtuosoPlaylistConfig alloc] initWithName:@"TEST_PLAYLIST"];
-        
-        // Create one Playlist
-        VirtuosoPlaylist* playlist = [[VirtuosoPlaylist alloc] initWithConfig:playlistConfig
-                                                                     assets:@[@"SEASON-1-EPISODE-1",
-                                                                              @"SEASON-1-EPISODE-2",
-                                                                              @"SEASON-1-EPISODE-3"]];
-        
-        // When you create an Asset, you can also create playlists that might be assocated with the Asset.
-        config.playlists = [NSArray arrayWithObject:playlist];
+        NSError* error = nil;
+        VirtuosoPlaylistConfig* playlistConfig = [[VirtuosoPlaylistConfig alloc] initWithName:@"TEST_PLAYLIST"
+                                                                                 playlistType:kVDE_PlaylistType_AutoDownload
+                                                                                        error:&error];
+        if (error)
+        {
+            VLog(kVL_LogError, @"Failed to create PlaylistConfig. Error: %@", error.localizedDescription);
+            return;
+        }
         
         // For demo purposes we clear the previous playlist.
-        // This causes 'TEST_PLAYLIST' to be removed completely, resetting the demo.
-        // Ordinarily you would NOT do this as doing so will reset the smart-downloading cycle,
-        // restarting at the beginning.
-        [VirtuosoPlaylistManager.instance clear:@"TEST_PLAYLIST"];
+        [VirtuosoPlaylist clear:@"TEST_PLAYLIST"];
         
+        // Create Playlist
+        NSArray* assets = @[@"SEASON-1-EPISODE-1",
+                            @"SEASON-1-EPISODE-2",
+                            @"SEASON-1-EPISODE-3"];
+        
+        error = nil;
+        [VirtuosoPlaylist create:playlistConfig withAssets:assets error:&error];
+        if (error)
+        {
+            NSLog(@"Playlist create failed: %@", error.localizedDescription);
+        }
+
+        // Create first asset in Playlist.
+        // Once it's downloaded and played, deleting it will result in Episode-2 downloading.
         [VirtuosoAsset assetWithConfig:config];
-        
-        //
-        // Alternatively, you can create a Playlist directly using the following:
-        // [VirtuosoPlaylistManager.instance createWithItems:playlists];
-        
-        //
-        // Playlists can be appended to as well
-        // [VirtuosoPlaylistManager.instance appendItems:playlists];
-        
+                
         dispatch_async(dispatch_get_main_queue(), ^{
             sender.enabled = YES;
             [self refreshView];

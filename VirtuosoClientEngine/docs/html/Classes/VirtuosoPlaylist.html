@@ -56,6 +56,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/config">config</option>
+		
 		<option value="//api/name/isAssetHistoryConsidered">isAssetHistoryConsidered</option>
 		
 		<option value="//api/name/isPlaybackRequired">isPlaybackRequired</option>
@@ -68,6 +70,8 @@
 		
 		<option value="//api/name/pendingCount">pendingCount</option>
 		
+		<option value="//api/name/playlistType">playlistType</option>
+		
 		<option value="//api/name/status">status</option>
 		
 	</optgroup>
@@ -76,7 +80,17 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/findPlaylist:">+ findPlaylist:</option>
+		<option value="//api/name/clear:">+ clear:</option>
+		
+		<option value="//api/name/clearAll">+ clearAll</option>
+		
+		<option value="//api/name/create:error:">+ create:error:</option>
+		
+		<option value="//api/name/create:withAssets:error:">+ create:withAssets:error:</option>
+		
+		<option value="//api/name/find:">+ find:</option>
+		
+		<option value="//api/name/findAll">+ findAll</option>
 		
 	</optgroup>
 	
@@ -84,11 +98,15 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/append:">- append:</option>
+		<option value="//api/name/append:error:">- append:error:</option>
 		
 		<option value="//api/name/contains:">- contains:</option>
 		
+		<option value="//api/name/initWithConfig:">- initWithConfig:</option>
+		
 		<option value="//api/name/initWithConfig:assets:">- initWithConfig:assets:</option>
+		
+		<option value="//api/name/refresh">- refresh</option>
 		
 		<option value="//api/name/statusAsString">- statusAsString</option>
 		
@@ -127,8 +145,22 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>A VirtuosoPlaylist represents a sequenced set of Assets that are to be consecutively downloaded.
-Binge watching a TV series provides an appropriate example for how Playlists are intended to be used. When TV show in the series is watched,
-and deleted, the Playlist will automatically start downloading the next TV show in the series. Create an instance by providing an instance of <a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a> which is then used to control how the VirtuosoPlaylist is managed.</p>
+Binge watching a TV series provides an appropriate example for how Playlists are intended to be used. Create an instance by providing an instance of <a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a> which is then used to control how the VirtuosoPlaylist is managed. Paylist type is indicated by property <a href="#//api/name/playlistType">playlistType</a>. See <a href="../Constants/kVDE_PlaylistType.html">kVDE_PlaylistType</a></p>
+
+<p>Different types of Playlist can be created:</p>
+
+<p>1) Auto Download (original type)</p>
+
+<p>2) FastPlay</p>
+
+<p>Auto Download:</p>
+
+<p>This type of playlist will auto-download new epidodes as previous episodes are watched and deleted. When TV show in the series is watched,
+and deleted, the Playlist will automatically start downloading the next TV show in the series.</p>
+
+<p>FastPlay:</p>
+
+<p>FastPlay Playlists are designed for fast download of FastPlay enabled assets. This playlist type is simlar to AutoDownload playlist but differs on the triggering mechanism for new downloads. Triggering mechism is different. For AutoDownload playlists, the trigger event is asset deletion or expiry. FastPlay playlists trigger next download when the asset starts playing. As soon as an Asset configured for fastplay begins playing, the Playlist will immediately attempt to download the next sequential asset in the FastPlay playlist. Assets configured for this type of Playlist must be configured for FastPlay.</p>
 					</div>
 					
 					
@@ -139,13 +171,13 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 						<a title="Tasks" name="tasks"></a>
 						
 
-						
-						
+						<a title="Create" name="task_Create"></a>
+						<h2 class="task-title">Create</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/initWithConfig:assets:" title="initWithConfig:assets:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithConfig:assets:">&ndash;&nbsp;initWithConfig:assets:</a></code>
+	<a name="//api/name/create:error:" title="create:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/create:error:">+&nbsp;create:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -155,12 +187,12 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates playlist.</p>
+				<p>Creates persistent instance of playlist.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (_Nonnull instancetype)initWithConfig:(VirtuosoPlaylistConfig *_Nullable)<em>config</em> assets:(NSArray&lt;NSString*&gt; *_Nonnull)<em>assets</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)create:(VirtuosoPlaylistConfig *_Nonnull)<em>config</em> error:(NSError **_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -170,12 +202,12 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>config</code></th>
-						<td><p>Settings to control how Playlist is managed</p></td>
+						<td><p>Settings to control how Playlist is managed. See <a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a></p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>assets</code></th>
-						<td><p>Array of Strings which uniquely identify the Assets (via AssetID) that will become part of this playlist.</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError object returned indicating error</p></td>
 					</tr>
 				
 				</table>
@@ -194,7 +226,7 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Creates the VirtuosoPlaylist object. Once created you must then pass this to <a href="../Classes/VirtuosoPlaylistManager.html">VirtuosoPlaylistManager</a> to create the Playlist inside the Virtuoso.</p>
+				<p>Creates persistent instance of playlist.</p>
 			</div>
 			
 
@@ -212,8 +244,8 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/findPlaylist:" title="findPlaylist:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/findPlaylist:">+&nbsp;findPlaylist:</a></code>
+	<a name="//api/name/create:withAssets:error:" title="create:withAssets:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/create:withAssets:error:">+&nbsp;create:withAssets:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -223,12 +255,12 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Finds instance of specified playlist</p>
+				<p>Creates persistent instance of playlist.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)findPlaylist:(NSString *)<em>name</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (_Nullable instancetype)create:(VirtuosoPlaylistConfig *_Nonnull)<em>config</em> withAssets:(NSArray&lt;NSString*&gt; *_Nonnull)<em>assets</em> error:(NSError **_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -237,8 +269,18 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>name</code></th>
-						<td><p>String that uniquely identifies this Playlist.</p></td>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Settings to control how Playlist is managed. See <a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assets</code></th>
+						<td><p>Array of Strings which uniquely identify the Assets (via AssetID) that will become part of this playlist.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError object returned indicating error</p></td>
 					</tr>
 				
 				</table>
@@ -257,9 +299,382 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Finds instance of specified playlist.</p>
+				<p>Creates persistent instance of playlist.</p>
+			</div>
+			
 
-<p>@warning: This method is a blocking call. Best practice is to invoke this method using a background thread.</p>
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithConfig:" title="initWithConfig:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithConfig:">&ndash;&nbsp;initWithConfig:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an instance of VirtuosoPlaylist</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (_Nonnull instancetype)initWithConfig:(VirtuosoPlaylistConfig *_Nullable)<em>config</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides configuration parameters needed to create the Playlist. See <a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>VirtuosoPlaylist, nil if parameters were invalid</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates an instance of VirtuosoPlaylist that can have assets appended.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithConfig:assets:" title="initWithConfig:assets:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithConfig:assets:">&ndash;&nbsp;initWithConfig:assets:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an instance of VirtuosoPlaylist</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (_Nonnull instancetype)initWithConfig:(VirtuosoPlaylistConfig *_Nullable)<em>config</em> assets:(NSArray&lt;NSString*&gt; *_Nonnull)<em>assets</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>config</code></th>
+						<td><p>Provides configuration parameters needed to create the Playlist. See <a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assets</code></th>
+						<td><p>Array of strings for the AssetID&rsquo;s of the assets to be added.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>VirtuosoPlaylist, nil if parameters were invalid</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates an instance of VirtuosoPlaylist that can have assets appended.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="FInd" name="task_FInd"></a>
+						<h2 class="task-title">FInd</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/find:" title="find:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/find:">+&nbsp;find:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Finds Playlist</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype _Nullable)find:(NSString *)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name of the Playlist.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>VirtuosoPlaylist, nil if not found.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Finds the specified playlist.</p><div class="warning"><p><strong>Warning:</strong> Avoid calling this method directly from MainThread as the call will block.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findAll" title="findAll"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findAll">+&nbsp;findAll</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Finds all Playlist&rsquo;s</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;VirtuosoPlaylist*&gt; *)findAll</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Array<VirtuosoPlaylist>, nil if not found.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Finds all playlists.</p><div class="warning"><p><strong>Warning:</strong> Avoid calling this method directly from MainThread as the call will block.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Clear" name="task_Clear"></a>
+						<h2 class="task-title">Clear</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/clearAll" title="clearAll"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clearAll">+&nbsp;clearAll</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Clears all Playlist content</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (Boolean)clearAll</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>True indicates success.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Clears all Playlist content.</p><div class="warning"><p><strong>Warning:</strong> Avoid calling this method directly from MainThread as the call will block.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/clear:" title="clear:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/clear:">+&nbsp;clear:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Clears all <a href="#//api/name/items">items</a> in the specified Playlist</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (Boolean)clear:(NSString *_Nonnull)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name of the Asset Playlist.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>True indicates success.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Clears all <a href="#//api/name/items">items</a> in the specified Playlist.</p><div class="warning"><p><strong>Warning:</strong> Avoid calling this method directly from MainThread as the call will block.</p></div>
 			</div>
 			
 
@@ -334,9 +749,17 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 			
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/append:" title="append:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/append:">&ndash;&nbsp;append:</a></code>
+</div>
+						</div>
+						
+
+						<a title="Add" name="task_Add"></a>
+						<h2 class="task-title">Add</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/append:error:" title="append:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/append:error:">&ndash;&nbsp;append:error:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -346,12 +769,12 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Appends assets to the playlist</p>
+				<p>Appends assets to the playlist and return error on failure.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)append:(NSArray *)<em>assets</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)append:(NSArray *)<em>assets</em> error:(NSError *_Nullable __autoreleasing *)<em>error</em></code></div>
 
 		    
 			
@@ -364,10 +787,20 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 						<td><p>Array of AssetID&rsquo;s for the Assets to be added. Duplicate Assets are not allowed in the Playlist.</p></td>
 					</tr>
 				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError that will be returned if the call fails.</p></td>
+					</tr>
+				
 				</table>
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>True if successful</p>
+			</div>
 			
 
 			
@@ -392,7 +825,15 @@ and deleted, the Playlist will automatically start downloading the next TV show 
 			
 		</div>
 	</div>
-</div><div class="section-method">
+</div>
+						</div>
+						
+
+						<a title="Instance Properties" name="task_Instance Properties"></a>
+						<h2 class="task-title">Instance Properties</h2>
+
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/name" title="name"></a>
 	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
 </h3>
@@ -786,6 +1227,144 @@ is skipped.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/playlistType" title="playlistType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playlistType">&nbsp;&nbsp;playlistType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Type of playlist. See <a href="../Constants/kVDE_PlaylistType.html">kVDE_PlaylistType</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) kVDE_PlaylistType playlistType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Type of playlist. See <a href="../Constants/kVDE_PlaylistType.html">kVDE_PlaylistType</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/config" title="config"></a>
+	<h3 class="method-title"><code><a href="#//api/name/config">&nbsp;&nbsp;config</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a> settings for the Playlist. Once set this can not be changed and is only made available for read access.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) VirtuosoPlaylistConfig *config</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p><a href="../Classes/VirtuosoPlaylistConfig.html">VirtuosoPlaylistConfig</a> settings for the Playlist. Once set this can not be changed and is only made available for read access.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/refresh" title="refresh"></a>
+	<h3 class="method-title"><code><a href="#//api/name/refresh">&ndash;&nbsp;refresh</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Refresh current state of Playlist <a href="#//api/name/items">items</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)refresh</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Refresh current state of Playlist <a href="#//api/name/items">items</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylist.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -801,7 +1380,7 @@ is skipped.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-04-28</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-06-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

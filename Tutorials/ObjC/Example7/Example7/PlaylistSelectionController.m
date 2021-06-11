@@ -29,7 +29,7 @@
     [super viewWillAppear:animated];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        self.playlists = [VirtuosoPlaylistManager.instance findAllItems];
+        self.playlists = [VirtuosoPlaylist findAll];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });

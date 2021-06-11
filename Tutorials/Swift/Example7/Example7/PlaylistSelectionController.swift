@@ -23,7 +23,7 @@ class PlaylistSelectionController: UITableViewController {
         super.viewWillAppear(animated)
         
         DispatchQueue.global(qos: .userInitiated).async {
-            self.playlists = VirtuosoPlaylistManager.instance().findAllItems()
+            self.playlists = VirtuosoPlaylist.findAll()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -32,9 +32,9 @@ class PlaylistSelectionController: UITableViewController {
     
     @objc func clearPlaylists() {
         DispatchQueue.global(qos: .userInitiated).async {
-            VirtuosoPlaylistManager.instance().clearAll()
+            VirtuosoPlaylist.clearAll()
             VirtuosoAsset.deleteAll()
-            self.playlists = VirtuosoPlaylistManager.instance().findAllItems()
+            self.playlists = VirtuosoPlaylist.findAll()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

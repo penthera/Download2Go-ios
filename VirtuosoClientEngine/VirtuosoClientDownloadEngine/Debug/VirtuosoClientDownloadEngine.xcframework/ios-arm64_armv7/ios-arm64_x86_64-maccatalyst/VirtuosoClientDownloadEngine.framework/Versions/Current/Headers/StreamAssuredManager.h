@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "StreamAssuredConfig.h"
 
+#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
+#import <UIKit/UIKit.h>
+#endif
+
 NS_ASSUME_NONNULL_BEGIN
 @class StreamItemParameters;
 @class StreamItem;
@@ -41,12 +45,18 @@ typedef NS_ENUM(NSInteger, SAM_Error)
     /** WebProxy startup failed */
     SAM_Error_WebProxyStartFailure,
     
-    /** Mainifest parsing failed */
+    /** Manifest parsing failed */
     SAM_Error_ManifestParsingFailure,
     
+    /** Sub-Manifest parsing failed */
+    SAM_Error_SubManifestParsingFailure,
+        
     /** Not authenticated. */
     SAM_Error_NotAuthenticated,
-    
+
+    /** Playback failure error */
+    SAM_Error_PlaybackFailure,
+
 };
 
 /*!
@@ -117,6 +127,7 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 
 -(Boolean)isComplete;
 
++(UIViewController*)playAssurePlayerViewContollerForURL:(NSString*)url;
 
 @end
 

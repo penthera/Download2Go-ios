@@ -50,6 +50,8 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
     /** Could not find assetID in SDK data */
     kVAV_InvalidAssetIDValue = -8,
 
+    /** Player request CID did not match asset CID */
+    kVAV_MismatchedCID = -9,
 };
 
 /*!
@@ -63,7 +65,7 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
  *  @param delegate The VirtuosoAVAssetResourceLoaderDelegate that encountered the error
  *  @param error The error describing the issue.
  */
-- (void)resourceLoaderDelegate:(nonnull id<VirtuosoAVAssetResourceLoaderDelegate>)delegate generatedError:(nonnull NSError*)error;
+- (void)resourceLoaderDelegate:(nonnull id<VirtuosoAVAssetResourceLoaderDelegate>)delegate generatedError:(nullable NSError*)error;
 
 @end
 

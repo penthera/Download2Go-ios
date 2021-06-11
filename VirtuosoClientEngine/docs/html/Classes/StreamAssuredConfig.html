@@ -66,6 +66,12 @@
 		
 		<option value="//api/name/minimumWebServerIdleThreshold">minimumWebServerIdleThreshold</option>
 		
+		<option value="//api/name/mode">mode</option>
+		
+		<option value="//api/name/requiredCacheMbps">requiredCacheMbps</option>
+		
+		<option value="//api/name/targetBitrate">targetBitrate</option>
+		
 	</optgroup>
 	
 
@@ -77,6 +83,8 @@
 		<option value="//api/name/init">- init</option>
 		
 		<option value="//api/name/initWithDelegate:">- initWithDelegate:</option>
+		
+		<option value="//api/name/initWithTargetBitrate:andDelegate:">- initWithTargetBitrate:andDelegate:</option>
 		
 	</optgroup>
 	
@@ -112,7 +120,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Provides configruation options for StreamAssured playback.</p>
+						<p>Provides configuration options for StreamAssured playback.</p>
 					</div>
 					
 					
@@ -186,6 +194,47 @@
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger minimumStartingIndex</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requiredCacheMbps" title="requiredCacheMbps"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requiredCacheMbps">&nbsp;&nbsp;requiredCacheMbps</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Bandwidth required for SAM to continue reading-ahead whenever playback is throttled.  Generally values less than a bandiwdth of 10.0 Mbps will not have any affect as player requests will limit any reading-ahead.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) double requiredCacheMbps</code></div>
 
 		    
 			
@@ -308,7 +357,94 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) id&lt;StreamAssuredStatusDelegate&gt; _Nullable delegate</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;StreamAssuredStatusDelegate&gt; _Nullable delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/targetBitrate" title="targetBitrate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/targetBitrate">&nbsp;&nbsp;targetBitrate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Target bitrate SAM should try and maintain.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long targetBitrate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A value of - 1 will let the player the choose the the value automatically. 0 will select and lowest bitrate.  Any other value SAM will pick the closest available bitrate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mode" title="mode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mode">&nbsp;&nbsp;mode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current description of processing mode.  Values include Automatic, Progressive, and Backstop.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSString *mode</code></div>
 
 		    
 			
@@ -405,7 +541,70 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>Deleate that will be invoked by the SAM.</p></td>
+						<td><p>Delegate that will be invoked by the SAM.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Instance</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTargetBitrate:andDelegate:" title="initWithTargetBitrate:andDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTargetBitrate:andDelegate:">&ndash;&nbsp;initWithTargetBitrate:andDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates an instance</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTargetBitrate:(long long)<em>targetBitrate</em> andDelegate:(id&lt;StreamAssuredStatusDelegate&gt; _Nullable)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetBitrate</code></th>
+						<td><p>Bitrate SAM will try to maintain.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate that will be invoked by the SAM.</p></td>
 					</tr>
 				
 				</table>
@@ -451,7 +650,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-04-28</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-06-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

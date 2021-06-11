@@ -12,16 +12,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  *
- *  @typedef kVDE_PlaylistStatus
+ *  @discussion Playlist type options.
+ */
+typedef NS_ENUM(NSInteger, kVDE_PlaylistType)
+{
+    /** Playlist is auto download type triggered by asset delete or expiry. */
+    kVDE_PlaylistType_AutoDownload,
+
+    /** Playlist is fastplay download type triggered by fastplay asset playback. */
+    kVDE_PlaylistType_FastPlay
+};
+
+/*!
  *
- *  @abstract Status of playlist
+ *  @discussion Status of playlist.
  */
 typedef NS_ENUM(NSInteger, kVDE_PlaylistStatus)
 {
     /** Playlist is actively enabled */
     PlaylistStatus_Active     = 0,
     
-    /** Customer requested cancelling auto download */
+    /** Customer requested cancelling further downloads */
     PlaylistStatus_AutoDownloadCancelled,
     
     /** Playlist Asset creation failed */
@@ -29,18 +40,50 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistStatus)
     
     /** Playlist Asset creation failed and no more assets exist */
     PlaylistStatus_AssetCreateFailedNoAssetsLeft = 500,
-    
 };
+
+/*!
+ *  @discussion VirtuosoPlaylistConfig is used to control how a VirtuosoPlaylist will be managed.
+ *
+ *  A VirtuosoPlaylist represents a sequenced set of Assets that are to be consecutively downloaded.
+ *  Binge watching a TV series provides an appropriate example for how Playlists are intended to be used. Create an instance by providing an instance of VirtuosoPlaylistConfig which is then used to control how the VirtuosoPlaylist is managed. Paylist type is indicated by property playlistType. See kVDE_PlaylistType
+ *
+ *  Different types of Playlist can be created:
+ *
+ *     1) Auto Download (original type)
+ *
+ *     2) FastPlay
+ *
+ *   Auto Download:
+ *
+ *   This type of playlist will auto-download new epidodes as previous episodes are watched and deleted. When TV show in the series is watched,
+ *   and deleted, the Playlist will automatically start downloading the next TV show in the series.
+ *
+ *   FastPlay:
+ *
+ *   FastPlay Playlists are designed for fast download of FastPlay enabled assets. This playlist type is simlar to AutoDownload playlist but differs on the triggering mechanism for new downloads. Triggering mechism is different. For AutoDownload playlists, the trigger event is asset deletion or expiry. FastPlay playlists trigger next download when the asset starts playing. As soon as an Asset configured for fastplay begins playing, the Playlist will immediately attempt to download the next sequential asset in the FastPlay playlist. Assets configured for this type of Playlist must be configured for FastPlay.
+ */
+@interface VirtuosoPlaylistConfig : NSObject
+
+/*!
+ @abstract Create playlist types AutoDownload or FastPlay.
+ @discussion Creates either AutoDownload or FastPlay playlist types.
+ 
+ @param name Name of Playlist. Name is required.
+ @param playlistType Type of playlist to create. See kVDE_PlaylistType
+ @param error Will be initialized with instance of NSError if the initializer fails.
+ @returns Instance of the PlaylistConfig that can then be used to create a new Playlist.
+
+*/
+-(_Nullable instancetype)initWithName:(NSString*)name
+                         playlistType:(kVDE_PlaylistType)playlistType
+                                error:(NSError**)error;
 
 
 /*!
-*  @abstract Defines the various confiuration options that can be used to create a VirtuosoPlaylist.
-*
-*  @discussion Create this object and set the various properties to control how the VirtuosoPlaylist will be manged.
-*/
-@interface VirtuosoPlaylistConfig : NSObject
-
--(instancetype)initWithName:(NSString*)name;
+ *  @abstract Specifies the type of Playlist. See kVDE_PlaylistType
+ */
+@property (nonatomic, assign, readonly)kVDE_PlaylistType playlistType;
 
 @property (nonatomic, copy, readonly)NSString* name;
 

@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 
 /*!
-*  @discussion VideoStreamInfo provides status information regarding  StreamAssured download and playback of Video stream segments.
+*  @discussion StreamAssuredStatusInfoVideoStream provides status information regarding  StreamAssured download and playback of Video stream segments.
 */
 @interface StreamAssuredStatusInfoVideoStream : NSObject
 
@@ -20,6 +20,11 @@
 *  @abstract Number of segments total
 */
 @property (nonatomic, assign)NSInteger itemCount;
+
+/*!
+*  @abstract Number of segments requested
+*/
+@property (nonatomic, assign)NSInteger requestedCount;
 
 /*!
 *  @abstract Number of segments downloaded
@@ -41,7 +46,25 @@
 */
 @property (nonatomic, copy)NSString* resolution;
 
--(instancetype)initWithBitrate:(long long)bitrate codecs:(NSString*)codec resolution:(NSString*)resolution itemCount:(NSInteger)itemCount downloadCount:(NSInteger)downloadCount;
+/*!
+*  @abstract Whether the stream at this bitrate is being targeted
+*/
+@property (nonatomic, assign)Boolean targeted;
+
+/*!
+*  @abstract Whether the stream at this bitrate is currently being throttled
+*/
+@property (nonatomic, assign)Boolean currentlyThrottled;
+
+
+-(instancetype)initWithBitrate:(long long)bitrate
+                        codecs:(NSString*)codec
+                    resolution:(NSString*)resolution
+                     itemCount:(NSInteger)itemCount
+                requestedCount:(NSInteger)requestedCount
+                 downloadCount:(NSInteger)downloadCount
+                      targeted:(Boolean)targeted
+            currentlyThrottled:(Boolean)currentlyThrottled;
 
 @end
 
@@ -133,14 +156,15 @@
 
 
 /*!
-*  @discussion Stream Assured delegate used to notify progress state changes
+*  @discussion Stream Assured delegate used to notify progress state changes. Methods of this delegate wil be invoked from background threads. If you need to update UI make sure to dispatch to MainThread.
 */
 @protocol StreamAssuredStatusDelegate <NSObject>
 
+@optional
 /*!
 *  @abstract Bitrate changed
 *
-*  @discussion This method is invoked to report bitrate change and progress
+*  @discussion This method is invoked to report bitrate change and progress. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
  *
 *  @param statusInfo StreamAssuredStatusInfo
  *
@@ -150,12 +174,71 @@
 /*!
 *  @abstract Bitrate download progress reported
 *
-*  @discussion This method is invoked to report download progress..
+*  @discussion This method is invoked to report download progress.. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
  *
 *  @param statusInfo StreamAssuredStatusInfo
  *
 */
 -(void)progressReported:(StreamAssuredStatusInfo*)statusInfo;
+
+/*!
+*  @abstract Report network failure during playback
+*
+*  @discussion This callback indicates PlayAssured is now disabled and playback will be attempted via conventional streaming because the current network connection is too slow. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
+ *
+*  @param error NSError indicating cause of failure. See SAM_Error
+ *
+*/
+-(void)reportNetworkFail:(NSError*)error;
+
+/*!
+*  @abstract Report unrecoverable parsing failure during playback
+*
+*  @discussion Report unrecoverable parsing failure during playback. PlayAssured can not continue because the HLS Manifest was invalid. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
+ *
+*  @param error NSError indicating cause of failure. See SAM_Error
+ *
+*/
+-(void)reportParsingFail:(NSError*)error;
+
+/*!
+*  @abstract Report parsing succeeded
+*
+*  @discussion Report parsing succeeded. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
+*/
+-(void)reportParsingSuccess;
+
+
+/*!
+*  @abstract Report playback failure
+*
+*  @discussion This callback indicates PlayAssured is unable to conventionally streaming because the current network connection is too slow. Customer layer code should terminate playback in response to this callback as Streaming will not continue. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
+ *
+*  @param error NSError indicating cause of failure. See SAM_Error
+ *
+*/
+-(void)reportPlaybackFail:(NSError*)error;
+
+/*!
+*  @abstract Network reachability changed
+*
+*  @discussion This method is invoked to report network reachability changes. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
+ *
+*  @param reachable True indicates network is reachable
+ *
+*/
+-(void)networkReachabilityChanged:(Boolean)reachable;
+
+/*!
+*  @abstract This method is will be invoked anytime playback throttling state changes
+*
+*  @discussion This method is invoked anytime playback throttling state changes. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.
+ *
+*  @param throttled True indicates playback has been throttled
+ *
+*/
+-(void)reportPlaybackThrottled:(Boolean)throttled;
+
 
 @end
 

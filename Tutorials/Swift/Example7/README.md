@@ -1,7 +1,7 @@
 Tutorial - Example7: Playlists (Smart-Download's)
 =======================================
 ## Summary
-This sample demonstrates how Playlists work. When creating an Asset, provide an array of 1..n Playlists. Each playlist can contain any number of AssetID's for the Video Assets included in the Playlist. As a Playlist item is played, and then deleted, Penthera will search for any Playlist in which the deleted asset existed and start the next sequential smart-download.
+This sample demonstrates how Sequential Episode Playlists work. When creating an Asset, provide an array of 1..n Playlists. Each playlist can contain any number of AssetID's for the Video Assets included in the Playlist. As a Playlist item is played, and then deleted, Penthera will search for any Playlist in which the deleted asset existed and start the next sequential smart-download.
 </br>
 </br>
 

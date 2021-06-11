@@ -537,6 +537,16 @@ typedef void (^ShutdownCompleteCallback)(void);
  */
 @property (nonatomic,readonly)VirtuosoEngineStatusInfo* _Nonnull engineStatusInfo;
 
+/*!
+ *  @abstract Check whether the specified asset is currently being played.
+ * @discussion This method can be used to check whether the specified asset is currently being played.
+ *
+ *  @param asset Asset to check whether playback is happening.
+ *
+ *  @return True if asset was playing.
+ */
+-(Boolean)isPlaybackActive:(VirtuosoAsset* _Nonnull)asset;
+
 @end
 
 #endif

@@ -244,7 +244,7 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
 *
 *  @return The configured license server URL for the given DRM type
 */
-+ (nullable NSString*)licenseServerURLForDRM:(kVLM_DRMType)type andSubType:(NSString* _Nonnull)subType;
++ (nullable NSString*)licenseServerURLForDRM:(kVLM_DRMType)type andSubType:(NSString* _Nullable)subType;
 
 /*!
  *  @abstract Downloads the client app certificate from the provided URL
@@ -408,34 +408,39 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *
  *  @param avContentKeySession An AVContentKeySession to use for internal DRM operations
  */
-+ (void)registerAVContentKeySession:(nonnull AVContentKeySession*)avContentKeySession;
++ (void)registerAVContentKeySession:(nonnull AVContentKeySession*)avContentKeySession API_AVAILABLE(ios(10.3));
 
 /*!
  *  @abstract Returns the currently configured AVContentKeySession
  *
  *  @return The currently configured AVContentKeySession
  */
-+ (nonnull AVContentKeySession*)registeredAVContentKeySession;
++ (nonnull AVContentKeySession*)registeredAVContentKeySession API_AVAILABLE(ios(10.3));
 
 /*!
  *  @abstract Configures the VirtuosoLicenseManager to utilize a particular AVAssetResourceLoaderDelegate class
  *
- *  @discussion Methods in VirtuosoLicenseManager that reference AVAssetResourceLoader are required to support iOS devices
- *              on iOS < iOS 11.0.  On iOS devices >= iOS 11.0, the AVContentKeySession APIs from this class are active instead,
- *              and any configured AVAssetResourceLoaderDelegate will never be referenced.
+ *  @discussion Starting in iOS 11, Apple will only be adding new FairPlay features to AVContentKeySession DRM implementations.
+ *              We strongly recommend updating to AVContentKeySession for DRM if you are only supporting iOS 11 and higher.
+ *              Access to functions like dual expiry licenses are only available via that implementation.  Penthera cannot guarantee
+ *              how long AVAssetResourceLoaderDelegate implementations will remain supported by Apple.
  *
  *              By default, the VirtuosoLicenseManager will automatically create and use instances of the
  *              DefaultVirtuosoAVAssetResourceLoaderDelegate for DRM licensing and playback.  Calling this method allows
  *              you to specify an alternate custom class for these operations.
  *
  *  @param resourceLoaderDelegateClass A Class instance type to use for internal AVAssetResourceLoaderDelegate operations
- */
+ *
+ *  @deprecated
+*/
 + (void)registerAVAssetResourceLoaderDelegate:(nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)resourceLoaderDelegateClass;
 
 /*!
  *  @abstract Returns the currently configured AVAssetResourceLoaderDelegate class
  *
  *  @return The currently configured AVAssetResourceLoaderDelegate class
+ *
+ *  @deprecated
  */
 + (nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)registeredAVAssetResourceLoaderDelegate;
 

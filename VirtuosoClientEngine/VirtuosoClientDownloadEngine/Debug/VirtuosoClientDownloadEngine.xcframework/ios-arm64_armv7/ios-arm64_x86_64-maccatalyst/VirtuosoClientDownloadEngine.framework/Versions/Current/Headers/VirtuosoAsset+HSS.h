@@ -24,8 +24,6 @@
 
 /*!
  *  @discussion Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.
-  *
-  * @deprecated HSS Asset types deprecated and will be removed in the future.
  *
  */
 @interface VirtuosoAsset (HSS)

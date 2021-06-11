@@ -815,7 +815,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @abstract Deletes all assets.
  *
  *  @discussion Deletes all assets in the database. During delete, the Engine stops all parsing
- *              and downloading. Invoking deleteAll will remove all assets. Playlists will trigger downloads following deleteAll.
+ *              and downloading. Invoking deleteAll will remove all assets. Playlists will trigger downloads following deleteAll. This call will execute syncronously and should only be invoked from a background (non UI) thread because it will block and wait. If you do not want this method to trigger additional Playlist downloads you must first clear the playlist.
  */
 + (void)deleteAll;
 
@@ -1111,6 +1111,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              will block during this network request.
  */
 @property (nonatomic,readonly,nonnull) NSString* assetURL;
+
 
 /*!
  *  @abstract Where this asset exists on disk
@@ -1437,6 +1438,14 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *
  */
 @property (nonatomic,strong,nullable) NSDate* firstPlayDateTime;
+
+/*!
+ *  @abstract Date and time when this asset was last played.  Nil if Virtuoso is not aware of this asset being played yet.
+ *
+ *  @discussion This property is automatically set when play_start event is triggered.
+ *
+ */
+@property (nonatomic,strong,nullable) NSDate* lastPlaybackDateTime;
 
 /*!
  *  @abstract The asset-specific lifetime download limit.

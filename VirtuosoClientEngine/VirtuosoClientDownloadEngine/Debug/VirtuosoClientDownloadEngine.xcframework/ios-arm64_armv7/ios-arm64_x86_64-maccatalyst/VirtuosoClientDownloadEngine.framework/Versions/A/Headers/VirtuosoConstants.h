@@ -266,6 +266,8 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
     /** Asset was created for FastPlay download only */
     kVDE_FastPlayDownloadOnly = -22,
 
+    /** Asset has invalid MediaHintUrl configuration */
+    kVDE_InvalidMediaHintConfiguration = -23,
 
 
 };
@@ -479,7 +481,7 @@ typedef NS_ENUM(NSInteger, kVDE_AssetPermissionType)
     /** Permission to download has been denied because the account has reached is maximum limit */
     kVDE_AssetPermissionDeniedAccountMaxReached = 2,
     
-    /** Permission to download has been denied because the global asset download limit as been reached */
+    /** Permission to download has been denied because the global asset download limit has been reached */
     kVDE_AssetPermissionDeniedLifetimeLimitReached = 3,
     
     /** Permission to download has been denied because too many copies of this asset already exist on

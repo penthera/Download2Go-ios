@@ -14,6 +14,19 @@
 @class VirtuosoAsset;
 @class VirtuosoAncillaryFile;
 @class VirtuosoEngineStatusInfo;
+@class VirtuosoPlaylist;
+
+@interface VirtuosoPermissionSettingInfo : NSObject
+@property (nonatomic, copy)NSString* _Nonnull permission;
+@property (nonatomic, strong)NSNumber* _Nonnull currentValue;
+@property (nonatomic, strong)NSNumber* _Nonnull previousValue;
+@property (nonatomic, strong)NSDate* _Nonnull dateChanged;
+
+-(instancetype _Nullable)initWithPermission:(NSString* _Nonnull)permission
+                     currentValue:(NSNumber* _Nonnull)currentValue
+                    previousValue:(NSNumber* _Nonnull)previousValue
+                      dateChanged:(NSDate* _Nonnull)dateChanged;
+@end
 
 /*!
 *  @abstract Delegate interface for Download Engine notifications.
@@ -74,17 +87,6 @@
 *
 */
 -(void)downloadEngineDeletedAssetId:(NSString* _Nonnull)assetID;
-
-/*!
- *  @abstract Called whenever the Engine reports a consistency scan complete for an asset
- *
- *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidFinishConsistencyScanAssetNotification
- *
- *  @param asset VirtuosoAsset asset
- *
- */
--(void)downloadEngineConsistencyScanCompletedForAsset:(VirtuosoAsset* _Nonnull)asset;
-
 
 /*!
  *  @abstract Called whenever the Engine reports a VirtuosoAncillaryFile as complete
@@ -278,6 +280,62 @@
 *
 */
 -(void)downloadEnginePlaybackStopped:(VirtuosoAsset* _Nonnull)asset;
+
+/*!
+ @abstract Download permission granted
+ 
+ @discussion This callback is invoked when permission has been granted for an asset. This notificaiton is only emitted when Permissions are enabled.
+ 
+ @param asset Asset for which permission was granted
+ @param date Date and Time when permission was granted
+ */
+-(void)permissionGrantedForAsset:(VirtuosoAsset* _Nonnull)asset  requestDate:(NSDate* _Nonnull)date ;
+
+/*!
+*  @abstract Download permission was denied
+*
+*  @discussion This callback is invoked when permission has been denied for an asset. This notificaiton will only be emitted when Permissions are currently enabled.
+*
+ @param asset Asset for which permisison to download was denied
+ @param date Date and time when request was made
+ @param reason Reason why permision was denied. See kVBP_StatusCode
+*
+*/
+-(void)permissionDeniedForAsset:(VirtuosoAsset* _Nonnull)asset requestDate:(NSDate* _Nonnull)date withReason:(kVBP_StatusCode)reason;
+
+/*!
+*  @abstract Initial settings for Permisions
+*
+*  @discussion This callback is invoked at startup to notify listeners of initial Permission settings
+*
+ * @param changes Array of VirtuosoPermissionSettingInfo for permission settings.
+ * @param requestDate Date and time when request was made
+*
+*/
+-(void)permissionSettingInitialState:(NSArray<VirtuosoPermissionSettingInfo*>* _Nonnull)changes requestDate:(NSDate* _Nonnull)requestDate;
+
+/*!
+*  @abstract Permission settings changes
+*
+*  @discussion This callback is invoked when permission has received permission setting changes.
+*
+ @param changes Array of VirtuosoPermissionSettingInfo for permission settings that have changed.
+ @param requestDate Date and time when request was made
+ @param source Source of call that generated this setting change.
+*
+*/
+-(void)permissionSettingChange:(NSArray<VirtuosoPermissionSettingInfo*>* _Nonnull)changes  requestDate:(NSDate* _Nonnull)requestDate source:(NSString*_Nullable)source;
+
+
+/*!
+*  @abstract Playlist change
+*
+*  @discussion This callback is invoked when a playlist change happens
+*
+ @param playlist Playlist that has changed
+*
+*/
+-(void)playlistChange:(VirtuosoPlaylist* _Nonnull)playlist;
 
 @end
 

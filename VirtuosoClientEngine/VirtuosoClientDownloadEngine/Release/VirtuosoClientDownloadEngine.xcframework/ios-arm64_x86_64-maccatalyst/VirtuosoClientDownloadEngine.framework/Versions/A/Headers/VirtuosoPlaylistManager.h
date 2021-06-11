@@ -16,10 +16,22 @@ NS_ASSUME_NONNULL_BEGIN
 @class VirtuosoPlaylistConfig;
 
 /*!
- *
- *  @typedef kVDE_PlaylistDownloadOption
- *
- *  @abstract Control option for continuing Playlist auto downloads
+ *  @discussion Error codes for Playlists
+ */
+typedef NS_ENUM(NSInteger, kPLY_Error)
+{
+    /** Playlist status is not Active */
+    kPLE_Error_NotActive = -1,
+    /** Invalid parameter see logs */
+    kPLE_Error_InvalidParameter = -2,
+    /** Internal error see logs */
+    kPLE_Error_InternalError = -3,
+    
+};
+
+
+/*!
+ *  @discussion Control option for continuing Playlist auto downloads
  */
 typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
 {
@@ -102,8 +114,25 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *
  *  @return Return an instance of VirtuosoPlaylistNextAssetDownloadItem
  */
-
 -(VirtuosoPlaylistDownloadAssetItem*)assetForAssetID:(NSString* _Nonnull)assetID;
+
+@optional
+
+/*!
+ *  @abstract Requests the next asset that should be downlaoded for the named Playlist.
+ *
+ *  @discussion Fires when a Playlist determins next logical asset that is not on the device can be readied for download. FastPlay playlist assets must be configured for fastPlay download only (VirtuosoAssetConfig.fastPlayEnabled = true).
+ *
+ *  @param assetID The ID of the Asset in the specificed Playlist.
+ *  @param triggerAssetID The ID of the Asset that triggered the need to download a new asset.
+ *  @param playlists Playlists this triggeringAssetID is contained in.
+ *
+ *  @return Return an instance of VirtuosoPlaylistNextAssetDownloadItem
+ */
+
+-(VirtuosoPlaylistDownloadAssetItem*)assetForAssetID:(NSString* _Nonnull)assetID
+                                      triggerAssetID:(NSString* _Nonnull)triggerAssetID
+                                        forPlaylists:(NSArray<VirtuosoPlaylist*>*) playlists;
 
 @end
 
@@ -115,6 +144,12 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *
 */
 @interface VirtuosoPlaylistManager : NSObject
+
+/*!
+ *  @abstract Error domain for errors returned by Playlists. See kPLY_Error
+
+ */
+@property (nonatomic, class, readonly)NSString* errorDomain;
 
 /*!
  *  @abstract Sets the delegate that will be called when an asset is needed for downloading from Playlist
@@ -139,6 +174,8 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *
  *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
+ *  @deprecated This method has been deprecated and replaced by VirtuosoPlaylist method create
+ *
  *  @param name Name of the Playlist.
  *
  *  @param assets Array of Asset ID's to be added to the specified Playlist. Assets in the Playlist are indexed based on the order of items in this array.
@@ -147,7 +184,7 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *
  *  @return True indicates success.
  */
--(Boolean)create:(NSString* _Nonnull)name assets:(NSArray<NSString*>* _Nonnull)assets config:(VirtuosoPlaylistConfig* _Nullable)config;
+-(Boolean)create:(NSString* _Nonnull)name assets:(NSArray<NSString*>* _Nonnull)assets config:(VirtuosoPlaylistConfig* _Nullable)config __deprecated_msg("Use VirutosoPlaylist create");
 
 /*!
  *  @abstract Creates Playlist's
@@ -155,12 +192,14 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *  @discussion Creates and replaces any previous contents for the specified Playlist's.
  *
  *  @warning Avoid calling this method directly from MainThread as the call will block.
+ *
+ *  @deprecated This method has been deprecated and replaced by VirtuosoPlaylist method create
  *
  *  @param item Playlist to create
  *
  *  @return True indicates success.
  */
--(Boolean)create:(VirtuosoPlaylist* _Nonnull)item;
+-(Boolean)create:(VirtuosoPlaylist* _Nonnull)item __deprecated_msg("Use VirutosoPlaylist create");
 
 /*!
  *  @abstract Creates Playlist's
@@ -169,11 +208,13 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *
  *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
+ *  @deprecated This method has been deprecated and replaced by VirtuosoPlaylist method create
+ *
  *  @param items Array of Playlists to create
  *
  *  @return True indicates success.
  */
--(Boolean)createWithItems:(NSArray<VirtuosoPlaylist*>* _Nonnull)items;
+-(Boolean)createWithItems:(NSArray<VirtuosoPlaylist*>* _Nonnull)items __deprecated_msg("Use VirutosoPlaylist create");;
 
 /*!
  *  @abstract Appends to a Playlist
@@ -186,11 +227,13 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *
  *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
+ *  @deprecated This method has been deprecated and replaced by VirtuosoPlaylist method append
+ *
  *  @param item Playlist data to append
  *
  *  @return True indicates success.
  */
--(Boolean)append:(VirtuosoPlaylist* _Nonnull)item;
+-(Boolean)append:(VirtuosoPlaylist* _Nonnull)item __deprecated_msg("Use VirutosoPlaylist append");;
 
 /*!
  *  @abstract Appends to items to each of the specified Playlist in the input array.
@@ -203,11 +246,13 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
  *
  *  @warning Avoid calling this method directly from MainThread as the call will block.
  *
+ *  @deprecated This method has been deprecated and replaced by VirtuosoPlaylist method append
+ *
  *  @param items Array of Playlists to have items appended. See append method for details.
  *
  *  @return True indicates success.
  */
--(Boolean)appendItems:(NSArray<VirtuosoPlaylist*>* _Nonnull)items;
+-(Boolean)appendItems:(NSArray<VirtuosoPlaylist*>* _Nonnull)items __deprecated_msg("Use VirutosoPlaylist append");;
 
 /*!
  *  @abstract Clears all items in the specified Playlist

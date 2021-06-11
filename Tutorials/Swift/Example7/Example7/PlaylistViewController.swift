@@ -41,6 +41,10 @@ class PlaylistViewController: UITableViewController, VirtuosoDownloadEngineNotif
         self.refreshView()
     }
     
+    func playlistChange(_ playlist: VirtuosoPlaylist) {
+        self.refreshView()
+    }
+    
     // MARK: -
     // MARK: View Lifecycle
     // MARK:
@@ -142,8 +146,15 @@ class PlaylistViewController: UITableViewController, VirtuosoDownloadEngineNotif
             // Important:
             // When the following call completes, if the playlist had a pendingCount
             // we will immediately trigger an auto-download
-            playlist.append([episode])
+            do {
             
+                try playlist.append([episode])
+                
+            }
+            catch let error as NSError
+            {
+                print("Playlist append failed with error: \(error.localizedDescription)")
+            }
             
             self.refreshView()
         }

@@ -62,7 +62,19 @@
 		
 		<option value="//api/name/bitrateChangeReported:">- bitrateChangeReported:</option>
 		
+		<option value="//api/name/networkReachabilityChanged:">- networkReachabilityChanged:</option>
+		
 		<option value="//api/name/progressReported:">- progressReported:</option>
+		
+		<option value="//api/name/reportNetworkFail:">- reportNetworkFail:</option>
+		
+		<option value="//api/name/reportParsingFail:">- reportParsingFail:</option>
+		
+		<option value="//api/name/reportParsingSuccess">- reportParsingSuccess</option>
+		
+		<option value="//api/name/reportPlaybackFail:">- reportPlaybackFail:</option>
+		
+		<option value="//api/name/reportPlaybackThrottled:">- reportPlaybackThrottled:</option>
 		
 	</optgroup>
 	
@@ -98,7 +110,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Stream Assured delegate used to notify progress state changes</p>
+						<p>Stream Assured delegate used to notify progress state changes. Methods of this delegate wil be invoked from background threads. If you need to update UI make sure to dispatch to MainThread.</p>
 					</div>
 					
 					
@@ -116,7 +128,7 @@
 							<div class="section-method">
 	<a name="//api/name/bitrateChangeReported:" title="bitrateChangeReported:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/bitrateChangeReported:">&ndash;&nbsp;bitrateChangeReported:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -154,7 +166,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method is invoked to report bitrate change and progress</p>
+				<p>This method is invoked to report bitrate change and progress. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
 			</div>
 			
 
@@ -174,7 +186,7 @@
 </div><div class="section-method">
 	<a name="//api/name/progressReported:" title="progressReported:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/progressReported:">&ndash;&nbsp;progressReported:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -212,7 +224,343 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method is invoked to report download progress..</p>
+				<p>This method is invoked to report download progress.. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredStatusDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportNetworkFail:" title="reportNetworkFail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportNetworkFail:">&ndash;&nbsp;reportNetworkFail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Report network failure during playback</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reportNetworkFail:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError indicating cause of failure. See <a href="../Constants/SAM_Error.html">SAM_Error</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback indicates PlayAssured is now disabled and playback will be attempted via conventional streaming because the current network connection is too slow. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredStatusDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportParsingFail:" title="reportParsingFail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportParsingFail:">&ndash;&nbsp;reportParsingFail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Report unrecoverable parsing failure during playback</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reportParsingFail:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError indicating cause of failure. See <a href="../Constants/SAM_Error.html">SAM_Error</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Report unrecoverable parsing failure during playback. PlayAssured can not continue because the HLS Manifest was invalid. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredStatusDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportParsingSuccess" title="reportParsingSuccess"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportParsingSuccess">&ndash;&nbsp;reportParsingSuccess</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Report parsing succeeded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reportParsingSuccess</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Report parsing succeeded. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredStatusDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportPlaybackFail:" title="reportPlaybackFail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportPlaybackFail:">&ndash;&nbsp;reportPlaybackFail:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Report playback failure</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reportPlaybackFail:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>NSError indicating cause of failure. See <a href="../Constants/SAM_Error.html">SAM_Error</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback indicates PlayAssured is unable to conventionally streaming because the current network connection is too slow. Customer layer code should terminate playback in response to this callback as Streaming will not continue. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredStatusDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/networkReachabilityChanged:" title="networkReachabilityChanged:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/networkReachabilityChanged:">&ndash;&nbsp;networkReachabilityChanged:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Network reachability changed</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)networkReachabilityChanged:(Boolean)<em>reachable</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reachable</code></th>
+						<td><p>True indicates network is reachable</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked to report network reachability changes. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredStatusDelegate.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/reportPlaybackThrottled:" title="reportPlaybackThrottled:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reportPlaybackThrottled:">&ndash;&nbsp;reportPlaybackThrottled:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method is will be invoked anytime playback throttling state changes</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reportPlaybackThrottled:(Boolean)<em>throttled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>throttled</code></th>
+						<td><p>True indicates playback has been throttled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is invoked anytime playback throttling state changes. This method will be invoked from a background thread. If you need to update UI make sure you dispatch to MainThread.</p>
 			</div>
 			
 
@@ -244,7 +592,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-04-28</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-06-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -23,6 +23,7 @@
 @class VirtuosoAncillaryFile;
 @class VirtuosoAdsProvider;
 @class VirtuosoPlaylist;
+@class VirtuosoPlaylistConfig;
 
 /*!
  *  @abstract Use this class to configure settings used when creating an Asset.
@@ -63,7 +64,19 @@
  *  @abstract Optional Playlists that this asset should be added to.
  *
  */
-@property (nonatomic, strong)NSArray<VirtuosoPlaylist*>* _Nullable playlists;
+@property (nonatomic, strong)NSArray<VirtuosoPlaylist*>* _Nullable playlists __deprecated_msg("see playlistConfig, playlistAssets");
+
+/*!
+ *@abstract Optional Playlist configuration to which this asset will be added.
+ *  @discussion If this property is specified during asset creation, the specified Playlist will be created (if not found) and the assets specified by playlistAssets will be appended to the Playlist.
+ *
+ */
+@property (nonatomic, strong)VirtuosoPlaylistConfig* _Nullable playlistConfig;
+
+/*!
+ *  @abstract Optional list of assets to be added to the Playlist
+ */
+@property (nonatomic, strong)NSArray<NSString*>* _Nullable playlistAssets;
 
 /*!
  *  @abstract Where this asset exists on the Internet
@@ -76,6 +89,7 @@
  *              will block during this network request.
  */
 @property (nonatomic, copy, readonly)NSString* _Nonnull assetURL;
+
 
 /*!
  *  @abstract A unique identifier that you provide when instantiating this asset

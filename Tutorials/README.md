@@ -10,7 +10,8 @@ Tutorials
 * Example1.4 - Engine performance settings
 * Example1.5 - Advanced Logging
 * Example6 - Client Ads sample
-* Example7 - Playlists (Smart-Download) sample.
+* Example7 - Playlists Sequential Episodes
+* Example7.3 - FastPlay Playlists
 * Example8 - DRM samples (Swift only)
 * Example9 - CocoaPods integration example.
 * Example9.1 - Swift Package Manager integration example.
@@ -19,10 +20,9 @@ Tutorials
 * Example12 - Advanced Error Handling
 * Example14 - Background Wake Processing
 * Example15 - Server Ads sample
-* Example16 - StreamAssured sample
 
 #### The React-Native Folder contains tutorials covering the following
 
-* Download2GoHelloWorld - minimal example showing download and offline playback
-* Example1.1 - Pause / resume downloading
+* Download2Go_Hello_World - minimal example showing download and offline playback
+* Example1_1 - Pause / resume downloading
 * Example10 - FastPlay example

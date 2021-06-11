@@ -646,6 +646,29 @@
  */
 @property (nonatomic,strong,nullable) NSString* drmPassword;
 
+/**---------------------------------------------------------------------------------------
+  * @name MediaMelon Settings
+  *  ---------------------------------------------------------------------------------------
+  */
+
+ #pragma mark
+ #pragma mark MediaMelon Settings
+ #pragma mark
+
+ /*!
+  *  @abstract MediaMelon Service URL
+  *
+  *  @discussion For asset downloads that make use of MediaMelon, this property provides the MediaMelon ServiceURL
+  */
+ @property (nonatomic,copy,nullable) NSString* mediaMelonServiceURL;
+
+ /*!
+  *  @abstract MediaMelon Customer ID
+  *
+  *  @discussion For asset downloads that make use of MediaMelon, this property provides the default CustomerID
+  */
+ @property (nonatomic,copy,nullable) NSString* mediaMelonCustomerID;
+
 @end
 
 #endif

@@ -13,7 +13,7 @@ widevine = false
 platform :ios, '11.0'
 
 if !local
-  source 'https://github.com/penthera/Cache-and-Carry-specs.git'
+  source 'https://github.com/penthera/Download2Go-specs.git'
 end
 
 target 'Example9' do

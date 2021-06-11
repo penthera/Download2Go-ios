@@ -26,7 +26,7 @@ class DemoPlayerViewController: VirtuosoPlayerViewController, VirtuosoAVAssetRes
     }
     
 
-    func resourceLoaderDelegate(_ delegate: VirtuosoAVAssetResourceLoaderDelegate, generatedError error: Error)
+    func resourceLoaderDelegate(_ delegate: VirtuosoAVAssetResourceLoaderDelegate, generatedError error: Error?)
     {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "License Error", message: "An error was encountered playing this content.  Please try again later.", preferredStyle: .alert)

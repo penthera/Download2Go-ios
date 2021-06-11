@@ -1,4 +1,4 @@
-Tutorial - Example1.1: Pause & Resume Active Download
+Tutorial - Example1_1: Pause & Resume Active Download
 =======================================
 ## Summary
 This sample demonstrates pausing an asset while downloading.

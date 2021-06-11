@@ -24,7 +24,6 @@
 
 /*!
  *  @discussion Provides types and methods used to handle MPEG Dynamic Adaptive Streaming over HTTP (DASH) video
- *  @deprecated DASH Asset types deprecated and will be removed in the future.
 */
 @interface VirtuosoAsset (DASH)
 

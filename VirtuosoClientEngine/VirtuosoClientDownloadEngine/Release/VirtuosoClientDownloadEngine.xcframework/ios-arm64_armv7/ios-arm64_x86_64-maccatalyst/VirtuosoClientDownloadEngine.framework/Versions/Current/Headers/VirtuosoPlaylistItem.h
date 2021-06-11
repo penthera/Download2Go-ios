@@ -41,6 +41,11 @@ typedef NS_ENUM(NSInteger, PlaylistItemState)
     
     /** Playlist cancelled auto download */
     PlaylistItemState_AutoDownloadCancelled,
+    
+    /** Item was evicted from Playlist when maxItems was exceeded */
+    PlaylistItemState_Evicted,
+    
+
 };
 
 

@@ -246,15 +246,6 @@ extern NSString* kDownloadEngineInternalQueueUpdateNotification;
 extern NSString* kDownloadEngineDidFinishDownloadingAssetNotification;
 
 /*!
- *  @constant kDownloadEngineDidFinishConsistencyScanAssetNotification
- *
- *  @abstract Fired when an asset consistency scan completes.  The userInfo dictionary will contain the asset (in
- *            'kDownloadEngineNotificationAssetKey').
- */
-extern NSString* kDownloadEngineDidFinishConsistencyScanAssetNotification;
-
-
-/*!
  *  @constant kDownloadEngineDidFinishedAncillaryDownloadNotification
  *
  *  @abstract Fired when an ancillary download completes.  The userInfo dictionary will contain the ancillary file object (in

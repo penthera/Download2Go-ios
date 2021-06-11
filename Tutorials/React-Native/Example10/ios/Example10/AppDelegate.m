@@ -1,18 +1,10 @@
-//
-//  AppDelegate.m
-//  Example10
-//
-//  Created by Penthera on 4/01/20.
-//  Copyright © 2020 penthera. All rights reserved.
-//
-
 #import "AppDelegate.h"
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-#if DEBUG
+#ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
 #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
 #import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
@@ -35,10 +27,6 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#if DEBUG
-  InitializeFlipper(application);
-#endif
-
   // Important:
   // This is the master enable/disable switch.
   VirtuosoLogger.enable = YES;
@@ -54,35 +42,20 @@ static void InitializeFlipper(UIApplication *application) {
   [VirtuosoLogger setLogLevel:kVL_LogError];
 #endif
   
-  //  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  //  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-  //                                                   moduleName:@"Example10"
-  //                                            initialProperties:nil];
+#ifdef FB_SONARKIT_ENABLED
+  InitializeFlipper(application);
+#endif
 
-  // Note: Intermittently seeing warning "RCTBridge required dispatch_sync to load..." from RCTModuleData.mm
-  //
-  //       This is a known issue.  Using this suggested code as a workaround.  The application continues to
-  //       run after the warning but I hope this elminates the issue altogether.
-  //
-  //       See comments in RCTModuleData.mm for more information.
-  
-  NSURL *bundleURL;
-  
-  #if DEBUG
-    bundleURL = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-  #else
-    bundleURL = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-  #endif
-    
-  RCTBridge *bridge = [[RCTBridge alloc] initWithBundleURL:bundleURL
-                                            moduleProvider:nil
-                                             launchOptions:launchOptions];
-  
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"Example10"
                                             initialProperties:nil];
-    
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+
+  if (@available(iOS 13.0, *)) {
+      rootView.backgroundColor = [UIColor systemBackgroundColor];
+  } else {
+      rootView.backgroundColor = [UIColor whiteColor];
+  }
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];

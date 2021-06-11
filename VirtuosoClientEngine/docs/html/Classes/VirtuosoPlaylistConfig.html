@@ -62,11 +62,19 @@
 		
 		<option value="//api/name/isSearchFromBeginningEnabled">isSearchFromBeginningEnabled</option>
 		
+		<option value="//api/name/playlistType">playlistType</option>
+		
 	</optgroup>
 	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithName:playlistType:error:">- initWithName:playlistType:error:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -100,7 +108,25 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Create this object and set the various properties to control how the <a href="../Classes/VirtuosoPlaylist.html">VirtuosoPlaylist</a> will be manged.</p>
+						<p>VirtuosoPlaylistConfig is used to control how a <a href="../Classes/VirtuosoPlaylist.html">VirtuosoPlaylist</a> will be managed.</p>
+
+<p>A <a href="../Classes/VirtuosoPlaylist.html">VirtuosoPlaylist</a> represents a sequenced set of Assets that are to be consecutively downloaded.
+Binge watching a TV series provides an appropriate example for how Playlists are intended to be used. Create an instance by providing an instance of VirtuosoPlaylistConfig which is then used to control how the <a href="../Classes/VirtuosoPlaylist.html">VirtuosoPlaylist</a> is managed. Paylist type is indicated by property <a href="#//api/name/playlistType">playlistType</a>. See <a href="../Constants/kVDE_PlaylistType.html">kVDE_PlaylistType</a></p>
+
+<p>Different types of Playlist can be created:</p>
+
+<p>1) Auto Download (original type)</p>
+
+<p>2) FastPlay</p>
+
+<p>Auto Download:</p>
+
+<p>This type of playlist will auto-download new epidodes as previous episodes are watched and deleted. When TV show in the series is watched,
+and deleted, the Playlist will automatically start downloading the next TV show in the series.</p>
+
+<p>FastPlay:</p>
+
+<p>FastPlay Playlists are designed for fast download of FastPlay enabled assets. This playlist type is simlar to AutoDownload playlist but differs on the triggering mechanism for new downloads. Triggering mechism is different. For AutoDownload playlists, the trigger event is asset deletion or expiry. FastPlay playlists trigger next download when the asset starts playing. As soon as an Asset configured for fastplay begins playing, the Playlist will immediately attempt to download the next sequential asset in the FastPlay playlist. Assets configured for this type of Playlist must be configured for FastPlay.</p>
 					</div>
 					
 					
@@ -116,6 +142,120 @@
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/initWithName:playlistType:error:" title="initWithName:playlistType:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:playlistType:error:">&ndash;&nbsp;initWithName:playlistType:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Create playlist types AutoDownload or FastPlay.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithName:(NSString *)<em>name</em> playlistType:(kVDE_PlaylistType)<em>playlistType</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name of Playlist. Name is required.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>playlistType</code></th>
+						<td><p>Type of playlist to create. See <a href="../Constants/kVDE_PlaylistType.html">kVDE_PlaylistType</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Will be initialized with instance of NSError if the initializer fails.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Instance of the PlaylistConfig that can then be used to create a new Playlist.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates either AutoDownload or FastPlay playlist types.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylistConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playlistType" title="playlistType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playlistType">&nbsp;&nbsp;playlistType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Specifies the type of Playlist. See <a href="../Constants/kVDE_PlaylistType.html">kVDE_PlaylistType</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) kVDE_PlaylistType playlistType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoPlaylistConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/isPlaybackRequired" title="isPlaybackRequired"></a>
 	<h3 class="method-title"><code><a href="#//api/name/isPlaybackRequired">&nbsp;&nbsp;isPlaybackRequired</a></code>
 </h3>
@@ -309,7 +449,7 @@ does not exist on the device, and which has not been previously downloaded and d
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-04-28</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-06-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

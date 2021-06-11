@@ -268,41 +268,24 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
                                                     sender.isEnabled = true
                                                     return
             }
-            
-            // Create the Playlist
-            // The playlist contains three assets, which will download in sequence as previous episode
-            // is played and then deleted.
-            //
-            // PlaylistConfig is used to control how smart-download works.
-            let playlistConfig = VirtuosoPlaylistConfig(name: "TEST_PLAYLIST")
-            
-            // Create array of Playlist
-            var playlists : Array<VirtuosoPlaylist> = Array()
-            
-            // Add a Playlist to the array
-            playlists.append(VirtuosoPlaylist(config: playlistConfig,
-                                              assets: ["SEASON-1-EPISODE-1", "SEASON-1-EPISODE-2", "SEASON-1-EPISODE-3"]))
-            
-            // When you create an Asset, you can also create playlists that might be assocated with the Asset.
-            config.playlists = playlists
-            
 
-            // For demo purposes we clear the previous playlist.
-            // This causes 'TEST_PLAYLIST' to be removed completely, resetting the demo.
-            // Ordinarily you would NOT do this as doing so will reset the smart-downloading cycle,
-            // restarting at the beginning.
-            VirtuosoPlaylistManager.instance().clear("TEST_PLAYLIST")
+            VirtuosoPlaylist.clear("TEST_PLAYLIST")
             
+            do {
+                let playlistConfig = try VirtuosoPlaylistConfig(name: "TEST_PLAYLIST", playlistType: .vde_PlaylistType_AutoDownload)
+                
+                // Create initial list of Episodes
+                let assets = ["SEASON-1-EPISODE-1", "SEASON-1-EPISODE-2", "SEASON-1-EPISODE-3"]
+                
+                let _ = try VirtuosoPlaylist.create(playlistConfig, withAssets: assets)
+            }
+            catch let error as NSError
+            {
+                print("Failed to create Playlist with error: \(error.localizedDescription)")
+            }
+                        
             // Create asset and commence downloading.
             let _ = VirtuosoAsset.init(config: config)
-            
-            //
-            // Alternatively, you can create a Playlist directly using the following:
-            // VirtuosoPlaylistManager.instance().create(withItems: playlists)
-            
-            //
-            // Playlists can be appended to as well
-            // VirtuosoPlaylistManager.instance().appendItems(playlists)
 
             DispatchQueue.main.async {
                 sender.isEnabled = true

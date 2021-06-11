@@ -10,6 +10,6 @@ For each tutorial you will need to install node_modules and CocoaPods
 
 For information on the React-Native environment, visit https://facebook.github.io/react-native/docs/getting-started
 
-* Download2GoHelloWorld - minimal example showing download and offline playback
+* Download2Go_Hello_World - minimal example showing download and offline playback
 * Example1_1 - Pause / resume downloading
 * Example10 - FastPlay example

@@ -66,8 +66,6 @@
 		
 		<option value="//api/name/downloadEngineAssetsDeleted:">- downloadEngineAssetsDeleted:</option>
 		
-		<option value="//api/name/downloadEngineConsistencyScanCompletedForAsset:">- downloadEngineConsistencyScanCompletedForAsset:</option>
-		
 		<option value="//api/name/downloadEngineDRMResultForAsset:withError:">- downloadEngineDRMResultForAsset:withError:</option>
 		
 		<option value="//api/name/downloadEngineDeletedAssetId:">- downloadEngineDeletedAssetId:</option>
@@ -107,6 +105,16 @@
 		<option value="//api/name/downloadEngineStartupUserDeleteStarted">- downloadEngineStartupUserDeleteStarted</option>
 		
 		<option value="//api/name/downloadEngineStatusChange:statusInfo:">- downloadEngineStatusChange:statusInfo:</option>
+		
+		<option value="//api/name/permissionDeniedForAsset:requestDate:withReason:">- permissionDeniedForAsset:requestDate:withReason:</option>
+		
+		<option value="//api/name/permissionGrantedForAsset:requestDate:">- permissionGrantedForAsset:requestDate:</option>
+		
+		<option value="//api/name/permissionSettingChange:requestDate:source:">- permissionSettingChange:requestDate:source:</option>
+		
+		<option value="//api/name/permissionSettingInitialState:requestDate:">- permissionSettingInitialState:requestDate:</option>
+		
+		<option value="//api/name/playlistChange:">- playlistChange:</option>
 		
 	</optgroup>
 	
@@ -431,64 +439,6 @@
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>This callback is invoked in-response to Notification kAssetDeletedNotification</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/downloadEngineConsistencyScanCompletedForAsset:" title="downloadEngineConsistencyScanCompletedForAsset:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/downloadEngineConsistencyScanCompletedForAsset:">&ndash;&nbsp;downloadEngineConsistencyScanCompletedForAsset:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Called whenever the Engine reports a consistency scan complete for an asset</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)downloadEngineConsistencyScanCompletedForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>asset</code></th>
-						<td><p><a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> asset</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This callback is invoked in-response to Notification kDownloadEngineDidFinishConsistencyScanAssetNotification</p>
 			</div>
 			
 
@@ -1535,6 +1485,365 @@ continue the download process without intervention.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/permissionGrantedForAsset:requestDate:" title="permissionGrantedForAsset:requestDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/permissionGrantedForAsset:requestDate:">&ndash;&nbsp;permissionGrantedForAsset:requestDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Download permission granted</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)permissionGrantedForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em> requestDate:(NSDate *_Nonnull)<em>date</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>Asset for which permission was granted</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>date</code></th>
+						<td><p>Date and Time when permission was granted</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked when permission has been granted for an asset. This notificaiton is only emitted when Permissions are enabled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/permissionDeniedForAsset:requestDate:withReason:" title="permissionDeniedForAsset:requestDate:withReason:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/permissionDeniedForAsset:requestDate:withReason:">&ndash;&nbsp;permissionDeniedForAsset:requestDate:withReason:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>@abstract Download permission was denied
+*</li>
+<li>@discussion This callback is invoked when permission has been denied for an asset. This notificaiton will only be emitted when Permissions are currently enabled.
+*</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)permissionDeniedForAsset:(VirtuosoAsset *_Nonnull)<em>asset</em> requestDate:(NSDate *_Nonnull)<em>date</em> withReason:(kVBP_StatusCode)<em>reason</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>asset</code></th>
+						<td><p>Asset for which permisison to download was denied</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>date</code></th>
+						<td><p>Date and time when request was made</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reason</code></th>
+						<td><p>Reason why permision was denied. See <a href="../Constants/kVBP_StatusCode.html">kVBP_StatusCode</a>
+*</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>@abstract Download permission was denied
+*</li>
+<li>@discussion This callback is invoked when permission has been denied for an asset. This notificaiton will only be emitted when Permissions are currently enabled.
+*</li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/permissionSettingInitialState:requestDate:" title="permissionSettingInitialState:requestDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/permissionSettingInitialState:requestDate:">&ndash;&nbsp;permissionSettingInitialState:requestDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initial settings for Permisions</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)permissionSettingInitialState:(NSArray&lt;VirtuosoPermissionSettingInfo*&gt; *_Nonnull)<em>changes</em> requestDate:(NSDate *_Nonnull)<em>requestDate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>changes</code></th>
+						<td><p>Array of VirtuosoPermissionSettingInfo for permission settings.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requestDate</code></th>
+						<td><p>Date and time when request was made</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This callback is invoked at startup to notify listeners of initial Permission settings</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/permissionSettingChange:requestDate:source:" title="permissionSettingChange:requestDate:source:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/permissionSettingChange:requestDate:source:">&ndash;&nbsp;permissionSettingChange:requestDate:source:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>@abstract Permission settings changes
+*</li>
+<li>@discussion This callback is invoked when permission has received permission setting changes.
+*</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)permissionSettingChange:(NSArray&lt;VirtuosoPermissionSettingInfo*&gt; *_Nonnull)<em>changes</em> requestDate:(NSDate *_Nonnull)<em>requestDate</em> source:(NSString *_Nullable)<em>source</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>changes</code></th>
+						<td><p>Array of VirtuosoPermissionSettingInfo for permission settings that have changed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requestDate</code></th>
+						<td><p>Date and time when request was made</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>source</code></th>
+						<td><p>Source of call that generated this setting change.
+*</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>@abstract Permission settings changes
+*</li>
+<li>@discussion This callback is invoked when permission has received permission setting changes.
+*</li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playlistChange:" title="playlistChange:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playlistChange:">&ndash;&nbsp;playlistChange:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>@abstract Playlist change
+*</li>
+<li>@discussion This callback is invoked when a playlist change happens
+*</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)playlistChange:(VirtuosoPlaylist *_Nonnull)<em>playlist</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>playlist</code></th>
+						<td><p>Playlist that has changed
+*</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>@abstract Playlist change
+*</li>
+<li>@discussion This callback is invoked when a playlist change happens
+*</li>
+</ul>
+
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoDownloadEngineNotificationsManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1550,7 +1859,7 @@ continue the download process without intervention.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-04-28</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-06-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
