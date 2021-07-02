@@ -1257,9 +1257,14 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 @property (nonatomic, readonly)long long audioBitrate;
 
 /*!
-* @abstract Video resoltion selected for the Asset. Nil if resolution not reported in manifest.
+* @abstract Video resolution selected for the Asset. Nil if resolution not reported in manifest.
 */
 @property (nonatomic, readonly,nullable)NSString* videoResolution;
+
+/*!
+* @abstract Bandwidth selection type. If AVERAGE-BANDWIDTH is specified in the manifest, returns "avg"; "peak" otherwise.
+*/
+@property (nonatomic, readonly, nonnull)NSString* bandwidthSelectionType;
 
 /**---------------------------------------------------------------------------------------
 * @name Ads Support

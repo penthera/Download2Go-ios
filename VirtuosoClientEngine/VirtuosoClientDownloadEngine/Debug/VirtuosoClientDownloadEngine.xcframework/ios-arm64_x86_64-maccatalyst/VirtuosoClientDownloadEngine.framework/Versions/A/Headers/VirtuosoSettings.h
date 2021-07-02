@@ -520,6 +520,11 @@
  *              codecs here (E.G. ec-3, ac-3, mp4a.40.2, etc).  If you set this property to nil or an empty array,
  *              then all available codecs will be downloaded.
  *
+ *              When selecting which rendition to download, multiple factors are applied.  First, codec filters remove any
+ *              renditions that do not match the global filter settings.  Second, resolution filters are applied so that only
+ *              renditions with the requested resolution are considered.  Finally, the maximumBitrate selection is applied,
+ *              to insure we only download a bitrate that most closely matches the target value.
+ *
  *  @warning In order for this feature to be supported, your master manifests must properly specify the audio codecs
  *           in the CODECS field of the #EXT-X-STREAM-INF definitions.
  *

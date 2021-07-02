@@ -268,8 +268,24 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
 
     /** Asset has invalid MediaHintUrl configuration */
     kVDE_InvalidMediaHintConfiguration = -23,
+    
+    /** An audio codec could not be matched to any video rendition with the specified audio codecs*/
+    kVDE_AudioCodecNotFoundAmongSpecifiedCodecs = -24,
+    
+    /** A resolution could not be matched to any video rendition with the specified resolutions*/
+    kVDE_ResolutionNotFoundAmongSpecifiedResolutions = -25,
 
+    /** An audio codec could not be matched to any video rendition with the specified audio codecs and resolutions*/
+    kVDE_AudioCodecNotAmongSpecifiedCodecsAndResolution = -26,
+    
+    /** A resolution could not be matched to any video rendition with the specified audio codecs and resolutions*/
+    kVDE_ResolutionNotAmongSpecifiedCodecsAndResolution = -27,
 
+    /** Neither an audio codec nor a resolution could not be matched to any video rendition with the specified audio codecs and resolutions*/
+    kVDE_AudioCodecNorResolutionAmongSpecifiedCodecsAndResolution = -28,
+    
+    /** An audio codec and a resolution could not be matched to any video rendition with the specified audio codecs and resolutions*/
+    kVDE_AudioCodecAndResolutionNotAmongSpecifiedCodecsAndResolution = -29,
 };
 
 

@@ -143,6 +143,20 @@
 @property (nonatomic, assign)long long maximumAudioBitrate;
 
 /*!
+ *  @abstract Configures video resolutions to consider when determining video rendition for download
+ *
+ *  @discussion Only renditions from the manifest that match the given resolution filter will be considered during rendition
+ *              selection.  The format of filter strings will be required to match that values you use for the RESOLUTION tag
+ *              in the HLS manifest (E.G. 1920x1080).  The default value is nil.
+ *
+ *              When selecting which rendition to download, multiple factors are applied.  First, codec filters remove any
+ *              renditions that  do not match the global filter settings.  Second, resolution filters are applied so that only
+ *              renditions with the requested resolution  are considered.  Finally, the maximumBitrate selection is applied,
+ *              to insure we only download a bitrate that most closely matches the target value.
+ */
+@property (nonatomic,strong,nullable) NSArray* resolutions;
+
+/*!
  *  @abstract When this asset should become available
  *
  *  @discussion Virtuoso will download assets as soon as they are enqueued.

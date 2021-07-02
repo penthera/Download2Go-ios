@@ -81,11 +81,13 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
 
 /*!
  *  @abstract The VirtuosoAsset that is going to be played
+ *
+ *  @deprecated This property is now ignored and will be removed in future versions of this SDK.
  */
 @property (nonatomic,strong,nullable) VirtuosoAsset* asset;
 
 /*!
- *  @abstract Whether to load a persistent offline FairPlay license
+ *  @abstract Whether to load a persistent offline FairPlay license.  Defaults to YES.
  */
 @property (nonatomic,assign) Boolean loadPersistentLicense;
 
