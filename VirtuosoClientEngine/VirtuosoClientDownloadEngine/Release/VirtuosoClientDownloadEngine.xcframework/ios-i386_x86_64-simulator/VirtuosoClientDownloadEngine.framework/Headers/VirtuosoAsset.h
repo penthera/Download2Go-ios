@@ -23,6 +23,7 @@
 #endif
 
 #import "VirtuosoConstants.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoVideoRendition.h>
 
 #if IS_LIB==0
 #import <VirtuosoClientDownloadEngine/VirtuosoPlayer.h>
@@ -1487,6 +1488,17 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              Url's before downloading. See VirtuosoPrepareUrlDelegate for more information.
  */
 @property (nonatomic, weak, class)id <VirtuosoPrepareUrlDelegate> _Nullable prepareUrlDelegate;
+
+/*!
+ *  @abstract If set, this delegate is called as described in VirtuosoVideoRendition.
+ *
+ *  @discussion This is an advanced feature. It allows the Customer to override internal SDK video rendition
+ *              selection rules and to specify the rendition for download manually.  This delegate is only
+ *              valid for HLS assets.  For all other asset types, this delegate is currently ignored.
+ *
+ *              See VirtuosoVideoRendition for more information.
+ */
+@property (nonatomic, weak, class)id <VirtuosoRenditionSelectionDelegate> _Nullable renditionSelectionDelegate;
 
 /*!
  *  @abstract If set, this block is called whenever an asset is about to request data from

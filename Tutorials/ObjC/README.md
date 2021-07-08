@@ -15,6 +15,7 @@ Tutorials
 * Example7.2 - Most Recent Episodes Playlists (Delegate)
 * Example7.3 - FastPlay Playlists
 * Example9 - CocoaPods integration example.
+* Example9.1 - Swift Package Manager integration example.
 * Example10 - FastPlay example
 * Example11 - Unregister device(s)
 * Example12 - Advanced error handling

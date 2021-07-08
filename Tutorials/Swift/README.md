@@ -16,6 +16,7 @@ Tutorials
 * Example7.3 - FastPlay Playlists
 * Example8 - DRM Tutorials
 * Example9 - CocoaPods integration example.
+* Example9.1 - Swift Package Manager integration example.
 * Example10 - FastPlay example
 * Example11 - Unregister device(s).
 * Example12 - Error handling.
