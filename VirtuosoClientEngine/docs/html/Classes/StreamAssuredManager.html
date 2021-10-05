@@ -66,7 +66,17 @@
 	
 	<optgroup label="Class Methods">
 		
+		<option value="//api/name/ABPlaybackPercentage">+ ABPlaybackPercentage</option>
+		
+		<option value="//api/name/ABTestingPlayerViewControllerForURL:">+ ABTestingPlayerViewControllerForURL:</option>
+		
 		<option value="//api/name/isNetworkReady:">+ isNetworkReady:</option>
+		
+		<option value="//api/name/playAssurePlayerViewControllerForURL:">+ playAssurePlayerViewControllerForURL:</option>
+		
+		<option value="//api/name/streamingPlayerViewControllerForURL:">+ streamingPlayerViewControllerForURL:</option>
+		
+		<option value="//api/name/usePlayAssurePlaybackForABTesting">+ usePlayAssurePlaybackForABTesting</option>
 		
 	</optgroup>
 	
@@ -75,6 +85,8 @@
 	<optgroup label="Instance Methods">
 		
 		<option value="//api/name/initWithManifestURL:config:error:">- initWithManifestURL:config:error:</option>
+		
+		<option value="//api/name/isComplete">- isComplete</option>
 		
 		<option value="//api/name/shutdown">- shutdown</option>
 		
@@ -396,6 +408,307 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/isComplete" title="isComplete"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isComplete">&ndash;&nbsp;isComplete</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flag indicating Stream Assured has downloaded all segments necessary for a complete playback session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (Boolean)isComplete</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating download has completed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Flag indicating Stream Assured has downloaded all segments necessary for a complete playback session.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playAssurePlayerViewControllerForURL:" title="playAssurePlayerViewControllerForURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playAssurePlayerViewControllerForURL:">+&nbsp;playAssurePlayerViewControllerForURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method that provides a basic playback controller for PlayAssure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (PlayAssurePlayerViewController *)playAssurePlayerViewControllerForURL:(NSString *)<em>url</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>UIViewController for PlayAssure playback.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Convenience method that provides a basic playback controller for PlayAssure, generating a playback event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ABPlaybackPercentage" title="ABPlaybackPercentage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ABPlaybackPercentage">+&nbsp;ABPlaybackPercentage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Percentage of A/B playback sessions that will use PlayAssure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (double)ABPlaybackPercentage</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Percentage of A/B playback sessions that will use PlayAssure represented by a value in interval [0.0, 1.0].  A value of 1.0 indicates all sessions will use PlayAssure, 0.0 no sessions will use PlayAssure, etc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/usePlayAssurePlaybackForABTesting" title="usePlayAssurePlaybackForABTesting"></a>
+	<h3 class="method-title"><code><a href="#//api/name/usePlayAssurePlaybackForABTesting">+&nbsp;usePlayAssurePlaybackForABTesting</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Randomized method for A/B testing indicating whether PlayAssure or streaming playback should be used .</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (Boolean)usePlayAssurePlaybackForABTesting</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Boolean indicating a PlayAssure session should be started.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For A/B testing use this method to determine whether a PlayAssure or streaming session should be started.  The value is determined randomly, using the <a href="#//api/name/ABPlaybackPercentage">ABPlaybackPercentage</a>. This method is not idempotent.  If you need to reference the value, save the state locally.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/streamingPlayerViewControllerForURL:" title="streamingPlayerViewControllerForURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/streamingPlayerViewControllerForURL:">+&nbsp;streamingPlayerViewControllerForURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method that provides a basic playback controller for streaming.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (PlayAssurePlayerViewController *)streamingPlayerViewControllerForURL:(NSString *)<em>url</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>UIViewController for streaming playback.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Convenience method that provides a basic playback (streaming) controller, generating a playback event.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ABTestingPlayerViewControllerForURL:" title="ABTestingPlayerViewControllerForURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ABTestingPlayerViewControllerForURL:">+&nbsp;ABTestingPlayerViewControllerForURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method that provides a basic playback controller for A/B testing.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (PlayAssurePlayerViewController *)ABTestingPlayerViewControllerForURL:(NSString *)<em>url</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>UIViewController for streaming playback.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Convenience method that provides a basic playback controller, generating a playback event.  The controller will either present a controller for a PlayAssure controller or streaming session based on the randomized <a href="#//api/name/usePlayAssurePlaybackForABTesting">usePlayAssurePlaybackForABTesting</a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -411,7 +724,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-07-08</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-10-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

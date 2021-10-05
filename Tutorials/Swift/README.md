@@ -11,8 +11,6 @@ Tutorials
 * Example1.5 - Advanced Logging
 * Example6 - Client Ads sample
 * Example7 - Playlists Sequential Episodes
-* Example7.1 - Most Recent Episodes Playlists (FIFO)
-* Example7.2 - Most Recent Episodes Playlists (Delegate)
 * Example7.3 - FastPlay Playlists
 * Example8 - DRM Tutorials
 * Example9 - CocoaPods integration example.

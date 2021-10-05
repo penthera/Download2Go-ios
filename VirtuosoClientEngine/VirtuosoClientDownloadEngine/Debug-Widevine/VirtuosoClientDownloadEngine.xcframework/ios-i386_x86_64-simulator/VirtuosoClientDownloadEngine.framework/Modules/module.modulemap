@@ -5,7 +5,6 @@ module * { export * }
 header "BuyDRMAVAssetResourceLoaderDelegate.h"
 header "CastLabsAVAssetResourceLoaderDelegate.h"
 header "PlayAssurePlayerViewController.h"
-header "StreamAssuredAVURLAsset.h"
 header "StreamAssuredConfig.h"
 header "StreamAssuredManager.h"
 header "StreamAssuredStatusDelegate.h"

@@ -17,6 +17,8 @@
 #ifndef VirtuosoClientDownloadEngine_Master_h
 #define VirtuosoClientDownloadEngine_Master_h
 
+#import <Foundation/Foundation.h>
+
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 //! Project version number for VirtuosoClientDownloadEngine.
 FOUNDATION_EXPORT double VirtuosoClientDownloadEngineVersionNumber;
@@ -54,7 +56,6 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/StreamAssuredManager.h>
 #import <VirtuosoClientDownloadEngine/StreamAssuredConfig.h>
 #import <VirtuosoClientDownloadEngine/StreamAssuredStatusDelegate.h>
-#import <VirtuosoClientDownloadEngine/StreamAssuredAVURLAsset.h>
 #import <VirtuosoClientDownloadEngine/PlayAssurePlayerViewController.h>
 
 #import <VirtuosoClientDownloadEngine/VirtuosoEngineConfig.h>

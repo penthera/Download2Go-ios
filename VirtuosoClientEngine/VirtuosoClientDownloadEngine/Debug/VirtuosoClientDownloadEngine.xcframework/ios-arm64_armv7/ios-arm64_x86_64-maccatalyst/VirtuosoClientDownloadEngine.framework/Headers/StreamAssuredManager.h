@@ -16,6 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @class StreamItemParameters;
 @class StreamItem;
+@class PlayAssurePlayerViewController;
 
 extern NSString* NotificationAVPlayer_Paused;
 extern NSString* NotificationAVPlayer_Resumed;
@@ -122,12 +123,68 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 *  @discussion Shutdown and stop Stream Assured playback.
  *
 */
-
 -(void)shutdown;
 
+/*!
+*  @abstract Flag indicating Stream Assured has downloaded all segments necessary for a complete playback session.
+*
+*  @discussion  Flag indicating Stream Assured has downloaded all segments necessary for a complete playback session.
+*
+* @return Boolean indicating download has completed.
+ *
+*/
 -(Boolean)isComplete;
 
-+(UIViewController*)playAssurePlayerViewContollerForURL:(NSString*)url;
+/*!
+*  @abstract Convenience method that provides a basic playback controller for PlayAssure.
+*
+*  @discussion Convenience method that provides a basic playback controller for PlayAssure, generating a playback event.
+*
+* @return UIViewController for PlayAssure playback.
+*/
++(PlayAssurePlayerViewController*)playAssurePlayerViewControllerForURL:(NSString*)url;
+
+/*!
+*  @abstract Methods for A/B playback testing.
+*
+*  @discussion Methods for A/B playback testing.
+*/
+
+/*!
+*  @abstract Percentage of A/B playback sessions that will use PlayAssure.
+*
+*  @discussion Percentage of A/B playback sessions that will use PlayAssure represented by a value in interval [0.0, 1.0].  A value of 1.0 indicates all sessions will use PlayAssure, 0.0 no sessions will use PlayAssure, etc.
+*
+*/
++(double)ABPlaybackPercentage;
+
+/*!
+*  @abstract Randomized method for A/B testing indicating whether PlayAssure or streaming playback should be used .
+*
+*  @discussion For A/B testing use this method to determine whether a PlayAssure or streaming session should be started.  The value is determined randomly, using the ABPlaybackPercentage. This method is not idempotent.  If you need to reference the value, save the state locally.
+*
+* @return Boolean indicating a PlayAssure session should be started.
+*
+*/
++(Boolean)usePlayAssurePlaybackForABTesting;
+
+/*!
+*  @abstract Convenience method that provides a basic playback controller for streaming.
+*
+* @discussion Convenience method that provides a basic playback (streaming) controller, generating a playback event.
+*
+* @return UIViewController for streaming playback.
+*/
++(PlayAssurePlayerViewController*)streamingPlayerViewControllerForURL:(NSString*)url;
+
+/*!
+*  @abstract Convenience method that provides a basic playback controller for A/B testing.
+*
+* @discussion Convenience method that provides a basic playback controller, generating a playback event.  The controller will either present a controller for a PlayAssure controller or streaming session based on the randomized usePlayAssurePlaybackForABTesting method.
+*
+* @return UIViewController for streaming playback.
+*/
++(PlayAssurePlayerViewController*)ABTestingPlayerViewControllerForURL:(NSString*)url;
 
 @end
 

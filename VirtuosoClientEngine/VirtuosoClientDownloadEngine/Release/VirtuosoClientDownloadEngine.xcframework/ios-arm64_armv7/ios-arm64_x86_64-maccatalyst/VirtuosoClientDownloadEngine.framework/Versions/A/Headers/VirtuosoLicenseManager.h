@@ -436,6 +436,11 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
 + (void)registerAVAssetResourceLoaderDelegate:(nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)resourceLoaderDelegateClass;
 
 /*!
+ *  @abstract Remvoes previously configured AVAssetResourceLoaderDelegate class
+*/
++ (void)removeAVAssetResourceLoaderDelegate;
+
+/*!
  *  @abstract Returns the currently configured AVAssetResourceLoaderDelegate class
  *
  *  @return The currently configured AVAssetResourceLoaderDelegate class

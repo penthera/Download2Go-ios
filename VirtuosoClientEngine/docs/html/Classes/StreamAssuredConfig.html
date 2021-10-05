@@ -58,6 +58,12 @@
 		
 		<option value="//api/name/delegate">delegate</option>
 		
+		<option value="//api/name/lookAheadBackupVideoLevel">lookAheadBackupVideoLevel</option>
+		
+		<option value="//api/name/lookAheadBehindPlayer">lookAheadBehindPlayer</option>
+		
+		<option value="//api/name/lookAheadMaximumVideoSegmentDownloadCount">lookAheadMaximumVideoSegmentDownloadCount</option>
+		
 		<option value="//api/name/lookAheadSegmentCount">lookAheadSegmentCount</option>
 		
 		<option value="//api/name/minimumActiveRequestThreshold">minimumActiveRequestThreshold</option>
@@ -67,6 +73,8 @@
 		<option value="//api/name/minimumWebServerIdleThreshold">minimumWebServerIdleThreshold</option>
 		
 		<option value="//api/name/mode">mode</option>
+		
+		<option value="//api/name/playerBackupVideoLevel">playerBackupVideoLevel</option>
 		
 		<option value="//api/name/requiredCacheMbps">requiredCacheMbps</option>
 		
@@ -147,7 +155,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Number of segments we should attempt to read-ahead</p>
+				<p>Number of segments per stream we should attempt to read-ahead during cache processing for the stream. Default is 5000.</p>
 			</div>
 			
 		    
@@ -188,12 +196,176 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>This number of segments must be downloaded before the SAM starts caching via reading-ahead.</p>
+				<p>The number of segments per stream that must be downloaded before SAM starts caching via reading-ahead for the stream. Default is 10.</p>
 			</div>
 			
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger minimumStartingIndex</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lookAheadMaximumVideoSegmentDownloadCount" title="lookAheadMaximumVideoSegmentDownloadCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lookAheadMaximumVideoSegmentDownloadCount">&nbsp;&nbsp;lookAheadMaximumVideoSegmentDownloadCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Maximum total number of segments for all video streams that will be downloaded to the cache. Default is INT_MAX.  Any value &lt;= 0 will disable the lookahead cache.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger lookAheadMaximumVideoSegmentDownloadCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lookAheadBackupVideoLevel" title="lookAheadBackupVideoLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lookAheadBackupVideoLevel">&nbsp;&nbsp;lookAheadBackupVideoLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When evaluating video segments for the read-ahead cache, the number of video quality levels below the requested level to consider before downloading. Default is 0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger lookAheadBackupVideoLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playerBackupVideoLevel" title="playerBackupVideoLevel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playerBackupVideoLevel">&nbsp;&nbsp;playerBackupVideoLevel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When evaluating video segments requested by the player, the number of video quality levels below the requested level to consider before downloading. Default is 0.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger playerBackupVideoLevel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">StreamAssuredConfig.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lookAheadBehindPlayer" title="lookAheadBehindPlayer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lookAheadBehindPlayer">&nbsp;&nbsp;lookAheadBehindPlayer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reading-ahead starts by downloading segments from the current player position to the end of a video.  When set, this flag will also download segments from the beginning of the video to the current player postion.  Default is NO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean lookAheadBehindPlayer</code></div>
 
 		    
 			
@@ -229,7 +401,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Bandwidth required for SAM to continue reading-ahead whenever playback is throttled.  Generally values less than a bandiwdth of 10.0 Mbps will not have any affect as player requests will limit any reading-ahead.</p>
+				<p>Bandwidth required for SAM to continue reading-ahead whenever playback is throttled.  Generally values less than a bandiwdth of 10.0 Mbps will not have any affect as player requests will limit any reading-ahead. Default is 10.0 Mbps.</p>
 			</div>
 			
 		    
@@ -650,7 +822,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-07-08</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-10-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -14,9 +14,9 @@ class ViewController: UITableViewController {
     let MaxItems = 3;
     let InitialAssetList = ["SERIES-8-EPISODE-1", "SERIES-8-EPISODE-2", "SERIES-8-EPISODE-3", "SERIES-8-EPISODE-4", "SERIES-8-EPISODE-5", "SERIES-8-EPISODE-6"]
     
-    let backplaneUrl = "replace_with_your_backplane_url"
-    let publicKey = "replace_with_your_public_key"
-    let privateKey = "replace_with_your_private_key"
+    let backplaneUrl = "https://qa.penthera.com"
+    let publicKey = "c9adba5e6ceeed7d7a5bfc9ac24197971bbb4b2c34813dd5c674061a961a899e"
+    let privateKey = "41cc269275e04dcb4f2527b0af6e0ea11d227319fa743e4364255d07d7ed2830"
     let loadQueue = OperationQueue()
     
     var assets = [VirtuosoAsset]();
