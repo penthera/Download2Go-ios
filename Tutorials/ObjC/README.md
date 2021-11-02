@@ -19,3 +19,4 @@ Tutorials
 * Example12 - Advanced error handling
 * Example14 - Background Wake Processing
 * Example15 - Verizon Server ads
+* Example17 - Rendition Delegate

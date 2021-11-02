@@ -53,9 +53,9 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoDefaultAVAssetResourceLoaderDelegate.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoLicenseDefaultDelegate.h>
 
-#import <VirtuosoClientDownloadEngine/StreamAssuredManager.h>
-#import <VirtuosoClientDownloadEngine/StreamAssuredConfig.h>
-#import <VirtuosoClientDownloadEngine/StreamAssuredStatusDelegate.h>
+#import <VirtuosoClientDownloadEngine/PlayAssureManager.h>
+#import <VirtuosoClientDownloadEngine/PlayAssureConfig.h>
+#import <VirtuosoClientDownloadEngine/PlayAssureStatusDelegate.h>
 #import <VirtuosoClientDownloadEngine/PlayAssurePlayerViewController.h>
 
 #import <VirtuosoClientDownloadEngine/VirtuosoEngineConfig.h>

@@ -136,12 +136,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = penthera;
 				TargetAttributes = {
 					3D105744219E147600BB0BA4 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1300;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;

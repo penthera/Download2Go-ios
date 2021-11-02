@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 const static long long NOT_PRESENT = 0;
 
+@class VirtuosoAsset;
+
 /*!
  *  @abstract Defines metadata for a video rendition within a multistream HLS manifest.
  *
@@ -60,7 +62,15 @@ const static long long NOT_PRESENT = 0;
  */
 @protocol VirtuosoRenditionSelectionDelegate<NSObject>
 
-- (VirtuosoVideoRendition*)selectRenditionFromAvailableRenditions:(NSArray<VirtuosoVideoRendition*>*)renditions;
+/*!
+ *  @abstract Called whenever the video rendition is to be selected.
+ *
+ *  @param renditions Array of VirtuosoVideoRendition objects representing available video renditions
+ *
+ *  @param asset VirtuosoAsset asset
+ */
+
+- (VirtuosoVideoRendition* _Nullable)selectRenditionFromAvailableRenditions:(NSArray<VirtuosoVideoRendition*>*)renditions forAsset:(VirtuosoAsset*)asset;
 
 @end
 

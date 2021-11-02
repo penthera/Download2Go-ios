@@ -79,13 +79,7 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
  */
 @protocol VirtuosoAVAssetResourceLoaderDelegate<NSObject,AVAssetResourceLoaderDelegate>
 
-/*!
- *  @abstract The VirtuosoAsset that is going to be played
- *
- *  @deprecated This property is now ignored and will be removed in future versions of this SDK.
- */
-@property (nonatomic,strong,nullable) VirtuosoAsset* asset;
-
+@required
 /*!
  *  @abstract Whether to load a persistent offline FairPlay license.  Defaults to YES.
  */
@@ -95,5 +89,15 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
  *  @abstract An error handler to receive errors encountered while generating FairPlay licenses
  */
 @property (nonatomic,weak,nullable) id<VirtuosoAVAssetResourceLoaderDelegateErrorHandler> errorHandler;
+
+
+@optional
+/*!
+ *  @abstract The VirtuosoAsset that is going to be played
+ *
+ * @warning This property is no longer used and will be removed in a future release.
+ */
+@property (nonatomic,strong,nullable) VirtuosoAsset* asset;
+
 
 @end

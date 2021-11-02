@@ -650,6 +650,22 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID availabilityFilter:(Boolean)availabilityFilter;
 
+
+/*!
+ *  @abstract Lookup an asset by drmLicensePath
+ *
+ *  @discussion Each asset requires a drmLicensePath value, which you provided when you instantiated the asset.
+ *              The returned object may be nil (if no asset exists with the given drmLicensePath)
+ *
+ *  @warning This method should only be invoked from a background thread to prevent iOS (Springboard) from terminating the app while blocking the UI thread.
+ *
+ *  @param drmLicensePath The drmLicensePath corresponding to the asset
+ *
+ *  @return An array of assets or nil, if the asset does not exist or is unavailable
+ */
+
++ (nullable NSArray*)assetsWithDrmLicensePath:(nonnull NSString*)drmLicensePath;
+
 /*!
 *  @abstract Find an asset by UUID.
 *
@@ -750,7 +766,13 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @discussion The primary use case for this method would be to add additional Audio languages to the previous
  *              download. These new languages must be enabled in Settings.
  *
- *  @param completeBlock An optional block that will be called on completion
+ *  @param completeBlock An optional block that will be called on completion. The callback block will be invoked once downloading
+ *              is started but not necessarily before downloading has fully completed. Use VirtuosoDownloadEngineNotificationManager to monitor for download complete (downloadEngineDidFinishDownloadingAsset)
+ *              
+ *  @warning Asset manifest refresh is a time consuming operation and should not be invoked on MainThread unless the completeBlock is provided
+ *              in order to ensure iOS does not terminate the app for not responding on MainThread. When the completeBlock is provided
+ *              the refresh will happen on an async background thread and once complete the completeBlock will be invoked on the
+ *              thread pool set for VirtuosoDownloadEngine.notificationQueue which defaults to MainThread if not otherwise set.
  *
  *  @return TRUE indicates the reparse was successfully started.
  */
@@ -769,6 +791,12 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              If you pass a non-NULL completeBlock, then the method is asynchronous and will return
  *              immediately.  When the save has finished, the completion block will be called.  If you
  *              pass a NULL value for the completeBlock, then the save is synchronous.
+ *
+ *  @warning Asset refresh is a time consuming operation and should not be invoked on MainThread unless the completeBlock is provided
+ *              in order to ensure iOS does not terminate the app for not responding on MainThread. When the completeBlock is provided
+ *              the refresh will happen on an async background thread and once complete the completeBlock will be invoked on the
+ *              thread pool set for VirtuosoDownloadEngine.notificationQueue which defaults to MainThread if not otherwise set.
+ *
  *
  *  @param completeBlock An optional block that will be called when the refresh is complete
  */
@@ -807,6 +835,11 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              completion block will be called.  If you pass a NULL value for the deletedBlock,
  *              then the deletion is synchronous.
  *
+ *  @warning Asset delete is a time consuming operation and should not be invoked on MainThread unless the completeBlock is provided
+ *              in order to ensure iOS does not terminate the app for not responding on MainThread. When the completeBlock is provided
+ *              the delete will happen on an async background thread and once complete the completeBlock will be invoked on the
+ *              thread pool set for VirtuosoDownloadEngine.notificationQueue which defaults to MainThread if not otherwise set.
+*
  *  @param deletedBlock Notifies that Virtuoso has finished deleting all asset resources from disk.
  */
 

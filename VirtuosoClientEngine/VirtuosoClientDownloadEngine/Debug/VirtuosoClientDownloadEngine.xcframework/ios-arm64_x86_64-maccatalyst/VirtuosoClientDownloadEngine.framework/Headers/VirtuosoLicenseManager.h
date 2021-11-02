@@ -431,9 +431,9 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *
  *  @param resourceLoaderDelegateClass A Class instance type to use for internal AVAssetResourceLoaderDelegate operations
  *
- *  @deprecated
+ *  @deprecated Replaced with registerAVContentKeySession
 */
-+ (void)registerAVAssetResourceLoaderDelegate:(nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)resourceLoaderDelegateClass;
++ (void)registerAVAssetResourceLoaderDelegate:(nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)resourceLoaderDelegateClass  __attribute__((deprecated("See registerAVContentKeySession.")));
 
 /*!
  *  @abstract Remvoes previously configured AVAssetResourceLoaderDelegate class
@@ -445,9 +445,9 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
  *
  *  @return The currently configured AVAssetResourceLoaderDelegate class
  *
- *  @deprecated
+ *  @deprecated Replaced with registerAVContentKeySession
  */
-+ (nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)registeredAVAssetResourceLoaderDelegate;
++ (nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)registeredAVAssetResourceLoaderDelegate  __attribute__((deprecated("See registerAVContentKeySession.")));
 
 /*!
  *  @abstract Sets the license manager delegate

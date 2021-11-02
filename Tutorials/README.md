@@ -20,6 +20,7 @@ Tutorials
 * Example12 - Advanced Error Handling
 * Example14 - Background Wake Processing
 * Example15 - Server Ads sample
+* Example17 - Rendition Delegate
 
 #### The React-Native Folder contains tutorials covering the following
 

@@ -4,10 +4,10 @@ export *
 module * { export * }
 header "BuyDRMAVAssetResourceLoaderDelegate.h"
 header "CastLabsAVAssetResourceLoaderDelegate.h"
+header "PlayAssureConfig.h"
+header "PlayAssureManager.h"
 header "PlayAssurePlayerViewController.h"
-header "StreamAssuredConfig.h"
-header "StreamAssuredManager.h"
-header "StreamAssuredStatusDelegate.h"
+header "PlayAssureStatusDelegate.h"
 header "VirtuosoAVAssetResourceLoaderDelegate.h"
 header "VirtuosoAVPlayer.h"
 header "VirtuosoAdsClientProvider.h"

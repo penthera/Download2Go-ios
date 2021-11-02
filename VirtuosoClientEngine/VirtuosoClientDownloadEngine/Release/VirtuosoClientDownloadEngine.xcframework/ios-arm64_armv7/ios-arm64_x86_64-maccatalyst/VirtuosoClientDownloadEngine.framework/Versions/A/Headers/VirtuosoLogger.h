@@ -277,14 +277,14 @@ extern long long kLoggerDataValueInvalid;
  *
  *  @discussion Global Proxy logging
  *              Examples:
- *                  VirtuosoLogger.streamAssuredLoggingEnabled = true;  // enables logging
- *                  VirtuosoLogger.streamAssuredLoggingEnabled = false; // disables logging
+ *                  VirtuosoLogger.playAssureLoggingEnabled = true;  // enables logging
+ *                  VirtuosoLogger.playAssureLoggingEnabled = false; // disables logging
  *
  *              Default is false
  *              This setting persist's across App restarts.
  *              Recommend setting in AppDelegate as early as possible if disable is required.
  */
-@property (nonatomic, assign, class)Boolean streamAssuredLoggingEnabled;
+@property (nonatomic, assign, class)Boolean playAssureLoggingEnabled;
 
 
 
