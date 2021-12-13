@@ -154,6 +154,14 @@ extern NSString* kDownloadEngineNetworkReachabilityChangePreviousNetworkReachabi
 */
 extern NSString* kDownloadEngineNetworkReachabilityChangeCurrentNetworkReachabilityKey;
 
+/*!
+*  @constant kVirtuosoBaseEventKey
+*
+*  @abstract The key in userInfo dictionary kAnalyticsEventNotification notification to return
+*            the VituosoBaseEvent that was just triggered.
+*/
+extern NSString* kVirtuosoBaseEventKey;
+
 /**---------------------------------------------------------------------------------------
  * @name NSNotification Names
  *  ---------------------------------------------------------------------------------------
@@ -518,5 +526,12 @@ extern NSString* kDownloadEngineStartupUserDeleteStartedNotification;
 *  @abstract Fired when the operating system detects a change in network reachabilotu
 */
 extern NSString* kDownloadEngineNetworkReachabilityChangeNotification;
+
+/*!
+*  @constant kAnalyticsEventNotification
+*
+*  @abstract Fired when an SDK analytics event is triggered.
+*/
+extern NSString* kAnalyticsEventNotification;
 
 #endif

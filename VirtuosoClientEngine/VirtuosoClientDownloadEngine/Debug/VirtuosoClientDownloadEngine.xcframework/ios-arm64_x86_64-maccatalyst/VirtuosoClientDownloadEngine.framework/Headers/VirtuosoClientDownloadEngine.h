@@ -97,4 +97,24 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 
 #import <VirtuosoClientDownloadEngine/VirtuosoLogger.h>
 
+/*
+#import <VirtuosoClientDownloadEngine/VirtuosoBaseEvent.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoAssetEvent.h>
+#import <VirtuosoClientDownloadEngine/AppLaunch.h>
+#import <VirtuosoClientDownloadEngine/QueueForDownload.h>
+#import <VirtuosoClientDownloadEngine/AssetRemovedFromQueue.h>
+#import <VirtuosoClientDownloadEngine/DownloadStart.h>
+#import <VirtuosoClientDownloadEngine/DownloadComplete.h>
+#import <VirtuosoClientDownloadEngine/DownloadError.h>
+#import <VirtuosoClientDownloadEngine/DownloadWarning.h>
+#import <VirtuosoClientDownloadEngine/MaxErrorReset.h>
+#import <VirtuosoClientDownloadEngine/AssetDelete.h>
+#import <VirtuosoClientDownloadEngine/AssetExpire.h>
+#import <VirtuosoClientDownloadEngine/PlayStart.h>
+#import <VirtuosoClientDownloadEngine/PlayStop.h>
+#import <VirtuosoClientDownloadEngine/Reset.h>
+#import <VirtuosoClientDownloadEngine/DownloadLimitReached.h>
+#import <VirtuosoClientDownloadEngine/PlaybackInitiated.h>
+*/
+
 #endif

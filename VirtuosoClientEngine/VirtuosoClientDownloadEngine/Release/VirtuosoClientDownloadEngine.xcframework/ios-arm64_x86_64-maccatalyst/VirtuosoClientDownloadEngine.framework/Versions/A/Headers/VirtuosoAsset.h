@@ -923,11 +923,6 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
 +(void)isPlayable:(VirtuosoAsset* _Nonnull)asset dispatchQueue:(dispatch_queue_t _Nonnull)dispatchQueue callback:(IsPlayableCompleteBlock _Nonnull)callback;
 
 /*!
- *  @abstract Logs the asset as having been played back, incrementing the stored playback counts on the Backplane
- */
-- (void)logPlayback;
-
-/*!
  *  @abstract Plays this asset by presenting a standard MPMoviePlayerViewController from the
  *            specified parent view controller.
  *
@@ -944,7 +939,10 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              copletes executing the call to Asset.isPlayable. If critical initailzation is required i viewWillAppear is necessary
  *              before viewDidAppear is called, make sure that code is execute BEFORE invoking this method.
  *              Alternatively, invoke this method using async on the MainThread should resolve any timing issues.
-*
+ *
+ * @warning     If the asset selected for Playback has not finished downloading, Penthera will make sure the asset is enabled for download (asset.paused = false), set the engine enabled for download, move the asset to top of queue, and will resume actively downloading the selected Asset if possible. This is necessary to reduce chances that Playback stalls while the asset is played. If these behaviors are not desired make sure the asset is not played until it has completed downloading.
+ *
+ *
  *  @param playbackType Whether to play the downloaded copy or the online copy
  *  @param parent    The parent view controller to present the movie player from
  *  @param onSuccess Called when playback succeeds
@@ -961,6 +959,9 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              and presenting it in the UI hierarchy after calling this method. To play assets
  *              via a custom (perhaps DRM-enabled) video player, or if you require a more
  *              complex integration, use the VirtuosoClientHTTPServer class directly.
+ *
+ * @warning     If the asset selected for Playback has not finished downloading, Penthera will make sure the asset is enabled for download (asset.paused = false), set the engine enabled for download, move the asset to top of queue, and will resume actively downloading the selected Asset if possible. This is necessary to reduce chances that Playback stalls while the asset is played. If these behaviors are not desired make sure the asset is not played until it has completed downloading.
+ *
  *
  *  @param playbackType Whether to play the downloaded copy or the online copy
  *  @param player An object that follows the VirtuosoPlayer protocol.
@@ -1431,18 +1432,15 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @abstract Whether this asset is currently playable.
  *
  *  @discussion This value is calculated by evaluating download state, expiry rules, and ad requirements,
- *              and indicates whether attempts to play this asset will succeed. Note also, this property
- *              This property requries blocking calls to CoreData. If accessed from MainThread, this call will
- *              block and wait for the call to complete BUT will run the MainThread NSRunLoop while the call
- *              completes. This may result in unusual sequencing of events in the UI Layer. For example, invoking
- *              this method in viewWillAppear may result in viewDidAppear executing before the call in viewWillAppear
- *              copletes executing the call to Asset.isPlayable. If critical initailzation is required i viewWillAppear is necessary
- *              before viewDidAppear is called, make sure that code is execute BEFORE invoking this method.
- *              Alternatively, invoke this method using async on the MainThread should resolve any timing issues.
+ *              and indicates whether attempts to play this asset are likely to succeed. Note also, this property
+ *              requries blocking calls to CoreData. Avoid accessing this property from MainThread code.
  *
  *              For non-blocking scnearios:
  *              +(void)isPlayable:(VirtuosoAsset* _Nonnull)asset operationQueue:(NSOperationQueue* _Nonnull)operationQueue callback:(CompletionBlockWithStatus _Nonnull)callback;
  *              +(void)isPlayable:(VirtuosoAsset* _Nonnull)asset dispatchQueue:(dispatch_queue_t _Nonnull)dispatchQueue callback:(CompletionBlockWithStatus _Nonnull)callback;
+ *
+ * @warning     This property should not be accessed from MainThread code as the call may require several seconds to complete and will result in blocking UI updates.
+ *
  */
 @property (nonatomic,readonly) Boolean isPlayable;
 

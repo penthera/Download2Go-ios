@@ -136,6 +136,44 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 -(Boolean)isComplete;
 
 /*!
+*  @abstract Adds a text layer displaying PlayAssure status.
+*
+*  @discussion Adds a text layer displaying PlayAssure status to the provided view (normally a AVPlayerView).  The text will be centered within the view.
+*
+*  @param view UIView to add status layer.
+*
+*  @param prefix Text to prepend to status string.
+*/
+-(void)addStatusLayerToView:(UIView*)view withPrefix:(nullable NSString*)prefix;
+
+/*!
+*  @abstract Transition Status Layer to new size.
+*
+*  @discussion Call when mode transitions between portrait/landscape.
+*
+*  @param size New size.
+*/
+-(void)transitionStatusLayerToSize:(CGSize)size;
+
+/*!
+*  @abstract Adds a UIView as a subivew displaying PlayAssure cache progress.
+*
+*  @discussion Adds a subview displaying PlayAssure cache progress  to the provided view (normally a AVPlayerView).  The subview will be centered within the view.
+*
+*  @param view UIView to add cache progress subview.
+*/
+-(void)addCacheProgressSubViewToView:(UIView*)view;
+
+/*!
+*  @abstract Transition cache progress view to new size.
+*
+*  @discussion Call when mode transitions between portrait/landscape.
+*
+*  @param size New size.
+*/
+-(void)transitionCacheProgressSubViewToSize:(CGSize)size;
+
+/*!
 *  @abstract Convenience method that provides a basic playback controller for PlayAssure.
 *
 *  @discussion Convenience method that provides a basic playback controller for PlayAssure, generating a playback event.

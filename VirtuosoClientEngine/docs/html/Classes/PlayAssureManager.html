@@ -84,11 +84,19 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/addCacheProgressSubViewToView:">- addCacheProgressSubViewToView:</option>
+		
+		<option value="//api/name/addStatusLayerToView:withPrefix:">- addStatusLayerToView:withPrefix:</option>
+		
 		<option value="//api/name/initWithManifestURL:config:error:">- initWithManifestURL:config:error:</option>
 		
 		<option value="//api/name/isComplete">- isComplete</option>
 		
 		<option value="//api/name/shutdown">- shutdown</option>
+		
+		<option value="//api/name/transitionCacheProgressSubViewToSize:">- transitionCacheProgressSubViewToSize:</option>
+		
+		<option value="//api/name/transitionStatusLayerToSize:">- transitionStatusLayerToSize:</option>
 		
 	</optgroup>
 	
@@ -460,6 +468,243 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/addStatusLayerToView:withPrefix:" title="addStatusLayerToView:withPrefix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addStatusLayerToView:withPrefix:">&ndash;&nbsp;addStatusLayerToView:withPrefix:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a text layer displaying PlayAssure status.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addStatusLayerToView:(UIView *)<em>view</em> withPrefix:(nullable NSString *)<em>prefix</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>view</code></th>
+						<td><p>UIView to add status layer.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>prefix</code></th>
+						<td><p>Text to prepend to status string.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds a text layer displaying PlayAssure status to the provided view (normally a AVPlayerView).  The text will be centered within the view.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PlayAssureManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transitionStatusLayerToSize:" title="transitionStatusLayerToSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transitionStatusLayerToSize:">&ndash;&nbsp;transitionStatusLayerToSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Transition Status Layer to new size.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)transitionStatusLayerToSize:(CGSize)<em>size</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>New size.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Call when mode transitions between portrait/landscape.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PlayAssureManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addCacheProgressSubViewToView:" title="addCacheProgressSubViewToView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addCacheProgressSubViewToView:">&ndash;&nbsp;addCacheProgressSubViewToView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a UIView as a subivew displaying PlayAssure cache progress.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addCacheProgressSubViewToView:(UIView *)<em>view</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>view</code></th>
+						<td><p>UIView to add cache progress subview.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds a subview displaying PlayAssure cache progress  to the provided view (normally a AVPlayerView).  The subview will be centered within the view.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PlayAssureManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/transitionCacheProgressSubViewToSize:" title="transitionCacheProgressSubViewToSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transitionCacheProgressSubViewToSize:">&ndash;&nbsp;transitionCacheProgressSubViewToSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Transition cache progress view to new size.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)transitionCacheProgressSubViewToSize:(CGSize)<em>size</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>size</code></th>
+						<td><p>New size.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Call when mode transitions between portrait/landscape.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PlayAssureManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/playAssurePlayerViewControllerForURL:" title="playAssurePlayerViewControllerForURL:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/playAssurePlayerViewControllerForURL:">+&nbsp;playAssurePlayerViewControllerForURL:</a></code>
 </h3>
@@ -760,7 +1005,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-11-02</p>
+						<p class="copyright">Copyright &copy; 2021 Penthera Inc. All rights reserved. Updated: 2021-12-13</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
