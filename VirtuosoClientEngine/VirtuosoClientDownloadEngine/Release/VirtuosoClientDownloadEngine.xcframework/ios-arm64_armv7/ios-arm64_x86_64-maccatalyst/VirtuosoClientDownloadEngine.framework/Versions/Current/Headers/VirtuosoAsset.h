@@ -563,6 +563,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @discussion This method only returns non-ad content.  If the Caller wishes to retrieve ads,
  *              they must be instantiated by UUID after retrieving the ad load from an ad-supported
  *              asset.
+ *              This is a blocking call, avoid using this method from MainThread
  *
  *  @param availabilityFilter Whether to filter the returned array against the availability window.
  *                            If NO, then all VirtuosoAsset objects are returned.

@@ -306,7 +306,7 @@
  *  @discussion Max storage is the total amount of space that Virtuoso can use on disk for downloads.
  *              For instance, if maxStorage is 10GB and Virtuoso is now storing 9.5GB,
  *              Virtuoso will begin to download a 400MB asset, but will NOT begin to download an 800MB asset.
- *              The default is 5 GB.
+ *              The default is LONG_LONG_MAX MB.
  *
  *  @see overrideMaxStorageAllowed:
  *  @see resetMaxStorageAllowedToDefault
