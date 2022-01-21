@@ -21,11 +21,6 @@
 @property (nonatomic, strong)NSNumber* _Nonnull currentValue;
 @property (nonatomic, strong)NSNumber* _Nonnull previousValue;
 @property (nonatomic, strong)NSDate* _Nonnull dateChanged;
-
--(instancetype _Nullable)initWithPermission:(NSString* _Nonnull)permission
-                     currentValue:(NSNumber* _Nonnull)currentValue
-                    previousValue:(NSNumber* _Nonnull)previousValue
-                      dateChanged:(NSDate* _Nonnull)dateChanged;
 @end
 
 /*!
@@ -35,7 +30,7 @@
 */
 @protocol VirtuosoDownloadEngineNotificationsDelegate <NSObject>
 
-@required
+@optional
 /*!
  *  @abstract Called whenever the Engine starts downloading a VirtuosoAsset object.
  *
@@ -75,8 +70,6 @@
  *
  */
 -(void)downloadEngineDidFinishDownloadingAsset:(VirtuosoAsset* _Nonnull)asset;
-
-@optional
 
 /*!
 *  @abstract Called whenever asset is deleted
@@ -359,7 +352,7 @@
 /*!
  *  @abstract Asset ID that will be used to filter delegate callbacks. Nil to skip filtering.
  */
-@property (atomic, copy)NSString* _Nullable assetID;
+@property (nonatomic, strong, readonly)NSString* _Nullable assetID;
 
 /*!
  *  @abstract Creates an instance
@@ -383,6 +376,19 @@
  */
 -(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate
                                     queue:(NSOperationQueue* _Nonnull)queue;
+
+/*!
+ *  @abstract Creates an instance
+ *
+ *  @param delegate Delegate that will be called
+ *
+ *  @param assetID Asset ID for the asset to filter on, nil to skip filtering.
+ *
+ *  @return Instance of this component, nil on failure.
+ *
+*/
+-(instancetype _Nullable)initWithDelegate:(id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull)delegate
+                                  assetID:(NSString* _Nullable)assetID;
 
 /*!
  *  @abstract Creates an instance
