@@ -23,7 +23,4 @@ Pod::Spec.new do |s|
   s.preserve_path = 'VirtuosoClientDownloadEngine.xcframework/*'
   s.module_map = 'VirtuosoClientDownloadEngine.xcframework/ios-arm64_armv7/VirtuosoClientDownloadEngine.framework/Modules/module.modulemap'
 
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-
 end
