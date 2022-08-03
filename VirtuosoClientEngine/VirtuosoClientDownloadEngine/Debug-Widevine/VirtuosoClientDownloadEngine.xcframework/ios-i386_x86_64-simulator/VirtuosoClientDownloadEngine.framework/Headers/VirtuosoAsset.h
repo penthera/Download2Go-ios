@@ -651,22 +651,6 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  */
 + (nullable VirtuosoAsset*)assetWithAssetID:(nonnull NSString*)assetID availabilityFilter:(Boolean)availabilityFilter;
 
-
-/*!
- *  @abstract Lookup an asset by drmLicensePath
- *
- *  @discussion Each asset requires a drmLicensePath value, which you provided when you instantiated the asset.
- *              The returned object may be nil (if no asset exists with the given drmLicensePath)
- *
- *  @warning This method should only be invoked from a background thread to prevent iOS (Springboard) from terminating the app while blocking the UI thread.
- *
- *  @param drmLicensePath The drmLicensePath corresponding to the asset
- *
- *  @return An array of assets or nil, if the asset does not exist or is unavailable
- */
-
-+ (nullable NSArray*)assetsWithDrmLicensePath:(nonnull NSString*)drmLicensePath;
-
 /*!
 *  @abstract Find an asset by UUID.
 *
