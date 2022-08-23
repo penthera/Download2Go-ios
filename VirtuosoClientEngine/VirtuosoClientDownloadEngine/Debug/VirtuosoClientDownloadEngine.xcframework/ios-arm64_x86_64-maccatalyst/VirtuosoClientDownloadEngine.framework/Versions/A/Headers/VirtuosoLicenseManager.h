@@ -450,6 +450,20 @@ typedef NS_ENUM(NSInteger, kVLM_DRMType)
 + (nonnull Class<VirtuosoAVAssetResourceLoaderDelegate>)registeredAVAssetResourceLoaderDelegate  __attribute__((deprecated("See registerAVContentKeySession.")));
 
 /*!
+ *  @abstract Retrieves the asset associated with an AVAssetResourceLoadingRequest
+ *
+ *  @discussion You must use this method within a custom AVAssetResourceLoaderDelegate to retrieve the asset
+ *              associated with the DRM license flow.  If the asset is nil, then you should treat the loaderRequest as
+ *              if it is for a streaming (non downloaded) license.  If the asset is not nil, then you should check the
+ *              VirtuosoLicenseManager for an existing persisted license and return that, if available.  In addition,
+ *              if a license is not currently available then after generating a new license, you should attempt conversion
+ *              to a persistent license and store that license to VirtuosoLicenseManager with the VirtuosoAsset.
+ *
+ *  @return The VirtuosoAsset to use for DRM logic
+ */
++ (nullable VirtuosoAsset*)assetForResourceLoadingRequest:(nonnull AVAssetResourceLoadingRequest*)loadingRequest;
+
+/*!
  *  @abstract Sets the license manager delegate
  *
  *  @discussion Some DRM implementations require that an additional unique asset license ID be appended

@@ -83,7 +83,7 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
 /*!
  *  @abstract Whether to load a persistent offline FairPlay license.  Defaults to YES.
  */
-@property (nonatomic,assign) Boolean loadPersistentLicense;
+@property (nonatomic,assign) Boolean loadPersistentLicense __deprecated_msg("You should use the assetForResourceLoadingRequest method in VirtuosoLicenseManager instead. If you retrieve a non-nil asset, then you should attempt to load a persistent license.");
 
 /*!
  *  @abstract An error handler to receive errors encountered while generating FairPlay licenses
@@ -96,8 +96,9 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
  *  @abstract The VirtuosoAsset that is going to be played
  *
  * @warning This property is no longer used and will be removed in a future release.
+ *
+ *  @deprecated This property has been deprecated and has been replaced by the assetForResourceLoadingRequest in VirtuosoLicenseManager
  */
-@property (nonatomic,strong,nullable) VirtuosoAsset* asset;
-
+@property (nonatomic,strong,nullable) VirtuosoAsset* asset __deprecated_msg("You should use the assetForResourceLoadingRequest method in VirtuosoLicenseManager instead.");
 
 @end
