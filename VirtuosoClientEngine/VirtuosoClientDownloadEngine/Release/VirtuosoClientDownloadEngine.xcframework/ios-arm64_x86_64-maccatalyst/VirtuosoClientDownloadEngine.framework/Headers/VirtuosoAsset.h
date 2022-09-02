@@ -1237,7 +1237,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              Lower-level values take precedence. For instance, if you provide the same header key in both
  *              levels, then the Asset value takes predecence over the Engine value.
  */
-@property (nonatomic,strong,nullable) NSDictionary* additionalNetworkHeaders;
+@property (nonatomic,copy,nullable) NSDictionary* additionalNetworkHeaders;
 
 /*
  *  @abstract The asset protection type identified during asset creation.
