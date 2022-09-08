@@ -12,8 +12,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "VirtuosoClientDownloadEngine",
-            url: "https://github.com/penthera/Download2Go-ios/releases/download/v4.2.25/VirtuosoClientDownloadEngine-spm.xcframework.zip",
-            checksum: "ad47c1b608b0177468966e4ab96b1e14168c711a53bc1d6f0acddf5383ebdebb"
+            url: "https://github.com/penthera/Download2Go-ios/releases/download/v4.2.26/VirtuosoClientDownloadEngine-spm.xcframework.zip",
+            checksum: "b0fcdcf9a8aa60f97000376fb3b01d9017d04ae0be07b2d290cfca8584fa2272"
         )
     ]
 )
