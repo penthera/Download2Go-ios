@@ -165,7 +165,21 @@
 /*!
 *  @abstract Local playback URL for FiarPlay license server request to download license for asset
 */
--(NSString* _Nonnull)fairPlayLicenseServerURL;
+@property (nonatomic,readonly,nonnull) NSString* fairPlayLicenseServerURL;
+
+/*!
+ * @abstract Local URL to access an ancillary file downloaded with the configured asset with the given tag.
+ *
+ * @discussion If more than one ancillary exists in the asset with the same tag, then the first ancillary found will
+ *             be returned.
+ *
+ *             Since ancillaries are arbitrary files, it is not possible for Virtuoso to determine an appropriate MIME
+ *             type, which may be required by your player, when returning the ancillary files.  You must pass an
+ *             appropriate MIME type to this method, otherwise application/octet-stream will be used.
+ *
+ * @param tag String value identifying a given ancillary file downloaded with the asset
+ */
+-(NSString* _Nullable)ancillaryURLForAncillaryWithTag:(NSString* _Nonnull)tag usingMime:(NSString* _Nullable)mimeType;
 
 /*!
 *  @abstract Local playback URL for FairPlay certificate data download request
@@ -173,6 +187,7 @@
 * @param subType optional string specifying the optional subtype
 */
 -(NSString* _Nonnull)fairPlayCertificateDataURLForSubType:(NSString* _Nullable)subType;
+
 @end
 
 #endif

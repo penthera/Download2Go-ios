@@ -506,7 +506,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @abstract Retrieves all of the ancillary files assocated awith this asset
  *
  *  @discussion This is a BLOCKING call that will query CoreData for all ancillary files.
- *               See findAllCompleted for a non-blocking call.
+ *               See findCompletedAncillaries for a non-blocking call.
  *
  *  @return Array of VirtuosoAncillaryFile objects. Empty if none.
  */
@@ -516,7 +516,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @abstract Retrieves ancillary files with the specified tag for this asset
  *
  *  @discussion This is a BLOCKING call that will query CoreData for all ancillary files.
- *               See findAllCompleted for a non-blocking call.
+ *               See findCompletedAncillaries for a non-blocking call.
  *
  *  @param tag The tag to filter on
  *
