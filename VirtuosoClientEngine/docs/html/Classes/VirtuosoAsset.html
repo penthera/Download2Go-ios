@@ -326,7 +326,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>A VirtuosoAsset may be a single physical file (E.G. MP4) or a conceptual &ldquo;group&rdquo;
 of many smaller file segments (E.G. HLS/HSS).</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this <a href="#//api/name/type">type</a> directly.
-You can create a VirtuosoAsset object via the provided static constructor methods.</p></div><p>Provides types and methods used to handle MPEG Dynamic Adaptive Streaming over HTTP (DASH) video</p><p>Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.</p><p>Provides types and methods used to handle HTTP Live Streaming (HLS) video</p><p>Provides additional types and methods used to handle segmented video</p>
+You can create a VirtuosoAsset object via the provided static constructor methods.</p></div><p>Provides types and methods used to handle MPEG Dynamic Adaptive Streaming over HTTP (DASH) video</p><p>Provides additional types and methods used to handle segmented video</p><p>Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.</p><p>Provides types and methods used to handle HTTP Live Streaming (HLS) video</p>
 					</div>
 					
 					
@@ -6117,6 +6117,356 @@ this asset is contained within the video profile, this value is ignored.</p></td
 						</div>
 						
 
+						<a title="SegmentedVideo Methods" name="task_SegmentedVideo Methods"></a>
+						<h2 class="task-title">SegmentedVideo Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/segmentDownloadErrors" title="segmentDownloadErrors"></a>
+	<h3 class="method-title"><code><a href="#//api/name/segmentDownloadErrors">&ndash;&nbsp;segmentDownloadErrors</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The number of segments that could not be downloaded in this asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)segmentDownloadErrors</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This value will always be 0 unless the option in <a href="../Classes/VirtuosoSettings.html">VirtuosoSettings</a> is
+configured to permit downloading after segment errors are hit.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/manifestRemoteURL" title="manifestRemoteURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/manifestRemoteURL">&nbsp;&nbsp;manifestRemoteURL</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Where the manifest for this asset lives on the Internet.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The remote URL is the addressable location on the Internet.  The URL must include any
+security or CDN tokens required to download the asset.</p>
+
+<p>If your CDN uses dynamic URLs or another method where URLs change over time, Virtuoso
+may need to issue a network request to get a &lsquo;fresh&rsquo; URL.  In that case, this method
+will block during this network request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/manifestLocalPath" title="manifestLocalPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/manifestLocalPath">&nbsp;&nbsp;manifestLocalPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The local file path for the saved master manifest file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> If this asset is not available (Virtuoso is in an timed-out state, the asset is
+outside its availability window or the asset is expired), then this property will return nil,
+preventing API access to the asset.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoStreamBitrate" title="videoStreamBitrate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoStreamBitrate">&nbsp;&nbsp;videoStreamBitrate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The video bitrate of this asset when downloaded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long videoStreamBitrate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the provided manifest contained multiple video profiles, then this property contains the
+bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
+then this property will return 0.  If the asset contains both video and audio in a single
+stream, then this property will return the same value as the <a href="#//api/name/audioStreamBitrate">audioStreamBitrate</a> property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/audioStreamBitrate" title="audioStreamBitrate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/audioStreamBitrate">&nbsp;&nbsp;audioStreamBitrate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The audio bitrate of this asset when downloaded</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long audioStreamBitrate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the provided manifest contained multiple audio profiles, then this property contains the
+bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
+then this property will return 0.  If the asset contains both video and audio in a single
+stream, then this property will return the same value as the <a href="#//api/name/videoStreamBitrate">videoStreamBitrate</a> property.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectedAudio" title="selectedAudio"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectedAudio">&nbsp;&nbsp;selectedAudio</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The audio languages to download</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For manifests containing multiple audio language definitions, it is possible to specify which
+languages will be downloaded.  If the languages were filtered when this asset was created,
+then the languages that were downloaded will be returned.  If all languages were downloaded,
+this property will be nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectedSubtitles" title="selectedSubtitles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectedSubtitles">&nbsp;&nbsp;selectedSubtitles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The subtitle languages to download</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For manifests containing multiple subtitle language definitions, it is possible to specify which
+languages will be downloaded.  If the languages were filtered when this asset was created,
+then the languages that were downloaded will be returned.  If all languages were downloaded,
+this property will be nil.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
 						<a title="HSS Methods" name="task_HSS Methods"></a>
 						<h2 class="task-title">HSS Methods</h2>
 
@@ -7401,356 +7751,6 @@ preventing API access to the asset.</p></div>
 </div>
 						</div>
 						
-
-						<a title="SegmentedVideo Methods" name="task_SegmentedVideo Methods"></a>
-						<h2 class="task-title">SegmentedVideo Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/segmentDownloadErrors" title="segmentDownloadErrors"></a>
-	<h3 class="method-title"><code><a href="#//api/name/segmentDownloadErrors">&ndash;&nbsp;segmentDownloadErrors</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The number of segments that could not be downloaded in this asset.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSUInteger)segmentDownloadErrors</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This value will always be 0 unless the option in <a href="../Classes/VirtuosoSettings.html">VirtuosoSettings</a> is
-configured to permit downloading after segment errors are hit.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/manifestRemoteURL" title="manifestRemoteURL"></a>
-	<h3 class="method-title"><code><a href="#//api/name/manifestRemoteURL">&nbsp;&nbsp;manifestRemoteURL</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Where the manifest for this asset lives on the Internet.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestRemoteURL</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The remote URL is the addressable location on the Internet.  The URL must include any
-security or CDN tokens required to download the asset.</p>
-
-<p>If your CDN uses dynamic URLs or another method where URLs change over time, Virtuoso
-may need to issue a network request to get a &lsquo;fresh&rsquo; URL.  In that case, this method
-will block during this network request.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/manifestLocalPath" title="manifestLocalPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/manifestLocalPath">&nbsp;&nbsp;manifestLocalPath</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The local file path for the saved master manifest file</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSString *manifestLocalPath</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="warning"><p><strong>Warning:</strong> If this asset is not available (Virtuoso is in an timed-out state, the asset is
-outside its availability window or the asset is expired), then this property will return nil,
-preventing API access to the asset.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/videoStreamBitrate" title="videoStreamBitrate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/videoStreamBitrate">&nbsp;&nbsp;videoStreamBitrate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The video bitrate of this asset when downloaded</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long videoStreamBitrate</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If the provided manifest contained multiple video profiles, then this property contains the
-bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
-then this property will return 0.  If the asset contains both video and audio in a single
-stream, then this property will return the same value as the <a href="#//api/name/audioStreamBitrate">audioStreamBitrate</a> property.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/audioStreamBitrate" title="audioStreamBitrate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/audioStreamBitrate">&nbsp;&nbsp;audioStreamBitrate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The audio bitrate of this asset when downloaded</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long audioStreamBitrate</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If the provided manifest contained multiple audio profiles, then this property contains the
-bitrate of the profile selected for download.  If Virtuoso could not determine the bitrate,
-then this property will return 0.  If the asset contains both video and audio in a single
-stream, then this property will return the same value as the <a href="#//api/name/videoStreamBitrate">videoStreamBitrate</a> property.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/selectedAudio" title="selectedAudio"></a>
-	<h3 class="method-title"><code><a href="#//api/name/selectedAudio">&nbsp;&nbsp;selectedAudio</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The audio languages to download</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray *selectedAudio</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>For manifests containing multiple audio language definitions, it is possible to specify which
-languages will be downloaded.  If the languages were filtered when this asset was created,
-then the languages that were downloaded will be returned.  If all languages were downloaded,
-this property will be nil.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/selectedSubtitles" title="selectedSubtitles"></a>
-	<h3 class="method-title"><code><a href="#//api/name/selectedSubtitles">&nbsp;&nbsp;selectedSubtitles</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The subtitle languages to download</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray *selectedSubtitles</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>For manifests containing multiple subtitle language definitions, it is possible to specify which
-languages will be downloaded.  If the languages were filtered when this asset was created,
-then the languages that were downloaded will be returned.  If all languages were downloaded,
-this property will be nil.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+SegmentedVideo.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
 					</div>
 					
 					
@@ -7763,7 +7763,7 @@ this property will be nil.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2023 Penthera Inc. All rights reserved. Updated: 2023-04-10</p>
+						<p class="copyright">Copyright &copy; 2023 Penthera Inc. All rights reserved. Updated: 2023-04-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
