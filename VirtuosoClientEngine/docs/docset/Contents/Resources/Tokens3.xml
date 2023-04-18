@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CastLabsAVAssetResourceLoaderDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CastLabsAVAssetResourceLoaderDelegate</TokenIdentifier>
+			<Abstract type="html">A convenience subclass that automatically handles CastLabs FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/CastLabsAVAssetResourceLoaderDelegate/setDrmConfigDelegate:</TokenIdentifier>
+			<Abstract type="html">An object to call to reuest asset-specific drm configuration details during licensing.</Abstract>
+			<DeclaredIn>CastLabsAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDrmConfigDelegate:(id&lt;VirtuosoDrmConfigDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate to call curing licensing requests.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDrmConfigDelegate:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

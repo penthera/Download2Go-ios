@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BuyDRMAVAssetResourceLoaderDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BuyDRMAVAssetResourceLoaderDelegate</TokenIdentifier>
+			<Abstract type="html">A convenience subclass that automatically handles BuyDRM FairPlay licensing using the VirtuosoLicenseManager configuration</Abstract>
+			<DeclaredIn>BuyDRMAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/BuyDRMAVAssetResourceLoaderDelegate/setDrmConfigDelegate:</TokenIdentifier>
+			<Abstract type="html">An object to call to reuest asset-specific drm configuration details during licensing.</Abstract>
+			<DeclaredIn>BuyDRMAVAssetResourceLoaderDelegate.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDrmConfigDelegate:(id&lt;VirtuosoDrmConfigDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">The delegate to call curing licensing requests.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDrmConfigDelegate:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

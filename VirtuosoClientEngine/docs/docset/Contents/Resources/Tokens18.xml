@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VirtuosoPlayerView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VirtuosoPlayerView</TokenIdentifier>
+			<Abstract type="html">A convenience UIView subclass that includes a VirtuosoAVPlayer, a basic user interface, and implements
+the VirtuosoPlayer protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+            
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/play</TokenIdentifier>
+			<Abstract type="html">Begins or resumes video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)play</Declaration>
+			
+			
+			<Anchor>//api/name/play</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/pause</TokenIdentifier>
+			<Abstract type="html">Pauses video playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)pause</Declaration>
+			
+			
+			<Anchor>//api/name/pause</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setContentURL:</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/contentURL</TokenIdentifier>
+			<Abstract type="html">The local or remote location of the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, nullable) NSURL *contentURL</Declaration>
+			
+			
+			<Anchor>//api/name/contentURL</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setAsset:</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/asset</TokenIdentifier>
+			<Abstract type="html">The VirtuosoAsset object representing the video to play.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, nullable) VirtuosoAsset *asset</Declaration>
+			
+			
+			<Anchor>//api/name/asset</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setAllowsExternalPlayback:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/allowsExternalPlayback</TokenIdentifier>
+			<Abstract type="html">A Boolean value that indicates whether the player allows switching to external playback mode.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL allowsExternalPlayback</Declaration>
+			
+			
+			<Anchor>//api/name/allowsExternalPlayback</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/cleanup</TokenIdentifier>
+			<Abstract type="html">Must be called when playback permanently stops (E.G. when the view controller exits)</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)cleanup</Declaration>
+			
+			
+			<Anchor>//api/name/cleanup</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/viewWillTransitionToSize:withTransitionCoordinator:</TokenIdentifier>
+			<Abstract type="html">Notifies the container that the size of its view is about to change.
+
+@description UIKit calls this method on a view controller before changing the size of a presented view controller’s view.
+You should override this method in your own view controller and use it to perform additional tasks related to
+the size change. At a minimum, you must call this method to allow VirtuosoPlayerView to properly resize its user
+interface.
+
+If you override this method in your custom view controllers, always call super at some point in your implementation
+so that UIKit can forward the size change message appropriately.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id&lt;UIViewControllerTransitionCoordinator&gt;)coordinator</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The new size for the container&apos;s view</Abstract>
+				</Parameter><Parameter>
+					<Name>coordinator</Name>
+					<Abstract type="html">The transition coordinator object managing the size change. You can use this object to animate your changes
+or get information about the transition that is in progress.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/viewWillTransitionToSize:withTransitionCoordinator:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setDelegate:</TokenIdentifier>
+			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/delegate</TokenIdentifier>
+			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/delegate</TokenIdentifier>
+			<Abstract type="html">An object that implements the VirtuosoPlayerViewDelegate protocol.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, nullable) id&lt;VirtuosoPlayerViewDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayer:</TokenIdentifier>
+			<Abstract type="html">You may use access to the AVPlayer object to perform custom player actions, such as modifying the
+playback rate or seeking to a particular time in the playback stream.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
+			
+			
+			<Anchor>//api/name/player</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/player</TokenIdentifier>
+			<Abstract type="html">You may use access to the AVPlayer object to perform custom player actions, such as modifying the
+playback rate or seeking to a particular time in the playback stream.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
+			
+			
+			<Anchor>//api/name/player</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/player</TokenIdentifier>
+			<Abstract type="html">You may use access to the AVPlayer object to perform custom player actions, such as modifying the
+playback rate or seeking to a particular time in the playback stream.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) AVPlayer *player</Declaration>
+			
+			
+			<Anchor>//api/name/player</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setIsPlaying:</TokenIdentifier>
+			<Abstract type="html">Whether the player is currently playing</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPlaying</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaying</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/isPlaying</TokenIdentifier>
+			<Abstract type="html">Whether the player is currently playing</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPlaying</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaying</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/isPlaying</TokenIdentifier>
+			<Abstract type="html">Whether the player is currently playing</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPlaying</Declaration>
+			
+			
+			<Anchor>//api/name/isPlaying</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setCurrentProgress:</TokenIdentifier>
+			<Abstract type="html">Convenience method to set/return the current player progress as a value from 0.0 - 1.0 inclusive.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double currentProgress</Declaration>
+			
+			
+			<Anchor>//api/name/currentProgress</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/currentProgress</TokenIdentifier>
+			<Abstract type="html">Convenience method to set/return the current player progress as a value from 0.0 - 1.0 inclusive.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double currentProgress</Declaration>
+			
+			
+			<Anchor>//api/name/currentProgress</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/currentProgress</TokenIdentifier>
+			<Abstract type="html">Convenience method to set/return the current player progress as a value from 0.0 - 1.0 inclusive.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double currentProgress</Declaration>
+			
+			
+			<Anchor>//api/name/currentProgress</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setCurrentPlaybackPosition:</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the current playback position, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackPosition</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/currentPlaybackPosition</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the current playback position, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackPosition</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/currentPlaybackPosition</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the current playback position, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval currentPlaybackPosition</Declaration>
+			
+			
+			<Anchor>//api/name/currentPlaybackPosition</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setDuration:</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the total duration of the loaded video, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/duration</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the total duration of the loaded video, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/duration</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the total duration of the loaded video, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval duration</Declaration>
+			
+			
+			<Anchor>//api/name/duration</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlaybackTimeRemaining:</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the playback time remaining, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining</Declaration>
+			
+			
+			<Anchor>//api/name/playbackTimeRemaining</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playbackTimeRemaining</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the playback time remaining, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining</Declaration>
+			
+			
+			<Anchor>//api/name/playbackTimeRemaining</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playbackTimeRemaining</TokenIdentifier>
+			<Abstract type="html">Convenience method to return the playback time remaining, in seconds.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval playbackTimeRemaining</Declaration>
+			
+			
+			<Anchor>//api/name/playbackTimeRemaining</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayerControlsHidden:</TokenIdentifier>
+			<Abstract type="html">Whether the built-in player user interface is displayed.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL playerControlsHidden</Declaration>
+			
+			
+			<Anchor>//api/name/playerControlsHidden</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playerControlsHidden</TokenIdentifier>
+			<Abstract type="html">Whether the built-in player user interface is displayed.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL playerControlsHidden</Declaration>
+			
+			
+			<Anchor>//api/name/playerControlsHidden</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playerControlsHidden</TokenIdentifier>
+			<Abstract type="html">Whether the built-in player user interface is displayed.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL playerControlsHidden</Declaration>
+			
+			
+			<Anchor>//api/name/playerControlsHidden</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayPauseButton:</TokenIdentifier>
+			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
+			
+			
+			<Anchor>//api/name/playPauseButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playPauseButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
+			
+			
+			<Anchor>//api/name/playPauseButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playPauseButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the center of the screen, allowing the user to pause/resume playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *playPauseButton</Declaration>
+			
+			
+			<Anchor>//api/name/playPauseButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setProgressBar:</TokenIdentifier>
+			<Abstract type="html">Slider shown in the top HUD overlay, allowing the user to see playback progress and scrub
+to a particular location in the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
+			
+			
+			<Anchor>//api/name/progressBar</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/progressBar</TokenIdentifier>
+			<Abstract type="html">Slider shown in the top HUD overlay, allowing the user to see playback progress and scrub
+to a particular location in the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
+			
+			
+			<Anchor>//api/name/progressBar</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/progressBar</TokenIdentifier>
+			<Abstract type="html">Slider shown in the top HUD overlay, allowing the user to see playback progress and scrub
+to a particular location in the video.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UISlider *progressBar</Declaration>
+			
+			
+			<Anchor>//api/name/progressBar</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayBackTime:</TokenIdentifier>
+			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playBackTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playBackTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the left of the progress bar to indicate the current playback position</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setPlayBackTotalTime:</TokenIdentifier>
+			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTotalTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/playBackTotalTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTotalTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/playBackTotalTime</TokenIdentifier>
+			<Abstract type="html">Label shown to the right of the progress bar to indicate how much time is left for playback</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UILabel *playBackTotalTime</Declaration>
+			
+			
+			<Anchor>//api/name/playBackTotalTime</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setLanguageSelectionButton:</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select audio language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/languageSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/languageSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select audio language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/languageSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/languageSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select audio language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *languageSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/languageSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setCcSelectionButton:</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select subtitle language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/ccSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/ccSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select subtitle language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/ccSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VirtuosoPlayerView/ccSelectionButton</TokenIdentifier>
+			<Abstract type="html">Button shown in the top HUD overlay, allowing the user to select subtitle language options</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nonnull) UIButton *ccSelectionButton</Declaration>
+			
+			
+			<Anchor>//api/name/ccSelectionButton</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/mediaOptionsForMediaCharacteristic:</TokenIdentifier>
+			<Abstract type="html">Convenience interface used to retrieve the available audio and subtitle track options.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSArray&lt;AVMediaSelectionOption*&gt; *)mediaOptionsForMediaCharacteristic:(nonnull AVMediaCharacteristic)characteristic</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>characteristic</Name>
+					<Abstract type="html">Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray containing the available media selection options for the given characteristic</Abstract></ReturnValue>
+			<Anchor>//api/name/mediaOptionsForMediaCharacteristic:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VirtuosoPlayerView/setMediaSelectionOption:forMediaCharacteristic:</TokenIdentifier>
+			<Abstract type="html">Convenience interface used to set a particular audio/subtitle language option in the player.</Abstract>
+			<DeclaredIn>VirtuosoPlayerView.h</DeclaredIn>
+			
+			<Declaration>- (void)setMediaSelectionOption:(nullable AVMediaSelectionOption *)option forMediaCharacteristic:(nonnull AVMediaCharacteristic)characteristic</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>option</Name>
+					<Abstract type="html">One of the options returned from mediaOptionsForMediaCharacteristic:</Abstract>
+				</Parameter><Parameter>
+					<Name>characteristic</Name>
+					<Abstract type="html">Either AVMediaCharacteristicAudible or AVMediaCharacteristicLegible</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setMediaSelectionOption:forMediaCharacteristic:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -17,6 +17,8 @@
 #ifndef VirtuosoClientDownloadEngine_Master_h
 #define VirtuosoClientDownloadEngine_Master_h
 
+#import <Foundation/Foundation.h>
+
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 //! Project version number for VirtuosoClientDownloadEngine.
 FOUNDATION_EXPORT double VirtuosoClientDownloadEngineVersionNumber;

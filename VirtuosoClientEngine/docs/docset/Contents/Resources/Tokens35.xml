@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/kVAV_ErrorCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kVAV_ErrorCode</TokenIdentifier>
+			<Abstract type="html">Resource loader error codes</Abstract>
+			<DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_NoCertificate</TokenIdentifier>
+            <Abstract type="html">Error generated when no FairPlay certificate is available</Abstract>
+            <Declaration>kVAV_NoCertificate</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kVAV_ExpiredWhileOffline</TokenIdentifier>
+            <Abstract type="html">Error generated when the FairPlay license expires while the device is offline</Abstract>
+            <Declaration>kVAV_ExpiredWhileOffline</Declaration>
+            
+            <DeclaredIn>VirtuosoAVAssetResourceLoaderDelegate.h</DeclaredIn>
+            
+            <NodeRef refid="35"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>
