@@ -8,20 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VirtuosoClientDownloadEngineWidevine'
-  s.version          = '4.2.45'
+  s.version          = '4.2.46'
   s.summary          = 'A best-of-breed download and offline viewing solution for video.'
   s.homepage         = 'http://penthera.com'
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
   s.author           = { 'josh-penthera' => 'josh.pressnell@penthera.com' }
   s.source           = { :http => 'file:' + __dir__ + '/../../VirtuosoClientEngine/CocoaPodsProducts/VirtuosoClientDownloadEngineWidevine.xcframework.zip' }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'VirtuosoClientDownloadEngine.xcframework/ios-armv7/VirtuosoClientDownloadEngine.framework/Headers/*'
+  s.source_files = 'VirtuosoClientDownloadEngine.xcframework/ios-arm64/VirtuosoClientDownloadEngine.framework/Headers/*'
   
   s.ios.vendored_frameworks = 'VirtuosoClientDownloadEngine.xcframework'
   s.preserve_path = 'VirtuosoClientDownloadEngine.xcframework/*'
-  s.module_map = 'VirtuosoClientDownloadEngine.xcframework/ios-armv7/VirtuosoClientDownloadEngine.framework/Modules/module.modulemap'
+  s.module_map = 'VirtuosoClientDownloadEngine.xcframework/ios-arm64/VirtuosoClientDownloadEngine.framework/Modules/module.modulemap'
 
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
