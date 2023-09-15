@@ -23,7 +23,10 @@
     //
     [VirtuosoLogger setLogLevel:kVL_LogVerbose];  // Verbose might be overkill for Production.
     [VirtuosoLogger enableLogsToFile:NO];
-    [VirtuosoSettings.instance setBool:YES forKey:@"VFM_BetaFeatures.EnableClientAds"];
+    
+    [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
+        [instance setBool:YES forKey:@"VFM_BetaFeatures.EnableClientAds"];
+    }];
     
     return YES;
 }

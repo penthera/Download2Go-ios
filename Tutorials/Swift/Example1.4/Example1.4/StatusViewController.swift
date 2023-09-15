@@ -56,49 +56,51 @@ class StatusViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifier, for: indexPath)
         
-        cell.accessoryType = .disclosureIndicator
-        switch indexPath.row {
-        case PerformanceSettings.taskRefillLimit.rawValue:
-            cell.textLabel?.text = "Task Refill Limit"
-            cell.detailTextLabel?.text = "\(VirtuosoSettings.instance().integer(forKey: "VFM_TaskRefillLimit"))"
-        case PerformanceSettings.taskRefillSize.rawValue:
-            cell.textLabel?.text = "Task Refill Size"
-            cell.detailTextLabel?.text = "\(VirtuosoSettings.instance().integer(forKey: "VFM_TaskRefillSize"))"
-        case PerformanceSettings.timeout.rawValue:
-            cell.textLabel?.text = "Network Timeout"
-            cell.detailTextLabel?.text = "\(VirtuosoSettings.instance().networkTimeout.description)"
-        case PerformanceSettings.maxHTTPConnections.rawValue:
-            cell.textLabel?.text = "Max HTTP Connections"
-            cell.detailTextLabel?.text = "\(VirtuosoSettings.instance().integer(forKey: "VFM_MaxHTTPConn"))"
-        case PerformanceSettings.maxPackagerSegments.rawValue:
-            cell.textLabel?.text = "Max Packager Segments"
-            cell.detailTextLabel?.text = "\(VirtuosoSettings.instance().integer(forKey: "VFM_MaxPackagerSegments"))"
-        case PerformanceSettings.backgroundSetupTime.rawValue:
-            cell.textLabel?.text = "Background Setup Time"
-            cell.detailTextLabel?.text = "\(max(20,VirtuosoSettings.instance().integer(forKey: "VFM_BackgroundSetupTime")))"
-        case PerformanceSettings.headroom.rawValue:
-            cell.textLabel?.text = "Headroom  (MB)"
-            cell.detailTextLabel?.text = "\(VirtuosoSettings.instance().headroom)"
-        case PerformanceSettings.maxStorage.rawValue:
-            cell.textLabel?.text = "Max Storage (MB)"
-            cell.detailTextLabel?.text = "\((Int64.max == VirtuosoSettings.instance().maxStorageAllowed) ? "unlimited" : VirtuosoSettings.instance().maxStorageAllowed.description)"
-        case PerformanceSettings.enableIFrames.rawValue:
-            cell.textLabel?.text = "Enable IFRAME"
-            cell.detailTextLabel?.text = VirtuosoSettings.instance().iframeSupportEnabled.description
-        case PerformanceSettings.cellDownload.rawValue:
-            cell.textLabel?.text = "Enable Cellular Download"
-            cell.detailTextLabel?.text = VirtuosoSettings.instance().downloadOverCellular.description
-        case PerformanceSettings.proxyLogging.rawValue:
-            cell.textLabel?.text = "Enable Proxy Logging"
-            cell.detailTextLabel?.text = VirtuosoLogger.proxyLoggingEnabled.description
-        case PerformanceSettings.backplaneLogging.rawValue:
-            cell.textLabel?.text = "Enable Backplane Logging"
-            cell.detailTextLabel?.text = VirtuosoLogger.backplaneLoggingEnabled.description
-        default:
-            cell.textLabel?.text = "unhandled-engine-status"
-            cell.detailTextLabel?.text = ""
-        }
-        
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
+            cell.accessoryType = .disclosureIndicator
+            switch indexPath.row {
+            case PerformanceSettings.taskRefillLimit.rawValue:
+                cell.textLabel?.text = "Task Refill Limit"
+                cell.detailTextLabel?.text = "\(instance.integer(forKey: "VFM_TaskRefillLimit"))"
+            case PerformanceSettings.taskRefillSize.rawValue:
+                cell.textLabel?.text = "Task Refill Size"
+                cell.detailTextLabel?.text = "\(instance.integer(forKey: "VFM_TaskRefillSize"))"
+            case PerformanceSettings.timeout.rawValue:
+                cell.textLabel?.text = "Network Timeout"
+                cell.detailTextLabel?.text = "\(instance.networkTimeout.description)"
+            case PerformanceSettings.maxHTTPConnections.rawValue:
+                cell.textLabel?.text = "Max HTTP Connections"
+                cell.detailTextLabel?.text = "\(instance.integer(forKey: "VFM_MaxHTTPConn"))"
+            case PerformanceSettings.maxPackagerSegments.rawValue:
+                cell.textLabel?.text = "Max Packager Segments"
+                cell.detailTextLabel?.text = "\(instance.integer(forKey: "VFM_MaxPackagerSegments"))"
+            case PerformanceSettings.backgroundSetupTime.rawValue:
+                cell.textLabel?.text = "Background Setup Time"
+                cell.detailTextLabel?.text = "\(max(20, instance.integer(forKey: "VFM_BackgroundSetupTime")))"
+            case PerformanceSettings.headroom.rawValue:
+                cell.textLabel?.text = "Headroom  (MB)"
+                cell.detailTextLabel?.text = "\(instance.headroom)"
+            case PerformanceSettings.maxStorage.rawValue:
+                cell.textLabel?.text = "Max Storage (MB)"
+                cell.detailTextLabel?.text = "\((Int64.max == instance.maxStorageAllowed) ? "unlimited" : instance.maxStorageAllowed.description)"
+            case PerformanceSettings.enableIFrames.rawValue:
+                cell.textLabel?.text = "Enable IFRAME"
+                cell.detailTextLabel?.text = instance.iframeSupportEnabled.description
+            case PerformanceSettings.cellDownload.rawValue:
+                cell.textLabel?.text = "Enable Cellular Download"
+                cell.detailTextLabel?.text = instance.downloadOverCellular.description
+            case PerformanceSettings.proxyLogging.rawValue:
+                cell.textLabel?.text = "Enable Proxy Logging"
+                cell.detailTextLabel?.text = VirtuosoLogger.proxyLoggingEnabled.description
+            case PerformanceSettings.backplaneLogging.rawValue:
+                cell.textLabel?.text = "Enable Backplane Logging"
+                cell.detailTextLabel?.text = VirtuosoLogger.backplaneLoggingEnabled.description
+            default:
+                cell.textLabel?.text = "unhandled-engine-status"
+                cell.detailTextLabel?.text = ""
+            }
+        })
+           
         return cell
     }
     
@@ -152,51 +154,60 @@ class StatusViewController: UITableViewController {
     // Default: 10
     func setTaskRefillLimit(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Int(sval) else { return }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
             
-            // Setting's of zero are not allowed
-            guard ival > 0 else { return }
-
-            // Set new value
-            VirtuosoSettings.instance().setInteger(ival, forKey: "VFM_TaskRefillLimit")
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Int(sval) else { return }
+                
+                // Setting's of zero are not allowed
+                guard ival > 0 else { return }
+                
+                // Set new value
+                
+                instance.setInteger(ival, forKey: "VFM_TaskRefillLimit")
+            }
+            
+            self.changeTextValueDialog(indexPath,
+                                  closure:validateInput,
+                                  settingTitle: "Task Refill Limit",
+                                  settingName: "Default 10",
+                                  settingValue: instance.integer(forKey:"VFM_TaskRefillLimit").description,
+                                  kbdType: .numberPad)
+            
+            })
         }
-        
-        changeTextValueDialog(indexPath,
-                            closure:validateInput,
-                            settingTitle: "Task Refill Limit",
-                            settingName: "Default 10",
-                            settingValue: VirtuosoSettings.instance().integer(forKey:"VFM_TaskRefillLimit").description,
-                            kbdType: .numberPad)
-    }
     
     // Setting: VFM_TaskRefillSize
     // This value controls maximum number of pending segments considered when creating new download tasks.
     // Default: 40
     func setTaskRefillSize(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Int(sval) else { return }
-            
-            // Setting's of zero are not allowed
-            guard ival > 0 else { return }
-
-            // Set new value
-            VirtuosoSettings.instance().setInteger(ival, forKey: "VFM_TaskRefillSize")
-        }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
         
-        changeTextValueDialog(indexPath,
-                                  closure:validateInput,
-                                  settingTitle: "Task Refil Size",
-                                  settingName: "Default 40",
-                                  settingValue: VirtuosoSettings.instance().integer(forKey:"VFM_TaskRefillSize").description,
-                                  kbdType: .numberPad)
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Int(sval) else { return }
+                
+                // Setting's of zero are not allowed
+                guard ival > 0 else { return }
+
+                // Set new value
+                instance.setInteger(ival, forKey: "VFM_TaskRefillSize")
+            }
+            
+            self.changeTextValueDialog(indexPath,
+                                      closure:validateInput,
+                                      settingTitle: "Task Refil Size",
+                                      settingName: "Default 40",
+                                      settingValue: instance.integer(forKey:"VFM_TaskRefillSize").description,
+                                      kbdType: .numberPad)
+                
+        })
 
     }
     
@@ -205,25 +216,29 @@ class StatusViewController: UITableViewController {
     // Default: 60 seconds
     func setTimeout(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Double(sval) else { return }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
+                
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Double(sval) else { return }
+                
+                // Setting's of zero are not allowed
+                guard ival > 0 else { return }
+                
+                // Set new value
+                instance.networkTimeout = ival;
+            }
             
-            // Setting's of zero are not allowed
-            guard ival > 0 else { return }
-            
-            // Set new value
-            VirtuosoSettings.instance().networkTimeout = ival;
-        }
-        
-        changeTextValueDialog(indexPath,
-                                closure:validateInput,
-                                settingTitle: "Timeout",
-                                settingName: "Default 60 seconds",
-                                settingValue: VirtuosoSettings.instance().networkTimeout.description,
-                                kbdType: .numberPad)
+            self.changeTextValueDialog(indexPath,
+                                    closure:validateInput,
+                                    settingTitle: "Timeout",
+                                    settingName: "Default 60 seconds",
+                                    settingValue: instance.networkTimeout.description,
+                                    kbdType: .numberPad)
+                
+        })
         
     }
 
@@ -232,25 +247,28 @@ class StatusViewController: UITableViewController {
     // Default: 20
     func setMaxHTTPConnections(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Int(sval) else { return }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
             
-            // Setting's of zero are not allowed
-            guard ival > 0 else { return }
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Int(sval) else { return }
+                
+                // Setting's of zero are not allowed
+                guard ival > 0 else { return }
+                
+                // Set new value
+                instance.setInteger(ival, forKey: "VFM_MaxHTTPConn")
+            }
             
-            // Set new value
-            VirtuosoSettings.instance().setInteger(ival, forKey: "VFM_MaxHTTPConn")
-        }
-        
-        changeTextValueDialog(indexPath,
+            self.changeTextValueDialog(indexPath,
                                   closure:validateInput,
                                   settingTitle: "Max HTTP Connections",
                                   settingName: "Default 20",
-                                  settingValue: VirtuosoSettings.instance().integer(forKey:"VFM_MaxHTTPConn").description,
+                                  settingValue: instance.integer(forKey:"VFM_MaxHTTPConn").description,
                                   kbdType: .numberPad)
+        })
         
     }
 
@@ -259,25 +277,29 @@ class StatusViewController: UITableViewController {
     // Default: 200
     func setMaxPackagerSegments(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Int(sval) else { return }
-            
-            // Setting's of zero are not allowed
-            guard ival > 0 else { return }
-            
-            // Set new value
-            VirtuosoSettings.instance().setInteger(ival, forKey: "VFM_MaxPackagerSegments")
-        }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
         
-        changeTextValueDialog(indexPath,
-                                  closure:validateInput,
-                                  settingTitle: "Max Packager Segments",
-                                  settingName: "Default 200",
-                                  settingValue: VirtuosoSettings.instance().integer(forKey:"VFM_MaxPackagerSegments").description,
-                                  kbdType: .numberPad)
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Int(sval) else { return }
+                
+                // Setting's of zero are not allowed
+                guard ival > 0 else { return }
+                
+                // Set new value
+                instance.setInteger(ival, forKey: "VFM_MaxPackagerSegments")
+            }
+            
+            self.changeTextValueDialog(indexPath,
+                                      closure:validateInput,
+                                      settingTitle: "Max Packager Segments",
+                                      settingName: "Default 200",
+                                      settingValue: instance.integer(forKey:"VFM_MaxPackagerSegments").description,
+                                      kbdType: .numberPad)
+                
+        })
         
     }
 
@@ -286,65 +308,74 @@ class StatusViewController: UITableViewController {
     // Default: 1GB, minimum 500 MB
     func setHeadroom(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Int(sval) else { return }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
             
-            // Minimum is 500 mb
-            guard ival > 500 else {
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Int(sval) else { return }
+                
+                // Minimum is 500 mb
+                guard ival > 500 else {
+                    // Important:
+                    // This call shows how to reset headroom to whatever the default value is
+                    instance.resetHeadroomToDefault()
+                    return
+                }
+                
                 // Important:
-                // This call shows how to reset headroom to whatever the default value is
-                VirtuosoSettings.instance().resetHeadroomToDefault()
-                return
+                // VirtuosoSettings.instance().headroom is read-only. To change this value
+                // use method VirtuosoSettings.instance().overrideHeadroom(Int64(ival))
+                instance.overrideHeadroom(Int64(ival))
             }
             
-            // Important:
-            // VirtuosoSettings.instance().headroom is read-only. To change this value
-            // use method VirtuosoSettings.instance().overrideHeadroom(Int64(ival))
-            VirtuosoSettings.instance().overrideHeadroom(Int64(ival))
-        }
-        
-        changeTextValueDialog(indexPath,
+            self.changeTextValueDialog(indexPath,
                                   closure:validateInput,
                                   settingTitle: "Headroom (in MB)",
                                   settingName: "Default 1024",
-                                  settingValue: VirtuosoSettings.instance().headroom.description,
+                                  settingValue: instance.headroom.description,
                                   kbdType: .numberPad)
-    }
+            
+            })
+      
+        }
     
     // Setting: Virtuoso.instance().maxStorageAllowed
     // This value controls maximum amount of storage that can be used.
     // Default: 5GB, resets to default when zero
     func setMaxStorage(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Int(sval) else { return }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
             
-            // Rest when zero
-            guard ival > 0 else {
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Int(sval) else { return }
+                
+                // Rest when zero
+                guard ival > 0 else {
+                    // Important:
+                    // This call shows how to reset max storage allowed
+                    instance.resetMaxStorageAllowedToDefault()
+                    return
+                }
+                
                 // Important:
-                // This call shows how to reset max storage allowed
-                VirtuosoSettings.instance().resetMaxStorageAllowedToDefault()
-                return
+                // VirtuosoSettings.instance().maxStorageAllowed is read-only. To change this value
+                // use method VirtuosoSettings.instance().overrideMaxStorageAllowed(Int64(ival))
+                instance.overrideMaxStorageAllowed(Int64(ival))
             }
             
-            // Important:
-            // VirtuosoSettings.instance().maxStorageAllowed is read-only. To change this value
-            // use method VirtuosoSettings.instance().overrideMaxStorageAllowed(Int64(ival))
-            VirtuosoSettings.instance().overrideMaxStorageAllowed(Int64(ival))
-        }
-        
-        changeTextValueDialog(indexPath,
+            self.changeTextValueDialog(indexPath,
                                   closure:validateInput,
                                   settingTitle: "Max Storage (in MB)",
                                   settingName: "Default unlimited",
-                                  settingValue: "\((Int64.max == VirtuosoSettings.instance().maxStorageAllowed) ? "" : (VirtuosoSettings.instance().maxStorageAllowed).description)",
+                                       settingValue: "\((Int64.max == instance.maxStorageAllowed) ? "" : (instance.maxStorageAllowed).description)",
                                   kbdType: .numberPad)
+            
+        })
     }
 
     // Setting: VFM_BackgroundSetupTime
@@ -352,26 +383,28 @@ class StatusViewController: UITableViewController {
     // Default: 20 seconds
     func setBackgroundSetupTime(_ indexPath: IndexPath) {
         
-        // Closure to range check input
-        let validateInput: TextValidationClosure = {
-            (val1: String?) -> Void in
-            guard let sval = val1 else { return }
-            guard let ival = Int(sval) else { return }
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
             
-            // Minimum value is 20 seconds
-            guard ival >= 20 else { return }
+            // Closure to range check input
+            let validateInput: TextValidationClosure = {
+                (val1: String?) -> Void in
+                guard let sval = val1 else { return }
+                guard let ival = Int(sval) else { return }
+                
+                // Minimum value is 20 seconds
+                guard ival >= 20 else { return }
+                
+                // Set new value
+                instance.setInteger(ival, forKey: "VFM_BackgroundSetupTime")
+            }
             
-            // Set new value
-            VirtuosoSettings.instance().setInteger(ival, forKey: "VFM_BackgroundSetupTime")
-        }
-        
-        changeTextValueDialog(indexPath,
+            self.changeTextValueDialog(indexPath,
                                   closure:validateInput,
                                   settingTitle: "Packager Setup Time",
                                   settingName: "Default 20 seconds",
-                                  settingValue: VirtuosoSettings.instance().integer(forKey:"VFM_BackgroundSetupTime").description,
+                                  settingValue: instance.integer(forKey:"VFM_BackgroundSetupTime").description,
                                   kbdType: .numberPad)
-        
+        })
     }
 
     // Setting: VirtuosoSettings.instance().iframeSupportEnabled
@@ -379,17 +412,20 @@ class StatusViewController: UITableViewController {
     // Default: false
     func setEnableIFrames(_ indexPath: IndexPath) {
         
-        // Closure update setting
-        let validateInput: BooleanValidationClosure = {
-            (val1: Bool) -> Void in
-            VirtuosoSettings.instance().iframeSupportEnabled = val1;
-        }
-        
-        changeBooleanValueDialog(indexPath,
-                                closure:validateInput,
-                                settingTitle: "Enble IFRAMES",
-                                settingName: "Default No",
-                                settingValue: VirtuosoSettings.instance().iframeSupportEnabled.description)
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
+            
+            // Closure update setting
+            let validateInput: BooleanValidationClosure = {
+                (val1: Bool) -> Void in
+                instance.iframeSupportEnabled = val1;
+            }
+            
+            self.changeBooleanValueDialog(indexPath,
+                                     closure:validateInput,
+                                     settingTitle: "Enble IFRAMES",
+                                     settingName: "Default No",
+                                     settingValue: instance.iframeSupportEnabled.description)
+        })
     }
 
     // Setting: VirtuosoSettings.instance().downloadOverCellular
@@ -397,19 +433,22 @@ class StatusViewController: UITableViewController {
     // Default: false
     func setCellularDownload(_ indexPath: IndexPath) {
         
-        // Closure update setting
-        let validateInput: BooleanValidationClosure = {
-            (val1: Bool) -> Void in
-            VirtuosoSettings.instance().overrideDownloadOverCellular(val1)
-        }
-        
-        changeBooleanValueDialog(indexPath,
-                                  closure:validateInput,
-                                  settingTitle: "Enable Cellular Download",
-                                  settingName: "Default No",
-                                  settingValue: VirtuosoSettings.instance().downloadOverCellular.description)
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
+            
+            // Closure update setting
+            let validateInput: BooleanValidationClosure = {
+                (val1: Bool) -> Void in
+                instance.overrideDownloadOverCellular(val1)
+            }
+            
+            self.changeBooleanValueDialog(indexPath,
+                                     closure:validateInput,
+                                     settingTitle: "Enable Cellular Download",
+                                     settingName: "Default No",
+                                     settingValue: instance.downloadOverCellular.description)
+        })
     }
-
+        
     // This value controls enable/disable downloading over Cellular connection
     // Default: false
     func setProxyLogging(_ indexPath: IndexPath) {

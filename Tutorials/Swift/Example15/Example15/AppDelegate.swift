@@ -17,12 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         VirtuosoLogger.setLogLevel(.vl_LogVerbose)          // Verbose might be overkill for Production.
         VirtuosoLogger.enableLogs(toFile: false)            // Setting to true will save Virtuoso logs to disk
-        VirtuosoSettings.instance().setBool(true, forKey:"VFM_BetaFeatures.EnableClientAds")
         
-        VirtuosoSettings.instance().allowRestrictedMimeTypes(forEncryptionKeys:true)
-        VirtuosoSettings.instance().allowAdditionalMimeTypes(["text/html"], for:.vde_AssetTypeHLS, andDataType:.vf_DataTypeStreamCC)
-        VirtuosoSettings.instance().allowAdditionalMimeTypes(["application/octet-stream"], for:.vde_AssetTypeHLS, andDataType:.vf_DataTypeManifest)
-        
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
+            instance.setBool(true, forKey:"VFM_BetaFeatures.EnableClientAds")
+            
+            instance.allowRestrictedMimeTypes(forEncryptionKeys:true)
+            instance.allowAdditionalMimeTypes(["text/html"], for:.vde_AssetTypeHLS, andDataType:.vf_DataTypeStreamCC)
+            instance.allowAdditionalMimeTypes(["application/octet-stream"], for:.vde_AssetTypeHLS, andDataType:.vf_DataTypeManifest)
+        })
+            
         return true
     }
 }

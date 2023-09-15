@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VirtuosoLogger.setLogLevel(.vl_LogVerbose)          // Verbose might be overkill for Production.
         VirtuosoLogger.enableLogs(toFile: false)            // Setting to true will save Virtuoso logs to disk
         
-        VirtuosoSettings.instance().setBool(true, forKey: "VFM_Undocumented_EnableClientAds")
-        
+        VirtuosoSettings.instance(onReady: {(instance:VirtuosoSettings)->Void in
+            instance.setBool(true, forKey: "VFM_Undocumented_EnableClientAds")
+        })
+                                  
         return true
     }
 

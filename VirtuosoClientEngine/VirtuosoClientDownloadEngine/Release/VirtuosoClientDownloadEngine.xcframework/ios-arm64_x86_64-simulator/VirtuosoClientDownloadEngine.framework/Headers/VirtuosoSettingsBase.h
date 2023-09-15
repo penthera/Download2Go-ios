@@ -21,7 +21,7 @@
 
 @interface VirtuosoSettingsBase : NSObject
 
--(Boolean)isVirtuosoKey:(NSString* _Nonnull)key;
++(Boolean)isVirtuosoKey:(NSString* _Nonnull)key;
 
 -(void)registerDefaults:(NSDictionary<NSString *,id>* _Nonnull)registrationDictionary;
 
