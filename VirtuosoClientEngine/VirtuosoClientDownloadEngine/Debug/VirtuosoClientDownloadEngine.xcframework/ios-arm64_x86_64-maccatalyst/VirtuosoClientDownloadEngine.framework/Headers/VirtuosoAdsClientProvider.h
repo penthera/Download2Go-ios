@@ -2,12 +2,12 @@
 //  VirtuosoAdsClientProvider.h
 //  VirtuosoClientDownloadEngine
 //
-//  Created by jkountz on 9/28/18.
+//  Created by Penthera on 9/28/18.
 //  Copyright © 2018 Penthera. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoAdsProvider.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoAdsProvider.h>
 
 #ifndef VirtuosoAdsClientProvider_Included
 #define VirtuosoAdsClientProvider_Included

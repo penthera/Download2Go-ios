@@ -44,6 +44,18 @@
 /*!
  *  @abstract The singleton instance access method
  *
+ *  @discussion You must never instantiate a local copy of the VirtuosoSettings object.  This object
+ *              is intended to be a static singleton accessed through the instance method only.  Instantiating a local
+ *              copy will throw an exception.
+ *
+ *  @return Returns the VirtuosoSettings object instance.
+ */
++ (nonnull VirtuosoSettings*)instance;
+
+
+/*!
+ *  @abstract The singleton instance access method
+ *
  *  @discussion If the VirtuosoSettings instance has already been initiazlied, then this method immediately calls the given
  *              block synchronously on the calling thread.  If the instance has not been initialized, then this method
  *              initializes the instance in a background thread and later executes the provided block on the calling thread.
@@ -52,11 +64,13 @@
  *              is intended to be a static singleton accessed through appropriate instance methods only.  Instantiating a local
  *              copy will throw an exception.
  *
- *  @property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete.
- *                    The instance is passed as a parameter to the handler.
+ *  @property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete
  *
+ *  @return Returns the VirtuosoSettings object instance.
  */
 + (void)instanceOnReady:(void (^_Nonnull)(VirtuosoSettings* _Nonnull))onReady;
+
+
 
 /**---------------------------------------------------------------------------------------
  * @name Backplane-Provided Configuration
@@ -678,6 +692,14 @@
   *  @discussion For asset downloads that make use of MediaMelon, this property provides the default CustomerID
   */
  @property (nonatomic,copy,nullable) NSString* mediaMelonCustomerID;
+
+
+/*!
+ *  @abstract Enables Parser logic to ensure CC name attribute is always unique.
+ *
+ *  @discussion Enables HLS Parsing logic that will ensure Closed Caption Name attributes are unique. Default is disabled. In most cases the default value should be acceptable.
+ */
+@property (nonatomic, assign)Boolean enableClosedCaptionUniqueName;
 
 @end
 

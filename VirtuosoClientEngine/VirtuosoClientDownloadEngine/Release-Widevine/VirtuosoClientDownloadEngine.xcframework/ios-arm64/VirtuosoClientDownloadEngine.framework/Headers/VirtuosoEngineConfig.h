@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoConstants.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -81,8 +81,6 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param user The Backplane user to use
  *
- * @param backplaneUrl A root URL pointing to the location of the Backplane endpoints
- *
  * @param publicKey The Penthera-provided public key
  *
  * @param privateKey The Penthera-provided private key
@@ -91,7 +89,6 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 -(instancetype _Nullable)initWithUser:(NSString*)user
-                         backplaneUrl:(NSString* _Nonnull)backplaneUrl
                             publicKey:(NSString* _Nonnull)publicKey
                            privateKey:(NSString* _Nonnull)privateKey;
 
@@ -101,8 +98,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @discussion Parameter values for backplaneUrl, publicKey, and privateKey must be set in the Application Bundle info.plist
  *
  * @param user The Backplane user to use
- *
- * @param backplaneUrl A root URL pointing to the location of the Backplane endpoints
  *
  * @param publicKey The Penthera-provided public key
  *
@@ -114,7 +109,6 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 -(instancetype _Nullable)initWithUser:(NSString*)user
-                         backplaneUrl:(NSString* _Nonnull)backplaneUrl
                             publicKey:(NSString* _Nonnull)publicKey
                            privateKey:(NSString* _Nonnull)privateKey
                      externalDeviceID:(NSString* _Nullable)externalDeviceID;

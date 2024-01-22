@@ -19,6 +19,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class VirtuosoError;
+
 /*!
  *
  *  @typedef DeviceUpdateResultBlock
@@ -66,6 +68,20 @@ typedef void(^DeviceUpdateResultBlock)(Boolean success,  NSError* _Nullable  err
  *  @param onComplete A callback block indicating the result of the update
  */
 - (void) updateNickname:(nonnull NSString*)newNickname onComplete:(nullable DeviceUpdateResultBlock)onComplete;
+
+/*!
+ *  @abstract Sets a new externalID for this device.
+ *
+ *  @warning You can only call this method from the device itself.
+ *           If you try to call this method from a different device, it will have no effect.
+ *
+ *  @param externalID The new externalDeviceID for this device
+ *
+ *  @param onComplete A callback block indicating the result of the update
+ *
+ *  @param error Indicates error failed
+ */
+- (void) updateExternalID:(nonnull NSString*)externalID onComplete:(nullable DeviceUpdateResultBlock)onComplete error:(VirtuosoError*_Nullable *_Nullable)error;
 
 /*!
  *  @abstract Sets a new externalID for this device.
@@ -147,6 +163,11 @@ typedef void(^DeviceUpdateResultBlock)(Boolean success,  NSError* _Nullable  err
 @property (nonatomic,readonly,nonnull) NSDate*   createdDate;
 
 /*!
+ *  @abstract When the Backplane created a record for the user of this device
+ */
+@property (nonatomic,readonly,nonnull) NSDate*   userCreatedDate;
+
+/*!
  *  @abstract The current push token associated with this device
  */
 @property (nonatomic,readonly,nullable) NSString* pushToken;
@@ -173,4 +194,3 @@ typedef void(^DeviceUpdateResultBlock)(Boolean success,  NSError* _Nullable  err
 @end
 
 #endif
-

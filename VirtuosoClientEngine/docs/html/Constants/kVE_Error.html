@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>kVE_Error Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Cache &amp; Carry (Virtuoso) SDK - iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Penthera Inc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">kVE_Error Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>VirtuosoError.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">kVE_Error</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>@typedef kVE_Error</p><p>Error codes for <a href="../Classes/VirtuosoError.html">VirtuosoError</a></p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, kVE_Error ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_GeneralErrorInvalidPushToken</a> = 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_GeneralErrorInvalidAsset</a> = 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_GeneralErrorInvalidParameter</a> = 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_GeneralErrorUnableToRequestPermissionsWhenOffline</a> = 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_GeneralErrorDataMigrationError</a> = 5,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DownloadReachabilityError</a> = 1000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DownloadHttpError</a> = 1001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DownloadMimeError</a> = 1002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DownloadIOError</a> = 1003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DownloadFileSizeError</a> = 1004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DownloadEngineStateError</a> = 1005,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DownloadAssetDeletedDuringProcessing</a> = 1006,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestReachabilityError</a> = 2000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestHttpError</a> = 2001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestMimeError</a> = 2002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestIOError</a> = 2003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestFormatError</a> = 2004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestEmptyError</a> = 2005,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestInvalidURL</a> = 2006,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestMultipleCopiesOfAsset</a> = 2007,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestConfigError</a> = 2008,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ManifestUnknownParsingError</a> = 2009,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ProxyBackplaneAuthorizationTimedOut</a> = 3000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ProxyPlayedAssetOutsideViewingWindow</a> = 3001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ProxyPlayedAssetExpired</a> = 3002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ProxyInvalidAsset</a> = 3003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ProxyPortInUse</a> = 3004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_ProxyPlayedAssetWithAdExpired</a> = 3005,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayerErrorAssetTypeNotSupported</a> = 4000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayerUnableToPlayAsset</a> = 4001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_DrmRetrievalFailed</a> = 5000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_AdsRefreshError</a> = 6000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PermissionErrorLifetimeDownloadLimit</a> = 7000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PermissionErrorMaximumDownloadsPerAccount</a> = 7001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PermissionErrorExternalPolicyServiceDenied</a> = 7002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PermissionErrorMaximumCopiesPerAccount</a> = 7003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneUrlError</a> = 8000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneNotReachable</a> = 8001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneNilResponse</a> = 8002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneInvalidCredentials</a> = 8003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneSaveDeviceError</a> = 8004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplanePermissionUnknownFailure</a> = 8005,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneRegisterRequestDataInvalid</a> = 8006,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneRequestThrottled</a> = 8007,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneAuthFailed</a> = 8008,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneUnregisterDeviceStatusError</a> = 8009,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneUnregisterDeviceInternalError</a> = 8010,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneSendLogsFailed</a> = 8011,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_BackplaneSyncFailed</a> = 8012,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlaylistErrorNotActive</a> = 9000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlaylistErrorInvalidParameter</a> = 9001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlaylistErrorInternal</a> = 9002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureInvalidParameter</a> = 10000,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureCreateSegmentFail</a> = 10001,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureErrorNetwork</a> = 10002,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureParameterError</a> = 10003,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureWebProxyStartFailure</a> = 10004,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureManifestParsingFailure</a> = 10005,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureSubManifestParsingFailure</a> = 10006,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssureNotAuthenticated</a> = 10007,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVE_PlayAssurePlaybackFailure</a> = 10008,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="kVE_GeneralErrorInvalidPushToken"></a><code>kVE_GeneralErrorInvalidPushToken</code></dt>
+<dd>
+
+
+<p>GeneralError code indicating invalid push token received</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_GeneralErrorInvalidAsset"></a><code>kVE_GeneralErrorInvalidAsset</code></dt>
+<dd>
+
+
+<p>GeneralError code indicating invalid asset</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_GeneralErrorInvalidParameter"></a><code>kVE_GeneralErrorInvalidParameter</code></dt>
+<dd>
+
+
+<p>GeneralError code indicating invalid parameter</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_GeneralErrorUnableToRequestPermissionsWhenOffline"></a><code>kVE_GeneralErrorUnableToRequestPermissionsWhenOffline</code></dt>
+<dd>
+
+
+<p>GeneralError code indicating unable to request permission while offline</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_GeneralErrorDataMigrationError"></a><code>kVE_GeneralErrorDataMigrationError</code></dt>
+<dd>
+
+
+<p>GeneralError code indicating CoreData migration error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DownloadReachabilityError"></a><code>kVE_DownloadReachabilityError</code></dt>
+<dd>
+
+
+<p>Reachability error, network not reachable</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DownloadHttpError"></a><code>kVE_DownloadHttpError</code></dt>
+<dd>
+
+
+<p>Http error downloading content</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DownloadMimeError"></a><code>kVE_DownloadMimeError</code></dt>
+<dd>
+
+
+<p>Invalid MIME error  downloading segment</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DownloadIOError"></a><code>kVE_DownloadIOError</code></dt>
+<dd>
+
+
+<p>IO error saving download to local disk</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DownloadFileSizeError"></a><code>kVE_DownloadFileSizeError</code></dt>
+<dd>
+
+
+<p>File size did not match expected size error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DownloadEngineStateError"></a><code>kVE_DownloadEngineStateError</code></dt>
+<dd>
+
+
+<p>Download engine state error.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DownloadAssetDeletedDuringProcessing"></a><code>kVE_DownloadAssetDeletedDuringProcessing</code></dt>
+<dd>
+
+
+<p>Asset deleted by  user during processing</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestReachabilityError"></a><code>kVE_ManifestReachabilityError</code></dt>
+<dd>
+
+
+<p>Failed to download manifest due to reachability error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestHttpError"></a><code>kVE_ManifestHttpError</code></dt>
+<dd>
+
+
+<p>HTTP error while downloading manifest</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestMimeError"></a><code>kVE_ManifestMimeError</code></dt>
+<dd>
+
+
+<p>MIME error downlading manifest</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestIOError"></a><code>kVE_ManifestIOError</code></dt>
+<dd>
+
+
+<p>Disk IO Error while saving manifest</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestFormatError"></a><code>kVE_ManifestFormatError</code></dt>
+<dd>
+
+
+<p>Mainfest format error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestEmptyError"></a><code>kVE_ManifestEmptyError</code></dt>
+<dd>
+
+
+<p>Manifest empty error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestInvalidURL"></a><code>kVE_ManifestInvalidURL</code></dt>
+<dd>
+
+
+<p>Manifest URL invalid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestMultipleCopiesOfAsset"></a><code>kVE_ManifestMultipleCopiesOfAsset</code></dt>
+<dd>
+
+
+<p>  Multiple copies of same AssetID error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestConfigError"></a><code>kVE_ManifestConfigError</code></dt>
+<dd>
+
+
+<p>  Manifest configuration error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ManifestUnknownParsingError"></a><code>kVE_ManifestUnknownParsingError</code></dt>
+<dd>
+
+
+<p>Manifest unknown parsing error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ProxyBackplaneAuthorizationTimedOut"></a><code>kVE_ProxyBackplaneAuthorizationTimedOut</code></dt>
+<dd>
+
+
+<p>For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
+        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ProxyPlayedAssetOutsideViewingWindow"></a><code>kVE_ProxyPlayedAssetOutsideViewingWindow</code></dt>
+<dd>
+
+
+<p>You attempted to play an asset outside its availability window.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ProxyPlayedAssetExpired"></a><code>kVE_ProxyPlayedAssetExpired</code></dt>
+<dd>
+
+
+<p>You attempted to play an expired asset.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ProxyInvalidAsset"></a><code>kVE_ProxyInvalidAsset</code></dt>
+<dd>
+
+
+<p>The <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> used to initialize the proxy wasn&rsquo;t an invalid asset or the asset protection type was not
+        kVDE_AssetProtectionTypePassthrough.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ProxyPortInUse"></a><code>kVE_ProxyPortInUse</code></dt>
+<dd>
+
+
+<p>The HTTP server was unable to listen on the selected port</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_ProxyPlayedAssetWithAdExpired"></a><code>kVE_ProxyPlayedAssetWithAdExpired</code></dt>
+<dd>
+
+
+<p>You attempted to play an asset with ads that have expired.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayerErrorAssetTypeNotSupported"></a><code>kVE_PlayerErrorAssetTypeNotSupported</code></dt>
+<dd>
+
+
+<p>Asset type not supported by Player</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayerUnableToPlayAsset"></a><code>kVE_PlayerUnableToPlayAsset</code></dt>
+<dd>
+
+
+<p>Asset is not playable yet</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_DrmRetrievalFailed"></a><code>kVE_DrmRetrievalFailed</code></dt>
+<dd>
+
+
+<p>Failed to retrieve DRM</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_AdsRefreshError"></a><code>kVE_AdsRefreshError</code></dt>
+<dd>
+
+
+<p>Failed to refresh Ads</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PermissionErrorLifetimeDownloadLimit"></a><code>kVE_PermissionErrorLifetimeDownloadLimit</code></dt>
+<dd>
+
+
+<p>Lifetime download limit error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PermissionErrorMaximumDownloadsPerAccount"></a><code>kVE_PermissionErrorMaximumDownloadsPerAccount</code></dt>
+<dd>
+
+
+<p>Max downloads per account error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PermissionErrorExternalPolicyServiceDenied"></a><code>kVE_PermissionErrorExternalPolicyServiceDenied</code></dt>
+<dd>
+
+
+<p>External policy service denied error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PermissionErrorMaximumCopiesPerAccount"></a><code>kVE_PermissionErrorMaximumCopiesPerAccount</code></dt>
+<dd>
+
+
+<p>Max copies per account error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneUrlError"></a><code>kVE_BackplaneUrlError</code></dt>
+<dd>
+
+
+<p>Backplane URL was invalid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneNotReachable"></a><code>kVE_BackplaneNotReachable</code></dt>
+<dd>
+
+
+<p>Backplane not reachable</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneNilResponse"></a><code>kVE_BackplaneNilResponse</code></dt>
+<dd>
+
+
+<p>Backplane returned nil response</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneInvalidCredentials"></a><code>kVE_BackplaneInvalidCredentials</code></dt>
+<dd>
+
+
+<p>Backplane credentials were invalid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneSaveDeviceError"></a><code>kVE_BackplaneSaveDeviceError</code></dt>
+<dd>
+
+
+<p>Backplane save device error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplanePermissionUnknownFailure"></a><code>kVE_BackplanePermissionUnknownFailure</code></dt>
+<dd>
+
+
+<p>Backplane permission unkown failure</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneRegisterRequestDataInvalid"></a><code>kVE_BackplaneRegisterRequestDataInvalid</code></dt>
+<dd>
+
+
+<p>Backplane registration request data was invalid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneRequestThrottled"></a><code>kVE_BackplaneRequestThrottled</code></dt>
+<dd>
+
+
+<p>Backplane request was throttled</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneAuthFailed"></a><code>kVE_BackplaneAuthFailed</code></dt>
+<dd>
+
+
+<p>Backplane authentication failed</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneUnregisterDeviceStatusError"></a><code>kVE_BackplaneUnregisterDeviceStatusError</code></dt>
+<dd>
+
+
+<p>Backplane unregister device failed</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneUnregisterDeviceInternalError"></a><code>kVE_BackplaneUnregisterDeviceInternalError</code></dt>
+<dd>
+
+
+<p>Backplane uregister device failed with internal error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneSendLogsFailed"></a><code>kVE_BackplaneSendLogsFailed</code></dt>
+<dd>
+
+
+<p>Backplane send logs failed</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_BackplaneSyncFailed"></a><code>kVE_BackplaneSyncFailed</code></dt>
+<dd>
+
+
+<p>Backplane sync failed</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlaylistErrorNotActive"></a><code>kVE_PlaylistErrorNotActive</code></dt>
+<dd>
+
+
+<p>Playlist was is no longer active error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlaylistErrorInvalidParameter"></a><code>kVE_PlaylistErrorInvalidParameter</code></dt>
+<dd>
+
+
+<p>Playlist API invalid parameter error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlaylistErrorInternal"></a><code>kVE_PlaylistErrorInternal</code></dt>
+<dd>
+
+
+<p>Plalist internal error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureInvalidParameter"></a><code>kVE_PlayAssureInvalidParameter</code></dt>
+<dd>
+
+
+<p>PlayAssure API invalid parameter</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureCreateSegmentFail"></a><code>kVE_PlayAssureCreateSegmentFail</code></dt>
+<dd>
+
+
+<p>PlayAssure  create segment failed</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureErrorNetwork"></a><code>kVE_PlayAssureErrorNetwork</code></dt>
+<dd>
+
+
+<p>PlayAssure  network error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureParameterError"></a><code>kVE_PlayAssureParameterError</code></dt>
+<dd>
+
+
+<p>PlayAssure  API parameter was invalid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureWebProxyStartFailure"></a><code>kVE_PlayAssureWebProxyStartFailure</code></dt>
+<dd>
+
+
+<p>PlayAssure  proxy startup failure</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureManifestParsingFailure"></a><code>kVE_PlayAssureManifestParsingFailure</code></dt>
+<dd>
+
+
+<p>PlayAssure  manifest parsing failure</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureSubManifestParsingFailure"></a><code>kVE_PlayAssureSubManifestParsingFailure</code></dt>
+<dd>
+
+
+<p>PlayAssure  submanifest parsing failure</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssureNotAuthenticated"></a><code>kVE_PlayAssureNotAuthenticated</code></dt>
+<dd>
+
+
+<p>PlayAssure  not authenticated</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVE_PlayAssurePlaybackFailure"></a><code>kVE_PlayAssurePlaybackFailure</code></dt>
+<dd>
+
+
+<p>PlayAssure  playback falure</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoError.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">VirtuosoError.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-01-22</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

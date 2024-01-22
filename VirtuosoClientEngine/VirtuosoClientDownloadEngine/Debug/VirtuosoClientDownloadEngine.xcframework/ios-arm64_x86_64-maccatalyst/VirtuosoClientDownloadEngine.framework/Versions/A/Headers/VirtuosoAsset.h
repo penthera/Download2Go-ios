@@ -22,7 +22,7 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import "VirtuosoConstants.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoVideoRendition.h>
 
 #if IS_LIB==0
@@ -749,10 +749,10 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *  @abstract Reparses the main mainfest to add additional Audio, Closed Caption data, and download the changes.
  *
  *  @discussion The primary use case for this method would be to add additional Audio languages to the previous
- *              download. These new languages must be enabled in Settings.
+ *              download. These new languages must be enabled in Settings. Following reparse the download engine will download any new content. When download has completed VirtuosoDownloadEngineNotificationManager will invoke delegate callback downloadEngineDidFinishRefreshingAsset.
  *
  *  @param completeBlock An optional block that will be called on completion. The callback block will be invoked once downloading
- *              is started but not necessarily before downloading has fully completed. Use VirtuosoDownloadEngineNotificationManager to monitor for download complete (downloadEngineDidFinishDownloadingAsset)
+ *              is started but not necessarily before downloading has fully completed. Use VirtuosoDownloadEngineNotificationManager to monitor for download complete (downloadEngineDidFinishRefreshingAsset)
  *              
  *  @warning Asset manifest refresh is a time consuming operation and should not be invoked on MainThread unless the completeBlock is provided
  *              in order to ensure iOS does not terminate the app for not responding on MainThread. When the completeBlock is provided
@@ -783,7 +783,7 @@ typedef void (^CompletionBlockWithOptionalError)(NSError* _Nullable);
  *              thread pool set for VirtuosoDownloadEngine.notificationQueue which defaults to MainThread if not otherwise set.
  *
  *
- *  @param completeBlock An optional block that will be called when the refresh is complete
+ *  @param completeBlock An optional block that will be called when the refresh is complete.
  */
 - (void)refreshOnComplete:(nullable AsyncCompleteBlock)completeBlock;
 

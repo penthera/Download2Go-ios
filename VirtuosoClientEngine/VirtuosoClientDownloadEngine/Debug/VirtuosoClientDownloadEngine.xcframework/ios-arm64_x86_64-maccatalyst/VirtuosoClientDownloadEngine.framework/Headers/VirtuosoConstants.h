@@ -144,30 +144,6 @@ typedef NS_ENUM(NSInteger, kVBP_StatusCode)
     
 };
 
-/*!
- *  @typedef kVDE_ErrorCode
- *
- *  @abstract Errors or warnings encountered by Virtuoso. Included in the NSError object sent
- *            via NSNotificationCenter when issues are reported.
- */
-typedef NS_ENUM(NSInteger, kVDE_ErrorCode)
-{
-    /** The supplied Backplane URL contains an invalid format */
-    kVDE_BackplaneURLError = -10,
-    
-    /** Virtuoso was unable to reach the Backplane */
-    kVDE_BackplaneNotReachableError = -11,
-    
-    /** Virtuoso was unable to move the downloaded asset to the final destination */
-    kVDE_FileMoveToFinalPathError = -12,
-    
-    /** The observed final file size doesn't match the expected file size */
-    kVDE_UnexpectedFileSizeWarning = -13,
-    
-    /** The userInfo dictionary contains objects that cannot be serialized */
-    kVDE_UnserializableUserInfoError = -14,
-};
-
 
 /*!
  *  @typedef kVDE_EngineStartupCode
@@ -197,146 +173,7 @@ typedef NS_ENUM(NSInteger, kVDE_EngineStartupCode)
     /** Virtuoso encountered an error initializing the CoreData database during startup */
     kVDE_EngineDataMigrationError = -7,
     
-
 };
-
-
-/*!
- *  @typedef kVDE_DownloadErrorCode
- *
- *  @abstract Virtuoso issues these codes via NSNotificationCenter when there's a problem downloading an asset.
- *            Virtuoso also marks the individual asset with an error code.
- */
-typedef NS_ENUM(NSInteger, kVDE_DownloadErrorCode)
-{
-    /** The file length advertised by the HTTP server doesn't match the expected size.
-        If file size validation is off, then the download proceeds anyway. If it's on,
-        Virtuoso aborts the download and sets the appropriate error codes. */
-    kVDE_ServerFileSizeDisagreesWithExpectedFileSize = -1,
-
-    /** If the MIME type returned from the HTTP server doesn't match the required MIME types
-        whitelist you provided earlier, then Virtuoso aborts the download. */
-    kVDE_InvalidMimeType = -4,
-
-    /** Some network issue (HTTP 404,416,etc) caused the download to fail. */
-    kVDE_NetworkError = -5,
-
-    /** The asset was configured with an invalid protection type. */
-    kVDE_InvalidProtectionType = -8,
-
-    /** There was an internal error.  Please contact Penthera support. */
-    kVDE_InternalError = -9,
-
-    /** Virtuoso was unable to obtain permission to download the asset because the lifetime download limit for this asset was reached. */
-    kVDE_PermissionsErrorLifetimeDownloadLimit = -10,
-
-    /** Virtuoso was unable to obtain permission to download the asset because the account has reached its maximum download limit. */
-    kVDE_PermissionsErrorMaximumDownloadsPerAccount = -11,
-
-    /** Virtuoso was unable to obtain permission to download the asset because the external policy service denied permission. */
-    kVDE_PermissionsErrorExternalPolicyServiceDenied = -12,
-
-    /** Virtuoso was unable to create the VirtuosoAsset due to configuration restrictions. */
-    kVDE_InvalidConfigurationOptions = -13,
-
-    /** Virtuoso was unable to obtain permission to download the asset because too many copies of this asset are already in the account. */
-    kVDE_PermissionsErrorMaximumCopiesPerAccount = -14,
-
-    /** Virtuoso was unable to create the VirtuosoAsset due to invalid manifest. */
-    kVDE_InvalidManifest = -15,
-
-    /** Virtuoso was unable to create the VirtuosoAsset due to asset being deleted. */
-    kVDE_AssetDeleted = -16,
-
-    /** Virtuoso was unable to create a VirtuosoSegment. */
-    kVDE_CreateSegmentFailed = -17,
-    
-    /** User has exceeded the simultaneous access limit. */
-    kVirtuosoDownloadEngineErrorTooManySimultaneousDownloads = -18,
-
-    /** User has exceeded the simultaneous access limit. */
-    kVirtuosoDownloadEngineErrorAdsRefreshError = -19,
-    
-    /** Virtuoso API received invalid parameter  */
-    kVDE_InvalidParameter = -20,
-
-    /** Virtuoso timeout waiting  */
-    kVDE_TimeOutWaiting = -21,
-
-    /** Asset was created for FastPlay download only */
-    kVDE_FastPlayDownloadOnly = -22,
-
-    /** Asset has invalid MediaHintUrl configuration */
-    kVDE_InvalidMediaHintConfiguration = -23,
-    
-    /** An audio codec could not be matched to any video rendition with the specified audio codecs*/
-    kVDE_AudioCodecNotFoundAmongSpecifiedCodecs = -24,
-    
-    /** A resolution could not be matched to any video rendition with the specified resolutions*/
-    kVDE_ResolutionNotFoundAmongSpecifiedResolutions = -25,
-
-    /** An audio codec could not be matched to any video rendition with the specified audio codecs and resolutions*/
-    kVDE_AudioCodecNotAmongSpecifiedCodecsAndResolution = -26,
-    
-    /** A resolution could not be matched to any video rendition with the specified audio codecs and resolutions*/
-    kVDE_ResolutionNotAmongSpecifiedCodecsAndResolution = -27,
-
-    /** Neither an audio codec nor a resolution could not be matched to any video rendition with the specified audio codecs and resolutions*/
-    kVDE_AudioCodecNorResolutionAmongSpecifiedCodecsAndResolution = -28,
-    
-    /** An audio codec and a resolution could not be matched to any video rendition with the specified audio codecs and resolutions*/
-    kVDE_AudioCodecAndResolutionNotAmongSpecifiedCodecsAndResolution = -29,
-};
-
-
-/*!
- *  @typedef kVDE_ProxyErrorCode
- *
- *  @abstract Errors issued from VirtuosoClientHTTPServer during instantiation.  Issued via
- *            NSNotificationCenter. These codes are included in the NSError that is sent.
- */
-typedef NS_ENUM(NSInteger, kVDE_ProxyErrorCode)
-{
-    /** For downloaded assets to remain playable, Virtuoso must sync with the Backplane at least every N seconds.
-        When this time is exceeded, Virtuoso will issue this error every time you set up a proxy to play a downloaded asset. */
-    kVDE_BackplaneAuthorizationTimedOut = -6,
-    
-    /** You attempted to play an asset outside its availability window. */
-    kVDE_PlayedAssetOutsideViewingWindow = -7,
-    
-    /** You attempted to play an expired asset. */
-    kVDE_PlayedAssetExpired = -8,
-    
-    /** The VirtuosoAsset used to initialize the proxy wasn't an invalid asset or the asset protection type was not
-        kVDE_AssetProtectionTypePassthrough. */
-    kVDE_InvalidAsset = -9,
-    
-    /** The HTTP server was unable to listen on the selected port */
-    kVDE_PortInUse = -10,
-    
-    /** You attempted to play an asset with ads that have expired. */
-    kVDE_PlayedAssetWithAdExpired = -11,
-};
-
-/*!
- *  @typedef kVDE_PlayerErrorCode
- *
- *  @abstract Errors issued from VirtuosoAVPlayer and associated classes.  Will be reported via the AVPlayer
- *            error property when the status property changes to AVPlayerStatusFailed.
- *
- *  @see VirtuosoAVPlayer
- */
-typedef NS_ENUM(NSInteger, kVDE_PlayerErrorCode)
-{
-    /** VirtuosoAVPlayer supports playback of MP4, HLS, and MPEG-DASH assets.  FairPlay and Widevine DRM is 
-        directly supported.  Integration with other DRM systems is possible, but may require additional integration. 
-        Attempts to play any other asset type will result in this error. */
-    kVDE_PlayerErrorAssetTypeNotSupported = -10,
-    
-    /** VirtuosoAVPlayer was unable to play the asset */
-    kVDE_UnableToPlayAsset = -11,
-};
-
 
 #pragma mark
 #pragma mark Virtuoso Asset Data Types
@@ -503,6 +340,10 @@ typedef NS_ENUM(NSInteger, kVDE_AssetPermissionType)
     /** Permission to download has been denied because too many copies of this asset already exist on
         devices in this account */
     kVDE_AssetPermissionDeniedAssetCopiesPerAccountMaxReached = 4,
+    
+    /** Permission to download has been denied because it was denied by external DPS */
+    kVDE_AssetPermissionDeniedExternalDPS = 5,
+
 };
 
 /*!
@@ -607,6 +448,10 @@ typedef NS_ENUM(NSInteger, kVDE_DownloadErrorType)
     /** Virtuoso has attempted to start downloading an asset for which DRM is required before downloading
      and was unable to successfully retrieve a DRM license.  Downloads cannot continue for this asset. */
     kVDE_BlockedOnDRM = 7,
+    
+    /** Virtuoso has received notice from the Customer's DPS server that permission was denied for this asset. */
+    kVDE_ExternalPermissionPolicyError = 8,
+
 };
 
 /*!

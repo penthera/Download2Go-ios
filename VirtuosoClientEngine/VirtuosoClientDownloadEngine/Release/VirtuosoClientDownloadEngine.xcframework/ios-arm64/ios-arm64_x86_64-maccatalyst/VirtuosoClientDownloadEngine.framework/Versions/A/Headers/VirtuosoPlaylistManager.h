@@ -146,12 +146,6 @@ typedef NS_ENUM(NSInteger, kVDE_PlaylistDownloadOption)
 @interface VirtuosoPlaylistManager : NSObject
 
 /*!
- *  @abstract Error domain for errors returned by Playlists. See kPLY_Error
-
- */
-@property (nonatomic, class, readonly)NSString* errorDomain;
-
-/*!
  *  @abstract Sets the delegate that will be called when an asset is needed for downloading from Playlist
  *
  *  @discussion Fires when an asset has been deleted in the asset Playlist and the next logical asset that is not on the device can be readied for download.

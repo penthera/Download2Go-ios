@@ -6,13 +6,13 @@
 //  Copyright © 2019 Penthera. All rights reserved.
 //
 
-#import "TargetConditionals.h"
+#import <TargetConditionals.h>
 
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 #endif
 
-#import "VirtuosoAdsClientProvider.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoAdsClientProvider.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

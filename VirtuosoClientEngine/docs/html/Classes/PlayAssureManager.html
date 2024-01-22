@@ -58,6 +58,8 @@
 		
 		<option value="//api/name/config">config</option>
 		
+		<option value="//api/name/playAssureSession">playAssureSession</option>
+		
 		<option value="//api/name/streamingURL">streamingURL</option>
 		
 	</optgroup>
@@ -68,13 +70,9 @@
 		
 		<option value="//api/name/ABPlaybackPercentage">+ ABPlaybackPercentage</option>
 		
-		<option value="//api/name/ABTestingPlayerViewControllerForURL:">+ ABTestingPlayerViewControllerForURL:</option>
+		<option value="//api/name/PlayAssureABPlayerViewControllerForURL:targetBitrate:displayStatus:videoDescription:">+ PlayAssureABPlayerViewControllerForURL:targetBitrate:displayStatus:videoDescription:</option>
 		
 		<option value="//api/name/isNetworkReady:">+ isNetworkReady:</option>
-		
-		<option value="//api/name/playAssurePlayerViewControllerForURL:">+ playAssurePlayerViewControllerForURL:</option>
-		
-		<option value="//api/name/streamingPlayerViewControllerForURL:">+ streamingPlayerViewControllerForURL:</option>
 		
 		<option value="//api/name/usePlayAssurePlaybackForABTesting">+ usePlayAssurePlaybackForABTesting</option>
 		
@@ -84,7 +82,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/addCacheProgressSubViewToView:">- addCacheProgressSubViewToView:</option>
+		<option value="//api/name/addCacheProgressLayerToView:">- addCacheProgressLayerToView:</option>
 		
 		<option value="//api/name/addStatusLayerToView:withPrefix:">- addStatusLayerToView:withPrefix:</option>
 		
@@ -94,7 +92,7 @@
 		
 		<option value="//api/name/shutdown">- shutdown</option>
 		
-		<option value="//api/name/transitionCacheProgressSubViewToSize:">- transitionCacheProgressSubViewToSize:</option>
+		<option value="//api/name/transitionCacheProgressLayerToSize:">- transitionCacheProgressLayerToSize:</option>
 		
 		<option value="//api/name/transitionStatusLayerToSize:">- transitionStatusLayerToSize:</option>
 		
@@ -176,7 +174,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>PlayAssure will proxy all streaming playback. This property provides the URL the Player should use to start playback</p>
+				<p>PlayAssure will proxy all streaming playback. This property provides the URL the Player should use to start playback. If PlayAssure is not handling playback during A/B testing, the streamingURL returned will be the same streamingURL provided in the initWithManifestURL initializer.</p>
 			</div>
 			
 
@@ -251,7 +249,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Verify network is connected.</p>
+				<p>Verify network is connected and internet is fully reachable.</p>
 			</div>
 			
 		    
@@ -266,7 +264,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>callback</code></th>
-						<td><p>Callback invoked once internet status has been checked.</p></td>
+						<td><p>This callback will be invoked with a Boolean stattus indicating whether internet was reachable (true).</p></td>
 					</tr>
 				
 				</table>
@@ -280,7 +278,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method will ping the internet to ensure it&rsquo;s reachable. The callback will indicate success by returning true in the callback.</p>
+				<p>This method will ping the internet to ensure it&rsquo;s reachable. Because this requires a background state transition, the call is will return immediately and the callback will be invoked async on the callers thread.</p>
 			</div>
 			
 
@@ -353,7 +351,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Creates an instance of hte SAM using the specified configuration. This will cause the SAM to immediately begin downloading and parsing the requried manifests.</p>
+				<p>Creates an instance of the PlayAssureManager using the specified configuration. This will cause the PlayAssureManager to immediately begin downloading and parsing the requried manifests.</p>
 			</div>
 			
 
@@ -589,8 +587,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/addCacheProgressSubViewToView:" title="addCacheProgressSubViewToView:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addCacheProgressSubViewToView:">&ndash;&nbsp;addCacheProgressSubViewToView:</a></code>
+	<a name="//api/name/addCacheProgressLayerToView:" title="addCacheProgressLayerToView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addCacheProgressLayerToView:">&ndash;&nbsp;addCacheProgressLayerToView:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -605,7 +603,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addCacheProgressSubViewToView:(UIView *)<em>view</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addCacheProgressLayerToView:(UIView *)<em>view</em></code></div>
 
 		    
 			
@@ -647,8 +645,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/transitionCacheProgressSubViewToSize:" title="transitionCacheProgressSubViewToSize:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/transitionCacheProgressSubViewToSize:">&ndash;&nbsp;transitionCacheProgressSubViewToSize:</a></code>
+	<a name="//api/name/transitionCacheProgressLayerToSize:" title="transitionCacheProgressLayerToSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/transitionCacheProgressLayerToSize:">&ndash;&nbsp;transitionCacheProgressLayerToSize:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -663,7 +661,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)transitionCacheProgressSubViewToSize:(CGSize)<em>size</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)transitionCacheProgressLayerToSize:(CGSize)<em>size</em></code></div>
 
 		    
 			
@@ -688,69 +686,6 @@
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Call when mode transitions between portrait/landscape.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PlayAssureManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/playAssurePlayerViewControllerForURL:" title="playAssurePlayerViewControllerForURL:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/playAssurePlayerViewControllerForURL:">+&nbsp;playAssurePlayerViewControllerForURL:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Convenience method that provides a basic playback controller for PlayAssure.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (PlayAssurePlayerViewController *)playAssurePlayerViewControllerForURL:(NSString *)<em>url</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>url</code></th>
-						<td><p>Manifest to stream</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>UIViewController for PlayAssure playback.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Convenience method that provides a basic playback controller for PlayAssure, generating a playback event.</p>
 			</div>
 			
 
@@ -865,71 +800,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/streamingPlayerViewControllerForURL:" title="streamingPlayerViewControllerForURL:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/streamingPlayerViewControllerForURL:">+&nbsp;streamingPlayerViewControllerForURL:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Convenience method that provides a basic playback controller for streaming.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (PlayAssurePlayerViewController *)streamingPlayerViewControllerForURL:(NSString *)<em>url</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>url</code></th>
-						<td><p>Manifest to stream</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>UIViewController for streaming playback.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Convenience method that provides a basic playback (streaming) controller, generating a playback event.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">PlayAssureManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ABTestingPlayerViewControllerForURL:" title="ABTestingPlayerViewControllerForURL:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ABTestingPlayerViewControllerForURL:">+&nbsp;ABTestingPlayerViewControllerForURL:</a></code>
+	<a name="//api/name/PlayAssureABPlayerViewControllerForURL:targetBitrate:displayStatus:videoDescription:" title="PlayAssureABPlayerViewControllerForURL:targetBitrate:displayStatus:videoDescription:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/PlayAssureABPlayerViewControllerForURL:targetBitrate:displayStatus:videoDescription:">+&nbsp;PlayAssureABPlayerViewControllerForURL:targetBitrate:displayStatus:videoDescription:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -944,7 +816,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (PlayAssurePlayerViewController *)ABTestingPlayerViewControllerForURL:(NSString *)<em>url</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (PlayAssureABPlayerViewController *)PlayAssureABPlayerViewControllerForURL:(NSString *)<em>url</em> targetBitrate:(long long)<em>targetBitrate</em> displayStatus:(Boolean)<em>displayStatus</em> videoDescription:(NSString *)<em>videoDescription</em></code></div>
 
 		    
 			
@@ -955,6 +827,21 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>url</code></th>
 						<td><p>Manifest to stream</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>targetBitrate</code></th>
+						<td><p>If using PlayAssure Backstop mode, the target bitrate. Pass -1 otherwise.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>displayStatus</code></th>
+						<td><p>Flag indicating whether a playback status message should be superimposed on the video during playback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>videoDescription</code></th>
+						<td><p>Description of video that will be displayed as part of the playback status message.</p></td>
 					</tr>
 				
 				</table>
@@ -990,6 +877,52 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/playAssureSession" title="playAssureSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playAssureSession">&nbsp;&nbsp;playAssureSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Flag indicating whether PlayAssure is actively running for this session.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean playAssureSession</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>For A/B testing, this flag indicates whether playback is via PlayAssure (true) or straight streaming (false). If PlayAssure is not handling playback during A/B testing, the <a href="#//api/name/streamingURL">streamingURL</a> returned will be the same <a href="#//api/name/streamingURL">streamingURL</a> provided in the initWithManifestURL initializer.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">PlayAssureManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1005,7 +938,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2023 Penthera Inc. All rights reserved. Updated: 2023-12-05</p>
+						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-01-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

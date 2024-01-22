@@ -147,6 +147,11 @@
 */
 @property (atomic, assign)BOOL isComplete;
 
+/*!
+*  @abstract The estimated time remaining in seconds to complete the download based on the currently playing video stream and bandwidth.
+*  @discussion 0 indicates the download is complete, -1 indicates an estimate could not be made.
+*/
+@property (atomic, assign)double estimatedTimeRemaining;
 
 -(instancetype)initWithVideoStreams:(NSArray<PlayAssureStatusInfoVideoStream*>*)videoStreams
                        audioStreams:(NSArray<PlayAssureStatusInfoAudioStream*>*)audioStreams

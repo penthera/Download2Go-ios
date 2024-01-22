@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -46,6 +47,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @abstract Whether the Virtuoso SDK license is currently valid
  */
 @property (nonatomic, assign) Boolean authenticationOK;
+
+/*!
+ *  @abstract Current engine status
+ */
+@property (nonatomic, assign) kVDE_DownloadEngineStatus engineStatus;
 
 
 @end

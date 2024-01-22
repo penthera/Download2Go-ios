@@ -18,12 +18,33 @@
 #define VirtuosoAssetConfig_h
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoConstants.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
 
 @class VirtuosoAncillaryFile;
 @class VirtuosoAdsProvider;
 @class VirtuosoPlaylist;
 @class VirtuosoPlaylistConfig;
+
+/*!
+ *  @abstract Defines type of download to perform.
+ *
+ *  @discussion This enum controls the type of download used for an Asset.
+ *
+ *  @see VirtuosoAssetConfig
+ *
+ */
+typedef NS_ENUM(NSInteger, kVDE_DownloadType)
+{
+    /** Download for Offline playback */
+    kVDE_DownloadOfflinePlayback = 0,
+    
+    /** Download for FastPlay playback */
+    kVDE_DownloadFastPlayPlayback = 1,
+    
+    /** Download for both Offline and FastPay playback */
+    kVDE_DownloadBothOfflineFastPlayPlayback = 2,
+};
+
 
 /*!
  *  @abstract Use this class to configure settings used when creating an Asset.
@@ -38,45 +59,30 @@
  *  Default values:
  *
  *    - VirtuosoAssetConfig..autoAddToQueue = TRUE;
- *    - VirtuosoAssetConfig..maximumBitrate = INT_MAX;
- *    - VirtuosoAssetConfig..maximumAudioBitrate = INT_MAX;
- *    - VirtuosoAssetConfig..protectionType = kVDE_AssetProtectionTypePassthrough;
+ *    - VirtuosoAssetConfig.downloadType = kVDE_DownloadOfflinePlayback;
+ *    - VirtuosoAssetConfig.maximumBitrate = INT_MAX;
+ *    - VirtuosoAssetConfig.maximumAudioBitrate = INT_MAX;
+ *    - VirtuosoAssetConfig.protectionType = kVDE_AssetProtectionTypePassthrough;
  *    - VirtuosoAssetConfig.includeEncryption = YES;
  *    - VirtuosoAssetConfig.assetDownloadLimit = -1;
  *    - VirtuosoAssetConfig.expiryAfterPlay = kInvalidExpiryTimeInterval;     // -42.0
  *    - VirtuosoAssetConfig.expiryAfterDownload = kInvalidExpiryTimeInterval; // -42.0
- *    - VirtuosoAssetConfig.offlinePlayEnabled = TRUE;
  *
  *  FastPlay quckest download should use the following:
  *
- *    - VirtuosoAssetConfig.fastPlayEnabled = TRUE;
- *    - VirtuosoAssetConfig.offlinePlayEnabled = FALSE;
+ *    - VirtuosoAssetConfig.downloadType = kVDE_DownloadFastPlayPlayback;
  *
  *  Download for both FastPlay and Offline playback:
  *  
- *    - VirtuosoAssetConfig.fastPlayEnabled = TRUE;
- *    - VirtuosoAssetConfig.offlinePlayEnabled = TRUE; // Default is TRUE
+ *    - VirtuosoAssetConfig.downloadType = kVDE_DownloadBothOfflineFastPlayPlayback;
  *
  */
 @interface VirtuosoAssetConfig : NSObject
 
-/*!
- *  @abstract Optional Playlists that this asset should be added to.
- *
+/**---------------------------------------------------------------------------------------
+ * @name Properties
+ *  ---------------------------------------------------------------------------------------
  */
-@property (nonatomic, strong)NSArray<VirtuosoPlaylist*>* _Nullable playlists __deprecated_msg("see playlistConfig, playlistAssets");
-
-/*!
- *@abstract Optional Playlist configuration to which this asset will be added.
- *  @discussion If this property is specified during asset creation, the specified Playlist will be created (if not found) and the assets specified by playlistAssets will be appended to the Playlist.
- *
- */
-@property (nonatomic, strong)VirtuosoPlaylistConfig* _Nullable playlistConfig;
-
-/*!
- *  @abstract Optional list of assets to be added to the Playlist
- */
-@property (nonatomic, strong)NSArray<NSString*>* _Nullable playlistAssets;
 
 /*!
  *  @abstract Where this asset exists on the Internet
@@ -110,6 +116,17 @@
  *  @abstract The asset type
  */
 @property (nonatomic, assign, readonly)kVDE_AssetType assetType;
+
+/*!
+ *  @abstract Specified the type of download requested.
+ *
+ *  @discussion Specifies the type of download requested. Defaults to kVDE_DownloadOfflinePlayback.
+ *
+ *  @see kVDE_DownloadType
+ *
+ */
+@property (nonatomic, assign)kVDE_DownloadType downloadType;
+
 
 /*
  *  @abstract The asset protection type identified during asset creation.
@@ -206,25 +223,6 @@
  *              defined value.  This value is provided during creation of the asset and cannot be changed after creation.
  */
 @property (nonatomic, assign)NSInteger assetDownloadLimit;
-
-/*!
- *  @abstract Prepare download for fastplay playback.
- *
- *  @discussion This option will download the asset for Fastplay playback.
- *  In addition, quickest download option for fastplay playback can be achieved by setting offlinePlayEnabled = FALSE.
- *  This reduces the amount of data downloaded and will result in asset become ready for fasatplay playback as quickly as possible.
- *  Default is disabled.
- */
-@property (nonatomic, assign)Boolean fastPlayEnabled;
-
-/*!
- *  @abstract Prepare download for Offline playback.
- *
- *  @discussion This option will download the asset for Offline playback.
- *              Preparing for both fastplay and offline playback will take longer than just preparing for fastplay.
- *              Default is enabled.
- */
-@property (nonatomic, assign)Boolean offlinePlayEnabled;
                                      
 /*!
  *  @abstract If true the asset is automatically added to the download queue. Default is true.
@@ -253,6 +251,30 @@
 @property (nonatomic, copy)NSDictionary* _Nullable userInfo;
 
 /*!
+ *  @abstract Optional Playlist configuration to which this assedt will be added.
+ */
+@property (nonatomic, strong)VirtuosoPlaylistConfig* _Nullable playlistConfig;
+
+/*!
+ *  @abstract Optional list of assets to be added to the Playlist
+ */
+@property (nonatomic, strong)NSArray<NSString*>* _Nullable playlistAssets;
+
+
+/*!
+ *  @abstract Optional Playlists that this asset should be added to.
+ *
+ *
+ */
+@property (nonatomic, strong)NSArray<VirtuosoPlaylist*>* _Nullable playlists
+__deprecated_msg("Prefer playlistConfig and playlistAssets");
+
+/**---------------------------------------------------------------------------------------
+ * @name Initializer
+ *  ---------------------------------------------------------------------------------------
+ */
+
+/*!
  *  @abstract Creates instance
  *
  *  @discussion This constructor creates an instance with the basic properties needed by all Asset types.
@@ -274,4 +296,3 @@
 @end
 
 #endif /* VirtuosoAssetConfig_h */
-

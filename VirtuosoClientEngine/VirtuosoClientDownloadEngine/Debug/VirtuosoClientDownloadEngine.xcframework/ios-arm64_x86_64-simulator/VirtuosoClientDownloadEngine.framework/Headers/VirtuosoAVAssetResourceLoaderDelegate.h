@@ -52,6 +52,12 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
 
     /** Player request CID did not match asset CID */
     kVAV_MismatchedCID = -9,
+    
+    /** Timed out while downloading license */
+    kVAV_DRMRetrievalTimedOut = -10,
+    
+    /** Invalid Key Request Identifier */
+    kVAV_InvalidKeyRequestIdentifier = -11,
 };
 
 /*!
@@ -96,9 +102,8 @@ typedef NS_ENUM(NSInteger, kVAV_ErrorCode)
  *  @abstract The VirtuosoAsset that is going to be played
  *
  * @warning This property is no longer used and will be removed in a future release.
- *
- *  @deprecated This property has been deprecated and has been replaced by the assetForResourceLoadingRequest in VirtuosoLicenseManager
  */
 @property (nonatomic,strong,nullable) VirtuosoAsset* asset __deprecated_msg("You should use the assetForResourceLoadingRequest method in VirtuosoLicenseManager instead.");
+
 
 @end

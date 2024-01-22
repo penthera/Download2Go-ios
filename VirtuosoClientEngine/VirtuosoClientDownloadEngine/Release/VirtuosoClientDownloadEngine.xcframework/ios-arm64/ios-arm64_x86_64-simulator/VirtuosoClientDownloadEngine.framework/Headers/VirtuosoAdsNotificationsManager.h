@@ -2,7 +2,7 @@
 //  VirtuoslAdsNotificationManager.h
 //  VirtuosoClientDownloadEngine
 //
-//  Created by jkountz on 11/8/18.
+//  Created by Penthera on 11/8/18.
 //  Copyright © 2018 Penthera. All rights reserved.
 //
 

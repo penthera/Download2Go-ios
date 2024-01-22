@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PlayAssureStatusDelegate.h"
+#import <VirtuosoClientDownloadEngine/PlayAssureStatusDelegate.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +19,16 @@ NS_ASSUME_NONNULL_BEGIN
 *
 */
 @interface PlayAssureConfig : NSObject
+
+/*!
+* @abstract Headroom value, expressed in MB. Default value is 1024 MB (1 GB).
+*
+* @discussion Headroom is the amount of free space a PlayAssure session must preserve on disk, expressed in MB.
+*                      For instance, if headroom is 1GB and the device has 1.2GB free disk space, PlayAssure will  begin playback
+*                      of a 150MB asset, but it will NOT begin playback of a 500MB asset.
+*/
+
+@property (nonatomic, assign)NSInteger headroom;
 
 /*!
 *  @abstract Number of segments per stream we should attempt to read-ahead during cache processing for the stream. Default is 5000.
@@ -49,6 +59,11 @@ NS_ASSUME_NONNULL_BEGIN
 *  @abstract Reading-ahead starts by downloading segments from the current player position to the end of a video.  When set, this flag will also download segments from the beginning of the video to the current player postion.  Default is NO.
 */
 @property (nonatomic, assign)Boolean lookAheadBehindPlayer;
+
+/*!
+*  @abstract If the player receives a request for a video segment at a higher quality than one currently on disk, this flag determines whether to persist the higher quality segment to disk and remove the lower quality segment.  If not set (default), the segment request is passed through to the player with an in-memory buffer and its contents are not saved to disk. If no segment exists on disk, it will always be persisted, regardless of this setting.
+*/
+@property (nonatomic, assign)Boolean cacheHigherPlayerRequests;
 
 /*!
 *  @abstract Bandwidth required for the PlayAssure Manager to continue reading-ahead processing. The default value of -1 indicates the bitrate of the currently playing video stream will be used.

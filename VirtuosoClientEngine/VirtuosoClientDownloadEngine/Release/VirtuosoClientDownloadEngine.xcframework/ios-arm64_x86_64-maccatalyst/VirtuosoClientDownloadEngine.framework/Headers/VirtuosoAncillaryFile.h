@@ -16,7 +16,7 @@
 #define VIRTUOSOANCILLARYFILE_INCLUDE
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoAsset.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoAsset.h>
 
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 #else

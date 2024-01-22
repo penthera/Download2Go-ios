@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoPlaylistConfig.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoPlaylistConfig.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,11 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
  *   FastPlay Playlists are designed for fast download of FastPlay enabled assets. This playlist type is simlar to AutoDownload playlist but differs on the triggering mechanism for new downloads. Triggering mechism is different. For AutoDownload playlists, the trigger event is asset deletion or expiry. FastPlay playlists trigger next download when the asset starts playing. As soon as an Asset configured for fastplay begins playing, the Playlist will immediately attempt to download the next sequential asset in the FastPlay playlist. Assets configured for this type of Playlist must be configured for FastPlay.
  */
 @interface VirtuosoPlaylist : NSObject
-
-/**---------------------------------------------------------------------------------------
- * @name Create
- *  ---------------------------------------------------------------------------------------
- */
 
 /*!
 *  @abstract Creates persistent instance of playlist.

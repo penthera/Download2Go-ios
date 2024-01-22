@@ -102,11 +102,11 @@ extern NSString* kDownloadEngineNotificationErrorKey;
 extern NSString* kDownloadEngineNotificationErrorTaskKey;
 
 /*!
- *  @constant kDownloadEngineNotificationErrorDataKey
- *
- *  @abstract Key for the NSData object in the userInfo dictionary
- */
-extern NSString* kDownloadEngineNotificationErrorDataKey;
+  *  @constant kDownloadEngineNotificationErrorDataKey
+  *
+  *  @abstract Key for the NSData object in the userInfo dictionary
+  */
+ extern NSString* kDownloadEngineNotificationErrorDataKey;
 
 /*!
  *  @constant kDownloadEngineNotificationErrorResponseStatusCodeKey
@@ -254,6 +254,14 @@ extern NSString* kDownloadEngineInternalQueueUpdateNotification;
 extern NSString* kDownloadEngineDidFinishDownloadingAssetNotification;
 
 /*!
+ *  @constant kDownloadEngineDidFinishRefreshingAssetNotification
+ *
+ *  @abstract Fired when an asset download refresh completes.  The userInfo dictionary will contain the asset (in
+ *            'kDownloadEngineNotificationAssetKey').
+ */
+extern NSString* kDownloadEngineDidFinishRefreshingAssetNotification;
+
+/*!
  *  @constant kDownloadEngineDidFinishedAncillaryDownloadNotification
  *
  *  @abstract Fired when an ancillary download completes.  The userInfo dictionary will contain the ancillary file object (in
@@ -269,6 +277,16 @@ extern NSString* kDownloadEngineDidFinishedAncillaryDownloadNotification;
 *            userInfo key 'kDownloadEngineNotificationAssetKey') contains the asset.
 */
 extern NSString* kDownloadEngineFastPlayReadyNotification;
+
+/*!
+ *  @constant kDownloadEngineDidEncounterGeneralErrorNotification
+ *
+ *  @abstract Fired when a download engine encounters general (non-asset) error.
+ *
+ *  @discussion The error localizedDescription will contain a reason for the failure.  The notice userInfo dictionary will contain
+ *              the VirtuosoError instance in key: kDownloadEngineNotificationErrorKey
+ */
+extern NSString* kDownloadEngineDidEncounterGeneralErrorNotification;
 
 /*!
  *  @constant kDownloadEngineDidEncounterErrorNotification

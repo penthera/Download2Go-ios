@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientDownloadEngine.h>
-#import "VirtuosoDefaultAVAssetResourceLoaderDelegate.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoDefaultAVAssetResourceLoaderDelegate.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

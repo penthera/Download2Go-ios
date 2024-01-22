@@ -88,6 +88,8 @@
 		
 		<option value="//api/name/drmUserName">drmUserName</option>
 		
+		<option value="//api/name/enableClosedCaptionUniqueName">enableClosedCaptionUniqueName</option>
+		
 		<option value="//api/name/engineSetsNetworkActivityIndicator">engineSetsNetworkActivityIndicator</option>
 		
 		<option value="//api/name/fastPlayMinimumSegmentCount">fastPlayMinimumSegmentCount</option>
@@ -139,6 +141,8 @@
 
 	
 	<optgroup label="Class Methods">
+		
+		<option value="//api/name/instance">+ instance</option>
 		
 		<option value="//api/name/instanceOnReady:">+ instanceOnReady:</option>
 		
@@ -207,7 +211,7 @@
 						<p>A singleton object that manages all SDK configuration settings.  Receives default settings
 and business rules from the Backplane.</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this type directly.
 The VirtuosoSettings is a singleton and should only be accessed via the
-provided instance method.</p></div>
+provided <a href="#//api/name/instance">instance</a> method.</p></div>
 					</div>
 					
 					
@@ -223,8 +227,8 @@ provided instance method.</p></div>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/instanceOnReady:" title="instanceOnReady:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/instanceOnReady:">+&nbsp;instanceOnReady:</a></code>
+	<a name="//api/name/instance" title="instance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/instance">+&nbsp;instance</a></code>
 </h3>
 
 	<div class="method-info">
@@ -239,11 +243,16 @@ provided instance method.</p></div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)instanceOnReady:(void ( ^ _Nonnull ) ( VirtuosoSettings *_Nonnull ))<em>onReady</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull VirtuosoSettings *)instance</code></div>
 
 		    
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the VirtuosoSettings object instance.</p>
+			</div>
 			
 
 			
@@ -251,14 +260,66 @@ provided instance method.</p></div>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>If the VirtuosoSettings instance has already been initiazlied, then this method immediately calls the given
-block synchronously on the calling thread.  If the instance has not been initialized, then this method
-initializes the instance in a background thread and later executes the provided block on the calling thread.</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate a local copy of the VirtuosoSettings object.  This object
-is intended to be a static singleton accessed through appropriate instance methods only.  Instantiating a local
+				<p>You must never instantiate a local copy of the VirtuosoSettings object.  This object
+is intended to be a static singleton accessed through the instance method only.  Instantiating a local
+copy will throw an exception.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/instanceOnReady:" title="instanceOnReady:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/instanceOnReady:">+&nbsp;instanceOnReady:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The singleton <a href="#//api/name/instance">instance</a> access method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)instanceOnReady:(void ( ^ _Nonnull ) ( VirtuosoSettings *_Nonnull ))<em>onReady</em></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the VirtuosoSettings object <a href="#//api/name/instance">instance</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the VirtuosoSettings <a href="#//api/name/instance">instance</a> has already been initiazlied, then this method immediately calls the given
+block synchronously on the calling thread.  If the <a href="#//api/name/instance">instance</a> has not been initialized, then this method
+initializes the <a href="#//api/name/instance">instance</a> in a background thread and later executes the provided block on the calling thread.</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate a local copy of the VirtuosoSettings object.  This object
+is intended to be a static singleton accessed through appropriate <a href="#//api/name/instance">instance</a> methods only.  Instantiating a local
 copy will throw an exception.</p>
 
-<p>@property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete.
-The instance is passed as a parameter to the handler.</p></div>
+<p>@property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete</p></div>
 			</div>
 			
 
@@ -1224,7 +1285,7 @@ The Penthera SDK swizzles code into the AppDelegate chain to receive the push to
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Headroom is the amount of free space that Virtuoso must preserve on disk.
-For instance, if headroom is 1GB and the device has 1.2GB free disk space, Virtuoso will
+For <a href="#//api/name/instance">instance</a>, if headroom is 1GB and the device has 1.2GB free disk space, Virtuoso will
 begin to download a 150MB asset, but it will NOT begin to download a 500MB asset. The default
 is 1 GB.</p>
 			</div>
@@ -1400,7 +1461,7 @@ is 1 GB.</p>
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Max storage is the total amount of space that Virtuoso can use on disk for downloads.
-For instance, if maxStorage is 10GB and Virtuoso is now storing 9.5GB,
+For <a href="#//api/name/instance">instance</a>, if maxStorage is 10GB and Virtuoso is now storing 9.5GB,
 Virtuoso will begin to download a 400MB asset, but will NOT begin to download an 800MB asset.
 The default is LONG_LONG_MAX MB.</p>
 			</div>
@@ -1682,7 +1743,7 @@ values is NO.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Reset Virtuoso&rsquo;s cellular download setting to the default (false)</p>
+				<p><a href="../Classes/Reset.html">Reset</a> Virtuoso&rsquo;s cellular download setting to the default (false)</p>
 			</div>
 			
 		    
@@ -2934,6 +2995,52 @@ this value if you know your DRM system requires it.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/enableClosedCaptionUniqueName" title="enableClosedCaptionUniqueName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enableClosedCaptionUniqueName">&nbsp;&nbsp;enableClosedCaptionUniqueName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enables Parser logic to ensure CC name attribute is always unique.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) Boolean enableClosedCaptionUniqueName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Enables HLS Parsing logic that will ensure Closed Caption Name attributes are unique. Default is disabled. In most cases the default value should be acceptable.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -2949,7 +3056,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2023 Penthera Inc. All rights reserved. Updated: 2023-12-05</p>
+						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-01-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

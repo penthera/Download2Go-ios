@@ -2,19 +2,20 @@
 //  VirtuosoDownloadEngineNotificationsManager.h
 //  VirtuosoClientDownloadEngine
 //
-//  Created by jkountz on 11/8/18.
+//  Created by Penthera on 11/8/18.
 //  Copyright © 2018 Penthera. All rights reserved.
 //
 
 #ifndef VirtuosoDownloadEngineNotificationsManager_h
 #define VirtuosoDownloadEngineNotificationsManager_h
-#import "VirtuosoConstants.h"
-#import "VirtuosoLogger.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoLogger.h>
 
 @class VirtuosoAsset;
 @class VirtuosoAncillaryFile;
 @class VirtuosoEngineStatusInfo;
 @class VirtuosoPlaylist;
+@class VirtuosoError;
 
 @interface VirtuosoPermissionSettingInfo : NSObject
 @property (nonatomic, copy)NSString* _Nonnull permission;
@@ -70,6 +71,16 @@
  *
  */
 -(void)downloadEngineDidFinishDownloadingAsset:(VirtuosoAsset* _Nonnull)asset;
+
+/*!
+ *  @abstract Called whenever the Engine reports a VirtuosoAsset as refresh complete
+ *
+ *  @discussion This callback is invoked in-response to Notification kDownloadEngineDidFinishRefreshingAssetNotification
+ *
+ *  @param asset VirtuosoAsset asset
+ *
+ */
+-(void)downloadEngineDidFinishRefreshingAsset:(VirtuosoAsset* _Nonnull)asset;
 
 /*!
 *  @abstract Called whenever asset is deleted
@@ -146,7 +157,61 @@
  *  @param error optional NSError
  *
  */
--(void)downloadEngineDidEncounterWarningForAsset:(VirtuosoAsset* _Nonnull)asset error:(NSError* _Nullable)error;
+-(void)downloadEngineDidEncounterWarningForAsset:(VirtuosoAsset* _Nonnull)asset error:(NSError* _Nullable)error __deprecated_msg("Deprecated. See downloadEngineDidEncounterWarningForAsset:virtuosoError:task:data:statusCode");
+
+/*!
+ *  @abstract Called whenever the Engine encounters a recoverable issue.
+ *
+ *  @discussion Called whenever the Engine encounters a recoverable issue.  These are events that MAY be of concern to the Caller, but the Engine will
+ *  continue the download process without intervention.
+ *
+ *  @param asset VirtuosoAsset asset
+ *
+ *  @param error optional VirtuosoError
+ *
+ */
+-(void)downloadEngineDidEncounterWarningForAsset:(VirtuosoAsset* _Nonnull)asset virtuosoError:(VirtuosoError* _Nullable)error;
+
+/*!
+ *  @abstract Called whenever the Engine encounters an error
+ *
+ *  @discussion Called whenever the Engine encounters an error that it cannot recover from.  This type of error will cause the engine to retry download of the file.  If too many errors are encountered, the Engine will move on to the next item in the queue.
+ *
+ *  @param asset VirtuosoAsset asset
+ *
+ *  @param error VirtuosoError for indicating the error details
+ *
+ *  @param task NSURLSessionTask for the error
+ *
+ *  @param data NSData for the HTTP Response.
+ *
+ *  @param statusCode Http Status Code (NSNumber integerValue) if this was for an Http error.
+ *
+ */
+-(void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset* _Nonnull)asset
+                                         virtuosoError:(VirtuosoError* _Nullable)error
+                                          task:(NSURLSessionTask* _Nullable)task
+                                          data:(NSData* _Nullable)data
+                                    statusCode:(NSNumber* _Nullable)statusCode;
+
+/*!
+ *  @abstract Called whenever the Engine encounters a general error (not connected to an asset).
+ *
+ *  @discussion Called whenever the Engine encounters a general error (not connected to an asset). This error may indicate a configuratioin issue. See GeneralError codes for enum kVE_Error.
+ *
+ *  @param error VirtuosoError for indicating the error details
+ */
+-(void)downloadEngineDidEncounterGeneralError:(VirtuosoError* _Nullable)error;
+
+/*!
+ *  @abstract Called whenever the Engine encounters a communication error with the backplane.
+ *
+ *  @discussion Called whenever the Engine encounters a communication error with the backplane.
+ *
+ *  @param error VirtuosoError for indicating the error details
+ */
+-(void)downloadEngineDidEncounterBackplaneCommunicationError:(VirtuosoError* _Nullable)error;
+
 
 /*!
  *  @abstract Called whenever the Engine encounters an error
@@ -168,7 +233,7 @@
                                          error:(NSError* _Nullable)error
                                           task:(NSURLSessionTask* _Nullable)task
                                           data:(NSData* _Nullable)data
-                                    statusCode:(NSNumber* _Nullable)statusCode;
+                                    statusCode:(NSNumber* _Nullable)statusCode __deprecated_msg("Deprecated. See downloadEngineDidEncounterErrorForAsset:virtuosoError:task:data:statusCode");
 
 /*!
  *  @abstract Called whenever the Engine is about to enter background
@@ -342,7 +407,7 @@
 /*!
  *  @abstract Delegate callback
  */
-@property (nonatomic, strong, readonly)id<VirtuosoDownloadEngineNotificationsDelegate> _Nonnull delegate;
+@property (nonatomic, weak, readonly)id<VirtuosoDownloadEngineNotificationsDelegate> _Nullable delegate;
 
 /*!
  *  @abstract Operation queue upon which the callbacks will happen

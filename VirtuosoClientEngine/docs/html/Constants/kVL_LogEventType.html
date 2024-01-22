@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>kVL_LogEventType Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Cache &amp; Carry (Virtuoso) SDK - iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Penthera Inc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">kVL_LogEventType Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>VirtuosoBaseEvent.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">kVL_LogEventType</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>This enum defines the various analytics events emitted by Penthera SDK</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, kVL_LogEventType ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_AppLaunch</a> = 1,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_QueueForDownload</a> = 2,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_AssetRemovedFromQueue</a> = 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_DownloadStart</a> = 4,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_DownloadComplete</a> = 5,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_DownloadError</a> = 6,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_DownloadWarning</a> = 7,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_MaxErrorsReset</a> = 8,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_AssetDeleted</a> = 9,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_AssetExpired</a> = 10,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_PlayStart</a> = 11,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_PlayStop</a> = 12,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_Reset</a> = 13,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_DownloadLimitReached</a> = 14,<br>
+                            
+                            &nbsp;&nbsp; <a href="">kVL_PlaybackInitiated</a> = 15,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="kVL_AppLaunch"></a><code>kVL_AppLaunch</code></dt>
+<dd>
+
+
+<p>The enclosing app has launched</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_QueueForDownload"></a><code>kVL_QueueForDownload</code></dt>
+<dd>
+
+
+<p>Virtuoso has queued a new <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> for download</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_AssetRemovedFromQueue"></a><code>kVL_AssetRemovedFromQueue</code></dt>
+<dd>
+
+
+<p>Virtuoso has removed a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> from the download queue</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_DownloadStart"></a><code>kVL_DownloadStart</code></dt>
+<dd>
+
+
+<p>Virtuoso has begun to download a <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a></p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_DownloadComplete"></a><code>kVL_DownloadComplete</code></dt>
+<dd>
+
+
+<p>Virtuoso successfully finished downloading a VirtuosoFile</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_DownloadError"></a><code>kVL_DownloadError</code></dt>
+<dd>
+
+
+<p>Virtuoso detected an error during download</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_DownloadWarning"></a><code>kVL_DownloadWarning</code></dt>
+<dd>
+
+
+<p>Virtuoso detected a warning during download</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_MaxErrorsReset"></a><code>kVL_MaxErrorsReset</code></dt>
+<dd>
+
+
+<p>An asset which had exceeded it&rsquo;s maximum error count has been reset and will retry download</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_AssetDeleted"></a><code>kVL_AssetDeleted</code></dt>
+<dd>
+
+
+<p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> was deleted</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_AssetExpired"></a><code>kVL_AssetExpired</code></dt>
+<dd>
+
+
+<p>A <a href="../Classes/VirtuosoAsset.html">VirtuosoAsset</a> reached the expired state</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_PlayStart"></a><code>kVL_PlayStart</code></dt>
+<dd>
+
+
+<p>The enclosing app played a video asset</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_PlayStop"></a><code>kVL_PlayStop</code></dt>
+<dd>
+
+
+<p>The enclosing app stopped playing a video asset</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_Reset"></a><code>kVL_Reset</code></dt>
+<dd>
+
+
+<p>The app either started the first time after installation, or is starting up after a remote wipe</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_DownloadLimitReached"></a><code>kVL_DownloadLimitReached</code></dt>
+<dd>
+
+
+<p>The download limit imposed by the rules for either MDA or MAD has been reached and the asset with asset_id
+        cannot be downloaded.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="kVL_PlaybackInitiated"></a><code>kVL_PlaybackInitiated</code></dt>
+<dd>
+
+
+<p>Generated the first time SDK detects the asset has been played.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">VirtuosoBaseEvent.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">VirtuosoBaseEvent.h</code></p>
+                    </div>
+                    
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-01-22</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

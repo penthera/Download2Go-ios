@@ -18,8 +18,8 @@
 #define VDENGINE
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoConstants.h"
-#import "VirtuosoEngineConfig.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoConstants.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoEngineConfig.h>
 
 @class VirtuosoAsset;
 @class VirtuosoDevice;
@@ -170,8 +170,6 @@ typedef void (^ShutdownCompleteCallback)(void);
  *              this one, you'll get an exception. If you catch and ignore the exceptions,
  *              Virtuoso behavior will be undefined.
  *
- *  @param backplaneURL A root URL pointing to the location of the Backplane endpoints
- *
  *  @param user The Backplane user to use.  This is a string representing your authenticated user ID.
  *              It could be your actual user ID, or a hash of your user ID.  The only requirements are that
  *              it uniqely identifies your user and the value must be less than 512 characters long.
@@ -184,11 +182,10 @@ typedef void (^ShutdownCompleteCallback)(void);
  *
  *  @return A startup code indicating the result
  */
-- (kVDE_EngineStartupCode)startupWithBackplane:(nonnull NSString*)backplaneURL
-                                          user:(nonnull NSString*)user
-                              externalDeviceID:(nullable NSString*)externalDeviceID
-                                    privateKey:(nonnull NSString*)privateKey
-                                     publicKey:(nonnull NSString*)publicKey  __attribute__((deprecated("use startup:callbackQueue:startupCallback:")));
+- (kVDE_EngineStartupCode)startupWithUser:(nonnull NSString*)user
+                         externalDeviceID:(nullable NSString*)externalDeviceID
+                               privateKey:(nonnull NSString*)privateKey
+                                publicKey:(nonnull NSString*)publicKey  __attribute__((deprecated("use startup:callbackQueue:startupCallback:")));
 
 /*!
  *  @abstract Resets Virtuoso without unregistering the device or deleting assets.

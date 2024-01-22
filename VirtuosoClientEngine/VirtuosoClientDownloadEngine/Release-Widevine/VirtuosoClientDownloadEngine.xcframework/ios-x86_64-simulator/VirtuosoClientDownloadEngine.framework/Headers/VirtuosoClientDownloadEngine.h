@@ -42,7 +42,6 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/VirtuosoAsset+DASH.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoClientHTTPServer.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoDevice.h>
-#import <VirtuosoClientDownloadEngine/VirtuosoEventHandler.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoPlayer.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAVPlayer.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoEncryption.h>
@@ -56,7 +55,7 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/PlayAssureManager.h>
 #import <VirtuosoClientDownloadEngine/PlayAssureConfig.h>
 #import <VirtuosoClientDownloadEngine/PlayAssureStatusDelegate.h>
-#import <VirtuosoClientDownloadEngine/PlayAssurePlayerViewController.h>
+#import <VirtuosoClientDownloadEngine/PlayAssureABPlayerViewController.h>
 
 #import <VirtuosoClientDownloadEngine/VirtuosoEngineConfig.h>
 
@@ -97,9 +96,9 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 
 #import <VirtuosoClientDownloadEngine/VirtuosoLogger.h>
 
-/*
 #import <VirtuosoClientDownloadEngine/VirtuosoBaseEvent.h>
 #import <VirtuosoClientDownloadEngine/VirtuosoAssetEvent.h>
+#import <VirtuosoClientDownloadEngine/VirtuosoError.h>
 #import <VirtuosoClientDownloadEngine/AppLaunch.h>
 #import <VirtuosoClientDownloadEngine/QueueForDownload.h>
 #import <VirtuosoClientDownloadEngine/AssetRemovedFromQueue.h>
@@ -115,6 +114,6 @@ FOUNDATION_EXPORT const unsigned char VirtuosoClientDownloadEngineVersionString[
 #import <VirtuosoClientDownloadEngine/Reset.h>
 #import <VirtuosoClientDownloadEngine/DownloadLimitReached.h>
 #import <VirtuosoClientDownloadEngine/PlaybackInitiated.h>
-*/
+
 
 #endif

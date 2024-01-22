@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoClientAdInfo.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoClientAdInfo.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

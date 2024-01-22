@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VirtuosoLicenseManager.h"
+#import <VirtuosoClientDownloadEngine/VirtuosoLicenseManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -21,11 +21,9 @@
 
 @interface VirtuosoSettingsBase : NSObject
 
-+(Boolean)isVirtuosoKey:(NSString* _Nonnull)key;
-
--(void)registerDefaults:(NSDictionary<NSString *,id>* _Nonnull)registrationDictionary;
-
 -(NSArray* _Nonnull)objectsForKeyContainingString:(NSString* _Nonnull)substring;
+
+
 -(id _Nullable)objectForKey:(NSString* _Nonnull)key;
 -(void)removeObjectForKey:(NSString*  _Nonnull)key;
 -(void)setObject:(id _Nonnull)object forKey:(NSString*  _Nonnull)key;

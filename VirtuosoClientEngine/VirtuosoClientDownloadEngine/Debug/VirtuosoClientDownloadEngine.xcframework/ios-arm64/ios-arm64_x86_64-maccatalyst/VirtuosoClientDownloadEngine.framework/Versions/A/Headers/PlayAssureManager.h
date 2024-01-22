@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PlayAssureConfig.h"
+#import <VirtuosoClientDownloadEngine/PlayAssureConfig.h>
 
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
 #import <UIKit/UIKit.h>
@@ -16,7 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @class StreamItemParameters;
 @class StreamItem;
-@class PlayAssurePlayerViewController;
+@class PlayAssureABPlayerViewController;
 
 extern NSString* NotificationAVPlayer_Paused;
 extern NSString* NotificationAVPlayer_Resumed;
@@ -31,36 +31,6 @@ extern NSString* NotificationAVPlayer_Resumed;
 typedef void(^NetworkCheckCallback)(Boolean success);
 
 /*!
-*  @typedef SAM_Error
-*
-*  @abstract Error codes returned by SAM
-*/
-typedef NS_ENUM(NSInteger, SAM_Error)
-{
-    /** Network error */
-    SAM_Error_Network,
-    
-    /** Invalid parameter error */
-    SAM_Error_ParameterError,
-    
-    /** WebProxy startup failed */
-    SAM_Error_WebProxyStartFailure,
-    
-    /** Manifest parsing failed */
-    SAM_Error_ManifestParsingFailure,
-    
-    /** Sub-Manifest parsing failed */
-    SAM_Error_SubManifestParsingFailure,
-        
-    /** Not authenticated. */
-    SAM_Error_NotAuthenticated,
-
-    /** Playback failure error */
-    SAM_Error_PlaybackFailure,
-
-};
-
-/*!
 *  @abstract Manages PlayAssure playback.
 *
 *  @discussion Manages stream assured playback by proxying streaming requests and downloading content in-advance of need and caching it locally.
@@ -72,7 +42,7 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 /*!
 *  @abstract URL that Player should use to stream
 *
-*  @discussion PlayAssure will proxy all streaming playback. This property provides the URL the Player should use to start playback
+*  @discussion PlayAssure will proxy all streaming playback. This property provides the URL the Player should use to start playback. If PlayAssure is not handling playback during A/B testing, the streamingURL returned will be the same streamingURL provided in the initWithManifestURL initializer.
 */
 @property (nonatomic, copy, readonly)NSString* _Nonnull streamingURL;
 
@@ -84,28 +54,19 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 @property (nonatomic, strong, readonly)PlayAssureConfig* config;
 
 /*!
- * @abstract: Verify network is connected and internet is fully reachable.
- *
- * @discussion: This method will ping the internet to ensure it's reachable. Because this requires a background state transition, the call is will return immeidately and the callback will be invoked async on the callers thread.
- *
- * @param callback This callback will be invoked with a Boolean stattus indicating whether internet was reachable (true).
- */
-
-/*!
-*  @abstract Verify network is connected.
+*  @abstract Verify network is connected and internet is fully reachable.
 *
-*  @discussion This method will ping the internet to ensure it's reachable. The callback will indicate success by returning true in the callback.
+*  @discussion This method will ping the internet to ensure it's reachable. Because this requires a background state transition, the call is will return immediately and the callback will be invoked async on the callers thread.
  *
-*  @param callback Callback invoked once internet status has been checked.
+*  @param callback This callback will be invoked with a Boolean stattus indicating whether internet was reachable (true).
  *
 */
-
 +(void)isNetworkReady:(NetworkCheckCallback _Nonnull)callback;
 
 /*!
 *  @abstract Creates new instance of PlayAssureManager
 *
-*  @discussion Creates an instance of hte SAM using the specified configuration. This will cause the SAM to immediately begin downloading and parsing the requried manifests.
+*  @discussion Creates an instance of the PlayAssureManager using the specified configuration. This will cause the PlayAssureManager to immediately begin downloading and parsing the requried manifests.
  *
 *  @param streamingURL Manifest to stream
  *
@@ -162,7 +123,7 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 *
 *  @param view UIView to add cache progress subview.
 */
--(void)addCacheProgressSubViewToView:(UIView*)view;
+-(void)addCacheProgressLayerToView:(UIView*)view;
 
 /*!
 *  @abstract Transition cache progress view to new size.
@@ -171,18 +132,7 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 *
 *  @param size New size.
 */
--(void)transitionCacheProgressSubViewToSize:(CGSize)size;
-
-/*!
-*  @abstract Convenience method that provides a basic playback controller for PlayAssure.
-*
-*  @discussion Convenience method that provides a basic playback controller for PlayAssure, generating a playback event.
-*
-*  @param url Manifest to stream
-*
-* @return UIViewController for PlayAssure playback.
-*/
-+(PlayAssurePlayerViewController*)playAssurePlayerViewControllerForURL:(NSString*)url;
+-(void)transitionCacheProgressLayerToSize:(CGSize)size;
 
 /*!
 *  @abstract Methods for A/B playback testing.
@@ -209,27 +159,31 @@ typedef NS_ENUM(NSInteger, SAM_Error)
 +(Boolean)usePlayAssurePlaybackForABTesting;
 
 /*!
-*  @abstract Convenience method that provides a basic playback controller for streaming.
-*
-* @discussion Convenience method that provides a basic playback (streaming) controller, generating a playback event.
-*
-*  @param url Manifest to stream
-*
-* @return UIViewController for streaming playback.
-*/
-+(PlayAssurePlayerViewController*)streamingPlayerViewControllerForURL:(NSString*)url;
-
-/*!
 *  @abstract Convenience method that provides a basic playback controller for A/B testing.
 *
 * @discussion Convenience method that provides a basic playback controller, generating a playback event.  The controller will either present a controller for a PlayAssure controller or streaming session based on the randomized usePlayAssurePlaybackForABTesting method.
 *
-*  @param url Manifest to stream
+* @param url Manifest to stream
 *
+* @param targetBitrate If using PlayAssure Backstop mode, the target bitrate. Pass -1 otherwise.
+*
+* @param displayStatus Flag indicating whether a playback status message should be superimposed on the video during playback.
+*
+* @param videoDescription Description of video that will be displayed as part of the playback status message.
 *
 * @return UIViewController for streaming playback.
 */
-+(PlayAssurePlayerViewController*)ABTestingPlayerViewControllerForURL:(NSString*)url;
++(PlayAssureABPlayerViewController*)PlayAssureABPlayerViewControllerForURL:(NSString*)url
+                                                             targetBitrate:(long long)targetBitrate
+                                                             displayStatus:(Boolean)displayStatus
+                                                          videoDescription:(NSString*)videoDescription;
+
+/*!
+*  @abstract Flag indicating whether PlayAssure is actively running for this session.
+*
+*  @discussion For A/B testing, this flag indicates whether playback is via PlayAssure (true) or straight streaming (false). If PlayAssure is not handling playback during A/B testing, the streamingURL returned will be the same streamingURL provided in the initWithManifestURL initializer.
+*/
+@property (nonatomic, readonly)Boolean playAssureSession;
 
 @end
 
