@@ -326,7 +326,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>A VirtuosoAsset may be a single physical file (E.G. MP4) or a conceptual &ldquo;group&rdquo;
 of many smaller file segments (E.G. HLS/HSS).</p><div class="warning"><p><strong>Warning:</strong> You must never instantiate an object of this <a href="#//api/name/type">type</a> directly.
-You can create a VirtuosoAsset object via the provided static constructor methods.</p></div><p>Provides types and methods used to handle MPEG Dynamic Adaptive Streaming over HTTP (DASH) video</p><p>Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.</p><p>Provides types and methods used to handle HTTP Live Streaming (HLS) video</p><p>Provides additional types and methods used to handle segmented video</p>
+You can create a VirtuosoAsset object via the provided static constructor methods.</p></div><p>Provides types and methods used to handle HTTP Live Streaming (HLS) video</p><p>Provides types and methods used to handle MPEG Dynamic Adaptive Streaming over HTTP (DASH) video</p><p>Provides types and methods used to handle Microsoft Smooth Streaming (HSS) video.</p><p>Provides additional types and methods used to handle segmented video</p>
 					</div>
 					
 					
@@ -5480,7 +5480,7 @@ Url&rsquo;s before downloading. See <a href="../Protocols/VirtuosoPrepareUrlDele
 			
 			
 			<div class="method-subsection brief-description">
-				<p>If set, this delegate is called as described in VirtuosoVideoRendition.</p>
+				<p>If set, this delegate is called as described in <a href="../Classes/VirtuosoVideoRendition.html">VirtuosoVideoRendition</a>.</p>
 			</div>
 			
 		    
@@ -5501,7 +5501,7 @@ Url&rsquo;s before downloading. See <a href="../Protocols/VirtuosoPrepareUrlDele
 selection rules and to specify the rendition for download manually.  This delegate is only
 valid for HLS assets.  For all other asset types, this delegate is currently ignored.</p>
 
-<p>See VirtuosoVideoRendition for more information.</p>
+<p>See <a href="../Classes/VirtuosoVideoRendition.html">VirtuosoVideoRendition</a> for more information.</p>
 			</div>
 			
 
@@ -5584,6 +5584,644 @@ parameter value as the values.</p>
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
 				<p><code class="declared-in-ref">VirtuosoAsset.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="HLS Methods" name="task_HLS Methods"></a>
+						<h2 class="task-title">HLS Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new in-memory HLS VirtuosoAsset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> manifestUrl:(nonnull NSString *)<em>manifestUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> maximumBitrate:(long long)<em>maximumBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> assetDownloadLimit:(int)<em>assetDownloadLimit</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetID</code></th>
+						<td><p>A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&rsquo;s are not allowed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>description</code></th>
+						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
+						<td><p>Where the manifest lives on the Internet.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protectionType</code></th>
+						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
+						<td><p>If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
+						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
+bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>publishDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetDownloadLimit</code></th>
+						<td><p>Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value > 0 will be applied to download permissions checks for this asset.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
+						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>readyBlock</code></th>
+						<td><p>Called when the asset is ready to be added to the download queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>Called when asset parsing completes. May be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new (empty) VirtuosoAsset object, or nil if there was an <a href="#//api/name/error">error</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This constructor uses the default expiry rules.  To customize expiry rules for this asset,
+use the constructors that take expiry parameters, or change the expiry values after creation.</p><div class="warning"><p><strong>Warning:</strong> The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new in-memory HLS VirtuosoAsset object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> manifestUrl:(nonnull NSString *)<em>manifestUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> maximumBitrate:(long long)<em>maximumBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> expiryAfterDownload:(NSTimeInterval)<em>expiryAfterDownload</em> expiryAfterPlay:(NSTimeInterval)<em>expiryAfterPlay</em> assetDownloadLimit:(int)<em>assetDownloadLimit</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetID</code></th>
+						<td><p>A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&rsquo;s are not allowed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>description</code></th>
+						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
+						<td><p>Where the manifest lives on the Internet.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protectionType</code></th>
+						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
+						<td><p>If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
+						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
+bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>publishDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterDownload</code></th>
+						<td><p>Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterPlay</code></th>
+						<td><p>Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetDownloadLimit</code></th>
+						<td><p>Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value > 0 will be applied to download permissions checks for this asset.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
+						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>readyBlock</code></th>
+						<td><p>Called when the asset is ready to be added to the download queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>Called when asset parsing completes. May be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new (empty) VirtuosoAsset object, or nil if there was an <a href="#//api/name/error">error</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This constructor allows you to set custom expiry rules.</p><div class="warning"><p><strong>Warning:</strong> The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new in-memory HLS VirtuosoAsset object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> manifestUrl:(nonnull NSString *)<em>manifestUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> maximumBitrate:(long long)<em>maximumBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> expiryAfterDownload:(NSTimeInterval)<em>expiryAfterDownload</em> expiryAfterPlay:(NSTimeInterval)<em>expiryAfterPlay</em> assetDownloadLimit:(int)<em>assetDownloadLimit</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> ancillaries:(nullable NSArray *)<em>ancillaries</em> adsProvider:(nullable VirtuosoAdsProvider *)<em>adsProvider</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetID</code></th>
+						<td><p>A globally unique identifier for the asset. Used in all log events.
+IMPORTANT: This value must be globally unique across all assets within the Catalog.
+Dupicate AssetID&rsquo;s are not allowed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>description</code></th>
+						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
+						<td><p>Where the manifest lives on the Internet.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protectionType</code></th>
+						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
+instructed differently by Penthera support.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
+						<td><p>If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
+						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
+bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>publishDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryDate</code></th>
+						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterDownload</code></th>
+						<td><p>Amount of time after Virtuoso completes download of the asset that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterPlay</code></th>
+						<td><p>Amount of time after the asset is first played that
+Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>assetDownloadLimit</code></th>
+						<td><p>Virtuoso applies this value instead of the backplane-defined global asset download limit
+A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
+value > 0 will be applied to download permissions checks for this asset.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
+						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
+as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
+will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ancillaries</code></th>
+						<td><p>Optional array of VirtuosoAncillaryFile&rsquo;s</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>adsProvider</code></th>
+						<td><p>Instance of AdsProvider to use with this Asset.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
+Virtuoso will serialize this data and store it, but not explicitly use this data.
+The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>readyBlock</code></th>
+						<td><p>Called when the asset is ready to be added to the download queue</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>Called when asset parsing completes. May be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A new (empty) VirtuosoAsset object, or nil if there was an <a href="#//api/name/error">error</a>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This constructor allows you to set custom expiry rules.</p><div class="warning"><p><strong>Warning:</strong> The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:" title="setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:">&ndash;&nbsp;setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a manifest URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
+not an HLS asset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setManifestURL:(nonnull NSString *)<em>manifestUrl</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> withMaximumBitrate:(long long)<em>maximumBitrate</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
+						<td><p>Where the manifest lives on the Internet.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
+						<td><p>If YES, then this method will download any encryption keys in
+manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
+						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
+profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
+bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
+select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completeBlock</code></th>
+						<td><p>Called when asset parsing completes. May be nil.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hlsManifestLocalPathForType:forSubtype:" title="hlsManifestLocalPathForType:forSubtype:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hlsManifestLocalPathForType:forSubtype:">&ndash;&nbsp;hlsManifestLocalPathForType:forSubtype:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the local file path for the HLS manifest of the given <a href="#//api/name/type">type</a> and sub<a href="#//api/name/type">type</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)hlsManifestLocalPathForType:(kVDM_ManifestType)<em>type</em> forSubtype:(nullable NSString *)<em>subtype</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>The HLS manifest <a href="#//api/name/type">type</a> to return</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subtype</code></th>
+						<td><p>The sub<a href="#//api/name/type">type</a> of the manifest to return</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The local file path for the HLS manifest of the given <a href="#//api/name/type">type</a> and sub<a href="#//api/name/type">type</a></p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the <a href="#//api/name/type">type</a> is hlsManifestTypeMaster, then sub<a href="#//api/name/type">type</a> is ignored.  If you are requesting
+a language or closed captioning sub-manifest, then sub<a href="#//api/name/type">type</a> should be the language code
+for the specified manifest.  If you are requesting a particular bitrate stream, then
+sub<a href="#//api/name/type">type</a> should be the bitrate of the stream, represented as a string.</p><div class="warning"><p><strong>Warning:</strong> If this asset is not available (Virtuoso is in an timed-out state, the asset is
+outside its availability window or the asset is expired), then this method will return nil,
+preventing API access to the asset.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hlsManifestFastPlayPath" title="hlsManifestFastPlayPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hlsManifestFastPlayPath">&ndash;&nbsp;hlsManifestFastPlayPath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The local file path for the saved FastPlay manifest file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)hlsManifestFastPlayPath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
 			</div>
 			
 			
@@ -6764,644 +7402,6 @@ select the lowest bitrate profile. A value of INT_MAX means &ldquo;use the highe
 						</div>
 						
 
-						<a title="HLS Methods" name="task_HLS Methods"></a>
-						<h2 class="task-title">HLS Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Creates a new in-memory HLS VirtuosoAsset.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> manifestUrl:(nonnull NSString *)<em>manifestUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> maximumBitrate:(long long)<em>maximumBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> assetDownloadLimit:(int)<em>assetDownloadLimit</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetID</code></th>
-						<td><p>A globally unique identifier for the asset. Used in all log events.
-IMPORTANT: This value must be globally unique across all assets within the Catalog.
-Dupicate AssetID&rsquo;s are not allowed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>description</code></th>
-						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
-						<td><p>Where the manifest lives on the Internet.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>protectionType</code></th>
-						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
-instructed differently by Penthera support.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
-						<td><p>If YES, then this method will download any encryption keys in
-manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
-						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
-profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
-bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
-select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>publishDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetDownloadLimit</code></th>
-						<td><p>Virtuoso applies this value instead of the backplane-defined global asset download limit
-A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
-value > 0 will be applied to download permissions checks for this asset.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
-						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
-as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
-will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>userInfo</code></th>
-						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
-Virtuoso will serialize this data and store it, but not explicitly use this data.
-The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>readyBlock</code></th>
-						<td><p>Called when the asset is ready to be added to the download queue</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completeBlock</code></th>
-						<td><p>Called when asset parsing completes. May be nil.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new (empty) VirtuosoAsset object, or nil if there was an <a href="#//api/name/error">error</a>.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This constructor uses the default expiry rules.  To customize expiry rules for this asset,
-use the constructors that take expiry parameters, or change the expiry values after creation.</p><div class="warning"><p><strong>Warning:</strong> The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:userInfo:onReadyForDownload:onParseComplete:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Creates a new in-memory HLS VirtuosoAsset object.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> manifestUrl:(nonnull NSString *)<em>manifestUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> maximumBitrate:(long long)<em>maximumBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> expiryAfterDownload:(NSTimeInterval)<em>expiryAfterDownload</em> expiryAfterPlay:(NSTimeInterval)<em>expiryAfterPlay</em> assetDownloadLimit:(int)<em>assetDownloadLimit</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetID</code></th>
-						<td><p>A globally unique identifier for the asset. Used in all log events.
-IMPORTANT: This value must be globally unique across all assets within the Catalog.
-Dupicate AssetID&rsquo;s are not allowed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>description</code></th>
-						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
-						<td><p>Where the manifest lives on the Internet.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>protectionType</code></th>
-						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
-instructed differently by Penthera support.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
-						<td><p>If YES, then this method will download any encryption keys in
-manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
-						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
-profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
-bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
-select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>publishDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryAfterDownload</code></th>
-						<td><p>Amount of time after Virtuoso completes download of the asset that
-Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryAfterPlay</code></th>
-						<td><p>Amount of time after the asset is first played that
-Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetDownloadLimit</code></th>
-						<td><p>Virtuoso applies this value instead of the backplane-defined global asset download limit
-A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
-value > 0 will be applied to download permissions checks for this asset.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
-						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
-as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
-will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>userInfo</code></th>
-						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
-Virtuoso will serialize this data and store it, but not explicitly use this data.
-The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>readyBlock</code></th>
-						<td><p>Called when the asset is ready to be added to the download queue</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completeBlock</code></th>
-						<td><p>Called when asset parsing completes. May be nil.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new (empty) VirtuosoAsset object, or nil if there was an <a href="#//api/name/error">error</a>.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This constructor allows you to set custom expiry rules.</p><div class="warning"><p><strong>Warning:</strong> The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:" title="assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:">+&nbsp;assetWithAssetID:description:manifestUrl:protectionType:includeEncryptionKeys:maximumBitrate:publishDate:expiryDate:expiryAfterDownload:expiryAfterPlay:assetDownloadLimit:enableFastPlay:ancillaries:adsProvider:userInfo:onReadyForDownload:onParseComplete:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Creates a new in-memory HLS VirtuosoAsset object.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (nullable VirtuosoAsset *)assetWithAssetID:(nonnull NSString *)<em>assetID</em> description:(nonnull NSString *)<em>description</em> manifestUrl:(nonnull NSString *)<em>manifestUrl</em> protectionType:(kVDE_AssetProtectionType)<em>protectionType</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> maximumBitrate:(long long)<em>maximumBitrate</em> publishDate:(nullable NSDate *)<em>publishDate</em> expiryDate:(nullable NSDate *)<em>expiryDate</em> expiryAfterDownload:(NSTimeInterval)<em>expiryAfterDownload</em> expiryAfterPlay:(NSTimeInterval)<em>expiryAfterPlay</em> assetDownloadLimit:(int)<em>assetDownloadLimit</em> enableFastPlay:(Boolean)<em>enableFastPlay</em> ancillaries:(nullable NSArray *)<em>ancillaries</em> adsProvider:(nullable VirtuosoAdsProvider *)<em>adsProvider</em> userInfo:(nullable NSDictionary *)<em>userInfo</em> onReadyForDownload:(nullable AssetReadyForDownloadBlock)<em>readyBlock</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetID</code></th>
-						<td><p>A globally unique identifier for the asset. Used in all log events.
-IMPORTANT: This value must be globally unique across all assets within the Catalog.
-Dupicate AssetID&rsquo;s are not allowed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>description</code></th>
-						<td><p>A <a href="#//api/name/description">description</a> of the asset.  Virtuoso only uses this in log output.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
-						<td><p>Where the manifest lives on the Internet.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>protectionType</code></th>
-						<td><p>You should pass the default value of kVDE_AssetProtectionTypePassthrough unless
-instructed differently by Penthera support.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
-						<td><p>If YES, then this method will download any encryption keys in
-manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
-						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
-profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
-bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
-select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>publishDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset until this date. Nil means &ldquo;now.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryDate</code></th>
-						<td><p>Virtuoso will not provide API access to the asset after this date. Nil means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryAfterDownload</code></th>
-						<td><p>Amount of time after Virtuoso completes download of the asset that
-Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>expiryAfterPlay</code></th>
-						<td><p>Amount of time after the asset is first played that
-Virtuoso will delete the asset. In seconds. &lt;=0 means no expiry.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>assetDownloadLimit</code></th>
-						<td><p>Virtuoso applies this value instead of the backplane-defined global asset download limit
-A value &lt; 0 means to use the backplane defined value.  A value of 0 means unlimited.  A
-value > 0 will be applied to download permissions checks for this asset.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>enableFastPlay</code></th>
-						<td><p>If enabled, Virtuoso will automatically download the initial portion of the asset as soon
-as the asset is created.  Whenever an asset is streamed, the cached beginning of the asset
-will be returned to the player immediatley, eliminating startup buffer time for streamed playback.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>ancillaries</code></th>
-						<td><p>Optional array of VirtuosoAncillaryFile&rsquo;s</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>adsProvider</code></th>
-						<td><p>Instance of AdsProvider to use with this Asset.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>userInfo</code></th>
-						<td><p>A convenience field allowing you to associate arbitrary data with an asset.
-Virtuoso will serialize this data and store it, but not explicitly use this data.
-The provided <a href="#//api/name/userInfo">userInfo</a> must be property-list compatible. May be nil.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>readyBlock</code></th>
-						<td><p>Called when the asset is ready to be added to the download queue</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completeBlock</code></th>
-						<td><p>Called when asset parsing completes. May be nil.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>A new (empty) VirtuosoAsset object, or nil if there was an <a href="#//api/name/error">error</a>.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This constructor allows you to set custom expiry rules.</p><div class="warning"><p><strong>Warning:</strong> The SDK does not check or prevent download of Assets with codec not supported by hardware on the device.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:" title="setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:">&ndash;&nbsp;setManifestURL:includeEncryptionKeys:withMaximumBitrate:onParseComplete:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Adds a manifest URL to this VirtuosoAsset.  Call does nothing if the VirtuosoAsset is
-not an HLS asset.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setManifestURL:(nonnull NSString *)<em>manifestUrl</em> includeEncryptionKeys:(Boolean)<em>includeEncryption</em> withMaximumBitrate:(long long)<em>maximumBitrate</em> onParseComplete:(nullable AssetParsingCompletedBlock)<em>completeBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>manifestUrl</code></th>
-						<td><p>Where the manifest lives on the Internet.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>includeEncryption</code></th>
-						<td><p>If YES, then this method will download any encryption keys in
-manifest.  Normally, you would pass YES, but this allows for custom behaviors.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>maximumBitrate</code></th>
-						<td><p>For manifests containing multiple profiles, Virtuoso will select the highest bitrate
-profile whose bitrate doesn&rsquo;t exceed this value. A value of 1 means &ldquo;use the lowest
-bitrate.&rdquo; If there&rsquo;s no profile of lower bitrate than maximumBitrate, Virtuoso will
-select the lowest bitrate profile.  A value of INT_MAX means &ldquo;use the highest bitrate.&rdquo;</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completeBlock</code></th>
-						<td><p>Called when asset parsing completes. May be nil.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/hlsManifestLocalPathForType:forSubtype:" title="hlsManifestLocalPathForType:forSubtype:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/hlsManifestLocalPathForType:forSubtype:">&ndash;&nbsp;hlsManifestLocalPathForType:forSubtype:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns the local file path for the HLS manifest of the given <a href="#//api/name/type">type</a> and sub<a href="#//api/name/type">type</a></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (nullable NSString *)hlsManifestLocalPathForType:(kVDM_ManifestType)<em>type</em> forSubtype:(nullable NSString *)<em>subtype</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>type</code></th>
-						<td><p>The HLS manifest <a href="#//api/name/type">type</a> to return</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>subtype</code></th>
-						<td><p>The sub<a href="#//api/name/type">type</a> of the manifest to return</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The local file path for the HLS manifest of the given <a href="#//api/name/type">type</a> and sub<a href="#//api/name/type">type</a></p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>If the <a href="#//api/name/type">type</a> is hlsManifestTypeMaster, then sub<a href="#//api/name/type">type</a> is ignored.  If you are requesting
-a language or closed captioning sub-manifest, then sub<a href="#//api/name/type">type</a> should be the language code
-for the specified manifest.  If you are requesting a particular bitrate stream, then
-sub<a href="#//api/name/type">type</a> should be the bitrate of the stream, represented as a string.</p><div class="warning"><p><strong>Warning:</strong> If this asset is not available (Virtuoso is in an timed-out state, the asset is
-outside its availability window or the asset is expired), then this method will return nil,
-preventing API access to the asset.</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/hlsManifestFastPlayPath" title="hlsManifestFastPlayPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/hlsManifestFastPlayPath">&ndash;&nbsp;hlsManifestFastPlayPath</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The local file path for the saved FastPlay manifest file</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (nullable NSString *)hlsManifestFastPlayPath</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">VirtuosoAsset+HLS.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
 						<a title="SegmentedVideo Methods" name="task_SegmentedVideo Methods"></a>
 						<h2 class="task-title">SegmentedVideo Methods</h2>
 
@@ -7763,7 +7763,7 @@ this property will be nil.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-04-17</p>
+						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-10-02</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

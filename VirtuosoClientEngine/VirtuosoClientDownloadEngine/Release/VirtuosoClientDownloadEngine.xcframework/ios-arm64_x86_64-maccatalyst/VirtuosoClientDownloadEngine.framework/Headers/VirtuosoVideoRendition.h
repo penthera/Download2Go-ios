@@ -36,16 +36,53 @@ const static long long NOT_PRESENT = 0;
  */
 @interface VirtuosoVideoRendition : NSObject
 
+/*!
+ *  @abstract (Required) The peak segment bit rate of the variant stream
+ */
 @property (nonatomic,readonly) int bandwidth;
+
+/*!
+ *  @abstract (Optional) The average segment bit rate of the variant stream
+ */
 @property (nonatomic,readonly) int averageBandwidth;
+
+/*!
+ *  @abstract (Optional) A comma-separated list of formats, where each format specifies a media sample type
+ *            that is present in a rendition specified by the variant stream. Valid format identifiers
+ *            are those in the ISO Base Media File Format Name Space defined in RFC6381
+ */
 @property (nonatomic,readonly) NSString* codecs;
+
+/*!
+ *  @abstract (Optional) A decimal-resolution describing the optimal pixel resolution to display the video (e.g. 960x540)
+ */
 @property (nonatomic,readonly) NSString* resolution;
+
+/*!
+ *  @abstract (Optional) The group ID of the associated audio tracks for this video
+ */
 @property (nonatomic,readonly) NSString* audio;
+
+/*!
+ *  @abstract (Optional) The group ID of associated video renditions that should be used when playing the presentation
+ */
 @property (nonatomic,readonly) NSString* video;
+
+/*!
+ *  @abstract (Optional) The group ID of the associated subtitle tracks for this video
+ */
 @property (nonatomic,readonly) NSString* subtitles;
+
+/*!
+ *  @abstract (Optional) The group ID of the associated closed caption tracks for this video
+ */
 @property (nonatomic,readonly) NSString* closedCaptions;
 
+/*!
+ *  @abstract (Required) The raw video rendition string from the manifest
+ */
 @property (nonatomic,readonly) NSString* renditionDefinition;
+
 @property (nonatomic,readonly) NSString* renditionUrl;
 @property (nonatomic,readonly) NSString* renditionLocalUrl;
 
@@ -67,7 +104,9 @@ const static long long NOT_PRESENT = 0;
  *
  *  @param renditions Array of VirtuosoVideoRendition objects representing available video renditions
  *
- *  @param asset VirtuosoAsset asset
+ *  @param asset VirtuosoAsset The asset being parsed and to which the provided renditions belong
+ *
+ *  @return The video rendition selected for download, or nil to allow the SDK internal rules to be used
  */
 
 - (VirtuosoVideoRendition* _Nullable)selectRenditionFromAvailableRenditions:(NSArray<VirtuosoVideoRendition*>*)renditions forAsset:(VirtuosoAsset*)asset;
