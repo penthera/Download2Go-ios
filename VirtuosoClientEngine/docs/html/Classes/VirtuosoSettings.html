@@ -158,17 +158,33 @@
 		
 		<option value="//api/name/overrideDownloadOverCellular:">- overrideDownloadOverCellular:</option>
 		
+		<option value="//api/name/overrideExpiryAfterDownload:">- overrideExpiryAfterDownload:</option>
+		
+		<option value="//api/name/overrideExpiryAfterPlay:">- overrideExpiryAfterPlay:</option>
+		
 		<option value="//api/name/overrideHeadroom:">- overrideHeadroom:</option>
 		
+		<option value="//api/name/overrideMaxAssetsOnDevice:">- overrideMaxAssetsOnDevice:</option>
+		
 		<option value="//api/name/overrideMaxStorageAllowed:">- overrideMaxStorageAllowed:</option>
+		
+		<option value="//api/name/overrideOfflineViewingPeriod:">- overrideOfflineViewingPeriod:</option>
 		
 		<option value="//api/name/permittedMimeTypesForAssetType:andDataType:">- permittedMimeTypesForAssetType:andDataType:</option>
 		
 		<option value="//api/name/resetDownloadOverCellularToDefault">- resetDownloadOverCellularToDefault</option>
 		
+		<option value="//api/name/resetExpiryAfterDownloadToDefault">- resetExpiryAfterDownloadToDefault</option>
+		
+		<option value="//api/name/resetExpiryAfterPlayToDefault">- resetExpiryAfterPlayToDefault</option>
+		
 		<option value="//api/name/resetHeadroomToDefault">- resetHeadroomToDefault</option>
 		
+		<option value="//api/name/resetMaxAssetsOnDeviceToDefault">- resetMaxAssetsOnDeviceToDefault</option>
+		
 		<option value="//api/name/resetMaxStorageAllowedToDefault">- resetMaxStorageAllowedToDefault</option>
+		
+		<option value="//api/name/resetOfflineViewingPeriodToDefault">- resetOfflineViewingPeriodToDefault</option>
 		
 		<option value="//api/name/restrictedMimeTypesForEncryptionKeysAllowed">- restrictedMimeTypesForEncryptionKeysAllowed</option>
 		
@@ -1783,6 +1799,490 @@ values is NO.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideOfflineViewingPeriod:" title="overrideOfflineViewingPeriod:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideOfflineViewingPeriod:">&ndash;&nbsp;overrideOfflineViewingPeriod:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to override Virtuoso&rsquo;s default value for the maximum offline viewing period setting.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideOfflineViewingPeriod:(long long)<em>offlineViewingPeriod</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>offlineViewingPeriod</code></th>
+						<td><p>The new offline viewing period setting</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/defaultOfflineViewingPeriod">@property defaultOfflineViewingPeriod</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetOfflineViewingPeriodToDefault">- resetOfflineViewingPeriodToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetOfflineViewingPeriodToDefault" title="resetOfflineViewingPeriodToDefault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetOfflineViewingPeriodToDefault">&ndash;&nbsp;resetOfflineViewingPeriodToDefault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="../Classes/Reset.html">Reset</a> Virtuoso&rsquo;s offline viewing period setting to the default (unlimited)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetOfflineViewingPeriodToDefault</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/defaultOfflineViewingPeriod">@property defaultOfflineViewingPeriod</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/overrideOfflineViewingPeriod:">- overrideOfflineViewingPeriod:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideExpiryAfterDownload:" title="overrideExpiryAfterDownload:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideExpiryAfterDownload:">&ndash;&nbsp;overrideExpiryAfterDownload:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to override Virtuoso&rsquo;s default value for the expiry after download setting.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideExpiryAfterDownload:(long long)<em>expiryAfterDownload</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterDownload</code></th>
+						<td><p>The new expiry after download setting</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/defaultExpiryAfterDownload">@property defaultExpiryAfterDownload</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetExpiryAfterDownloadToDefault">- resetExpiryAfterDownloadToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetExpiryAfterDownloadToDefault" title="resetExpiryAfterDownloadToDefault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetExpiryAfterDownloadToDefault">&ndash;&nbsp;resetExpiryAfterDownloadToDefault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="../Classes/Reset.html">Reset</a> Virtuoso&rsquo;s expiry after download setting to the default (unlimited)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetExpiryAfterDownloadToDefault</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/defaultExpiryAfterDownload">@property defaultExpiryAfterDownload</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/overrideExpiryAfterDownload:">- overrideExpiryAfterDownload:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideExpiryAfterPlay:" title="overrideExpiryAfterPlay:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideExpiryAfterPlay:">&ndash;&nbsp;overrideExpiryAfterPlay:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to override Virtuoso&rsquo;s default value for the expiry after play setting.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideExpiryAfterPlay:(long long)<em>defaultExpiryAfterPlay</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expiryAfterPlay</code></th>
+						<td><p>The new expiry after play setting</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/defaultExpiryAfterPlay">@property defaultExpiryAfterPlay</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetExpiryAfterPlayToDefault">- resetExpiryAfterPlayToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetExpiryAfterPlayToDefault" title="resetExpiryAfterPlayToDefault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetExpiryAfterPlayToDefault">&ndash;&nbsp;resetExpiryAfterPlayToDefault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="../Classes/Reset.html">Reset</a> Virtuoso&rsquo;s expiry after play setting to the default (unlimited)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetExpiryAfterPlayToDefault</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/defaultExpiryAfterPlay">@property defaultExpiryAfterPlay</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/overrideExpiryAfterPlay:">- overrideExpiryAfterPlay:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/overrideMaxAssetsOnDevice:" title="overrideMaxAssetsOnDevice:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/overrideMaxAssetsOnDevice:">&ndash;&nbsp;overrideMaxAssetsOnDevice:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allows you to override Virtuoso&rsquo;s default value for the max assets on device setting.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)overrideMaxAssetsOnDevice:(long long)<em>maxDownloads</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>maxDownloads</code></th>
+						<td><p>The new max assets on device setting</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/maxDownloadedAssetsOnDevice">@property maxDownloadedAssetsOnDevice</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/resetMaxAssetsOnDeviceToDefault">- resetMaxAssetsOnDeviceToDefault</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetMaxAssetsOnDeviceToDefault" title="resetMaxAssetsOnDeviceToDefault"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetMaxAssetsOnDeviceToDefault">&ndash;&nbsp;resetMaxAssetsOnDeviceToDefault</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><a href="../Classes/Reset.html">Reset</a> Virtuoso&rsquo;s max assets on device setting to the default (unlimited)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetMaxAssetsOnDeviceToDefault</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/maxDownloadedAssetsOnDevice">@property maxDownloadedAssetsOnDevice</a></p></code></li>
+					
+					<li><code><p><a href="#//api/name/overrideMaxAssetsOnDevice:">- overrideMaxAssetsOnDevice:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -3056,7 +3556,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-10-02</p>
+						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-11-04</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

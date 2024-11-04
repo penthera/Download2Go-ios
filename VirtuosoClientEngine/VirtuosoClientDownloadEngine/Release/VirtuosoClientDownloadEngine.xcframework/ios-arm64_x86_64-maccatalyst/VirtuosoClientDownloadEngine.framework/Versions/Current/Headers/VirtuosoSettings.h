@@ -381,6 +381,86 @@
  */
 - (void)resetDownloadOverCellularToDefault;
 
+/*!
+ *  @abstract Allows you to override Virtuoso's default value for the maximum offline viewing period setting.
+ *
+ *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
+ *
+ *  @param offlineViewingPeriod The new offline viewing period setting
+ *
+ *  @see defaultOfflineViewingPeriod
+ *  @see resetOfflineViewingPeriodToDefault
+ */
+- (void)overrideOfflineViewingPeriod:(long long)offlineViewingPeriod;
+
+/*!
+ *  @abstract Reset Virtuoso's offline viewing period setting to the default (unlimited)
+ *
+ *  @see defaultOfflineViewingPeriod
+ *  @see overrideOfflineViewingPeriod:
+ */
+- (void)resetOfflineViewingPeriodToDefault;
+
+/*!
+ *  @abstract Allows you to override Virtuoso's default value for the expiry after download setting.
+ *
+ *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
+ *
+ *  @param expiryAfterDownload The new expiry after download setting
+ *
+ *  @see defaultExpiryAfterDownload
+ *  @see resetExpiryAfterDownloadToDefault
+ */
+- (void)overrideExpiryAfterDownload:(long long)expiryAfterDownload;
+
+/*!
+ *  @abstract Reset Virtuoso's expiry after download setting to the default (unlimited)
+ *
+ *  @see defaultExpiryAfterDownload
+ *  @see overrideExpiryAfterDownload:
+ */
+- (void)resetExpiryAfterDownloadToDefault;
+
+/*!
+ *  @abstract Allows you to override Virtuoso's default value for the expiry after play setting.
+ *
+ *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
+ *
+ *  @param expiryAfterPlay The new expiry after play setting
+ *
+ *  @see defaultExpiryAfterPlay
+ *  @see resetExpiryAfterPlayToDefault
+ */
+- (void)overrideExpiryAfterPlay:(long long)defaultExpiryAfterPlay;
+
+/*!
+ *  @abstract Reset Virtuoso's expiry after play setting to the default (unlimited)
+ *
+ *  @see defaultExpiryAfterPlay
+ *  @see overrideExpiryAfterPlay:
+ */
+- (void)resetExpiryAfterPlayToDefault;
+
+/*!
+ *  @abstract Allows you to override Virtuoso's default value for the max assets on device setting.
+ *
+ *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
+ *
+ *  @param maxDownloads The new max assets on device setting
+ *
+ *  @see maxDownloadedAssetsOnDevice
+ *  @see resetMaxAssetsOnDeviceToDefault
+ */
+- (void)overrideMaxAssetsOnDevice:(long long)maxDownloads;
+
+/*!
+ *  @abstract Reset Virtuoso's max assets on device setting to the default (unlimited)
+ *
+ *  @see maxDownloadedAssetsOnDevice
+ *  @see overrideMaxAssetsOnDevice:
+ */
+- (void)resetMaxAssetsOnDeviceToDefault;
+
 
 /**---------------------------------------------------------------------------------------
  * @name Advanced Policy/Configuration - stuff you probably should leave alone
