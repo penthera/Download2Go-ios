@@ -14,14 +14,6 @@ A simple Download2Go_Hello_World getting started example for how Penthera downlo
 
 For information on the React-Native environment, visit https://facebook.github.io/react-native/docs/getting-started
 
-### Enable Downloads:
-Dowloading Assets requires enabling App Transport Security settings in info.plist
-
-```
-> <key>NSAllowsArbitraryLoads</key>
-> <true/>
-```
-</br>
 </br>
 ## VirtuosoClientDownloadEngine.framework
 If you embed the framework directly (vs using CocoaPods) you will need to change several build settings as follows:
@@ -34,4 +26,23 @@ Set Search Paths to where VirtuosoClientDownloadEngine.framework is located for 
 
 Also make sure to include VirtuosoClientDownloadEngine.framework in both Embedded Binaries and Linked Frameworks.
 </br>
+
+Opening Info.plist search for the following:</br>
+
+	<key>VirtuosoBackplaneUrl</key>
+	<string>replace_with_your_backplane_url</string>
+
+Replace "replace_with_your_backplane_url" with the URL Penthera Customer Support provided. 
+</br>
+
+Opening Info.plist search for the following:</br>
+
+	<key>VirtuosoBackplaneMasterPublickey</key>
+	<string>replace_with_your_public_key</string>
+
+Replace "replace_with_your_public_key" with the Public Key Penthera Customer Support provided. 
+
+</br>
+Then scan the source code and replace "replace_with_your_public_key" with the public key provided by Penthera and replace "replace_with_your_private_key" with the private key Penthera provided. 
+
 </br>

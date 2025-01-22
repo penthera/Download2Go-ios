@@ -68,74 +68,72 @@ typedef void (^BooleanValidationClosure)(Boolean);
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
-        switch (indexPath.row) {
-            case taskRefillLimit:
-                cell.textLabel.text = @"Task Refill Limit";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_TaskRefillLimit"] ];
-                break;
-                
-            case taskRefillSize:
-                cell.textLabel.text = @"Task Refill Size";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_TaskRefillSize"] ];
-                break;
-                
-            case timeout:
-                cell.textLabel.text = @"Timeout";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", @(instance.networkTimeout)];
-                break;
-                
-            case maxPackagerSegments:
-                cell.textLabel.text = @"Max Packager Segments";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_MaxPackagerSegments"]];
-                break;
-                
-            case backgroundSetupTime:
-                cell.textLabel.text = @"Packager Setup Time";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", @(MAX(20,[instance integerForKey:@"VFM_BackgroundSetupTime"]))];
-                break;
-                
-            case maxStorage:
-                cell.textLabel.text = @"Max Storage (MB)";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance maxStorageAllowed] == NSIntegerMax ? @"Unlimited" : @([instance maxStorageAllowed]) ];
-                break;
-                
-            case headroom:
-                cell.textLabel.text = @"Headroom (MB)";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", @(instance.headroom)];
-                break;
-                
-            case enableIFrames:
-                cell.textLabel.text = @"Enable IFRAMES";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", instance.iframeSupportEnabled ? @"Yes" : @"No"];
-                break;
-                
-            case cellDownload:
-                cell.textLabel.text = @"Enable Cellular Download";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", instance.downloadOverCellular ? @"Yes" : @"No"];
-                break;
-                
-            case proxyLogging:
-                cell.textLabel.text = @"Enable Proxy Logging";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", VirtuosoLogger.proxyLoggingEnabled ? @"Yes" : @"No"];
-                break;
-                
-            case backplaneLogging:
-                cell.textLabel.text = @"Enable Backplane Logging";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", VirtuosoLogger.backplaneLoggingEnabled ? @"Yes" : @"No"];
-                break;
-                
-            case maxHTTPConnections:
-                cell.textLabel.text = @"Max HTTP Connections";
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_MaxHTTPConn"]];
-                break;
-                
-            default:
-                cell.textLabel.text = @"<missing value>";
-                cell.detailTextLabel.text = nil;
-                break;
-        }
-        
+            switch (indexPath.row) {
+                case taskRefillLimit:
+                    cell.textLabel.text = @"Task Refill Limit";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_TaskRefillLimit"] ];
+                    break;
+                    
+                case taskRefillSize:
+                    cell.textLabel.text = @"Task Refill Size";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_TaskRefillSize"] ];
+                    break;
+                    
+                case timeout:
+                    cell.textLabel.text = @"Timeout";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", @(instance.networkTimeout)];
+                    break;
+                    
+                case maxPackagerSegments:
+                    cell.textLabel.text = @"Max Packager Segments";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_MaxPackagerSegments"]];
+                    break;
+                    
+                case backgroundSetupTime:
+                    cell.textLabel.text = @"Packager Setup Time";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", @(MAX(20,[instance integerForKey:@"VFM_BackgroundSetupTime"]))];
+                    break;
+                    
+                case maxStorage:
+                    cell.textLabel.text = @"Max Storage (MB)";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance maxStorageAllowed] == NSIntegerMax ? @"Unlimited" : @([instance maxStorageAllowed]) ];
+                    break;
+                    
+                case headroom:
+                    cell.textLabel.text = @"Headroom (MB)";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", @(instance.headroom)];
+                    break;
+                    
+                case enableIFrames:
+                    cell.textLabel.text = @"Enable IFRAMES";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", instance.iframeSupportEnabled ? @"Yes" : @"No"];
+                    break;
+                    
+                case cellDownload:
+                    cell.textLabel.text = @"Enable Cellular Download";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", instance.downloadOverCellular ? @"Yes" : @"No"];
+                    break;
+                    
+                case proxyLogging:
+                    cell.textLabel.text = @"Enable Proxy Logging";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", VirtuosoLogger.proxyLoggingEnabled ? @"Yes" : @"No"];
+                    break;
+                    
+                case backplaneLogging:
+                    cell.textLabel.text = @"Enable Backplane Logging";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", VirtuosoLogger.backplaneLoggingEnabled ? @"Yes" : @"No"];
+                    break;
+                    
+                case maxHTTPConnections:
+                    cell.textLabel.text = @"Max HTTP Connections";
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [instance objectForKey:@"VFM_MaxHTTPConn"]];
+                    break;
+                    
+                default:
+                    cell.textLabel.text = @"<missing value>";
+                    cell.detailTextLabel.text = nil;
+                    break;
+            }
     }];
  
     return cell;
@@ -201,9 +199,7 @@ typedef void (^BooleanValidationClosure)(Boolean);
 // This value controls maximum number of active download tasks.
 // Default: 10
 -(void)setTaskRefillLimit:(NSIndexPath*)indexPath {
-    
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -231,7 +227,6 @@ typedef void (^BooleanValidationClosure)(Boolean);
 // Default: 40
 -(void)setTaskRefillSize:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -254,12 +249,11 @@ typedef void (^BooleanValidationClosure)(Boolean);
     }];
 }
 
-// Setting: VirtuosoSettings.instance.networkTimeout
+// Setting: instance.networkTimeout
 // This value controls network timeout interval
 // Default: 60 seconds
 -(void)setTimeout:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -286,7 +280,6 @@ typedef void (^BooleanValidationClosure)(Boolean);
 // Default: 20
 -(void)setMaxHTTPConnections:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -314,7 +307,6 @@ typedef void (^BooleanValidationClosure)(Boolean);
 // Default: 200
 -(void)setMaxPackagerSegments:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -341,7 +333,6 @@ typedef void (^BooleanValidationClosure)(Boolean);
 // Default: 1GB, minimum 500 MB
 -(void)setMaxHeadroom:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -354,8 +345,8 @@ typedef void (^BooleanValidationClosure)(Boolean);
             }
             
             // Important:
-            // VirtuosoSettings.instance().headroom is read-only. To change this value
-            // use method VirtuosoSettings.instance().overrideHeadroom(Int64(ival))
+            // instance().headroom is read-only. To change this value
+            // use method instance().overrideHeadroom(Int64(ival))
             [instance overrideHeadroom:iVal];
         };
         
@@ -373,7 +364,6 @@ typedef void (^BooleanValidationClosure)(Boolean);
 // Default: unlimited
 -(void)setMaxStorage:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -407,7 +397,6 @@ typedef void (^BooleanValidationClosure)(Boolean);
 // Default: 20 seconds
 -(void)setBackgroundSetupTime:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         TextValidationClosure closure = ^(NSString* input) {
             if (!input.length) return;
             NSInteger iVal = [input integerValue];
@@ -429,12 +418,11 @@ typedef void (^BooleanValidationClosure)(Boolean);
 }
                              
 
-// Setting: VirtuosoSettings.instance().iframeSupportEnabled
+// Setting: instance().iframeSupportEnabled
 // This value controls enable/disable downloading of HLS IFRAME's
 // Default: false
 -(void)setEnableIFrames:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         BooleanValidationClosure closure = ^(Boolean input) {
             instance.iframeSupportEnabled = input;
         };
@@ -447,12 +435,11 @@ typedef void (^BooleanValidationClosure)(Boolean);
     }];
 }
 
-// Setting: VirtuosoSettings.instance().downloadOverCellular
+// Setting: instance().downloadOverCellular
 // This value controls enable/disable downloading over Cellular connection
 // Default: false
 -(void)setCellularDownload:(NSIndexPath*)indexPath {
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
-        
         BooleanValidationClosure closure = ^(Boolean input) {
             [instance overrideDownloadOverCellular:input];
         };

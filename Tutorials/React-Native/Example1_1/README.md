@@ -14,16 +14,6 @@ This sample demonstrates pausing an asset while downloading.
 
 For information on the React-Native environment, visit https://facebook.github.io/react-native/docs/getting-started
 
-### Enable Downloads:
-Dowloading Assets requires enabling App Transport Security settings in info.plist
-
-```
->     <key>NSAppTransportSecurity</key>
->     <dict>
->         <key>NSAllowsArbitraryLoads</key>
->        <true/>
->     </dict>
-```
 </br>
 
 ### VirtuosoClientDownloadEngine.framework:

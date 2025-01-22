@@ -14,7 +14,6 @@ class HelloWorld: UIViewController, VirtuosoDownloadEngineNotificationsDelegate
     // IMPORTANT:
     // The following three values must be initialzied, please contact support@penthera.com to obtain these keys
     // ---------------------------------------------------------------------------------------------------------
-    let backplaneUrl = "replace_with_your_backplane_url"                                        // <-- change this
     let publicKey = "replace_with_your_public_key"  // <-- change this
     let privateKey = "replace_with_your_private_key" // <-- change this
     
@@ -38,10 +37,6 @@ class HelloWorld: UIViewController, VirtuosoDownloadEngineNotificationsDelegate
         downloadEngineNotifications = VirtuosoDownloadEngineNotificationManager.init(delegate: self)
         self.statusLabel.text = "Starting Engine..."
         
-        //
-        // Enable the Engine
-        VirtuosoDownloadEngine.instance().enabled = true;
-        
         // Backplane permissions require a unique user-id for the full range of captabilities support to work
         // Production code that needs this will need a unique customer ID.
         // For demonstation purposes only, we use the device name
@@ -50,7 +45,6 @@ class HelloWorld: UIViewController, VirtuosoDownloadEngineNotificationsDelegate
         //
         // Create the engine confuration
         guard let config = VirtuosoEngineConfig(user: userName,
-                                                backplaneUrl: self.backplaneUrl,
                                                 publicKey: self.publicKey,
                                                 privateKey: self.privateKey)
         else
@@ -232,7 +226,7 @@ class HelloWorld: UIViewController, VirtuosoDownloadEngineNotificationsDelegate
             let yourAssetID = "tears-of-steel-asset-1"
             
             // Create asset configuration object
-            guard let config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/tears/index.m3u8",
+            guard let config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/tears/index.m3u8",
                                                    assetID: yourAssetID,
                                                    description: "Tears of Steel",
                                                    type: kVDE_AssetType.vde_AssetTypeHLS) else {

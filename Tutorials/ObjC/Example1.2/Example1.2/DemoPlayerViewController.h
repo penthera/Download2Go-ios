@@ -6,8 +6,8 @@
 //  Copyright © 2018 penthera. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <VirtuosoClientDownloadEngine/VirtuosoPlayerViewController.h>
+@import Foundation;
+@import VirtuosoClientDownloadEngine;
 
 NS_ASSUME_NONNULL_BEGIN
 

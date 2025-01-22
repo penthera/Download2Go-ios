@@ -18,42 +18,42 @@
     VirtuosoAssetConfig* config = nil;
     if ([assetID isEqualToString:@"SERIES-8-EPISODE-1"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8"
                                                   assetID:@"SERIES-8-EPISODE-1"
                                               description:@"Shadow Play"
                                                      type:kVDE_AssetTypeHLS];
     }
     else if ([assetID isEqualToString:@"SERIES-8-EPISODE-2"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep2/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep2/index.m3u8"
                                                   assetID:@"SERIES-8-EPISODE-2"
                                               description:@"Aloha Adventure"
                                                      type:kVDE_AssetTypeHLS];
     }
     else if ([assetID isEqualToString:@"SERIES-8-EPISODE-3"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep3/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep3/index.m3u8"
                                                   assetID:@"SERIES-8-EPISODE-3"
                                               description:@"Aloha Adventure"
                                                      type:kVDE_AssetTypeHLS];
     }
     else if ([assetID isEqualToString:@"SERIES-8-EPISODE-4"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep4/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep4/index.m3u8"
                                                   assetID:@"SERIES-8-EPISODE-4"
                                               description:@"Aloha Adventure"
                                                      type:kVDE_AssetTypeHLS];
     }
     else if ([assetID isEqualToString:@"SERIES-8-EPISODE-5"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep5/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep5/index.m3u8"
                                                   assetID:@"SERIES-8-EPISODE-5"
                                               description:@"Aloha Adventure"
                                                      type:kVDE_AssetTypeHLS];
     }
     else if ([assetID isEqualToString:@"SERIES-8-EPISODE-6"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep6/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep6/index.m3u8"
                                                   assetID:@"SERIES-8-EPISODE-6"
                                               description:@"Aloha Adventure"
                                                      type:kVDE_AssetTypeHLS];

@@ -13,7 +13,6 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     
     
     // <-- change these to your settings in production
-    let backplaneUrl = "replace_with_your_backplane_url"
     let publicKey = "replace_with_your_public_key"
     let privateKey = "replace_with_your_private_key"
     
@@ -24,7 +23,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     var downloadEngineNotifications: VirtuosoDownloadEngineNotificationManager!
     var backplaneNotifications: VirtuosoBackplaneNotificationsManager!
     var hasDownloaded = false
-    var error: Error?
+    var error: VirtuosoError?
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var playBtn: UIButton!
@@ -42,10 +41,6 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         
         self.statusLabel.text = "Starting Engine..."
 
-        //
-        // Enable the Engine
-        VirtuosoDownloadEngine.instance().enabled = true;
-        
         // Backplane permissions require a unique user-id for the full range of captabilities support to work
         // Production code that needs this will need a unique customer ID.
         // For demonstation purposes only, we use the device name
@@ -54,7 +49,6 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         //
         // Create the engine confuration
         guard let config = VirtuosoEngineConfig(user: userName,
-                                                backplaneUrl: self.backplaneUrl,
                                                 publicKey: self.publicKey,
                                                 privateKey: self.privateKey)
         else
@@ -359,7 +353,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         // Create the Asset on a background thread
         DispatchQueue.global(qos: .background).async {
             // Create asset configuration object
-            guard let config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8",
+            guard let config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8",
                                                    assetID: "SEASON-1-EPISODE-1",
                                                    description: "The Right Kite",
                                                    type: kVDE_AssetType.vde_AssetTypeHLS) else {
@@ -458,8 +452,8 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     // --------------------------------------------------------------
     // Called whenever an Engine encounters error downloading asset
     // --------------------------------------------------------------
-    func downloadEngineDidEncounterError(for asset: VirtuosoAsset, error: Error?, task: URLSessionTask?, data: Data?, statusCode: NSNumber?) {
-        self.error = error
+    func downloadEngineDidEncounterError(for asset: VirtuosoAsset, virtuosoError: VirtuosoError?, task: URLSessionTask?, data: Data?, statusCode: NSNumber?) {
+        self.error = virtuosoError
         displayAsset(asset: asset)
         refreshView()
         loadEngineData()

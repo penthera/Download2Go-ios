@@ -18,14 +18,14 @@
     VirtuosoAssetConfig* config = nil;
     if ([assetID isEqualToString:@"SEASON-1-EPISODE-2"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep2/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep2/index.m3u8"
                                                   assetID:@"SEASON-1-EPISODE-2"
                                               description:@"Shadow Play"
                                                      type:kVDE_AssetTypeHLS];
     }
     else if ([assetID isEqualToString:@"SEASON-1-EPISODE-3"])
     {
-        config = [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep3/index.m3u8"
+        config = [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep3/index.m3u8"
                                                   assetID:@"SEASON-1-EPISODE-3"
                                               description:@"Aloha Adventure"
                                                      type:kVDE_AssetTypeHLS];

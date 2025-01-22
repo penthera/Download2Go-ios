@@ -1,4 +1,5 @@
 {
+  "originHash" : "a388bdd902915bae6aa9e989e89968372c46a0b70724b88accac4e80518bc4af",
   "pins" : [
     {
       "identity" : "download2go-ios",
@@ -6,9 +7,9 @@
       "location" : "https://github.com/penthera/Download2Go-ios",
       "state" : {
         "branch" : "master",
-        "revision" : "e136b98a46f5c89dadcd6403151b8f258d4220f8"
+        "revision" : "ba3a3a697c0c22f15225b2a30a186efb1e37e51d"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

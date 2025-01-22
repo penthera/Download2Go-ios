@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDelegate {
     
     // <-- change these to your settings in production
-    let backplaneUrl = "replace_with_your_backplane_url"
     let publicKey = "replace_with_your_public_key"
     let privateKey = "replace_with_your_private_key"
     
@@ -21,7 +20,7 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     var exampleAsset: VirtuosoAsset?
     var downloadEngineNotifications: VirtuosoDownloadEngineNotificationManager!
     var hasDownloaded = false
-    var error: Error?
+    var error: VirtuosoError?
     var downloadSelection = 0
     
     @IBOutlet weak var errorsLabel: UILabel!
@@ -40,10 +39,6 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
 
         self.statusLabel.text = "Starting Engine..."
 
-        //
-        // Enable the Engine
-        VirtuosoDownloadEngine.instance().enabled = true;
-        
         // Backplane permissions require a unique user-id for the full range of captabilities support to work
         // Production code that needs this will need a unique customer ID.
         // For demonstation purposes only, we use the device name
@@ -52,7 +47,6 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         //
         // Create the engine confuration
         guard let config = VirtuosoEngineConfig(user: userName,
-                                                backplaneUrl: self.backplaneUrl,
                                                 publicKey: self.publicKey,
                                                 privateKey: self.privateKey)
         else
@@ -280,8 +274,8 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         // The following Manifests contain errors and will fail
         // downloading to demonstate error handling
         let invalidDownloads: [String] = {
-            ["http://hls-vbcp.s3.amazonaws.com/httyd_rel_response_error.m3u8",
-             "http://hls-vbcp.s3.amazonaws.com/normal/1200/im2_broken.m3u8"]
+            ["https://hls-vbcp.s3.amazonaws.com/httyd_rel_response_error.m3u8",
+             "https://hls-vbcp.s3.amazonaws.com/normal/1200/im2_broken.m3u8"]
         }()
         
         let downloadUrl = invalidDownloads[downloadSelection]
@@ -365,14 +359,14 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     // --------------------------------------------------------------
     // Called whenever an Engine encounters error downloading asset
     // --------------------------------------------------------------
-    func downloadEngineDidEncounterError(for asset: VirtuosoAsset, error: Error?, task: URLSessionTask?, data: Data?, statusCode: NSNumber?) {
+    func downloadEngineDidEncounterError(for asset: VirtuosoAsset, virtuosoError: VirtuosoError?, task: URLSessionTask?, data: Data?, statusCode: NSNumber?) {
         
         //
         // Important:
         // Encountered an error during download. The Engine will attempt to recover from all error conditions until
         // we exceed maximum number of retries. Once that happens, the Engine will try again upon App restart.
         // See the SDK documentation for errors.
-        self.error = error
+        self.error = virtuosoError
         
         displayAsset(asset: asset)
         refreshView()

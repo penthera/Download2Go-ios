@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D93B36B2538CD29004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3692538CD24004F08DA /* VirtuosoClientDownloadEngine.xcframework */; };
-		4D93B36C2538CD29004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D93B3692538CD24004F08DA /* VirtuosoClientDownloadEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0306E5D327C80A1200F4DBA8 /* VirtuosoUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0306E5CF27C809FD00F4DBA8 /* VirtuosoUIKit.framework */; };
+		0306E5D427C80A1200F4DBA8 /* VirtuosoUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0306E5CF27C809FD00F4DBA8 /* VirtuosoUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03D6BC022836CB2F001E9E9B /* VirtuosoClientDownloadEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D6BC012836CB2F001E9E9B /* VirtuosoClientDownloadEngine.xcframework */; };
+		03D6BC032836CB67001E9E9B /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03D6BC012836CB2F001E9E9B /* VirtuosoClientDownloadEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7CE832822E0A90200C79576 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE832722E0A90200C79576 /* AppDelegate.m */; };
 		D7CE832B22E0A90200C79576 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE832A22E0A90200C79576 /* ViewController.m */; };
 		D7CE832E22E0A90200C79576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CE832C22E0A90200C79576 /* Main.storyboard */; };
@@ -18,6 +20,23 @@
 		D7CE834322E0A9D700C79576 /* DemoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE834222E0A9D700C79576 /* DemoPlayerViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0306E5CE27C809FD00F4DBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0306E5C927C809FD00F4DBA8 /* VirtuosoUIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 037BB13B27A862AD000BC1C7;
+			remoteInfo = VirtuosoUIKit;
+		};
+		0306E5D027C809FD00F4DBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0306E5C927C809FD00F4DBA8 /* VirtuosoUIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 037BB14527A862AE000BC1C7;
+			remoteInfo = VirtuosoUIKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		D7CE834022E0A96500C79576 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -25,7 +44,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4D93B36C2538CD29004F08DA /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */,
+				03D6BC032836CB67001E9E9B /* VirtuosoClientDownloadEngine.xcframework in Embed Frameworks */,
+				0306E5D427C80A1200F4DBA8 /* VirtuosoUIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D93B3692538CD24004F08DA /* VirtuosoClientDownloadEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VirtuosoClientDownloadEngine.xcframework; path = ../../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Release/VirtuosoClientDownloadEngine.xcframework; sourceTree = "<group>"; };
+		0306E5C927C809FD00F4DBA8 /* VirtuosoUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VirtuosoUIKit.xcodeproj; path = "../UIKit Integration/VirtuosoUIKit/VirtuosoUIKit.xcodeproj"; sourceTree = "<group>"; };
+		03D6BC012836CB2F001E9E9B /* VirtuosoClientDownloadEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VirtuosoClientDownloadEngine.xcframework; path = ../../../VirtuosoClientEngine/VirtuosoClientDownloadEngine/Debug/VirtuosoClientDownloadEngine.xcframework; sourceTree = "<group>"; };
 		D7CE832322E0A90200C79576 /* Example1.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example1.2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CE832622E0A90200C79576 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7CE832722E0A90200C79576 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,18 +74,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D93B36B2538CD29004F08DA /* VirtuosoClientDownloadEngine.xcframework in Frameworks */,
+				0306E5D327C80A1200F4DBA8 /* VirtuosoUIKit.framework in Frameworks */,
+				03D6BC022836CB2F001E9E9B /* VirtuosoClientDownloadEngine.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0306E5CA27C809FD00F4DBA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0306E5CF27C809FD00F4DBA8 /* VirtuosoUIKit.framework */,
+				0306E5D127C809FD00F4DBA8 /* VirtuosoUIKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0306E5D227C80A1200F4DBA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D7CE831A22E0A90200C79576 = {
 			isa = PBXGroup;
 			children = (
+				03D6BC012836CB2F001E9E9B /* VirtuosoClientDownloadEngine.xcframework */,
+				0306E5C927C809FD00F4DBA8 /* VirtuosoUIKit.xcodeproj */,
 				D7CE832522E0A90200C79576 /* Example1.2 */,
 				D7CE832422E0A90200C79576 /* Products */,
+				0306E5D227C80A1200F4DBA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,7 +120,6 @@
 		D7CE832522E0A90200C79576 /* Example1.2 */ = {
 			isa = PBXGroup;
 			children = (
-				4D93B3692538CD24004F08DA /* VirtuosoClientDownloadEngine.xcframework */,
 				D7CE832622E0A90200C79576 /* AppDelegate.h */,
 				D7CE832722E0A90200C79576 /* AppDelegate.m */,
 				D7CE832F22E0A90300C79576 /* Assets.xcassets */,
@@ -122,7 +162,7 @@
 		D7CE831B22E0A90200C79576 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = Penthera;
 				TargetAttributes = {
 					D7CE832222E0A90200C79576 = {
@@ -141,12 +181,35 @@
 			mainGroup = D7CE831A22E0A90200C79576;
 			productRefGroup = D7CE832422E0A90200C79576 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0306E5CA27C809FD00F4DBA8 /* Products */;
+					ProjectRef = 0306E5C927C809FD00F4DBA8 /* VirtuosoUIKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D7CE832222E0A90200C79576 /* Example1.2 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0306E5CF27C809FD00F4DBA8 /* VirtuosoUIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VirtuosoUIKit.framework;
+			remoteRef = 0306E5CE27C809FD00F4DBA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0306E5D127C809FD00F4DBA8 /* VirtuosoUIKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VirtuosoUIKitTests.xctest;
+			remoteRef = 0306E5D027C809FD00F4DBA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D7CE832122E0A90200C79576 /* Resources */ = {
@@ -221,6 +284,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -280,6 +344,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -315,7 +380,7 @@
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example1.2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +399,7 @@
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Example1.2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

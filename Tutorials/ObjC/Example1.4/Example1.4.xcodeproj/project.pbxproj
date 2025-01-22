@@ -136,7 +136,7 @@
 		D753102722E78CFF000E1A15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = Penthera;
 				TargetAttributes = {
 					D753102E22E78CFF000E1A15 = {

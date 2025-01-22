@@ -94,7 +94,7 @@
         [playlist append:[NSArray arrayWithObject:episode] error:&error];
         if (error)
         {
-            VLog(kVL_LogError, "Error while appending to playlist: %@  error: %@",
+            NSLog(@"Error while appending to playlist: %@  error: %@",
                  playlist.name,
                  error.localizedDescription);
         }

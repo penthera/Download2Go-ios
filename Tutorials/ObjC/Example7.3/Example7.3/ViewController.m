@@ -14,9 +14,8 @@ static NSString* PlaylistName = @"TESTQUEUE-8";
 
 // ---------------------------------------------------------------------------------------------------------
 // IMPORTANT:
-// The following three values must be initialzied, please contact support@penthera.com to obtain these keys
+// The following two values must be initialzied and the backplace URL in the "Info" File, please contact support@penthera.com to obtain these keys
 // ---------------------------------------------------------------------------------------------------------
-static NSString* backplaneUrl = @"replace_with_your_backplane_url";                                         // <-- change this
 static NSString* publicKey = @"replace_with_your_public_key";   // <-- change this
 static NSString* privateKey = @"replace_with_your_private_key";  // <-- change this
 
@@ -125,11 +124,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self clearData];
-        
-        //
-        // Enable the Engine
-        VirtuosoDownloadEngine.instance.enabled = TRUE;
-        
+                
         // Backplane permissions require a unique user-id for the full range of captabilities support to work
         // Production code that needs this will need a unique customer ID.
         // For demonstation purposes only, we use the device name
@@ -138,7 +133,6 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
         //
         // Create the engine confuration
         VirtuosoEngineConfig* config = [[VirtuosoEngineConfig alloc]initWithUser:userName
-                                                                    backplaneUrl:backplaneUrl
                                                                        publicKey:publicKey
                                                                       privateKey:privateKey];
         if (!config)
@@ -258,7 +252,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
                                                                                    error:&error];
     if (error)
     {
-        VLog(kVL_LogError, @"Failed to create PlaylistConfig. Error: %@", error.localizedDescription);
+        NSLog(@"Failed to create PlaylistConfig. Error: %@", error.localizedDescription);
         return false;
     }
     
@@ -275,7 +269,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     self.playlist = [VirtuosoPlaylist create:playlistConfig withAssets:assets error:&error];
     if (error)
     {
-        VLog(kVL_LogError, @"Failed to create Playlist. Error: %@", error.localizedDescription);
+        NSLog(@"Failed to create Playlist. Error: %@", error.localizedDescription);
         return false;
     }
     
@@ -285,7 +279,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
 
 -(void)createInitialAsset
 {
-    VirtuosoAssetConfig* config = [[VirtuosoAssetConfig alloc]initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8"
+    VirtuosoAssetConfig* config = [[VirtuosoAssetConfig alloc]initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8"
                                                                   assetID:@"SERIES-8-EPISODE-1"
                                                               description:@"Sample Description"
                                                                      type:kVDE_AssetTypeHLS];
@@ -295,8 +289,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     }
     
     // Configure asset for FastPlay
-    config.fastPlayEnabled = true;
-    config.offlinePlayEnabled = false;
+    config.downloadType = kVDE_DownloadFastPlayPlayback;
     config.autoAddToQueue = false;
     
     // Create the asset
@@ -403,8 +396,12 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     [self loadData];
 }
 
-- (void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset *)asset error:(NSError *)error task:(NSURLSessionTask *)task data:(NSData *)data statusCode:(NSNumber *)statusCode
-{
+-(void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset *)asset
+                                         virtuosoError:(VirtuosoError *)error
+                                          task:(NSURLSessionTask *)task
+                                          data:(NSData *)data
+                                    statusCode:(NSNumber *)statusCode {
+    
     [self loadData];
 }
 

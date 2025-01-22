@@ -3,6 +3,34 @@ Tutorials
 
 #### Objective-C Sample CocoaPods Integration
 
+### Setup
+To enable this demo you first need to contact Penthera Customer Support to request registration information including the following items:
+
+* Backplane URL
+* Backplane Public Key
+* Backplane Private Key
+
+Opening Info.plist search for the following:</br>
+
+	<key>VirtuosoBackplaneUrl</key>
+	<string>replace_with_your_backplane_url</string>
+
+Replace "replace_with_your_backplane_url" with the URL Penthera Customer Support provided. 
+</br>
+
+Opening Info.plist search for the following:</br>
+
+	<key>VirtuosoBackplaneMasterPublickey</key>
+	<string>replace_with_your_public_key</string>
+
+Replace "replace_with_your_public_key" with the Public Key Penthera Customer Support provided. 
+
+</br>
+Then scan the source code and replace "replace_with_your_public_key" with the public key provided by Penthera and replace "replace_with_your_private_key" with the private key Penthera provided. 
+
+</br>
+
+
 A working sample Podfile is already included in the tutorial directory and displayed below.  The default configuration uses the local version of the VirtuosoDownloadEngine CocoaPod without bitcode.
 
 Once your Podfile is configured, invoke the command ```pod install``` to add the requested CocoaPods to the workspace.  Make sure your XCode project is not open.

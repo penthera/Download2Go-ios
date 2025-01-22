@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="76a-sN-7Zm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9Na-ms-k6d">
+            <objects>
+                <navigationController id="76a-sN-7Zm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4aE-sv-ogH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rJK-Oh-aSz" kind="relationship" relationship="rootViewController" id="cNf-w6-h3d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQj-dq-Y3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-648" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vgJ-p3-9Kx">
+            <objects>
+                <viewController id="rJK-Oh-aSz" customClass="ViewController" customModule="Example1_6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PRF-1Z-RuE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="mainStack" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="psI-9P-dXt">
+                                <rect key="frame" x="20" y="356.5" width="374" height="183.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wj8-gt-9MC" userLabel="buttonStack">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5s-MR-qma">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Download">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="downloadBtnClicked:" destination="rJK-Oh-aSz" eventType="touchUpInside" id="cVb-Xz-PKS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6C-Ip-Jv5">
+                                                <rect key="frame" x="96" y="0.0" width="86" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playBtnClicked:" destination="rJK-Oh-aSz" eventType="touchUpInside" id="PGH-Ur-qhT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvi-tQ-cGp">
+                                                <rect key="frame" x="192" y="0.0" width="86" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Refresh">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="refreshPressed:" destination="rJK-Oh-aSz" eventType="touchUpInside" id="Q0V-Yr-osD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XP-aL-0bQ">
+                                                <rect key="frame" x="288" y="0.0" width="86" height="80"/>
+                                                <color key="backgroundColor" red="0.18142967469999999" green="0.49229217720000001" blue="0.58252782879999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteButtonClicked:" destination="rJK-Oh-aSz" eventType="touchUpInside" id="H9w-Cr-F7w"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="fcS-BW-K2R"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-bV-uVR" userLabel="statusStack">
+                                        <rect key="frame" x="0.0" y="119" width="374" height="64.5"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sy2-Zf-ezv">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="4"/>
+                                            </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kSf-FT-4QO">
+                                                <rect key="frame" x="0.0" y="43" width="374" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="40e-gD-5RM"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="psI-9P-dXt" firstAttribute="leading" secondItem="40e-gD-5RM" secondAttribute="leading" constant="20" id="FKG-Kz-jWC"/>
+                            <constraint firstItem="psI-9P-dXt" firstAttribute="centerY" secondItem="PRF-1Z-RuE" secondAttribute="centerY" id="LSd-aF-6xQ"/>
+                            <constraint firstItem="psI-9P-dXt" firstAttribute="centerX" secondItem="PRF-1Z-RuE" secondAttribute="centerX" id="kGx-Bb-ZWC"/>
+                            <constraint firstItem="40e-gD-5RM" firstAttribute="trailing" secondItem="psI-9P-dXt" secondAttribute="trailing" constant="20" id="rrB-56-kES"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kxv-xz-hLZ">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" image="Settings.png" id="PTu-mQ-fjD"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deleteButton" destination="2XP-aL-0bQ" id="Ou6-du-tzL"/>
+                        <outlet property="downloadButton" destination="f5s-MR-qma" id="Lcd-Lu-c4V"/>
+                        <outlet property="playButton" destination="A6C-Ip-Jv5" id="PKk-Md-wJY"/>
+                        <outlet property="refreshButton" destination="Bvi-tQ-cGp" id="afD-03-0mx"/>
+                        <outlet property="statusProgress" destination="sy2-Zf-ezv" id="uzO-jA-JDR"/>
+                        <outlet property="statusText" destination="kSf-FT-4QO" id="lch-l1-azj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJR-xg-oZe" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="132.58928571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Settings.png" width="16" height="16"/>
+    </resources>
+</document>

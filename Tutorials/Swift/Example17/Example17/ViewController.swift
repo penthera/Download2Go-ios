@@ -13,11 +13,10 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     // IMPORTANT:
     // The following three values must be initialzied, please contact support@penthera.com to obtain these keys
     // ---------------------------------------------------------------------------------------------------------
-    let backplaneUrl = "replace_with_your_backplane_url"                                        // <-- change this
     let publicKey = "replace_with_your_public_key"  // <-- change this
     let privateKey = "replace_with_your_private_key" // <-- change this
    
-    var error:Error?
+    var error:VirtuosoError?
     
     // Bandwidths available for this asset
     
@@ -46,10 +45,6 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         downloadEngineNotifications = VirtuosoDownloadEngineNotificationManager.init(delegate: self)
         self.statusLabel.text = "Starting Engine..."
         
-        //
-        // Enable the Engine
-        VirtuosoDownloadEngine.instance().enabled = true;
-        
         // Backplane permissions require a unique user-id for the full range of captabilities support to work
         // Production code that needs this will need a unique customer ID.
         // For demonstation purposes only, we use the device name
@@ -58,7 +53,6 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
         //
         // Create the engine confuration
         guard let config = VirtuosoEngineConfig(user: userName,
-                                                backplaneUrl: self.backplaneUrl,
                                                 publicKey: self.publicKey,
                                                 privateKey: self.privateKey)
         else
@@ -370,8 +364,8 @@ class ViewController: UIViewController, VirtuosoDownloadEngineNotificationsDeleg
     // --------------------------------------------------------------
     // Called whenever an Engine encounters error downloading asset
     // --------------------------------------------------------------
-    func downloadEngineDidEncounterError(for asset: VirtuosoAsset, error: Error?, task: URLSessionTask?, data: Data?, statusCode: NSNumber?) {
-        self.error = error
+    func downloadEngineDidEncounterError(for asset: VirtuosoAsset, virtuosoError: VirtuosoError?, task: URLSessionTask?, data: Data?, statusCode: NSNumber?) {
+        self.error = virtuosoError
         displayAsset(asset: asset)
         refreshView()
         loadEngineData()

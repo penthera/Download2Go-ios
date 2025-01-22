@@ -14,7 +14,6 @@ class ViewController: UITableViewController {
     let MaxItems = 3;
     let InitialAssetList = ["SERIES-8-EPISODE-1", "SERIES-8-EPISODE-2", "SERIES-8-EPISODE-3", "SERIES-8-EPISODE-4", "SERIES-8-EPISODE-5", "SERIES-8-EPISODE-6"]
     
-    let backplaneUrl = "replace_with_your_backplane_url"
     let publicKey = "replace_with_your_public_key"
     let privateKey = "replace_with_your_private_key"
     let loadQueue = OperationQueue()
@@ -123,9 +122,6 @@ class ViewController: UITableViewController {
             // Each time the app starts we blow away all of the previous demo data.
             // Definitely do NOT want to do this in a production app.
             self.clearData()
-            //
-            // Enable the Engine
-            VirtuosoDownloadEngine.instance().enabled = true;
             
             // Backplane permissions require a unique user-id for the full range of captabilities support to work
             // Production code that needs this will need a unique customer ID.
@@ -135,7 +131,6 @@ class ViewController: UITableViewController {
             //
             // Create the engine confuration
             guard let config = VirtuosoEngineConfig(user: userName,
-                                                    backplaneUrl: self.backplaneUrl,
                                                     publicKey: self.publicKey,
                                                     privateKey: self.privateKey)
             else
@@ -217,7 +212,7 @@ class ViewController: UITableViewController {
 
     func createInitialAsset()
     {
-        guard let assetConfig = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8",
+        guard let assetConfig = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8",
                                               assetID: "SERIES-8-EPISODE-1",
                                               description: "Sample Description",
                                               type: .vde_AssetTypeHLS) else {
@@ -225,8 +220,7 @@ class ViewController: UITableViewController {
         }
         
         // Configure asset for FastPlay
-        assetConfig.fastPlayEnabled = true
-        assetConfig.offlinePlayEnabled = false
+        assetConfig.downloadType = .vde_DownloadFastPlayPlayback;
         assetConfig.autoAddToQueue = false
         let _ = VirtuosoAsset.init(config: assetConfig)
     }

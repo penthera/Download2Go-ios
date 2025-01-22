@@ -46,16 +46,6 @@ CastLabs sessionID property
 </br>
 
 ## XCode Setup
-### Enable Downloads:
-Dowloading Assets requires enabling App Transport Security settings in info.plist
-
-```
->     <key>NSAppTransportSecurity</key>
->     <dict>
->         <key>NSAllowsArbitraryLoads</key>
->        <true/>
->     </dict>
-```
 </br>
 
 ### VirtuosoClientDownloadEngine.framework:

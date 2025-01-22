@@ -16,15 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-#ifdef DEBUG
-    [VirtuosoLogger setLogLevel:kVL_LogVerbose];  // Verbose is helpful for Debugging
-    [VirtuosoLogger enableLogsToFile:YES];
-#else
-    [VirtuosoLogger setLogLevel:kVL_LogWarning];  // Warning is better for Production
-    [VirtuosoLogger enableLogsToFile:NO];
-#endif
-
+    
     //
     // Register Playlist delegate
     //

@@ -64,9 +64,7 @@
  *              is intended to be a static singleton accessed through appropriate instance methods only.  Instantiating a local
  *              copy will throw an exception.
  *
- *  @property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete
- *
- *  @return Returns the VirtuosoSettings object instance.
+ *  @property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete with the initialized instance.
  */
 + (void)instanceOnReady:(void (^_Nonnull)(VirtuosoSettings* _Nonnull))onReady;
 
@@ -84,6 +82,8 @@
 /*!
  *  @abstract Once the time since last Backplane sync exceeds this value, Virtuoso makes the downloaded assets inaccessible
  *
+ *  @note This value has no meaning if you are not connecting to Penthera's Backplane.
+ *
  *  @discussion Virtuoso enforces that clients must sync with the Backplane at a required interval,
  *              or else lose access to downloaded assets.
  *              Virtuoso marks the time since the sync with the Backplane, and makes all downloaded
@@ -98,16 +98,24 @@
 
 /*!
  *  @abstract The total number of unique enabled devices for the current user
+ *
+ *  @note This value has no meaning if you are not connecting to Penthera's Backplane.
  */
 @property (nonatomic,readonly) long long numberOfDevicesEnabled;
 
 /*!
  *  @abstract The maximum number of devices per user that the Backplane allows to be enabled for download
+ *
+ *  @note This value has no meaning if you are not connecting to Penthera's Backplane.
  */
 @property (nonatomic,readonly) long long maxDevicesForDownload;
 
 /*!
  *  @abstract The maximum number of downloads that can exist on the device at any given time
+ *
+ *  @note While the default value for this property will come from the Backplane if you are using one, if you
+ *        are not connecting to a Backplane, this limit may still be enforced and the default will be set to the
+ *        SDK default value for this build.
  *
  *  @discussion Virtuoso limits the total number of downloads the device can have on disk at any given time.
  *              Any download requests beyond this limit are queued, but will not download, and the engine
@@ -120,6 +128,8 @@
 /*!
  *  @abstract The maximum number of downloads that can exist across all devices on the account at any given time
  *
+ *  @note This value has no meaning if you are not connecting to Penthera's Backplane.
+ *
  *  @discussion Virtuoso limits the total number of downloads the user can have on disk across all their devices
  *              at any given time.  Any download requests beyond this limit are queued, but will not download, and
  *              the engine will report an error indicating the download queue is blocked until the user manually
@@ -131,6 +141,8 @@
 /*!
  *  @abstract The maximum number of times any single asset can be downloaded
  *
+ *  @note This value has no meaning if you are not connecting to Penthera's Backplane.
+ *
  *  @discussion Virtuoso limits the total number of times an asset can be downloaded on any device in the account.
  *              Once this limit is reached, the asset can no longer be downloaded without administrative action.
  *              The default value is -1 (unlimited).
@@ -139,6 +151,8 @@
 
 /*!
  *  @abstract The maximum number of copies of this asset that can be stored in all devices in the account
+ *
+ *  @note This value has no meaning if you are not connecting to Penthera's Backplane.
  *
  *  @discussion Virtuoso limits the total number of copies of an asset that can be downloaded on any device in the
  *              account.  Once this limit is reached, the asset can no longer be downloaded until the user deletes
@@ -152,6 +166,8 @@
 /*!
  *  @abstract Whether the engine should acquire download permissions when the asset is queued or when it starts downloading
  *
+ *  @note Calling this method has no effect if you are not connecting to Penthera's Backplane.
+ *
  *  @discussion Normally, the download engine acquires any necessary download permissions when the item starts downloading. By
  *              delaying the permission check until download can occur, the SDK can allow new assets to be queued while the
  *              device is offline.  If this setting is enabled, the download engine acquires permissions when the item is initially
@@ -163,6 +179,8 @@
 
 /*!
  *  @abstract If YES, Virtuoso will always call the Backplane to request download permissions.  Defaults to NO.
+ *
+ *  @note Calling this method has no effect if you are not connecting to Penthera's Backplane.
  *
  *  @discussion Normally, the download engine will not request download permissions when the Backplane settings for maximum
  *              downloads per account and maximum lifetime download limit is set to unlimited, as there is no reason to attempt
@@ -384,7 +402,7 @@
 /*!
  *  @abstract Allows you to override Virtuoso's default value for the maximum offline viewing period setting.
  *
- *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
+ *  @note Calling this method has no effect if you are not connecting to Penthera's Backplane.
  *
  *  @param offlineViewingPeriod The new offline viewing period setting
  *
@@ -404,7 +422,7 @@
 /*!
  *  @abstract Allows you to override Virtuoso's default value for the expiry after download setting.
  *
- *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
+ *  @note Calling this method has no effect if you are not connecting to Penthera's Backplane.
  *
  *  @param expiryAfterDownload The new expiry after download setting
  *
@@ -424,14 +442,14 @@
 /*!
  *  @abstract Allows you to override Virtuoso's default value for the expiry after play setting.
  *
- *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
+ *  @note Calling this method has no effect if you are not connecting to Penthera's Backplane.
  *
  *  @param expiryAfterPlay The new expiry after play setting
  *
  *  @see defaultExpiryAfterPlay
  *  @see resetExpiryAfterPlayToDefault
  */
-- (void)overrideExpiryAfterPlay:(long long)defaultExpiryAfterPlay;
+- (void)overrideExpiryAfterPlay:(long long)expiryAfterPlay;
 
 /*!
  *  @abstract Reset Virtuoso's expiry after play setting to the default (unlimited)
@@ -443,8 +461,6 @@
 
 /*!
  *  @abstract Allows you to override Virtuoso's default value for the max assets on device setting.
- *
- *  @note Calling this method has no effect if you are connecting to Penthera's Backplane.
  *
  *  @param maxDownloads The new max assets on device setting
  *
@@ -547,6 +563,8 @@
 
 /*!
  *  @abstract The minimum amount of time between Backplane syncs
+ *
+ *  @note This value has no meaning if you are not connecting to Penthera's Backplane.
  *
  *  @discussion No matter how many times the Backplane sync method is called, or how often internal events might
  *              attempt a sync, the SDK will generally sync with the backplane more often than this value.  Certain time-critical

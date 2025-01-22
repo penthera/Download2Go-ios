@@ -10,31 +10,16 @@
 
 @implementation SampleLoggingDelegate
 
-- (void)virtuosoEventOccurred:(kVL_LogEvent)event
-forFile:(nullable NSString*)fileID
-                     onBearer:(kVL_BearerType)bearer
-                     withData:(long long)data
+
+- (void)virtuosoConsoleLogLine:(nonnull NSString*)line atLevel:(kVL_LoggingLevel)level
 {
-    NSLog(@"SampleLoggingDelete event: %@", [VirtuosoLogger eventTypeToString:event]);
+    NSLog( @"virtuosoConsoleLogLine for line: %@", line);
 }
 
-- (void)virtuosoEventOccurred:(kVL_LogEvent)event
-                      forFile:(nullable NSString*)fileID
-                     onBearer:(kVL_BearerType)bearer
-               withStringData:(nullable NSString*)data
-{
-    NSLog( @"SampleLoggingDelete  event: %@", [VirtuosoLogger eventTypeToString:event]);
-}
 
-- (void)virtuosoCustomEventOccurred:(nonnull NSDictionary*)eventDetails
+- (void)virtuosoEventOccurred:(nonnull VirtuosoBaseEvent*)event
 {
-    NSLog( @"SampleLoggingDelete for custom event: %@", eventDetails);
+    NSLog( @"virtuosoEventOccurred for event: %@", [event jsonData]);
 }
-
-- (void)virtuosoDebugEventOccurred:(nonnull NSString*)data atLevel:(kVL_LoggingLevel)level
-{
-    NSLog( @"SampleLoggingDelete for data: %@", data);
-}
-
 
 @end

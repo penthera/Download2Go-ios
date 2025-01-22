@@ -17,13 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //
-    // IMPORTANT:
-    // Configure Download Engine Logging
-    //
-    [VirtuosoLogger setLogLevel:kVL_LogVerbose];  // Verbose might be overkill for Production.
-    [VirtuosoLogger enableLogsToFile:NO];
-    
     [VirtuosoSettings instanceOnReady:^(VirtuosoSettings * _Nonnull instance) {
         [instance setBool:YES forKey:@"VFM_BetaFeatures.EnableClientAds"];
         
@@ -31,11 +24,10 @@
         [instance allowAdditionalMimeTypes:@[@"text/html"] forAssetType:kVDE_AssetTypeHLS andDataType:kVF_DataTypeStreamCC];
         [instance allowAdditionalMimeTypes:@[@"application/octet-stream"] forAssetType:kVDE_AssetTypeHSS andDataType:kVF_DataTypeManifest];
         
-        // kVF_DataTypeStreamAudio
+            // kVF_DataTypeStreamAudio
         [instance allowAdditionalMimeTypes:@[@"application/octet-stream"] forAssetType:kVDE_AssetTypeHLS andDataType:kVF_DataTypeManifest];
-        
     }];
-    
+        
     return YES;
 }
 

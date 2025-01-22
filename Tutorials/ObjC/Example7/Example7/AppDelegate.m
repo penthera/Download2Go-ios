@@ -18,14 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //
-    // IMPORTANT:
-    // Configure Download Engine Logging
-    //
-    [VirtuosoLogger setLogLevel:kVL_LogVerbose];  // Verbose might be overkill for Production.
-    [VirtuosoLogger enableLogsToFile:NO];
-    //[VirtuosoSettings.instance setBool:YES forKey:@"VFM_Undocumented_EnableClientAds"];
-    
     // Register Playlist delegate
     
     [VirtuosoPlaylistManager setDelegate:[[PlaylistDelegateProvider alloc] init]] ;

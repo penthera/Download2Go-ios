@@ -43,6 +43,37 @@ typedef void (^StartupCompleteStatusCallback)(kVDE_EngineStartupCode status);
 typedef void (^ShutdownCompleteCallback)(void);
 
 /*!
+ *  @abstract Delegate used to determine if the engine should stop downloading during OS memory warnings
+ *
+ *  @discussion If memory pressure gets too high, the OS reports memory warnings to all running apps.  If
+ *              memory pressure keeps rising, the OS reports additional warnings.  If not enough memory
+ *              is freed to alleviate the warnings, the OS may eventually terminate your app. When these
+ *              conditions occur, Virtuoso will ask this delegate if it should keep actively downloading.
+ *              Returning NO will allow the SDK to stop downloading and conserve memory.  The SDK
+ *              will automatically resume downloading once memory pressure clears.  Returning YES will
+ *              continually downloading and the SDK will ask again if a new memory warning is received.
+ */
+@protocol VirtuosoMemoryWarningDelegate <NSObject>
+
+/*!
+ *  @abstract Asks if downloading should continue after the indicated memory warning.
+ *
+ *  @discussion The SDK will always continue downloading if the download is in the background or is being
+ *              downloaded as single or small set of files, as this download mode is not memory intensive.
+ *              It will also continue downloading after the intial OS memory warning.  If the current/next download
+ *              is a segmented download, then after the second warning from the OS has been received, this method
+ *              will be called to determine if the SDK should continue.
+ *
+ *  @param currentWarningLevel       Either 2 or 3, indicating how many times the OS warning has recently fired. Higher
+ *                               values increase the chance of app termination.
+ */
+- (Boolean)shouldKeepDownloadingAfterMemoryWarning:(int)currentWarningLevel;
+
+@end
+
+
+
+/*!
  *  @abstract The central control for all download-related activities.
  *
  *  @discussion A singleton object that handles all download activity and monitoring conditions and settings.
@@ -290,6 +321,11 @@ typedef void (^ShutdownCompleteCallback)(void);
 #pragma mark
 #pragma mark Engine Status
 #pragma mark
+
+/*!
+ *  @abstract A delegate to be asked when OS memory warnings occur.
+ */
+@property (nonatomic, weak) id<VirtuosoMemoryWarningDelegate> memoryWarningDelegate;
 
 /*!
  *  @abstract Queue used to post Engine status notifications. Default is MainThread.

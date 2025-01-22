@@ -15,9 +15,8 @@
 
 // ---------------------------------------------------------------------------------------------------------
 // IMPORTANT:
-// The following three values must be initialized, please contact support@penthera.com to obtain these keys
+// The following two values must be initialzied and the backplace URL in the "Info" File, please contact support@penthera.com to obtain these keys
 // ---------------------------------------------------------------------------------------------------------
-static NSString* backplaneUrl = @"replace_with_your_backplane_url";                                         // <-- change this
 static NSString* publicKey = @"replace_with_your_public_key";   // <-- change this
 static NSString* privateKey = @"replace_with_your_private_key";  // <-- change this
 
@@ -37,7 +36,7 @@ static NSString* preplayUrl = @"replace_with_your_preplay_url"; // <-- change th
 @property (nonatomic,strong) VirtuosoAsset *exampleAsset;
 @property (nonatomic, strong) VirtuosoDownloadEngineNotificationManager* downloadEngineNotifications;
 @property (nonatomic, strong) VirtuosoAdsNotificationsManager* adsNotifications;
-@property (nonatomic, strong) NSError* error;
+@property (nonatomic, strong) VirtuosoError* error;
 @property (nonatomic, strong) NSMutableArray* beaconsReported;
 
 //
@@ -74,10 +73,6 @@ static NSString* preplayUrl = @"replace_with_your_preplay_url"; // <-- change th
     
     self.beaconsReported = [NSMutableArray new];
     
-    //
-    // Enable the Engine
-    VirtuosoDownloadEngine.instance.enabled = TRUE;
-    
     // Backplane permissions require a unique user-id for the full range of captabilities support to work
     // Production code that needs this will need a unique customer ID.
     // For demonstation purposes only, we use the device name
@@ -86,7 +81,6 @@ static NSString* preplayUrl = @"replace_with_your_preplay_url"; // <-- change th
     //
     // Create the engine confuration
     VirtuosoEngineConfig* config = [[VirtuosoEngineConfig alloc]initWithUser:userName
-                                                                backplaneUrl:backplaneUrl
                                                                    publicKey:publicKey
                                                                   privateKey:privateKey];
     if (!config)
@@ -310,6 +304,7 @@ static NSString* preplayUrl = @"replace_with_your_preplay_url"; // <-- change th
     if (nil == self.exampleAsset) {
         
         self.statusLabel.text = @"Ready to download";
+        self.statusLabel.enabled = false;
         self.statusProgressBar.progress = 0;
         
         [self setEnabledAppearance:self.downloadBtn enabled:YES];
@@ -416,7 +411,7 @@ static NSString* preplayUrl = @"replace_with_your_preplay_url"; // <-- change th
     [self loadEngineData];
 }
 
-- (void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset *)asset error:(NSError *)error task:(NSURLSessionTask *)task data:(NSData *)data statusCode:(NSNumber *)statusCode
+- (void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset *)asset virtuosoError:(VirtuosoError *)error task:(NSURLSessionTask *)task data:(NSData *)data statusCode:(NSNumber *)statusCode
 {
     self.error = error;
     [self displayAsset:asset];

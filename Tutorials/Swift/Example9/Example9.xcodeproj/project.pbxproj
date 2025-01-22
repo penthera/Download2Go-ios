@@ -110,7 +110,7 @@
 				4D689B7023EE152B00019D1D /* Sources */,
 				4D689B7123EE152B00019D1D /* Frameworks */,
 				4D689B7223EE152B00019D1D /* Resources */,
-				B6DE75DB1F211860F23DBF56 /* [CP] Embed Pods Frameworks */,
+				63E8A4263438D615D110F9BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,7 +128,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = Penthera;
 				TargetAttributes = {
 					4D689B7323EE152B00019D1D = {
@@ -190,7 +190,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6DE75DB1F211860F23DBF56 /* [CP] Embed Pods Frameworks */ = {
+		63E8A4263438D615D110F9BD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

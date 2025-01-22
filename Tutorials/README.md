@@ -9,6 +9,7 @@ Tutorials
 * Example1.3 - Engine status
 * Example1.4 - Engine performance settings
 * Example1.5 - Advanced Logging
+* Example1.6 - Wait for completion of asset refreshManifestAndDownload
 * Example6 - Client Ads sample
 * Example7 - Playlists Sequential Episodes
 * Example7.3 - FastPlay Playlists
@@ -18,9 +19,9 @@ Tutorials
 * Example10 - FastPlay example
 * Example11 - Device Unregister
 * Example12 - Advanced Error Handling
-* Example14 - Background Wake Processing
 * Example15 - Server Ads sample
 * Example17 - Rendition Delegate
+* PerpetualLicense - Minimal example showing download and offline playback using perpetual license
 
 #### The React-Native Folder contains tutorials covering the following
 

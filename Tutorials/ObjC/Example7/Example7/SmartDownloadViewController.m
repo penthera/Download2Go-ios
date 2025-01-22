@@ -14,9 +14,8 @@
 
 // ---------------------------------------------------------------------------------------------------------
 // IMPORTANT:
-// The following three values must be initialzied, please contact support@penthera.com to obtain these keys
+// The following two values must be initialzied and the backplace URL in the "Info" File, please contact support@penthera.com to obtain these keys
 // ---------------------------------------------------------------------------------------------------------
-static NSString* backplaneUrl = @"replace_with_your_backplane_url";                                         // <-- change this
 static NSString* publicKey = @"replace_with_your_public_key";   // <-- change this
 static NSString* privateKey = @"replace_with_your_private_key";  // <-- change this
 
@@ -27,7 +26,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
 //
 @property (nonatomic,strong) VirtuosoAsset *exampleAsset;
 @property (nonatomic, strong) VirtuosoDownloadEngineNotificationManager* downloadEngineNotifications;
-@property (nonatomic, strong) NSError* error;
+@property (nonatomic, strong) VirtuosoError* error;
 
 //
 // MARK: Outlets
@@ -56,10 +55,6 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     
     self.statusLabel.text = @"Starting Engine...";
     
-    //
-    // Enable the Engine
-    VirtuosoDownloadEngine.instance.enabled = TRUE;
-    
     // Backplane permissions require a unique user-id for the full range of captabilities support to work
     // Production code that needs this will need a unique customer ID.
     // For demonstation purposes only, we use the device name
@@ -68,7 +63,6 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     //
     // Create the engine confuration
     VirtuosoEngineConfig* config = [[VirtuosoEngineConfig alloc]initWithUser:userName
-                                                                backplaneUrl:backplaneUrl
                                                                    publicKey:publicKey
                                                                   privateKey:privateKey];
     if (!config)
@@ -153,7 +147,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
         
         // Create asset configuration object
         VirtuosoAssetConfig* config =
-            [[VirtuosoAssetConfig alloc] initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8"
+            [[VirtuosoAssetConfig alloc] initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8"
                                              assetID:myAssetID
                                          description:@"The Right Kite"
                                                 type:kVDE_AssetTypeHLS];
@@ -176,7 +170,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
                                                                                         error:&error];
         if (error)
         {
-            VLog(kVL_LogError, @"Failed to create PlaylistConfig. Error: %@", error.localizedDescription);
+            NSLog(@"Failed to create PlaylistConfig. Error: %@", error.localizedDescription);
             return;
         }
         
@@ -305,6 +299,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     if (nil == self.exampleAsset) {
         
         self.statusLabel.text = @"Ready to download";
+        self.statusLabel.enabled = false;
         self.statusProgressBar.progress = 0;
         
         [self setEnabledAppearance:self.downloadBtn enabled:YES];
@@ -378,7 +373,7 @@ static NSString* privateKey = @"replace_with_your_private_key";  // <-- change t
     [self loadEngineData];
 }
 
-- (void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset *)asset error:(NSError *)error task:(NSURLSessionTask *)task data:(NSData *)data statusCode:(NSNumber *)statusCode
+- (void)downloadEngineDidEncounterErrorForAsset:(VirtuosoAsset *)asset virtuosoError:(VirtuosoError *)error task:(NSURLSessionTask *)task data:(NSData *)data statusCode:(NSNumber *)statusCode
 {
     self.error = error;
     [self displayAsset:asset];

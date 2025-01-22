@@ -21,40 +21,40 @@ class PlaylistDelegateProvider : NSObject, VirtuosoPlaylistManagerDelegate {
         
         switch assetID {
         case "SERIES-8-EPISODE-1":
-            config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8",
+            config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep1/index.m3u8",
                                          assetID: assetID,
                                          description: "The Right Knight",
                                          type: .vde_AssetTypeHLS)
             break
         case "SERIES-8-EPISODE-2":
-            config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep2/index.m3u8",
+            config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep2/index.m3u8",
                                          assetID: assetID,
                                          description: "Shadow Play",
                                          type: .vde_AssetTypeHLS)
             break
         case "SERIES-8-EPISODE-3":
-            config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep3/index.m3u8",
+            config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep3/index.m3u8",
                                          assetID: assetID,
                                          description: "Aloha Adventure",
                                          type: .vde_AssetTypeHLS)
             break
             
         case "SERIES-8-EPISODE-4":
-            config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep4/index.m3u8",
+            config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep4/index.m3u8",
                                          assetID: assetID,
                                          description: "Squirrelly",
                                          type: .vde_AssetTypeHLS)
             break
 
         case "SERIES-8-EPISODE-5":
-            config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep5/index.m3u8",
+            config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep5/index.m3u8",
                                          assetID: assetID,
                                          description: "Apples Raining",
                                          type: .vde_AssetTypeHLS)
             break
 
         case "SERIES-8-EPISODE-6":
-            config = VirtuosoAssetConfig(url: "http://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep6/index.m3u8",
+            config = VirtuosoAssetConfig(url: "https://virtuoso-demo-content.s3.amazonaws.com/bbb/season1/ep6/index.m3u8",
                                          assetID: assetID,
                                          description: "Final Call",
                                          type: .vde_AssetTypeHLS)
@@ -72,8 +72,7 @@ class PlaylistDelegateProvider : NSObject, VirtuosoPlaylistManagerDelegate {
         // IMPORTANT:
         // This asset has been created for FastPlay so we need
         // to alter the default configuration as follows:
-        assetConfig.fastPlayEnabled = true
-        assetConfig.offlinePlayEnabled = false
+        assetConfig.downloadType = .vde_DownloadFastPlayPlayback;
         assetConfig.autoAddToQueue = false
         
         

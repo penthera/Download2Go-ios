@@ -99,10 +99,6 @@ RCT_EXPORT_METHOD(startEngine)
     // will receive callbacks allowing us to refresh the UI.
     self.downloadEngineNotifications = [[VirtuosoDownloadEngineNotificationManager alloc]initWithDelegate:self];
     
-    //
-    // Enable the Engine
-    VirtuosoDownloadEngine.instance.enabled = TRUE;
-    
     // Backplane permissions require a unique user-id for the full range of captabilities support to work
     // Production code that needs this will need a unique customer ID.
     // For demonstation purposes only, we use the device name
@@ -181,7 +177,7 @@ RCT_EXPORT_METHOD(download)
       
       // Important:
       // Create asset configuration object
-      VirtuosoAssetConfig* config = [[VirtuosoAssetConfig alloc]initWithURL:@"http://virtuoso-demo-content.s3.amazonaws.com/tears/index.m3u8"
+      VirtuosoAssetConfig* config = [[VirtuosoAssetConfig alloc]initWithURL:@"https://virtuoso-demo-content.s3.amazonaws.com/tears/index.m3u8"
                                                                     assetID:myAssetID
                                                                 description:@"Tears of Steel" type:kVDE_AssetTypeHLS];
       if (!config)

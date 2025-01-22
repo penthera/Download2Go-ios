@@ -318,11 +318,6 @@ copy will throw an exception.</p>
 			
 
 			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Returns the VirtuosoSettings object <a href="#//api/name/instance">instance</a>.</p>
-			</div>
-			
 
 			
 
@@ -335,7 +330,7 @@ initializes the <a href="#//api/name/instance">instance</a> in a background thre
 is intended to be a static singleton accessed through appropriate <a href="#//api/name/instance">instance</a> methods only.  Instantiating a local
 copy will throw an exception.</p>
 
-<p>@property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete</p></div>
+<p>@property onReady - This block will be called on the calling thread immediately or after any required VirtuosoSettings initialization is complete with the initialized <a href="#//api/name/instance">instance</a>.</p></div>
 			</div>
 			
 
@@ -389,7 +384,7 @@ copy will throw an exception.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Virtuoso enforces that clients must sync with the Backplane at a required interval,
+				<div class="note"><p><strong>Note:</strong> This value has no meaning if you are not connecting to Penthera&rsquo;s Backplane.</p></div><p>Virtuoso enforces that clients must sync with the Backplane at a required interval,
 or else lose access to downloaded assets.
 Virtuoso marks the time since the sync with the Backplane, and makes all downloaded
 assets inaccessible if the time exceeds this value.
@@ -441,6 +436,11 @@ inaccessible. Once the next Backplane sync occurs, the assets are again accessib
 			
 
 			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> This value has no meaning if you are not connecting to Penthera&rsquo;s Backplane.</p></div>
+			</div>
+			
 
 			
 
@@ -481,6 +481,11 @@ inaccessible. Once the next Backplane sync occurs, the assets are again accessib
 
 			
 
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> This value has no meaning if you are not connecting to Penthera&rsquo;s Backplane.</p></div>
+			</div>
 			
 
 			
@@ -525,7 +530,9 @@ inaccessible. Once the next Backplane sync occurs, the assets are again accessib
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Virtuoso limits the total number of downloads the device can have on disk at any given time.
+				<div class="note"><p><strong>Note:</strong> While the default value for this property will come from the Backplane if you are using one, if you
+are not connecting to a Backplane, this limit may still be enforced and the default will be set to the
+SDK default value for this build.</p></div><p>Virtuoso limits the total number of downloads the device can have on disk at any given time.
 Any download requests beyond this limit are queued, but will not download, and the engine
 will report an error indicating the download queue is blocked until the user manually
 deletes enough of the currently downloaded assets to get below the limit again.  The default
@@ -575,7 +582,7 @@ value is 100.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Virtuoso limits the total number of downloads the user can have on disk across all their devices
+				<div class="note"><p><strong>Note:</strong> This value has no meaning if you are not connecting to Penthera&rsquo;s Backplane.</p></div><p>Virtuoso limits the total number of downloads the user can have on disk across all their devices
 at any given time.  Any download requests beyond this limit are queued, but will not download, and
 the engine will report an error indicating the download queue is blocked until the user manually
 deletes enough of the currently downloaded assets, on this device or other devices, to get below
@@ -625,7 +632,7 @@ the limit again.  The default value is -1 (unlimited).</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Virtuoso limits the total number of times an asset can be downloaded on any device in the account.
+				<div class="note"><p><strong>Note:</strong> This value has no meaning if you are not connecting to Penthera&rsquo;s Backplane.</p></div><p>Virtuoso limits the total number of times an asset can be downloaded on any device in the account.
 Once this limit is reached, the asset can no longer be downloaded without administrative action.
 The default value is -1 (unlimited).</p>
 			</div>
@@ -673,7 +680,7 @@ The default value is -1 (unlimited).</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Virtuoso limits the total number of copies of an asset that can be downloaded on any device in the
+				<div class="note"><p><strong>Note:</strong> This value has no meaning if you are not connecting to Penthera&rsquo;s Backplane.</p></div><p>Virtuoso limits the total number of copies of an asset that can be downloaded on any device in the
 account.  Once this limit is reached, the asset can no longer be downloaded until the user deletes
 a copy of the asset from other devices in the account.  Any download requests beyond this limit are
 queued, but will not download, and the engine will report an error indicating the download queue is
@@ -724,7 +731,7 @@ again.  The default value is -1 (unlimited).</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Normally, the download engine acquires any necessary download permissions when the item starts downloading. By
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are not connecting to Penthera&rsquo;s Backplane.</p></div><p>Normally, the download engine acquires any necessary download permissions when the item starts downloading. By
 delaying the permission check until download can occur, the SDK can allow new assets to be queued while the
 device is offline.  If this setting is enabled, the download engine acquires permissions when the item is initially
 queued.  This means that assets can only be created and queued when the device is online.  If this setting is
@@ -775,7 +782,7 @@ are configured), then attempts to create/queue the asset while offline will fail
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Normally, the download engine will not request download permissions when the Backplane settings for maximum
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are not connecting to Penthera&rsquo;s Backplane.</p></div><p>Normally, the download engine will not request download permissions when the Backplane settings for maximum
 downloads per account and maximum lifetime download limit is set to unlimited, as there is no reason to attempt
 policy enforcement under these conditions.  If, however, your settings are currently unlimited, you anticipate
 that you might enforce limits later, and you wish to track downloads done while the policy was unrestricted, you may wish
@@ -1840,7 +1847,7 @@ values is NO.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are not connecting to Penthera&rsquo;s Backplane.</p></div>
 			</div>
 			
 
@@ -1961,7 +1968,7 @@ values is NO.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are not connecting to Penthera&rsquo;s Backplane.</p></div>
 			</div>
 			
 
@@ -2058,7 +2065,7 @@ values is NO.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)overrideExpiryAfterPlay:(long long)<em>defaultExpiryAfterPlay</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)overrideExpiryAfterPlay:(long long)<em>expiryAfterPlay</em></code></div>
 
 		    
 			
@@ -2082,7 +2089,7 @@ values is NO.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
+				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are not connecting to Penthera&rsquo;s Backplane.</p></div>
 			</div>
 			
 
@@ -2200,11 +2207,6 @@ values is NO.</p>
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="note"><p><strong>Note:</strong> Calling this method has no effect if you are connecting to Penthera&rsquo;s Backplane.</p></div>
-			</div>
 			
 
 			
@@ -2654,7 +2656,7 @@ network activity indicator.  Default is YES.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>No matter how many times the Backplane sync method is called, or how often internal events might
+				<div class="note"><p><strong>Note:</strong> This value has no meaning if you are not connecting to Penthera&rsquo;s Backplane.</p></div><p>No matter how many times the Backplane sync method is called, or how often internal events might
 attempt a sync, the SDK will generally sync with the backplane more often than this value.  Certain time-critical
 events, such as a SDK push notice, may cause the SDK to sync regardless of the last sync.  The default
 is 60 minutes.</p>
@@ -3556,7 +3558,7 @@ this value if you know your DRM system requires it.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2024 Penthera Inc. All rights reserved. Updated: 2024-11-04</p>
+						<p class="copyright">Copyright &copy; 2025 Penthera Inc. All rights reserved. Updated: 2025-01-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
