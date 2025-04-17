@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -365,6 +365,7 @@
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example9/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,6 +386,7 @@
 				DEVELOPMENT_TEAM = L5M4866SC8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Example9/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
