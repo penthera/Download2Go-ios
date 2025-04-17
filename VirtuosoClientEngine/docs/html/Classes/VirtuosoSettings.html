@@ -114,6 +114,8 @@
 		
 		<option value="//api/name/maximumAssetsForBackgroundDownload">maximumAssetsForBackgroundDownload</option>
 		
+		<option value="//api/name/maximumSizeForActiveBackgroundTransition">maximumSizeForActiveBackgroundTransition</option>
+		
 		<option value="//api/name/mediaMelonCustomerID">mediaMelonCustomerID</option>
 		
 		<option value="//api/name/mediaMelonServiceURL">mediaMelonServiceURL</option>
@@ -2327,6 +2329,61 @@ application is suspended.  Under certain scenarios, it may be desirable to restr
 the number of downloads the SDK will transfer to the iOS download system.  If this value
 is 0, then background downloading is disabled.  If this value is greater than 0, the SDK will
 only startup that many background downloads.  The default is INT_MAX.</p>
+
+<p>Note that when the SDK transitions to background downloading, a notification is sent to the
+application which indicates the assets that were transferred to background download and the assets
+that were paused and which won&rsquo;t download until the app returns to the foreground.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">VirtuosoSettings.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/maximumSizeForActiveBackgroundTransition" title="maximumSizeForActiveBackgroundTransition"></a>
+	<h3 class="method-title"><code><a href="#//api/name/maximumSizeForActiveBackgroundTransition">&nbsp;&nbsp;maximumSizeForActiveBackgroundTransition</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The largest an active download can be for the SDK to allow its transition to background.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) long long maximumSizeForActiveBackgroundTransition</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Under some conditions, particularly when a single downloading file is very large, iOS can take
+too long to cancel the download task.  This prevents the SDK from accessing the data necessary
+to resume the task in the background and can cause downloads to restart during background
+or foreground transitions.  This setting can be used to limit the size of an active download so
+that it will pause instead of reset and will continue downloading in the foreground.  The setting
+is only applicable to single-file &ldquo;monolithic&rdquo; type downloads (E.G. MP4 files).  Default is 2GB.</p>
 
 <p>Note that when the SDK transitions to background downloading, a notification is sent to the
 application which indicates the assets that were transferred to background download and the assets

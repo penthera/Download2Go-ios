@@ -503,6 +503,22 @@
 @property (nonatomic,assign) NSUInteger maximumAssetsForBackgroundDownload;
 
 /*!
+ *  @abstract The largest an active download can be for the SDK to allow its transition to background.
+ *
+ *  @discussion Under some conditions, particularly when a single downloading file is very large, iOS can take
+ *              too long to cancel the download task.  This prevents the SDK from accessing the data necessary
+ *              to resume the task in the background and can cause downloads to restart during background
+ *              or foreground transitions.  This setting can be used to limit the size of an active download so
+ *              that it will pause instead of reset and will continue downloading in the foreground.  The setting
+ *              is only applicable to single-file "monolithic" type downloads (E.G. MP4 files).  Default is 2GB.
+ *
+ *              Note that when the SDK transitions to background downloading, a notification is sent to the
+ *              application which indicates the assets that were transferred to background download and the assets
+ *              that were paused and which won't download until the app returns to the foreground.
+ */
+@property (nonatomic,assign) long long maximumSizeForActiveBackgroundTransition;
+
+/*!
  *  @abstract When downloading without the packager, the number of direct-download segments to startup for
  *            background download at a time.  The default is 300.  Values less than 50 or greater than 500 are
  *            invalid.
