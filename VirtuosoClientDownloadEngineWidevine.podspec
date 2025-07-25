@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.author           = { 'josh-penthera' => 'josh.pressnell@penthera.com' }
   s.source           = { :http => 'https://github.com/penthera/Download2Go-ios/releases/download/v4.4.6/VirtuosoClientDownloadEngineWidevine.xcframework.zip' }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'VirtuosoClientDownloadEngine.xcframework/ios-arm64/VirtuosoClientDownloadEngine.framework/Headers/*'
   
